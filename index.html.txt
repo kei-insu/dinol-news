@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url=Dinol_news_20260630.html">
+<title>디자인 놀이터 — AI & Design News</title>
+</head>
+<body><p>최신 뉴스 브리핑으로 이동 중...</p></body>
+</html>
