@@ -308,13 +308,6 @@
 
   .drawer-source { font-size: 12px; color: #888; }
 
-  .drawer-close {
-    background: none; border: none;
-    color: #555; font-size: 20px;
-    cursor: pointer; padding: 0 4px;
-    line-height: 1;
-  }
-
   .drawer-thumb {
     height: 140px;
     position: relative;
@@ -347,7 +340,44 @@
     margin-top: 2px;
   }
 
-  .drawer-footer { padding: 8px 20px 36px; }
+  .drawer-footer { padding: 8px 20px 36px; display: flex; flex-direction: column; gap: 10px; }
+
+  .drawer-close-btn {
+    display: block;
+    width: 100%;
+    background: none;
+    border: 1px solid #2c2c48;
+    color: #888;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .drawer-close-btn:hover { background: #1a1a28; color: #ccc; }
+
+  .drawer-lang-toggle {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 2px;
+  }
+  .lang-btn {
+    background: none;
+    border: 1px solid #2c2c48;
+    color: #666;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+  }
+  .lang-btn.active {
+    background: #2c2c48;
+    color: #fff;
+    border-color: #3c3c58;
+  }
 
   .drawer-cta {
     display: block;
@@ -422,7 +452,6 @@
 <div class="drawer" id="drawer">
   <div class="drawer-header">
     <div class="drawer-source" id="drawerSource"></div>
-    <button class="drawer-close" id="drawerClose">✕</button>
   </div>
   <div class="drawer-thumb" id="drawerThumb">
     <div class="noise"></div>
@@ -430,11 +459,16 @@
     <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
   </div>
   <div class="drawer-body">
+    <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+      <button class="lang-btn active" id="btnKr">KR</button>
+      <button class="lang-btn" id="btnEn">EN</button>
+    </div>
     <div class="drawer-title" id="drawerTitle"></div>
     <div class="drawer-summary" id="drawerSummary"></div>
   </div>
   <div class="drawer-footer">
     <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
   </div>
 </div>
 
@@ -627,17 +661,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const cards = [...document.querySelectorAll('a.card')];
 
   /* ── 드로어 (슬라이드업 요약 패널) ── */
-  const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-  const drawer       = document.getElementById('drawer');
-  const overlay      = document.getElementById('drawerOverlay');
-  const drawerClose  = document.getElementById('drawerClose');
-  const drawerThumb  = document.getElementById('drawerThumb');
-  const drawerLabel  = document.getElementById('drawerLabel');
-  const drawerEn     = document.getElementById('drawerEn');
-  const drawerSource = document.getElementById('drawerSource');
-  const drawerTitle  = document.getElementById('drawerTitle');
-  const drawerSummary= document.getElementById('drawerSummary');
-  const drawerCta    = document.getElementById('drawerCta');
+  const drawer           = document.getElementById('drawer');
+  const overlay          = document.getElementById('drawerOverlay');
+  const drawerClose      = document.getElementById('drawerClose');
+  const drawerThumb      = document.getElementById('drawerThumb');
+  const drawerLabel      = document.getElementById('drawerLabel');
+  const drawerEn         = document.getElementById('drawerEn');
+  const drawerSource     = document.getElementById('drawerSource');
+  const drawerTitle      = document.getElementById('drawerTitle');
+  const drawerSummary    = document.getElementById('drawerSummary');
+  const drawerCta        = document.getElementById('drawerCta');
+  const drawerLangToggle = document.getElementById('drawerLangToggle');
+  const btnKr            = document.getElementById('btnKr');
+  const btnEn            = document.getElementById('btnEn');
+
+  let _titleKr = '', _titleEn = '', _summaryKr = '', _summaryEn = '';
+
+  function setLang(lang) {
+    if (lang === 'kr') {
+      drawerTitle.textContent   = _titleKr;
+      drawerSummary.textContent = _summaryKr;
+      btnKr.classList.add('active');
+      btnEn.classList.remove('active');
+    } else {
+      drawerTitle.textContent   = _titleEn;
+      drawerSummary.textContent = _summaryEn;
+      btnEn.classList.add('active');
+      btnKr.classList.remove('active');
+    }
+  }
+
+  btnKr.addEventListener('click', () => setLang('kr'));
+  btnEn.addEventListener('click', () => setLang('en'));
 
   function openDrawer(card) {
     const thumb = card.querySelector('.thumb');
@@ -659,9 +714,22 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerLabel.textContent = card.querySelector('.thumb-label')?.textContent || '';
     const hasEn = !!card.querySelector('.thumb-en');
     drawerEn.style.display = hasEn ? 'block' : 'none';
-    drawerSource.textContent  = card.querySelector('.card-source')?.textContent || '';
-    drawerTitle.textContent   = card.querySelector('.card-title')?.textContent  || '';
-    drawerSummary.textContent = card.dataset.summary || '';
+    drawerSource.textContent = card.querySelector('.card-source')?.textContent || '';
+
+    _titleEn   = card.querySelector('.card-title')?.textContent || '';
+    _summaryEn = card.dataset.summary || '';
+    _titleKr   = card.dataset.titleKr   || _titleEn;
+    _summaryKr = card.dataset.summaryKr || _summaryEn;
+
+    if (hasEn && card.dataset.titleKr) {
+      drawerLangToggle.style.display = 'flex';
+      setLang('kr');
+    } else {
+      drawerLangToggle.style.display = 'none';
+      drawerTitle.textContent   = _titleEn;
+      drawerSummary.textContent = _summaryEn;
+    }
+
     drawerCta.href = card.href;
     drawer.classList.add('open');
     overlay.classList.add('open');
