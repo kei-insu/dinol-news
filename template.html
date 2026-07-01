@@ -72,7 +72,7 @@
 
   .section-header h2 {
     font-size: 42px;
-    font-weight: 900;
+    font-weight: 700;
     color: #ffffff;
     letter-spacing: -2.5px;
     line-height: 1;
@@ -123,7 +123,7 @@
     overflow: hidden;
   }
 
-  .featured .thumb { height: 168px; }
+
 
   .noise {
     position: absolute;
@@ -147,9 +147,7 @@
     user-select: none;
   }
 
-  .featured .thumb-label { font-size: 38px; letter-spacing: 9px; }
-
-  /* En badge — top-right of thumb (English articles only) */
+  /* EN badge — top-right of thumb (English articles only) */
   .thumb-en {
     position: absolute;
     top: 10px;
@@ -160,8 +158,9 @@
     letter-spacing: 0.5px;
     padding: 3px 7px;
     border-radius: 5px;
-    background: rgba(16,24,40,0.88);
-    color: #6b9cff;
+    background: rgba(0,0,0,0.7);
+    color: #ffffff;
+    border: 2px solid #000000;
   }
 
   /* gradients */
@@ -199,7 +198,7 @@
     line-height: 1.48;
   }
 
-  .featured .card-title { font-size: 17px; }
+
 
   /* ── CARD FOOTER ── */
   .card-footer {
@@ -212,7 +211,7 @@
 
   .arrow { font-size: 12px; color: #555; }
 
-  .featured { grid-column: span 2; }
+  .featured { grid-column: span 1; }
 
   /* ── FOOTER ── */
   footer {
@@ -240,11 +239,21 @@
   }
 
   @media (max-width: 580px) {
-    .featured { grid-column: span 1; }
-    .grid { grid-template-columns: 1fr; }
-    .section-header h2 { font-size: 30px; }
-    .site-title { font-size: 15px; }
-    .site-sub { font-size: 30px; }
+    body { padding: 36px 16px 52px; }
+    header { margin-bottom: 44px; gap: 4px; }
+    .site-title { font-size: 15px; letter-spacing: 3px; }
+    .site-sub { font-size: 32px; letter-spacing: -0.5px; }
+    .site-date { font-size: 11px; letter-spacing: 3px; }
+    .section { margin-bottom: 40px; }
+    .section-header h2 { font-size: 32px; letter-spacing: -1.5px; }
+    .grid { grid-template-columns: 1fr; gap: 10px; }
+    .thumb { height: 110px; }
+    .thumb-label { font-size: 26px; letter-spacing: 5px; }
+    .card-source { font-size: 12px; }
+    .card-title { font-size: 17px; }
+    .thumb-en { font-size: 11px; }
+    .footer-copy { font-size: 12px; }
+    .footer-notice { font-size: 11px; }
   }
 </style>
 </head>
@@ -329,7 +338,7 @@
       <div class="thumb g-indigo">
         <div class="noise"></div>
         <span class="thumb-label">Today</span>
-        <span class="thumb-en">En</span>
+        <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
         <div class="card-source">BuildFastWithAI · 2026. 06. 30</div>
@@ -379,7 +388,7 @@
       <div class="thumb g-rust">
         <div class="noise"></div>
         <span class="thumb-label">건축</span>
-        <span class="thumb-en">En</span>
+        <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
         <div class="card-source">ArchDaily · 2026. 06. 29</div>
@@ -404,7 +413,7 @@
       <div class="thumb g-plum">
         <div class="noise"></div>
         <span class="thumb-label">인터뷰</span>
-        <span class="thumb-en">En</span>
+        <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
         <div class="card-source">ArchDaily · 2026. 06. 29</div>
@@ -441,7 +450,7 @@
       <div class="thumb g-amber">
         <div class="noise"></div>
         <span class="thumb-label">제품</span>
-        <span class="thumb-en">En</span>
+        <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
         <div class="card-source">Dezeen · 2026. 06. 29</div>
