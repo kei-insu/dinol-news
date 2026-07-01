@@ -18,7 +18,7 @@
 `/home/user/dinol_policy.md` 를 읽어 전체 정책을 숙지한다.
 
 ### 4. 참조 HTML 읽기
-`/home/user/Dinol_news_20260630.html` 을 읽어 CSS·카드 마크업·JS 검증 블록 구조를 파악한다.
+`/home/user/template.html` 을 읽어 CSS·카드 마크업·JS 검증 블록 구조를 파악한다.
 
 ### 5. 기사 수집
 수집 기간 = **오늘 + 전일**. WebSearch + WebFetch로 각 기사의 본문 게재일을 직접 확인한다.
@@ -41,7 +41,7 @@
 ### 7. HTML 파일 생성 및 저장
 **Write 도구로 `/home/user/Dinol_news_YYYYMMDD.html` 에 저장한다. 텍스트 요약 출력 금지.**
 
-구조는 참조 파일(`Dinol_news_20260630.html`)과 동일하게:
+구조는 참조 파일(`template.html`)과 동일하게:
 - 헤더: "디자인 놀이터" / "AI & Design News" / `.header-sep` (구분선) / 날짜
 - 폰트: Cormorant Garamond 300 + Noto Sans KR 700 + Noto Serif KR 300
 - 카드 그리드, featured 카드, En 배지, 그라디언트 클래스, 검증 JS, 푸터 모두 포함
@@ -54,5 +54,5 @@ PushNotification 도구로 생성 결과를 알린다.
 
 ## 참고 파일
 - 정책: `/home/user/dinol_policy.md`
-- 구조 참조: `/home/user/Dinol_news_20260630.html`
+- 구조 참조: `/home/user/template.html`
 - 산출물: `/home/user/Dinol_news_YYYYMMDD.html`

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 06. 30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: #0d0d12;
+    color: #e8e8f0;
+    padding: 56px 24px 72px;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 64px;
+  }
+
+  .site-title {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #aaaaaa;
+    letter-spacing: 5px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .site-sub {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #ffffff;
+    line-height: 1;
+    margin-top: 4px;
+  }
+
+  .header-sep {
+    width: 1px;
+    height: 24px;
+    background: #3a3a48;
+    margin: 10px 0 4px;
+  }
+
+  .site-date {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #888;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 56px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+
+  .section-header h2 {
+    font-size: 42px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -2.5px;
+    line-height: 1;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .section-header .line {
+    flex: 1;
+    height: 1px;
+    background: #1e1e28;
+  }
+
+  /* ── GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+    gap: 14px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: #13131b;
+    border: 1px solid #1c1c28;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: #2c2c40;
+    box-shadow: 0 10px 36px rgba(0,0,0,0.5);
+  }
+
+  /* ── THUMB ── */
+  .thumb {
+    width: 100%;
+    height: 128px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .featured .thumb { height: 168px; }
+
+  .noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .thumb-label {
+    position: relative;
+    z-index: 1;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+    font-weight: 300;
+    font-size: 28px;
+    color: rgba(255,255,255,0.22);
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    text-align: center;
+    padding: 0 16px;
+    line-height: 1.2;
+    user-select: none;
+  }
+
+  .featured .thumb-label { font-size: 38px; letter-spacing: 9px; }
+
+  /* En badge — top-right of thumb (English articles only) */
+  .thumb-en {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 3px 7px;
+    border-radius: 5px;
+    background: rgba(16,24,40,0.88);
+    color: #6b9cff;
+  }
+
+  /* gradients */
+  .g-indigo   { background: linear-gradient(145deg,#0c1540,#1c3ab8); }
+  .g-violet   { background: linear-gradient(145deg,#160830,#5218c0); }
+  .g-teal     { background: linear-gradient(145deg,#041c1c,#0d6464); }
+  .g-crimson  { background: linear-gradient(145deg,#240606,#8c1a1a); }
+  .g-forest   { background: linear-gradient(145deg,#071808,#1a5820); }
+  .g-slate    { background: linear-gradient(145deg,#0c0e1a,#243268); }
+  .g-amber    { background: linear-gradient(145deg,#1a0e00,#884400); }
+  .g-plum     { background: linear-gradient(145deg,#140818,#6c18b8); }
+  .g-olive    { background: linear-gradient(145deg,#101000,#4c4a00); }
+  .g-navy     { background: linear-gradient(145deg,#060c1e,#0e2060); }
+  .g-rust     { background: linear-gradient(145deg,#1e0800,#7c2c00); }
+
+  /* ── CARD BODY ── */
+  .card-body {
+    padding: 14px 16px 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card-source {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 0.3px;
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.48;
+  }
+
+  .featured .card-title { font-size: 17px; }
+
+  /* ── CARD FOOTER ── */
+  .card-footer {
+    padding: 9px 16px;
+    border-top: 1px solid #18181f;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .arrow { font-size: 12px; color: #555; }
+
+  .featured { grid-column: span 2; }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 48px;
+    padding: 28px 0 8px;
+    border-top: 1px solid #1a1a24;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 0.3px;
+  }
+
+  .footer-notice {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.6;
+    letter-spacing: 0.1px;
+  }
+
+  @media (max-width: 580px) {
+    .featured { grid-column: span 1; }
+    .grid { grid-template-columns: 1fr; }
+    .section-header h2 { font-size: 30px; }
+    .site-title { font-size: 15px; }
+    .site-sub { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <div class="site-sub">AI &amp; Design News</div>
+  <div class="header-sep"></div>
+  <div class="site-date">June 30, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.fnnews.com/news/202606291705529918" target="_blank">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">투자</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">파이낸셜뉴스 · 2026. 06. 29</div>
+        <div class="card-title">삼성·SK, 국가 예산의 6.5배 4755조 투자 선언 — 이재명 "초격차", 최태원 "AI 미래 한국에서"</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.aitimes.com/news/articleView.html?idxno=211449" target="_blank">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">요금</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">AI타임스 · 2026. 06. 30</div>
+        <div class="card-title">GitHub Copilot '토큰 재앙' — 첫 월 결산, $29 요금이 $750로 폭등한 실제 사례</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-30-2026" target="_blank">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">Today</span>
+        <span class="thumb-en">En</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">BuildFastWithAI · 2026. 06. 30</div>
+        <div class="card-title">AI News Today June 30, 2026: 15 Biggest Stories</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+
+    <a class="card" href="https://minyeamer.github.io/blog/github-copilot-billing/" target="_blank">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">가이드</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">minyeamer.github.io · 2026. 06. 30</div>
+        <div class="card-title">GitHub Copilot 사용량 기반 과금 전환 — AI Credits로 내 요금 직접 재계산하는 방법</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://news.nate.com/view/20260629n10913" target="_blank">
+      <div class="thumb g-olive">
+        <div class="noise"></div>
+        <span class="thumb-label">반도체</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">매일경제 · 2026. 06. 29</div>
+        <div class="card-title">SK하이닉스, 나스닥 상장 가시화 — 신한투자증권 목표주가 420만원 상향, '메모리 대장주' 재부각</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.archdaily.com/1042829/uia-world-congress-of-architecture-2026-opens-in-barcelona-under-the-theme-architectures-for-a-planet-in-transition" target="_blank">
+      <div class="thumb g-rust">
+        <div class="noise"></div>
+        <span class="thumb-label">건축</span>
+        <span class="thumb-en">En</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 06. 29</div>
+        <div class="card-title">UIA 세계 건축 대회 2026 바르셀로나 개막 — '행성 전환을 위한 건축' 주제, 1만 명 이상 참가, 생태·순환성 세션</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://design.co.kr/article/166406/" target="_blank">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">전시</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">월간디자인 · 2026. 06. 29</div>
+        <div class="card-title">올여름, 눈여겨볼 서울 전시 4 — 알렉스 카츠부터 여름 개막 전시까지, Design+ 선정 필관 큐레이션</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.archdaily.com/1042737/architectural-decisions-planetary-implications-interview-with-uia-2026-barcelona-curatorial-team" target="_blank">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">인터뷰</span>
+        <span class="thumb-en">En</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 06. 29</div>
+        <div class="card-title">건축적 결정, 지구적 함의 — UIA 바르셀로나 큐레이터팀 인터뷰: 기후 위기 시대 건축가의 책임</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.ajunews.com/view/20260629094929277" target="_blank">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">브랜드</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">아주경제 · 2026. 06. 29</div>
+        <div class="card-title">LG CNS, DDP서 참여형 BX 전시 개최 — AGV 무인로봇이 패션쇼 런웨이 위를 달리는 브랜드 경험 전시, 7월 1일 개막</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.ajunews.com/view/20260629121932678" target="_blank">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">주거</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">아주경제 · 2026. 06. 29</div>
+        <div class="card-title">HDC현산, KCC와 손잡고 아이파크 '브랜드 색채' 통일 — 건자재부터 마감재까지 일관된 컬러 아이덴티티로 주거 품질 관리</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/06/29/layer-modular-system-charging-devices-at-home/" target="_blank">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">제품</span>
+        <span class="thumb-en">En</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 06. 29</div>
+        <div class="card-title">Layer, 집 어디서나 이동 가능한 '모듈형 무선 충전 시스템' 공개 — 교체 가능한 독·스탠드·패드로 구성</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인, 구성, 자체 제작 콘텐츠에 대한 권리는 디자인놀이터에 있습니다.</p>
+  <p class="footer-notice">제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+</footer>
+
+
+<script>
+/* ── 콘텐츠 검토 로직 ──────────────────────────────────────────
+   페이지 로드 시 자동으로 아래 항목을 검사합니다.
+   1. 중복 URL — 같은 링크가 2개 이상이면 해당 카드에 경고 표시
+   2. 빈 링크 — href가 없거나 '#'인 카드 감지
+   개발/검토용 표시이며 콘텐츠 영역 위에 요약 배너가 표시됩니다.
+──────────────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = [...document.querySelectorAll('a.card')];
+
+  /* 1. 중복 URL 검사 */
+  const urlCount = {};
+  cards.forEach(c => {
+    const url = c.href;
+    urlCount[url] = (urlCount[url] || 0) + 1;
+  });
+  const dupeUrls = Object.keys(urlCount).filter(u => urlCount[u] > 1);
+
+  dupeUrls.forEach(url => {
+    cards.filter(c => c.href === url).forEach(card => {
+      card.style.outline = '2px solid #ff4444';
+      const badge = document.createElement('div');
+      badge.textContent = '⚠ 중복 링크';
+      badge.style.cssText = [
+        'position:absolute', 'top:0', 'left:0',
+        'background:#ff4444', 'color:#fff',
+        'font-size:10px', 'font-weight:700',
+        'padding:2px 8px', 'z-index:10',
+        'border-radius:0 0 6px 0'
+      ].join(';');
+      card.style.position = 'relative';
+      card.prepend(badge);
+    });
+  });
+
+  /* 2. 빈 링크 검사 */
+  const emptyLinks = cards.filter(c => !c.getAttribute('href') || c.getAttribute('href') === '#');
+  emptyLinks.forEach(card => {
+    card.style.outline = '2px solid #ffaa00';
+    const badge = document.createElement('div');
+    badge.textContent = '⚠ 링크 없음';
+    badge.style.cssText = [
+      'position:absolute', 'top:0', 'left:0',
+      'background:#ffaa00', 'color:#000',
+      'font-size:10px', 'font-weight:700',
+      'padding:2px 8px', 'z-index:10',
+      'border-radius:0 0 6px 0'
+    ].join(';');
+    card.style.position = 'relative';
+    card.prepend(badge);
+  });
+
+  /* 3. 요약 배너 */
+  const issues = dupeUrls.length + emptyLinks.length;
+  if (issues > 0) {
+    const banner = document.createElement('div');
+    banner.innerHTML = `⚠ 콘텐츠 검토 결과: 중복 링크 <b>${dupeUrls.length}건</b>, 빈 링크 <b>${emptyLinks.length}건</b> 발견 — 빨간/노란 테두리 카드를 확인하세요.`;
+    banner.style.cssText = [
+      'position:fixed', 'bottom:20px', 'left:50%',
+      'transform:translateX(-50%)',
+      'background:#ff4444', 'color:#fff',
+      'font-size:12px', 'font-weight:600',
+      'padding:10px 20px', 'border-radius:8px',
+      'z-index:9999', 'box-shadow:0 4px 20px rgba(0,0,0,0.5)',
+      'white-space:nowrap'
+    ].join(';');
+    document.body.appendChild(banner);
+    console.warn('[디자인놀이터] 검토 오류:', { dupeUrls, emptyLinks: emptyLinks.map(c => c.querySelector('.card-title')?.textContent) });
+  } else {
+    console.log('[디자인놀이터] ✅ 콘텐츠 검토 통과 — 중복 링크 없음, 빈 링크 없음');
+  }
+});
+</script>
+
+</body>
+</html>

@@ -130,5 +130,6 @@ July 1, 2026          ← 11px, letter-spacing 4px, #888
 
 | 파일 | 설명 |
 |---|---|
-| `/home/user/Dinol_news_20260630.html` | 2026-06-30 기준 완성본 (구조 참고용) |
+| `/home/user/template.html` | 디자인 템플릿 (CSS·카드·JS 구조 참고용) |
+| `/home/user/Dinol_news_20260630.html` | 2026-06-30 기준 완성본 |
 | `/home/user/dinol_policy.md` | 이 문서 |
