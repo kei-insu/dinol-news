@@ -2,10 +2,38 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=Dinol_news_20260701.html">
 <title>디자인 놀이터 — AI & Design News</title>
+<script>
+(async function () {
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function dateStr(d) {
+    return '' + d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate());
+  }
+
+  const today = new Date();
+  const yesterday = new Date(today);
+  yesterday.setDate(today.getDate() - 1);
+
+  const candidates = [dateStr(today), dateStr(yesterday)];
+
+  for (const d of candidates) {
+    const url = 'Dinol_news_' + d + '.html';
+    try {
+      const res = await fetch(url, { method: 'HEAD' });
+      if (res.ok) {
+        location.replace(url);
+        return;
+      }
+    } catch (e) {}
+  }
+
+  document.getElementById('msg').textContent = '최신 브리핑을 찾을 수 없습니다.';
+}());
+</script>
 </head>
 <body>
-<p>최신 뉴스 브리핑으로 이동 중...</p>
+<p id="msg" style="font-family:sans-serif;color:#888;padding:40px;text-align:center">
+  최신 브리핑으로 이동 중…
+</p>
 </body>
 </html>
