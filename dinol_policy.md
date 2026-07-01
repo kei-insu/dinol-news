@@ -101,8 +101,12 @@ July 1, 2026          ← 11px, letter-spacing 4px, #888
 
 ### 카드 구조
 - 썸네일 (gradient 배경 + noise + 중앙 라벨 + En 배지)
-  - 본문 페이지에 이미지가 있는 경우 → 해당 이미지를 썸네일로 사용 (gradient 배경 대체)
-  - 이미지가 없는 경우 → gradient 배경 + 중앙 라벨 사용
+  - **이미지 있는 경우**: 기사 본문 `og:image` 메타태그를 대표 이미지로 사용 (gradient 대체)
+    - 이미지 여러 장이면 `og:image`(OG 태그) 우선 → 없으면 첫 번째 `<img>` 사용
+    - 사이즈 처리: `object-fit: cover` + `object-position: center` (가로폭 기준 crop)
+    - HTML 패턴: `<div class="thumb">` + `<img class="thumb-img" src="…" alt="">` + (En 배지 선택)
+    - `.noise`, `.thumb-label` 미포함 (이미지가 있을 때는 라벨 불필요)
+  - **이미지 없는 경우**: gradient 배경 + `.noise` + `.thumb-label` 사용
 - 카드 본문 (출처·날짜 / 타이틀)
 - 카드 푸터 (화살표 ↗ 만)
 - featured 카드: `grid-column: span 2`, thumb 168px

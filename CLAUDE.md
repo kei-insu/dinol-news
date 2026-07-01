@@ -20,7 +20,7 @@
 ### 4. 참조 HTML 읽기
 `/home/user/template.html` 을 읽어 CSS·카드 마크업·JS 검증 블록 구조를 파악한다.
 
-### 5. 기사 수집
+### 5. 기사 수집 + OG 이미지 추출
 수집 기간 = **오늘 + 전일**. WebSearch + WebFetch로 각 기사의 본문 게재일을 직접 확인한다.
 
 **[AI 섹션] 최소 4카드, KR 50% + En 50%**
@@ -30,6 +30,10 @@
 **[디자인 섹션] 최소 4카드, KR 50% + En 50%**
 - 한국어: designdb.com, design.co.kr, ajunews.com, asiae.co.kr, mt.co.kr, kidp.or.kr, etnews.com, yna.co.kr, newsis.com
 - 영문: dezeen.com, archdaily.com, core77.com, itsnicethat.com
+
+**[썸네일 이미지]** 기사 페이지 WebFetch 시 `<meta property="og:image" content="…">` 태그 추출.
+- OG 이미지 있음 → 카드 썸네일에 `<img class="thumb-img" src="[URL]" alt="">` 삽입, gradient 클래스·`.noise`·`.thumb-label` 제거
+- OG 이미지 없음 → 기존대로 gradient 클래스 + `.noise` + `.thumb-label` 사용
 
 ### 6. 콘텐츠 검증 (필수)
 1. URL 중복 없음
@@ -44,7 +48,7 @@
 구조는 참조 파일(`template.html`)과 동일하게:
 - 헤더: "디자인 놀이터" / "AI & Design News" / `.header-sep` (구분선) / 날짜
 - 폰트: Cormorant Garamond 300 + Noto Sans KR 700 + Noto Serif KR 300
-- 카드 그리드, featured 카드, En 배지, 그라디언트 클래스, 검증 JS, 푸터 모두 포함
+- 카드 그리드, EN 배지(영문 기사만, 흰색 텍스트·검정 배경 70%·검정 테두리 2px), 그라디언트 클래스, 검증 JS, 푸터 모두 포함
 - 날짜는 하드코딩 (YYYY. MM. DD 형식, replace 연산 금지)
 
 ### 8. 알림 전송
