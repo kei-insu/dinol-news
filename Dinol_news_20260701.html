@@ -304,12 +304,6 @@
 
   .drawer-source { font-size: 12px; color: #888; }
 
-  .drawer-close {
-    background: none; border: none;
-    color: #555; font-size: 20px;
-    cursor: pointer; padding: 0 4px;
-    line-height: 1;
-  }
 
   .drawer-thumb {
     height: 140px;
@@ -366,7 +360,21 @@
     border-color: #3c3c58;
   }
 
-  .drawer-footer { padding: 8px 20px 36px; }
+  .drawer-footer { padding: 8px 20px 36px; display: flex; flex-direction: column; gap: 10px; }
+
+  .drawer-close-btn {
+    display: block;
+    width: 100%;
+    background: none;
+    border: 1px solid #2c2c48;
+    color: #888;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .drawer-close-btn:hover { background: #1a1a28; color: #ccc; }
 
   .drawer-cta {
     display: block;
@@ -407,7 +415,6 @@
 <div class="drawer" id="drawer">
   <div class="drawer-header">
     <div class="drawer-source" id="drawerSource"></div>
-    <button class="drawer-close" id="drawerClose">✕</button>
   </div>
   <div class="drawer-thumb" id="drawerThumb">
     <div class="noise"></div>
@@ -424,6 +431,7 @@
   </div>
   <div class="drawer-footer">
     <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
   </div>
 </div>
 
