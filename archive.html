@@ -25,10 +25,16 @@
     color: #e8e8f0;
     padding: 56px 24px 72px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   .wrap {
     max-width: 640px;
+    width: 100%;
     margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
   header {
     display: flex;
@@ -77,9 +83,51 @@
     margin-bottom: 24px;
   }
 
-  .list { display: flex; flex-direction: column; gap: 10px; }
-  /* 목록이 비었을 때: 일정 높이 안에서 가로·세로 중앙 정렬 */
-  .list.is-empty { min-height: 240px; justify-content: center; align-items: center; }
+  .list { display: flex; flex-direction: column; gap: 28px; flex: 1; }
+  /* 목록이 비었을 때: 리스트 영역 안에서 가로·세로 중앙 정렬 */
+  .list.is-empty { justify-content: center; align-items: center; }
+
+  /* ── 월별 아코디언 ── */
+  .month-group { display: flex; flex-direction: column; }
+  .month-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 4px 2px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    color: #e8e8f0;
+    font-family: inherit;
+  }
+  .month-label { font-size: 15px; font-weight: 700; letter-spacing: 0.2px; white-space: nowrap; }
+  .month-line { flex: 1; height: 1px; background: #23232e; }
+  .month-count { font-size: 12px; color: #666; white-space: nowrap; }
+  .month-chevron {
+    font-size: 11px;
+    color: #888;
+    transition: transform .2s ease;
+    line-height: 1;
+  }
+  .month-group.collapsed .month-chevron { transform: rotate(180deg); }
+
+  .month-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    max-height: 4000px;
+    opacity: 1;
+    transition: max-height .28s ease, opacity .2s ease, margin .2s ease;
+  }
+  .month-group.collapsed .month-items {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
   .item {
     display: flex;
     align-items: center;
@@ -173,6 +221,8 @@
   <div class="loading">아카이브를 불러오는 중…</div>
 </div>
 
+</div>
+
 <div class="nav-cta-wrap">
   <a class="nav-cta" href="./index.html">메인으로</a>
 </div>
@@ -181,8 +231,6 @@
   <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
   <a class="footer-link" href="./privacy.html">개인정보처리방침</a>
 </footer>
-
-</div>
 
 <script>
 (async function () {
@@ -225,14 +273,55 @@
     return;
   }
 
-  dates.forEach(d => {
+  // 날짜 카드 하나 생성
+  function makeItem(d) {
     const a = document.createElement('a');
     a.className = 'item';
     a.href = 'Dinol_news_' + d + '.html';
     const todayBadge = (d === todayStr) ? '<span class="item-today">today</span>' : '';
     a.innerHTML = '<span class="item-date">' + displayDate(d) + todayBadge +
                   '</span><span class="item-arrow">↗</span>';
-    listEl.appendChild(a);
+    return a;
+  }
+
+  // 연·월(YYYYMM)로 그룹핑 → 최신 월이 위로
+  const groups = {};
+  dates.forEach(d => {
+    const key = d.slice(0, 6); // YYYYMM
+    (groups[key] = groups[key] || []).push(d);
+  });
+  const monthKeys = Object.keys(groups).sort().reverse();
+
+  monthKeys.forEach((mk, idx) => {
+    const year = mk.slice(0, 4);
+    const month = parseInt(mk.slice(4, 6), 10);
+    const dateList = groups[mk]; // 이미 최신순(dates가 최신순 정렬됨)
+
+    const group = document.createElement('div');
+    group.className = 'month-group' + (idx === 0 ? '' : ' collapsed'); // 최신 월만 펼침
+
+    const header = document.createElement('button');
+    header.className = 'month-header';
+    header.type = 'button';
+    header.setAttribute('aria-expanded', idx === 0 ? 'true' : 'false');
+    header.innerHTML =
+      '<span class="month-label">' + year + '년 ' + month + '월</span>' +
+      '<span class="month-line"></span>' +
+      '<span class="month-count">' + dateList.length + '</span>' +
+      '<span class="month-chevron">▾</span>';
+
+    const items = document.createElement('div');
+    items.className = 'month-items';
+    dateList.forEach(d => items.appendChild(makeItem(d)));
+
+    header.addEventListener('click', () => {
+      const collapsed = group.classList.toggle('collapsed');
+      header.setAttribute('aria-expanded', String(!collapsed));
+    });
+
+    group.appendChild(header);
+    group.appendChild(items);
+    listEl.appendChild(group);
   });
 })();
 </script>
