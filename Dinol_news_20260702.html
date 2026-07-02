@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 02</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: #0d0d12;
+    color: #e8e8f0;
+    padding: 56px 24px 72px;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 64px;
+  }
+
+  .site-title {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #aaaaaa;
+    letter-spacing: 5px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .site-sub {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #ffffff;
+    line-height: 1;
+    margin-top: 4px;
+  }
+
+  .header-sep {
+    width: 1px;
+    height: 24px;
+    background: #3a3a48;
+    margin: 10px 0 4px;
+  }
+
+  .site-date {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #888;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 56px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+
+  .section-header h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -2.5px;
+    line-height: 1;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .section-header .line {
+    flex: 1;
+    height: 1px;
+    background: #1e1e28;
+  }
+
+  /* ── GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+    gap: 14px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: #13131b;
+    border: 1px solid #1c1c28;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: #2c2c40;
+    box-shadow: 0 10px 36px rgba(0,0,0,0.5);
+  }
+
+  /* ── THUMB ── */
+  .thumb {
+    width: 100%;
+    height: 128px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #1a1a24;
+  }
+
+  /* 기사 대표 이미지 썸네일 (object-fit: cover, 가로폭 기준 crop) */
+  .thumb-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+
+
+  .noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .thumb-label {
+    position: relative;
+    z-index: 1;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+    font-weight: 300;
+    font-size: 28px;
+    color: rgba(255,255,255,0.22);
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    text-align: center;
+    padding: 0 16px;
+    line-height: 1.2;
+    user-select: none;
+  }
+
+  /* EN badge — top-right of thumb (English articles only) */
+  .thumb-en {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 3px 7px;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.7);
+    color: #ffffff;
+    border: 2px solid #000000;
+  }
+
+  /* gradients */
+  .g-indigo   { background: linear-gradient(145deg,#0c1540,#1c3ab8); }
+  .g-violet   { background: linear-gradient(145deg,#160830,#5218c0); }
+  .g-teal     { background: linear-gradient(145deg,#041c1c,#0d6464); }
+  .g-crimson  { background: linear-gradient(145deg,#240606,#8c1a1a); }
+  .g-forest   { background: linear-gradient(145deg,#071808,#1a5820); }
+  .g-slate    { background: linear-gradient(145deg,#0c0e1a,#243268); }
+  .g-amber    { background: linear-gradient(145deg,#1a0e00,#884400); }
+  .g-plum     { background: linear-gradient(145deg,#140818,#6c18b8); }
+  .g-olive    { background: linear-gradient(145deg,#101000,#4c4a00); }
+  .g-navy     { background: linear-gradient(145deg,#060c1e,#0e2060); }
+  .g-rust     { background: linear-gradient(145deg,#1e0800,#7c2c00); }
+
+  /* ── CARD BODY ── */
+  .card-body {
+    padding: 14px 16px 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card-source {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 0.3px;
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.48;
+  }
+
+
+
+  /* ── CARD FOOTER ── */
+  .card-footer {
+    padding: 9px 16px;
+    border-top: 1px solid #18181f;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .arrow { font-size: 12px; color: #555; }
+
+  .featured { grid-column: span 1; }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 48px;
+    padding: 28px 0 8px;
+    border-top: 1px solid #1a1a24;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 0.3px;
+  }
+
+  .footer-notice {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.6;
+    letter-spacing: 0.1px;
+  }
+
+  /* ── DRAWER ── */
+  .drawer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 900;
+  }
+  .drawer-overlay.open { display: block; }
+
+  /* PC — 중앙 모달 */
+  .drawer {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -48%) scale(0.96);
+    width: 480px;
+    max-height: 82vh;
+    background: #13131b;
+    border: 1px solid #2c2c40;
+    border-radius: 16px;
+    z-index: 901;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.22s ease, opacity 0.22s ease;
+    overflow-y: auto;
+  }
+  .drawer.open {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* 모바일 — 바텀시트 */
+  @media (max-width: 580px) {
+    .drawer {
+      top: auto; left: 0; right: 0;
+      bottom: 0;
+      transform: translateY(100%);
+      width: 100%;
+      border-radius: 20px 20px 0 0;
+      border-top: 1px solid #2c2c40;
+      border-left: none; border-right: none; border-bottom: none;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .drawer.open { transform: translateY(0); }
+  }
+
+  .drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid #1e1e28;
+  }
+
+  .drawer-source { font-size: 12px; color: #888; }
+
+  .drawer-thumb {
+    height: 140px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 14px 16px 0;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .drawer-body {
+    padding: 14px 20px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .drawer-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.45;
+  }
+
+  .drawer-summary {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.7;
+    margin-top: 2px;
+  }
+
+  .drawer-footer { padding: 8px 20px 36px; display: flex; flex-direction: column; gap: 10px; }
+
+  .drawer-close-btn {
+    display: block;
+    width: 100%;
+    background: none;
+    border: 1px solid #2c2c48;
+    color: #888;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .drawer-close-btn:hover { background: #1a1a28; color: #ccc; }
+
+  .drawer-lang-toggle {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 2px;
+  }
+  .lang-btn {
+    background: none;
+    border: 1px solid #2c2c48;
+    color: #666;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+  }
+  .lang-btn.active {
+    background: #2c2c48;
+    color: #fff;
+    border-color: #3c3c58;
+  }
+
+  .drawer-cta {
+    display: block;
+    background: #1e1e2e;
+    border: 1px solid #2c2c48;
+    color: #fff;
+    text-align: center;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  @media (max-width: 580px) {
+    body { padding: 36px 16px 52px; }
+    header { margin-bottom: 44px; gap: 4px; }
+    .site-title { font-size: 15px; letter-spacing: 3px; }
+    .site-sub { font-size: 32px; letter-spacing: -0.5px; }
+    .site-date { font-size: 11px; letter-spacing: 3px; }
+    .section { margin-bottom: 40px; }
+    .section-header h2 { font-size: 32px; letter-spacing: -1.5px; }
+    .grid { grid-template-columns: 1fr; gap: 10px; }
+    .thumb { height: 110px; }
+    .thumb-label { font-size: 26px; letter-spacing: 5px; }
+    .card-source { font-size: 12px; }
+    .card-title { font-size: 17px; }
+    .thumb-en { font-size: 11px; }
+    .footer-copy { font-size: 12px; }
+    .footer-notice { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (2026-07-01 ~ 2026-07-02)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+
+  [검증 참고사항]
+  · 이 세션의 아웃바운드 네트워크 정책상 기사 원문 페이지에 대한
+    직접 WebFetch가 차단되어(프록시 403) og:image 추출이
+    불가능했습니다. 이에 따라 모든 카드는 그라디언트 썸네일로
+    대체했고, 날짜·내용은 WebSearch 결과(복수 소스 교차 확인)를
+    근거로 작성했습니다.
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+      <button class="lang-btn active" id="btnKr">KR</button>
+      <button class="lang-btn" id="btnEn">EN</button>
+    </div>
+    <div class="drawer-title" id="drawerTitle"></div>
+    <div class="drawer-summary" id="drawerSummary"></div>
+  </div>
+  <div class="drawer-footer">
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <div class="site-sub">AI &amp; Design News</div>
+  <div class="header-sep"></div>
+  <div class="site-date">July 2, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.aitimes.com/news/articleView.html?idxno=212295" target="_blank" data-summary="미 상무부가 앤트로픽의 클로드 페이블 5와 미스트랄 5에 대한 수출 통제를 철회하며 7월 2일부터 해외 사용자 접근이 복구됩니다. 사용량 기반 크레딧 방식으로 제공되며 KYC 인증 절차를 거쳐야 합니다.">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">복귀</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">AI타임스 · 2026. 07. 01</div>
+        <div class="card-title">앤트로픽, '페이블 5' 2일부터 복구...미 정부 수출 통제 철회</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260701161645" target="_blank" data-summary="과학기술정보통신부가 피지컬 AI 분야에서 향후 3년을 '골든타임'으로 규정하고 집중 육성 전략을 발표했습니다. 한국을 피지컬 AI 기술을 수출하는 국가로 도약시키겠다는 목표를 제시했습니다.">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">국가전략</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 01</div>
+        <div class="card-title">과기정통부 "피지컬AI 수출하는 나라로"...3년 내 집중육성</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.etnews.com/20260701000364" target="_blank" data-summary="보건복지부가 엔비디아 B200 GPU를 활용한 차세대 AI 인프라로 공공의료 AI 클라우드를 구축하고 공공의료 AI 생태계 조성에 나섭니다. 의료 데이터 분석과 진단 지원 등에 AI 기술을 확대 적용할 계획입니다.">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">의료AI</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">전자신문 · 2026. 07. 01</div>
+        <div class="card-title">복지부, 엔비디아 'B200' 기반 공공의료 AI 생태계 조성</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/01/gemini-spark-googles-agentic-assistant-is-now-available-on-mac/" target="_blank" data-summary="구글의 AI 에이전트 '제미니 스파크'가 맥(Mac) 데스크톱 앱에 정식 탑재됐습니다. 실시간 주제 업데이트와 구글 태스크·킵 등 앱 연동 기능이 새롭게 추가됐습니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">Mac</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 01</div>
+        <div class="card-title">Gemini Spark, Google's agentic assistant, is now available on Mac</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/" target="_blank" data-summary="클라우드플레어가 오는 9월 15일부터 광고가 게재된 페이지에서 검색·에이전트·학습 기능이 혼합된 'mixed-use' 크롤러를 기본적으로 차단하는 새 정책을 발표했습니다. AI 기업들이 퍼블리셔 콘텐츠 이용에 대가를 지불하도록 유도하는 조치입니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">Policy</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 01</div>
+        <div class="card-title">Cloudflare's new policy pushes AI companies to pay for publishers' content</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026" target="_blank" data-summary="2026년 7월 1일 기준 AI 업계의 15대 주요 뉴스를 정리한 영문 브리핑입니다. 앤트로픽 클로드 소넷5 출시, 스페이스X의 리플렉션AI 컴퓨트 임대 계약 등 최신 동향을 다룹니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">Today</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">BuildFastWithAI · 2026. 07. 01</div>
+        <div class="card-title">AI News Today July 1, 2026: 15 Biggest Stories</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.newsis.com/view/NISX20260701_0003692007" target="_blank" data-summary="현대카드가 기존 카드 아이덴티티와 별개로 실험적이고 자유로운 정체성을 내세운 독자 브랜드 '알파벳카드'를 7월 1일 출시했습니다. 네덜란드 미니멀리즘 디자인과 카드 고유 비율(1:1.58)을 활용한 구조적 실험이 특징입니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">브랜드</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">뉴시스 · 2026. 07. 01</div>
+        <div class="card-title">현대카드, 독자브랜드 '알파벳카드' 론칭…"자유로운 정체성"</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.mt.co.kr/estate/2026/07/01/2026070109363633339" target="_blank" data-summary="서울시가 여의도공원 재조성 국제설계공모에서 '함께 자라는 여의도공원'을 최종 당선작으로 선정했습니다. 한강과 연계한 문화공원으로 탈바꿈시키는 설계안이 공개됐습니다.">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">조경설계</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">머니투데이 · 2026. 07. 01</div>
+        <div class="card-title">여의도공원, 한강 품은 문화공원으로 재탄생…설계 당선작 공개</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.etnews.com/20260701000152" target="_blank" data-summary="제네시스가 '2027년형 GV70' 연식 변경과 함께 스포티한 감성을 극대화한 신규 디자인 패키지 '그래파이트 패키지'를 출시했습니다. 다이내믹한 디자인 콘셉트를 앞세운 것이 특징입니다.">
+      <div class="thumb g-rust">
+        <div class="noise"></div>
+        <span class="thumb-label">제품</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">전자신문 · 2026. 07. 01</div>
+        <div class="card-title">제네시스, '2027 GV70' '그래파이트 패키지' 출시</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/01/tokyo-tomi-hotel-ginza-keiji-ashizawa-design/" target="_blank" data-summary="일본 디자이너 아시자와 케이지가 도쿄의 옛 호스텔을 개조해 객실 8개 규모의 부티크 호텔 '토미 호텔 긴자'로 재탄생시켰습니다. 층마다 하나의 스위트만 배치해 '안목 있는 친구의 집'에 머무는 듯한 경험을 제공합니다.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">Hotel</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 01</div>
+        <div class="card-title">Eight-room Tokyo hotel designed to feel like staying "at the home of a tasteful friend"</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.archdaily.com/1042771/the-building-in-motion-how-vertical-mobility-is-redefining-contemporary-architecture" target="_blank" data-summary="1743년 베르사유 궁전에 설치된 '나는 의자'부터 현대 건축까지 수직 이동 장치의 역사를 조명하는 에디토리얼입니다. 수직 모빌리티가 현대 건축의 공간 경험을 어떻게 재정의하는지 다룹니다.">
+      <div class="thumb g-olive">
+        <div class="noise"></div>
+        <span class="thumb-label">Insight</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 07. 01</div>
+        <div class="card-title">The Building in Motion: How Vertical Mobility Is Redefining Contemporary Architecture</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/01/velo-layer-andreu-world-dezeen-showroom/" target="_blank" data-summary="디자인 스튜디오 레이어(Layer)가 스페인 가구 브랜드 안드레우 월드를 위해 태스크 체어 '벨로(Velo)'를 디자인해 데젠 쇼룸에 공개했습니다. 영국 디자이너 벤자민 허버트가 이끄는 스튜디오의 작업입니다.">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">Chair</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 01</div>
+        <div class="card-title">Velo chair by Layer for Andreu World</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.</p>
+  <p class="footer-notice">제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+</footer>
+
+
+<script>
+/* ── 콘텐츠 검토 로직 ──────────────────────────────────────────
+   페이지 로드 시 자동으로 아래 항목을 검사합니다.
+   1. 중복 URL — 같은 링크가 2개 이상이면 해당 카드에 경고 표시
+   2. 빈 링크 — href가 없거나 '#'인 카드 감지
+   개발/검토용 표시이며 콘텐츠 영역 위에 요약 배너가 표시됩니다.
+──────────────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = [...document.querySelectorAll('a.card')];
+
+  /* ── 드로어 (슬라이드업 요약 패널) ── */
+  const drawer           = document.getElementById('drawer');
+  const overlay          = document.getElementById('drawerOverlay');
+  const drawerClose      = document.getElementById('drawerClose');
+  const drawerThumb      = document.getElementById('drawerThumb');
+  const drawerLabel      = document.getElementById('drawerLabel');
+  const drawerEn         = document.getElementById('drawerEn');
+  const drawerSource     = document.getElementById('drawerSource');
+  const drawerTitle      = document.getElementById('drawerTitle');
+  const drawerSummary    = document.getElementById('drawerSummary');
+  const drawerCta        = document.getElementById('drawerCta');
+  const drawerLangToggle = document.getElementById('drawerLangToggle');
+  const btnKr            = document.getElementById('btnKr');
+  const btnEn            = document.getElementById('btnEn');
+
+  let _titleKr = '', _titleEn = '', _summaryKr = '', _summaryEn = '';
+
+  function setLang(lang) {
+    if (lang === 'kr') {
+      drawerTitle.textContent   = _titleKr;
+      drawerSummary.textContent = _summaryKr;
+      btnKr.classList.add('active');
+      btnEn.classList.remove('active');
+    } else {
+      drawerTitle.textContent   = _titleEn;
+      drawerSummary.textContent = _summaryEn;
+      btnEn.classList.add('active');
+      btnKr.classList.remove('active');
+    }
+  }
+
+  btnKr.addEventListener('click', () => setLang('kr'));
+  btnEn.addEventListener('click', () => setLang('en'));
+
+  function openDrawer(card) {
+    const thumb = card.querySelector('.thumb');
+    const gradClass = [...thumb.classList].find(c => c.startsWith('g-')) || '';
+    drawerThumb.className = `drawer-thumb ${gradClass}`;
+
+    /* 기존 이미지 제거 후 카드 썸네일 이미지 복사 */
+    const prevImg = drawerThumb.querySelector('.thumb-img');
+    if (prevImg) prevImg.remove();
+    const cardImg = thumb.querySelector('img.thumb-img');
+    if (cardImg) {
+      const img = document.createElement('img');
+      img.className = 'thumb-img';
+      img.src = cardImg.src;
+      img.alt = '';
+      drawerThumb.prepend(img);
+    }
+
+    drawerLabel.textContent = card.querySelector('.thumb-label')?.textContent || '';
+    const hasEn = !!card.querySelector('.thumb-en');
+    drawerEn.style.display = hasEn ? 'block' : 'none';
+    drawerSource.textContent = card.querySelector('.card-source')?.textContent || '';
+
+    _titleEn   = card.querySelector('.card-title')?.textContent || '';
+    _summaryEn = card.dataset.summary || '';
+    _titleKr   = card.dataset.titleKr   || _titleEn;
+    _summaryKr = card.dataset.summaryKr || _summaryEn;
+
+    if (hasEn && card.dataset.titleKr) {
+      drawerLangToggle.style.display = 'flex';
+      setLang('kr');
+    } else {
+      drawerLangToggle.style.display = 'none';
+      drawerTitle.textContent   = _titleEn;
+      drawerSummary.textContent = _summaryEn;
+    }
+
+    drawerCta.href = card.href;
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', e => {
+      e.preventDefault();
+      openDrawer(card);
+    });
+  });
+  drawerClose.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  /* 1. 중복 URL 검사 */
+  const urlCount = {};
+  cards.forEach(c => {
+    const url = c.href;
+    urlCount[url] = (urlCount[url] || 0) + 1;
+  });
+  const dupeUrls = Object.keys(urlCount).filter(u => urlCount[u] > 1);
+
+  dupeUrls.forEach(url => {
+    cards.filter(c => c.href === url).forEach(card => {
+      card.style.outline = '2px solid #ff4444';
+      const badge = document.createElement('div');
+      badge.textContent = '⚠ 중복 링크';
+      badge.style.cssText = [
+        'position:absolute', 'top:0', 'left:0',
+        'background:#ff4444', 'color:#fff',
+        'font-size:10px', 'font-weight:700',
+        'padding:2px 8px', 'z-index:10',
+        'border-radius:0 0 6px 0'
+      ].join(';');
+      card.style.position = 'relative';
+      card.prepend(badge);
+    });
+  });
+
+  /* 2. 빈 링크 검사 */
+  const emptyLinks = cards.filter(c => !c.getAttribute('href') || c.getAttribute('href') === '#');
+  emptyLinks.forEach(card => {
+    card.style.outline = '2px solid #ffaa00';
+    const badge = document.createElement('div');
+    badge.textContent = '⚠ 링크 없음';
+    badge.style.cssText = [
+      'position:absolute', 'top:0', 'left:0',
+      'background:#ffaa00', 'color:#000',
+      'font-size:10px', 'font-weight:700',
+      'padding:2px 8px', 'z-index:10',
+      'border-radius:0 0 6px 0'
+    ].join(';');
+    card.style.position = 'relative';
+    card.prepend(badge);
+  });
+
+  /* 3. 요약 배너 */
+  const issues = dupeUrls.length + emptyLinks.length;
+  if (issues > 0) {
+    const banner = document.createElement('div');
+    banner.innerHTML = `⚠ 콘텐츠 검토 결과: 중복 링크 <b>${dupeUrls.length}건</b>, 빈 링크 <b>${emptyLinks.length}건</b> 발견 — 빨간/노란 테두리 카드를 확인하세요.`;
+    banner.style.cssText = [
+      'position:fixed', 'bottom:20px', 'left:50%',
+      'transform:translateX(-50%)',
+      'background:#ff4444', 'color:#fff',
+      'font-size:12px', 'font-weight:600',
+      'padding:10px 20px', 'border-radius:8px',
+      'z-index:9999', 'box-shadow:0 4px 20px rgba(0,0,0,0.5)',
+      'white-space:nowrap'
+    ].join(';');
+    document.body.appendChild(banner);
+    console.warn('[디자인놀이터] 검토 오류:', { dupeUrls, emptyLinks: emptyLinks.map(c => c.querySelector('.card-title')?.textContent) });
+  } else {
+    console.log('[디자인놀이터] ✅ 콘텐츠 검토 통과 — 중복 링크 없음, 빈 링크 없음');
+  }
+});
+</script>
+
+</body>
+</html>
