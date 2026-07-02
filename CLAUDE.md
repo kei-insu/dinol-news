@@ -48,10 +48,24 @@
 구조는 참조 파일(`template.html`)과 동일하게:
 - 헤더: "디자인 놀이터" / "AI & Design News" / `.header-sep` (구분선) / 날짜
 - 폰트: Cormorant Garamond 300 + Noto Sans KR 700 + Noto Serif KR 300
-- 카드 그리드, EN 배지(영문 기사만, 흰색 텍스트·검정 배경 70%·검정 테두리 2px), 그라디언트 클래스, 검증 JS, 푸터 모두 포함
+- 카드 그리드, EN 배지(영문 기사만, 흰색 텍스트·검정 배경 70%·검정 테두리 2px), 그라디언트 클래스, 읽음 상태(`.card-title.read`, weight 450 / `#a3a3a3`, localStorage 기반), 검증 JS 모두 포함
+- **카드 그리드 끝(푸터 위)에 버튼 2개를 `.archive-cta-wrap`(세로 정렬, gap 12px)로 배치** — 두 버튼은 동일 폭(width 240px, 좌우 padding 16px)·동일 높이(min-height 48px, 모바일 터치 가이드 충족), 모두 검정 텍스트(#191919)
+  - "AI & Design 아카이브" 버튼(`.archive-cta`, 그레이 배경 #c9ccd4, `href="./archive.html"`)
+  - "디자인놀이터 오픈채팅방" 버튼(`.kakao-cta`, 카카오 옐로우 #FEE500, `href="https://open.kakao.com/o/g3XICwx"`, `target="_blank"` `rel="noopener noreferrer"`)
+- **"맨 위로 ↑" 플로팅 버튼(`.to-top`, `#toTop`) 포함** — 모바일(≤580px)에서만 노출, 스크롤 600px 이상 시 `.show`로 페이드인, 클릭 시 상단으로 스무스 스크롤
+- 푸터에는 개인정보처리방침 링크만 포함(아카이브 링크는 상기 pill 버튼으로 대체)
+- `<head>`에 Google AdSense 자동 광고 스크립트(`ca-pub-XXXXXXXXXXXXXXXX`, template.html과 동일한 값) 포함
 - 날짜는 하드코딩 (YYYY. MM. DD 형식, replace 연산 금지)
 
-### 8. 알림 전송
+### 8. 아카이브 목록(index.json) 갱신
+`/home/user/index.json` 을 읽어 오늘 날짜(YYYYMMDD)를 배열에 추가하고 다시 저장한다.
+- 형식: 날짜 문자열 배열. 예) `["20260702", "20260701", "20260630"]`
+- **이미 오늘 날짜가 있으면 추가하지 않는다** (중복 금지)
+- 파일이 없으면 오늘 날짜 하나만 담아 새로 생성한다
+- 정렬·중복 제거는 `archive.html`이 렌더링 시 처리하므로, 여기서는 오늘 날짜를 배열에 넣기만 하면 된다
+- 이 파일은 `archive.html`이 읽어 "아카이브" 목록을 그리는 원본이다
+
+### 9. 알림 전송
 PushNotification 도구로 생성 결과를 알린다.
 
 ---
@@ -60,3 +74,4 @@ PushNotification 도구로 생성 결과를 알린다.
 - 정책: `/home/user/dinol_policy.md`
 - 구조 참조: `/home/user/template.html`
 - 산출물: `/home/user/Dinol_news_YYYYMMDD.html`
+- 아카이브 목록: `/home/user/index.json` (아카이브 목록 원본)

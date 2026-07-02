@@ -2,38 +2,126 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>디자인 놀이터 — AI & Design News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: #0d0d12;
+    color: #e8e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .box { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .site-title {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #aaaaaa;
+    letter-spacing: 5px;
+    line-height: 1;
+    text-align: center;
+  }
+  .site-sub {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #ffffff;
+    line-height: 1;
+    text-align: center;
+  }
+  .msg { font-size: 13px; color: #888; letter-spacing: 0.3px; margin-top: 6px; }
+  .manual-link {
+    display: none;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #9fb8ff;
+    text-decoration: underline;
+  }
+</style>
 <script>
 (async function () {
-  function pad(n) { return String(n).padStart(2, '0'); }
-  function dateStr(d) {
-    return '' + d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate());
+  // "20260702" → "Dinol_news_20260702.html"
+  function briefingUrl(d) { return 'Dinol_news_' + d + '.html'; }
+
+  let settled = false;  // 이동 또는 폴백 UI 중 하나로 이미 처리됐는지
+
+  // 폴백 UI 노출 (DOM 준비 여부와 무관하게 안전하게 동작)
+  function showFallback(message) {
+    if (settled) return;
+    settled = true;
+    const render = () => {
+      const msg = document.getElementById('msg');
+      const link = document.getElementById('manualLink');
+      if (msg) msg.textContent = message;
+      if (link) link.style.display = 'inline-block';
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', render);
+    } else {
+      render();
+    }
   }
 
-  const today = new Date();
-  const yesterday = new Date(today);
-  yesterday.setDate(today.getDate() - 1);
+  // 안전장치: 3초 안에 이동이 일어나지 않으면 수동 안내로 전환
+  // (로컬 file:// 환경에서 fetch가 차단돼 멈추는 경우 등)
+  const failTimer = setTimeout(() => {
+    showFallback('브리핑을 여는 데 문제가 있어요. 아래에서 확인해 주세요.');
+  }, 3000);
 
-  const candidates = [dateStr(today), dateStr(yesterday)];
-
-  for (const d of candidates) {
-    const url = 'Dinol_news_' + d + '.html';
-    try {
-      const res = await fetch(url, { method: 'HEAD' });
-      if (res.ok) {
-        location.replace(url);
-        return;
+  let target = null;
+  let loadedOk = false;   // index.json을 정상적으로 읽어 배열로 파싱했는지
+  try {
+    // fetch 자체가 응답 없이 매달리는 경우까지 대비해 2.5초 후 중단
+    const controller = new AbortController();
+    const abortTimer = setTimeout(() => controller.abort(), 2500);
+    const res = await fetch('index.json', { cache: 'no-cache', signal: controller.signal });
+    clearTimeout(abortTimer);
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        loadedOk = true;
+        const dates = data
+          .filter(d => typeof d === 'string' && /^\d{8}$/.test(d))
+          .sort();                      // 오름차순 정렬 후
+        if (dates.length) target = dates[dates.length - 1];  // 가장 최신 날짜
       }
-    } catch (e) {}
+    }
+  } catch (e) {
+    console.error('[디자인놀이터] index.json을 불러오지 못했습니다.', e);
   }
 
-  document.getElementById('msg').textContent = '최신 브리핑을 찾을 수 없습니다.';
-}());
+  if (target && !settled) {
+    clearTimeout(failTimer);
+    settled = true;
+    // 최신 브리핑으로 즉시 이동 (뒤로가기 시 이 페이지가 히스토리에 남지 않도록 replace)
+    location.replace(briefingUrl(target));
+  } else if (loadedOk) {
+    // 목록을 정상적으로 읽었으나 비어 있는 경우
+    clearTimeout(failTimer);
+    showFallback('등록된 브리핑이 없습니다.');
+  } else {
+    // 로드/파싱 실패 (예: 로컬 file:// 환경에서 fetch 차단)
+    clearTimeout(failTimer);
+    showFallback('브리핑을 여는 데 문제가 있어요. 아래에서 확인해 주세요.');
+  }
+})();
 </script>
 </head>
 <body>
-<p id="msg" style="font-family:sans-serif;color:#888;padding:40px;text-align:center">
-  최신 브리핑으로 이동 중…
-</p>
+  <div class="box">
+    <div class="site-title">디자인 놀이터</div>
+    <div class="site-sub">AI &amp; Design News</div>
+    <div class="msg" id="msg">최신 브리핑으로 이동 중…</div>
+    <a class="manual-link" id="manualLink" href="./archive.html">아카이브 →</a>
+  </div>
 </body>
 </html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아카이브 — 디자인 놀이터</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: #0d0d12;
+    color: #e8e8f0;
+    padding: 56px 24px 72px;
+    min-height: 100vh;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    min-height: calc(100vh - 128px);
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 64px;
+  }
+  .site-title {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #aaaaaa;
+    letter-spacing: 5px;
+    text-align: center;
+    line-height: 1;
+  }
+  .site-sub {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #ffffff;
+    line-height: 1;
+    margin-top: 4px;
+  }
+  .back-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 12px;
+    color: #888;
+    text-decoration: none;
+    border: 1px solid #2c2c40;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+  .back-link:hover { color: #ccc; border-color: #3c3c58; }
+
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -2.5px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .list { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  /* 목록이 비었을 때: 리스트 영역 안에서 가로·세로 중앙 정렬 */
+  .list.is-empty { justify-content: center; align-items: center; }
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #13131b;
+    border: 1px solid #1c1c28;
+    border-radius: 10px;
+    padding: 14px 18px;
+    text-decoration: none;
+    color: #e8e8f0;
+    transition: border-color .14s ease, transform .14s ease;
+  }
+  .item:hover { border-color: #2c2c40; transform: translateY(-1px); }
+  .item-date { font-size: 15px; font-weight: 600; }
+  .item-arrow { font-size: 12px; color: #555; }
+
+  .empty, .loading { font-size: 18px; color: #777; padding: 20px 0; text-align: center; }
+
+  footer {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid #1a1a24;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-copy { font-size: 12px; font-weight: 600; color: #888; }
+  .footer-link { font-size: 11px; color: #666; text-decoration: none; }
+  .footer-link:hover { color: #999; }
+
+  /* ── 메인으로 버튼 (메인의 아카이브 버튼과 동일 스타일) ── */
+  .nav-cta-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 8px;
+  }
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    max-width: 100%;
+    min-height: 48px;
+    padding: 0 16px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: #191919;
+    background: #c9ccd4;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
+  }
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.97);
+    box-shadow: 0 6px 18px rgba(201, 204, 212, 0.14);
+  }
+
+  @media (max-width: 580px) {
+    .site-title { font-size: 15px; letter-spacing: 3px; }
+    .site-sub { font-size: 32px; letter-spacing: -0.5px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <div class="site-sub">아카이브</div>
+</header>
+
+<div class="list" id="list">
+  <div class="loading">아카이브를 불러오는 중…</div>
+</div>
+
+<div class="nav-cta-wrap">
+  <a class="nav-cta" href="./index.html">메인으로</a>
+</div>
+
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <a class="footer-link" href="./privacy.html">개인정보처리방침</a>
+</footer>
+
+</div>
+
+<script>
+(async function () {
+  const listEl = document.getElementById('list');
+
+  // "20260702" → "2026. 07. 02"
+  function displayDate(s) {
+    return s.slice(0, 4) + '. ' + s.slice(4, 6) + '. ' + s.slice(6, 8);
+  }
+
+  // index.json 형식: 날짜 문자열(YYYYMMDD) 배열. 예: ["20260702", "20260701"]
+  let dates = [];
+  try {
+    const res = await fetch('index.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('index.json 응답 오류: ' + res.status);
+    const data = await res.json();
+    if (Array.isArray(data)) {
+      // 문자열 8자리(YYYYMMDD)만 통과 + 중복 제거 + 최신순 정렬
+      dates = [...new Set(
+        data.filter(d => typeof d === 'string' && /^\d{8}$/.test(d))
+      )].sort().reverse();
+    }
+  } catch (e) {
+    console.error('[디자인놀이터] 아카이브 목록을 불러오지 못했습니다.', e);
+    listEl.classList.add('is-empty');
+    listEl.innerHTML = '<div class="empty">등록된 브리핑이 없습니다.</div>';
+    return;
+  }
+
+  listEl.innerHTML = '';
+
+  if (dates.length === 0) {
+    listEl.classList.add('is-empty');
+    listEl.innerHTML = '<div class="empty">등록된 브리핑이 없습니다.</div>';
+    return;
+  }
+
+  dates.forEach(d => {
+    const a = document.createElement('a');
+    a.className = 'item';
+    a.href = 'Dinol_news_' + d + '.html';
+    a.innerHTML = '<span class="item-date">' + displayDate(d) +
+                  '</span><span class="item-arrow">↗</span>';
+    listEl.appendChild(a);
+  });
+})();
+</script>
+
+</body>
+</html>

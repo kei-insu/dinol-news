@@ -12,6 +12,8 @@
   gtag('js', new Date());
   gtag('config', 'G-ZC93DYWB2B');
 </script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
 <style>
@@ -216,6 +218,13 @@
     font-weight: 600;
     color: #ffffff;
     line-height: 1.48;
+    transition: color 0.2s ease, font-weight 0.2s ease;
+  }
+
+  /* 읽음 상태 — 카드를 한 번 열람하면(localStorage 기록) 적용 */
+  .card-title.read {
+    font-weight: 450;
+    color: #a3a3a3;
   }
 
 
@@ -257,6 +266,97 @@
     line-height: 1.6;
     letter-spacing: 0.1px;
   }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 4px;
+  }
+
+  .footer-link {
+    font-size: 11px;
+    color: #666;
+    text-decoration: none;
+  }
+  .footer-link:hover { color: #999; }
+
+  /* ── 아카이브 · 오픈채팅방 버튼 (동일 폭, 세로 정렬) ── */
+  .archive-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;                 /* 모바일 터치 간격 가이드(Material ≥8dp) 충족 */
+    margin-top: 8px;
+  }
+  .archive-cta, .kakao-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;              /* 두 버튼 가로 길이 동일 */
+    max-width: 100%;
+    min-height: 48px;          /* 터치 타깃 가이드(Apple 44 / Material 48) 충족 */
+    padding: 0 16px;           /* 좌우 여백 (Material 버튼 표준 ~16dp) */
+    border-radius: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
+  }
+  /* 아카이브: 그레이 배경 + 검정 텍스트 */
+  .archive-cta {
+    font-size: 14px;
+    color: #191919;
+    background: #c9ccd4;
+    border: none;
+    letter-spacing: 0.2px;
+  }
+  .archive-cta:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.97);
+    box-shadow: 0 6px 18px rgba(201, 204, 212, 0.14);
+  }
+  /* 오픈채팅방: 카카오 옐로우 + 검정 텍스트 */
+  .kakao-cta {
+    font-size: 14px;
+    color: #191919;
+    background: #FEE500;
+    border: none;
+    letter-spacing: 0.2px;
+  }
+  .kakao-cta:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.97);
+    box-shadow: 0 6px 18px rgba(254, 229, 0, 0.18);
+  }
+
+  /* ── 맨 위로 플로팅 버튼 (모바일 전용) ── */
+  .to-top {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 800;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #2c2c40;
+    background: rgba(19, 19, 27, 0.86);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: none;              /* 데스크톱 및 초기 상태: 숨김 */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .18s ease, transform .18s ease, border-color .14s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  }
+  .to-top:hover { border-color: #3c3c58; color: #fff; }
+  .to-top.show { opacity: 1; transform: translateY(0); }
 
   /* ── DRAWER ── */
   .drawer-overlay {
@@ -416,6 +516,7 @@
     .thumb-en { font-size: 11px; }
     .footer-copy { font-size: 12px; }
     .footer-notice { font-size: 11px; }
+    .to-top { display: flex; }   /* 모바일에서만 노출 (표시는 JS가 .show로 제어) */
   }
 </style>
 </head>
@@ -650,12 +751,25 @@
 </div>
 
 
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="./archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
 <!-- ── FOOTER ── -->
 <footer>
   <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
   <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.</p>
   <p class="footer-notice">제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="./privacy.html">개인정보처리방침</a>
+  </div>
 </footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
 
 
 <script>
@@ -667,6 +781,51 @@
 ──────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   const cards = [...document.querySelectorAll('a.card')];
+
+  /* ── 맨 위로 플로팅 버튼 ──────────────────────────────────
+     600px 이상 스크롤되면 .show로 페이드인, 클릭 시 상단으로 부드럽게 이동.
+     노출 자체는 CSS @media(max-width:580px)에서만 display:flex → 모바일 전용.
+  ──────────────────────────────────────────────────────────── */
+  const toTop = document.getElementById('toTop');
+  if (toTop) {
+    const SHOW_AFTER = 600;
+    const onScroll = () => {
+      if (window.scrollY > SHOW_AFTER) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ── 읽음 상태 (localStorage) ──────────────────────────────
+     카드를 한 번 열람(드로어 오픈)하면 해당 URL을 기록하고,
+     card-title에 .read 클래스(font-weight 450, color #a3a3a3)를 부여합니다.
+  ──────────────────────────────────────────────────────────── */
+  const READ_KEY = 'dinol_read_urls';
+
+  function getReadUrls() {
+    try { return new Set(JSON.parse(localStorage.getItem(READ_KEY) || '[]')); }
+    catch (e) { return new Set(); }
+  }
+
+  function markAsRead(card) {
+    const read = getReadUrls();
+    read.add(card.href);
+    localStorage.setItem(READ_KEY, JSON.stringify([...read]));
+    card.querySelector('.card-title')?.classList.add('read');
+  }
+
+  (function applyReadState() {
+    const read = getReadUrls();
+    cards.forEach(card => {
+      if (read.has(card.href)) {
+        card.querySelector('.card-title')?.classList.add('read');
+      }
+    });
+  })();
 
   /* ── 드로어 (슬라이드업 요약 패널) ── */
   const drawer           = document.getElementById('drawer');
@@ -754,6 +913,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', e => {
       e.preventDefault();
       openDrawer(card);
+      markAsRead(card);
     });
   });
   drawerClose.addEventListener('click', closeDrawer);

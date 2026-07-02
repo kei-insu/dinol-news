@@ -115,25 +115,46 @@ July 1, 2026          ← 11px, letter-spacing 4px, #888
 `g-indigo` `g-violet` `g-teal` `g-crimson` `g-forest` `g-slate`
 `g-amber` `g-plum` `g-olive` `g-navy` `g-rust` + 향후 추가 가능
 
+### 읽음 상태 (Read State)
+- 카드를 한 번 열람(드로어 오픈)하면 `card-title`에 `.read` 클래스 부여
+- 스타일: `font-weight: 450`, `color: #a3a3a3` (미열람 기본값 `font-weight: 600`, `color: #ffffff`)
+- 열람 기록은 `localStorage`(`dinol_read_urls` 키, URL 배열)에 저장 → 페이지 재방문 시에도 유지
+- 구현 위치: `template.html`의 `<style>` (`.card-title.read`)와 하단 `<script>`(`getReadUrls` / `markAsRead` / `applyReadState`)
+
 ### 검증 JS
 페이지 하단 `<script>` 블록에서 DOMContentLoaded 시:
 - 중복 URL → 빨간 테두리 + ⚠ 중복 링크 배지
 - 빈 링크 → 노란 테두리 + ⚠ 링크 없음 배지
 - 이슈 발생 시 하단 고정 배너 표시
 
-### 푸터 (3줄)
+### 푸터 (4줄)
 ```
 © YYYY 디자인놀이터. All rights reserved.
 본 서비스의 디자인, 구성, 자체 제작 콘텐츠에 대한 권리는 디자인놀이터에 있습니다.
 제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.
+[지난 브리핑] [개인정보처리방침]  ← footer-links, archive.html / privacy.html 링크
 ```
 
 ---
 
-## 8. 참고 파일
+## 8. 수익화 (Google AdSense)
+
+- `<head>`에 AdSense 자동 광고 스크립트 삽입: `client=ca-pub-XXXXXXXXXXXXXXXX`
+  - **TODO**: `ca-pub-XXXXXXXXXXXXXXXX`를 실제 발급받은 게시자 ID로 교체 필요 (템플릿·매일 생성 파일·`archive.html`·`privacy.html` 4곳 모두)
+- `/home/user/ads.txt` — `google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0` (동일하게 실제 ID로 교체 필요)
+- 신규 브리핑 생성 시(7단계) `<head>`에 동일한 AdSense 스크립트 태그를 반드시 포함할 것
+- AdSense 심사 관련 유의사항: 카드 요약이 지나치게 짧으면 "콘텐츠 부족" 사유로 거절될 수 있으므로, data-summary는 최소 2문장 이상 유지
+
+---
+
+## 9. 참고 파일
 
 | 파일 | 설명 |
 |---|---|
 | `/home/user/template.html` | 디자인 템플릿 (CSS·카드·JS 구조 참고용) |
-| `/home/user/Dinol_news_20260630.html` | 2026-06-30 기준 완성본 |
+| `/home/user/index.html` | 오늘 날짜 브리핑으로 자동 리다이렉트 |
+| `/home/user/archive.html` | 지난 브리핑 목록 (날짜별 자동 탐색) |
+| `/home/user/privacy.html` | 개인정보처리방침 (AdSense 쿠키 고지 포함) |
+| `/home/user/ads.txt` | AdSense ads.txt (게시자 ID 교체 필요) |
+| `/home/user/Dinol_news_YYYYMMDD.html` | 날짜별 완성본 |
 | `/home/user/dinol_policy.md` | 이 문서 |
