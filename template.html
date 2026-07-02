@@ -216,6 +216,13 @@
     font-weight: 600;
     color: #ffffff;
     line-height: 1.48;
+    transition: color 0.2s ease, font-weight 0.2s ease;
+  }
+
+  /* 읽음 상태 — 카드를 한 번 열람하면(localStorage 기록) 적용 */
+  .card-title.read {
+    font-weight: 450;
+    color: #a3a3a3;
   }
 
 
@@ -668,6 +675,33 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cards = [...document.querySelectorAll('a.card')];
 
+  /* ── 읽음 상태 (localStorage) ──────────────────────────────
+     카드를 한 번 열람(드로어 오픈)하면 해당 URL을 기록하고,
+     card-title에 .read 클래스(font-weight 450, color #a3a3a3)를 부여합니다.
+  ──────────────────────────────────────────────────────────── */
+  const READ_KEY = 'dinol_read_urls';
+
+  function getReadUrls() {
+    try { return new Set(JSON.parse(localStorage.getItem(READ_KEY) || '[]')); }
+    catch (e) { return new Set(); }
+  }
+
+  function markAsRead(card) {
+    const read = getReadUrls();
+    read.add(card.href);
+    localStorage.setItem(READ_KEY, JSON.stringify([...read]));
+    card.querySelector('.card-title')?.classList.add('read');
+  }
+
+  (function applyReadState() {
+    const read = getReadUrls();
+    cards.forEach(card => {
+      if (read.has(card.href)) {
+        card.querySelector('.card-title')?.classList.add('read');
+      }
+    });
+  })();
+
   /* ── 드로어 (슬라이드업 요약 패널) ── */
   const drawer           = document.getElementById('drawer');
   const overlay          = document.getElementById('drawerOverlay');
@@ -754,6 +788,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', e => {
       e.preventDefault();
       openDrawer(card);
+      markAsRead(card);
     });
   });
   drawerClose.addEventListener('click', closeDrawer);

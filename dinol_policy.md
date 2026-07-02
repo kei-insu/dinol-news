@@ -115,6 +115,12 @@ July 1, 2026          ← 11px, letter-spacing 4px, #888
 `g-indigo` `g-violet` `g-teal` `g-crimson` `g-forest` `g-slate`
 `g-amber` `g-plum` `g-olive` `g-navy` `g-rust` + 향후 추가 가능
 
+### 읽음 상태 (Read State)
+- 카드를 한 번 열람(드로어 오픈)하면 `card-title`에 `.read` 클래스 부여
+- 스타일: `font-weight: 450`, `color: #a3a3a3` (미열람 기본값 `font-weight: 600`, `color: #ffffff`)
+- 열람 기록은 `localStorage`(`dinol_read_urls` 키, URL 배열)에 저장 → 페이지 재방문 시에도 유지
+- 구현 위치: `template.html`의 `<style>` (`.card-title.read`)와 하단 `<script>`(`getReadUrls` / `markAsRead` / `applyReadState`)
+
 ### 검증 JS
 페이지 하단 `<script>` 블록에서 DOMContentLoaded 시:
 - 중복 URL → 빨간 테두리 + ⚠ 중복 링크 배지
