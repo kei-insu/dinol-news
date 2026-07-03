@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 03</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scrollbar-gutter: stable; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: #0d0d12;
+    color: #e8e8f0;
+    padding: 56px 24px 72px;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 64px;
+  }
+
+  .site-title {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #aaaaaa;
+    letter-spacing: 5px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .site-sub {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #ffffff;
+    line-height: 1;
+    margin-top: 4px;
+  }
+
+  .header-sep {
+    width: 1px;
+    height: 24px;
+    background: #3a3a48;
+    margin: 10px 0 4px;
+  }
+
+  .site-date {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #888;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 56px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+
+  .section-header h2 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 7px;
+    line-height: 1;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .section-header .line {
+    flex: 1;
+    height: 1px;
+    background: #1e1e28;
+  }
+
+  /* ── GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+    gap: 14px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: #13131b;
+    border: 1px solid #1c1c28;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: #2c2c40;
+    box-shadow: 0 10px 36px rgba(0,0,0,0.5);
+  }
+
+  /* ── THUMB ── */
+  .thumb {
+    width: 100%;
+    height: 128px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #1a1a24;
+  }
+
+  /* 기사 대표 이미지 썸네일 (object-fit: cover, 가로폭 기준 crop) */
+  .thumb-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+
+
+  .noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .thumb-label {
+    position: relative;
+    z-index: 1;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+    font-weight: 300;
+    font-size: 28px;
+    color: rgba(255,255,255,0.42);
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    text-align: center;
+    padding: 0 16px;
+    line-height: 1.2;
+    user-select: none;
+  }
+
+  /* EN badge — top-right of thumb (English articles only) */
+  .thumb-en {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 2px 7px;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.7);
+    color: #ffffff;
+    border: 2px solid #000000;
+    font-style: italic;
+  }
+
+  /* gradients */
+  .g-indigo   { background: linear-gradient(145deg,#0c1540,#1c3ab8); }
+  .g-violet   { background: linear-gradient(145deg,#160830,#5218c0); }
+  .g-teal     { background: linear-gradient(145deg,#041c1c,#0d6464); }
+  .g-crimson  { background: linear-gradient(145deg,#240606,#8c1a1a); }
+  .g-forest   { background: linear-gradient(145deg,#071808,#1a5820); }
+  .g-slate    { background: linear-gradient(145deg,#0c0e1a,#243268); }
+  .g-amber    { background: linear-gradient(145deg,#1a0e00,#884400); }
+  .g-plum     { background: linear-gradient(145deg,#140818,#6c18b8); }
+  .g-olive    { background: linear-gradient(145deg,#101000,#4c4a00); }
+  .g-navy     { background: linear-gradient(145deg,#060c1e,#0e2060); }
+  .g-rust     { background: linear-gradient(145deg,#1e0800,#7c2c00); }
+
+  /* ── CARD BODY ── */
+  .card-body {
+    padding: 14px 16px 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card-source {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 0.3px;
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.48;
+    transition: color 0.2s ease, font-weight 0.2s ease;
+  }
+
+  /* 읽음 상태 — 카드를 한 번 열람하면(localStorage 기록) 적용 */
+  .card-title.read {
+    font-weight: 450;
+    color: #a3a3a3;
+  }
+
+
+
+  /* ── CARD FOOTER ── */
+  .card-footer {
+    padding: 9px 16px;
+    border-top: 1px solid #18181f;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .arrow { font-size: 12px; color: #555; }
+
+  .featured { grid-column: span 1; }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 48px;
+    padding: 28px 0 8px;
+    border-top: 1px solid #1a1a24;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 0.3px;
+    line-height: 1.6;
+  }
+
+  .footer-notice {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.45;
+    letter-spacing: 0.1px;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 4px;
+  }
+
+  .footer-link {
+    font-size: 16px;
+    color: #666;
+    text-decoration: underline;
+  }
+  .footer-link:hover { color: #999; }
+
+  /* ── 아카이브 · 오픈채팅방 버튼 (동일 폭, 세로 정렬) ── */
+  .archive-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;                 /* 모바일 터치 간격 가이드(Material ≥8dp) 충족 */
+    margin-top: 8px;
+  }
+  .archive-cta, .kakao-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;              /* 두 버튼 가로 길이 동일 */
+    max-width: 100%;
+    min-height: 48px;          /* 터치 타깃 가이드(Apple 44 / Material 48) 충족 */
+    padding: 0 16px;           /* 좌우 여백 (Material 버튼 표준 ~16dp) */
+    border-radius: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
+    font-size: 16px;
+  }
+  /* 아카이브: 그레이 배경 + 검정 텍스트 */
+  .archive-cta {
+    font-size: 16px;
+    color: #191919;
+    background: #c9ccd4;
+    border: none;
+    letter-spacing: 0.2px;
+  }
+  .archive-cta:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.97);
+    box-shadow: 0 6px 18px rgba(201, 204, 212, 0.14);
+  }
+  /* 오픈채팅방: 카카오 옐로우 + 검정 텍스트 */
+  .kakao-cta {
+    font-size: 16px;
+    color: #191919;
+    background: #FEE500;
+    border: none;
+    letter-spacing: 0.2px;
+  }
+  .kakao-cta:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.97);
+    box-shadow: 0 6px 18px rgba(254, 229, 0, 0.18);
+  }
+
+  /* ── 맨 위로 플로팅 버튼 (모바일 전용) ── */
+  .to-top {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 800;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #2c2c40;
+    background: rgba(19, 19, 27, 0.86);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: none;              /* 데스크톱 및 초기 상태: 숨김 */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .18s ease, transform .18s ease, border-color .14s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  }
+  .to-top:hover { border-color: #3c3c58; color: #fff; }
+  .to-top.show { opacity: 1; transform: translateY(0); }
+
+  /* ── DRAWER ── */
+  .drawer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 900;
+  }
+  .drawer-overlay.open { display: block; }
+
+  /* PC — 중앙 모달 */
+  .drawer {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -48%) scale(0.96);
+    width: 480px;
+    height: 90vh;
+    background: #13131b;
+    border: 1px solid #2c2c40;
+    border-radius: 16px;
+    z-index: 901;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.22s ease, opacity 0.22s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .drawer.open {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* 모바일 — 바텀시트 */
+  @media (max-width: 580px) {
+    .drawer {
+      top: auto; left: 0; right: 0;
+      bottom: 0;
+      transform: translateY(100%);
+      width: 100%;
+      height: 90vh;
+      border-radius: 20px 20px 0 0;
+      border-top: 1px solid #2c2c40;
+      border-left: none; border-right: none; border-bottom: none;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .drawer.open { transform: translateY(0); }
+    .drawer .drawer-footer { padding: 8px 20px calc(28px + env(safe-area-inset-bottom, 0px)); }
+  }
+
+  .drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid #1e1e28;
+  }
+
+  .drawer-source { font-size: 12px; color: #888; }
+
+  .drawer-thumb {
+    height: 140px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 14px 16px 0;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .drawer-body {
+    padding: 14px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    scrollbar-width: thin;                 /* Firefox */
+    scrollbar-color: #33333f transparent;  /* thumb, track */
+  }
+  .drawer-body::-webkit-scrollbar { width: 6px; }
+  .drawer-body::-webkit-scrollbar-track { background: transparent; }
+  .drawer-body::-webkit-scrollbar-thumb {
+    background: #33333f;
+    border-radius: 3px;
+  }
+  .drawer-body::-webkit-scrollbar-thumb:hover { background: #45455a; }
+
+  .drawer-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.45;
+  }
+
+  .drawer-summary {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.7;
+    margin-top: 2px;
+  }
+  /* ── A안: 구조화 요약 필드 ── */
+  .drawer-category { font-size: 12px; font-weight: 600; color: #8a8aff; letter-spacing: 0.4px; }
+  .drawer-field { display: flex; flex-direction: column; gap: 5px; }
+  .drawer-field-label { font-size: 12px; font-weight: 700; color: #d0d0e0; letter-spacing: 0.2px; }
+  .drawer-field-text { font-size: 14px; color: #a6a6b8; line-height: 1.65; }
+  .drawer-points { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 4px; }
+  .drawer-points li { font-size: 14px; color: #a6a6b8; line-height: 1.55; }
+
+  .drawer-footer { padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 10px; }
+
+  .drawer-close-btn {
+    display: block;
+    width: 100%;
+    background: none;
+    border: 1px solid #2c2c48;
+    color: #888;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .drawer-close-btn:hover { background: #1a1a28; color: #ccc; }
+
+  .drawer-lang-toggle {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 2px;
+  }
+  .lang-btn {
+    background: none;
+    border: 1px solid #2c2c48;
+    color: #666;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+  }
+  .lang-btn.active {
+    background: #2c2c48;
+    color: #fff;
+    border-color: #3c3c58;
+  }
+
+  .drawer-cta {
+    display: block;
+    background: #1e1e2e;
+    border: 1px solid #2c2c48;
+    color: #fff;
+    text-align: center;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  @media (max-width: 580px) {
+    body { padding: 36px 16px 52px; }
+    header { margin-bottom: 44px; gap: 4px; }
+    .site-title { font-size: 15px; letter-spacing: 3px; }
+    .site-sub { font-size: 32px; letter-spacing: -0.5px; }
+    .site-date { font-size: 11px; letter-spacing: 3px; }
+    .section { margin-bottom: 40px; }
+    .section-header h2 { font-size: 16px; letter-spacing: 4px; }
+    .grid { grid-template-columns: 1fr; gap: 10px; }
+    .thumb { height: 110px; }
+    .thumb-label { font-size: 26px; letter-spacing: 5px; }
+    .card-source { font-size: 12px; }
+    .card-title { font-size: 17px; }
+    .thumb-en { font-size: 13px; }
+    .footer-copy { font-size: 13px; }
+    .footer-notice { font-size: 13px; }
+    .to-top { display: flex; }   /* 모바일에서만 노출 (표시는 JS가 .show로 제어) */
+  }
+</style>
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+      <button class="lang-btn active" id="btnKr">KR</button>
+      <button class="lang-btn" id="btnEn">EN</button>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-field-text" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">볼 포인트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <div class="site-sub">AI &amp; Design News</div>
+  <div class="header-sep"></div>
+  <div class="site-date">July 3, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.reuters.com/business/zuckerberg-says-ai-agent-development-going-slower-than-expected-2026-07-02/" target="_blank"
+       data-category="AI · Big Tech · Strategy"
+       data-summary="At an internal town hall, Meta CEO Mark Zuckerberg admitted AI agent development over the past four months hasn't accelerated as expected, despite up to $145B in AI spending." data-summary-kr="메타 CEO 마크 저커버그가 내부 타운홀에서 최근 4개월간 AI 에이전트 개발이 기대만큼 빨라지지 않았다고 인정했습니다. 최대 1,450억 달러 투자에도 조직 개편 성과가 아직 나오지 않았다는 것입니다."
+       data-designer="A reality check on agent hype — treat 'AI will automate this workflow' claims with healthy skepticism and design for human-in-the-loop." data-designer-kr="에이전트 과열에 대한 현실 점검입니다. 'AI가 이 업무를 자동화한다'는 주장을 건강한 회의로 보고, 사람이 개입하는(human-in-the-loop) 흐름으로 설계하는 게 좋습니다."
+       data-impact="Medium · Product designers and PMs planning AI-agent features" data-impact-kr="중간 · AI 에이전트 기능을 기획하는 프로덕트 디자이너·PM"
+       data-points="Why agent progress stalled despite huge spend|What human-in-the-loop means for product design|Meta's new 3–6 month expectation" data-points-kr="막대한 투자에도 에이전트 진척이 더딘 이유|human-in-the-loop가 제품 설계에 주는 의미|메타가 제시한 향후 3~6개월 기대치"
+       data-recommend="Worth a read for AI-feature planners · Share with product teams" data-recommend-kr="AI 기능 기획자 필독 · 프로덕트팀 공유 추천"
+       data-title-kr="저커버그 'AI 에이전트, 기대만큼 빠르게 발전 못 했다' 직원들에 인정">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">AGENTS</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 02</div>
+        <div class="card-title">Zuckerberg tells staff AI agents haven't progressed as fast as hoped</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.reuters.com/business/retail-consumer/us-talks-with-ai-companies-voluntary-model-standards-ft-reports-2026-07-02/" target="_blank"
+       data-category="AI · Policy · Governance"
+       data-summary="The US government is in advanced talks with AI firms on voluntary standards for releasing new models — setting benchmarks, timelines and access rules — with an announcement possible within a week." data-summary-kr="미국 정부가 AI 기업들과 새 모델 출시에 대한 자율 표준을 협의 중입니다. 벤치마크·일정·접근 권한 기준을 정하는 내용으로, 이르면 다음 주 발표 가능성이 제기됩니다."
+       data-designer="Release governance shapes when and how new AI capabilities reach the tools designers use — expect more staged, gated rollouts." data-designer-kr="출시 거버넌스는 새 AI 기능이 디자이너가 쓰는 도구에 언제·어떻게 도달할지를 좌우합니다. 앞으로 단계적·제한적 출시가 늘어날 것으로 보입니다."
+       data-impact="Medium · Teams relying on frontier-model access for AI tooling" data-impact-kr="중간 · 프런티어 모델 접근에 의존하는 AI 도구 사용 팀"
+       data-points="What benchmarks/timelines the standards may set|How access rules could affect tool availability|Ties to June executive order on pre-release testing" data-points-kr="표준이 정할 벤치마크·일정|접근 규칙이 도구 사용성에 미칠 영향|6월 출시 전 테스트 행정명령과의 연결"
+       data-recommend="Track if you depend on latest models · Save for reference" data-recommend-kr="최신 모델 의존 시 주시 · 참고 저장"
+       data-title-kr="미국 정부, AI 기업과 '모델 출시 자율 표준' 협의 중">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">POLICY</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Reuters · 2026. 07. 02</div>
+        <div class="card-title">US in talks with AI companies over voluntary model-release standards</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.reuters.com/business/trump-administration-anthropic-have-not-discussed-government-taking-stakes-firm-2026-07-02/" target="_blank"
+       data-category="AI · Policy · Business"
+       data-summary="A source says the Trump administration and Anthropic have not discussed the government taking a stake in the firm, after an FT report that OpenAI discussed giving the US a 5% stake." data-summary-kr="소식통에 따르면 트럼프 행정부와 Anthropic은 정부의 지분 취득을 논의한 적이 없습니다. OpenAI가 미국 정부에 5% 지분을 논의했다는 FT 보도 이후 나온 해명입니다."
+       data-designer="Signals how tightly frontier AI is entangling with government — the vendors behind your AI tools face growing political oversight." data-designer-kr="프런티어 AI가 정부와 얼마나 밀접해지는지를 보여줍니다. 여러분이 쓰는 AI 도구의 공급사가 점점 정치적 감독을 받는다는 신호입니다."
+       data-impact="Low–Medium · Context for anyone building on OpenAI/Anthropic" data-impact-kr="낮음~중간 · OpenAI·Anthropic 기반으로 개발하는 이들에게 배경 지식"
+       data-points="What the FT reported about OpenAI's 5% stake|Why Washington is scrutinizing AI valuations|How it ties to recent export-control moves" data-points-kr="OpenAI 5% 지분에 대한 FT 보도 내용|워싱턴이 AI 밸류에이션을 주시하는 이유|최근 수출 통제 조치와의 연결"
+       data-recommend="Background reading · Optional" data-recommend-kr="배경 참고용 · 선택"
+       data-title-kr="'트럼프 행정부-Anthropic, 정부 지분 논의 없었다' 소식통">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">STAKE</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Reuters · 2026. 07. 02</div>
+        <div class="card-title">Trump administration and Anthropic haven't discussed a government stake, source says</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.elledecor.com/design-decorate/trends/a71683847/london-wowhouse-trends-ideas-2026/" target="_blank"
+       data-category="디자인 · 인테리어 · 트렌드"
+       data-summary="A roundup of standout 2026 interior trends from London's WOW!house showhouse (closed July 2) — from verdigris finishes to fringe, tassels and a renewed focus on craft and materiality." data-summary-kr="7월 2일 막을 내린 런던 WOW!house 쇼하우스에서 포착한 2026년 인테리어 트렌드 정리입니다. 청록빛 녹청(verdigris) 마감, 프린지·태슬, 그리고 공예·물성에 대한 재조명이 두드러졌습니다."
+       data-designer="Showhouses act as an industry crystal ball — useful signals for color, material and texture direction in spatial and product work." data-designer-kr="쇼하우스는 업계의 방향을 미리 보여줍니다. 공간·제품 작업의 색상·소재·질감 방향을 잡는 데 유용한 신호입니다."
+       data-impact="Medium · Interior, spatial and product designers" data-impact-kr="중간 · 인테리어·공간·제품 디자이너"
+       data-points="Verdigris as a key 2026 finish|Return of fringe, tassels and passementerie|Craft and materiality over fast trends" data-points-kr="2026년 핵심 마감으로 떠오른 녹청(verdigris)|프린지·태슬·파스망트리의 귀환|빠른 유행보다 공예·물성 중시"
+       data-recommend="Great mood-board fuel · Save for material research" data-recommend-kr="무드보드 소스로 훌륭 · 소재 리서치 저장 추천"
+       data-title-kr="런던 WOW!house 2026에서 포착한 올해 디자인 트렌드">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">TRENDS</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Elle Decor · 2026. 07. 02</div>
+        <div class="card-title">The biggest 2026 design trends spotted at London's WOW!house</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/01/five-architecture-design-events-july-dezeen-events-guide-2026/" target="_blank"
+       data-category="디자인 · 건축 · 이벤트"
+       data-summary="Dezeen's Events Guide highlights five architecture and design events to see in July 2026, spanning exhibitions, festivals and talks around the world." data-summary-kr="Dezeen 이벤트 가이드가 2026년 7월 볼 만한 건축·디자인 이벤트 다섯 곳을 소개합니다. 전 세계 전시·페스티벌·강연을 아우릅니다."
+       data-designer="A quick way to plan what to attend or follow this month — good for spotting where the field's conversations are happening." data-designer-kr="이번 달 참석하거나 팔로우할 것을 빠르게 계획하는 방법입니다. 업계 담론이 어디서 일어나는지 파악하기 좋습니다."
+       data-impact="Low · Designers planning July events and inspiration" data-impact-kr="낮음 · 7월 이벤트·영감을 계획하는 디자이너"
+       data-points="Which five events made the list|Mix of exhibitions, festivals and talks|Global spread of venues" data-points-kr="선정된 다섯 이벤트|전시·페스티벌·강연의 조합|전 세계에 걸친 개최지"
+       data-recommend="Bookmark for July planning · Optional" data-recommend-kr="7월 계획용 저장 · 선택"
+       data-title-kr="Dezeen이 꼽은 7월 건축·디자인 이벤트 다섯 곳">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">EVENTS</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 01</div>
+        <div class="card-title">Five architecture and design events in July from Dezeen</div>
+      </div>
+      <div class="card-footer"><span class="arrow">↗</span></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="./archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="./privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script>
+/* ── 콘텐츠 검토 로직 ──────────────────────────────────────────
+   페이지 로드 시 자동으로 아래 항목을 검사합니다.
+   1. 중복 URL — 같은 링크가 2개 이상이면 해당 카드에 경고 표시
+   2. 빈 링크 — href가 없거나 '#'인 카드 감지
+   개발/검토용 표시이며 콘텐츠 영역 위에 요약 배너가 표시됩니다.
+──────────────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = [...document.querySelectorAll('a.card')];
+
+  /* ── 맨 위로 플로팅 버튼 ──────────────────────────────────
+     600px 이상 스크롤되면 .show로 페이드인, 클릭 시 상단으로 부드럽게 이동.
+     노출 자체는 CSS @media(max-width:580px)에서만 display:flex → 모바일 전용.
+  ──────────────────────────────────────────────────────────── */
+  const toTop = document.getElementById('toTop');
+  if (toTop) {
+    const SHOW_AFTER = 600;
+    const onScroll = () => {
+      if (window.scrollY > SHOW_AFTER) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ── 읽음 상태 (localStorage) ──────────────────────────────
+     카드를 한 번 열람(드로어 오픈)하면 해당 URL을 기록하고,
+     card-title에 .read 클래스(font-weight 450, color #a3a3a3)를 부여합니다.
+  ──────────────────────────────────────────────────────────── */
+  const READ_KEY = 'dinol_read_20260703';
+
+  function getReadUrls() {
+    try { return new Set(JSON.parse(localStorage.getItem(READ_KEY) || '[]')); }
+    catch (e) { return new Set(); }
+  }
+
+  function markAsRead(card) {
+    const read = getReadUrls();
+    read.add(card.href);
+    localStorage.setItem(READ_KEY, JSON.stringify([...read]));
+    card.querySelector('.card-title')?.classList.add('read');
+  }
+
+  (function applyReadState() {
+    const read = getReadUrls();
+    cards.forEach(card => {
+      if (read.has(card.href)) {
+        card.querySelector('.card-title')?.classList.add('read');
+      }
+    });
+  })();
+
+  /* ── 드로어 (슬라이드업 요약 패널) ── */
+  const drawer           = document.getElementById('drawer');
+  const overlay          = document.getElementById('drawerOverlay');
+  const drawerClose      = document.getElementById('drawerClose');
+  const drawerThumb      = document.getElementById('drawerThumb');
+  const drawerLabel      = document.getElementById('drawerLabel');
+  const drawerEn         = document.getElementById('drawerEn');
+  const drawerSource     = document.getElementById('drawerSource');
+  const drawerTitle      = document.getElementById('drawerTitle');
+  const drawerCategory   = document.getElementById('drawerCategory');
+  const drawerOneline    = document.getElementById('drawerOneline');
+  const drawerDesigner   = document.getElementById('drawerDesigner');
+  const drawerImpact     = document.getElementById('drawerImpact');
+  const drawerPoints     = document.getElementById('drawerPoints');
+  const drawerRecommend  = document.getElementById('drawerRecommend');
+  const drawerCta        = document.getElementById('drawerCta');
+  const drawerLangToggle = document.getElementById('drawerLangToggle');
+  const btnKr            = document.getElementById('btnKr');
+  const btnEn            = document.getElementById('btnEn');
+
+  /* 6필드: 각 필드의 EN(기본)/KR 값 보관 */
+  const F = {
+    title:{}, oneline:{}, designer:{}, impact:{}, points:{}, recommend:{}
+  };
+
+  function renderPoints(str) {
+    drawerPoints.innerHTML = '';
+    (str || '').split('|').map(s => s.trim()).filter(Boolean).forEach(p => {
+      const li = document.createElement('li'); li.textContent = p; drawerPoints.appendChild(li);
+    });
+  }
+
+  function setField(el, val) {
+    el.textContent = val || '';
+    const wrap = el.closest('.drawer-field');
+    if (wrap) wrap.style.display = (val && val.trim()) ? 'flex' : 'none';
+  }
+
+  function setLang(lang) {
+    const k = (lang === 'kr') ? 'kr' : 'en';
+    drawerTitle.textContent = F.title[k];
+    setField(drawerOneline, F.oneline[k]);
+    setField(drawerDesigner, F.designer[k]);
+    setField(drawerImpact, F.impact[k]);
+    renderPoints(F.points[k]);
+    const pWrap = drawerPoints.closest('.drawer-field');
+    if (pWrap) pWrap.style.display = drawerPoints.children.length ? 'flex' : 'none';
+    setField(drawerRecommend, F.recommend[k]);
+    btnKr.classList.toggle('active', k === 'kr');
+    btnEn.classList.toggle('active', k === 'en');
+  }
+
+  btnKr.addEventListener('click', () => setLang('kr'));
+  btnEn.addEventListener('click', () => setLang('en'));
+
+  function openDrawer(card) {
+    const thumb = card.querySelector('.thumb');
+    const gradClass = [...thumb.classList].find(c => c.startsWith('g-')) || '';
+    drawerThumb.className = `drawer-thumb ${gradClass}`;
+
+    /* 기존 이미지 제거 후 카드 썸네일 이미지 복사 */
+    const prevImg = drawerThumb.querySelector('.thumb-img');
+    if (prevImg) prevImg.remove();
+    const cardImg = thumb.querySelector('img.thumb-img');
+    if (cardImg) {
+      const img = document.createElement('img');
+      img.className = 'thumb-img';
+      img.src = cardImg.src;
+      img.alt = '';
+      drawerThumb.prepend(img);
+    }
+
+    drawerLabel.textContent = card.querySelector('.thumb-label')?.textContent || '';
+    const hasEn = !!card.querySelector('.thumb-en');
+    drawerEn.style.display = hasEn ? 'block' : 'none';
+    drawerSource.textContent = card.querySelector('.card-source')?.textContent || '';
+
+    const d = card.dataset;
+    /* 카테고리(언어중립, 공유) */
+    drawerCategory.textContent = d.category || '';
+    drawerCategory.style.display = d.category ? 'block' : 'none';
+
+    /* 기본값(EN 슬롯) = 카드 언어, -kr 슬롯 = 한국어(없으면 기본값 복제) */
+    const baseTitle = card.querySelector('.card-title')?.textContent || '';
+    F.title.en     = baseTitle;
+    F.oneline.en   = d.summary   || '';
+    F.designer.en  = d.designer  || '';
+    F.impact.en    = d.impact    || '';
+    F.points.en    = d.points    || '';
+    F.recommend.en = d.recommend || '';
+
+    F.title.kr     = d.titleKr     || baseTitle;
+    F.oneline.kr   = d.summaryKr   || F.oneline.en;
+    F.designer.kr  = d.designerKr  || F.designer.en;
+    F.impact.kr    = d.impactKr    || F.impact.en;
+    F.points.kr    = d.pointsKr    || F.points.en;
+    F.recommend.kr = d.recommendKr || F.recommend.en;
+
+    /* 영문 기사(-kr 번역 있음) → 토글 노출, 기본 KR / 한국어 기사 → 토글 숨김, KR 값 표시 */
+    if (hasEn && d.titleKr) {
+      drawerLangToggle.style.display = 'flex';
+      setLang('kr');
+    } else {
+      drawerLangToggle.style.display = 'none';
+      setLang('kr'); /* 한국어 기사: kr 슬롯이 곧 기본값 */
+    }
+
+    drawerCta.href = card.href;
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', e => {
+      e.preventDefault();
+      openDrawer(card);
+      markAsRead(card);
+    });
+  });
+  drawerClose.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  /* 1. 중복 URL 검사 */
+  const urlCount = {};
+  cards.forEach(c => {
+    const url = c.href;
+    urlCount[url] = (urlCount[url] || 0) + 1;
+  });
+  const dupeUrls = Object.keys(urlCount).filter(u => urlCount[u] > 1);
+
+  dupeUrls.forEach(url => {
+    cards.filter(c => c.href === url).forEach(card => {
+      card.style.outline = '2px solid #ff4444';
+      const badge = document.createElement('div');
+      badge.textContent = '⚠ 중복 링크';
+      badge.style.cssText = [
+        'position:absolute', 'top:0', 'left:0',
+        'background:#ff4444', 'color:#fff',
+        'font-size:10px', 'font-weight:700',
+        'padding:2px 8px', 'z-index:10',
+        'border-radius:0 0 6px 0'
+      ].join(';');
+      card.style.position = 'relative';
+      card.prepend(badge);
+    });
+  });
+
+  /* 2. 빈 링크 검사 */
+  const emptyLinks = cards.filter(c => !c.getAttribute('href') || c.getAttribute('href') === '#');
+  emptyLinks.forEach(card => {
+    card.style.outline = '2px solid #ffaa00';
+    const badge = document.createElement('div');
+    badge.textContent = '⚠ 링크 없음';
+    badge.style.cssText = [
+      'position:absolute', 'top:0', 'left:0',
+      'background:#ffaa00', 'color:#000',
+      'font-size:10px', 'font-weight:700',
+      'padding:2px 8px', 'z-index:10',
+      'border-radius:0 0 6px 0'
+    ].join(';');
+    card.style.position = 'relative';
+    card.prepend(badge);
+  });
+
+  /* 3. 요약 배너 */
+  const issues = dupeUrls.length + emptyLinks.length;
+  if (issues > 0) {
+    const banner = document.createElement('div');
+    banner.innerHTML = `⚠ 콘텐츠 검토 결과: 중복 링크 <b>${dupeUrls.length}건</b>, 빈 링크 <b>${emptyLinks.length}건</b> 발견 — 빨간/노란 테두리 카드를 확인하세요.`;
+    banner.style.cssText = [
+      'position:fixed', 'bottom:20px', 'left:50%',
+      'transform:translateX(-50%)',
+      'background:#ff4444', 'color:#fff',
+      'font-size:12px', 'font-weight:600',
+      'padding:10px 20px', 'border-radius:8px',
+      'z-index:9999', 'box-shadow:0 4px 20px rgba(0,0,0,0.5)',
+      'white-space:nowrap'
+    ].join(';');
+    document.body.appendChild(banner);
+    console.warn('[디자인놀이터] 검토 오류:', { dupeUrls, emptyLinks: emptyLinks.map(c => c.querySelector('.card-title')?.textContent) });
+  } else {
+    console.log('[디자인놀이터] ✅ 콘텐츠 검토 통과 — 중복 링크 없음, 빈 링크 없음');
+  }
+});
+</script>
+
+</body>
+</html>
