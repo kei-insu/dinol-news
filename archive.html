@@ -102,16 +102,18 @@
     color: #e8e8f0;
     font-family: inherit;
   }
-  .month-label { font-size: 15px; font-weight: 700; letter-spacing: 0.2px; white-space: nowrap; }
+  .month-label { font-size: 14px; font-weight: 700; letter-spacing: -0.5px; white-space: nowrap; }
   .month-line { flex: 1; height: 1px; background: #23232e; }
   .month-count { font-size: 12px; color: #666; white-space: nowrap; }
   .month-chevron {
-    font-size: 11px;
-    color: #888;
+    font-size: 15px;
+    color: #cccccc;
     transition: transform .2s ease;
     line-height: 1;
+    display: inline-block;
+    transform: scaleY(0.8);            /* 세로만 살짝 눌러 납작하게 */
   }
-  .month-group.collapsed .month-chevron { transform: rotate(180deg); }
+  .month-group.collapsed .month-chevron { transform: scaleY(0.8) rotate(180deg); }
 
   .month-items {
     display: flex;
@@ -155,7 +157,7 @@
     vertical-align: middle;
     text-transform: uppercase;
   }
-  .item-arrow { font-size: 12px; color: #555; }
+  .item-arrow { display: inline-flex; align-items: center; color: #a9a9b8; flex-shrink: 0; }
 
   .empty, .loading { font-size: 18px; color: #777; padding: 20px 0; text-align: center; }
 
@@ -168,8 +170,8 @@
     flex-direction: column;
     gap: 6px;
   }
-  .footer-copy { font-size: 12px; font-weight: 600; color: #888; }
-  .footer-link { font-size: 11px; color: #666; text-decoration: none; }
+  .footer-copy { font-size: 13px; font-weight: 600; color: #888; }
+  .footer-link { font-size: 16px; color: #666; text-decoration: underline; }
   .footer-link:hover { color: #999; }
 
   /* ── 메인으로 버튼 (메인의 아카이브 버튼과 동일 스타일) ── */
@@ -187,8 +189,8 @@
     min-height: 48px;
     padding: 0 16px;
     border-radius: 24px;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 400;
     letter-spacing: 0.2px;
     color: #191919;
     background: #c9ccd4;
@@ -206,6 +208,9 @@
   @media (max-width: 580px) {
     .site-title { font-size: 15px; letter-spacing: 3px; }
     .site-sub { font-size: 32px; letter-spacing: -0.5px; }
+    .month-label { font-size: 16px; }
+    .item-date { font-size: 17px; }
+    .footer-link { font-size: 16px; }
   }
 </style>
 </head>
@@ -280,7 +285,7 @@
     a.href = 'Dinol_news_' + d + '.html';
     const todayBadge = (d === todayStr) ? '<span class="item-today">today</span>' : '';
     a.innerHTML = '<span class="item-date">' + displayDate(d) + todayBadge +
-                  '</span><span class="item-arrow">↗</span>';
+                  '</span><span class="item-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="8 7 17 7 17 16"></polyline></svg></span>';
     return a;
   }
 
@@ -307,8 +312,7 @@
     header.innerHTML =
       '<span class="month-label">' + year + '년 ' + month + '월</span>' +
       '<span class="month-line"></span>' +
-      '<span class="month-count">' + dateList.length + '</span>' +
-      '<span class="month-chevron">▾</span>';
+      '<span class="month-chevron">▼</span>';
 
     const items = document.createElement('div');
     items.className = 'month-items';

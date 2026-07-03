@@ -79,10 +79,10 @@
   }
 
   .section-header h2 {
-    font-size: 42px;
+    font-size: 21px;
     font-weight: 700;
     color: #ffffff;
-    letter-spacing: -2.5px;
+    letter-spacing: 7px;
     line-height: 1;
     white-space: nowrap;
     flex-shrink: 0;
@@ -156,7 +156,7 @@
     font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
     font-weight: 300;
     font-size: 28px;
-    color: rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.42);
     text-transform: uppercase;
     letter-spacing: 7px;
     text-align: center;
@@ -171,14 +171,15 @@
     top: 10px;
     right: 10px;
     z-index: 2;
-    font-size: 10px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 400;
     letter-spacing: 0.5px;
-    padding: 3px 7px;
+    padding: 2px 7px;
     border-radius: 5px;
     background: rgba(0,0,0,0.7);
     color: #ffffff;
     border: 2px solid #000000;
+    font-style: italic;
   }
 
   /* gradients */
@@ -244,16 +245,17 @@
   }
 
   .footer-copy {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     color: #888;
     letter-spacing: 0.3px;
+    line-height: 1.6;
   }
 
   .footer-notice {
-    font-size: 11px;
+    font-size: 13px;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.45;
     letter-spacing: 0.1px;
   }
 
@@ -414,15 +416,15 @@
     .site-sub { font-size: 32px; letter-spacing: -0.5px; }
     .site-date { font-size: 11px; letter-spacing: 3px; }
     .section { margin-bottom: 40px; }
-    .section-header h2 { font-size: 32px; letter-spacing: -1.5px; }
+    .section-header h2 { font-size: 16px; letter-spacing: 4px; }
     .grid { grid-template-columns: 1fr; gap: 10px; }
     .thumb { height: 110px; }
     .thumb-label { font-size: 26px; letter-spacing: 5px; }
     .card-source { font-size: 12px; }
     .card-title { font-size: 17px; }
-    .thumb-en { font-size: 11px; }
-    .footer-copy { font-size: 12px; }
-    .footer-notice { font-size: 11px; }
+    .thumb-en { font-size: 13px; }
+    .footer-copy { font-size: 13px; }
+    .footer-notice { font-size: 13px; }
   }
 
   /* ── 아카이브 · 오픈채팅방 버튼 (동일 폭, 세로 정렬) ── */
@@ -433,18 +435,19 @@
   .archive-cta, .kakao-cta {
     display: flex; align-items: center; justify-content: center;
     width: 240px; max-width: 100%; min-height: 48px; padding: 0 16px;
-    border-radius: 24px; font-weight: 700; text-decoration: none;
+    border-radius: 24px; font-weight: 500; text-decoration: none;
     box-sizing: border-box;
     transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
+    font-size: 18px;
   }
-  .archive-cta { font-size: 14px; color: #191919; background: #c9ccd4; border: none; letter-spacing: 0.2px; }
+  .archive-cta { font-size: 16px; color: #191919; background: #c9ccd4; border: none; letter-spacing: 0.2px; }
   .archive-cta:hover { transform: translateY(-1px); filter: brightness(0.97); box-shadow: 0 6px 18px rgba(201,204,212,0.14); }
-  .kakao-cta { font-size: 14px; color: #191919; background: #FEE500; border: none; letter-spacing: 0.2px; }
+  .kakao-cta { font-size: 16px; color: #191919; background: #FEE500; border: none; letter-spacing: 0.2px; }
   .kakao-cta:hover { transform: translateY(-1px); filter: brightness(0.97); box-shadow: 0 6px 18px rgba(254,229,0,0.18); }
 
   /* ── 푸터 링크 ── */
   .footer-links { display: flex; justify-content: center; gap: 16px; margin-top: 4px; }
-  .footer-link { font-size: 11px; color: #666; text-decoration: none; }
+  .footer-link { font-size: 16px; color: #666; text-decoration: underline; }
   .footer-link:hover { color: #999; }
 
   /* ── 맨 위로 플로팅 버튼 (모바일 전용) ── */
@@ -702,8 +705,7 @@
 <!-- ── FOOTER ── -->
 <footer>
   <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
-  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.</p>
-  <p class="footer-notice">제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
   <div class="footer-links">
     <a class="footer-link" href="./privacy.html">개인정보처리방침</a>
   </div>

@@ -45,6 +45,8 @@
 ### 7. HTML 파일 생성 및 저장
 **Write 도구로 `/home/user/Dinol_news_YYYYMMDD.html` 에 저장한다. 텍스트 요약 출력 금지.**
 
+> **스타일 단일 기준(디자인 가이드):** 폰트 크기·굵기·컬러·자간, 버튼/아이콘 크기, 푸터 구조 등 모든 시각 스펙은 `template.html`을 **그대로 복사**한다. 임의로 값을 재생성하지 말 것. 전체 스펙 표는 `DESIGN_GUIDE.md` 참조. (핵심: 섹션헤더 AI/Design 21px·자간 7px, 버튼 텍스트 16px/w500, EN 배지 12px/italic·명도 유지, 썸네일 라벨 흰색 0.42, 푸터 저작권 13px·안내문 13px 한 덩어리(`<br>`)·개인정보처리방침 16px 밑줄.)
+
 구조는 참조 파일(`template.html`)과 동일하게:
 - 헤더: "디자인 놀이터" / "AI & Design News" / `.header-sep` (구분선) / 날짜
 - 폰트: Cormorant Garamond 300 + Noto Sans KR 700 + Noto Serif KR 300
