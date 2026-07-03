@@ -74,15 +74,27 @@
 
 ---
 
-## 5. 팝업 요약 구조 (향후 확장 · A안)
+## 5. 팝업(드로어) — 구조화 요약
 
-현재 팝업은 기존 `data-summary` 한 문단만 표시(B안). 추후 아래 구조로 확장 예정:
+카드 클릭 시 뜨는 요약 팝업.
 
-- 카테고리
-- 제목
-- 한 줄 요약
-- 디자이너 관점
-- 실무 영향도 (어떤 실무에?)
-- 볼 포인트
-- 추천
-- 원문 링크
+**규격**
+- 데스크톱: 480px × **90vh** 중앙 모달 / 모바일: 100% × **90vh** 바텀시트
+- 본문(`.drawer-body`) 영역만 스크롤 — 커스텀 스크롤바(폭 6px, thumb `#33333f`, 투명 트랙)
+- 닫기 버튼 아래 여백: PC 21px / 모바일 28px + `env(safe-area-inset-bottom)`
+- 영문 기사: KR/EN 토글로 6필드 전체 언어 전환. 값이 빈 필드는 자동 숨김
+
+**구성 (위→아래)**
+1. 팝업 출처 `drawer-source` — 12px `#888888`
+2. 썸네일 `drawer-thumb`
+3. 카테고리 `drawer-category` — 12px/w600 `#8a8aff`
+4. 팝업 제목 `drawer-title` — 17px/w700 `#ffffff`
+5. **한 줄 요약** / **디자이너 관점** / **실무 영향도** / **볼 포인트**(목록) / **추천**
+   - 필드 라벨 `drawer-field-label` — 12px/w700 `#d0d0e0`
+   - 필드 본문 `drawer-field-text` / `drawer-points li` — 14px `#a6a6b8`
+6. 원문 버튼 `drawer-cta` / 닫기 버튼 `drawer-close` — 각 420×44, 16px/w400
+
+**데이터 규칙 (카드 `data-*`)**
+- 공통: `data-category`
+- 6필드 기본: `data-summary`(한 줄 요약) · `data-designer` · `data-impact` · `data-points`(`|`구분) · `data-recommend`
+- 영문 카드: 위 기본(영문) + `-kr` 접미사(한국어) 각각 + `data-title-kr`

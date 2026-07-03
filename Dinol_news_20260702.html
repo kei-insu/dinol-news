@@ -299,7 +299,7 @@
     top: 50%; left: 50%;
     transform: translate(-50%, -48%) scale(0.96);
     width: 480px;
-    height: 80vh;                /* 고정 크기 */
+    height: 90vh;
     background: #13131b;
     border: 1px solid #2c2c40;
     border-radius: 16px;
@@ -307,7 +307,7 @@
     opacity: 0;
     pointer-events: none;
     transition: transform 0.22s ease, opacity 0.22s ease;
-    display: flex;              /* 헤더/썸네일/푸터 고정, 본문만 스크롤 */
+    display: flex;
     flex-direction: column;
     overflow: hidden;
   }
@@ -324,7 +324,7 @@
       bottom: 0;
       transform: translateY(100%);
       width: 100%;
-      height: 80vh;
+      height: 90vh;
       border-radius: 20px 20px 0 0;
       border-top: 1px solid #2c2c40;
       border-left: none; border-right: none; border-bottom: none;
@@ -332,6 +332,7 @@
       pointer-events: auto;
     }
     .drawer.open { transform: translateY(0); }
+    .drawer .drawer-footer { padding: 8px 20px calc(28px + env(safe-area-inset-bottom, 0px)); }
   }
 
   .drawer-header {
@@ -356,14 +357,23 @@
   }
 
   .drawer-body {
-    padding: 14px 20px 12px;
+    padding: 14px 20px 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    flex: 1;                    /* 남는 공간 차지 */
-    overflow-y: auto;           /* 요약 텍스트만 스크롤 */
+    gap: 14px;
+    flex: 1;
+    overflow-y: auto;
     min-height: 0;
+    scrollbar-width: thin;                 /* Firefox */
+    scrollbar-color: #33333f transparent;  /* thumb, track */
   }
+  .drawer-body::-webkit-scrollbar { width: 6px; }
+  .drawer-body::-webkit-scrollbar-track { background: transparent; }
+  .drawer-body::-webkit-scrollbar-thumb {
+    background: #33333f;
+    border-radius: 3px;
+  }
+  .drawer-body::-webkit-scrollbar-thumb:hover { background: #45455a; }
 
   .drawer-title {
     font-size: 17px;
@@ -373,13 +383,20 @@
   }
 
   .drawer-summary {
-    font-size: 15px;
+    font-size: 14px;
     color: #aaa;
     line-height: 1.7;
     margin-top: 2px;
   }
+  /* ── A안: 구조화 요약 필드 ── */
+  .drawer-category { font-size: 12px; font-weight: 600; color: #8a8aff; letter-spacing: 0.4px; }
+  .drawer-field { display: flex; flex-direction: column; gap: 5px; }
+  .drawer-field-label { font-size: 12px; font-weight: 700; color: #d0d0e0; letter-spacing: 0.2px; }
+  .drawer-field-text { font-size: 14px; color: #a6a6b8; line-height: 1.65; }
+  .drawer-points { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 4px; }
+  .drawer-points li { font-size: 14px; color: #a6a6b8; line-height: 1.55; }
 
-  .drawer-footer { padding: 8px 20px 36px; display: flex; flex-direction: column; gap: 10px; }
+  .drawer-footer { padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 10px; }
 
   .drawer-close-btn {
     display: block;
@@ -527,8 +544,29 @@
       <button class="lang-btn active" id="btnKr">KR</button>
       <button class="lang-btn" id="btnEn">EN</button>
     </div>
+    <div class="drawer-category" id="drawerCategory"></div>
     <div class="drawer-title" id="drawerTitle"></div>
-    <div class="drawer-summary" id="drawerSummary"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-field-text" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">볼 포인트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
   </div>
   <div class="drawer-footer">
     <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
@@ -803,26 +841,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawerEn         = document.getElementById('drawerEn');
   const drawerSource     = document.getElementById('drawerSource');
   const drawerTitle      = document.getElementById('drawerTitle');
-  const drawerSummary    = document.getElementById('drawerSummary');
+  const drawerCategory   = document.getElementById('drawerCategory');
+  const drawerOneline    = document.getElementById('drawerOneline');
+  const drawerDesigner   = document.getElementById('drawerDesigner');
+  const drawerImpact     = document.getElementById('drawerImpact');
+  const drawerPoints     = document.getElementById('drawerPoints');
+  const drawerRecommend  = document.getElementById('drawerRecommend');
   const drawerCta        = document.getElementById('drawerCta');
   const drawerLangToggle = document.getElementById('drawerLangToggle');
   const btnKr            = document.getElementById('btnKr');
   const btnEn            = document.getElementById('btnEn');
 
-  let _titleKr = '', _titleEn = '', _summaryKr = '', _summaryEn = '';
+  const F = { title:{}, oneline:{}, designer:{}, impact:{}, points:{}, recommend:{} };
+
+  function renderPoints(str) {
+    drawerPoints.innerHTML = '';
+    (str || '').split('|').map(s => s.trim()).filter(Boolean).forEach(p => {
+      const li = document.createElement('li'); li.textContent = p; drawerPoints.appendChild(li);
+    });
+  }
+
+  function setField(el, val) {
+    el.textContent = val || '';
+    const wrap = el.closest('.drawer-field');
+    if (wrap) wrap.style.display = (val && val.trim()) ? 'flex' : 'none';
+  }
 
   function setLang(lang) {
-    if (lang === 'kr') {
-      drawerTitle.textContent   = _titleKr;
-      drawerSummary.textContent = _summaryKr;
-      btnKr.classList.add('active');
-      btnEn.classList.remove('active');
-    } else {
-      drawerTitle.textContent   = _titleEn;
-      drawerSummary.textContent = _summaryEn;
-      btnEn.classList.add('active');
-      btnKr.classList.remove('active');
-    }
+    const k = (lang === 'kr') ? 'kr' : 'en';
+    drawerTitle.textContent = F.title[k];
+    setField(drawerOneline, F.oneline[k]);
+    setField(drawerDesigner, F.designer[k]);
+    setField(drawerImpact, F.impact[k]);
+    renderPoints(F.points[k]);
+    const pWrap = drawerPoints.closest('.drawer-field');
+    if (pWrap) pWrap.style.display = drawerPoints.children.length ? 'flex' : 'none';
+    setField(drawerRecommend, F.recommend[k]);
+    btnKr.classList.toggle('active', k === 'kr');
+    btnEn.classList.toggle('active', k === 'en');
   }
 
   btnKr.addEventListener('click', () => setLang('kr'));
@@ -850,18 +906,31 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerEn.style.display = hasEn ? 'block' : 'none';
     drawerSource.textContent = card.querySelector('.card-source')?.textContent || '';
 
-    _titleEn   = card.querySelector('.card-title')?.textContent || '';
-    _summaryEn = card.dataset.summary || '';
-    _titleKr   = card.dataset.titleKr   || _titleEn;
-    _summaryKr = card.dataset.summaryKr || _summaryEn;
+    const d = card.dataset;
+    drawerCategory.textContent = d.category || '';
+    drawerCategory.style.display = d.category ? 'block' : 'none';
 
-    if (hasEn && card.dataset.titleKr) {
+    const baseTitle = card.querySelector('.card-title')?.textContent || '';
+    F.title.en     = baseTitle;
+    F.oneline.en   = d.summary   || '';
+    F.designer.en  = d.designer  || '';
+    F.impact.en    = d.impact    || '';
+    F.points.en    = d.points    || '';
+    F.recommend.en = d.recommend || '';
+
+    F.title.kr     = d.titleKr     || baseTitle;
+    F.oneline.kr   = d.summaryKr   || F.oneline.en;
+    F.designer.kr  = d.designerKr  || F.designer.en;
+    F.impact.kr    = d.impactKr    || F.impact.en;
+    F.points.kr    = d.pointsKr    || F.points.en;
+    F.recommend.kr = d.recommendKr || F.recommend.en;
+
+    if (hasEn && d.titleKr) {
       drawerLangToggle.style.display = 'flex';
       setLang('kr');
     } else {
       drawerLangToggle.style.display = 'none';
-      drawerTitle.textContent   = _titleEn;
-      drawerSummary.textContent = _summaryEn;
+      setLang('kr');
     }
 
     drawerCta.href = card.href;
