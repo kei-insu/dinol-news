@@ -133,7 +133,7 @@
 
 | 용어 | PC | MO | 비고 |
 |---|---|---|---|
-| 타이틀 `gb-header h2` | 42px | 36px | **손글씨 Single Day**, 흰색 |
+| 타이틀 `gb-header h2` | 40px | 32px | **손글씨 Single Day**, 흰색 |
 | 닉네임 `gb-nick` | 14px | 15px | 넓게(flex) |
 | 비밀번호 `gb-pw` | 14px | 15px | **4자리 숫자**, 140px 고정 |
 | 내용 `gb-content` | 14px | 15px | 최대 200자, 카운터 |

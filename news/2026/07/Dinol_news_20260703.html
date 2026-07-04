@@ -542,7 +542,7 @@
     header { margin-bottom: 44px; gap: 4px; }
     .site-title { font-size: 15px; letter-spacing: 3px; }
     .site-sub { font-size: 32px; letter-spacing: -0.5px; }
-    .site-logo { width: 260px; }
+    .site-logo { width: 300px; }
     .site-date { font-size: 13px; letter-spacing: 3px; }
     .section { margin-bottom: 40px; }
     .section-header h2 { font-size: 16px; letter-spacing: 4px; }
@@ -561,10 +561,10 @@
   /* ─────────── 방명록 ─────────── */
   .guestbook { max-width: 640px; margin: 64px auto 0; padding: 0 4px; }
   .gb-header { text-align: center; margin-bottom: 24px; }
-  .gb-header h2 { font-family: 'Single Day', cursive; font-size: 42px; font-weight: 400; letter-spacing: 1px; color: #ffffff; }
+  .gb-header h2 { font-family: 'Single Day', cursive; font-size: 40px; font-weight: 400; letter-spacing: 1px; color: #ffffff; }
   .gb-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
   .gb-namerow { display: flex; gap: 10px; }
-  .gb-namerow .gb-nick { flex: 1 1 auto; width: auto; }
+  .gb-namerow .gb-nick { flex: 1 1 auto; width: auto; min-width: 0; }
   .gb-namerow .gb-pw { flex: 0 0 140px; width: 140px; }
   .gb-nick, .gb-pw, .gb-content {
     background: #141419; border: 1px solid #222230; border-radius: 10px;
@@ -602,6 +602,7 @@
   @media (max-width: 580px) {
     .guestbook { margin-top: 48px; }
     .gb-header h2 { font-size: 32px; letter-spacing: 1px; }
+    .gb-namerow .gb-pw { flex: 0 0 110px; width: 110px; }
     .gb-nick, .gb-pw, .gb-content { font-size: 15px; }
     .gb-entry-nick { font-size: 15px; }
     .gb-entry-body { font-size: 15px; }
@@ -1216,176 +1217,9 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 
-<script>
-(function(){
-  var list=document.getElementById('gbList'),
-      pager=document.getElementById('gbPager'),
-      nick=document.querySelector('.gb-nick'),
-      pw=document.querySelector('.gb-pw'),
-      content=document.querySelector('.gb-content'),
-      submit=document.getElementById('gbSubmit'),
-      count=document.getElementById('gbCount');
-  var PER=10, WINDOW=5, page=1, editingId=null, uid=0;
 
-  // 숫자 4자리만
-  function digitsOnly(el){ el.addEventListener('input',function(){ el.value=el.value.replace(/\D/g,'').slice(0,4); }); }
-  digitsOnly(pw);
 
-  var EMOJI=['😀','😃','😄','😊','🙂','😎','🤓','🧐','🤩','😌','🥰','😉','😆','🤗','😙','🙃','😇','😺','🤠','😸'];
-  function avatar(nick){ var h=0; for(var i=0;i<nick.length;i++){ h=(h*31+nick.charCodeAt(i))>>>0; } return EMOJI[h%EMOJI.length]; }
-  function esc(s){return s.replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];});}
 
-  // 데모용 23개 (실제로는 Firebase에서 10개씩 조회)
-  var entries = []; // Firebase 연동 시 실데이터로 대체
-
-  function totalPages(){ return Math.max(1, Math.ceil(entries.length/PER)); }
-
-  function entryHTML(e){
-    var head='<div class="gb-entry-head"><span class="gb-entry-nick">'+avatar(e.nick)+' '+esc(e.nick)+'</span>'+
-             '<span class="gb-entry-time">'+e.time+'</span>'+
-             '<div class="gb-entry-actions"><button class="gb-act-edit" data-id="'+e.id+'">수정</button><button class="gb-act-del" data-id="'+e.id+'">삭제</button></div></div>';
-    if(editingId===e.id){
-      return '<div class="gb-entry editing" data-id="'+e.id+'">'+head+
-        '<div class="gb-edit-area"><textarea class="gb-edit-text" maxlength="200">'+esc(e.body)+'</textarea>'+
-        '<div class="gb-edit-btns"><button class="gb-edit-cancel">취소</button><button class="gb-edit-save" data-id="'+e.id+'">저장</button></div></div></div>';
-    }
-    return '<div class="gb-entry" data-id="'+e.id+'">'+head+'<div class="gb-entry-body">'+esc(e.body)+'</div></div>';
-  }
-
-  function renderList(){
-    var tp=totalPages(); if(page>tp) page=tp; if(page<1) page=1;
-    var start=(page-1)*PER, items=entries.slice(start, start+PER);
-    if(!items.length){ list.innerHTML='<div class="gb-empty">아직 남겨진 글이 없어요. 첫 이야기를 남겨보세요!</div>'; pager.innerHTML=''; return; }
-    list.innerHTML=items.map(entryHTML).join('');
-    renderPager(tp);
-  }
-
-  function renderPager(tp){
-    pager.innerHTML='';
-    if(tp<=1) return;
-    function mk(label, target, disabled, active, nav){
-      var btn=document.createElement('button');
-      var cls='gb-page-btn'; if(active) cls+=' active';
-      if(nav){ cls+=' gb-page-nav'; if(nav!=='nav') cls+=' '+nav; }
-      btn.className=cls; btn.textContent=label; btn.disabled=!!disabled;
-      if(!disabled&&!active) btn.addEventListener('click',function(){ page=target; renderList(); });
-      pager.appendChild(btn);
-    }
-    mk('«', 1, page===1, false, 'nav');
-    mk('‹', page-1, page===1, false, 'nav-prev');
-    var half=Math.floor(WINDOW/2), s=Math.max(1, page-half), e=Math.min(tp, s+WINDOW-1);
-    s=Math.max(1, e-WINDOW+1);
-    for(var n=s;n<=e;n++){ mk(String(n), n, false, n===page, null); }
-    mk('›', page+1, page===tp, false, 'nav-next');
-    mk('»', tp, page===tp, false, 'nav');
-  }
-
-  // 비번 확인 모달
-  var mOverlay=document.getElementById('gbModalOverlay'), modal=document.getElementById('gbModal'),
-      mTitle=document.getElementById('gbModalTitle'), mPw=document.getElementById('gbModalPw'),
-      mErr=document.getElementById('gbModalErr'), mOk=document.getElementById('gbModalOk'), mCancel=document.getElementById('gbModalCancel');
-  digitsOnly(mPw);
-  mPw.addEventListener('input', function(){ mOk.disabled = !/^\d{4}$/.test(mPw.value); });
-  var pending=null; // {type:'edit'|'delete', id}
-  function openModal(type, id){
-    pending={type:type, id:id};
-    mTitle.textContent = type==='delete' ? '삭제하려면 비밀번호를 입력하세요' : '수정하려면 비밀번호를 입력하세요';
-    mPw.value=''; mErr.textContent=''; mOk.disabled=true;
-    mOverlay.classList.add('show'); modal.classList.add('show'); setTimeout(function(){mPw.focus();},50);
-  }
-  function closeModal(){ mOverlay.classList.remove('show'); modal.classList.remove('show'); pending=null; }
-  function confirmModal(){
-    if(!pending) return;
-    var input=mPw.value.trim();
-    if(!/^\d{4}$/.test(input)){ mErr.textContent='4자리 숫자를 입력하세요.'; return; }
-    var e=entries.find(function(x){return x.id===pending.id;});
-    if(!e){ closeModal(); return; }
-    // 데모: 저장된 비번 있으면 일치 확인, 없으면(시드) 4자리면 통과
-    if(e.pw && input!==e.pw){ mErr.textContent='비밀번호가 일치하지 않습니다.'; return; }
-    var type=pending.type, id=pending.id; closeModal();
-    if(type==='delete'){ entries=entries.filter(function(x){return x.id!==id;}); if(editingId===id) editingId=null; renderList(); }
-    else { editingId=id; renderList(); }
-  }
-  mOk.addEventListener('click', confirmModal);
-  mPw.addEventListener('keydown', function(ev){ if(ev.key==='Enter') confirmModal(); });
-  mCancel.addEventListener('click', closeModal);
-  mOverlay.addEventListener('click', closeModal);
-
-  // 리스트 이벤트 위임 (수정/삭제/저장/취소)
-  list.addEventListener('click', function(ev){
-    var t=ev.target;
-    if(t.classList.contains('gb-act-del')){ openModal('delete', +t.dataset.id); }
-    else if(t.classList.contains('gb-act-edit')){ openModal('edit', +t.dataset.id); }
-    else if(t.classList.contains('gb-edit-cancel')){ editingId=null; renderList(); }
-    else if(t.classList.contains('gb-edit-save')){
-      var id=+t.dataset.id, ta=t.closest('.gb-entry').querySelector('.gb-edit-text');
-      var val=ta.value.trim(); if(!val){ alert('내용을 입력해주세요.'); return; }
-      var e=entries.find(function(x){return x.id===id;}); if(e){ e.body=val; }
-      editingId=null; renderList();
-    }
-  });
-
-  function now(){var d=new Date(),p=function(n){return String(n).padStart(2,'0');};
-    return d.getFullYear()+'. '+p(d.getMonth()+1)+'. '+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes());}
-  function updateSubmit(){ submit.disabled = !(nick.value.trim() && /^\d{4}$/.test(pw.value.trim()) && content.value.trim()); }
-  [nick, pw, content].forEach(function(el){ el.addEventListener('input', updateSubmit); });
-  content.addEventListener('input',function(){count.textContent=content.value.length+' / 200';});
-  updateSubmit();
-  submit.addEventListener('click',function(){
-    var n=nick.value.trim(), b=content.value.trim(), p=pw.value.trim();
-    if(!n){alert('닉네임을 입력해주세요.');return;}
-    if(!/^\d{4}$/.test(p)){alert('비밀번호 4자리(숫자)를 입력해주세요.');return;}
-    if(!b){alert('내용을 입력해주세요.');return;}
-    entries.unshift({id:++uid, nick:n, body:b, pw:p, time:now()});
-    nick.value='';pw.value='';content.value='';count.textContent='0 / 200';
-    page=1; editingId=null; renderList();
-  });
-  renderList();
-})();
-</script>
-
-<script>
-(function(){
-  var seeds=[], i=0;
-  var toast=document.createElement('div'); toast.className='gb-toast'; document.body.appendChild(toast);
-  var tTimer;
-  function showToast(msg){ toast.textContent=msg; toast.classList.add('show');
-    clearTimeout(tTimer); tTimer=setTimeout(function(){toast.classList.remove('show');},1800); }
-
-  var state={};
-  var cards=[].slice.call(document.querySelectorAll('a.card'));
-  cards.forEach(function(card){ state[card.href]={count:0, liked:false}; });
-
-  function paint(likeEl,countEl,st){ likeEl.classList.toggle('liked',st.liked); countEl.textContent=st.count>0?st.count:''; }
-  function renderCard(card){ var st=state[card.href]; paint(card.querySelector('.act-like'),card.querySelector('.act-count'),st); }
-  function doShare(href,title){
-    if(navigator.share){ navigator.share({title:title,url:href}).catch(function(){}); }
-    else if(navigator.clipboard){ navigator.clipboard.writeText(href).then(function(){showToast('링크가 복사되었어요');}).catch(function(){showToast('링크: '+href);}); }
-    else { showToast('링크: '+href); }
-  }
-
-  var currentCard=null;
-  var dLike=document.getElementById('drawerLike'), dShare=document.getElementById('drawerShare'), dCount=document.getElementById('drawerLikeCount');
-  function renderDrawer(){ if(currentCard&&dLike) paint(dLike,dCount,state[currentCard.href]); }
-
-  cards.forEach(function(card){
-    var like=card.querySelector('.act-like'), share=card.querySelector('.act-share');
-    if(like&&share){
-      renderCard(card);
-      like.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation();
-        var st=state[card.href]; st.liked=!st.liked; st.count+=st.liked?1:-1; renderCard(card);
-        if(currentCard&&currentCard.href===card.href) renderDrawer(); });
-      share.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation();
-        doShare(card.href,(card.querySelector('.card-title')||{}).textContent||'디자인 놀이터'); });
-    }
-    card.addEventListener('click',function(){ currentCard=card; renderDrawer(); });
-  });
-
-  if(dLike) dLike.addEventListener('click',function(e){ e.stopPropagation(); if(!currentCard) return;
-    var st=state[currentCard.href]; st.liked=!st.liked; st.count+=st.liked?1:-1; renderDrawer(); renderCard(currentCard); });
-  if(dShare) dShare.addEventListener('click',function(e){ e.stopPropagation(); if(!currentCard) return;
-    doShare(currentCard.href,(currentCard.querySelector('.card-title')||{}).textContent||'디자인 놀이터'); });
-})();
-</script>
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
 </body>
 </html>
