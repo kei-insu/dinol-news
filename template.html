@@ -562,7 +562,7 @@
   /* ─────────── 방명록 ─────────── */
   .guestbook { max-width: 640px; margin: 64px auto 0; padding: 0 4px; }
   .gb-header { text-align: center; margin-bottom: 24px; }
-  .gb-header h2 { font-family: 'Single Day', cursive; font-size: 34px; font-weight: 400; letter-spacing: 1px; color: #ffffff; }
+  .gb-header h2 { font-family: 'Single Day', cursive; font-size: 32px; font-weight: 400; letter-spacing: 1px; color: #ffffff; }
   .gb-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
   .gb-namerow { display: flex; gap: 10px; }
   .gb-namerow .gb-nick { flex: 1 1 auto; width: auto; min-width: 0; }
@@ -572,6 +572,16 @@
     color: #e8e8f0; font-family: inherit; font-size: 14px; padding: 12px 14px; width: 100%;
   }
   .gb-nick::placeholder, .gb-pw::placeholder, .gb-content::placeholder { color: #666; }
+  /* 브라우저 자동완성 배경 강제 제거 (흰 박스 방지) */
+  .gb-nick:-webkit-autofill, .gb-pw:-webkit-autofill, .gb-content:-webkit-autofill,
+  .gb-nick:-webkit-autofill:focus, .gb-pw:-webkit-autofill:focus, .gb-content:-webkit-autofill:focus,
+  .gb-modal-pw:-webkit-autofill, .gb-modal-pw:-webkit-autofill:focus {
+    -webkit-text-fill-color: #e8e8f0 !important;
+    -webkit-box-shadow: 0 0 0 1000px #141419 inset !important;
+    box-shadow: 0 0 0 1000px #141419 inset !important;
+    caret-color: #e8e8f0;
+    transition: background-color 9999s ease-in-out 0s;
+  }
   .gb-nick:focus, .gb-pw:focus, .gb-content:focus { outline: none; border-color: #33333f; }
   .gb-content { min-height: 96px; resize: vertical; line-height: 1.6; }
   .gb-row { display: flex; justify-content: space-between; align-items: center; }
@@ -602,7 +612,7 @@
   .gb-empty { text-align: center; color: #666; font-size: 18px; padding: 20px 0; margin-top: 44px; }
   @media (max-width: 580px) {
     .guestbook { margin-top: 48px; }
-    .gb-header h2 { font-size: 34px; letter-spacing: 1px; }
+    .gb-header h2 { font-size: 32px; letter-spacing: 1px; }
     .gb-namerow .gb-pw { flex: 0 0 110px; width: 110px; }
     .gb-nick, .gb-pw, .gb-content { font-size: 15px; }
     .gb-entry-nick { font-size: 15px; }
@@ -931,8 +941,8 @@
   <div class="gb-header"><h2>디놀 톡톡</h2></div>
   <div class="gb-form">
     <div class="gb-namerow">
-      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="20">
-      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="20" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4" autocomplete="new-password">
     </div>
     <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
     <div class="gb-row"><span></span><span class="gb-count" id="gbCount">0 / 200</span></div>
@@ -946,7 +956,7 @@
 <div class="gb-modal-overlay" id="gbModalOverlay"></div>
 <div class="gb-modal" id="gbModal">
   <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
-  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호">
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
   <div class="gb-modal-err" id="gbModalErr"></div>
   <div class="gb-modal-btns">
     <button class="gb-modal-cancel" id="gbModalCancel">취소</button>

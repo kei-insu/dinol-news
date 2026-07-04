@@ -161,8 +161,8 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
 
   const EMOJI = ["😀","😃","😄","😊","🙂","😎","🤓","🧐","🤩","😌","🥰","😉","😆","🤗","😙","🙃","😇","😺","🤠","😸"];
   function avatar(nk) { let h = 0; for (let i = 0; i < nk.length; i++) h = (h * 31 + nk.charCodeAt(i)) >>> 0; return EMOJI[h % EMOJI.length]; }
-  function digitsOnly(el) { el && el.addEventListener("input", () => { el.value = el.value.replace(/\D/g, "").slice(0, 4); }); }
-  digitsOnly(pw);
+  function digitsOnly(el, max = 4) { el && el.addEventListener("input", () => { el.value = el.value.replace(/\D/g, "").slice(0, max); }); }
+  digitsOnly(pw, 4);
 
   function fmtTime(ts) {
     const d = ts && ts.toDate ? ts.toDate() : new Date();
@@ -246,8 +246,8 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         mErr = document.getElementById("gbModalErr"),
         mOk = document.getElementById("gbModalOk"),
         mCancel = document.getElementById("gbModalCancel");
-  digitsOnly(mPw);
-  if (mPw) mPw.addEventListener("input", () => { mOk.disabled = !/^\d{4}$/.test(mPw.value); });
+  digitsOnly(mPw, 6);
+  if (mPw) mPw.addEventListener("input", () => { mOk.disabled = !/^\d{4,6}$/.test(mPw.value); });
   let pending = null; // {type, id}
   function openModal(type, id) {
     pending = { type, id };
@@ -259,7 +259,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   async function confirmModal() {
     if (!pending) return;
     const input = mPw.value.trim();
-    if (!/^\d{4}$/.test(input)) { mErr.textContent = "4자리 숫자를 입력하세요."; return; }
+    if (!/^\d{4,6}$/.test(input)) { mErr.textContent = "비밀번호를 입력하세요."; return; }
     const e = entries.find(x => x.id === pending.id);
     if (!e) { closeModal(); return; }
     const inputHash = await sha256(input);
