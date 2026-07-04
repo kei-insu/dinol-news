@@ -416,7 +416,8 @@
     #gbModal { width: 340px; padding: 28px 24px; }
     #gbModal .gb-modal-title { font-size: 18px; margin-bottom: 18px; }
     #gbModal .gb-modal-pw { font-size: 18px; padding: 15px; letter-spacing: 8px; }
-    #gbModal .gb-modal-btns { gap: 10px; margin-top: 16px; }
+    #gbModal .gb-modal-err { font-size: 14px; margin-top: 14px; min-height: 20px; }
+    #gbModal .gb-modal-btns { gap: 10px; margin-top: 8px; }
     #gbModal .gb-modal-btns button { font-size: 16px; padding: 14px; min-height: 48px; }
   }
 
@@ -561,7 +562,7 @@
   /* ─────────── 방명록 ─────────── */
   .guestbook { max-width: 640px; margin: 64px auto 0; padding: 0 4px; }
   .gb-header { text-align: center; margin-bottom: 24px; }
-  .gb-header h2 { font-family: 'Single Day', cursive; font-size: 40px; font-weight: 400; letter-spacing: 1px; color: #ffffff; }
+  .gb-header h2 { font-family: 'Single Day', cursive; font-size: 34px; font-weight: 400; letter-spacing: 1px; color: #ffffff; }
   .gb-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
   .gb-namerow { display: flex; gap: 10px; }
   .gb-namerow .gb-nick { flex: 1 1 auto; width: auto; min-width: 0; }
@@ -601,7 +602,7 @@
   .gb-empty { text-align: center; color: #666; font-size: 18px; padding: 20px 0; margin-top: 44px; }
   @media (max-width: 580px) {
     .guestbook { margin-top: 48px; }
-    .gb-header h2 { font-size: 32px; letter-spacing: 1px; }
+    .gb-header h2 { font-size: 34px; letter-spacing: 1px; }
     .gb-namerow .gb-pw { flex: 0 0 110px; width: 110px; }
     .gb-nick, .gb-pw, .gb-content { font-size: 15px; }
     .gb-entry-nick { font-size: 15px; }
@@ -669,8 +670,8 @@
     font-family: inherit; font-size: 15px; padding: 12px 14px; text-align: center; letter-spacing: 6px; box-sizing: border-box; }
   .gb-modal-pw::placeholder { color: #666; letter-spacing: normal; }
   .gb-modal-pw:focus { outline: none; border-color: #33333f; }
-  .gb-modal-err { color: #F64444; font-size: 12px; text-align: center; margin-top: 8px; min-height: 15px; }
-  .gb-modal-btns { display: flex; gap: 8px; }
+  .gb-modal-err { color: #F64444; font-size: 13px; text-align: center; margin-top: 12px; margin-bottom: 4px; min-height: 18px; line-height: 1.4; }
+  .gb-modal-btns { display: flex; gap: 8px; margin-top: 6px; }
   .gb-modal-btns button { flex: 1; border-radius: 10px; font-size: 14px; padding: 10px; cursor: pointer; font-family: inherit; }
   .gb-modal-cancel { background: #23232e; border: none; color: #b0b0bc; }
   .gb-modal-cancel:hover { background: #2c2c3a; }
@@ -945,7 +946,7 @@
 <div class="gb-modal-overlay" id="gbModalOverlay"></div>
 <div class="gb-modal" id="gbModal">
   <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
-  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="4" placeholder="4자리">
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호">
   <div class="gb-modal-err" id="gbModalErr"></div>
   <div class="gb-modal-btns">
     <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
