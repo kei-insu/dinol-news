@@ -100,7 +100,7 @@ Write 도구로 `/home/user/Dinol_news_YYYYMMDD.html` 저장. **텍스트 요약
     <div class="card-source">[출처] · [YYYY. MM. DD]</div>
     <div class="card-title">[제목]</div>
   </div>
-  <div class="card-footer"><span class="arrow">↗</span></div>
+  <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
 </a>
 ```
 
@@ -123,7 +123,7 @@ Write 도구로 `/home/user/Dinol_news_YYYYMMDD.html` 저장. **텍스트 요약
     <div class="card-source">[Source] · [YYYY. MM. DD]</div>
     <div class="card-title">[English Title]</div>
   </div>
-  <div class="card-footer"><span class="arrow">↗</span></div>
+  <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
 </a>
 ```
 
@@ -150,7 +150,7 @@ Write 도구로 `/home/user/Dinol_news_YYYYMMDD.html` 저장. **텍스트 요약
     <div class="card-source">[출처] · [YYYY. MM. DD]</div>
     <div class="card-title">[제목]</div>
   </div>
-  <div class="card-footer"><span class="arrow">↗</span></div>
+  <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
 </a>
 ```
 

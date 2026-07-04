@@ -15,9 +15,10 @@
 <!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scrollbar-gutter: stable; }
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
@@ -55,6 +56,13 @@
     line-height: 1;
     margin-top: 4px;
   }
+  .site-logo {
+    display: block;
+    width: 360px;
+    max-width: 86%;
+    height: auto;
+    margin: -6px auto -2px;
+  }
 
   .header-sep {
     width: 1px;
@@ -71,7 +79,7 @@
   }
 
   /* ── SECTION ── */
-  .section { margin-bottom: 56px; }
+  .section { max-width: 1130px; margin-left: auto; margin-right: auto; margin-bottom: 56px; }
 
   .section-header {
     display: flex;
@@ -177,13 +185,13 @@
     z-index: 2;
     font-size: 12px;
     font-weight: 400;
-    font-style: italic;
     letter-spacing: 0.5px;
     padding: 2px 7px;
     border-radius: 5px;
     background: rgba(0,0,0,0.7);
     color: #ffffff;
     border: 2px solid #000000;
+    font-style: italic;
   }
 
   /* gradients */
@@ -283,6 +291,76 @@
   }
   .footer-link:hover { color: #999; }
 
+  /* ── 아카이브 · 오픈채팅방 버튼 (동일 폭, 세로 정렬) ── */
+  .archive-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;                 /* 모바일 터치 간격 가이드(Material ≥8dp) 충족 */
+    margin-top: 8px;
+  }
+  .archive-cta, .kakao-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;              /* 두 버튼 가로 길이 동일 */
+    max-width: 100%;
+    min-height: 48px;          /* 터치 타깃 가이드(Apple 44 / Material 48) 충족 */
+    padding: 0 16px;           /* 좌우 여백 (Material 버튼 표준 ~16dp) */
+    border-radius: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
+    font-size: 16px;
+  }
+  /* 아카이브: 그레이 배경 + 검정 텍스트 */
+  .archive-cta {
+    font-size: 16px;
+    color: #191919;
+    background: #c9ccd4;
+    border: none;
+    letter-spacing: 0.2px;
+  }
+  .archive-cta:hover { background: #d9dce4; }
+  /* 오픈채팅방: 카카오 옐로우 + 검정 텍스트 */
+  .kakao-cta {
+    font-size: 16px;
+    color: #191919;
+    background: #FEE500;
+    border: none;
+    letter-spacing: 0.2px;
+  }
+  .kakao-cta:hover { background: #ffe94d; }
+
+  /* ── 맨 위로 플로팅 버튼 (모바일 전용) ── */
+  .to-top {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 800;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #2c2c40;
+    background: rgba(19, 19, 27, 0.86);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: none;              /* 데스크톱 및 초기 상태: 숨김 */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .18s ease, transform .18s ease, border-color .14s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  }
+  .to-top:hover { border-color: #3c3c58; color: #fff; }
+  .to-top.show { opacity: 1; transform: translateY(0); }
+
   /* ── DRAWER ── */
   .drawer-overlay {
     display: none;
@@ -333,6 +411,18 @@
     }
     .drawer.open { transform: translateY(0); }
     .drawer .drawer-footer { padding: 8px 20px calc(28px + env(safe-area-inset-bottom, 0px)); }
+    .drawer .drawer-source { font-size: 13px; }
+    .drawer .drawer-category { font-size: 13px; }
+    .drawer .drawer-title { font-size: 18px; }
+    .drawer .drawer-field-label { font-size: 13px; }
+    .drawer .drawer-field-text { font-size: 15px; }
+    .drawer .drawer-points li { font-size: 15px; }
+    .drawer .lang-btn { font-size: 12px; padding: 6px 14px; min-height: 0; min-width: 46px; border-radius: 5px; }
+    #gbModal { width: 340px; padding: 28px 24px; }
+    #gbModal .gb-modal-title { font-size: 18px; margin-bottom: 18px; }
+    #gbModal .gb-modal-pw { font-size: 18px; padding: 15px; letter-spacing: 8px; }
+    #gbModal .gb-modal-btns { gap: 10px; margin-top: 16px; }
+    #gbModal .gb-modal-btns button { font-size: 16px; padding: 14px; min-height: 48px; }
   }
 
   .drawer-header {
@@ -360,7 +450,7 @@
     padding: 14px 20px 16px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 18px;
     flex: 1;
     overflow-y: auto;
     min-height: 0;
@@ -390,43 +480,45 @@
   }
   /* ── A안: 구조화 요약 필드 ── */
   .drawer-category { font-size: 12px; font-weight: 600; color: #8a8aff; letter-spacing: 0.4px; }
-  .drawer-field { display: flex; flex-direction: column; gap: 5px; }
+  .drawer-field { display: flex; flex-direction: column; gap: 3px; }
   .drawer-field-label { font-size: 12px; font-weight: 700; color: #d0d0e0; letter-spacing: 0.2px; }
-  .drawer-field-text { font-size: 14px; color: #a6a6b8; line-height: 1.65; }
+  .drawer-field-text { font-size: 14px; color: #a6a6b8; line-height: 1.5; }
   .drawer-points { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 4px; }
-  .drawer-points li { font-size: 14px; color: #a6a6b8; line-height: 1.55; }
+  .drawer-points li { font-size: 14px; color: #a6a6b8; line-height: 1.45; }
 
   .drawer-footer { padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 10px; }
 
   .drawer-close-btn {
     display: block;
     width: 100%;
-    background: none;
-    border: 1px solid #2c2c48;
-    color: #888;
-    padding: 14px;
+    background: #23232e;
+    border: none;
+    color: #b0b0bc;
+    padding: 12px;
     border-radius: 10px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
   }
-  .drawer-close-btn:hover { background: #1a1a28; color: #ccc; }
+  .drawer-close-btn:hover { background: #2c2c3a; color: #ccc; }
 
+  .drawer-toolbar { display: flex; align-items: center; margin-bottom: 6px; }
+  .drawer-lang-toggle { margin-left: auto; }
   .drawer-lang-toggle {
     display: flex;
     gap: 4px;
     margin-bottom: 2px;
   }
+  .lang-btn:not(.active):hover { background: #2c2c3e; border-color: #4a4a66; color: #ccc; }
   .lang-btn {
     background: none;
     border: 1px solid #2c2c48;
     color: #666;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    padding: 3px 8px;
-    border-radius: 4px;
+    padding: 5px 11px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background 0.12s, color 0.12s;
   }
@@ -436,6 +528,7 @@
     border-color: #3c3c58;
   }
 
+  .drawer-cta:hover { background: #26263a; border-color: #3a3a52; }
   .drawer-cta {
     display: block;
     background: #1e1e2e;
@@ -444,9 +537,8 @@
     text-align: center;
     padding: 14px;
     border-radius: 10px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1;
+    font-size: 15px;
+    font-weight: 600;
     text-decoration: none;
   }
 
@@ -455,52 +547,140 @@
     header { margin-bottom: 44px; gap: 4px; }
     .site-title { font-size: 15px; letter-spacing: 3px; }
     .site-sub { font-size: 32px; letter-spacing: -0.5px; }
+    .site-logo { width: 260px; }
     .site-date { font-size: 11px; letter-spacing: 3px; }
     .section { margin-bottom: 40px; }
     .section-header h2 { font-size: 16px; letter-spacing: 4px; }
     .grid { grid-template-columns: 1fr; gap: 10px; }
     .thumb { height: 110px; }
-    .thumb-label { font-size: 26px; letter-spacing: 5px; }
+    .thumb-label { font-size: 27px; letter-spacing: 5px; }
     .card-source { font-size: 12px; }
     .card-title { font-size: 17px; }
-    .thumb-en { font-size: 13px; }
-    .footer-copy { font-size: 13px; }
-    .footer-notice { font-size: 13px; }
+    .thumb-en { font-size: 14px; }
+    .footer-copy { font-size: 14px; }
+    .footer-notice { font-size: 14px; }
+    .footer-link { font-size: 17px; }
+    .to-top { display: flex; }   /* 모바일에서만 노출 (표시는 JS가 .show로 제어) */
   }
 
-  /* ── 아카이브 · 오픈채팅방 버튼 (동일 폭, 세로 정렬) ── */
-  .archive-cta-wrap {
-    display: flex; flex-direction: column; align-items: center;
-    gap: 12px; margin-top: 8px;
+  /* ─────────── 방명록 ─────────── */
+  .guestbook { max-width: 640px; margin: 64px auto 0; padding: 0 4px; }
+  .gb-header { text-align: center; margin-bottom: 24px; }
+  .gb-header h2 { font-family: 'Single Day', cursive; font-size: 42px; font-weight: 400; letter-spacing: 1px; color: #ffffff; }
+  .gb-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+  .gb-namerow { display: flex; gap: 10px; }
+  .gb-namerow .gb-nick { flex: 1 1 auto; width: auto; }
+  .gb-namerow .gb-pw { flex: 0 0 140px; width: 140px; }
+  .gb-nick, .gb-pw, .gb-content {
+    background: #141419; border: 1px solid #222230; border-radius: 10px;
+    color: #e8e8f0; font-family: inherit; font-size: 14px; padding: 12px 14px; width: 100%;
   }
-  .archive-cta, .kakao-cta {
+  .gb-nick::placeholder, .gb-pw::placeholder, .gb-content::placeholder { color: #666; }
+  .gb-nick:focus, .gb-pw:focus, .gb-content:focus { outline: none; border-color: #33333f; }
+  .gb-content { min-height: 96px; resize: vertical; line-height: 1.6; }
+  .gb-row { display: flex; justify-content: space-between; align-items: center; }
+  .gb-count { font-size: 11px; color: #666; }
+  .gb-captcha {
+    height: 78px; border: 1px dashed #33333f; border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
-    width: 240px; max-width: 100%; min-height: 48px; padding: 0 16px;
-    border-radius: 24px; font-weight: 500; text-decoration: none;
-    box-sizing: border-box;
-    transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
-    font-size: 18px;
+    color: #666; font-size: 13px; background: rgba(255,255,255,0.02); letter-spacing: 0.3px;
   }
-  .archive-cta { font-size: 16px; color: #191919; background: #c9ccd4; border: none; letter-spacing: 0.2px; }
-  .archive-cta:hover { transform: translateY(-1px); filter: brightness(0.97); box-shadow: 0 6px 18px rgba(201,204,212,0.14); }
-  .kakao-cta { font-size: 16px; color: #191919; background: #FEE500; border: none; letter-spacing: 0.2px; }
-  .kakao-cta:hover { transform: translateY(-1px); filter: brightness(0.97); box-shadow: 0 6px 18px rgba(254,229,0,0.18); }
+  .gb-submit {
+    align-self: center; width: 240px; max-width: 100%; min-height: 48px;
+    background: #c9ccd4; color: #191919; border: none; border-radius: 24px;
+    font-size: 16px; font-weight: 500; cursor: pointer; margin-top: 4px;
+    transition: background .15s, color .15s, opacity .15s;
+  }
+  .gb-submit:not(:disabled):hover { background: #d9dce4; }
+  .gb-submit:disabled { background: #2a2a32; color: #666; cursor: not-allowed; }
+  .gb-submit.active { background: #3D3894; color: #FF7F3E; cursor: pointer; }
+  .gb-submit.active:hover { background: #47419f; }
+  .gb-list { display: flex; flex-direction: column; gap: 12px; }
+  .gb-entry { background: #191922; border: 1px solid #222230; border-radius: 14px; padding: 14px 16px; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+  .gb-entry:not(.editing):hover { transform: translateY(-3px); border-color: #2c2c40; box-shadow: 0 10px 36px rgba(0,0,0,0.5); }
+  .gb-entry-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+  .gb-entry-nick { font-size: 14px; font-weight: 700; color: #ffffff; }
+  .gb-emoji { font-size: 15px; margin-right: 1px; }
+  .gb-entry-time { font-size: 11px; color: #888; }
+  .gb-entry-body { font-size: 14px; color: #a6a6b8; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+  .gb-empty { text-align: center; color: #666; font-size: 13px; padding: 20px 0; }
+  @media (max-width: 580px) {
+    .guestbook { margin-top: 48px; }
+    .gb-header h2 { font-size: 36px; letter-spacing: 1px; }
+    .gb-nick, .gb-pw, .gb-content { font-size: 15px; }
+    .gb-entry-nick { font-size: 15px; }
+    .gb-entry-body { font-size: 15px; }
+    .gb-entry-time { font-size: 12px; }
+    .gb-count { font-size: 12px; }
+    .gb-pagination .gb-page-btn { font-size: 15px; min-width: 44px; height: 44px; }
+    .gb-entry-actions .gb-act-edit, .gb-entry-actions .gb-act-del { min-height: 44px; min-width: 44px; font-size: 16px; padding: 0 12px; }
+  }
 
-  /* ── 맨 위로 플로팅 버튼 (모바일 전용) ── */
-  .to-top {
-    position: fixed; right: 16px; bottom: 16px; z-index: 800;
-    width: 44px; height: 44px; border-radius: 50%;
-    border: 1px solid #2c2c40; background: rgba(19,19,27,0.86);
-    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-    color: #ddd; font-size: 18px; line-height: 1; cursor: pointer;
-    display: none; align-items: center; justify-content: center;
-    opacity: 0; transform: translateY(8px);
-    transition: opacity .18s ease, transform .18s ease, border-color .14s ease;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.45);
-  }
-  .to-top:hover { border-color: #3c3c58; color: #fff; }
-  .to-top.show { opacity: 1; transform: translateY(0); }
-  @media (max-width: 580px) { .to-top { display: flex; } }
+  /* ─────────── 카드 좋아요·공유 액션바 ─────────── */
+  .card-footer { justify-content: space-between; }
+  .card-actions { display: flex; align-items: center; gap: 15px; }
+  .act { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #8a8a99; transition: color .15s ease, transform .1s ease; }
+  .act svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+  .act:hover { color: #c4c4d0; }
+  .act:active { transform: scale(0.88); }
+  .act-count { font-size: 12px; color: #8a8a99; min-width: 6px; }
+  .act-like.liked { color: #ff7f3e; }
+  .act-like.liked svg { fill: #ff7f3e; stroke: #ff7f3e; }
+  .act-like.liked .act-count { color: #ffffff; }
+  .gb-toast { position: fixed; left: 50%; bottom: 32px; transform: translateX(-50%) translateY(20px);
+    background: #23232e; color: #e8e8f0; font-size: 13px; padding: 10px 18px; border-radius: 22px;
+    border: 1px solid #33333f; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 2000; }
+  .gb-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ─────────── 페이지네이션 (네이버식: 번호=플레인, 화살표=구분) ─────────── */
+  .gb-pagination { display: flex; justify-content: center; align-items: center; gap: 2px; margin-top: 28px; flex-wrap: wrap; }
+  .gb-page-btn { min-width: 34px; height: 34px; padding: 0 10px; background: none; border: none; color: #8a8a99;
+    font-size: 14px; cursor: pointer; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; transition: color .12s, background .12s; }
+  .gb-page-btn:hover:not(:disabled) { color: #ffffff; background: #191922; }
+  .gb-page-btn.active { color: #ffffff; font-weight: 700; position: relative; }
+  .gb-page-btn.active::after { content: ''; position: absolute; left: 9px; right: 9px; bottom: 4px; height: 2px; background: #ff7f3e; border-radius: 2px; }
+  /* 화살표: 테두리 있는 버튼 + 번호와 간격 */
+  .gb-page-btn.gb-page-nav { border: 1px solid #222230; background: #191922; color: #a6a6b8; font-size: 13px; }
+  .gb-page-btn.gb-page-nav:hover:not(:disabled) { border-color: #33333f; color: #ffffff; background: #191922; }
+  .gb-page-nav.nav-prev { margin-right: 8px; }
+  .gb-page-nav.nav-next { margin-left: 8px; }
+  .gb-page-btn:disabled { opacity: 0.3; cursor: default; }
+
+  /* ─────────── 디놀 톡톡: 수정/삭제 · 인라인 편집 · 비번 모달 ─────────── */
+  .gb-entry-head { position: relative; }
+  .gb-entry-actions { margin-left: auto; display: flex; gap: 6px; }
+  .gb-act-edit, .gb-act-del { background: none; border: none; color: #5c5c68; font-size: 12px; cursor: pointer; padding: 4px 8px; font-family: inherit; display: inline-flex; align-items: center; justify-content: center; }
+  .gb-act-edit:hover { color: #ffffff; }
+  .gb-act-del:hover { color: #ffffff; }
+  .gb-edit-area { margin-top: 10px; }
+  .gb-edit-text { width: 100%; background: #141419; border: 1px solid #33333f; border-radius: 8px; color: #e8e8f0;
+    font-family: inherit; font-size: 14px; padding: 10px 12px; min-height: 72px; resize: vertical; line-height: 1.6; box-sizing: border-box; }
+  .gb-edit-text:focus { outline: none; border-color: #4a4a5c; }
+  .gb-edit-btns { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+  .gb-edit-btns button { border-radius: 8px; font-size: 13px; padding: 7px 16px; cursor: pointer; font-family: inherit; }
+  .gb-edit-cancel { background: #23232e; border: none; color: #b0b0bc; }
+  .gb-edit-cancel:hover { background: #2c2c3a; }
+  .gb-edit-save { background: #c9ccd4; border: none; color: #191919; font-weight: 700; }
+  /* 비번 확인 모달 */
+  .gb-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 3000; }
+  .gb-modal-overlay.show { opacity: 1; pointer-events: auto; }
+  .gb-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-46%); width: 320px; max-width: calc(100% - 40px);
+    background: #191922; border: 1px solid #2c2c40; border-radius: 16px; padding: 24px 22px; z-index: 3001;
+    opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
+  .gb-modal.show { opacity: 1; pointer-events: auto; transform: translate(-50%,-50%); }
+  .gb-modal-title { font-size: 16px; font-weight: 700; color: #fff; text-align: center; margin-bottom: 16px; }
+  .gb-modal-pw { width: 100%; background: #141419; border: 1px solid #222230; border-radius: 10px; color: #e8e8f0;
+    font-family: inherit; font-size: 15px; padding: 12px 14px; text-align: center; letter-spacing: 6px; box-sizing: border-box; }
+  .gb-modal-pw::placeholder { color: #666; letter-spacing: normal; }
+  .gb-modal-pw:focus { outline: none; border-color: #33333f; }
+  .gb-modal-err { color: #F64444; font-size: 12px; text-align: center; margin-top: 8px; min-height: 15px; }
+  .gb-modal-btns { display: flex; gap: 8px; }
+  .gb-modal-btns button { flex: 1; border-radius: 10px; font-size: 14px; padding: 10px; cursor: pointer; font-family: inherit; }
+  .gb-modal-cancel { background: #23232e; border: none; color: #b0b0bc; }
+  .gb-modal-cancel:hover { background: #2c2c3a; }
+  .gb-modal-ok { background: #c9ccd4; border: none; color: #191919; font-weight: 700; cursor: pointer; transition: background .15s; }
+  .gb-modal-ok:not(:disabled):hover { background: #d9dce4; }
+  .gb-modal-ok:disabled { background: #2a2a32; color: #666; cursor: not-allowed; }
 </style>
 </head>
 <body>
@@ -510,7 +690,7 @@
   디자인 놀이터 — 콘텐츠 수집 정책
   ════════════════════════════════════════════════════════
   [크롤링 기간]
-  · 해당일 + 전일 (2026-07-01 ~ 2026-07-02)
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
 
   [크롤링 범위]
   · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
@@ -518,13 +698,24 @@
 
   [언어 비율]
   · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
 
-  [검증 참고사항]
-  · 이 세션의 아웃바운드 네트워크 정책상 기사 원문 페이지에 대한
-    직접 WebFetch가 차단되어(프록시 403) og:image 추출이
-    불가능했습니다. 이에 따라 모든 카드는 그라디언트 썸네일로
-    대체했고, 날짜·내용은 WebSearch 결과(복수 소스 교차 확인)를
-    근거로 작성했습니다.
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
   ════════════════════════════════════════════════════════
 -->
 
@@ -540,9 +731,15 @@
     <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
   </div>
   <div class="drawer-body">
-    <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
-      <button class="lang-btn active" id="btnKr">KR</button>
-      <button class="lang-btn" id="btnEn">EN</button>
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
     </div>
     <div class="drawer-category" id="drawerCategory"></div>
     <div class="drawer-title" id="drawerTitle"></div>
@@ -577,7 +774,7 @@
 <!-- ── HEADER ── -->
 <header>
   <div class="site-title">디자인 놀이터</div>
-  <div class="site-sub">AI &amp; Design News</div>
+  <img class="site-logo" src="./assets/ai-design-news.png" alt="AI & Design News">
   <div class="header-sep"></div>
   <div class="site-date">July 2, 2026</div>
 </header>
@@ -600,7 +797,7 @@
         <div class="card-source">AI타임스 · 2026. 07. 01</div>
         <div class="card-title">앤트로픽, '페이블 5' 2일부터 복구...미 정부 수출 통제 철회</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://zdnet.co.kr/view/?no=20260701161645" target="_blank" data-summary="과학기술정보통신부가 피지컬 AI 분야에서 향후 3년을 '골든타임'으로 규정하고 집중 육성 전략을 발표했습니다. 한국을 피지컬 AI 기술을 수출하는 국가로 도약시키겠다는 목표를 제시했습니다.">
@@ -612,7 +809,7 @@
         <div class="card-source">ZDNet Korea · 2026. 07. 01</div>
         <div class="card-title">과기정통부 "피지컬AI 수출하는 나라로"...3년 내 집중육성</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.etnews.com/20260701000364" target="_blank" data-summary="보건복지부가 엔비디아 B200 GPU를 활용한 차세대 AI 인프라로 공공의료 AI 클라우드를 구축하고 공공의료 AI 생태계 조성에 나섭니다. 의료 데이터 분석과 진단 지원 등에 AI 기술을 확대 적용할 계획입니다.">
@@ -624,7 +821,7 @@
         <div class="card-source">전자신문 · 2026. 07. 01</div>
         <div class="card-title">복지부, 엔비디아 'B200' 기반 공공의료 AI 생태계 조성</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://techcrunch.com/2026/07/01/gemini-spark-googles-agentic-assistant-is-now-available-on-mac/" target="_blank" data-summary-kr="구글의 AI 에이전트 '제미니 스파크'가 맥(Mac) 데스크톱 앱에 정식 탑재됐습니다. 실시간 주제 업데이트와 구글 태스크·킵 등 앱 연동 기능이 새롭게 추가됐습니다." data-summary="Google's agentic assistant Gemini Spark is now available as a Mac desktop app, adding real-time topic updates and integrations with Google Tasks and Keep." data-title-kr="구글의 AI 에이전트 '제미니 스파크', 맥 데스크톱 앱에 정식 출시">
@@ -637,7 +834,7 @@
         <div class="card-source">TechCrunch · 2026. 07. 01</div>
         <div class="card-title">Gemini Spark, Google's agentic assistant, is now available on Mac</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/" target="_blank" data-summary-kr="클라우드플레어가 오는 9월 15일부터 광고가 게재된 페이지에서 검색·에이전트·학습 기능이 혼합된 'mixed-use' 크롤러를 기본적으로 차단하는 새 정책을 발표했습니다. AI 기업들이 퍼블리셔 콘텐츠 이용에 대가를 지불하도록 유도하는 조치입니다." data-summary="From September 15, Cloudflare will block mixed-use crawlers on ad-served pages by default, pushing AI companies to pay for publishers' content." data-title-kr="클라우드플레어, AI 기업에 퍼블리셔 콘텐츠 이용료 부과하는 새 정책 발표">
@@ -650,7 +847,7 @@
         <div class="card-source">TechCrunch · 2026. 07. 01</div>
         <div class="card-title">Cloudflare's new policy pushes AI companies to pay for publishers' content</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026" target="_blank" data-summary-kr="2026년 7월 1일 기준 AI 업계의 15대 주요 뉴스를 정리한 영문 브리핑입니다. 앤트로픽 클로드 소넷5 출시, 스페이스X의 리플렉션AI 컴퓨트 임대 계약 등 최신 동향을 다룹니다." data-summary="A daily roundup of the 15 biggest AI stories, including Anthropic's Claude Sonnet 5 launch and SpaceX's compute lease with Reflection AI." data-title-kr="AI 뉴스 투데이 — 2026년 7월 1일 15대 주요 소식">
@@ -663,7 +860,7 @@
         <div class="card-source">BuildFastWithAI · 2026. 07. 01</div>
         <div class="card-title">AI News Today July 1, 2026: 15 Biggest Stories</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
   </div>
@@ -687,7 +884,7 @@
         <div class="card-source">뉴시스 · 2026. 07. 01</div>
         <div class="card-title">현대카드, 독자브랜드 '알파벳카드' 론칭…"자유로운 정체성"</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.mt.co.kr/estate/2026/07/01/2026070109363633339" target="_blank" data-summary="서울시가 여의도공원 재조성 국제설계공모에서 '함께 자라는 여의도공원'을 최종 당선작으로 선정했습니다. 한강과 연계한 문화공원으로 탈바꿈시키는 설계안이 공개됐습니다.">
@@ -699,7 +896,7 @@
         <div class="card-source">머니투데이 · 2026. 07. 01</div>
         <div class="card-title">여의도공원, 한강 품은 문화공원으로 재탄생…설계 당선작 공개</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.etnews.com/20260701000152" target="_blank" data-summary="제네시스가 '2027년형 GV70' 연식 변경과 함께 스포티한 감성을 극대화한 신규 디자인 패키지 '그래파이트 패키지'를 출시했습니다. 다이내믹한 디자인 콘셉트를 앞세운 것이 특징입니다.">
@@ -711,7 +908,7 @@
         <div class="card-source">전자신문 · 2026. 07. 01</div>
         <div class="card-title">제네시스, '2027 GV70' '그래파이트 패키지' 출시</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.dezeen.com/2026/07/01/tokyo-tomi-hotel-ginza-keiji-ashizawa-design/" target="_blank" data-summary-kr="일본 디자이너 아시자와 케이지가 도쿄의 옛 호스텔을 개조해 객실 8개 규모의 부티크 호텔 '토미 호텔 긴자'로 재탄생시켰습니다. 층마다 하나의 스위트만 배치해 '안목 있는 친구의 집'에 머무는 듯한 경험을 제공합니다." data-summary="Designer Keiji Ashizawa converted a former Tokyo hostel into an eight-room boutique hotel, placing one suite per floor for an intimate, home-like stay." data-title-kr="'안목 있는 친구의 집' 같은 도쿄 8객실 부티크 호텔">
@@ -724,7 +921,7 @@
         <div class="card-source">Dezeen · 2026. 07. 01</div>
         <div class="card-title">Eight-room Tokyo hotel designed to feel like staying "at the home of a tasteful friend"</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.archdaily.com/1042771/the-building-in-motion-how-vertical-mobility-is-redefining-contemporary-architecture" target="_blank" data-summary-kr="1743년 베르사유 궁전에 설치된 '나는 의자'부터 현대 건축까지 수직 이동 장치의 역사를 조명하는 에디토리얼입니다. 수직 모빌리티가 현대 건축의 공간 경험을 어떻게 재정의하는지 다룹니다." data-summary="An editorial tracing vertical mobility from Versailles' 1743 flying chair to today, exploring how it redefines spatial experience in modern architecture." data-title-kr="움직이는 건축 — 수직 이동이 현대 건축을 재정의하는 방식">
@@ -737,7 +934,7 @@
         <div class="card-source">ArchDaily · 2026. 07. 01</div>
         <div class="card-title">The Building in Motion: How Vertical Mobility Is Redefining Contemporary Architecture</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.dezeen.com/2026/07/01/velo-layer-andreu-world-dezeen-showroom/" target="_blank" data-summary-kr="디자인 스튜디오 레이어(Layer)가 스페인 가구 브랜드 안드레우 월드를 위해 태스크 체어 '벨로(Velo)'를 디자인해 데젠 쇼룸에 공개했습니다. 영국 디자이너 벤자민 허버트가 이끄는 스튜디오의 작업입니다." data-summary="Design studio Layer, led by Benjamin Hubert, designed the Velo task chair for Spanish furniture brand Andreu World, unveiled at the Dezeen showroom." data-title-kr="레이어가 안드레우 월드를 위해 디자인한 태스크 체어 '벨로'">
@@ -750,18 +947,49 @@
         <div class="card-source">Dezeen · 2026. 07. 01</div>
         <div class="card-title">Velo chair by Layer for Andreu World</div>
       </div>
-      <div class="card-footer"><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
   </div>
 </div>
 
-
-<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
 <div class="archive-cta-wrap">
   <a class="archive-cta" href="./archive.html">AI &amp; Design 아카이브</a>
   <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
 </div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="20">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4">
+    </div>
+    <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
+    <div class="gb-row"><span></span><span class="gb-count" id="gbCount">0 / 200</span></div>
+    <div class="gb-captcha">🔒 캡차 (배포 시 연동 예정)</div>
+    <button class="gb-submit" id="gbSubmit">등록</button>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="4" placeholder="4자리">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
 
 
 <!-- ── FOOTER ── -->
@@ -809,7 +1037,7 @@ document.addEventListener('DOMContentLoaded', () => {
      카드를 한 번 열람(드로어 오픈)하면 해당 URL을 기록하고,
      card-title에 .read 클래스(font-weight 450, color #a3a3a3)를 부여합니다.
   ──────────────────────────────────────────────────────────── */
-  const READ_KEY = 'dinol_read_urls';
+  const READ_KEY = 'dinol_read_20260702';
 
   function getReadUrls() {
     try { return new Set(JSON.parse(localStorage.getItem(READ_KEY) || '[]')); }
@@ -852,7 +1080,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnKr            = document.getElementById('btnKr');
   const btnEn            = document.getElementById('btnEn');
 
-  const F = { title:{}, oneline:{}, designer:{}, impact:{}, points:{}, recommend:{} };
+  /* 6필드: 각 필드의 EN(기본)/KR 값 보관 */
+  const F = {
+    title:{}, oneline:{}, designer:{}, impact:{}, points:{}, recommend:{}
+  };
 
   function renderPoints(str) {
     drawerPoints.innerHTML = '';
@@ -907,9 +1138,11 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerSource.textContent = card.querySelector('.card-source')?.textContent || '';
 
     const d = card.dataset;
+    /* 카테고리(언어중립, 공유) */
     drawerCategory.textContent = d.category || '';
     drawerCategory.style.display = d.category ? 'block' : 'none';
 
+    /* 기본값(EN 슬롯) = 카드 언어, -kr 슬롯 = 한국어(없으면 기본값 복제) */
     const baseTitle = card.querySelector('.card-title')?.textContent || '';
     F.title.en     = baseTitle;
     F.oneline.en   = d.summary   || '';
@@ -925,12 +1158,13 @@ document.addEventListener('DOMContentLoaded', () => {
     F.points.kr    = d.pointsKr    || F.points.en;
     F.recommend.kr = d.recommendKr || F.recommend.en;
 
+    /* 영문 기사(-kr 번역 있음) → 토글 노출, 기본 KR / 한국어 기사 → 토글 숨김, KR 값 표시 */
     if (hasEn && d.titleKr) {
       drawerLangToggle.style.display = 'flex';
       setLang('kr');
     } else {
       drawerLangToggle.style.display = 'none';
-      setLang('kr');
+      setLang('kr'); /* 한국어 기사: kr 슬롯이 곧 기본값 */
     }
 
     drawerCta.href = card.href;
@@ -1019,5 +1253,177 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
+<script>
+(function(){
+  var list=document.getElementById('gbList'),
+      pager=document.getElementById('gbPager'),
+      nick=document.querySelector('.gb-nick'),
+      pw=document.querySelector('.gb-pw'),
+      content=document.querySelector('.gb-content'),
+      submit=document.getElementById('gbSubmit'),
+      count=document.getElementById('gbCount');
+  var PER=10, WINDOW=5, page=1, editingId=null, uid=0;
+
+  // 숫자 4자리만
+  function digitsOnly(el){ el.addEventListener('input',function(){ el.value=el.value.replace(/\D/g,'').slice(0,4); }); }
+  digitsOnly(pw);
+
+  var EMOJI=['😀','😃','😄','😊','🙂','😎','🤓','🧐','🤩','😌','🥰','😉','😆','🤗','😙','🙃','😇','😺','🤠','😸'];
+  function avatar(nick){ var h=0; for(var i=0;i<nick.length;i++){ h=(h*31+nick.charCodeAt(i))>>>0; } return EMOJI[h%EMOJI.length]; }
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];});}
+
+  // 데모용 23개 (실제로는 Firebase에서 10개씩 조회)
+  var entries = []; // Firebase 연동 시 실데이터로 대체
+
+  function totalPages(){ return Math.max(1, Math.ceil(entries.length/PER)); }
+
+  function entryHTML(e){
+    var head='<div class="gb-entry-head"><span class="gb-entry-nick">'+avatar(e.nick)+' '+esc(e.nick)+'</span>'+
+             '<span class="gb-entry-time">'+e.time+'</span>'+
+             '<div class="gb-entry-actions"><button class="gb-act-edit" data-id="'+e.id+'">수정</button><button class="gb-act-del" data-id="'+e.id+'">삭제</button></div></div>';
+    if(editingId===e.id){
+      return '<div class="gb-entry editing" data-id="'+e.id+'">'+head+
+        '<div class="gb-edit-area"><textarea class="gb-edit-text" maxlength="200">'+esc(e.body)+'</textarea>'+
+        '<div class="gb-edit-btns"><button class="gb-edit-cancel">취소</button><button class="gb-edit-save" data-id="'+e.id+'">저장</button></div></div></div>';
+    }
+    return '<div class="gb-entry" data-id="'+e.id+'">'+head+'<div class="gb-entry-body">'+esc(e.body)+'</div></div>';
+  }
+
+  function renderList(){
+    var tp=totalPages(); if(page>tp) page=tp; if(page<1) page=1;
+    var start=(page-1)*PER, items=entries.slice(start, start+PER);
+    if(!items.length){ list.innerHTML='<div class="gb-empty">아직 남겨진 글이 없어요. 첫 이야기를 남겨보세요!</div>'; pager.innerHTML=''; return; }
+    list.innerHTML=items.map(entryHTML).join('');
+    renderPager(tp);
+  }
+
+  function renderPager(tp){
+    pager.innerHTML='';
+    if(tp<=1) return;
+    function mk(label, target, disabled, active, nav){
+      var btn=document.createElement('button');
+      var cls='gb-page-btn'; if(active) cls+=' active';
+      if(nav){ cls+=' gb-page-nav'; if(nav!=='nav') cls+=' '+nav; }
+      btn.className=cls; btn.textContent=label; btn.disabled=!!disabled;
+      if(!disabled&&!active) btn.addEventListener('click',function(){ page=target; renderList(); });
+      pager.appendChild(btn);
+    }
+    mk('«', 1, page===1, false, 'nav');
+    mk('‹', page-1, page===1, false, 'nav-prev');
+    var half=Math.floor(WINDOW/2), s=Math.max(1, page-half), e=Math.min(tp, s+WINDOW-1);
+    s=Math.max(1, e-WINDOW+1);
+    for(var n=s;n<=e;n++){ mk(String(n), n, false, n===page, null); }
+    mk('›', page+1, page===tp, false, 'nav-next');
+    mk('»', tp, page===tp, false, 'nav');
+  }
+
+  // 비번 확인 모달
+  var mOverlay=document.getElementById('gbModalOverlay'), modal=document.getElementById('gbModal'),
+      mTitle=document.getElementById('gbModalTitle'), mPw=document.getElementById('gbModalPw'),
+      mErr=document.getElementById('gbModalErr'), mOk=document.getElementById('gbModalOk'), mCancel=document.getElementById('gbModalCancel');
+  digitsOnly(mPw);
+  mPw.addEventListener('input', function(){ mOk.disabled = !/^\d{4}$/.test(mPw.value); });
+  var pending=null; // {type:'edit'|'delete', id}
+  function openModal(type, id){
+    pending={type:type, id:id};
+    mTitle.textContent = type==='delete' ? '삭제하려면 비밀번호를 입력하세요' : '수정하려면 비밀번호를 입력하세요';
+    mPw.value=''; mErr.textContent=''; mOk.disabled=true;
+    mOverlay.classList.add('show'); modal.classList.add('show'); setTimeout(function(){mPw.focus();},50);
+  }
+  function closeModal(){ mOverlay.classList.remove('show'); modal.classList.remove('show'); pending=null; }
+  function confirmModal(){
+    if(!pending) return;
+    var input=mPw.value.trim();
+    if(!/^\d{4}$/.test(input)){ mErr.textContent='4자리 숫자를 입력하세요.'; return; }
+    var e=entries.find(function(x){return x.id===pending.id;});
+    if(!e){ closeModal(); return; }
+    // 데모: 저장된 비번 있으면 일치 확인, 없으면(시드) 4자리면 통과
+    if(e.pw && input!==e.pw){ mErr.textContent='비밀번호가 일치하지 않습니다.'; return; }
+    var type=pending.type, id=pending.id; closeModal();
+    if(type==='delete'){ entries=entries.filter(function(x){return x.id!==id;}); if(editingId===id) editingId=null; renderList(); }
+    else { editingId=id; renderList(); }
+  }
+  mOk.addEventListener('click', confirmModal);
+  mPw.addEventListener('keydown', function(ev){ if(ev.key==='Enter') confirmModal(); });
+  mCancel.addEventListener('click', closeModal);
+  mOverlay.addEventListener('click', closeModal);
+
+  // 리스트 이벤트 위임 (수정/삭제/저장/취소)
+  list.addEventListener('click', function(ev){
+    var t=ev.target;
+    if(t.classList.contains('gb-act-del')){ openModal('delete', +t.dataset.id); }
+    else if(t.classList.contains('gb-act-edit')){ openModal('edit', +t.dataset.id); }
+    else if(t.classList.contains('gb-edit-cancel')){ editingId=null; renderList(); }
+    else if(t.classList.contains('gb-edit-save')){
+      var id=+t.dataset.id, ta=t.closest('.gb-entry').querySelector('.gb-edit-text');
+      var val=ta.value.trim(); if(!val){ alert('내용을 입력해주세요.'); return; }
+      var e=entries.find(function(x){return x.id===id;}); if(e){ e.body=val; }
+      editingId=null; renderList();
+    }
+  });
+
+  function now(){var d=new Date(),p=function(n){return String(n).padStart(2,'0');};
+    return d.getFullYear()+'. '+p(d.getMonth()+1)+'. '+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes());}
+  function updateSubmit(){ submit.disabled = !(nick.value.trim() && /^\d{4}$/.test(pw.value.trim()) && content.value.trim()); }
+  [nick, pw, content].forEach(function(el){ el.addEventListener('input', updateSubmit); });
+  content.addEventListener('input',function(){count.textContent=content.value.length+' / 200';});
+  updateSubmit();
+  submit.addEventListener('click',function(){
+    var n=nick.value.trim(), b=content.value.trim(), p=pw.value.trim();
+    if(!n){alert('닉네임을 입력해주세요.');return;}
+    if(!/^\d{4}$/.test(p)){alert('비밀번호 4자리(숫자)를 입력해주세요.');return;}
+    if(!b){alert('내용을 입력해주세요.');return;}
+    entries.unshift({id:++uid, nick:n, body:b, pw:p, time:now()});
+    nick.value='';pw.value='';content.value='';count.textContent='0 / 200';
+    page=1; editingId=null; renderList();
+  });
+  renderList();
+})();
+</script>
+
+<script>
+(function(){
+  var seeds=[], i=0;
+  var toast=document.createElement('div'); toast.className='gb-toast'; document.body.appendChild(toast);
+  var tTimer;
+  function showToast(msg){ toast.textContent=msg; toast.classList.add('show');
+    clearTimeout(tTimer); tTimer=setTimeout(function(){toast.classList.remove('show');},1800); }
+
+  var state={};
+  var cards=[].slice.call(document.querySelectorAll('a.card'));
+  cards.forEach(function(card){ state[card.href]={count:0, liked:false}; });
+
+  function paint(likeEl,countEl,st){ likeEl.classList.toggle('liked',st.liked); countEl.textContent=st.count>0?st.count:''; }
+  function renderCard(card){ var st=state[card.href]; paint(card.querySelector('.act-like'),card.querySelector('.act-count'),st); }
+  function doShare(href,title){
+    if(navigator.share){ navigator.share({title:title,url:href}).catch(function(){}); }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(href).then(function(){showToast('링크가 복사되었어요');}).catch(function(){showToast('링크: '+href);}); }
+    else { showToast('링크: '+href); }
+  }
+
+  var currentCard=null;
+  var dLike=document.getElementById('drawerLike'), dShare=document.getElementById('drawerShare'), dCount=document.getElementById('drawerLikeCount');
+  function renderDrawer(){ if(currentCard&&dLike) paint(dLike,dCount,state[currentCard.href]); }
+
+  cards.forEach(function(card){
+    var like=card.querySelector('.act-like'), share=card.querySelector('.act-share');
+    if(like&&share){
+      renderCard(card);
+      like.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation();
+        var st=state[card.href]; st.liked=!st.liked; st.count+=st.liked?1:-1; renderCard(card);
+        if(currentCard&&currentCard.href===card.href) renderDrawer(); });
+      share.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation();
+        doShare(card.href,(card.querySelector('.card-title')||{}).textContent||'디자인 놀이터'); });
+    }
+    card.addEventListener('click',function(){ currentCard=card; renderDrawer(); });
+  });
+
+  if(dLike) dLike.addEventListener('click',function(e){ e.stopPropagation(); if(!currentCard) return;
+    var st=state[currentCard.href]; st.liked=!st.liked; st.count+=st.liked?1:-1; renderDrawer(); renderCard(currentCard); });
+  if(dShare) dShare.addEventListener('click',function(e){ e.stopPropagation(); if(!currentCard) return;
+    doShare(currentCard.href,(currentCard.querySelector('.card-title')||{}).textContent||'디자인 놀이터'); });
+})();
+</script>
 </body>
 </html>
