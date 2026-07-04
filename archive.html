@@ -190,7 +190,7 @@
     padding: 0 16px;
     border-radius: 24px;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.2px;
     color: #191919;
     background: #c9ccd4;
@@ -282,7 +282,7 @@
   function makeItem(d) {
     const a = document.createElement('a');
     a.className = 'item';
-    a.href = 'Dinol_news_' + d + '.html';
+    a.href = 'news/' + d.slice(0,4) + '/' + d.slice(4,6) + '/Dinol_news_' + d + '.html';
     const todayBadge = (d === todayStr) ? '<span class="item-today">today</span>' : '';
     a.innerHTML = '<span class="item-date">' + displayDate(d) + todayBadge +
                   '</span><span class="item-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="8 7 17 7 17 16"></polyline></svg></span>';

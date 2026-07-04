@@ -20,7 +20,7 @@
     min-height: 100vh;
     padding: 24px;
   }
-  .box { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .box { display: flex; flex-direction: column; align-items: center; gap: 10px; visibility: hidden; }
   .site-title {
     font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
     font-weight: 300;
@@ -30,28 +30,31 @@
     line-height: 1;
     text-align: center;
   }
-  .site-sub {
-    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
-    font-size: 40px;
-    font-weight: 700;
-    letter-spacing: -1px;
-    color: #ffffff;
-    line-height: 1;
-    text-align: center;
+  .msg { font-size: 14px; color: #999; letter-spacing: 0.2px; margin-top: 4px; line-height: 1.6; text-align: center; }
+  .warn-icon { width: 46px; height: 46px; color: #ff7f3e; margin-top: 4px; }
+  .retry-btn {
+    width: 240px;
+    max-width: 100%;
+    min-height: 48px;
+    margin-top: 18px;
+    padding: 0 16px;
+    background: #c9ccd4;
+    color: #191919;
+    border: none;
+    border-radius: 24px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    transition: background .15s;
   }
-  .msg { font-size: 13px; color: #888; letter-spacing: 0.3px; margin-top: 6px; }
-  .manual-link {
-    display: none;
-    margin-top: 4px;
-    font-size: 13px;
-    color: #9fb8ff;
-    text-decoration: underline;
-  }
+  .retry-btn:hover { background: #d9dce4; }
 </style>
 <script>
 (async function () {
   // "20260702" → "Dinol_news_20260702.html"
-  function briefingUrl(d) { return 'Dinol_news_' + d + '.html'; }
+  function briefingUrl(d) { return 'news/' + d.slice(0,4) + '/' + d.slice(4,6) + '/Dinol_news_' + d + '.html'; }
 
   let settled = false;  // 이동 또는 폴백 UI 중 하나로 이미 처리됐는지
 
@@ -60,10 +63,10 @@
     if (settled) return;
     settled = true;
     const render = () => {
+      const box = document.querySelector('.box');
       const msg = document.getElementById('msg');
-      const link = document.getElementById('manualLink');
-      if (msg) msg.textContent = message;
-      if (link) link.style.display = 'inline-block';
+      if (box) box.style.visibility = 'visible';   // 실패 시에만 화면 노출
+      if (msg) msg.innerHTML = message;
     };
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', render);
@@ -75,7 +78,7 @@
   // 안전장치: 3초 안에 이동이 일어나지 않으면 수동 안내로 전환
   // (로컬 file:// 환경에서 fetch가 차단돼 멈추는 경우 등)
   const failTimer = setTimeout(() => {
-    showFallback('브리핑을 여는 데 문제가 있어요. 아래에서 확인해 주세요.');
+    showFallback('디자인 놀이터 AI & Design News를 여는 데 문제가 있어요.<br>다시 시도해 주세요.');
   }, 3000);
 
   let target = null;
@@ -112,7 +115,7 @@
   } else {
     // 로드/파싱 실패 (예: 로컬 file:// 환경에서 fetch 차단)
     clearTimeout(failTimer);
-    showFallback('브리핑을 여는 데 문제가 있어요. 아래에서 확인해 주세요.');
+    showFallback('디자인 놀이터 AI & Design News를 여는 데 문제가 있어요.<br>다시 시도해 주세요.');
   }
 })();
 </script>
@@ -120,9 +123,9 @@
 <body>
   <div class="box">
     <div class="site-title">디자인 놀이터</div>
-    <div class="site-sub">AI &amp; Design News</div>
-    <div class="msg" id="msg">최신 브리핑으로 이동 중…</div>
-    <a class="manual-link" id="manualLink" href="./archive.html">아카이브 →</a>
+    <svg class="warn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <div class="msg" id="msg"></div>
+    <button class="retry-btn" id="retryBtn" onclick="location.reload()">다시 시도</button>
   </div>
 </body>
 </html>
