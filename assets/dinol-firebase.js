@@ -8,6 +8,9 @@ import {
   updateDoc, deleteDoc, query, orderBy, serverTimestamp,
   runTransaction, setDoc
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import {
+  initializeAppCheck, ReCaptchaV3Provider
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app-check.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD84D4xoyD74W263XBiy7uRfNX-Oree5Xo",
@@ -18,10 +21,22 @@ const firebaseConfig = {
   appId: "1:212617826818:web:e5ab06e9bad469c7e00d1b"
 };
 
+// reCAPTCHA v3 사이트 키 (공개용)
+const RECAPTCHA_SITE_KEY = "6LcW4kQtAAAAAJ5-eZc-SpxCrQ37bfTaYHs7v_yd";
+
 // 관리자 마스터 비밀번호(스팸 정리용) — 아무 글이나 이 값으로 수정/삭제 가능
 const ADMIN_PW = "481516";
 
 const app = initializeApp(firebaseConfig);
+
+// App Check (reCAPTCHA v3) — 봇/스팸 차단. 사용자에겐 보이지 않음.
+try {
+  initializeAppCheck(app, {
+    provider: new ReCaptchaV3Provider(RECAPTCHA_SITE_KEY),
+    isTokenAutoRefreshEnabled: true
+  });
+} catch (e) { /* App Check 초기화 실패 시에도 앱은 계속 동작 */ }
+
 const db = getFirestore(app);
 
 // ── 공통 유틸 ──────────────────────────────────────────────
