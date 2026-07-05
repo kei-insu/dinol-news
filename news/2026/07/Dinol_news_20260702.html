@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>디자인 놀이터 — 2026. 07. 02</title>
+<title>ëìì¸ ëì´í° â 2026. 07. 02</title>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
 <script>
@@ -12,7 +12,7 @@
   gtag('js', new Date());
   gtag('config', 'G-ZC93DYWB2B');
 </script>
-<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<!-- Google AdSense â TODO: ca-pub- ë¤ ì«ìë¥¼ ì¤ì  ë°ê¸ë°ì ê²ìì IDë¡ êµì²´íì¸ì -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
@@ -22,13 +22,13 @@
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
-    background: #0d0d12;
+    background: #000000;
     color: #e8e8f0;
     padding: 56px 24px 72px;
     min-height: 100vh;
   }
 
-  /* ── HEADER ── */
+  /* ââ HEADER ââ */
   header {
     display: flex;
     flex-direction: column;
@@ -73,7 +73,7 @@
     text-transform: uppercase;
   }
 
-  /* ── SECTION ── */
+  /* ââ SECTION ââ */
   .section { max-width: 1130px; margin-left: auto; margin-right: auto; margin-bottom: 56px; }
 
   .section-header {
@@ -81,6 +81,8 @@
     align-items: center;
     gap: 18px;
     margin-bottom: 22px;
+    cursor: pointer;
+    user-select: none;
   }
 
   .section-header h2 {
@@ -99,14 +101,35 @@
     background: #1e1e28;
   }
 
-  /* ── GRID ── */
+  .section-chevron {
+    flex-shrink: 0;
+    font-size: 13px;
+    color: #8a8a99;
+    transition: transform 0.25s ease;
+    line-height: 1;
+  }
+  .section.collapsed .section-chevron { transform: scaleY(0.8) rotate(180deg); }
+  .section .grid {
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease, margin 0.25s ease;
+    max-height: 8000px;
+    opacity: 1;
+  }
+  .section.collapsed .grid {
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  /* ââ GRID ââ */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
     gap: 14px;
   }
 
-  /* ── CARD ── */
+  /* ââ CARD ââ */
   .card {
     background: #13131b;
     border: 1px solid #1c1c28;
@@ -124,7 +147,7 @@
     box-shadow: 0 10px 36px rgba(0,0,0,0.5);
   }
 
-  /* ── THUMB ── */
+  /* ââ THUMB ââ */
   .thumb {
     width: 100%;
     height: 128px;
@@ -137,7 +160,7 @@
     background: #1a1a24;
   }
 
-  /* 기사 대표 이미지 썸네일 (object-fit: cover, 가로폭 기준 crop) */
+  /* ê¸°ì¬ ëí ì´ë¯¸ì§ ì¸ë¤ì¼ (object-fit: cover, ê°ë¡í­ ê¸°ì¤ crop) */
   .thumb-img {
     position: absolute;
     inset: 0;
@@ -172,7 +195,7 @@
     user-select: none;
   }
 
-  /* EN badge — top-right of thumb (English articles only) */
+  /* EN badge â top-right of thumb (English articles only) */
   .thumb-en {
     position: absolute;
     top: 10px;
@@ -202,7 +225,7 @@
   .g-navy     { background: linear-gradient(145deg,#060c1e,#0e2060); }
   .g-rust     { background: linear-gradient(145deg,#1e0800,#7c2c00); }
 
-  /* ── CARD BODY ── */
+  /* ââ CARD BODY ââ */
   .card-body {
     padding: 14px 16px 12px;
     flex: 1;
@@ -225,7 +248,7 @@
     transition: color 0.2s ease, font-weight 0.2s ease;
   }
 
-  /* 읽음 상태 — 카드를 한 번 열람하면(localStorage 기록) 적용 */
+  /* ì½ì ìí â ì¹´ëë¥¼ í ë² ì´ëíë©´(localStorage ê¸°ë¡) ì ì© */
   .card-title.read {
     font-weight: 450;
     color: #a3a3a3;
@@ -233,7 +256,7 @@
 
 
 
-  /* ── CARD FOOTER ── */
+  /* ââ CARD FOOTER ââ */
   .card-footer {
     padding: 9px 16px;
     border-top: 1px solid #18181f;
@@ -246,7 +269,7 @@
 
   .featured { grid-column: span 1; }
 
-  /* ── FOOTER ── */
+  /* ââ FOOTER ââ */
   footer {
     margin-top: 48px;
     padding: 28px 0 8px;
@@ -286,22 +309,22 @@
   }
   .footer-link:hover { color: #999; }
 
-  /* ── 아카이브 · 오픈채팅방 버튼 (동일 폭, 세로 정렬) ── */
+  /* ââ ìì¹´ì´ë¸ Â· ì¤íì±íë°© ë²í¼ (ëì¼ í­, ì¸ë¡ ì ë ¬) ââ */
   .archive-cta-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;                 /* 모바일 터치 간격 가이드(Material ≥8dp) 충족 */
+    gap: 12px;                 /* ëª¨ë°ì¼ í°ì¹ ê°ê²© ê°ì´ë(Material â¥8dp) ì¶©ì¡± */
     margin-top: 8px;
   }
   .archive-cta, .kakao-cta {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 240px;              /* 두 버튼 가로 길이 동일 */
+    width: 240px;              /* ë ë²í¼ ê°ë¡ ê¸¸ì´ ëì¼ */
     max-width: 100%;
-    min-height: 48px;          /* 터치 타깃 가이드(Apple 44 / Material 48) 충족 */
-    padding: 0 16px;           /* 좌우 여백 (Material 버튼 표준 ~16dp) */
+    min-height: 48px;          /* í°ì¹ íê¹ ê°ì´ë(Apple 44 / Material 48) ì¶©ì¡± */
+    padding: 0 16px;           /* ì¢ì° ì¬ë°± (Material ë²í¼ íì¤ ~16dp) */
     border-radius: 24px;
     font-weight: 500;
     text-decoration: none;
@@ -309,7 +332,7 @@
     transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
     font-size: 16px;
   }
-  /* 아카이브: 그레이 배경 + 검정 텍스트 */
+  /* ìì¹´ì´ë¸: ê·¸ë ì´ ë°°ê²½ + ê²ì  íì¤í¸ */
   .archive-cta {
     font-size: 16px;
     color: #191919;
@@ -318,7 +341,7 @@
     letter-spacing: 0.2px;
   }
   .archive-cta:hover { background: #d9dce4; }
-  /* 오픈채팅방: 카카오 옐로우 + 검정 텍스트 */
+  /* ì¤íì±íë°©: ì¹´ì¹´ì¤ ìë¡ì° + ê²ì  íì¤í¸ */
   .kakao-cta {
     font-size: 16px;
     color: #191919;
@@ -328,7 +351,7 @@
   }
   .kakao-cta:hover { background: #ffe94d; }
 
-  /* ── 맨 위로 플로팅 버튼 (모바일 전용) ── */
+  /* ââ ë§¨ ìë¡ íë¡í ë²í¼ (ëª¨ë°ì¼ ì ì©) ââ */
   .to-top {
     position: fixed;
     right: 16px;
@@ -345,7 +368,7 @@
     font-size: 18px;
     line-height: 1;
     cursor: pointer;
-    display: none;              /* 데스크톱 및 초기 상태: 숨김 */
+    display: none;              /* ë°ì¤í¬í± ë° ì´ê¸° ìí: ì¨ê¹ */
     align-items: center;
     justify-content: center;
     opacity: 0;
@@ -356,7 +379,7 @@
   .to-top:hover { border-color: #3c3c58; color: #fff; }
   .to-top.show { opacity: 1; transform: translateY(0); }
 
-  /* ── DRAWER ── */
+  /* ââ DRAWER ââ */
   .drawer-overlay {
     display: none;
     position: fixed;
@@ -366,7 +389,7 @@
   }
   .drawer-overlay.open { display: block; }
 
-  /* PC — 중앙 모달 */
+  /* PC â ì¤ì ëª¨ë¬ */
   .drawer {
     position: fixed;
     top: 50%; left: 50%;
@@ -390,7 +413,7 @@
     pointer-events: auto;
   }
 
-  /* 모바일 — 바텀시트 */
+  /* ëª¨ë°ì¼ â ë°íìí¸ */
   @media (max-width: 580px) {
     .drawer {
       top: auto; left: 0; right: 0;
@@ -475,31 +498,27 @@
     line-height: 1.7;
     margin-top: 2px;
   }
-  /* ── A안: 구조화 요약 필드 ── */
+  /* ââ Aì: êµ¬ì¡°í ìì½ íë ââ */
   .drawer-category { font-size: 12px; font-weight: 600; color: #8a8aff; letter-spacing: 0.4px; }
   .drawer-field { display: flex; flex-direction: column; gap: 3px; }
   .drawer-field-label { font-size: 12px; font-weight: 700; color: #d0d0e0; letter-spacing: 0.2px; }
   .drawer-field-text { font-size: 14px; color: #a6a6b8; line-height: 1.6; }
-  /* 실무 영향도 별점 */
+  /* ì¤ë¬´ ìí¥ë ë³ì  */
   .drawer-stars { display: inline-flex; align-items: center; gap: 2px; font-size: 15px; letter-spacing: 1px; line-height: 1; }
   .drawer-stars .star-on { color: #ff7f3e; }
   .drawer-stars .star-off { color: #3a3a48; }
-  .drawer-points { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 6px; }
-  .drawer-points li { font-size: 14px; color: #a6a6b8; line-height: 1.6; }
-  /* 에디터 코멘트 (오리지널 논평 · 시각적 강조) */
+  .drawer-points { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 3px; }
+  .drawer-points li { font-size: 14px; color: #a6a6b8; line-height: 1.45; }
+  /* ìëí° ì½ë©í¸ (ì¤ë¦¬ì§ë ë¼í Â· ìê°ì  ê°ì¡°) */
   .drawer-comment {
     display: flex; flex-direction: column; gap: 6px;
-    background: #1a1622;
-    border-left: 3px solid #ff7f3e;
-    border-radius: 0 10px 10px 0;
-    padding: 13px 15px;
     margin-top: 2px;
   }
   .drawer-comment-label {
     display: flex; align-items: center; gap: 5px;
     font-size: 12px; font-weight: 700; color: #ff7f3e; letter-spacing: 0.2px;
   }
-  .drawer-comment-text { font-size: 14px; color: #cfcfda; line-height: 1.7; }
+  .drawer-comment-text { font-size: 14px; color: #cfcfda; line-height: 1.6; }
 
   .drawer-footer { padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 10px; }
 
@@ -581,10 +600,10 @@
     .footer-copy { font-size: 13px; }
     .footer-notice { font-size: 13px; }
     .footer-link { font-size: 13px; }
-    .to-top { display: flex; }   /* 모바일에서만 노출 (표시는 JS가 .show로 제어) */
+    .to-top { display: flex; }   /* ëª¨ë°ì¼ììë§ ë¸ì¶ (íìë JSê° .showë¡ ì ì´) */
   }
 
-  /* ─────────── 방명록 ─────────── */
+  /* âââââââââââ ë°©ëªë¡ âââââââââââ */
   .guestbook { max-width: 640px; margin: 64px auto 0; padding: 0 4px; }
   .gb-header { text-align: center; margin-bottom: 24px; }
   .gb-header h2 { font-family: 'Single Day', cursive; font-size: 32px; font-weight: 400; letter-spacing: 1px; color: #ffffff; }
@@ -597,7 +616,7 @@
     color: #e8e8f0; font-family: inherit; font-size: 16px; padding: 12px 14px; width: 100%;
   }
   .gb-nick::placeholder, .gb-pw::placeholder, .gb-content::placeholder { color: #666; }
-  /* 브라우저 자동완성 배경 강제 제거 (흰 박스 방지) */
+  /* ë¸ë¼ì°ì  ìëìì± ë°°ê²½ ê°ì  ì ê±° (í° ë°ì¤ ë°©ì§) */
   .gb-nick:-webkit-autofill, .gb-pw:-webkit-autofill, .gb-content:-webkit-autofill,
   .gb-nick:-webkit-autofill:focus, .gb-pw:-webkit-autofill:focus, .gb-content:-webkit-autofill:focus,
   .gb-modal-pw:-webkit-autofill, .gb-modal-pw:-webkit-autofill:focus {
@@ -649,7 +668,7 @@
     .gb-entry-actions .gb-act-edit, .gb-entry-actions .gb-act-del { min-height: 44px; min-width: 44px; font-size: 16px; padding: 0 12px; }
   }
 
-  /* ─────────── 카드 좋아요·공유 액션바 ─────────── */
+  /* âââââââââââ ì¹´ë ì¢ììÂ·ê³µì  ì¡ìë° âââââââââââ */
   .card-footer { justify-content: space-between; }
   .card-actions { display: flex; align-items: center; gap: 15px; }
   .act { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #8a8a99; transition: color .15s ease, transform .1s ease; }
@@ -665,21 +684,21 @@
     border: 1px solid #33333f; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 2000; }
   .gb-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-  /* ─────────── 페이지네이션 (네이버식: 번호=플레인, 화살표=구분) ─────────── */
+  /* âââââââââââ íì´ì§ë¤ì´ì (ë¤ì´ë²ì: ë²í¸=íë ì¸, íì´í=êµ¬ë¶) âââââââââââ */
   .gb-pagination { display: flex; justify-content: center; align-items: center; gap: 2px; margin-top: 28px; flex-wrap: wrap; }
   .gb-page-btn { min-width: 34px; height: 34px; padding: 0 10px; background: none; border: none; color: #8a8a99;
     font-size: 14px; cursor: pointer; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; transition: color .12s, background .12s; }
   .gb-page-btn:hover:not(:disabled) { color: #ffffff; background: #191922; }
   .gb-page-btn.active { color: #ffffff; font-weight: 700; position: relative; }
   .gb-page-btn.active::after { content: ''; position: absolute; left: 9px; right: 9px; bottom: 4px; height: 2px; background: #ff7f3e; border-radius: 2px; }
-  /* 화살표: 테두리 있는 버튼 + 번호와 간격 */
+  /* íì´í: íëë¦¬ ìë ë²í¼ + ë²í¸ì ê°ê²© */
   .gb-page-btn.gb-page-nav { border: 1px solid #222230; background: #191922; color: #a6a6b8; font-size: 13px; }
   .gb-page-btn.gb-page-nav:hover:not(:disabled) { border-color: #33333f; color: #ffffff; background: #191922; }
   .gb-page-nav.nav-prev { margin-right: 8px; }
   .gb-page-nav.nav-next { margin-left: 8px; }
   .gb-page-btn:disabled { opacity: 0.3; cursor: default; }
 
-  /* ─────────── 디놀 톡톡: 수정/삭제 · 인라인 편집 · 비번 모달 ─────────── */
+  /* âââââââââââ ëë í¡í¡: ìì /ì­ì  Â· ì¸ë¼ì¸ í¸ì§ Â· ë¹ë² ëª¨ë¬ âââââââââââ */
   .gb-entry-head { position: relative; }
   .gb-entry-actions { margin-left: auto; display: flex; gap: 6px; flex-shrink: 0; }
   .gb-act-edit, .gb-act-del { background: none; border: none; color: #5c5c68; font-size: 12px; cursor: pointer; padding: 4px 8px; font-family: inherit; display: inline-flex; align-items: center; justify-content: center; }
@@ -694,7 +713,7 @@
   .gb-edit-cancel { background: #23232e; border: none; color: #b0b0bc; }
   .gb-edit-cancel:hover { background: #2c2c3a; }
   .gb-edit-save { background: #c9ccd4; border: none; color: #191919; font-weight: 700; }
-  /* 비번 확인 모달 */
+  /* ë¹ë² íì¸ ëª¨ë¬ */
   .gb-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 3000; }
   .gb-modal-overlay.show { opacity: 1; pointer-events: auto; }
   .gb-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-46%); width: 320px; max-width: calc(100% - 40px);
@@ -719,40 +738,40 @@
 <body>
 
 <!--
-  ════════════════════════════════════════════════════════
-  디자인 놀이터 — 콘텐츠 수집 정책
-  ════════════════════════════════════════════════════════
-  [크롤링 기간]
-  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  ëìì¸ ëì´í° â ì½íì¸  ìì§ ì ì±
+  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  [í¬ë¡¤ë§ ê¸°ê°]
+  Â· í´ë¹ì¼ + ì ì¼ (ì: ì¤ë 2026-06-30 â 2026-06-29 ~ 2026-06-30)
 
-  [크롤링 범위]
-  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
-  · 카테고리별 최소 4개 이상 수집
+  [í¬ë¡¤ë§ ë²ì]
+  Â· ë´ì¤ ê¸°ì¬ + ìì¤ ê³µì  + ì¸ì¬ì´í¸ ìë£ ë± ë¤ìí ì½ìê±°ë¦¬
+  Â· ì¹´íê³ ë¦¬ë³ ìµì 4ê° ì´ì ìì§
 
-  [언어 비율]
-  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
-  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
-  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
-    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+  [ì¸ì´ ë¹ì¨]
+  Â· ì¹ìë³ íêµ­ì´ ê¸°ì¬ : ìë¬¸ ê¸°ì¬ = 50:50 ì ì§
+  Â· ìë¬¸ ê¸°ì¬ë§ì¼ë¡ ì¹ìì´ ì±ìì§ì§ ìëë¡ íêµ­ì´ ìì¤ ì°ì  íì
+  Â· íêµ­ì´ ê¸°ì¬ íë³´: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr ë±
 
-  [콘텐츠 검증 — 크롤링 후 반드시 수행]
-  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
-  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
-  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
-     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
-     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
-     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
-  4. 빈 링크·깨진 링크 사용 금지
-  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+  [ì½íì¸  ê²ì¦ â í¬ë¡¤ë§ í ë°ëì ìí]
+  1. URL ì¤ë³µ íì¸ â ëì¼ URLì 1ê° ì¹´ëë§ íì©
+  2. ë ì§ íì¸ â ê¸°ì¬ ë³¸ë¬¸ì ì¤ì  ê²ì¬ì¼ì´ ìì§ ê¸°ê° ë´ì¸ì§ ê²ì¦
+  3. ì¹´ë íì´í â ëª©ì ì§ URL ì¼ì¹ íì¸
+     Â· ì¹´ëì íìë íì´íÂ·ë´ì©ì´ ë§í¬ ëì°© íì´ì§ì ì¤ì  ë´ì©ê³¼ ì¼ì¹í´ì¼ í¨
+     Â· URLì´ ëª©ë¡/ë©ì¸ íì´ì§ ë± ê¸°ì¬ê° ìë ê²½ì° ì¬ì© ê¸ì§
+     Â· ì¤ì  íì´ì§ë¥¼ ì´ì´ íì¸ëì§ ìì ë´ì©ì ì¹´ëì ê¸°ì¬íì§ ìì
+  4. ë¹ ë§í¬Â·ê¹¨ì§ ë§í¬ ì¬ì© ê¸ì§
+  5. ì¸ì´ ë¹ì¨ íì¸ â ì¹ìë³ KR:En = 50:50 ì¶©ì¡± ì¬ë¶ ìµì¢ ì ê²
 
-  [표기 규칙]
-  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
-  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
-  · 파일명: Dinol_news_YYYYMMDD.html
-  ════════════════════════════════════════════════════════
+  [íê¸° ê·ì¹]
+  Â· ë ì§ íì: YYYY. MM. DD (íëì½ë©, replace ì°ì° ì¬ì© ê¸ì§)
+  Â· ìë¬¸ ê¸°ì¬ë§ En ë°°ì§ íì (êµ­ë¬¸ ê¸°ì¬ë ë°°ì§ ìì)
+  Â· íì¼ëª: Dinol_news_YYYYMMDD.html
+  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 -->
 
-<!-- ── DRAWER ── -->
+<!-- ââ DRAWER ââ -->
 <div class="drawer-overlay" id="drawerOverlay"></div>
 <div class="drawer" id="drawer">
   <div class="drawer-header">
@@ -766,8 +785,8 @@
   <div class="drawer-body">
     <div class="drawer-toolbar">
       <div class="card-actions drawer-actions">
-        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
-        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+        <span class="act act-like" id="drawerLike" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
       </div>
       <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
         <button class="lang-btn active" id="btnKr">KR</button>
@@ -778,283 +797,285 @@
     <div class="drawer-title" id="drawerTitle"></div>
 
     <div class="drawer-field">
-      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-label">í ì¤ ìì½</div>
       <div class="drawer-field-text" id="drawerOneline"></div>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">디자이너 관점</div>
-      <div class="drawer-field-text" id="drawerDesigner"></div>
-    </div>
-    <div class="drawer-field">
-      <div class="drawer-field-label">실무 영향도</div>
-      <div class="drawer-stars" id="drawerImpact"></div>
-    </div>
-    <div class="drawer-field">
-      <div class="drawer-field-label">볼 포인트</div>
+      <div class="drawer-field-label">ë³¼ í¬ì¸í¸</div>
       <ul class="drawer-points" id="drawerPoints"></ul>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">추천</div>
+      <div class="drawer-field-label">ëìì´ë ê´ì </div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">ì¤ë¬´ ìí¥ë</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">ì¶ì²</div>
       <div class="drawer-field-text" id="drawerRecommend"></div>
     </div>
     <div class="drawer-comment" id="drawerCommentWrap">
-      <div class="drawer-comment-label">💬 에디터 코멘트</div>
+      <div class="drawer-comment-label">ð¬ ìëí° ì½ë©í¸</div>
       <div class="drawer-comment-text" id="drawerComment"></div>
     </div>
   </div>
   <div class="drawer-footer">
-    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
-    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">ìë¬¸ ë³´ê¸° â</a>
+    <button class="drawer-close-btn" id="drawerClose">ë«ê¸°</button>
   </div>
 </div>
 
-<!-- ── HEADER ── -->
+<!-- ââ HEADER ââ -->
 <header>
-  <div class="site-title">디자인 놀이터</div>
+  <div class="site-title">ëìì¸ ëì´í°</div>
   <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
   <div class="header-sep"></div>
   <div class="site-date">July 2, 2026</div>
 </header>
 
 
-<!-- ══════════════════════ AI ══════════════════════ -->
+<!-- ââââââââââââââââââââââ AI ââââââââââââââââââââââ -->
 <div class="section">
   <div class="section-header">
     <h2>AI</h2>
     <div class="line"></div>
+    <span class="section-chevron">▼</span>
   </div>
   <div class="grid">
 
-    <a class="card featured" href="https://www.aitimes.com/news/articleView.html?idxno=212295" target="_blank" data-summary="미 상무부가 앤트로픽의 클로드 페이블 5와 미스트랄 5에 대한 수출 통제를 철회하며 7월 2일부터 해외 사용자 접근이 복구됩니다. 사용량 기반 크레딧 방식으로 제공되며 KYC 인증 절차를 거쳐야 합니다.">
+    <a class="card featured" href="https://www.aitimes.com/news/articleView.html?idxno=212295" target="_blank" data-summary="ë¯¸ ìë¬´ë¶ê° ì¤í¸ë¡í½ì í´ë¡ë íì´ë¸ 5ì ë¯¸ì¤í¸ë 5ì ëí ìì¶ íµì ë¥¼ ì² ííë©° 7ì 2ì¼ë¶í° í´ì¸ ì¬ì©ì ì ê·¼ì´ ë³µêµ¬ë©ëë¤. ì¬ì©ë ê¸°ë° í¬ë ë§ ë°©ìì¼ë¡ ì ê³µëë©° KYC ì¸ì¦ ì ì°¨ë¥¼ ê±°ì³ì¼ í©ëë¤.">
       <div class="thumb g-violet">
         <div class="noise"></div>
-        <span class="thumb-label">복귀</span>
+        <span class="thumb-label">ë³µê·</span>
       </div>
       <div class="card-body">
-        <div class="card-source">AI타임스 · 2026. 07. 01</div>
-        <div class="card-title">앤트로픽, '페이블 5' 2일부터 복구...미 정부 수출 통제 철회</div>
+        <div class="card-source">AIíìì¤ Â· 2026. 07. 01</div>
+        <div class="card-title">ì¤í¸ë¡í½, 'íì´ë¸ 5' 2ì¼ë¶í° ë³µêµ¬...ë¯¸ ì ë¶ ìì¶ íµì  ì² í</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
-    <a class="card" href="https://zdnet.co.kr/view/?no=20260701161645" target="_blank" data-summary="과학기술정보통신부가 피지컬 AI 분야에서 향후 3년을 '골든타임'으로 규정하고 집중 육성 전략을 발표했습니다. 한국을 피지컬 AI 기술을 수출하는 국가로 도약시키겠다는 목표를 제시했습니다.">
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260701161645" target="_blank" data-summary="ê³¼íê¸°ì ì ë³´íµì ë¶ê° í¼ì§ì»¬ AI ë¶ì¼ìì í¥í 3ëì 'ê³¨ë íì'ì¼ë¡ ê·ì íê³  ì§ì¤ ì¡ì± ì ëµì ë°ííìµëë¤. íêµ­ì í¼ì§ì»¬ AI ê¸°ì ì ìì¶íë êµ­ê°ë¡ ëì½ìí¤ê² ë¤ë ëª©íë¥¼ ì ìíìµëë¤.">
       <div class="thumb g-indigo">
         <div class="noise"></div>
-        <span class="thumb-label">국가전략</span>
+        <span class="thumb-label">êµ­ê°ì ëµ</span>
       </div>
       <div class="card-body">
-        <div class="card-source">ZDNet Korea · 2026. 07. 01</div>
-        <div class="card-title">과기정통부 "피지컬AI 수출하는 나라로"...3년 내 집중육성</div>
+        <div class="card-source">ZDNet Korea Â· 2026. 07. 01</div>
+        <div class="card-title">ê³¼ê¸°ì íµë¶ "í¼ì§ì»¬AI ìì¶íë ëë¼ë¡"...3ë ë´ ì§ì¤ì¡ì±</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
-    <a class="card" href="https://www.etnews.com/20260701000364" target="_blank" data-summary="보건복지부가 엔비디아 B200 GPU를 활용한 차세대 AI 인프라로 공공의료 AI 클라우드를 구축하고 공공의료 AI 생태계 조성에 나섭니다. 의료 데이터 분석과 진단 지원 등에 AI 기술을 확대 적용할 계획입니다.">
+    <a class="card" href="https://www.etnews.com/20260701000364" target="_blank" data-summary="ë³´ê±´ë³µì§ë¶ê° ìë¹ëì B200 GPUë¥¼ íì©í ì°¨ì¸ë AI ì¸íë¼ë¡ ê³µê³µìë£ AI í´ë¼ì°ëë¥¼ êµ¬ì¶íê³  ê³µê³µìë£ AI ìíê³ ì¡°ì±ì ëì­ëë¤. ìë£ ë°ì´í° ë¶ìê³¼ ì§ë¨ ì§ì ë±ì AI ê¸°ì ì íë ì ì©í  ê³íìëë¤.">
       <div class="thumb g-teal">
         <div class="noise"></div>
-        <span class="thumb-label">의료AI</span>
+        <span class="thumb-label">ìë£AI</span>
       </div>
       <div class="card-body">
-        <div class="card-source">전자신문 · 2026. 07. 01</div>
-        <div class="card-title">복지부, 엔비디아 'B200' 기반 공공의료 AI 생태계 조성</div>
+        <div class="card-source">ì ìì ë¬¸ Â· 2026. 07. 01</div>
+        <div class="card-title">ë³µì§ë¶, ìë¹ëì 'B200' ê¸°ë° ê³µê³µìë£ AI ìíê³ ì¡°ì±</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
-    <a class="card" href="https://techcrunch.com/2026/07/01/gemini-spark-googles-agentic-assistant-is-now-available-on-mac/" target="_blank" data-summary-kr="구글의 AI 에이전트 '제미니 스파크'가 맥(Mac) 데스크톱 앱에 정식 탑재됐습니다. 실시간 주제 업데이트와 구글 태스크·킵 등 앱 연동 기능이 새롭게 추가됐습니다." data-summary="Google's agentic assistant Gemini Spark is now available as a Mac desktop app, adding real-time topic updates and integrations with Google Tasks and Keep." data-title-kr="구글의 AI 에이전트 '제미니 스파크', 맥 데스크톱 앱에 정식 출시">
+    <a class="card" href="https://techcrunch.com/2026/07/01/gemini-spark-googles-agentic-assistant-is-now-available-on-mac/" target="_blank" data-summary-kr="êµ¬ê¸ì AI ìì´ì í¸ 'ì ë¯¸ë ì¤íí¬'ê° ë§¥(Mac) ë°ì¤í¬í± ì±ì ì ì íì¬ëìµëë¤. ì¤ìê° ì£¼ì  ìë°ì´í¸ì êµ¬ê¸ íì¤í¬Â·íµ ë± ì± ì°ë ê¸°ë¥ì´ ìë¡­ê² ì¶ê°ëìµëë¤." data-summary="Google's agentic assistant Gemini Spark is now available as a Mac desktop app, adding real-time topic updates and integrations with Google Tasks and Keep." data-title-kr="êµ¬ê¸ì AI ìì´ì í¸ 'ì ë¯¸ë ì¤íí¬', ë§¥ ë°ì¤í¬í± ì±ì ì ì ì¶ì">
       <div class="thumb g-crimson">
         <div class="noise"></div>
         <span class="thumb-label">Mac</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">TechCrunch · 2026. 07. 01</div>
+        <div class="card-source">TechCrunch Â· 2026. 07. 01</div>
         <div class="card-title">Gemini Spark, Google's agentic assistant, is now available on Mac</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
-    <a class="card" href="https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/" target="_blank" data-summary-kr="클라우드플레어가 오는 9월 15일부터 광고가 게재된 페이지에서 검색·에이전트·학습 기능이 혼합된 'mixed-use' 크롤러를 기본적으로 차단하는 새 정책을 발표했습니다. AI 기업들이 퍼블리셔 콘텐츠 이용에 대가를 지불하도록 유도하는 조치입니다." data-summary="From September 15, Cloudflare will block mixed-use crawlers on ad-served pages by default, pushing AI companies to pay for publishers' content." data-title-kr="클라우드플레어, AI 기업에 퍼블리셔 콘텐츠 이용료 부과하는 새 정책 발표">
+    <a class="card" href="https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/" target="_blank" data-summary-kr="í´ë¼ì°ëíë ì´ê° ì¤ë 9ì 15ì¼ë¶í° ê´ê³ ê° ê²ì¬ë íì´ì§ìì ê²ìÂ·ìì´ì í¸Â·íìµ ê¸°ë¥ì´ í¼í©ë 'mixed-use' í¬ë¡¤ë¬ë¥¼ ê¸°ë³¸ì ì¼ë¡ ì°¨ë¨íë ì ì ì±ì ë°ííìµëë¤. AI ê¸°ìë¤ì´ í¼ë¸ë¦¬ì ì½íì¸  ì´ì©ì ëê°ë¥¼ ì§ë¶íëë¡ ì ëíë ì¡°ì¹ìëë¤." data-summary="From September 15, Cloudflare will block mixed-use crawlers on ad-served pages by default, pushing AI companies to pay for publishers' content." data-title-kr="í´ë¼ì°ëíë ì´, AI ê¸°ìì í¼ë¸ë¦¬ì ì½íì¸  ì´ì©ë£ ë¶ê³¼íë ì ì ì± ë°í">
       <div class="thumb g-slate">
         <div class="noise"></div>
         <span class="thumb-label">Policy</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">TechCrunch · 2026. 07. 01</div>
+        <div class="card-source">TechCrunch Â· 2026. 07. 01</div>
         <div class="card-title">Cloudflare's new policy pushes AI companies to pay for publishers' content</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
-    <a class="card" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026" target="_blank" data-summary-kr="2026년 7월 1일 기준 AI 업계의 15대 주요 뉴스를 정리한 영문 브리핑입니다. 앤트로픽 클로드 소넷5 출시, 스페이스X의 리플렉션AI 컴퓨트 임대 계약 등 최신 동향을 다룹니다." data-summary="A daily roundup of the 15 biggest AI stories, including Anthropic's Claude Sonnet 5 launch and SpaceX's compute lease with Reflection AI." data-title-kr="AI 뉴스 투데이 — 2026년 7월 1일 15대 주요 소식">
+    <a class="card" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026" target="_blank" data-summary-kr="2026ë 7ì 1ì¼ ê¸°ì¤ AI ìê³ì 15ë ì£¼ì ë´ì¤ë¥¼ ì ë¦¬í ìë¬¸ ë¸ë¦¬íìëë¤. ì¤í¸ë¡í½ í´ë¡ë ìë·5 ì¶ì, ì¤íì´ì¤Xì ë¦¬íë ìAI ì»´í¨í¸ ìë ê³ì½ ë± ìµì  ëí¥ì ë¤ë£¹ëë¤." data-summary="A daily roundup of the 15 biggest AI stories, including Anthropic's Claude Sonnet 5 launch and SpaceX's compute lease with Reflection AI." data-title-kr="AI ë´ì¤ í¬ë°ì´ â 2026ë 7ì 1ì¼ 15ë ì£¼ì ìì">
       <div class="thumb g-navy">
         <div class="noise"></div>
         <span class="thumb-label">Today</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">BuildFastWithAI · 2026. 07. 01</div>
+        <div class="card-source">BuildFastWithAI Â· 2026. 07. 01</div>
         <div class="card-title">AI News Today July 1, 2026: 15 Biggest Stories</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
   </div>
 </div>
 
 
-<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<!-- ââââââââââââââââââââââ DESIGN ââââââââââââââââââââââ -->
 <div class="section">
   <div class="section-header">
     <h2>Design</h2>
     <div class="line"></div>
+    <span class="section-chevron">▼</span>
   </div>
   <div class="grid">
 
-    <a class="card featured" href="https://www.newsis.com/view/NISX20260701_0003692007" target="_blank" data-summary="현대카드가 기존 카드 아이덴티티와 별개로 실험적이고 자유로운 정체성을 내세운 독자 브랜드 '알파벳카드'를 7월 1일 출시했습니다. 네덜란드 미니멀리즘 디자인과 카드 고유 비율(1:1.58)을 활용한 구조적 실험이 특징입니다.">
+    <a class="card featured" href="https://www.newsis.com/view/NISX20260701_0003692007" target="_blank" data-summary="íëì¹´ëê° ê¸°ì¡´ ì¹´ë ìì´ë´í°í°ì ë³ê°ë¡ ì¤íì ì´ê³  ìì ë¡ì´ ì ì²´ì±ì ë´ì¸ì´ ëì ë¸ëë 'ìíë²³ì¹´ë'ë¥¼ 7ì 1ì¼ ì¶ìíìµëë¤. ë¤ëëë ë¯¸ëë©ë¦¬ì¦ ëìì¸ê³¼ ì¹´ë ê³ ì  ë¹ì¨(1:1.58)ì íì©í êµ¬ì¡°ì  ì¤íì´ í¹ì§ìëë¤.">
       <div class="thumb g-plum">
         <div class="noise"></div>
-        <span class="thumb-label">브랜드</span>
+        <span class="thumb-label">ë¸ëë</span>
       </div>
       <div class="card-body">
-        <div class="card-source">뉴시스 · 2026. 07. 01</div>
-        <div class="card-title">현대카드, 독자브랜드 '알파벳카드' 론칭…"자유로운 정체성"</div>
+        <div class="card-source">ë´ìì¤ Â· 2026. 07. 01</div>
+        <div class="card-title">íëì¹´ë, ëìë¸ëë 'ìíë²³ì¹´ë' ë¡ ì¹­â¦"ìì ë¡ì´ ì ì²´ì±"</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
-    <a class="card" href="https://www.mt.co.kr/estate/2026/07/01/2026070109363633339" target="_blank" data-summary="서울시가 여의도공원 재조성 국제설계공모에서 '함께 자라는 여의도공원'을 최종 당선작으로 선정했습니다. 한강과 연계한 문화공원으로 탈바꿈시키는 설계안이 공개됐습니다.">
+    <a class="card" href="https://www.mt.co.kr/estate/2026/07/01/2026070109363633339" target="_blank" data-summary="ìì¸ìê° ì¬ìëê³µì ì¬ì¡°ì± êµ­ì ì¤ê³ê³µëª¨ìì 'í¨ê» ìë¼ë ì¬ìëê³µì'ì ìµì¢ ë¹ì ìì¼ë¡ ì ì íìµëë¤. íê°ê³¼ ì°ê³í ë¬¸íê³µìì¼ë¡ íë°ê¿ìí¤ë ì¤ê³ìì´ ê³µê°ëìµëë¤.">
       <div class="thumb g-forest">
         <div class="noise"></div>
-        <span class="thumb-label">조경설계</span>
+        <span class="thumb-label">ì¡°ê²½ì¤ê³</span>
       </div>
       <div class="card-body">
-        <div class="card-source">머니투데이 · 2026. 07. 01</div>
-        <div class="card-title">여의도공원, 한강 품은 문화공원으로 재탄생…설계 당선작 공개</div>
+        <div class="card-source">ë¨¸ëí¬ë°ì´ Â· 2026. 07. 01</div>
+        <div class="card-title">ì¬ìëê³µì, íê° íì ë¬¸íê³µìì¼ë¡ ì¬íìâ¦ì¤ê³ ë¹ì ì ê³µê°</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
-    <a class="card" href="https://www.etnews.com/20260701000152" target="_blank" data-summary="제네시스가 '2027년형 GV70' 연식 변경과 함께 스포티한 감성을 극대화한 신규 디자인 패키지 '그래파이트 패키지'를 출시했습니다. 다이내믹한 디자인 콘셉트를 앞세운 것이 특징입니다.">
+    <a class="card" href="https://www.etnews.com/20260701000152" target="_blank" data-summary="ì ë¤ìì¤ê° '2027ëí GV70' ì°ì ë³ê²½ê³¼ í¨ê» ì¤í¬í°í ê°ì±ì ê·¹ëíí ì ê· ëìì¸ í¨í¤ì§ 'ê·¸ëíì´í¸ í¨í¤ì§'ë¥¼ ì¶ìíìµëë¤. ë¤ì´ë´ë¯¹í ëìì¸ ì½ìí¸ë¥¼ ìì¸ì´ ê²ì´ í¹ì§ìëë¤.">
       <div class="thumb g-rust">
         <div class="noise"></div>
-        <span class="thumb-label">제품</span>
+        <span class="thumb-label">ì í</span>
       </div>
       <div class="card-body">
-        <div class="card-source">전자신문 · 2026. 07. 01</div>
-        <div class="card-title">제네시스, '2027 GV70' '그래파이트 패키지' 출시</div>
+        <div class="card-source">ì ìì ë¬¸ Â· 2026. 07. 01</div>
+        <div class="card-title">ì ë¤ìì¤, '2027 GV70' 'ê·¸ëíì´í¸ í¨í¤ì§' ì¶ì</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
-    <a class="card" href="https://www.dezeen.com/2026/07/01/tokyo-tomi-hotel-ginza-keiji-ashizawa-design/" target="_blank" data-summary-kr="일본 디자이너 아시자와 케이지가 도쿄의 옛 호스텔을 개조해 객실 8개 규모의 부티크 호텔 '토미 호텔 긴자'로 재탄생시켰습니다. 층마다 하나의 스위트만 배치해 '안목 있는 친구의 집'에 머무는 듯한 경험을 제공합니다." data-summary="Designer Keiji Ashizawa converted a former Tokyo hostel into an eight-room boutique hotel, placing one suite per floor for an intimate, home-like stay." data-title-kr="'안목 있는 친구의 집' 같은 도쿄 8객실 부티크 호텔">
+    <a class="card" href="https://www.dezeen.com/2026/07/01/tokyo-tomi-hotel-ginza-keiji-ashizawa-design/" target="_blank" data-summary-kr="ì¼ë³¸ ëìì´ë ìììì ì¼ì´ì§ê° ëì¿ì ì í¸ì¤íì ê°ì¡°í´ ê°ì¤ 8ê° ê·ëª¨ì ë¶í°í¬ í¸í 'í ë¯¸ í¸í ê¸´ì'ë¡ ì¬íììì¼°ìµëë¤. ì¸µë§ë¤ íëì ì¤ìí¸ë§ ë°°ì¹í´ 'ìëª© ìë ì¹êµ¬ì ì§'ì ë¨¸ë¬´ë ë¯í ê²½íì ì ê³µí©ëë¤." data-summary="Designer Keiji Ashizawa converted a former Tokyo hostel into an eight-room boutique hotel, placing one suite per floor for an intimate, home-like stay." data-title-kr="'ìëª© ìë ì¹êµ¬ì ì§' ê°ì ëì¿ 8ê°ì¤ ë¶í°í¬ í¸í">
       <div class="thumb g-amber">
         <div class="noise"></div>
         <span class="thumb-label">Hotel</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">Dezeen · 2026. 07. 01</div>
+        <div class="card-source">Dezeen Â· 2026. 07. 01</div>
         <div class="card-title">Eight-room Tokyo hotel designed to feel like staying "at the home of a tasteful friend"</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
-    <a class="card" href="https://www.archdaily.com/1042771/the-building-in-motion-how-vertical-mobility-is-redefining-contemporary-architecture" target="_blank" data-summary-kr="1743년 베르사유 궁전에 설치된 '나는 의자'부터 현대 건축까지 수직 이동 장치의 역사를 조명하는 에디토리얼입니다. 수직 모빌리티가 현대 건축의 공간 경험을 어떻게 재정의하는지 다룹니다." data-summary="An editorial tracing vertical mobility from Versailles' 1743 flying chair to today, exploring how it redefines spatial experience in modern architecture." data-title-kr="움직이는 건축 — 수직 이동이 현대 건축을 재정의하는 방식">
+    <a class="card" href="https://www.archdaily.com/1042771/the-building-in-motion-how-vertical-mobility-is-redefining-contemporary-architecture" target="_blank" data-summary-kr="1743ë ë² ë¥´ì¬ì  ê¶ì ì ì¤ì¹ë 'ëë ìì'ë¶í° íë ê±´ì¶ê¹ì§ ìì§ ì´ë ì¥ì¹ì ì­ì¬ë¥¼ ì¡°ëªíë ìëí ë¦¬ì¼ìëë¤. ìì§ ëª¨ë¹ë¦¬í°ê° íë ê±´ì¶ì ê³µê° ê²½íì ì´ë»ê² ì¬ì ìíëì§ ë¤ë£¹ëë¤." data-summary="An editorial tracing vertical mobility from Versailles' 1743 flying chair to today, exploring how it redefines spatial experience in modern architecture." data-title-kr="ìì§ì´ë ê±´ì¶ â ìì§ ì´ëì´ íë ê±´ì¶ì ì¬ì ìíë ë°©ì">
       <div class="thumb g-olive">
         <div class="noise"></div>
         <span class="thumb-label">Insight</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">ArchDaily · 2026. 07. 01</div>
+        <div class="card-source">ArchDaily Â· 2026. 07. 01</div>
         <div class="card-title">The Building in Motion: How Vertical Mobility Is Redefining Contemporary Architecture</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
-    <a class="card" href="https://www.dezeen.com/2026/07/01/velo-layer-andreu-world-dezeen-showroom/" target="_blank" data-summary-kr="디자인 스튜디오 레이어(Layer)가 스페인 가구 브랜드 안드레우 월드를 위해 태스크 체어 '벨로(Velo)'를 디자인해 데젠 쇼룸에 공개했습니다. 영국 디자이너 벤자민 허버트가 이끄는 스튜디오의 작업입니다." data-summary="Design studio Layer, led by Benjamin Hubert, designed the Velo task chair for Spanish furniture brand Andreu World, unveiled at the Dezeen showroom." data-title-kr="레이어가 안드레우 월드를 위해 디자인한 태스크 체어 '벨로'">
+    <a class="card" href="https://www.dezeen.com/2026/07/01/velo-layer-andreu-world-dezeen-showroom/" target="_blank" data-summary-kr="ëìì¸ ì¤íëì¤ ë ì´ì´(Layer)ê° ì¤íì¸ ê°êµ¬ ë¸ëë ìëë ì° ìëë¥¼ ìí´ íì¤í¬ ì²´ì´ 'ë²¨ë¡(Velo)'ë¥¼ ëìì¸í´ ë°ì   ì¼ë£¸ì ê³µê°íìµëë¤. ìêµ­ ëìì´ë ë²¤ìë¯¼ íë²í¸ê° ì´ëë ì¤íëì¤ì ìììëë¤." data-summary="Design studio Layer, led by Benjamin Hubert, designed the Velo task chair for Spanish furniture brand Andreu World, unveiled at the Dezeen showroom." data-title-kr="ë ì´ì´ê° ìëë ì° ìëë¥¼ ìí´ ëìì¸í íì¤í¬ ì²´ì´ 'ë²¨ë¡'">
       <div class="thumb g-indigo">
         <div class="noise"></div>
         <span class="thumb-label">Chair</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">Dezeen · 2026. 07. 01</div>
+        <div class="card-source">Dezeen Â· 2026. 07. 01</div>
         <div class="card-title">Velo chair by Layer for Andreu World</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
     </a>
 
   </div>
 </div>
 
 <div class="archive-cta-wrap">
-  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
-  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design ìì¹´ì´ë¸</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">ëìì¸ëì´í° ì¤íì±íë°©</a>
 </div>
 
 
 
-<!-- ── 방명록 ── -->
+<!-- ââ ë°©ëªë¡ ââ -->
 <section class="guestbook">
-  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-header"><h2>ëë í¡í¡</h2></div>
   <div class="gb-form">
     <div class="gb-namerow">
-      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="20" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
-      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4" autocomplete="new-password">
+      <input class="gb-nick" type="text" placeholder="ëë¤ì (ë¶ì¼)" maxlength="20" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="ë¹ë°ë²í¸ 4ìë¦¬" maxlength="4" autocomplete="new-password">
     </div>
-    <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
+    <textarea class="gb-content" placeholder="ëìì¸ì ëí ìê²¬ì´ë ê¶ê¸í ì ì ìì ë¡­ê² ë¨ê²¨ë³´ì¸ì." maxlength="200"></textarea>
     <div class="gb-row"><span></span><span class="gb-count" id="gbCount">0 / 200</span></div>
-    <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    <button class="gb-submit" id="gbSubmit" disabled>ë±ë¡</button>
   </div>
   <div class="gb-list" id="gbList"></div>
   <div class="gb-pagination" id="gbPager"></div>
 </section>
 
-<!-- 디놀 톡톡 비번 확인 모달 -->
+<!-- ëë í¡í¡ ë¹ë² íì¸ ëª¨ë¬ -->
 <div class="gb-modal-overlay" id="gbModalOverlay"></div>
 <div class="gb-modal" id="gbModal">
-  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
-  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-title" id="gbModalTitle">ë¹ë°ë²í¸ íì¸</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="ë¹ë°ë²í¸" autocomplete="new-password">
   <div class="gb-modal-err" id="gbModalErr"></div>
   <div class="gb-modal-btns">
-    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
-    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+    <button class="gb-modal-cancel" id="gbModalCancel">ì·¨ì</button>
+    <button class="gb-modal-ok" id="gbModalOk">íì¸</button>
   </div>
 </div>
 
 
 
 
-<!-- ── FOOTER ── -->
+<!-- ââ FOOTER ââ -->
 <footer>
-  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
-  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <p class="footer-copy">Â© 2026 ëìì¸ëì´í°. All rights reserved.</p>
+  <p class="footer-notice">ë³¸ ìë¹ì¤ì ëìì¸ ë° êµ¬ì±ì ëí ê¶ë¦¬ë ëìì¸ëì´í°ì ììµëë¤.<br>ì ê³µëë ì½íì¸ ì ì ìê¶ì ê° ì¸ë¡ ì¬ ë° ìì ìê¶ììê² ììµëë¤.</p>
   <div class="footer-links">
-    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+    <a class="footer-link" href="../../../privacy.html">ê°ì¸ì ë³´ì²ë¦¬ë°©ì¹¨</a>
   </div>
 </footer>
 
-<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
-<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+<!-- ââ ë§¨ ìë¡ (ëª¨ë°ì¼ ì ì©, ì¤í¬ë¡¤ ì ë¸ì¶) ââ -->
+<button class="to-top" id="toTop" aria-label="ë§¨ ìë¡" title="ë§¨ ìë¡">â</button>
 
 
 <script>
-/* ── 콘텐츠 검토 로직 ──────────────────────────────────────────
-   페이지 로드 시 자동으로 아래 항목을 검사합니다.
-   1. 중복 URL — 같은 링크가 2개 이상이면 해당 카드에 경고 표시
-   2. 빈 링크 — href가 없거나 '#'인 카드 감지
-   개발/검토용 표시이며 콘텐츠 영역 위에 요약 배너가 표시됩니다.
-──────────────────────────────────────────────────────────── */
+/* ââ ì½íì¸  ê²í  ë¡ì§ ââââââââââââââââââââââââââââââââââââââââââ
+   íì´ì§ ë¡ë ì ìëì¼ë¡ ìë í­ëª©ì ê²ì¬í©ëë¤.
+   1. ì¤ë³µ URL â ê°ì ë§í¬ê° 2ê° ì´ìì´ë©´ í´ë¹ ì¹´ëì ê²½ê³  íì
+   2. ë¹ ë§í¬ â hrefê° ìê±°ë '#'ì¸ ì¹´ë ê°ì§
+   ê°ë°/ê²í ì© íìì´ë©° ì½íì¸  ìì­ ìì ìì½ ë°°ëê° íìë©ëë¤.
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
 document.addEventListener('DOMContentLoaded', () => {
   const cards = [...document.querySelectorAll('a.card')];
 
-  /* ── 맨 위로 플로팅 버튼 ──────────────────────────────────
-     600px 이상 스크롤되면 .show로 페이드인, 클릭 시 상단으로 부드럽게 이동.
-     노출 자체는 CSS @media(max-width:580px)에서만 display:flex → 모바일 전용.
-  ──────────────────────────────────────────────────────────── */
+  /* ââ ë§¨ ìë¡ íë¡í ë²í¼ ââââââââââââââââââââââââââââââââââ
+     600px ì´ì ì¤í¬ë¡¤ëë©´ .showë¡ íì´ëì¸, í´ë¦­ ì ìë¨ì¼ë¡ ë¶ëë½ê² ì´ë.
+     ë¸ì¶ ìì²´ë CSS @media(max-width:580px)ììë§ display:flex â ëª¨ë°ì¼ ì ì©.
+  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
   const toTop = document.getElementById('toTop');
   if (toTop) {
     const SHOW_AFTER = 600;
@@ -1069,10 +1090,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── 읽음 상태 (localStorage) ──────────────────────────────
-     카드를 한 번 열람(드로어 오픈)하면 해당 URL을 기록하고,
-     card-title에 .read 클래스(font-weight 450, color #a3a3a3)를 부여합니다.
-  ──────────────────────────────────────────────────────────── */
+  /* ââ ì½ì ìí (localStorage) ââââââââââââââââââââââââââââââ
+     ì¹´ëë¥¼ í ë² ì´ë(ëë¡ì´ ì¤í)íë©´ í´ë¹ URLì ê¸°ë¡íê³ ,
+     card-titleì .read í´ëì¤(font-weight 450, color #a3a3a3)ë¥¼ ë¶ì¬í©ëë¤.
+  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
   const READ_KEY = 'dinol_read_20260702';
 
   function getReadUrls() {
@@ -1096,7 +1117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  /* ── 드로어 (슬라이드업 요약 패널) ── */
+  /* ââ ëë¡ì´ (ì¬ë¼ì´ëì ìì½ í¨ë) ââ */
   const drawer           = document.getElementById('drawer');
   const overlay          = document.getElementById('drawerOverlay');
   const drawerClose      = document.getElementById('drawerClose');
@@ -1118,7 +1139,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnKr            = document.getElementById('btnKr');
   const btnEn            = document.getElementById('btnEn');
 
-  /* 6필드: 각 필드의 EN(기본)/KR 값 보관 */
+  /* 6íë: ê° íëì EN(ê¸°ë³¸)/KR ê° ë³´ê´ */
   const F = {
     title:{}, oneline:{}, designer:{}, points:{}, recommend:{}
   };
@@ -1136,7 +1157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!n) { if (wrap) wrap.style.display = "none"; return; }
     if (wrap) wrap.style.display = "flex";
     let html = "";
-    for (let i = 1; i <= 5; i++) { html += "<span class='" + (i <= n ? "star-on" : "star-off") + "'>★</span>"; }
+    for (let i = 1; i <= 5; i++) { html += "<span class='" + (i <= n ? "star-on" : "star-off") + "'>â</span>"; }
     drawerImpact.innerHTML = html;
   }
 
@@ -1167,7 +1188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gradClass = [...thumb.classList].find(c => c.startsWith('g-')) || '';
     drawerThumb.className = `drawer-thumb ${gradClass}`;
 
-    /* 기존 이미지 제거 후 카드 썸네일 이미지 복사 */
+    /* ê¸°ì¡´ ì´ë¯¸ì§ ì ê±° í ì¹´ë ì¸ë¤ì¼ ì´ë¯¸ì§ ë³µì¬ */
     const prevImg = drawerThumb.querySelector('.thumb-img');
     if (prevImg) prevImg.remove();
     const cardImg = thumb.querySelector('img.thumb-img');
@@ -1185,11 +1206,11 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerSource.textContent = card.querySelector('.card-source')?.textContent || '';
 
     const d = card.dataset;
-    /* 카테고리(언어중립, 공유) */
+    /* ì¹´íê³ ë¦¬(ì¸ì´ì¤ë¦½, ê³µì ) */
     drawerCategory.textContent = d.category || '';
     drawerCategory.style.display = d.category ? 'block' : 'none';
 
-    /* 기본값(EN 슬롯) = 카드 언어, -kr 슬롯 = 한국어(없으면 기본값 복제) */
+    /* ê¸°ë³¸ê°(EN ì¬ë¡¯) = ì¹´ë ì¸ì´, -kr ì¬ë¡¯ = íêµ­ì´(ìì¼ë©´ ê¸°ë³¸ê° ë³µì ) */
     const baseTitle = card.querySelector('.card-title')?.textContent || '';
     F.title.en     = baseTitle;
     F.oneline.en   = d.summary   || '';
@@ -1203,21 +1224,21 @@ document.addEventListener('DOMContentLoaded', () => {
     F.points.kr    = d.pointsKr    || F.points.en;
     F.recommend.kr = d.recommendKr || F.recommend.en;
 
-    /* 영문 기사(-kr 번역 있음) → 토글 노출, 기본 KR / 한국어 기사 → 토글 숨김, KR 값 표시 */
+    /* ìë¬¸ ê¸°ì¬(-kr ë²ì­ ìì) â í ê¸ ë¸ì¶, ê¸°ë³¸ KR / íêµ­ì´ ê¸°ì¬ â í ê¸ ì¨ê¹, KR ê° íì */
     if (hasEn && d.titleKr) {
       drawerLangToggle.style.display = 'flex';
       setLang('kr');
     } else {
       drawerLangToggle.style.display = 'none';
-      setLang('kr'); /* 한국어 기사: kr 슬롯이 곧 기본값 */
+      setLang('kr'); /* íêµ­ì´ ê¸°ì¬: kr ì¬ë¡¯ì´ ê³§ ê¸°ë³¸ê° */
     }
 
     drawerCta.href = card.href;
 
-    /* 실무 영향도 별점 (언어 무관) */
+    /* ì¤ë¬´ ìí¥ë ë³ì  (ì¸ì´ ë¬´ê´) */
     renderStars(card.dataset.impactScore);
 
-    /* 에디터 코멘트 (언어 무관, 주관적 논평) — 값 없으면 항목 숨김 */
+    /* ìëí° ì½ë©í¸ (ì¸ì´ ë¬´ê´, ì£¼ê´ì  ë¼í) â ê° ìì¼ë©´ í­ëª© ì¨ê¹ */
     const commentText = (card.dataset.comment || '').trim();
     drawerComment.textContent = commentText;
     drawerCommentWrap.style.display = commentText ? 'flex' : 'none';
@@ -1243,7 +1264,14 @@ document.addEventListener('DOMContentLoaded', () => {
   drawerClose.addEventListener('click', closeDrawer);
   overlay.addEventListener('click', closeDrawer);
 
-  /* 1. 중복 URL 검사 */
+  /* 섹션 아코디언 (AI·Design 접기/펼치기) */
+  document.querySelectorAll('.section-header').forEach(header => {
+    header.addEventListener('click', () => {
+      header.closest('.section').classList.toggle('collapsed');
+    });
+  });
+
+  /* 1. ì¤ë³µ URL ê²ì¬ */
   const urlCount = {};
   cards.forEach(c => {
     const url = c.href;
@@ -1255,7 +1283,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.filter(c => c.href === url).forEach(card => {
       card.style.outline = '2px solid #ff4444';
       const badge = document.createElement('div');
-      badge.textContent = '⚠ 중복 링크';
+      badge.textContent = 'â  ì¤ë³µ ë§í¬';
       badge.style.cssText = [
         'position:absolute', 'top:0', 'left:0',
         'background:#ff4444', 'color:#fff',
@@ -1268,12 +1296,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* 2. 빈 링크 검사 */
+  /* 2. ë¹ ë§í¬ ê²ì¬ */
   const emptyLinks = cards.filter(c => !c.getAttribute('href') || c.getAttribute('href') === '#');
   emptyLinks.forEach(card => {
     card.style.outline = '2px solid #ffaa00';
     const badge = document.createElement('div');
-    badge.textContent = '⚠ 링크 없음';
+    badge.textContent = 'â  ë§í¬ ìì';
     badge.style.cssText = [
       'position:absolute', 'top:0', 'left:0',
       'background:#ffaa00', 'color:#000',
@@ -1285,11 +1313,11 @@ document.addEventListener('DOMContentLoaded', () => {
     card.prepend(badge);
   });
 
-  /* 3. 요약 배너 */
+  /* 3. ìì½ ë°°ë */
   const issues = dupeUrls.length + emptyLinks.length;
   if (issues > 0) {
     const banner = document.createElement('div');
-    banner.innerHTML = `⚠ 콘텐츠 검토 결과: 중복 링크 <b>${dupeUrls.length}건</b>, 빈 링크 <b>${emptyLinks.length}건</b> 발견 — 빨간/노란 테두리 카드를 확인하세요.`;
+    banner.innerHTML = `â  ì½íì¸  ê²í  ê²°ê³¼: ì¤ë³µ ë§í¬ <b>${dupeUrls.length}ê±´</b>, ë¹ ë§í¬ <b>${emptyLinks.length}ê±´</b> ë°ê²¬ â ë¹¨ê°/ë¸ë íëë¦¬ ì¹´ëë¥¼ íì¸íì¸ì.`;
     banner.style.cssText = [
       'position:fixed', 'bottom:20px', 'left:50%',
       'transform:translateX(-50%)',
@@ -1300,9 +1328,9 @@ document.addEventListener('DOMContentLoaded', () => {
       'white-space:nowrap'
     ].join(';');
     document.body.appendChild(banner);
-    console.warn('[디자인놀이터] 검토 오류:', { dupeUrls, emptyLinks: emptyLinks.map(c => c.querySelector('.card-title')?.textContent) });
+    console.warn('[ëìì¸ëì´í°] ê²í  ì¤ë¥:', { dupeUrls, emptyLinks: emptyLinks.map(c => c.querySelector('.card-title')?.textContent) });
   } else {
-    console.log('[디자인놀이터] ✅ 콘텐츠 검토 통과 — 중복 링크 없음, 빈 링크 없음');
+    console.log('[ëìì¸ëì´í°] â ì½íì¸  ê²í  íµê³¼ â ì¤ë³µ ë§í¬ ìì, ë¹ ë§í¬ ìì');
   }
 });
 </script>
