@@ -456,7 +456,7 @@
     border-bottom: 1px solid #1e1e28;
   }
 
-  .drawer-source { font-size: 13px; color: #d0d0e0; }
+  .drawer-source { font-size: 13px; color: #aeb0c2; }
 
   .drawer-thumb {
     height: 84px;
@@ -504,14 +504,14 @@
   /* ── A안: 구조화 요약 필드 ── */
   .drawer-category { font-size: 13px; font-weight: 600; color: #8a8aff; letter-spacing: 0.4px; }
   .drawer-field { display: flex; flex-direction: column; gap: 3px; }
-  .drawer-field-label { font-size: 13px; font-weight: 600; color: #d0d0e0; letter-spacing: 0.2px; }
-  .drawer-field-text { font-size: 15px; color: #cfcfda; line-height: 1.6; }
+  .drawer-field-label { font-size: 13px; font-weight: 550; color: #f1f2f7; letter-spacing: 0.2px; }
+  .drawer-field-text { font-size: 15px; font-weight: 350; color: #cfcfda; line-height: 1.6; white-space: pre-line; }
   /* 실무 영향도 별점 */
   .drawer-stars { display: inline-flex; align-items: center; gap: 2px; font-size: 15px; letter-spacing: 1px; line-height: 1; }
   .drawer-stars .star-on { color: #ff7f3e; }
   .drawer-stars .star-off { color: #3a3a48; }
   .drawer-points { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 3px; }
-  .drawer-points li { font-size: 15px; color: #cfcfda; line-height: 1.45; }
+  .drawer-points li { font-size: 15px; font-weight: 350; color: #cfcfda; line-height: 1.45; }
   /* 큐레이션 코멘트 (오리지널 논평 · 시각적 강조) */
   .drawer-comment {
     display: flex; flex-direction: column; gap: 6px;
@@ -519,9 +519,9 @@
   }
   .drawer-comment-label {
     display: flex; align-items: center; gap: 5px;
-    font-size: 13px; font-weight: 600; color: #ff7f3e; letter-spacing: 0.2px;
+    font-size: 13px; font-weight: 550; color: #ff7f3e; letter-spacing: 0.2px;
   }
-  .drawer-comment-text { font-size: 15px; color: #cfcfda; line-height: 1.6; }
+  .drawer-comment-text { font-size: 15px; font-weight: 350; color: #cfcfda; line-height: 1.6; white-space: pre-line; }
 
   .drawer-footer { padding: 8px 20px 20px; display: flex; flex-direction: row; gap: 10px; }
 
@@ -850,13 +850,16 @@
   <div class="grid">
     <a class="card featured" href="https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/" target="_blank"
        data-category="AI · Europe · Startup"
-       data-summary="Mistral, the French AI lab, is reportedly raising ~$3.5B at a $23B valuation and has an open-weight model coming this summer. Its ARR jumped from $20M to over $400M in a year — but it's still a fraction of OpenAI or Anthropic." data-summary-kr="프랑스 AI 기업 미스트랄이 약 35억 달러를 230억 달러 밸류로 조달 중이며, 이번 여름 오픈웨이트 신모델을 예고했습니다. 연매출이 1년 새 2천만→4억 달러로 급증했지만, 여전히 오픈AI·앤트로픽에 비하면 소규모입니다."
-       data-designer="Europe's 'sovereign, open' AI alternative is maturing. If you build tools or ship products in the EU, keep Mistral on your radar — open weights and GDPR-friendly positioning make it a realistic option when data control or cost matters." data-designer-kr="유럽의 '주권·오픈' AI 대안이 성숙하고 있습니다. EU 대상 제품·도구를 만든다면 미스트랄을 후보로 기억해 두세요. 오픈웨이트와 GDPR 친화 포지셔닝 덕에 데이터 통제·비용이 중요할 때 현실적 선택지가 됩니다."
+       data-summary="Mistral, the French AI lab, is reportedly raising ~$3.5B at a $23B valuation and has an open-weight model coming this summer. Its ARR jumped from $20M to over $400M in a year, but it's still a fraction of OpenAI or Anthropic." data-summary-kr="프랑스 AI 기업 미스트랄이 약 35억 달러를 230억 달러 밸류로 조달 중이며, 이번 여름 오픈웨이트 신모델을 예고했습니다. 연매출이 1년 새 2천만→4억 달러로 급증했지만, 여전히 오픈AI·앤트로픽에 비하면 소규모입니다."
+       data-designer="Europe's 'sovereign, open' AI alternative is maturing. If you build tools or ship products in the EU, keep Mistral on your radar. Open weights and GDPR-friendly positioning make it a realistic option when data control or cost matters." data-designer-kr="유럽의 '주권·오픈' AI 대안이 성숙하고 있습니다.
+EU 대상 제품·도구를 만든다면 미스트랄을 후보로 기억해 두세요. 오픈웨이트와 GDPR 친화 포지셔닝 덕에 데이터 통제·비용이 중요할 때 현실적 선택지가 됩니다."
        data-impact="Medium · Builders choosing AI models, esp. for EU/enterprise" data-impact-kr="중간 · AI 모델을 고르는 빌더, 특히 EU·엔터프라이즈"
        data-impact-score="3"
        data-points="Why Mistral follows a 'Palantir playbook' (forward-deployed engineers)|Open-weight strategy vs closed US labs|Still far smaller than US frontier labs, but Europe's clear leader" data-points-kr="미스트랄이 'Palantir식' 전략(현장 배치 엔지니어)을 쓰는 이유|오픈웨이트 전략 vs 미국의 폐쇄형 랩|미국 최전선 랩보다는 여전히 작지만, 유럽에선 확실한 선두"
        data-recommend="Read if you pick AI vendors, and bookmark Mistral as a European/open-weight option to reconsider each planning cycle" data-recommend-kr="AI 벤더를 고른다면 읽어보고, 기획 주기마다 재검토할 '유럽·오픈웨이트 선택지'로 미스트랄을 저장하세요"
-       data-comment="미스트랄 이야기의 핵심은 밸류 숫자가 아니라 '오픈웨이트 + 유럽 주권'이라는 포지셔닝이라고 봅니다. 미국 빅랩들이 폐쇄 모델로 갈 때, 자체 호스팅과 데이터 통제를 원하는 조직에게 미스트랄은 유일하게 진지한 대안이 됐습니다. 디자이너·기획자에게 시사점은 분명합니다 — 'AI = 오픈AI/앤트로픽'이라는 기본값을 의심하고, 프로젝트 성격(비용·규제·데이터)에 따라 모델을 고르는 감각이 점점 실무 역량이 되어갑니다."
+       data-comment="미스트랄 이야기의 핵심은 밸류 숫자가 아니라 '오픈웨이트 + 유럽 주권'이라는 포지셔닝이라고 봅니다. 미국 빅랩들이 폐쇄 모델로 갈 때, 자체 호스팅과 데이터 통제를 원하는 조직에게 미스트랄은 유일하게 진지한 대안이 됐습니다.
+
+디자이너·기획자에게 시사점은 분명합니다. 'AI = 오픈AI/앤트로픽'이라는 기본값을 의심하고, 프로젝트 성격(비용·규제·데이터)에 따라 모델을 고르는 감각이 점점 실무 역량이 되어갑니다."
        data-title-kr="미스트랄, 230억 달러 밸류 조달 추진…유럽의 오픈AI 대항마 현주소">
       <div class="thumb g-indigo">
         <div class="noise"></div>
@@ -870,17 +873,23 @@
       <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
-    <a class="card" href="https://variety.com/2026/film/news/midjourney-studios-ai-copyright-discovery-1236800902/" target="_blank" data-summary-kr="이미지 생성 AI 미드저니가 자신을 저작권 침해로 고소한 디즈니·유니버설·워너브러더스에게 '당신들도 내부적으로 AI를 어떻게 쓰는지 법정에서 공개하라'고 역으로 요구했습니다. 스튜디오들은 2025년 미드저니가 자사 캐릭터(다스베이더·슈퍼맨·심슨 등)를 무단 생성하게 한다며 최대 작품당 15만 달러를 청구했고, 미드저니는 '공개 이미지 학습은 공정 이용이며 스튜디오도 같은 일을 한다'는 논리로 맞서고 있습니다." data-summary="AI image generator Midjourney is pushing a federal court to force Disney, Universal and Warner Bros. to disclose how they use AI internally, as part of its defense in the studios' 2025 copyright suit. Midjourney argues training on public images is fair use — and that the studios may be doing the very thing they're suing over." data-title-kr="미드저니, 자신을 고소한 디즈니·유니버설·워너에 '당신들의 AI 사용도 공개하라' 역공"
+    <a class="card" href="https://variety.com/2026/film/news/midjourney-studios-ai-copyright-discovery-1236800902/" target="_blank" data-summary-kr="이미지 생성 AI 미드저니가 자신을 저작권 침해로 고소한 디즈니·유니버설·워너브러더스에게 '당신들도 내부적으로 AI를 어떻게 쓰는지 법정에서 공개하라'고 역으로 요구했습니다. 스튜디오들은 2025년 미드저니가 자사 캐릭터(다스베이더·슈퍼맨·심슨 등)를 무단 생성하게 한다며 최대 작품당 15만 달러를 청구했고, 미드저니는 '공개 이미지 학습은 공정 이용이며 스튜디오도 같은 일을 한다'는 논리로 맞서고 있습니다." data-summary="AI image generator Midjourney is pushing a federal court to force Disney, Universal and Warner Bros. to disclose how they use AI internally, as part of its defense in the studios' 2025 copyright suit. Midjourney argues training on public images is fair use, and that the studios may be doing the very thing they're suing over." data-title-kr="미드저니, 자신을 고소한 디즈니·유니버설·워너에 '당신들의 AI 사용도 공개하라' 역공"
        data-category="AI · 창작 · 저작권"
-       data-designer="This is the fight that will define how designers and creators can (and can't) use generative AI. At its heart: is training AI on copyrighted characters 'theft' or 'fair use'? However the court rules, it will shape what's legally safe to make with these tools — worth watching closely if AI image generation is anywhere near your workflow." data-designer-kr="이 소송은 '디자이너·창작자가 생성형 AI를 어디까지 써도 되는가'를 규정할 싸움입니다. 핵심 질문은 이겁니다 — 저작권 있는 캐릭터로 AI를 학습시키는 건 '도둑질'인가 '공정 이용'인가. 법원이 어느 쪽으로 판단하든, AI 도구로 무엇을 만들어도 법적으로 안전한지가 여기서 정해집니다. AI 이미지 생성을 조금이라도 쓴다면 눈여겨볼 사건입니다."
+       data-designer="This is the fight that will define how designers and creators can (and can't) use generative AI. At its heart: is training AI on copyrighted characters 'theft' or 'fair use'? However the court rules, it will shape what's legally safe to make with these tools, worth watching closely if AI image generation is anywhere near your workflow." data-designer-kr="이 소송은 '디자이너·창작자가 생성형 AI를 어디까지 써도 되는가'를 규정할 싸움입니다. 핵심 질문은 이겁니다. 저작권 있는 캐릭터로 AI를 학습시키는 건 '도둑질'인가 '공정 이용'인가.
+
+법원이 어느 쪽으로 판단하든, AI 도구로 무엇을 만들어도 법적으로 안전한지가 여기서 정해집니다. AI 이미지 생성을 조금이라도 쓴다면 눈여겨볼 사건입니다."
        data-impact="Medium · Anyone using or considering generative AI in creative work" data-impact-kr="중간 · 창작에 생성형 AI를 쓰거나 고려하는 모든 사람"
        data-impact-score="3"
        data-points="Studios sued Midjourney (2025) over AI-generated copyrighted characters|Midjourney counters with 'fair use' + 'you do it too' (unclean hands)|The ruling could set precedent for all generative AI and creators" data-points-kr="스튜디오들이 AI의 저작권 캐릭터 생성을 두고 미드저니 제소(2025)|미드저니는 '공정 이용' + '당신들도 한다'(unclean hands)로 반격|판결이 생성형 AI와 창작자 전체의 선례가 될 수 있음"
        data-recommend="Follow this case as the bellwether for AI-and-copyright; it affects what you can safely make" data-recommend-kr="AI·저작권의 풍향계로 이 사건을 따라가세요; 안전하게 만들 수 있는 범위가 여기서 갈립니다"
-       data-comment="이 소송은 우리 모두의 일입니다. AI로 이미지를 만드는 순간, 우리는 '이 결과물이 누군가의 저작권을 침해하는가'라는 질문 위에 서 있게 됐으니까요. 재미있는 건 미드저니의 반격 논리입니다 — '당신들(할리우드 스튜디오)도 내부적으로 AI를 쓰면서 왜 우리만 고소하냐'는 거죠. 이게 사실로 드러나면 '업계 관행'이라는 방어가 성립합니다. 어느 쪽이 이기든, 이 판결은 디자이너가 AI 도구로 무엇을 만들어도 되는지의 경계선을 그을 겁니다. 도구가 강력해질수록, 그 도구를 '어디까지 써도 되는가'라는 법적·윤리적 감각이 실력만큼 중요해집니다.">
+       data-comment="이 소송은 우리 모두의 일입니다. AI로 이미지를 만드는 순간, 우리는 '이 결과물이 누군가의 저작권을 침해하는가'라는 질문 위에 서 있게 됐으니까요.
+
+재미있는 건 미드저니의 반격 논리입니다. '당신들(할리우드 스튜디오)도 내부적으로 AI를 쓰면서 왜 우리만 고소하냐'는 거죠. 이게 사실로 드러나면 '업계 관행'이라는 방어가 성립합니다.
+
+어느 쪽이 이기든, 이 판결은 디자이너가 AI 도구로 무엇을 만들어도 되는지의 경계선을 그을 겁니다. 도구가 강력해질수록, 그 도구를 '어디까지 써도 되는가'라는 법적·윤리적 감각이 실력만큼 중요해집니다.">
       <div class="thumb g-slate">
         <div class="noise"></div>
-        <span class="thumb-label">저작권</span>
+        <span class="thumb-label">COPYRIGHT</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
@@ -904,17 +913,23 @@
   </div>
   <div class="grid">
 
-    <a class="card featured" href="https://www.yankodesign.com/2026/07/03/moon-inspired-japanese-knife-blends-damascus-steel-with-gallery-worthy-material-design/" target="_blank" data-summary-kr="달(TSUKI)에서 영감을 받은 일본 셰프칼입니다. 칼등의 어두운 해머드(두들긴) 마감이 칼날 쪽 밝은 다마스커스 물결무늬로 이어지고, 손잡이는 사쿠라 자작나무에서 반투명 레진으로 전환됩니다. 후쿠이산 VG-10 강을 67겹 다마스커스로 감싼 210mm 교토(만능 셰프칼)이며, 해머드 질감이 달 표면 크레이터를 연상시키는 동시에 재료가 칼에 붙지 않게 돕습니다. 일본 5개 지역의 전통 공예(사카이 연마·야마구치 오동나무 상자·나가노 미즈히키 매듭·에치젠 와시 종이)를 하나의 칼에 담았습니다." data-summary="TSUKI is a moon-inspired Japanese chef's knife: a dark hammered spine flows into a bright Damascus wave near the edge, and a Sakura-birch handle shifts into translucent resin. Built on 67-layer Damascus over Fukui VG-10 steel (a 210mm gyuto), it assembles five regional Japanese crafts into one object." data-title-kr="달을 담은 일본 셰프칼 — 다마스커스 강과 '갤러리급' 소재 디자인의 결합"
+    <a class="card featured" href="https://www.yankodesign.com/2026/07/03/moon-inspired-japanese-knife-blends-damascus-steel-with-gallery-worthy-material-design/" target="_blank" data-summary-kr="달(TSUKI)에서 영감을 받은 일본 셰프칼입니다. 칼등의 어두운 해머드(두들긴) 마감이 칼날 쪽 밝은 다마스커스 물결무늬로 이어지고, 손잡이는 사쿠라 자작나무에서 반투명 레진으로 전환됩니다. 후쿠이산 VG-10 강을 67겹 다마스커스로 감싼 210mm 교토(만능 셰프칼)이며, 해머드 질감이 달 표면 크레이터를 연상시키는 동시에 재료가 칼에 붙지 않게 돕습니다. 일본 5개 지역의 전통 공예(사카이 연마·야마구치 오동나무 상자·나가노 미즈히키 매듭·에치젠 와시 종이)를 하나의 칼에 담았습니다." data-summary="TSUKI is a moon-inspired Japanese chef's knife: a dark hammered spine flows into a bright Damascus wave near the edge, and a Sakura-birch handle shifts into translucent resin. Built on 67-layer Damascus over Fukui VG-10 steel (a 210mm gyuto), it assembles five regional Japanese crafts into one object." data-title-kr="달을 담은 일본 셰프칼, 다마스커스 강과 '갤러리급' 소재 디자인의 결합"
        data-category="Design · Product · Craft"
-       data-designer="A masterclass in material storytelling. Every surface — hammered steel, Damascus ripples, resin handle — serves one coherent idea (the moon), and the knife pulls in five regional craft traditions as genuine substance, not branding. It's a reminder that great product design makes material and narrative inseparable, so the object feels meant rather than assembled." data-designer-kr="소재로 이야기를 짜는 법의 정수입니다. 해머드 강철, 다마스커스 물결, 레진 손잡이 — 모든 표면이 '달'이라는 하나의 개념에 복무하고, 다섯 지역의 공예 전통을 브랜딩이 아니라 진짜 실체로 끌어들였습니다. 훌륭한 제품 디자인은 소재와 서사를 떼어낼 수 없게 만든다는 걸 보여줍니다. 그래서 사물이 '조립된' 게 아니라 '의도된' 것처럼 느껴지죠."
+       data-designer="A masterclass in material storytelling. Every surface (hammered steel, Damascus ripples, resin handle) serves one coherent idea (the moon), and the knife pulls in five regional craft traditions as genuine substance, not branding. It's a reminder that great product design makes material and narrative inseparable, so the object feels meant rather than assembled." data-designer-kr="소재로 이야기를 짜는 법의 정수입니다. 해머드 강철, 다마스커스 물결, 레진 손잡이. 모든 표면이 '달'이라는 하나의 개념에 복무하고, 다섯 지역의 공예 전통을 브랜딩이 아니라 진짜 실체로 끌어들였습니다.
+
+훌륭한 제품 디자인은 소재와 서사를 떼어낼 수 없게 만든다는 걸 보여줍니다. 그래서 사물이 '조립된' 게 아니라 '의도된' 것처럼 느껴지죠."
        data-impact="Low–Medium · Product, craft and material designers" data-impact-kr="낮음~중간 · 제품·공예·소재 디자이너"
        data-impact-score="4"
        data-points="Moon concept unifies every surface (hammered spine, Damascus edge, resin handle)|67-layer Damascus over Fukui VG-10; 210mm gyuto|Five regional Japanese crafts assembled into one tool" data-points-kr="'달' 콘셉트가 모든 표면(해머드 칼등·다마스커스 칼날·레진 손잡이)을 관통|후쿠이 VG-10을 67겹 다마스커스로; 210mm 교토|일본 5개 지역 공예를 한 도구에 집약"
        data-recommend="Study it as material-driven storytelling; a great example of concept unifying every detail" data-recommend-kr="소재로 이야기를 만드는 사례로 뜯어보세요; 콘셉트가 모든 디테일을 하나로 묶는 좋은 예입니다"
-       data-comment="AI가 이미지를 초 단위로 쏟아내는 시대에, 이 칼은 정반대 방향에서 힘을 얻습니다 — '왜, 어떤 손으로 만들었는가'라는 이야기죠. 흥미로운 건 '달'이라는 콘셉트 하나가 칼의 모든 부분을 지배한다는 점입니다. 칼등의 두들긴 질감은 달 크레이터, 칼날의 물결무늬는 수면에 비친 달빛, 손잡이의 반투명 레진은 달의 은은한 반사. 게다가 그 질감이 '재료가 안 붙게 한다'는 실용까지 겸합니다. 좋은 디자인의 교과서적 장면입니다 — 하나의 개념이 미감과 기능을 동시에 끌고 가고, 지역 공예라는 진짜 실체가 그걸 뒷받침합니다. 우리가 화면에서 하는 일도 결국 같습니다. 콘셉트 하나로 모든 디테일을 설득하는 것.">
+       data-comment="AI가 이미지를 초 단위로 쏟아내는 시대에, 이 칼은 정반대 방향에서 힘을 얻습니다. '왜, 어떤 손으로 만들었는가'라는 이야기죠.
+
+흥미로운 건 '달'이라는 콘셉트 하나가 칼의 모든 부분을 지배한다는 점입니다. 칼등의 두들긴 질감은 달 크레이터, 칼날의 물결무늬는 수면에 비친 달빛, 손잡이의 반투명 레진은 달의 은은한 반사. 게다가 그 질감이 '재료가 안 붙게 한다'는 실용까지 겸합니다.
+
+좋은 디자인의 교과서적 장면입니다. 하나의 개념이 미감과 기능을 동시에 끌고 가고, 지역 공예라는 진짜 실체가 그걸 뒷받침합니다. 우리가 화면에서 하는 일도 결국 같습니다. 콘셉트 하나로 모든 디테일을 설득하는 것.">
       <div class="thumb g-navy">
         <div class="noise"></div>
-        <span class="thumb-label">칼</span>
+        <span class="thumb-label">KNIFE</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
@@ -924,17 +939,23 @@
       <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
-    <a class="card" href="https://www.yankodesign.com/2026/07/02/fiat-multiplina-concept-rincarnates-classic-multipla-as-a-clever-four-seat-electric-urban-vehicle/" target="_blank" data-summary-kr="피아트가 4인승 콤팩트 전기차 '멀티플리나 콘셉트'를 공개했습니다. 1956년 피아트 600 멀티플라(공간 효율의 초기 명작)에서 영감을 받아, 최소한의 외형에 최대한의 실내 공간이라는 철학을 현대 전기 플랫폼으로 재해석했습니다. 2인승 '토폴리노'와 일반 승용차 사이의 '잃어버린 고리'를 자처하며, 도시 저배출 구역이 늘어나는 흐름 속 짧은 거리 이동에 맞춘 실용적 대안을 지향합니다. 2028년 양산 목표입니다." data-summary="Fiat revealed the Multiplina Concept, a compact four-seat EV inspired by the 1956 Fiat 600 Multipla. It revives that car's 'maximum interior in minimal exterior' philosophy on a modern electric platform, positioned as the 'missing link' between the two-seat Topolino and a full car. Production is targeted for 2028." data-title-kr="피아트 멀티플리나 콘셉트 — 1956년 명작을 4인승 도시형 전기차로 되살리다"
+    <a class="card" href="https://www.yankodesign.com/2026/07/02/fiat-multiplina-concept-rincarnates-classic-multipla-as-a-clever-four-seat-electric-urban-vehicle/" target="_blank" data-summary-kr="피아트가 4인승 콤팩트 전기차 '멀티플리나 콘셉트'를 공개했습니다. 1956년 피아트 600 멀티플라(공간 효율의 초기 명작)에서 영감을 받아, 최소한의 외형에 최대한의 실내 공간이라는 철학을 현대 전기 플랫폼으로 재해석했습니다. 2인승 '토폴리노'와 일반 승용차 사이의 '잃어버린 고리'를 자처하며, 도시 저배출 구역이 늘어나는 흐름 속 짧은 거리 이동에 맞춘 실용적 대안을 지향합니다. 2028년 양산 목표입니다." data-summary="Fiat revealed the Multiplina Concept, a compact four-seat EV inspired by the 1956 Fiat 600 Multipla. It revives that car's 'maximum interior in minimal exterior' philosophy on a modern electric platform, positioned as the 'missing link' between the two-seat Topolino and a full car. Production is targeted for 2028." data-title-kr="피아트 멀티플리나 콘셉트: 1956년 명작을 4인승 도시형 전기차로 되살리다"
        data-category="Design · Product · Mobility"
-       data-designer="A smart lesson in constraint and heritage. Fiat didn't chase a bigger, flashier car — it revived a 70-year-old idea (max space, min footprint) because it fits today's dense, low-emission cities. Good design often means solving the real problem (city space) rather than the expected one (more power/size), and knowing when to look backward to move forward." data-designer-kr="제약과 유산을 다루는 영리한 교훈입니다. 피아트는 더 크고 화려한 차를 좇지 않고, 70년 전 아이디어(최대 공간·최소 크기)를 되살렸습니다 — 그게 오늘의 밀집된 저배출 도시에 맞기 때문이죠. 좋은 디자인은 종종 예상된 문제(더 큰 힘·크기)가 아니라 진짜 문제(도시의 공간)를 푸는 것이고, 앞으로 가기 위해 언제 뒤를 돌아봐야 하는지 아는 것입니다."
+       data-designer="A smart lesson in constraint and heritage. Fiat didn't chase a bigger, flashier car. It revived a 70-year-old idea (max space, min footprint) because it fits today's dense, low-emission cities. Good design often means solving the real problem (city space) rather than the expected one (more power/size), and knowing when to look backward to move forward." data-designer-kr="제약과 유산을 다루는 영리한 교훈입니다. 피아트는 더 크고 화려한 차를 좇지 않고, 70년 전 아이디어(최대 공간·최소 크기)를 되살렸습니다. 그게 오늘의 밀집된 저배출 도시에 맞기 때문이죠.
+
+좋은 디자인은 종종 예상된 문제(더 큰 힘·크기)가 아니라 진짜 문제(도시의 공간)를 푸는 것이고, 앞으로 가기 위해 언제 뒤를 돌아봐야 하는지 아는 것입니다."
        data-impact="Low–Medium · Product, mobility and transportation designers" data-impact-kr="낮음~중간 · 제품·모빌리티·운송 디자이너"
        data-impact-score="3"
        data-points="Four-seat compact EV reviving the 1956 Fiat 600 Multipla|'Max interior, min exterior' for dense, low-emission cities|Positioned as the 'missing link' between micro-car and full car (2028)" data-points-kr="1956년 피아트 600 멀티플라를 되살린 4인승 콤팩트 전기차|밀집·저배출 도시를 위한 '최대 실내, 최소 외형'|마이크로카와 일반차 사이의 '잃어버린 고리'(2028 양산)"
        data-recommend="Note how heritage + constraint drives the concept; good mobility-design reference" data-recommend-kr="유산과 제약이 콘셉트를 이끄는 방식을 보세요; 좋은 모빌리티 디자인 레퍼런스입니다"
-       data-comment="이 콘셉트가 똑똑한 건 '더 큰 차'라는 뻔한 답을 거부했다는 점입니다. 도시가 붐비고 저배출 구역이 늘어나는 지금, 진짜 문제는 '힘'이 아니라 '공간'이라는 걸 정확히 짚었죠. 그래서 70년 전 명작(작은 외형에 넉넉한 실내)의 철학을 되살린 겁니다. 디자인에서 '복고'는 종종 게으른 향수로 흐르지만, 이건 다릅니다 — 옛 아이디어가 오늘의 문제에 딱 맞아떨어져서 소환된 거니까요. 앞으로 나아가기 위해 뒤를 돌아보는 것, 그리고 예상된 문제 대신 진짜 문제를 푸는 것. 화면 디자인에도 그대로 적용되는 태도입니다.">
+       data-comment="이 콘셉트가 똑똑한 건 '더 큰 차'라는 뻔한 답을 거부했다는 점입니다. 도시가 붐비고 저배출 구역이 늘어나는 지금, 진짜 문제는 '힘'이 아니라 '공간'이라는 걸 정확히 짚었죠. 그래서 70년 전 명작(작은 외형에 넉넉한 실내)의 철학을 되살린 겁니다.
+
+디자인에서 '복고'는 종종 게으른 향수로 흐르지만, 이건 다릅니다. 옛 아이디어가 오늘의 문제에 딱 맞아떨어져서 소환된 거니까요.
+
+앞으로 나아가기 위해 뒤를 돌아보는 것, 그리고 예상된 문제 대신 진짜 문제를 푸는 것. 화면 디자인에도 그대로 적용되는 태도입니다.">
       <div class="thumb g-forest">
         <div class="noise"></div>
-        <span class="thumb-label">전기차</span>
+        <span class="thumb-label">EV</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
@@ -944,22 +965,28 @@
       <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
-    <a class="card" href="https://www.yankodesign.com/2026/07/01/laser-engravers-need-a-workshop-this-one-fits-in-a-backpack/" target="_blank" data-summary-kr="한부스트(Hanboost) T1은 백팩에 들어가는 완전 밀폐형 미니 레이저 인그레이버입니다. 115×115×115mm에 약 400g, USB-C로 구동돼 보조배터리만으로도 작동합니다. 60×40mm 각인 영역으로 열쇠고리·가죽 패치·나무 코스터 같은 작은 물건에 집중하며, 파란색 다이오드 레이저로 더 선명한 대비와 0.05mm 정밀도를 냅니다. OD4+ 관찰창(보안경 불필요), 기울기 15도 초과 시 자동 차단, LightBurn·모바일 앱 연동을 갖췄습니다." data-summary="The Hanboost T1 is a fully-enclosed mini laser engraver that fits in a backpack — 115mm cube, ~400g, USB-C powered (a power bank is enough). Its 60x40mm area targets small objects, and a blue diode laser gives sharper contrast at 0.05mm accuracy, with an OD4+ window (no goggles needed) and a tilt cut-off." data-title-kr="레이저 인그레이버엔 작업실이 필요했다 — 이건 백팩에 들어간다"
+    <a class="card" href="https://www.yankodesign.com/2026/07/01/laser-engravers-need-a-workshop-this-one-fits-in-a-backpack/" target="_blank" data-summary-kr="한부스트(Hanboost) T1은 백팩에 들어가는 완전 밀폐형 미니 레이저 인그레이버입니다. 115×115×115mm에 약 400g, USB-C로 구동돼 보조배터리만으로도 작동합니다. 60×40mm 각인 영역으로 열쇠고리·가죽 패치·나무 코스터 같은 작은 물건에 집중하며, 파란색 다이오드 레이저로 더 선명한 대비와 0.05mm 정밀도를 냅니다. OD4+ 관찰창(보안경 불필요), 기울기 15도 초과 시 자동 차단, LightBurn·모바일 앱 연동을 갖췄습니다." data-summary="The Hanboost T1 is a fully-enclosed mini laser engraver that fits in a backpack: 115mm cube, ~400g, USB-C powered (a power bank is enough). Its 60x40mm area targets small objects, and a blue diode laser gives sharper contrast at 0.05mm accuracy, with an OD4+ window (no goggles needed) and a tilt cut-off." data-title-kr="레이저 인그레이버엔 작업실이 필요했다. 이건 백팩에 들어간다"
        data-category="Design · Product · Making"
-       data-designer="This is design lowering a barrier. By stripping a workshop machine down to a backpack-sized cube that runs off a power bank, it turns 'making physical things' from a committed setup into something casual. For screen-first designers, tools like this quietly widen what you can produce yourself — the distance from a digital design to a real, engraved object keeps shrinking." data-designer-kr="이건 '문턱을 낮추는' 디자인입니다. 작업실용 기계를 보조배터리로 돌아가는 백팩 크기 큐브로 덜어내면서, '실물을 만드는 일'을 거창한 세팅에서 가벼운 일상으로 바꿉니다. 화면 위주로 일하는 디자이너에게 이런 도구는 '스스로 만들 수 있는 것'의 범위를 조용히 넓힙니다 — 디지털 디자인에서 실제 각인된 사물까지의 거리가 계속 줄어들고 있습니다."
+       data-designer="This is design lowering a barrier. By stripping a workshop machine down to a backpack-sized cube that runs off a power bank, it turns 'making physical things' from a committed setup into something casual. For screen-first designers, tools like this quietly widen what you can produce yourself. The distance from a digital design to a real, engraved object keeps shrinking." data-designer-kr="이건 '문턱을 낮추는' 디자인입니다. 작업실용 기계를 보조배터리로 돌아가는 백팩 크기 큐브로 덜어내면서, '실물을 만드는 일'을 거창한 세팅에서 가벼운 일상으로 바꿉니다.
+
+화면 위주로 일하는 디자이너에게 이런 도구는 '스스로 만들 수 있는 것'의 범위를 조용히 넓힙니다. 디지털 디자인에서 실제 각인된 사물까지의 거리가 계속 줄어들고 있습니다."
        data-impact="Low · Makers, product designers, and anyone curious about physical output" data-impact-kr="낮음 · 메이커·제품 디자이너, 실물 제작이 궁금한 사람"
        data-impact-score="3"
        data-points="Fully-enclosed mini engraver, 115mm cube, ~400g, USB-C powered|Blue diode laser, 0.05mm accuracy, OD4+ window (no goggles)|Lowers the barrier from 'workshop machine' to backpack tool" data-points-kr="완전 밀폐형 미니 인그레이버, 115mm 큐브, 약 400g, USB-C 구동|파란 다이오드 레이저, 0.05mm 정밀도, OD4+ 관찰창(보안경 불필요)|'작업실 기계'를 백팩 도구로 낮춤"
        data-recommend="A nice signal of how making-tools are shrinking; save if you're curious about physical output" data-recommend-kr="제작 도구가 작아지는 흐름의 신호입니다; 실물 제작이 궁금하다면 저장하세요"
-       data-comment="7/4 브리핑의 xTool 프린터 카드와 이어지는 흐름입니다 — 실물을 만드는 도구가 점점 작고 싸지고 있습니다. 예전엔 레이저 인그레이버라면 작업실 한 켠, 전용 콘센트, 보안경이 필요했는데, 이건 백팩에 넣고 보조배터리로 돌립니다. 디자이너에게 이게 왜 중요하냐면, '디지털 화면 속 디자인'과 '손에 쥘 수 있는 실물' 사이의 거리가 계속 줄어들기 때문입니다. 키링에 로고를 새기든, 가죽에 패턴을 넣든, 이제 거창한 각오 없이 시도할 수 있습니다. 도구가 문턱을 낮추면, 화면만 다루던 사람도 '만드는 사람'이 될 수 있습니다.">
+       data-comment="7/4 브리핑의 xTool 프린터 카드와 이어지는 흐름입니다. 실물을 만드는 도구가 점점 작고 싸지고 있습니다. 예전엔 레이저 인그레이버라면 작업실 한 켠, 전용 콘센트, 보안경이 필요했는데, 이건 백팩에 넣고 보조배터리로 돌립니다.
+
+디자이너에게 이게 왜 중요하냐면, '디지털 화면 속 디자인'과 '손에 쥘 수 있는 실물' 사이의 거리가 계속 줄어들기 때문입니다. 키링에 로고를 새기든, 가죽에 패턴을 넣든, 이제 거창한 각오 없이 시도할 수 있습니다.
+
+도구가 문턱을 낮추면, 화면만 다루던 사람도 '만드는 사람'이 될 수 있습니다.">
       <div class="thumb g-olive">
         <div class="noise"></div>
-        <span class="thumb-label">인그레이버</span>
+        <span class="thumb-label">ENGRAVER</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
         <div class="card-source">Yanko Design · 2026. 07. 01</div>
-        <div class="card-title">Laser engravers need a workshop — this one fits in a backpack</div>
+        <div class="card-title">Laser engravers need a workshop, this one fits in a backpack</div>
       </div>
       <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
