@@ -522,14 +522,16 @@
   }
   .drawer-comment-text { font-size: 14px; color: #cfcfda; line-height: 1.6; }
 
-  .drawer-footer { padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 10px; }
+  .drawer-footer { padding: 8px 20px 20px; display: flex; flex-direction: row; gap: 10px; }
 
   .drawer-close-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 48px;
-    width: 100%;
+    flex: 0 0 auto;
+    padding-left: 22px;
+    padding-right: 22px;
     background: #23232e;
     border: none;
     color: #b0b0bc;
@@ -573,6 +575,7 @@
     align-items: center;
     justify-content: center;
     min-height: 48px;
+    flex: 1;
     background: #1e1e2e;
     border: 1px solid #2c2c48;
     color: #fff;
@@ -824,8 +827,8 @@
     </div>
   </div>
   <div class="drawer-footer">
-    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
     <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
   </div>
 </div>
 
