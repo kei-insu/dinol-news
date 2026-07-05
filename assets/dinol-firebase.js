@@ -165,15 +165,25 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   digitsOnly(pw, 4);
 
   function fmtTime(ts) {
-    const d = ts && ts.toDate ? ts.toDate() : new Date();
+    const d = ts && ts.toDate ? ts.toDate() : (ts instanceof Date ? ts : new Date());
+    const now = new Date();
+    const diff = Math.floor((now - d) / 1000); // 초 단위 경과
+    if (diff < 60) return "방금 전";
+    if (diff < 3600) return Math.floor(diff / 60) + "분 전";
+    if (diff < 86400) return Math.floor(diff / 3600) + "시간 전";
+    const days = Math.floor(diff / 86400);
+    if (days === 1) return "어제";
+    if (days < 7) return days + "일 전";
     const p = n => String(n).padStart(2, "0");
-    return d.getFullYear() + ". " + p(d.getMonth() + 1) + ". " + p(d.getDate()) + " " + p(d.getHours()) + ":" + p(d.getMinutes());
+    return d.getFullYear() + ". " + p(d.getMonth() + 1) + ". " + p(d.getDate());
   }
 
   function entryHTML(e) {
-    const head = '<div class="gb-entry-head"><span class="gb-entry-nick">' + avatar(e.nick) + " " + esc(e.nick) + '</span>' +
-      '<span class="gb-entry-time">' + esc(e.time) + '</span>' +
-      '<div class="gb-entry-actions"><button class="gb-act-edit" data-id="' + e.id + '">수정</button><button class="gb-act-del" data-id="' + e.id + '">삭제</button></div></div>';
+    const nk = e.nick.length > 12 ? e.nick.slice(0, 12) + "…" : e.nick;
+    const timeStr = fmtTime(e.ts);
+    const head = '<div class="gb-entry-head"><span class="gb-entry-nick">' + avatar(e.nick) + " " + esc(nk) + '</span>' +
+      '<div class="gb-entry-actions"><button class="gb-act-edit" data-id="' + e.id + '">수정</button><button class="gb-act-del" data-id="' + e.id + '">삭제</button></div></div>' +
+      '<div class="gb-entry-time">' + esc(timeStr) + '</div>';
     if (editingId === e.id) {
       return '<div class="gb-entry editing" data-id="' + e.id + '">' + head +
         '<div class="gb-edit-area"><textarea class="gb-edit-text" maxlength="200">' + esc(e.body) + '</textarea>' +
@@ -309,7 +319,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       const pwHash = await sha256(p);
       const ref = await addDoc(collection(db, "guestbook"), { nick: n, body: b, pwHash, createdAt: serverTimestamp() });
       // 로컬 목록 맨 앞에 추가 (서버 시간 반영 전 임시 표시)
-      entries.unshift({ id: ref.id, nick: n, body: b, pwHash, time: fmtTime(null), ts: null });
+      entries.unshift({ id: ref.id, nick: n, body: b, pwHash, time: fmtTime(null), ts: new Date() });
       nick.value = ""; pw.value = ""; content.value = ""; count.textContent = "0 / 200";
       page = 1; moShown = PER; editingId = null; renderList(); updateSubmit();
     } catch (err) {
