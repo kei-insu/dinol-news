@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ëìì¸ ëì´í° â 2026. 07. 05</title>
+<title>디자인 놀이터 — 2026. 07. 05</title>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
 <script>
@@ -12,7 +12,7 @@
   gtag('js', new Date());
   gtag('config', 'G-ZC93DYWB2B');
 </script>
-<!-- Google AdSense â TODO: ca-pub- ë¤ ì«ìë¥¼ ì¤ì  ë°ê¸ë°ì ê²ìì IDë¡ êµì²´íì¸ì -->
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
     min-height: 100vh;
   }
 
-  /* ââ HEADER ââ */
+  /* ── HEADER ── */
   header {
     display: flex;
     flex-direction: column;
@@ -73,7 +73,7 @@
     text-transform: uppercase;
   }
 
-  /* ââ SECTION ââ */
+  /* ── SECTION ── */
   .section { max-width: 1130px; margin-left: auto; margin-right: auto; margin-bottom: 56px; }
 
   .section-header {
@@ -103,10 +103,12 @@
 
   .section-chevron {
     flex-shrink: 0;
-    font-size: 13px;
-    color: #8a8a99;
-    transition: transform 0.25s ease;
+    font-size: 15px;
+    color: #cccccc;
+    transition: transform 0.2s ease;
     line-height: 1;
+    display: inline-block;
+    transform: scaleY(0.8);
   }
   .section.collapsed .section-chevron { transform: scaleY(0.8) rotate(180deg); }
   .section .grid {
@@ -122,14 +124,14 @@
     pointer-events: none;
   }
 
-  /* ââ GRID ââ */
+  /* ── GRID ── */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
     gap: 14px;
   }
 
-  /* ââ CARD ââ */
+  /* ── CARD ── */
   .card {
     background: #13131b;
     border: 1px solid #1c1c28;
@@ -147,7 +149,7 @@
     box-shadow: 0 10px 36px rgba(0,0,0,0.5);
   }
 
-  /* ââ THUMB ââ */
+  /* ── THUMB ── */
   .thumb {
     width: 100%;
     height: 128px;
@@ -160,7 +162,7 @@
     background: #1a1a24;
   }
 
-  /* ê¸°ì¬ ëí ì´ë¯¸ì§ ì¸ë¤ì¼ (object-fit: cover, ê°ë¡í­ ê¸°ì¤ crop) */
+  /* 기사 대표 이미지 썸네일 (object-fit: cover, 가로폭 기준 crop) */
   .thumb-img {
     position: absolute;
     inset: 0;
@@ -195,7 +197,7 @@
     user-select: none;
   }
 
-  /* EN badge â top-right of thumb (English articles only) */
+  /* EN badge — top-right of thumb (English articles only) */
   .thumb-en {
     position: absolute;
     top: 10px;
@@ -225,7 +227,7 @@
   .g-navy     { background: linear-gradient(145deg,#060c1e,#0e2060); }
   .g-rust     { background: linear-gradient(145deg,#1e0800,#7c2c00); }
 
-  /* ââ CARD BODY ââ */
+  /* ── CARD BODY ── */
   .card-body {
     padding: 14px 16px 12px;
     flex: 1;
@@ -248,7 +250,7 @@
     transition: color 0.2s ease, font-weight 0.2s ease;
   }
 
-  /* ì½ì ìí â ì¹´ëë¥¼ í ë² ì´ëíë©´(localStorage ê¸°ë¡) ì ì© */
+  /* 읽음 상태 — 카드를 한 번 열람하면(localStorage 기록) 적용 */
   .card-title.read {
     font-weight: 450;
     color: #a3a3a3;
@@ -256,7 +258,7 @@
 
 
 
-  /* ââ CARD FOOTER ââ */
+  /* ── CARD FOOTER ── */
   .card-footer {
     padding: 9px 16px;
     border-top: 1px solid #18181f;
@@ -269,7 +271,7 @@
 
   .featured { grid-column: span 1; }
 
-  /* ââ FOOTER ââ */
+  /* ── FOOTER ── */
   footer {
     margin-top: 48px;
     padding: 28px 0 8px;
@@ -309,22 +311,22 @@
   }
   .footer-link:hover { color: #999; }
 
-  /* ââ ìì¹´ì´ë¸ Â· ì¤íì±íë°© ë²í¼ (ëì¼ í­, ì¸ë¡ ì ë ¬) ââ */
+  /* ── 아카이브 · 오픈채팅방 버튼 (동일 폭, 세로 정렬) ── */
   .archive-cta-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;                 /* ëª¨ë°ì¼ í°ì¹ ê°ê²© ê°ì´ë(Material â¥8dp) ì¶©ì¡± */
+    gap: 12px;                 /* 모바일 터치 간격 가이드(Material ≥8dp) 충족 */
     margin-top: 8px;
   }
   .archive-cta, .kakao-cta {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 240px;              /* ë ë²í¼ ê°ë¡ ê¸¸ì´ ëì¼ */
+    width: 240px;              /* 두 버튼 가로 길이 동일 */
     max-width: 100%;
-    min-height: 48px;          /* í°ì¹ íê¹ ê°ì´ë(Apple 44 / Material 48) ì¶©ì¡± */
-    padding: 0 16px;           /* ì¢ì° ì¬ë°± (Material ë²í¼ íì¤ ~16dp) */
+    min-height: 48px;          /* 터치 타깃 가이드(Apple 44 / Material 48) 충족 */
+    padding: 0 16px;           /* 좌우 여백 (Material 버튼 표준 ~16dp) */
     border-radius: 24px;
     font-weight: 500;
     text-decoration: none;
@@ -332,7 +334,7 @@
     transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
     font-size: 16px;
   }
-  /* ìì¹´ì´ë¸: ê·¸ë ì´ ë°°ê²½ + ê²ì  íì¤í¸ */
+  /* 아카이브: 그레이 배경 + 검정 텍스트 */
   .archive-cta {
     font-size: 16px;
     color: #191919;
@@ -341,7 +343,7 @@
     letter-spacing: 0.2px;
   }
   .archive-cta:hover { background: #d9dce4; }
-  /* ì¤íì±íë°©: ì¹´ì¹´ì¤ ìë¡ì° + ê²ì  íì¤í¸ */
+  /* 오픈채팅방: 카카오 옐로우 + 검정 텍스트 */
   .kakao-cta {
     font-size: 16px;
     color: #191919;
@@ -351,7 +353,7 @@
   }
   .kakao-cta:hover { background: #ffe94d; }
 
-  /* ââ ë§¨ ìë¡ íë¡í ë²í¼ (ëª¨ë°ì¼ ì ì©) ââ */
+  /* ── 맨 위로 플로팅 버튼 (모바일 전용) ── */
   .to-top {
     position: fixed;
     right: 16px;
@@ -368,7 +370,7 @@
     font-size: 18px;
     line-height: 1;
     cursor: pointer;
-    display: none;              /* ë°ì¤í¬í± ë° ì´ê¸° ìí: ì¨ê¹ */
+    display: none;              /* 데스크톱 및 초기 상태: 숨김 */
     align-items: center;
     justify-content: center;
     opacity: 0;
@@ -379,7 +381,7 @@
   .to-top:hover { border-color: #3c3c58; color: #fff; }
   .to-top.show { opacity: 1; transform: translateY(0); }
 
-  /* ââ DRAWER ââ */
+  /* ── DRAWER ── */
   .drawer-overlay {
     display: none;
     position: fixed;
@@ -389,7 +391,7 @@
   }
   .drawer-overlay.open { display: block; }
 
-  /* PC â ì¤ì ëª¨ë¬ */
+  /* PC — 중앙 모달 */
   .drawer {
     position: fixed;
     top: 50%; left: 50%;
@@ -413,7 +415,7 @@
     pointer-events: auto;
   }
 
-  /* ëª¨ë°ì¼ â ë°íìí¸ */
+  /* 모바일 — 바텀시트 */
   @media (max-width: 580px) {
     .drawer {
       top: auto; left: 0; right: 0;
@@ -498,18 +500,18 @@
     line-height: 1.7;
     margin-top: 2px;
   }
-  /* ââ Aì: êµ¬ì¡°í ìì½ íë ââ */
+  /* ── A안: 구조화 요약 필드 ── */
   .drawer-category { font-size: 12px; font-weight: 600; color: #8a8aff; letter-spacing: 0.4px; }
   .drawer-field { display: flex; flex-direction: column; gap: 3px; }
   .drawer-field-label { font-size: 12px; font-weight: 700; color: #d0d0e0; letter-spacing: 0.2px; }
   .drawer-field-text { font-size: 14px; color: #a6a6b8; line-height: 1.6; }
-  /* ì¤ë¬´ ìí¥ë ë³ì  */
+  /* 실무 영향도 별점 */
   .drawer-stars { display: inline-flex; align-items: center; gap: 2px; font-size: 15px; letter-spacing: 1px; line-height: 1; }
   .drawer-stars .star-on { color: #ff7f3e; }
   .drawer-stars .star-off { color: #3a3a48; }
   .drawer-points { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 3px; }
   .drawer-points li { font-size: 14px; color: #a6a6b8; line-height: 1.45; }
-  /* ìëí° ì½ë©í¸ (ì¤ë¦¬ì§ë ë¼í Â· ìê°ì  ê°ì¡°) */
+  /* 에디터 코멘트 (오리지널 논평 · 시각적 강조) */
   .drawer-comment {
     display: flex; flex-direction: column; gap: 6px;
     margin-top: 2px;
@@ -600,10 +602,10 @@
     .footer-copy { font-size: 13px; }
     .footer-notice { font-size: 13px; }
     .footer-link { font-size: 13px; }
-    .to-top { display: flex; }   /* ëª¨ë°ì¼ììë§ ë¸ì¶ (íìë JSê° .showë¡ ì ì´) */
+    .to-top { display: flex; }   /* 모바일에서만 노출 (표시는 JS가 .show로 제어) */
   }
 
-  /* âââââââââââ ë°©ëªë¡ âââââââââââ */
+  /* ─────────── 방명록 ─────────── */
   .guestbook { max-width: 640px; margin: 64px auto 0; padding: 0 4px; }
   .gb-header { text-align: center; margin-bottom: 24px; }
   .gb-header h2 { font-family: 'Single Day', cursive; font-size: 32px; font-weight: 400; letter-spacing: 1px; color: #ffffff; }
@@ -616,7 +618,7 @@
     color: #e8e8f0; font-family: inherit; font-size: 16px; padding: 12px 14px; width: 100%;
   }
   .gb-nick::placeholder, .gb-pw::placeholder, .gb-content::placeholder { color: #666; }
-  /* ë¸ë¼ì°ì  ìëìì± ë°°ê²½ ê°ì  ì ê±° (í° ë°ì¤ ë°©ì§) */
+  /* 브라우저 자동완성 배경 강제 제거 (흰 박스 방지) */
   .gb-nick:-webkit-autofill, .gb-pw:-webkit-autofill, .gb-content:-webkit-autofill,
   .gb-nick:-webkit-autofill:focus, .gb-pw:-webkit-autofill:focus, .gb-content:-webkit-autofill:focus,
   .gb-modal-pw:-webkit-autofill, .gb-modal-pw:-webkit-autofill:focus {
@@ -668,7 +670,7 @@
     .gb-entry-actions .gb-act-edit, .gb-entry-actions .gb-act-del { min-height: 44px; min-width: 44px; font-size: 16px; padding: 0 12px; }
   }
 
-  /* âââââââââââ ì¹´ë ì¢ììÂ·ê³µì  ì¡ìë° âââââââââââ */
+  /* ─────────── 카드 좋아요·공유 액션바 ─────────── */
   .card-footer { justify-content: space-between; }
   .card-actions { display: flex; align-items: center; gap: 15px; }
   .act { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #8a8a99; transition: color .15s ease, transform .1s ease; }
@@ -684,21 +686,21 @@
     border: 1px solid #33333f; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 2000; }
   .gb-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-  /* âââââââââââ íì´ì§ë¤ì´ì (ë¤ì´ë²ì: ë²í¸=íë ì¸, íì´í=êµ¬ë¶) âââââââââââ */
+  /* ─────────── 페이지네이션 (네이버식: 번호=플레인, 화살표=구분) ─────────── */
   .gb-pagination { display: flex; justify-content: center; align-items: center; gap: 2px; margin-top: 28px; flex-wrap: wrap; }
   .gb-page-btn { min-width: 34px; height: 34px; padding: 0 10px; background: none; border: none; color: #8a8a99;
     font-size: 14px; cursor: pointer; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; transition: color .12s, background .12s; }
   .gb-page-btn:hover:not(:disabled) { color: #ffffff; background: #191922; }
   .gb-page-btn.active { color: #ffffff; font-weight: 700; position: relative; }
   .gb-page-btn.active::after { content: ''; position: absolute; left: 9px; right: 9px; bottom: 4px; height: 2px; background: #ff7f3e; border-radius: 2px; }
-  /* íì´í: íëë¦¬ ìë ë²í¼ + ë²í¸ì ê°ê²© */
+  /* 화살표: 테두리 있는 버튼 + 번호와 간격 */
   .gb-page-btn.gb-page-nav { border: 1px solid #222230; background: #191922; color: #a6a6b8; font-size: 13px; }
   .gb-page-btn.gb-page-nav:hover:not(:disabled) { border-color: #33333f; color: #ffffff; background: #191922; }
   .gb-page-nav.nav-prev { margin-right: 8px; }
   .gb-page-nav.nav-next { margin-left: 8px; }
   .gb-page-btn:disabled { opacity: 0.3; cursor: default; }
 
-  /* âââââââââââ ëë í¡í¡: ìì /ì­ì  Â· ì¸ë¼ì¸ í¸ì§ Â· ë¹ë² ëª¨ë¬ âââââââââââ */
+  /* ─────────── 디놀 톡톡: 수정/삭제 · 인라인 편집 · 비번 모달 ─────────── */
   .gb-entry-head { position: relative; }
   .gb-entry-actions { margin-left: auto; display: flex; gap: 6px; flex-shrink: 0; }
   .gb-act-edit, .gb-act-del { background: none; border: none; color: #5c5c68; font-size: 12px; cursor: pointer; padding: 4px 8px; font-family: inherit; display: inline-flex; align-items: center; justify-content: center; }
@@ -713,7 +715,7 @@
   .gb-edit-cancel { background: #23232e; border: none; color: #b0b0bc; }
   .gb-edit-cancel:hover { background: #2c2c3a; }
   .gb-edit-save { background: #c9ccd4; border: none; color: #191919; font-weight: 700; }
-  /* ë¹ë² íì¸ ëª¨ë¬ */
+  /* 비번 확인 모달 */
   .gb-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 3000; }
   .gb-modal-overlay.show { opacity: 1; pointer-events: auto; }
   .gb-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-46%); width: 320px; max-width: calc(100% - 40px);
@@ -738,40 +740,40 @@
 <body>
 
 <!--
-  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-  ëìì¸ ëì´í° â ì½íì¸  ìì§ ì ì±
-  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-  [í¬ë¡¤ë§ ê¸°ê°]
-  Â· í´ë¹ì¼ + ì ì¼ (ì: ì¤ë 2026-06-30 â 2026-06-29 ~ 2026-06-30)
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
 
-  [í¬ë¡¤ë§ ë²ì]
-  Â· ë´ì¤ ê¸°ì¬ + ìì¤ ê³µì  + ì¸ì¬ì´í¸ ìë£ ë± ë¤ìí ì½ìê±°ë¦¬
-  Â· ì¹´íê³ ë¦¬ë³ ìµì 4ê° ì´ì ìì§
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
 
-  [ì¸ì´ ë¹ì¨]
-  Â· ì¹ìë³ íêµ­ì´ ê¸°ì¬ : ìë¬¸ ê¸°ì¬ = 50:50 ì ì§
-  Â· ìë¬¸ ê¸°ì¬ë§ì¼ë¡ ì¹ìì´ ì±ìì§ì§ ìëë¡ íêµ­ì´ ìì¤ ì°ì  íì
-  Â· íêµ­ì´ ê¸°ì¬ íë³´: designdb.com, design.co.kr, kidp.or.kr,
-    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr ë±
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
 
-  [ì½íì¸  ê²ì¦ â í¬ë¡¤ë§ í ë°ëì ìí]
-  1. URL ì¤ë³µ íì¸ â ëì¼ URLì 1ê° ì¹´ëë§ íì©
-  2. ë ì§ íì¸ â ê¸°ì¬ ë³¸ë¬¸ì ì¤ì  ê²ì¬ì¼ì´ ìì§ ê¸°ê° ë´ì¸ì§ ê²ì¦
-  3. ì¹´ë íì´í â ëª©ì ì§ URL ì¼ì¹ íì¸
-     Â· ì¹´ëì íìë íì´íÂ·ë´ì©ì´ ë§í¬ ëì°© íì´ì§ì ì¤ì  ë´ì©ê³¼ ì¼ì¹í´ì¼ í¨
-     Â· URLì´ ëª©ë¡/ë©ì¸ íì´ì§ ë± ê¸°ì¬ê° ìë ê²½ì° ì¬ì© ê¸ì§
-     Â· ì¤ì  íì´ì§ë¥¼ ì´ì´ íì¸ëì§ ìì ë´ì©ì ì¹´ëì ê¸°ì¬íì§ ìì
-  4. ë¹ ë§í¬Â·ê¹¨ì§ ë§í¬ ì¬ì© ê¸ì§
-  5. ì¸ì´ ë¹ì¨ íì¸ â ì¹ìë³ KR:En = 50:50 ì¶©ì¡± ì¬ë¶ ìµì¢ ì ê²
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
 
-  [íê¸° ê·ì¹]
-  Â· ë ì§ íì: YYYY. MM. DD (íëì½ë©, replace ì°ì° ì¬ì© ê¸ì§)
-  Â· ìë¬¸ ê¸°ì¬ë§ En ë°°ì§ íì (êµ­ë¬¸ ê¸°ì¬ë ë°°ì§ ìì)
-  Â· íì¼ëª: Dinol_news_YYYYMMDD.html
-  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
 -->
 
-<!-- ââ DRAWER ââ -->
+<!-- ── DRAWER ── -->
 <div class="drawer-overlay" id="drawerOverlay"></div>
 <div class="drawer" id="drawer">
   <div class="drawer-header">
@@ -785,8 +787,8 @@
   <div class="drawer-body">
     <div class="drawer-toolbar">
       <div class="card-actions drawer-actions">
-        <span class="act act-like" id="drawerLike" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
-        <span class="act act-share" id="drawerShare" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
       </div>
       <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
         <button class="lang-btn active" id="btnKr">KR</button>
@@ -797,46 +799,46 @@
     <div class="drawer-title" id="drawerTitle"></div>
 
     <div class="drawer-field">
-      <div class="drawer-field-label">í ì¤ ìì½</div>
+      <div class="drawer-field-label">한 줄 요약</div>
       <div class="drawer-field-text" id="drawerOneline"></div>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">ë³¼ í¬ì¸í¸</div>
+      <div class="drawer-field-label">볼 포인트</div>
       <ul class="drawer-points" id="drawerPoints"></ul>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">ëìì´ë ê´ì </div>
+      <div class="drawer-field-label">디자이너 관점</div>
       <div class="drawer-field-text" id="drawerDesigner"></div>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">ì¤ë¬´ ìí¥ë</div>
+      <div class="drawer-field-label">실무 영향도</div>
       <div class="drawer-stars" id="drawerImpact"></div>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">ì¶ì²</div>
+      <div class="drawer-field-label">추천</div>
       <div class="drawer-field-text" id="drawerRecommend"></div>
     </div>
     <div class="drawer-comment" id="drawerCommentWrap">
-      <div class="drawer-comment-label">ð¬ ìëí° ì½ë©í¸</div>
+      <div class="drawer-comment-label">💬 에디터 코멘트</div>
       <div class="drawer-comment-text" id="drawerComment"></div>
     </div>
   </div>
   <div class="drawer-footer">
-    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">ìë¬¸ ë³´ê¸° â</a>
-    <button class="drawer-close-btn" id="drawerClose">ë«ê¸°</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
   </div>
 </div>
 
-<!-- ââ HEADER ââ -->
+<!-- ── HEADER ── -->
 <header>
-  <div class="site-title">ëìì¸ ëì´í°</div>
+  <div class="site-title">디자인 놀이터</div>
   <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
   <div class="header-sep"></div>
   <div class="site-date">July 5, 2026</div>
 </header>
 
 
-<!-- ââââââââââââââââââââââ AI ââââââââââââââââââââââ -->
+<!-- ══════════════════════ AI ══════════════════════ -->
 <div class="section">
   <div class="section-header">
     <h2>AI</h2>
@@ -845,117 +847,117 @@
   </div>
   <div class="grid">
     <a class="card featured" href="https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/" target="_blank"
-       data-category="AI Â· Europe Â· Startup"
-       data-summary="Mistral, the French AI lab, is reportedly raising ~$3.5B at a $23B valuation and has an open-weight model coming this summer. Its ARR jumped from $20M to over $400M in a year â but it's still a fraction of OpenAI or Anthropic." data-summary-kr="íëì¤ AI ê¸°ì ë¯¸ì¤í¸ëì´ ì½ 35ìµ ë¬ë¬ë¥¼ 230ìµ ë¬ë¬ ë°¸ë¥ë¡ ì¡°ë¬ ì¤ì´ë©°, ì´ë² ì¬ë¦ ì¤íì¨ì´í¸ ì ëª¨ë¸ì ìê³ íìµëë¤. ì°ë§¤ì¶ì´ 1ë ì 2ì²ë§â4ìµ ë¬ë¬ë¡ ê¸ì¦íì§ë§, ì¬ì í ì¤íAIÂ·ì¤í¸ë¡í½ì ë¹íë©´ ìê·ëª¨ìëë¤."
-       data-designer="Europe's 'sovereign, open' AI alternative is maturing. If you build tools or ship products in the EU, keep Mistral on your radar â open weights and GDPR-friendly positioning make it a realistic option when data control or cost matters." data-designer-kr="ì ë½ì 'ì£¼ê¶Â·ì¤í' AI ëìì´ ì±ìíê³  ììµëë¤. EU ëì ì íÂ·ëêµ¬ë¥¼ ë§ë ë¤ë©´ ë¯¸ì¤í¸ëì íë³´ë¡ ê¸°ìµí´ ëì¸ì. ì¤íì¨ì´í¸ì GDPR ì¹í í¬ì§ìë ëì ë°ì´í° íµì Â·ë¹ì©ì´ ì¤ìí  ë íì¤ì  ì íì§ê° ë©ëë¤."
-       data-impact="Medium Â· Builders choosing AI models, esp. for EU/enterprise" data-impact-kr="ì¤ê° Â· AI ëª¨ë¸ì ê³ ë¥´ë ë¹ë, í¹í EUÂ·ìí°íë¼ì´ì¦"
+       data-category="AI · Europe · Startup"
+       data-summary="Mistral, the French AI lab, is reportedly raising ~$3.5B at a $23B valuation and has an open-weight model coming this summer. Its ARR jumped from $20M to over $400M in a year — but it's still a fraction of OpenAI or Anthropic." data-summary-kr="프랑스 AI 기업 미스트랄이 약 35억 달러를 230억 달러 밸류로 조달 중이며, 이번 여름 오픈웨이트 신모델을 예고했습니다. 연매출이 1년 새 2천만→4억 달러로 급증했지만, 여전히 오픈AI·앤트로픽에 비하면 소규모입니다."
+       data-designer="Europe's 'sovereign, open' AI alternative is maturing. If you build tools or ship products in the EU, keep Mistral on your radar — open weights and GDPR-friendly positioning make it a realistic option when data control or cost matters." data-designer-kr="유럽의 '주권·오픈' AI 대안이 성숙하고 있습니다. EU 대상 제품·도구를 만든다면 미스트랄을 후보로 기억해 두세요. 오픈웨이트와 GDPR 친화 포지셔닝 덕에 데이터 통제·비용이 중요할 때 현실적 선택지가 됩니다."
+       data-impact="Medium · Builders choosing AI models, esp. for EU/enterprise" data-impact-kr="중간 · AI 모델을 고르는 빌더, 특히 EU·엔터프라이즈"
        data-impact-score="3"
-       data-points="Why Mistral follows a 'Palantir playbook' (forward-deployed engineers)|Open-weight strategy vs closed US labs|Still far smaller than US frontier labs, but Europe's clear leader" data-points-kr="ë¯¸ì¤í¸ëì´ 'Palantirì' ì ëµ(íì¥ ë°°ì¹ ìì§ëì´)ì ì°ë ì´ì |ì¤íì¨ì´í¸ ì ëµ vs ë¯¸êµ­ì íìí ë©|ë¯¸êµ­ ìµì ì  ë©ë³´ë¤ë ì¬ì í ìì§ë§, ì ë½ìì  íì¤í ì ë"
-       data-recommend="Read if you pick AI vendors, and bookmark Mistral as a European/open-weight option to reconsider each planning cycle" data-recommend-kr="AI ë²¤ëë¥¼ ê³ ë¥¸ë¤ë©´ ì½ì´ë³´ê³ , ê¸°í ì£¼ê¸°ë§ë¤ ì¬ê²í í  'ì ë½Â·ì¤íì¨ì´í¸ ì íì§'ë¡ ë¯¸ì¤í¸ëì ì ì¥íì¸ì"
-       data-comment="ë¯¸ì¤í¸ë ì´ì¼ê¸°ì íµì¬ì ë°¸ë¥ ì«ìê° ìëë¼ 'ì¤íì¨ì´í¸ + ì ë½ ì£¼ê¶'ì´ë¼ë í¬ì§ìëì´ë¼ê³  ë´ëë¤. ë¯¸êµ­ ë¹ë©ë¤ì´ íì ëª¨ë¸ë¡ ê° ë, ìì²´ í¸ì¤íê³¼ ë°ì´í° íµì ë¥¼ ìíë ì¡°ì§ìê² ë¯¸ì¤í¸ëì ì ì¼íê² ì§ì§í ëìì´ ëìµëë¤. ëìì´ëÂ·ê¸°íììê² ìì¬ì ì ë¶ëªí©ëë¤ â 'AI = ì¤íAI/ì¤í¸ë¡í½'ì´ë¼ë ê¸°ë³¸ê°ì ìì¬íê³ , íë¡ì í¸ ì±ê²©(ë¹ì©Â·ê·ì Â·ë°ì´í°)ì ë°ë¼ ëª¨ë¸ì ê³ ë¥´ë ê°ê°ì´ ì ì  ì¤ë¬´ ì­ëì´ ëì´ê°ëë¤."
-       data-title-kr="ë¯¸ì¤í¸ë, 230ìµ ë¬ë¬ ë°¸ë¥ ì¡°ë¬ ì¶ì§â¦ì ë½ì ì¤íAI ëí­ë§ íì£¼ì">
+       data-points="Why Mistral follows a 'Palantir playbook' (forward-deployed engineers)|Open-weight strategy vs closed US labs|Still far smaller than US frontier labs, but Europe's clear leader" data-points-kr="미스트랄이 'Palantir식' 전략(현장 배치 엔지니어)을 쓰는 이유|오픈웨이트 전략 vs 미국의 폐쇄형 랩|미국 최전선 랩보다는 여전히 작지만, 유럽에선 확실한 선두"
+       data-recommend="Read if you pick AI vendors, and bookmark Mistral as a European/open-weight option to reconsider each planning cycle" data-recommend-kr="AI 벤더를 고른다면 읽어보고, 기획 주기마다 재검토할 '유럽·오픈웨이트 선택지'로 미스트랄을 저장하세요"
+       data-comment="미스트랄 이야기의 핵심은 밸류 숫자가 아니라 '오픈웨이트 + 유럽 주권'이라는 포지셔닝이라고 봅니다. 미국 빅랩들이 폐쇄 모델로 갈 때, 자체 호스팅과 데이터 통제를 원하는 조직에게 미스트랄은 유일하게 진지한 대안이 됐습니다. 디자이너·기획자에게 시사점은 분명합니다 — 'AI = 오픈AI/앤트로픽'이라는 기본값을 의심하고, 프로젝트 성격(비용·규제·데이터)에 따라 모델을 고르는 감각이 점점 실무 역량이 되어갑니다."
+       data-title-kr="미스트랄, 230억 달러 밸류 조달 추진…유럽의 오픈AI 대항마 현주소">
       <div class="thumb g-indigo">
         <div class="noise"></div>
         <span class="thumb-label">MISTRAL</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">TechCrunch Â· 2026. 07. 04</div>
+        <div class="card-source">TechCrunch · 2026. 07. 04</div>
         <div class="card-title">What is Mistral AI? Everything to know about the OpenAI competitor</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://imnews.imbc.com/news/2026/politics/article/6834985_36912.html" target="_blank"
-       data-category="AI Â· êµ­ì  Â· ê±°ë²ëì¤"
-       data-summary="ì ì ëë¦½ ê³¼í í¨ëì´ ì²« ê¸ë¡ë² AI íê° ë³´ê³ ìë¥¼ ëìµëë¤. ìì§ì¤ ë²¤ì§ì¤Â·ë§ë¦¬ì ë ì¬ê° ê³µë ìì¥ì ë§¡ì 40ì¸ í¨ëì 'AI ì­ëì´ ê³¼íì  ì´í´ì ê°êµ­ ì ë¶ì ëì ìëë¥¼ ìì§ë¥´ê³  ìë¤'ë©°, ê·ì ëì§ ìì ë°ì ì´ íêµ­ì  ìíì¼ë¡ ì´ì´ì§ ì ìë¤ê³  ê²½ê³ íìµëë¤. ëìì ìë£Â·êµì¡ ë±ììì í° ê¸°íë ì¸ì íìµëë¤."
-       data-designer="AIë¥¼ ëë¬ì¼ êµ­ì  í©ìì 'ê³µì ê¸°ì¤ì 'ì´ ì²ì ë§ë¤ì´ì¡ë¤ë ì í¸ìëë¤. AI ê¸°ë¥ì ë¤ë£¨ë ì íì´ë¼ë©´ ìì¼ë¡ 'í¨ì¨'ë¿ ìëë¼ 'ìì Â·ê°ì¬ê°ë¥ì±Â·ì±ì'ì´ íê° ê¸°ì¤ì´ ë©ëë¤. ê²°ê³¼ë¥¼ ì¤ëªÂ·ëëë¦´ ì ìë UX, í¸í¥Â·ì¤ë¥ì ëë¹í ìì ì¥ì¹ë¥¼ ì§ê¸ë¶í° ì¤ê³ì ë°ìí´ ëì¸ì."
-       data-impact="ì¤ê° Â· AI ì íÂ·ìë¹ì¤ë¥¼ ë§ë¤ê±°ë ì ì±Â·ì¤ë¦¬ë¥¼ ì ê²½ ì°ë ì¤ë¬´ì"
+       data-category="AI · 국제 · 거버넌스"
+       data-summary="유엔 독립 과학 패널이 첫 글로벌 AI 평가 보고서를 냈습니다. 요지오 벤지오·마리아 레사가 공동 의장을 맡은 40인 패널은 'AI 역량이 과학적 이해와 각국 정부의 대응 속도를 앞지르고 있다'며, 규제되지 않은 발전이 파국적 위험으로 이어질 수 있다고 경고했습니다. 동시에 의료·교육 등에서의 큰 기회도 인정했습니다."
+       data-designer="AI를 둘러싼 국제 합의의 '공식 기준선'이 처음 만들어졌다는 신호입니다. AI 기능을 다루는 제품이라면 앞으로 '효율'뿐 아니라 '안전·감사가능성·책임'이 평가 기준이 됩니다. 결과를 설명·되돌릴 수 있는 UX, 편향·오류에 대비한 안전장치를 지금부터 설계에 반영해 두세요."
+       data-impact="중간 · AI 제품·서비스를 만들거나 정책·윤리를 신경 쓰는 실무자"
        data-impact-score="3"
-       data-points="'ì¦ê±° ëë ë§' â ê·ì í  ê·¼ê±°ê° ìì¼ ì¦ìì ì´ë¯¸ ë¦ì ì ìë¤|ì  ì¸ê³ AI ì°ì°ë ¥ì ì½ 90%ê° ë¨ ë ëë¼ì ì§ì¤ë ë¶ê· í|ê¸°í(ë¨ë°±ì§ êµ¬ì¡° ìì¸¡Â·ì ì½ ì°êµ¬)ì ìí(ë¶íë±Â·ìì¨ìì¤í íµì )ì ê³µì¡´"
-       data-recommend="AI ê±°ë²ëì¤ì 'ê³µì ê·¼ê±° ë¬¸ì'ë¡ ì ì¥íê³ , AI ê¸°ë¥ ê¸°íÂ·ì¤ë¦¬ ê²í  ì ê¸°ì¤ì ì¼ë¡ ì°¸ê³ íì¸ì"
-       data-comment="ì´ ë³´ê³ ìì ë¬´ê²ë '40ê°êµ­ ê³¼íì 40ëªì´ ì ì í©ìí´ì¼ ì¤ë¦°ë¤'ë ì ì ë°©ììì ëìµëë¤. ê·¸ë ê² ê±¸ë¬ì§ ë¬¸ì¥ì´ 'íêµ­ì  ìíì ë°°ì í  ì ìë¤'ë¼ë©´, ê·¸ê±´ ê³¼ì¥ì´ ìëë¼ ì¤ìê°ìëë¤. ëìì´ëÂ·ê¸°íììê² ì¤ìí ê±´ ê³µí¬ê° ìëë¼ ë°©í¥ìëë¤ â ìì¼ë¡ ì¢ì AI ì íì ê¸°ì¤ì 'ì¼ë§ë ëëíê°'ìì 'ì¼ë§ë ì¤ëª ê°ë¥íê³  ì±ìì§ ì ìëê°'ë¡ ì®ê²¨ê°ëë¤. ê·¸ ì¤ê³ ê°ê°ì ë¨¼ì  ê°ì¶ ì¬ëì´ ì ë¦¬í©ëë¤.">
+       data-points="'증거 딜레마' — 규제할 근거가 쌓일 즈음엔 이미 늦을 수 있다|전 세계 AI 연산력의 약 90%가 단 두 나라에 집중된 불균형|기회(단백질 구조 예측·신약 연구)와 위험(불평등·자율시스템 통제)의 공존"
+       data-recommend="AI 거버넌스의 '공식 근거 문서'로 저장하고, AI 기능 기획·윤리 검토 시 기준점으로 참고하세요"
+       data-comment="이 보고서의 무게는 '40개국 과학자 40명이 전원 합의해야 실린다'는 제작 방식에서 나옵니다. 그렇게 걸러진 문장이 '파국적 위험을 배제할 수 없다'라면, 그건 과장이 아니라 중앙값입니다. 디자이너·기획자에게 중요한 건 공포가 아니라 방향입니다 — 앞으로 좋은 AI 제품의 기준은 '얼마나 똑똑한가'에서 '얼마나 설명 가능하고 책임질 수 있는가'로 옮겨갑니다. 그 설계 감각을 먼저 갖춘 사람이 유리합니다.">
       <div class="thumb g-slate">
         <div class="noise"></div>
-        <span class="thumb-label">ì  ì</span>
+        <span class="thumb-label">유 엔</span>
       </div>
       <div class="card-body">
-        <div class="card-source">MBCë´ì¤ Â· 2026. 07. 02</div>
-        <div class="card-title">ì ì "AI ë°ì  ìë, ê³¼íÂ·ì ë¶ ëì ìì§ë¬â¦íêµ­ì  ìí ê²½ê³ "</div>
+        <div class="card-source">MBC뉴스 · 2026. 07. 02</div>
+        <div class="card-title">유엔 "AI 발전 속도, 과학·정부 대응 앞질러…파국적 위험 경고"</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.businessinsider.com/sam-altman-ai-reshape-material-conditions-human-life-2026-7" target="_blank"
-       data-category="AI Â· Governance Â· Opinion"
-       data-summary="In an FT op-ed, OpenAI CEO Sam Altman wrote that AI 'will reshape the material conditions of human life' on a scale not seen since electricity, and proposed a 'US-led international forum' â modeled on the IAEA â to set safety standards and grant AI access only to those who follow the rules." data-summary-kr="ì¤íAI CEO ì ì¬í¸ë¨¼ì´ íì´ë¸ìíìì¤ ê¸°ê³ ìì 'AIê° ì ê¸° ì´í ì ë¡ìë ê·ëª¨ë¡ ì¸ê° ì¶ì ë¬¼ì§ì  ì¡°ê±´ì ì¬í¸í  ê²'ì´ë¼ë©°, IAEAë¥¼ ë³¸ë¬ 'ë¯¸êµ­ ì£¼ë êµ­ì  AI í¬ë¼'ì ì ìíìµëë¤. ê·ì¹ì ì§í¤ë êµ­ê°Â·ê¸°ììë§ ê¸°ì  ì ê·¼ì íì©íìë êµ¬ììëë¤."
-       data-designer="A frontier-lab CEO openly lobbying for how AI should be governed globally. Read this alongside the UN report and the 'no-FDA-for-AI' view in this brief â forming your own take on AI governance is becoming part of being a literate designer, not optional background noise." data-designer-kr="íë°í°ì´ ë© CEOê° 'AIë¥¼ ì´ë»ê² íµì¹í  ê²ì¸ê°'ë¥¼ ê³µê°ì ì¼ë¡ ì£¼ì¥í ê¸ìëë¤. ì´ ì¹´ëë¥¼ ê°ì ë¸ë¦¬íì ì ì ë³´ê³ ìÂ·'AIì FDAë ìë¤' ì¹´ëì í¨ê» ì½ì´ë³´ì¸ì. AI ê±°ë²ëì¤ì ëí ìê¸° ê´ì ì ì¸ì°ë ê²ì´, ì´ì  ëìì´ëì ê¸°ë³¸ êµìì´ ëì´ê°ê³  ììµëë¤."
-       data-impact="Medium Â· Anyone who wants to understand where AI power is heading" data-impact-kr="ì¤ê° Â· AI ê¶ë ¥ì í¥ë°©ì ì´í´íë ¤ë ì¬ë"
+       data-category="AI · Governance · Opinion"
+       data-summary="In an FT op-ed, OpenAI CEO Sam Altman wrote that AI 'will reshape the material conditions of human life' on a scale not seen since electricity, and proposed a 'US-led international forum' — modeled on the IAEA — to set safety standards and grant AI access only to those who follow the rules." data-summary-kr="오픈AI CEO 샘 올트먼이 파이낸셜타임스 기고에서 'AI가 전기 이후 유례없는 규모로 인간 삶의 물질적 조건을 재편할 것'이라며, IAEA를 본뜬 '미국 주도 국제 AI 포럼'을 제안했습니다. 규칙을 지키는 국가·기업에만 기술 접근을 허용하자는 구상입니다."
+       data-designer="A frontier-lab CEO openly lobbying for how AI should be governed globally. Read this alongside the UN report and the 'no-FDA-for-AI' view in this brief — forming your own take on AI governance is becoming part of being a literate designer, not optional background noise." data-designer-kr="프런티어 랩 CEO가 'AI를 어떻게 통치할 것인가'를 공개적으로 주장한 글입니다. 이 카드를 같은 브리핑의 유엔 보고서·'AI에 FDA는 없다' 카드와 함께 읽어보세요. AI 거버넌스에 대한 자기 관점을 세우는 것이, 이제 디자이너의 기본 교양이 되어가고 있습니다."
+       data-impact="Medium · Anyone who wants to understand where AI power is heading" data-impact-kr="중간 · AI 권력의 향방을 이해하려는 사람"
        data-impact-score="3"
-       data-points="Altman's 'US-led forum' â who's in, who decides|Why he cites the IAEA (nuclear) as a model|The tension: safety standards vs concentrating US power" data-points-kr="ì¬í¸ë¨¼ì 'ë¯¸êµ­ ì£¼ë í¬ë¼' â ëê° ë¤ì´ê°ê³  ëê° ì íë|IAEA(íµ)ë¥¼ ëª¨ë¸ë¡ ë  ì´ì |ê¸´ì¥: ìì  ê¸°ì¤ vs ë¯¸êµ­ ê¶ë ¥ ì§ì¤"
-       data-recommend="Read as one side of the AI-governance debate, then compare with the UN and Krishnan cards in today's brief" data-recommend-kr="AI ê±°ë²ëì¤ ë¼ìì 'í ì¶'ì¼ë¡ ì½ê³ , ì¤ë ë¸ë¦¬íì ì ìÂ·í¬ë¦¬ìë ì¹´ëì ë¹êµí´ ë³´ì¸ì"
-       data-comment="ì¬í¸ë¨¼ì ì ìì ê·¸ëë¡ ë¯¿ì íìë ììµëë¤. 'ë¯¸êµ­ ì£¼ë êµ­ì  í¬ë¼'ì ìì ì ëªë¶ì¼ë¡ íì§ë§, ê²°êµ­ ê·ì¹ì ì íë ìë¦¬ì ëê° ìëëì ë¬¸ì ì´ê¸°ë í©ëë¤. ì¤ë ë¸ë¦¬íì ì ì(ì¤ë¦½ì  ê²½ê³ ) â ì¬í¸ë¨¼(ë¯¸êµ­ ì£¼ë íµí©) â í¬ë¦¬ìë(ê·ì  ìì²´ ë°ë) ìì¼ë¡ ì½ì¼ë©´, ê°ì 'AI ê±°ë²ëì¤'ê° ì¼ë§ë ë¤ë¥¸ ì´í´ê´ê³ë¡ ê°ë¼ì§ëì§ íëì ë³´ìëë¤. íë ì´ìì ì¬ë¯¸ë íëì ì ëµì´ ìëë¼ ì´ ëë¦½ì ëëí ëë ë° ìë¤ê³  ìê°í©ëë¤."
-       data-title-kr="ì ì¬í¸ë¨¼ 'AIê° ì¸ê° ì¶ì ë¬¼ì§ì  ì¡°ê±´ì ì¬í¸í  ê²'â¦ë¯¸êµ­ ì£¼ë êµ­ì  í¬ë¼ ì ì">
+       data-points="Altman's 'US-led forum' — who's in, who decides|Why he cites the IAEA (nuclear) as a model|The tension: safety standards vs concentrating US power" data-points-kr="올트먼의 '미국 주도 포럼' — 누가 들어가고 누가 정하나|IAEA(핵)를 모델로 든 이유|긴장: 안전 기준 vs 미국 권력 집중"
+       data-recommend="Read as one side of the AI-governance debate, then compare with the UN and Krishnan cards in today's brief" data-recommend-kr="AI 거버넌스 논쟁의 '한 축'으로 읽고, 오늘 브리핑의 유엔·크리슈난 카드와 비교해 보세요"
+       data-comment="올트먼의 제안을 그대로 믿을 필요는 없습니다. '미국 주도 국제 포럼'은 안전을 명분으로 하지만, 결국 규칙을 정하는 자리에 누가 앉느냐의 문제이기도 합니다. 오늘 브리핑을 유엔(중립적 경고) → 올트먼(미국 주도 통합) → 크리슈난(규제 자체 반대) 순으로 읽으면, 같은 'AI 거버넌스'가 얼마나 다른 이해관계로 갈라지는지 한눈에 보입니다. 큐레이션의 재미는 하나의 정답이 아니라 이 대립을 나란히 놓는 데 있다고 생각합니다."
+       data-title-kr="샘 올트먼 'AI가 인간 삶의 물질적 조건을 재편할 것'…미국 주도 국제 포럼 제안">
       <div class="thumb g-crimson">
         <div class="noise"></div>
         <span class="thumb-label">ALTMAN</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">Business Insider Â· 2026. 07. 02</div>
+        <div class="card-source">Business Insider · 2026. 07. 02</div>
         <div class="card-title">Sam Altman: AI 'will reshape the material conditions of human life'</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://timesofindia.indiatimes.com/technology/tech-news/sriram-krishnan-donald-trumps-outgoing-ai-advisor-calls-out-ai-leaders-for-terrible-job-it-is-own-due-to-your-own-doomer-messaging-that-/articleshow/132190327.cms" target="_blank"
-       data-category="AI Â· Governance Â· Opinion"
-       data-summary="Sriram Krishnan, Trump's outgoing AI adviser, told the FT there will be 'no FDA for AI' under this administration and blamed the public AI backlash on the industry's own 'doomer' messaging â arguing that leaders scared people with existential warnings and then lost control of the narrative." data-summary-kr="í¸ë¼í íì ë¶ì í´ì AI ìë¬¸ ì¤ë¦¬ë í¬ë¦¬ìëì´ íì´ë¸ìíìì¤ì 'ì´ ì ë¶ìì AIí FDA(ì ë´ ê·ì ê¸°ê´)ë ìì ê²'ì´ë¼ë©°, ëì¤ì AI ë°ë°ì ìê³ ì¤ì¤ë¡ì 'ë (doomerÂ·íë©¸ë¡ )' ë©ìì§ íì´ë¼ê³  ë¹ííìµëë¤. ì¡´ì¬ë¡ ì  ê²½ê³ ë¡ ê²ì ì¤ ë¤ ìì¬ë¥¼ íµì íì§ ëª»íë¤ë ê²ìëë¤."
-       data-designer="The opposite pole from Altman and the UN report: less regulation, not more. Notice how the same AI is framed as 'existential risk' or 'overhyped fear' depending on who's speaking â this framing literacy helps you read (and design around) AI hype and panic more clearly." data-designer-kr="ì¬í¸ë¨¼Â·ì ì ë³´ê³ ìì ì ë°ë ê·¹ìëë¤. ê·ì  ê°íê° ìëë¼ ìíë¥¼ ë§í©ëë¤. ê°ì AIê° ë§íë ì¬ëì ë°ë¼ 'ì¡´ì¬ì  ìí'ë 'ê³¼ì¥ë ê³µí¬'ë ëë¤ë ê±¸ ê´ì°°íì¸ì. ì´ 'íë ì´ë° ì½ê¸°' ë¥ë ¥ì AI ê³¼ì´ê³¼ ê³µí¬ë¥¼ ë ëë ·ì´ ë³´ê³  ì¤ê³ì ë°ìíë ë° ëìì´ ë©ëë¤."
-       data-impact="Medium Â· Anyone forming a view on AI regulation and hype" data-impact-kr="ì¤ê° Â· AI ê·ì Â·ê³¼ì´ì ê´ì ì ì¸ì°ë ¤ë ì¬ë"
+       data-category="AI · Governance · Opinion"
+       data-summary="Sriram Krishnan, Trump's outgoing AI adviser, told the FT there will be 'no FDA for AI' under this administration and blamed the public AI backlash on the industry's own 'doomer' messaging — arguing that leaders scared people with existential warnings and then lost control of the narrative." data-summary-kr="트럼프 행정부의 퇴임 AI 자문 스리람 크리슈난이 파이낸셜타임스에 '이 정부에서 AI판 FDA(전담 규제기관)는 없을 것'이라며, 대중의 AI 반발은 업계 스스로의 '둠(doomer·파멸론)' 메시징 탓이라고 비판했습니다. 존재론적 경고로 겁을 준 뒤 서사를 통제하지 못했다는 것입니다."
+       data-designer="The opposite pole from Altman and the UN report: less regulation, not more. Notice how the same AI is framed as 'existential risk' or 'overhyped fear' depending on who's speaking — this framing literacy helps you read (and design around) AI hype and panic more clearly." data-designer-kr="올트먼·유엔 보고서와 정반대 극입니다. 규제 강화가 아니라 완화를 말합니다. 같은 AI가 말하는 사람에 따라 '존재적 위험'도 '과장된 공포'도 된다는 걸 관찰하세요. 이 '프레이밍 읽기' 능력은 AI 과열과 공포를 더 또렷이 보고 설계에 반영하는 데 도움이 됩니다."
+       data-impact="Medium · Anyone forming a view on AI regulation and hype" data-impact-kr="중간 · AI 규제·과열에 관점을 세우려는 사람"
        data-impact-score="3"
-       data-points="Why 'no FDA for AI' under Trump|The 'doomer messaging backfired' argument|How this clashes with Altman's and the UN's framing" data-points-kr="í¸ë¼í ì ë¶ìì 'AIí FDA ìë¤'ë ì´ì |'ë  ë©ìì§ì´ ì­íì ë¶ë ë¤'ë ì£¼ì¥|ì¬í¸ë¨¼Â·ì ìì ê´ì ê³¼ ì¶©ëíë ì§ì "
-       data-recommend="Read as the deregulation side of the debate â pair it with the Altman and UN cards to see the full spectrum" data-recommend-kr="ë¼ìì 'ê·ì  ìí' ìª½ ìê°ì¼ë¡ ì½ê³ , ì¬í¸ë¨¼Â·ì ì ì¹´ëì ë¬¶ì´ ì ì²´ ì¤íí¸ë¼ì ë³´ì¸ì"
-       data-comment="í¬ë¦¬ìëì ì£¼ì¥ìë ë¼ìí ì§ì¤ì´ íë ììµëë¤ â AI ìê³ê° 'ìëª»íë©´ ì¸ë¥ê° ë©¸ë§íë¤'ê³  ì¤ì¤ë¡ ê²ì ì¤ ë¤, ê·¸ ê³µí¬ì íµì ê¶ì ììë¤ë ì§ì ìëë¤. ë¤ë§ 'ê·¸ë¬ë ê·ì íì§ ë§ì'ë ê²°ë¡ ì ë³ê° ë¬¸ì ìëë¤. ì¤ë ë¸ë¦¬íìì ì ì(ì ì¤í ê²½ê³ )Â·ì¬í¸ë¨¼(ì£¼ëì  íµí©)Â·í¬ë¦¬ìë(ê·ì  íì)ì ëëí ëì ì´ì ê° ì¬ê¸° ììµëë¤. ì´ë íëê° ì ëµì´ë¼ìê° ìëë¼, ì¸ ê´ì ì ë¤ íµê³¼í´ì¼ ë¹ë¡ì 'AIë¥¼ ì´ë»ê² ë¤ë£° ê²ì¸ê°'ë¼ë ì§ë¬¸ì ë¬´ê²ê° ë³´ì´ê¸° ëë¬¸ìëë¤."
-       data-title-kr="í¸ë¼í å AI ìë¬¸ 'ê·ì ê¸°ê´(FDA) ì ë§ë ë¤'â¦AI ë°ë°ì ìê³ì 'íë©¸ë¡ ' í">
+       data-points="Why 'no FDA for AI' under Trump|The 'doomer messaging backfired' argument|How this clashes with Altman's and the UN's framing" data-points-kr="트럼프 정부에서 'AI판 FDA 없다'는 이유|'둠 메시징이 역풍을 불렀다'는 주장|올트먼·유엔의 관점과 충돌하는 지점"
+       data-recommend="Read as the deregulation side of the debate — pair it with the Altman and UN cards to see the full spectrum" data-recommend-kr="논쟁의 '규제 완화' 쪽 시각으로 읽고, 올트먼·유엔 카드와 묶어 전체 스펙트럼을 보세요"
+       data-comment="크리슈난의 주장에는 뼈아픈 진실이 하나 있습니다 — AI 업계가 '잘못하면 인류가 멸망한다'고 스스로 겁을 준 뒤, 그 공포의 통제권을 잃었다는 지적입니다. 다만 '그러니 규제하지 말자'는 결론은 별개 문제입니다. 오늘 브리핑에서 유엔(신중한 경고)·올트먼(주도적 통합)·크리슈난(규제 회의)을 나란히 놓은 이유가 여기 있습니다. 어느 하나가 정답이라서가 아니라, 세 관점을 다 통과해야 비로소 'AI를 어떻게 다룰 것인가'라는 질문의 무게가 보이기 때문입니다."
+       data-title-kr="트럼프 前 AI 자문 '규제기관(FDA) 안 만든다'…AI 반발은 업계의 '파멸론' 탓">
       <div class="thumb g-teal">
         <div class="noise"></div>
         <span class="thumb-label">DEBATE</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">Times of India Â· 2026. 07. 03</div>
+        <div class="card-source">Times of India · 2026. 07. 03</div>
         <div class="card-title">Trump's outgoing AI adviser: 'no FDA for AI,' blames doomer messaging</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://timesofindia.indiatimes.com/business/india-business/govt-may-look-at-a-separate-legal-framework-for-ai-secretary/articleshow/132170345.cms" target="_blank"
-       data-category="AI Â· Policy Â· India"
-       data-summary="India's IT Secretary S. Krishnan said 'the time has come' to consider a dedicated legal framework for AI, rather than stretching existing IT laws. It's an early signal that one of the world's largest tech markets may write AI-specific rules." data-summary-kr="ì¸ë ITë¶ ì¥ê´ S. í¬ë¦¬ìëì´ ê¸°ì¡´ ITë²ì ëë ¤ ì ì©íë ëì  'AI ì ì© ë²ë¥  ì²´ê³ë¥¼ ê²í í  ëê° ëë¤'ê³  ë°íìµëë¤. ì¸ê³ ìµë IT ìì¥ ì¤ íëê° AI í¹í ê·ì ë¥¼ ë§ë¤ ì ìë¤ë ì´ê¸° ì í¸ìëë¤."
-       data-designer="A concrete counterpoint to the 'no-FDA-for-AI' view â some big markets are moving toward AI-specific law. If your product touches multiple regions, start treating 'AI regulation' as a real, divergent design constraint (like GDPR was) rather than a distant abstraction." data-designer-kr="'AIí FDAë ìë¤'ë ìê°ì ëí êµ¬ì²´ì  ë°ë¡ìëë¤. ì¼ë¶ ê±°ë ìì¥ì AI ì ì© ë²ì¼ë¡ ìì§ìëë¤. ì¬ë¬ ì§ì­ì ë¤ë£¨ë ì íì´ë¼ë©´ 'AI ê·ì 'ë¥¼ (GDPRì²ë¼) ì§ì­ë§ë¤ ê°ë¦¬ë ì¤ì  ì¤ê³ ì ì½ì¼ë¡ ë¤ë£¨ê¸° ììíì¸ì."
-       data-impact="LowâMedium Â· Teams shipping AI products across regions" data-impact-kr="ë®ì~ì¤ê° Â· ì¬ë¬ ì§ì­ì AI ì íì ì¶ìíë í"
+       data-category="AI · Policy · India"
+       data-summary="India's IT Secretary S. Krishnan said 'the time has come' to consider a dedicated legal framework for AI, rather than stretching existing IT laws. It's an early signal that one of the world's largest tech markets may write AI-specific rules." data-summary-kr="인도 IT부 장관 S. 크리슈난이 기존 IT법을 늘려 적용하는 대신 'AI 전용 법률 체계를 검토할 때가 됐다'고 밝혔습니다. 세계 최대 IT 시장 중 하나가 AI 특화 규제를 만들 수 있다는 초기 신호입니다."
+       data-designer="A concrete counterpoint to the 'no-FDA-for-AI' view — some big markets are moving toward AI-specific law. If your product touches multiple regions, start treating 'AI regulation' as a real, divergent design constraint (like GDPR was) rather than a distant abstraction." data-designer-kr="'AI판 FDA는 없다'는 시각에 대한 구체적 반례입니다. 일부 거대 시장은 AI 전용 법으로 움직입니다. 여러 지역을 다루는 제품이라면 'AI 규제'를 (GDPR처럼) 지역마다 갈리는 실제 설계 제약으로 다루기 시작하세요."
+       data-impact="Low–Medium · Teams shipping AI products across regions" data-impact-kr="낮음~중간 · 여러 지역에 AI 제품을 출시하는 팀"
        data-impact-score="2"
-       data-points="Why India may write AI-specific law|The contrast with the US 'no new regulator' stance|What 'divergent AI rules by country' means for products" data-points-kr="ì¸ëê° AI ì ì© ë²ì ê²í íë ì´ì |ë¯¸êµ­ì 'ì ê·ì ê¸°ê´ ìì' ê¸°ì¡°ìì ëë¹|'êµ­ê°ë³ë¡ ê°ë¦¬ë AI ê·ì 'ê° ì íì ì£¼ë ìë¯¸"
-       data-recommend="Bookmark as a regulatory-trend marker, and revisit when you plan multi-region AI features" data-recommend-kr="ê·ì  íë¦ì íìíë ë¶ë§í¬ë¡ ì ì¥íê³ , ì¬ë¬ ì§ì­ ëì AI ê¸°ë¥ì ê¸°íí  ë ë¤ì ë³´ì¸ì"
-       data-comment="ì¤ë ë¸ë¦¬íì ê±°ë²ëì¤ ì¹´ë 3ì¥(ì ìÂ·ì¬í¸ë¨¼Â·í¬ë¦¬ìë)ì´ 'ì´ë'ì´ë¼ë©´, ì´ ì¸ë ì¹´ëë 'ì¤ë¬´'ìëë¤. ë¼ìì´ ì´ë»ë , í° ìì¥ë¤ì ê²°êµ­ ê°ìì AI ë²ì ì°ê¸° ììí©ëë¤. GDPRì´ ê·¸ë¬ë¯, ê·ì ë ì¸ì  ê° ëìì´ëì íë©´ ìë¡ ë´ë ¤ìµëë¤ â ëì íë¦, ë°ì´í° ì²ë¦¬ ê³ ì§, ì¤ëª ê°ë¥ì± ê°ì ííë¡ì. ì§ê¸ì ë©ì´ ë³´ì¬ë, 'AI ê·ì ë ê³§ UX ìêµ¬ì¬í­ì´ ëë¤'ë ê°ê°ì ë¯¸ë¦¬ ê°ì§ ì¬ëì´ ëì¤ì ë ë¹í©í©ëë¤."
-       data-title-kr="ì¸ë, AI ì ì© ë²ë¥  ì²´ê³ ê²í â¦ITë¶ ì¥ê´ 'ë³ë ìë²ì ë³¼ ë ëë¤'">
+       data-points="Why India may write AI-specific law|The contrast with the US 'no new regulator' stance|What 'divergent AI rules by country' means for products" data-points-kr="인도가 AI 전용 법을 검토하는 이유|미국의 '새 규제기관 없음' 기조와의 대비|'국가별로 갈리는 AI 규제'가 제품에 주는 의미"
+       data-recommend="Bookmark as a regulatory-trend marker, and revisit when you plan multi-region AI features" data-recommend-kr="규제 흐름을 표시하는 북마크로 저장하고, 여러 지역 대상 AI 기능을 기획할 때 다시 보세요"
+       data-comment="오늘 브리핑의 거버넌스 카드 3장(유엔·올트먼·크리슈난)이 '이념'이라면, 이 인도 카드는 '실무'입니다. 논쟁이 어떻든, 큰 시장들은 결국 각자의 AI 법을 쓰기 시작합니다. GDPR이 그랬듯, 규제는 언젠가 디자이너의 화면 위로 내려옵니다 — 동의 흐름, 데이터 처리 고지, 설명 가능성 같은 형태로요. 지금은 멀어 보여도, 'AI 규제는 곧 UX 요구사항이 된다'는 감각을 미리 가진 사람이 나중에 덜 당황합니다."
+       data-title-kr="인도, AI 전용 법률 체계 검토…IT부 장관 '별도 입법을 볼 때 됐다'">
       <div class="thumb g-navy">
         <div class="noise"></div>
         <span class="thumb-label">POLICY</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">Times of India Â· 2026. 07. 03</div>
+        <div class="card-source">Times of India · 2026. 07. 03</div>
         <div class="card-title">India may create a separate legal framework for AI, says IT Secretary</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
   </div>
 </div>
 
 
-<!-- ââââââââââââââââââââââ DESIGN ââââââââââââââââââââââ -->
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
 <div class="section">
   <div class="section-header">
     <h2>Design</h2>
@@ -964,179 +966,179 @@
   </div>
   <div class="grid">
     <a class="card featured" href="https://fontsinuse.com/uses/78453/the-typography-of-whitehouse-gov-2000-2026" target="_blank"
-       data-category="Design Â· Typography Â· History"
-       data-summary="Fonts In Use traces the typography of whitehouse.gov from 2000 to 2026 â a 26-year walk through how the U.S. government's official site shifted typefaces, and what each choice quietly signaled about the administration behind it." data-summary-kr="í°ì¸ ì¸ì ì¦ê° 2000ëë¶í° 2026ëê¹ì§ ë°±ìê´ ê³µì ííì´ì§(whitehouse.gov)ì íì´í¬ê·¸ëí¼ ë³ì²ì¬ë¥¼ ì ë¦¬íìµëë¤. 26ëê° ìì²´ê° ì´ë»ê² ë°ëìê³ , ê·¸ ì í íëíëê° ë¹ë ì ë¶ì ëí´ ë¬´ìì ì¡°ì©í ë§í´ìëì§ ì§ìµëë¤."
-       data-designer="A masterclass in how type carries meaning â the same institution 'feels' authoritative, modern, or populist purely through font choices. Next time you pick a typeface, articulate in one sentence what it signals (trust? energy? tradition?). This case study is a great training ground for that instinct." data-designer-kr="ìì²´ê° ì´ë»ê² ìë¯¸ë¥¼ ì¤ì´ ëë¥´ëì§ ë³´ì¬ì£¼ë ëªê°ììëë¤. ê°ì ê¸°ê´ì´ í°í¸ ì íë§ì¼ë¡ ê¶ìì ì¼ë¡ë, íëì ì¼ë¡ë, ëì¤ì ì¼ë¡ë 'ëê»´ì§ëë¤'. ë¤ìì ìì²´ë¥¼ ê³ ë¥¼ ë 'ì´ í°í¸ê° ë¬´ìì ì í¸íëê°(ì ë¢°? íë ¥? ì íµ?)'ë¥¼ í ë¬¸ì¥ì¼ë¡ ë§í´ë³´ì¸ì. ì´ ì¬ë¡ê° ê·¸ ê°ê°ì íë ¨íê¸°ì ì¢ìµëë¤."
-       data-impact="LowâMedium Â· Anyone who chooses typefaces or cares about brand voice" data-impact-kr="ë®ì~ì¤ê° Â· ìì²´ë¥¼ ê³ ë¥´ê±°ë ë¸ëë í¤ì ë¤ë£¨ë ì¬ë"
+       data-category="Design · Typography · History"
+       data-summary="Fonts In Use traces the typography of whitehouse.gov from 2000 to 2026 — a 26-year walk through how the U.S. government's official site shifted typefaces, and what each choice quietly signaled about the administration behind it." data-summary-kr="폰츠인유즈가 2000년부터 2026년까지 백악관 공식 홈페이지(whitehouse.gov)의 타이포그래피 변천사를 정리했습니다. 26년간 서체가 어떻게 바뀌었고, 그 선택 하나하나가 당대 정부에 대해 무엇을 조용히 말해왔는지 짚습니다."
+       data-designer="A masterclass in how type carries meaning — the same institution 'feels' authoritative, modern, or populist purely through font choices. Next time you pick a typeface, articulate in one sentence what it signals (trust? energy? tradition?). This case study is a great training ground for that instinct." data-designer-kr="서체가 어떻게 의미를 실어 나르는지 보여주는 명강의입니다. 같은 기관이 폰트 선택만으로 권위적으로도, 현대적으로도, 대중적으로도 '느껴집니다'. 다음에 서체를 고를 때 '이 폰트가 무엇을 신호하는가(신뢰? 활력? 전통?)'를 한 문장으로 말해보세요. 이 사례가 그 감각을 훈련하기에 좋습니다."
+       data-impact="Low–Medium · Anyone who chooses typefaces or cares about brand voice" data-impact-kr="낮음~중간 · 서체를 고르거나 브랜드 톤을 다루는 사람"
        data-impact-score="3"
-       data-points="How whitehouse.gov's type changed across administrations|Why a font choice reads as 'authority' or 'populism'|Typography as a quiet political signal" data-points-kr="ì ë¶ê° ë°ë ëë§ë¤ ë¬ë¼ì§ ë°±ìê´ ííì´ì§ ìì²´|í°í¸ ì íì´ 'ê¶ì' ëë 'ëì¤ì±'ì¼ë¡ ì½íë ì´ì |ì¡°ì©í ì ì¹ì  ì í¸ë¡ìì íì´í¬ê·¸ëí¼"
-       data-recommend="Read slowly as a typography case study, and save it as a reference for arguing font choices with clients" data-recommend-kr="íì´í¬ê·¸ëí¼ ì¬ë¡ ì°êµ¬ë¡ ì²ì²í ì½ê³ , í´ë¼ì´ì¸í¸ìê² ìì²´ ì íì ì¤ëí  ë ì¸ ë í¼ë°ì¤ë¡ ì ì¥íì¸ì"
-       data-comment="ì´ ê¸ì´ ì¢ì ê±´ 'ì´ë¤ í°í¸ê° ììë¤'ê° ìëë¼ 'í°í¸ê° ë¬´ìì ë§íëê°'ë¥¼ 26ë íìë¼ì¸ì¼ë¡ ì¦ëªíê¸° ëë¬¸ìëë¤. ê°ì ë°±ìê´ì¸ë° ìì²´ íëë¡ ê¶ìì ì´ìë¤ê°, ì¹ê·¼íë¤ê°, ê°ê²½í´ ë³´ìëë¤. ëìì´ëìê² ì´ê±´ ì¤ì  êµì¬ë¼ê³  ìê°í©ëë¤ â ì°ë¦¬ë ë§¤ë² 'ê·¸ë¥ ì ì´ì¸ë¦¬ë í°í¸'ë¥¼ ê³ ë¥¸ë¤ê³  ìê°íì§ë§, ì¬ì¤ì ë§¤ë² ì´ë¤ ëª©ìë¦¬ì íëë¥¼ ê³ ë¥´ê³  ììµëë¤. ê·¸ ì¬ì¤ì ììíë ìê°, íì´í¬ê·¸ëí¼ ê²°ì ì´ ì·¨í¥ìì ì ëµì¼ë¡ ë°ëëë¤."
-       data-title-kr="ë°±ìê´ ííì´ì§ì íì´í¬ê·¸ëí¼, 2000â2026">
+       data-points="How whitehouse.gov's type changed across administrations|Why a font choice reads as 'authority' or 'populism'|Typography as a quiet political signal" data-points-kr="정부가 바뀔 때마다 달라진 백악관 홈페이지 서체|폰트 선택이 '권위' 또는 '대중성'으로 읽히는 이유|조용한 정치적 신호로서의 타이포그래피"
+       data-recommend="Read slowly as a typography case study, and save it as a reference for arguing font choices with clients" data-recommend-kr="타이포그래피 사례 연구로 천천히 읽고, 클라이언트에게 서체 선택을 설득할 때 쓸 레퍼런스로 저장하세요"
+       data-comment="이 글이 좋은 건 '어떤 폰트가 예쁘다'가 아니라 '폰트가 무엇을 말하는가'를 26년 타임라인으로 증명하기 때문입니다. 같은 백악관인데 서체 하나로 권위적이었다가, 친근했다가, 강경해 보입니다. 디자이너에게 이건 실전 교재라고 생각합니다 — 우리는 매번 '그냥 잘 어울리는 폰트'를 고른다고 생각하지만, 사실은 매번 어떤 목소리와 태도를 고르고 있습니다. 그 사실을 의식하는 순간, 타이포그래피 결정이 취향에서 전략으로 바뀝니다."
+       data-title-kr="백악관 홈페이지의 타이포그래피, 2000–2026">
       <div class="thumb g-plum">
         <div class="noise"></div>
         <span class="thumb-label">TYPE</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">Fonts In Use Â· 2026. 07</div>
-        <div class="card-title">The Typography of whitehouse.gov, 2000â2026</div>
+        <div class="card-source">Fonts In Use · 2026. 07</div>
+        <div class="card-title">The Typography of whitehouse.gov, 2000–2026</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.itsnicethat.com/features/the-poster-festival-warsaw-round-up-graphic-design-spotlight-020726" target="_blank"
-       data-category="Design Â· Graphic Â· Culture"
-       data-summary="It's Nice That reports from Warsaw's The Poster Festival, where a new generation of poster artists is emerging alongside a rediscovery of Poland's rich, long-overlooked graphic-design history â a scene wrestling with originality and authorship in the AI era." data-summary-kr="ìì¸ ëì´ì¤ëì´ ë°ë¥´ì¤ë° 'ë í¬ì¤í° íì¤í°ë²'ì ì·¨ì¬íìµëë¤. ìë¡ì´ ì¸ëì í¬ì¤í° ìê°ë¤ì´ ë±ì¥íë ëìì, ì¤ë«ëì ì¡°ëªë°ì§ ëª»í í´ëë ê·¸ëí½ ëìì¸ì íë¶í ì­ì¬ê° ì¬ë°ê²¬ëê³  ììµëë¤. AI ìëì 'ì¤ë¦¬ì§ëë¦¬í°ì ì ìê¶'ì ê³ ë¯¼íë íì¥ì´ê¸°ë í©ëë¤."
-       data-designer="A reminder that craft traditions and 'the hand' still carry weight, even as AI floods image-making. Study one poster from this piece and ask what makes it feel authored, not generated â that distinction is becoming a real competitive edge for designers." data-designer-kr="AIê° ì´ë¯¸ì§ ì ìì ë¤ë®ë ìëìë 'ìì ê°ê°'ê³¼ ê³µì ì íµì´ ì¬ì í íì ê°ëë¤ë ê±¸ ìê¸°ìíµëë¤. ì´ ê¸°ì¬ ì í¬ì¤í° íëë¥¼ ê³¨ë¼ 'ì ì´ê±´ ìì±ë ê² ìëë¼ ë§ë¤ì´ì§ ê²ì²ë¼ ëê»´ì§ëê°'ë¥¼ ë¬¼ì´ë³´ì¸ì. ê·¸ êµ¬ë¶ì´ ëìì´ëì ì§ì§ ê²½ìë ¥ì´ ëì´ê°ëë¤."
-       data-impact="LowâMedium Â· Graphic designers and anyone thinking about originality vs AI" data-impact-kr="ë®ì~ì¤ê° Â· ê·¸ëí½ ëìì´ë, 'AI vs ì¤ë¦¬ì§ëë¦¬í°'ë¥¼ ê³ ë¯¼íë ì¬ë"
+       data-category="Design · Graphic · Culture"
+       data-summary="It's Nice That reports from Warsaw's The Poster Festival, where a new generation of poster artists is emerging alongside a rediscovery of Poland's rich, long-overlooked graphic-design history — a scene wrestling with originality and authorship in the AI era." data-summary-kr="잇츠나이스댓이 바르샤바 '더 포스터 페스티벌'을 취재했습니다. 새로운 세대의 포스터 작가들이 등장하는 동시에, 오랫동안 조명받지 못한 폴란드 그래픽 디자인의 풍부한 역사가 재발견되고 있습니다. AI 시대의 '오리지널리티와 저작권'을 고민하는 현장이기도 합니다."
+       data-designer="A reminder that craft traditions and 'the hand' still carry weight, even as AI floods image-making. Study one poster from this piece and ask what makes it feel authored, not generated — that distinction is becoming a real competitive edge for designers." data-designer-kr="AI가 이미지 제작을 뒤덮는 시대에도 '손의 감각'과 공예 전통이 여전히 힘을 갖는다는 걸 상기시킵니다. 이 기사 속 포스터 하나를 골라 '왜 이건 생성된 게 아니라 만들어진 것처럼 느껴지는가'를 물어보세요. 그 구분이 디자이너의 진짜 경쟁력이 되어갑니다."
+       data-impact="Low–Medium · Graphic designers and anyone thinking about originality vs AI" data-impact-kr="낮음~중간 · 그래픽 디자이너, 'AI vs 오리지널리티'를 고민하는 사람"
        data-impact-score="2"
-       data-points="Warsaw's new wave of poster artists|Poland's overlooked graphic-design heritage|Authorship & originality in the age of AI image tools" data-points-kr="ë°ë¥´ì¤ë°ì ìë¡ì´ í¬ì¤í° ìê° ë¬¼ê²°|ì¡°ëªë°ì§ ëª»í í´ëë ê·¸ëí½ ëìì¸ ì ì°|AI ì´ë¯¸ì§ ëêµ¬ ìëì ì ìê¶Â·ì¤ë¦¬ì§ëë¦¬í°"
-       data-recommend="Read for inspiration, and save a few posters to a swipe file as 'authored, not generated' references" data-recommend-kr="ìê°ì©ì¼ë¡ ì½ê³ , ë§ìì ëë í¬ì¤í° ëª ê°ë¥¼ 'ìì±ì´ ìë ì°½ì' ë í¼ë°ì¤ë¡ ëª¨ì ëì¸ì"
-       data-comment="AIê° ê·¸ë´ë¯í ì´ë¯¸ì§ë¥¼ ë¬´íí ë½ìë´ë ì§ê¸, ì´ ê¸°ì¬ê° ëì§ë ì§ë¬¸ì ì¤íë ¤ ì ëªí©ëë¤ â ë¬´ìì´ 'ë§ë¤ì´ì§ ê²'ê³¼ 'ìì±ë ê²'ì ê°ë¥´ëê°. ë°ë¥´ì¤ë° í¬ì¤í°ë¤ì´ íì ê°ë ê±´ ê¸°ì ì  ìì±ëê° ìëë¼ 'ëêµ°ê° ì´ê±¸ ì, ì´ë¤ ìì¼ë¡ ë§ë¤ìëê°'ë¼ë ë§¥ë½ìëë¤. ì­ì¤ì ì¼ë¡ AI ìëì ëìì´ëì ê°ì¹ë 'ë ì ê·¸ë¦¬ë ê²'ì´ ìëë¼ 'ì ì´ë ê² ë§ë¤ìëì§ ë§í  ì ìë ê²'ì¼ë¡ ì®ê²¨ê°ëë¤. ì¤ë¦¬ì§ëë¦¬í°ë ê²°ê³¼ë¬¼ì´ ìëë¼ ìëìì ëì¨ë¤ê³  ìê°í©ëë¤."
-       data-title-kr="ë°ë¥´ì¤ë° í¬ì¤í° íì¤í°ë², ìë¡ì´ ë¬¼ê²°ê³¼ ìíì§ ì­ì¬ê° í¨ê» ë ì¤ë¥´ë¤">
+       data-points="Warsaw's new wave of poster artists|Poland's overlooked graphic-design heritage|Authorship & originality in the age of AI image tools" data-points-kr="바르샤바의 새로운 포스터 작가 물결|조명받지 못한 폴란드 그래픽 디자인 유산|AI 이미지 도구 시대의 저작권·오리지널리티"
+       data-recommend="Read for inspiration, and save a few posters to a swipe file as 'authored, not generated' references" data-recommend-kr="영감용으로 읽고, 마음에 드는 포스터 몇 개를 '생성이 아닌 창작' 레퍼런스로 모아 두세요"
+       data-comment="AI가 그럴듯한 이미지를 무한히 뽑아내는 지금, 이 기사가 던지는 질문은 오히려 선명합니다 — 무엇이 '만들어진 것'과 '생성된 것'을 가르는가. 바르샤바 포스터들이 힘을 갖는 건 기술적 완성도가 아니라 '누군가 이걸 왜, 어떤 손으로 만들었는가'라는 맥락입니다. 역설적으로 AI 시대에 디자이너의 가치는 '더 잘 그리는 것'이 아니라 '왜 이렇게 만들었는지 말할 수 있는 것'으로 옮겨갑니다. 오리지널리티는 결과물이 아니라 의도에서 나온다고 생각합니다."
+       data-title-kr="바르샤바 포스터 페스티벌, 새로운 물결과 잊혀진 역사가 함께 떠오르다">
       <div class="thumb g-amber">
         <div class="noise"></div>
         <span class="thumb-label">POSTER</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">It's Nice That Â· 2026. 07. 02</div>
+        <div class="card-source">It's Nice That · 2026. 07. 02</div>
         <div class="card-title">At Warsaw's Poster Festival, a new school emerges alongside a forgotten history</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.designweek.co.uk/design-leader-form-brands-studios-alex-andlaw/" target="_blank"
-       data-category="Design Â· Leadership Â· Interview"
-       data-summary="In Design Week's design/leader series, FORM Brands Studio's Alex Andlaw reflects on running a studio: the value of simplicity, why leadership is mostly about creating conditions for others to do good work, and resisting the urge to over-complicate." data-summary-kr="ëìì¸ ìí¬ì 'ëìì¸ ë¦¬ë' ìë¦¬ì¦ìì í¼ ë¸ëì¦ ì¤íëì¤ì ìë ì¤ ì¤ëë¡ê° ì¤íëì¤ ì´ìì ëìë´ëë¤. ë¨ìí¨ì ê°ì¹, ë¦¬ëì­ì´ë ê²°êµ­ ë¨ë¤ì´ ì¢ì ì¼ì í´ë¼ ì¡°ê±´ì ë§ëë ê²ì´ë¼ë ì , ê·¸ë¦¬ê³  ì¼ì ê³¼íê² ë³µì¡íê² ë§ë¤ë ¤ë ì¶©ëì ì°¸ë ë²ì ëí´ ì´ì¼ê¸°í©ëë¤."
-       data-designer="An honest interview for designers who lead â or will lead â a team. Reflect on where your time goes between 'doing great work myself' and 'helping others do great work.' As you become senior, the second matters more, and this piece is a useful mirror for that shift." data-designer-kr="ì¤íëì¤Â·íì ì´ëê±°ë ì¸ì  ê° ì´ë ëìì´ëë¥¼ ìí ìì§í ì¸í°ë·°ìëë¤. ì§ê¸ ë§¡ì ì¼ìì 'ë´ê° ë ìíë ê²'ê³¼ 'ë¨ì´ ìíëë¡ ëë ê²' ì¤ ì´ëì ìê°ì ì°ëì§ ëìë³´ì¸ì. ìëì´ë¡ ê°ìë¡ íìì ë¹ì¤ì´ ì»¤ì§ê³ , ì´ ì¸í°ë·°ê° ê·¸ ì íì ì¢ì ì°¸ê³ ê° ë©ëë¤."
-       data-impact="LowâMedium Â· Designers moving into (or curious about) leadership" data-impact-kr="ë®ì~ì¤ê° Â· ë¦¬ëì­ì¼ë¡ ëìê°ê±°ë ê´ì¬ ìë ëìì´ë"
+       data-category="Design · Leadership · Interview"
+       data-summary="In Design Week's design/leader series, FORM Brands Studio's Alex Andlaw reflects on running a studio: the value of simplicity, why leadership is mostly about creating conditions for others to do good work, and resisting the urge to over-complicate." data-summary-kr="디자인 위크의 '디자인 리더' 시리즈에서 폼 브랜즈 스튜디오의 알렉스 앤드로가 스튜디오 운영을 돌아봅니다. 단순함의 가치, 리더십이란 결국 남들이 좋은 일을 해낼 조건을 만드는 것이라는 점, 그리고 일을 과하게 복잡하게 만들려는 충동을 참는 법에 대해 이야기합니다."
+       data-designer="An honest interview for designers who lead — or will lead — a team. Reflect on where your time goes between 'doing great work myself' and 'helping others do great work.' As you become senior, the second matters more, and this piece is a useful mirror for that shift." data-designer-kr="스튜디오·팀을 이끌거나 언젠가 이끌 디자이너를 위한 솔직한 인터뷰입니다. 지금 맡은 일에서 '내가 더 잘하는 것'과 '남이 잘하도록 돕는 것' 중 어디에 시간을 쓰는지 돌아보세요. 시니어로 갈수록 후자의 비중이 커지고, 이 인터뷰가 그 전환의 좋은 참고가 됩니다."
+       data-impact="Low–Medium · Designers moving into (or curious about) leadership" data-impact-kr="낮음~중간 · 리더십으로 나아가거나 관심 있는 디자이너"
        data-impact-score="2"
-       data-points="Why simplicity is a leadership skill, not just an aesthetic|Leadership as 'creating conditions' for others|Resisting the urge to over-complicate work" data-points-kr="ë¨ìí¨ì´ ë¯¸íì´ ìëë¼ ë¦¬ëì­ ì­ëì¸ ì´ì |'ë¨ì´ ìí  ì¡°ê±´ì ë§ëë' ê²ì¼ë¡ìì ë¦¬ëì­|ì¼ì ê³¼íê² ë³µì¡íê² ë§ë¤ë ¤ë ì¶©ë ë¤ì¤ë¦¬ê¸°"
-       data-recommend="Read if you lead or want to lead, and save a quote or two to revisit when a project starts feeling over-complicated" data-recommend-kr="íì ì´ëê±°ë ì´ëê³  ì¶ë¤ë©´ ì½ê³ , íë¡ì í¸ê° ê³¼íê² ë³µì¡í´ì§ ë ë¤ì ë³¼ ë¬¸ì¥ íë ê°ë¥¼ ì ì¥íì¸ì"
-       data-comment="ì´ ì¸í°ë·°ìì ê°ì¥ ì¤ë ë¨ë ê±´ 'ë¨ìí¨'ì ë¯¸ê°ì´ ìëë¼ ë¦¬ëì­ì ë¬¸ì ë¡ ë¤ë£¬ ëëª©ìëë¤. ì£¼ëì´ ë 'ë´ê° ì¼ë§ë ì ë§ëëë'ê° ì ë¶ì§ë§, ìëì´Â·ë¦¬ëê° ëë©´ 'ë¨ì´ ì ë§ë¤ ì¡°ê±´ì ì´ë»ê² ë§ëëë'ë¡ ì§ë¬¸ì´ ë°ëëë¤. ê·¸ë¦¬ê³  ê·¸ ì¡°ê±´ì íµì¬ì´ ê²°êµ­ 'ë³µì¡íê² ë§ë¤ì§ ìë ê²'ì´ë¼ë íµì°°ì´ ì¸ìì ìëë¤. ëìì¸ì´ë  ì¡°ì§ì´ë , ìíë ì¬ëì ëíë ê² ìëë¼ ëì´ë¼ ì¤ ìë ê² ê°ìµëë¤."
-       data-title-kr="ëìì¸ ë¦¬ë ì¸í°ë·°: í¼ ë¸ëì¦ ì¤íëì¤ì ìë ì¤ ì¤ëë¡">
+       data-points="Why simplicity is a leadership skill, not just an aesthetic|Leadership as 'creating conditions' for others|Resisting the urge to over-complicate work" data-points-kr="단순함이 미학이 아니라 리더십 역량인 이유|'남이 잘할 조건을 만드는' 것으로서의 리더십|일을 과하게 복잡하게 만들려는 충동 다스리기"
+       data-recommend="Read if you lead or want to lead, and save a quote or two to revisit when a project starts feeling over-complicated" data-recommend-kr="팀을 이끌거나 이끌고 싶다면 읽고, 프로젝트가 과하게 복잡해질 때 다시 볼 문장 한두 개를 저장하세요"
+       data-comment="이 인터뷰에서 가장 오래 남는 건 '단순함'을 미감이 아니라 리더십의 문제로 다룬 대목입니다. 주니어 땐 '내가 얼마나 잘 만드느냐'가 전부지만, 시니어·리더가 되면 '남이 잘 만들 조건을 어떻게 만드느냐'로 질문이 바뀝니다. 그리고 그 조건의 핵심이 결국 '복잡하게 만들지 않는 것'이라는 통찰이 인상적입니다. 디자인이든 조직이든, 잘하는 사람은 더하는 게 아니라 덜어낼 줄 아는 것 같습니다."
+       data-title-kr="디자인 리더 인터뷰: 폼 브랜즈 스튜디오의 알렉스 앤드로">
       <div class="thumb g-violet">
         <div class="noise"></div>
         <span class="thumb-label">LEADER</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">Design Week Â· 2026. 07</div>
+        <div class="card-source">Design Week · 2026. 07</div>
         <div class="card-title">design/leader: FORM Brands Studio's Alex Andlaw</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.etnews.com/20260619000041" target="_blank"
-       data-category="ëìì¸ Â· UX Â· ì¤ë¬´"
-       data-summary="ì­ì¤ë ì´í´ë  ê²¸ìêµìê° 2026 íë°ê¸° UXÂ·UI íë¦ì 'AIë ìëì ìì, ì¬ëì ìë¯¸Â·ì ë¢°Â·íµì ë¥¼ ë§¡ëë¤'ë í ë¬¸ì¥ì¼ë¡ ìì½íìµëë¤. AIê° íë©´ ì´ìì ì ìê° ë§ì ììë´ë ìëì, ëìì´ëì ë¬´ê²ì¤ì¬ì´ 'ì ì'ìì 'AI ê²°ê³¼ë¬¼ ì¤ ë¬´ìì´ ë§ëì§ íë¨íë ì¼'ë¡ ì®ê²¨ê°ë¤ë ì§ë¨ìëë¤."
-       data-designer="'ìì ëì²´ëì§ë§, ìë¯¸ë¥¼ ë¶ì¬íë ë¨¸ë¦¬ë ì¤íë ¤ ëª¸ê°ì´ ì¬ëë¤'ë ë§ì´ íµì¬ìëë¤. ì§ê¸ íë ì¼ìì 'AIê° ëì í  ì ìë ì ìì'ê³¼ 'ëë§ í  ì ìë íë¨Â·ìë¯¸ ë¶ì¬'ë¥¼ êµ¬ë¶í´ ë³´ì¸ì. íìì ìê°ì ë ì°ë ìª½ì¼ë¡ ì»¤ë¦¬ì´ë¥¼ ì¬ë°°ì¹íë ê²ì´ ìì í©ëë¤."
-       data-impact="ì¤ê° Â· AI ìëì ì»¤ë¦¬ì´ ë°©í¥ì ê³ ë¯¼íë ëìì´ë"
+       data-category="디자인 · UX · 실무"
+       data-summary="숭실대 이해든 겸임교수가 2026 하반기 UX·UI 흐름을 'AI는 속도와 양을, 사람은 의미·신뢰·통제를 맡는다'는 한 문장으로 요약했습니다. AI가 화면 초안을 수 시간 만에 쏟아내는 시대에, 디자이너의 무게중심이 '제작'에서 'AI 결과물 중 무엇이 맞는지 판단하는 일'로 옮겨간다는 진단입니다."
+       data-designer="'손은 대체됐지만, 의미를 부여하는 머리는 오히려 몸값이 올랐다'는 말이 핵심입니다. 지금 하는 일에서 'AI가 대신할 수 있는 손 작업'과 '나만 할 수 있는 판단·의미 부여'를 구분해 보세요. 후자에 시간을 더 쓰는 쪽으로 커리어를 재배치하는 것이 안전합니다."
+       data-impact="중간 · AI 시대에 커리어 방향을 고민하는 디자이너"
        data-impact-score="3"
-       data-points="'AI=ìëÂ·ì, ì¬ë=ìë¯¸Â·ì ë¢°Â·íµì 'ë¼ë ì­í  ë¶ë´|ì¼í¼íì´Â·ëì¤ë§ê³ ì ì§ë¬´ ê°í¸(ì ëë´ë¦¬ì¤í¸ ì í¸)|'íë¤ì¤ ìì§ëì´ë§' â AI ì¶ë ¥ì íµì íë ì¤ê³"
-       data-recommend="ì»¤ë¦¬ì´ ë°©í¥ ì ê²ì©ì¼ë¡ ì½ê³ , 'íë¨Â·ìë¯¸ ë¶ì¬' ì­ëì ì´ë»ê² í¤ì¸ì§ ë©ëª¨í´ ëì¸ì"
-       data-comment="ì´ ì¸í°ë·°ê° ë°ê°ì´ ê±´, ë§ì°í 'AIê° ì¼ìë¦¬ë¥¼ ëºëë¤'ë ê³µí¬ë¥¼ 'ë¬´ìì´ ëì²´ëê³  ë¬´ìì´ ê²¬ê³ í´ì§ëê°'ë¡ êµ¬ì²´íí´ ì£¼ê¸° ëë¬¸ìëë¤. ëì²´ëë ê±´ ì(ì´ìÂ·ë°ë³µ ìì)ì´ê³ , ê²¬ê³ í´ì§ë ê±´ ë¨¸ë¦¬(íë¨Â·ìë¯¸Â·ì ë¢° ì¤ê³)ë¼ë êµ¬ë¶ì ëìì´ëìê² ì¤ì§ì ì¸ ëì¹¨ë°ì´ ë©ëë¤. ê²°êµ­ ì§ë¬¸ì íëìëë¤ â ëë ìì¼ë¡ ì¹ë¶íê³  ìëê°, ë¨¸ë¦¬ë¡ ì¹ë¶íê³  ìëê°."
-       data-title-kr="AIë ìëÂ·ì, ì¬ëì ìë¯¸Â·ì ë¢°Â·íµì â¦2026 íë°ê¸° UXÂ·UI 4ë íë¦">
+       data-points="'AI=속도·양, 사람=의미·신뢰·통제'라는 역할 분담|쇼피파이·듀오링고의 직무 개편(제너럴리스트 선호)|'하네스 엔지니어링' — AI 출력을 통제하는 설계"
+       data-recommend="커리어 방향 점검용으로 읽고, '판단·의미 부여' 역량을 어떻게 키울지 메모해 두세요"
+       data-comment="이 인터뷰가 반가운 건, 막연한 'AI가 일자리를 뺏는다'는 공포를 '무엇이 대체되고 무엇이 견고해지는가'로 구체화해 주기 때문입니다. 대체되는 건 손(초안·반복 작업)이고, 견고해지는 건 머리(판단·의미·신뢰 설계)라는 구분은 디자이너에게 실질적인 나침반이 됩니다. 결국 질문은 하나입니다 — 나는 손으로 승부하고 있는가, 머리로 승부하고 있는가."
+       data-title-kr="AI는 속도·양, 사람은 의미·신뢰·통제…2026 하반기 UX·UI 4대 흐름">
       <div class="thumb g-slate">
         <div class="noise"></div>
         <span class="thumb-label">U X</span>
       </div>
       <div class="card-body">
-        <div class="card-source">ì ìì ë¬¸ Â· 2026. 06. 19</div>
-        <div class="card-title">"AIë ìëÂ·ì, ì¬ëì ìë¯¸Â·ì ë¢°Â·íµì "â¦2026 íë°ê¸° UXÂ·UI í¸ë ë</div>
+        <div class="card-source">전자신문 · 2026. 06. 19</div>
+        <div class="card-title">"AI는 속도·양, 사람은 의미·신뢰·통제"…2026 하반기 UX·UI 트렌드</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://yozm.wishket.com/magazine/detail/3441/" target="_blank"
-       data-category="ëìì¸ Â· AI Â· ì»¤ë¦¬ì´"
-       data-summary="ìì¦ITê° 'AIê° ëì²´í ê²ê³¼ 2026ë UIÂ·UX í¸ë ë'ë¥¼ ì ë¦¬íìµëë¤. í¼ê·¸ë§ ë¦¬í¬í¸ìì ìëµìì 78%ê° 'AI íµí©ì íì'ë¼ê³  ëµíì§ë§, 'AIê° ìë¬´ íì§ì ëì¸ë¤'ì ëìí ëìì´ëë 54%ì ê·¸ì³¤ìµëë¤. ëêµ¬ë ë¹¨ë¼ì¡ì§ë§ ê²°ê³¼ë¬¼ì ì ë¢°Â·íë¨íë ë¶ë´ì ì¤íë ¤ ì¬ëìê² ëì´ìë¤ë ì´ì¼ê¸°ìëë¤."
-       data-designer="ëìì´ëì ì­í ì´ 'AIì ì§ë¥ì ì¸ê°ì ê°ì±ê³¼ ë§¥ë½ì¼ë¡ ìì±íë ì¡°ì¨ì'ë¡ ì´ëíë¤ë ì§ë¨ìëë¤. 'AIë¡ ê²°ê³¼ë¬¼ì ë ë§ì´ ë½ë ê²'ê³¼ 'ë ëì ê²½íì ë§ëë ê²'ì êµ¬ë¶íë ëì ê¸°ë¥´ì¸ì. ì ìë ì´ë¯¸ ì¬ìì¡ê³ , ìì¼ë¡ ê°ì´ ë§¤ê²¨ì§ë ê±´ íììëë¤."
-       data-impact="ì¤ê° Â· AI ìë ìê¸° ì­í ì ë¤ì ì ìíë ¤ë ëìì´ë"
+       data-category="디자인 · AI · 커리어"
+       data-summary="요즘IT가 'AI가 대체한 것과 2026년 UI·UX 트렌드'를 정리했습니다. 피그마 리포트에서 응답자의 78%가 'AI 통합은 필수'라고 답했지만, 'AI가 업무 품질을 높인다'에 동의한 디자이너는 54%에 그쳤습니다. 도구는 빨라졌지만 결과물을 신뢰·판단하는 부담은 오히려 사람에게 넘어왔다는 이야기입니다."
+       data-designer="디자이너의 역할이 'AI의 지능을 인간의 감성과 맥락으로 완성하는 조율자'로 이동한다는 진단입니다. 'AI로 결과물을 더 많이 뽑는 것'과 '더 나은 경험을 만드는 것'을 구분하는 눈을 기르세요. 전자는 이미 쉬워졌고, 앞으로 값이 매겨지는 건 후자입니다."
+       data-impact="중간 · AI 시대 자기 역할을 다시 정의하려는 디자이너"
        data-impact-score="3"
-       data-points="í¼ê·¸ë§ ë¦¬í¬í¸: 'AI íì' 78% vs 'íì§ í¥ì ëì' ëìì´ë 54%|AI ë¸ë¼ì°ì (ChatGPT AtlasÂ·Comet)ê° ë°ê¾¸ë ì ë³´ íì|'ë ë§ì ê²°ê³¼ë¬¼'ê³¼ 'ë ëì ê²½í'ì ê°ë¥´ë ì§ë¬¸"
-       data-recommend="ìê¸° ì­í  ì¬ì ìì©ì¼ë¡ ì½ê³ , 'ëë ê²°ê³¼ë¬¼ì ëë¦¬ëê°, ê²½íì ëì´ëê°'ë¥¼ ì¤ì¤ë¡ ì ê²í´ ë³´ì¸ì"
-       data-comment="'AIê° íìë¼ë ë°ë 78%ê° ëìíì§ë§, íì§ì ëì¸ë¤ë ë°ë 54%ë§ ëìíë¤'ë ê²©ì°¨ê° ì´ ê¸ì íµì¬ìëë¤. ì¦ ë¤ë¤ AIë¥¼ ì°ì§ë§, ê·¸ê² ì ë§ ì¢ì ê²°ê³¼ë¡ ì´ì´ì§ëì§ë íì íì§ ëª»íë¤ë ë»ìëë¤. ì¬ê¸°ì ëìì´ëì ìë¦¬ê° ìê¹ëë¤ â ììì§ë AI ê²°ê³¼ë¬¼ ì¤ ë¬´ìì´ ì§ì§ ì¢ì ê²½íì¸ì§ íë¨íê³  ê³¨ë¼ë´ë ì¼, ê·¸ê±´ ìì§ ì¬ëì ëª«ìëë¤. ìëë AIìê² ë´ì£¼ëë¼ë, ìëª©ë§í¼ì ë´ì£¼ì§ ììì¼ í©ëë¤."
-       data-title-kr="AIê° ëì²´í ê²ê³¼ 2026ë ì£¼ëª©í  UIÂ·UX í¸ë ë">
+       data-points="피그마 리포트: 'AI 필수' 78% vs '품질 향상 동의' 디자이너 54%|AI 브라우저(ChatGPT Atlas·Comet)가 바꾸는 정보 탐색|'더 많은 결과물'과 '더 나은 경험'을 가르는 질문"
+       data-recommend="자기 역할 재정의용으로 읽고, '나는 결과물을 늘리는가, 경험을 높이는가'를 스스로 점검해 보세요"
+       data-comment="'AI가 필수라는 데는 78%가 동의하지만, 품질을 높인다는 데는 54%만 동의한다'는 격차가 이 글의 핵심입니다. 즉 다들 AI를 쓰지만, 그게 정말 좋은 결과로 이어지는지는 확신하지 못한다는 뜻입니다. 여기서 디자이너의 자리가 생깁니다 — 쏟아지는 AI 결과물 중 무엇이 진짜 좋은 경험인지 판단하고 골라내는 일, 그건 아직 사람의 몫입니다. 속도는 AI에게 내주더라도, 안목만큼은 내주지 않아야 합니다."
+       data-title-kr="AI가 대체한 것과 2026년 주목할 UI·UX 트렌드">
       <div class="thumb g-navy">
         <div class="noise"></div>
-        <span class="thumb-label">ì»¤ ë¦¬ ì´</span>
+        <span class="thumb-label">커 리 어</span>
       </div>
       <div class="card-body">
-        <div class="card-source">ìì¦IT Â· 2026. 06. 29</div>
-        <div class="card-title">AIê° ëì²´í ê²ê³¼ 2026ë ì£¼ëª©í  UIÂ·UX í¸ë ë</div>
+        <div class="card-source">요즘IT · 2026. 06. 29</div>
+        <div class="card-title">AI가 대체한 것과 2026년 주목할 UI·UX 트렌드</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
   </div>
 </div>
 
-<!-- ââ ìì¹´ì´ë¸ Â· ì¤íì±íë°© ì´ë (ì¹´ë ë, í¸í° ì) ââ -->
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
 <div class="archive-cta-wrap">
-  <a class="archive-cta" href="../../../archive.html">AI &amp; Design ìì¹´ì´ë¸</a>
-  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">ëìì¸ëì´í° ì¤íì±íë°©</a>
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
 </div>
 
 
 
-<!-- ââ ë°©ëªë¡ ââ -->
+<!-- ── 방명록 ── -->
 <section class="guestbook">
-  <div class="gb-header"><h2>ëë í¡í¡</h2></div>
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
   <div class="gb-form">
     <div class="gb-namerow">
-      <input class="gb-nick" type="text" placeholder="ëë¤ì (ë¶ì¼)" maxlength="20" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
-      <input class="gb-pw" type="password" inputmode="numeric" placeholder="ë¹ë°ë²í¸ 4ìë¦¬" maxlength="4" autocomplete="new-password">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="20" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4" autocomplete="new-password">
     </div>
-    <textarea class="gb-content" placeholder="ëìì¸ì ëí ìê²¬ì´ë ê¶ê¸í ì ì ìì ë¡­ê² ë¨ê²¨ë³´ì¸ì." maxlength="200"></textarea>
+    <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
     <div class="gb-row"><span></span><span class="gb-count" id="gbCount">0 / 200</span></div>
-    <button class="gb-submit" id="gbSubmit" disabled>ë±ë¡</button>
+    <button class="gb-submit" id="gbSubmit" disabled>등록</button>
   </div>
   <div class="gb-list" id="gbList"></div>
   <div class="gb-pagination" id="gbPager"></div>
 </section>
 
-<!-- ëë í¡í¡ ë¹ë² íì¸ ëª¨ë¬ -->
+<!-- 디놀 톡톡 비번 확인 모달 -->
 <div class="gb-modal-overlay" id="gbModalOverlay"></div>
 <div class="gb-modal" id="gbModal">
-  <div class="gb-modal-title" id="gbModalTitle">ë¹ë°ë²í¸ íì¸</div>
-  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="ë¹ë°ë²í¸" autocomplete="new-password">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
   <div class="gb-modal-err" id="gbModalErr"></div>
   <div class="gb-modal-btns">
-    <button class="gb-modal-cancel" id="gbModalCancel">ì·¨ì</button>
-    <button class="gb-modal-ok" id="gbModalOk">íì¸</button>
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
   </div>
 </div>
 
 
-<!-- ââ FOOTER ââ -->
+<!-- ── FOOTER ── -->
 <footer>
-  <p class="footer-copy">Â© 2026 ëìì¸ëì´í°. All rights reserved.</p>
-  <p class="footer-notice">ë³¸ ìë¹ì¤ì ëìì¸ ë° êµ¬ì±ì ëí ê¶ë¦¬ë ëìì¸ëì´í°ì ììµëë¤.<br>ì ê³µëë ì½íì¸ ì ì ìê¶ì ê° ì¸ë¡ ì¬ ë° ìì ìê¶ììê² ììµëë¤.</p>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
   <div class="footer-links">
-    <a class="footer-link" href="../../../privacy.html">ê°ì¸ì ë³´ì²ë¦¬ë°©ì¹¨</a>
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
   </div>
 </footer>
 
-<!-- ââ ë§¨ ìë¡ (ëª¨ë°ì¼ ì ì©, ì¤í¬ë¡¤ ì ë¸ì¶) ââ -->
-<button class="to-top" id="toTop" aria-label="ë§¨ ìë¡" title="ë§¨ ìë¡">â</button>
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
 
 
 <script>
-/* ââ ì½íì¸  ê²í  ë¡ì§ ââââââââââââââââââââââââââââââââââââââââââ
-   íì´ì§ ë¡ë ì ìëì¼ë¡ ìë í­ëª©ì ê²ì¬í©ëë¤.
-   1. ì¤ë³µ URL â ê°ì ë§í¬ê° 2ê° ì´ìì´ë©´ í´ë¹ ì¹´ëì ê²½ê³  íì
-   2. ë¹ ë§í¬ â hrefê° ìê±°ë '#'ì¸ ì¹´ë ê°ì§
-   ê°ë°/ê²í ì© íìì´ë©° ì½íì¸  ìì­ ìì ìì½ ë°°ëê° íìë©ëë¤.
-ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+/* ── 콘텐츠 검토 로직 ──────────────────────────────────────────
+   페이지 로드 시 자동으로 아래 항목을 검사합니다.
+   1. 중복 URL — 같은 링크가 2개 이상이면 해당 카드에 경고 표시
+   2. 빈 링크 — href가 없거나 '#'인 카드 감지
+   개발/검토용 표시이며 콘텐츠 영역 위에 요약 배너가 표시됩니다.
+──────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   const cards = [...document.querySelectorAll('a.card')];
 
-  /* ââ ë§¨ ìë¡ íë¡í ë²í¼ ââââââââââââââââââââââââââââââââââ
-     600px ì´ì ì¤í¬ë¡¤ëë©´ .showë¡ íì´ëì¸, í´ë¦­ ì ìë¨ì¼ë¡ ë¶ëë½ê² ì´ë.
-     ë¸ì¶ ìì²´ë CSS @media(max-width:580px)ììë§ display:flex â ëª¨ë°ì¼ ì ì©.
-  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+  /* ── 맨 위로 플로팅 버튼 ──────────────────────────────────
+     600px 이상 스크롤되면 .show로 페이드인, 클릭 시 상단으로 부드럽게 이동.
+     노출 자체는 CSS @media(max-width:580px)에서만 display:flex → 모바일 전용.
+  ──────────────────────────────────────────────────────────── */
   const toTop = document.getElementById('toTop');
   if (toTop) {
     const SHOW_AFTER = 600;
@@ -1151,10 +1153,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ââ ì½ì ìí (localStorage) ââââââââââââââââââââââââââââââ
-     ì¹´ëë¥¼ í ë² ì´ë(ëë¡ì´ ì¤í)íë©´ í´ë¹ URLì ê¸°ë¡íê³ ,
-     card-titleì .read í´ëì¤(font-weight 450, color #a3a3a3)ë¥¼ ë¶ì¬í©ëë¤.
-  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+  /* ── 읽음 상태 (localStorage) ──────────────────────────────
+     카드를 한 번 열람(드로어 오픈)하면 해당 URL을 기록하고,
+     card-title에 .read 클래스(font-weight 450, color #a3a3a3)를 부여합니다.
+  ──────────────────────────────────────────────────────────── */
   const READ_KEY = 'dinol_read_20260705';
 
   function getReadUrls() {
@@ -1178,7 +1180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  /* ââ ëë¡ì´ (ì¬ë¼ì´ëì ìì½ í¨ë) ââ */
+  /* ── 드로어 (슬라이드업 요약 패널) ── */
   const drawer           = document.getElementById('drawer');
   const overlay          = document.getElementById('drawerOverlay');
   const drawerClose      = document.getElementById('drawerClose');
@@ -1200,7 +1202,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnKr            = document.getElementById('btnKr');
   const btnEn            = document.getElementById('btnEn');
 
-  /* 6íë: ê° íëì EN(ê¸°ë³¸)/KR ê° ë³´ê´ */
+  /* 6필드: 각 필드의 EN(기본)/KR 값 보관 */
   const F = {
     title:{}, oneline:{}, designer:{}, points:{}, recommend:{}
   };
@@ -1218,7 +1220,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!n) { if (wrap) wrap.style.display = "none"; return; }
     if (wrap) wrap.style.display = "flex";
     let html = "";
-    for (let i = 1; i <= 5; i++) { html += "<span class='" + (i <= n ? "star-on" : "star-off") + "'>â</span>"; }
+    for (let i = 1; i <= 5; i++) { html += "<span class='" + (i <= n ? "star-on" : "star-off") + "'>★</span>"; }
     drawerImpact.innerHTML = html;
   }
 
@@ -1249,7 +1251,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gradClass = [...thumb.classList].find(c => c.startsWith('g-')) || '';
     drawerThumb.className = `drawer-thumb ${gradClass}`;
 
-    /* ê¸°ì¡´ ì´ë¯¸ì§ ì ê±° í ì¹´ë ì¸ë¤ì¼ ì´ë¯¸ì§ ë³µì¬ */
+    /* 기존 이미지 제거 후 카드 썸네일 이미지 복사 */
     const prevImg = drawerThumb.querySelector('.thumb-img');
     if (prevImg) prevImg.remove();
     const cardImg = thumb.querySelector('img.thumb-img');
@@ -1267,11 +1269,11 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerSource.textContent = card.querySelector('.card-source')?.textContent || '';
 
     const d = card.dataset;
-    /* ì¹´íê³ ë¦¬(ì¸ì´ì¤ë¦½, ê³µì ) */
+    /* 카테고리(언어중립, 공유) */
     drawerCategory.textContent = d.category || '';
     drawerCategory.style.display = d.category ? 'block' : 'none';
 
-    /* ê¸°ë³¸ê°(EN ì¬ë¡¯) = ì¹´ë ì¸ì´, -kr ì¬ë¡¯ = íêµ­ì´(ìì¼ë©´ ê¸°ë³¸ê° ë³µì ) */
+    /* 기본값(EN 슬롯) = 카드 언어, -kr 슬롯 = 한국어(없으면 기본값 복제) */
     const baseTitle = card.querySelector('.card-title')?.textContent || '';
     F.title.en     = baseTitle;
     F.oneline.en   = d.summary   || '';
@@ -1285,21 +1287,21 @@ document.addEventListener('DOMContentLoaded', () => {
     F.points.kr    = d.pointsKr    || F.points.en;
     F.recommend.kr = d.recommendKr || F.recommend.en;
 
-    /* ìë¬¸ ê¸°ì¬(-kr ë²ì­ ìì) â í ê¸ ë¸ì¶, ê¸°ë³¸ KR / íêµ­ì´ ê¸°ì¬ â í ê¸ ì¨ê¹, KR ê° íì */
+    /* 영문 기사(-kr 번역 있음) → 토글 노출, 기본 KR / 한국어 기사 → 토글 숨김, KR 값 표시 */
     if (hasEn && d.titleKr) {
       drawerLangToggle.style.display = 'flex';
       setLang('kr');
     } else {
       drawerLangToggle.style.display = 'none';
-      setLang('kr'); /* íêµ­ì´ ê¸°ì¬: kr ì¬ë¡¯ì´ ê³§ ê¸°ë³¸ê° */
+      setLang('kr'); /* 한국어 기사: kr 슬롯이 곧 기본값 */
     }
 
     drawerCta.href = card.href;
 
-    /* ì¤ë¬´ ìí¥ë ë³ì  (ì¸ì´ ë¬´ê´) */
+    /* 실무 영향도 별점 (언어 무관) */
     renderStars(card.dataset.impactScore);
 
-    /* ìëí° ì½ë©í¸ (ì¸ì´ ë¬´ê´, ì£¼ê´ì  ë¼í) â ê° ìì¼ë©´ í­ëª© ì¨ê¹ */
+    /* 에디터 코멘트 (언어 무관, 주관적 논평) — 값 없으면 항목 숨김 */
     const commentText = (card.dataset.comment || '').trim();
     drawerComment.textContent = commentText;
     drawerCommentWrap.style.display = commentText ? 'flex' : 'none';
@@ -1332,7 +1334,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* 1. ì¤ë³µ URL ê²ì¬ */
+  /* 1. 중복 URL 검사 */
   const urlCount = {};
   cards.forEach(c => {
     const url = c.href;
@@ -1344,7 +1346,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.filter(c => c.href === url).forEach(card => {
       card.style.outline = '2px solid #ff4444';
       const badge = document.createElement('div');
-      badge.textContent = 'â  ì¤ë³µ ë§í¬';
+      badge.textContent = '⚠ 중복 링크';
       badge.style.cssText = [
         'position:absolute', 'top:0', 'left:0',
         'background:#ff4444', 'color:#fff',
@@ -1357,12 +1359,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* 2. ë¹ ë§í¬ ê²ì¬ */
+  /* 2. 빈 링크 검사 */
   const emptyLinks = cards.filter(c => !c.getAttribute('href') || c.getAttribute('href') === '#');
   emptyLinks.forEach(card => {
     card.style.outline = '2px solid #ffaa00';
     const badge = document.createElement('div');
-    badge.textContent = 'â  ë§í¬ ìì';
+    badge.textContent = '⚠ 링크 없음';
     badge.style.cssText = [
       'position:absolute', 'top:0', 'left:0',
       'background:#ffaa00', 'color:#000',
@@ -1374,11 +1376,11 @@ document.addEventListener('DOMContentLoaded', () => {
     card.prepend(badge);
   });
 
-  /* 3. ìì½ ë°°ë */
+  /* 3. 요약 배너 */
   const issues = dupeUrls.length + emptyLinks.length;
   if (issues > 0) {
     const banner = document.createElement('div');
-    banner.innerHTML = `â  ì½íì¸  ê²í  ê²°ê³¼: ì¤ë³µ ë§í¬ <b>${dupeUrls.length}ê±´</b>, ë¹ ë§í¬ <b>${emptyLinks.length}ê±´</b> ë°ê²¬ â ë¹¨ê°/ë¸ë íëë¦¬ ì¹´ëë¥¼ íì¸íì¸ì.`;
+    banner.innerHTML = `⚠ 콘텐츠 검토 결과: 중복 링크 <b>${dupeUrls.length}건</b>, 빈 링크 <b>${emptyLinks.length}건</b> 발견 — 빨간/노란 테두리 카드를 확인하세요.`;
     banner.style.cssText = [
       'position:fixed', 'bottom:20px', 'left:50%',
       'transform:translateX(-50%)',
@@ -1389,9 +1391,9 @@ document.addEventListener('DOMContentLoaded', () => {
       'white-space:nowrap'
     ].join(';');
     document.body.appendChild(banner);
-    console.warn('[ëìì¸ëì´í°] ê²í  ì¤ë¥:', { dupeUrls, emptyLinks: emptyLinks.map(c => c.querySelector('.card-title')?.textContent) });
+    console.warn('[디자인놀이터] 검토 오류:', { dupeUrls, emptyLinks: emptyLinks.map(c => c.querySelector('.card-title')?.textContent) });
   } else {
-    console.log('[ëìì¸ëì´í°] â ì½íì¸  ê²í  íµê³¼ â ì¤ë³µ ë§í¬ ìì, ë¹ ë§í¬ ìì');
+    console.log('[디자인놀이터] ✅ 콘텐츠 검토 통과 — 중복 링크 없음, 빈 링크 없음');
   }
 });
 </script>

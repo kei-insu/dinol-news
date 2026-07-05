@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ëìì¸ ëì´í° â 2026. 07. 01</title>
+<title>디자인 놀이터 — 2026. 07. 01</title>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
 <script>
@@ -12,7 +12,7 @@
   gtag('js', new Date());
   gtag('config', 'G-ZC93DYWB2B');
 </script>
-<!-- Google AdSense â TODO: ca-pub- ë¤ ì«ìë¥¼ ì¤ì  ë°ê¸ë°ì ê²ìì IDë¡ êµì²´íì¸ì -->
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
     min-height: 100vh;
   }
 
-  /* ââ HEADER ââ */
+  /* ── HEADER ── */
   header {
     display: flex;
     flex-direction: column;
@@ -73,7 +73,7 @@
     text-transform: uppercase;
   }
 
-  /* ââ SECTION ââ */
+  /* ── SECTION ── */
   .section { max-width: 1130px; margin-left: auto; margin-right: auto; margin-bottom: 56px; }
 
   .section-header {
@@ -103,10 +103,12 @@
 
   .section-chevron {
     flex-shrink: 0;
-    font-size: 13px;
-    color: #8a8a99;
-    transition: transform 0.25s ease;
+    font-size: 15px;
+    color: #cccccc;
+    transition: transform 0.2s ease;
     line-height: 1;
+    display: inline-block;
+    transform: scaleY(0.8);
   }
   .section.collapsed .section-chevron { transform: scaleY(0.8) rotate(180deg); }
   .section .grid {
@@ -122,14 +124,14 @@
     pointer-events: none;
   }
 
-  /* ââ GRID ââ */
+  /* ── GRID ── */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
     gap: 14px;
   }
 
-  /* ââ CARD ââ */
+  /* ── CARD ── */
   .card {
     background: #13131b;
     border: 1px solid #1c1c28;
@@ -147,7 +149,7 @@
     box-shadow: 0 10px 36px rgba(0,0,0,0.5);
   }
 
-  /* ââ THUMB ââ */
+  /* ── THUMB ── */
   .thumb {
     width: 100%;
     height: 128px;
@@ -160,7 +162,7 @@
     background: #1a1a24;
   }
 
-  /* ê¸°ì¬ ëí ì´ë¯¸ì§ ì¸ë¤ì¼ (object-fit: cover, ê°ë¡í­ ê¸°ì¤ crop) */
+  /* 기사 대표 이미지 썸네일 (object-fit: cover, 가로폭 기준 crop) */
   .thumb-img {
     position: absolute;
     inset: 0;
@@ -195,7 +197,7 @@
     user-select: none;
   }
 
-  /* EN badge â top-right of thumb (English articles only) */
+  /* EN badge — top-right of thumb (English articles only) */
   .thumb-en {
     position: absolute;
     top: 10px;
@@ -225,7 +227,7 @@
   .g-navy     { background: linear-gradient(145deg,#060c1e,#0e2060); }
   .g-rust     { background: linear-gradient(145deg,#1e0800,#7c2c00); }
 
-  /* ââ CARD BODY ââ */
+  /* ── CARD BODY ── */
   .card-body {
     padding: 14px 16px 12px;
     flex: 1;
@@ -248,7 +250,7 @@
     transition: color 0.2s ease, font-weight 0.2s ease;
   }
 
-  /* ì½ì ìí â ì¹´ëë¥¼ í ë² ì´ëíë©´(localStorage ê¸°ë¡) ì ì© */
+  /* 읽음 상태 — 카드를 한 번 열람하면(localStorage 기록) 적용 */
   .card-title.read {
     font-weight: 450;
     color: #a3a3a3;
@@ -256,7 +258,7 @@
 
 
 
-  /* ââ CARD FOOTER ââ */
+  /* ── CARD FOOTER ── */
   .card-footer {
     padding: 9px 16px;
     border-top: 1px solid #18181f;
@@ -269,7 +271,7 @@
 
   .featured { grid-column: span 1; }
 
-  /* ââ FOOTER ââ */
+  /* ── FOOTER ── */
   footer {
     margin-top: 48px;
     padding: 28px 0 8px;
@@ -309,22 +311,22 @@
   }
   .footer-link:hover { color: #999; }
 
-  /* ââ ìì¹´ì´ë¸ Â· ì¤íì±íë°© ë²í¼ (ëì¼ í­, ì¸ë¡ ì ë ¬) ââ */
+  /* ── 아카이브 · 오픈채팅방 버튼 (동일 폭, 세로 정렬) ── */
   .archive-cta-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;                 /* ëª¨ë°ì¼ í°ì¹ ê°ê²© ê°ì´ë(Material â¥8dp) ì¶©ì¡± */
+    gap: 12px;                 /* 모바일 터치 간격 가이드(Material ≥8dp) 충족 */
     margin-top: 8px;
   }
   .archive-cta, .kakao-cta {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 240px;              /* ë ë²í¼ ê°ë¡ ê¸¸ì´ ëì¼ */
+    width: 240px;              /* 두 버튼 가로 길이 동일 */
     max-width: 100%;
-    min-height: 48px;          /* í°ì¹ íê¹ ê°ì´ë(Apple 44 / Material 48) ì¶©ì¡± */
-    padding: 0 16px;           /* ì¢ì° ì¬ë°± (Material ë²í¼ íì¤ ~16dp) */
+    min-height: 48px;          /* 터치 타깃 가이드(Apple 44 / Material 48) 충족 */
+    padding: 0 16px;           /* 좌우 여백 (Material 버튼 표준 ~16dp) */
     border-radius: 24px;
     font-weight: 500;
     text-decoration: none;
@@ -332,7 +334,7 @@
     transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
     font-size: 16px;
   }
-  /* ìì¹´ì´ë¸: ê·¸ë ì´ ë°°ê²½ + ê²ì  íì¤í¸ */
+  /* 아카이브: 그레이 배경 + 검정 텍스트 */
   .archive-cta {
     font-size: 16px;
     color: #191919;
@@ -341,7 +343,7 @@
     letter-spacing: 0.2px;
   }
   .archive-cta:hover { background: #d9dce4; }
-  /* ì¤íì±íë°©: ì¹´ì¹´ì¤ ìë¡ì° + ê²ì  íì¤í¸ */
+  /* 오픈채팅방: 카카오 옐로우 + 검정 텍스트 */
   .kakao-cta {
     font-size: 16px;
     color: #191919;
@@ -351,7 +353,7 @@
   }
   .kakao-cta:hover { background: #ffe94d; }
 
-  /* ââ ë§¨ ìë¡ íë¡í ë²í¼ (ëª¨ë°ì¼ ì ì©) ââ */
+  /* ── 맨 위로 플로팅 버튼 (모바일 전용) ── */
   .to-top {
     position: fixed;
     right: 16px;
@@ -368,7 +370,7 @@
     font-size: 18px;
     line-height: 1;
     cursor: pointer;
-    display: none;              /* ë°ì¤í¬í± ë° ì´ê¸° ìí: ì¨ê¹ */
+    display: none;              /* 데스크톱 및 초기 상태: 숨김 */
     align-items: center;
     justify-content: center;
     opacity: 0;
@@ -379,7 +381,7 @@
   .to-top:hover { border-color: #3c3c58; color: #fff; }
   .to-top.show { opacity: 1; transform: translateY(0); }
 
-  /* ââ DRAWER ââ */
+  /* ── DRAWER ── */
   .drawer-overlay {
     display: none;
     position: fixed;
@@ -389,7 +391,7 @@
   }
   .drawer-overlay.open { display: block; }
 
-  /* PC â ì¤ì ëª¨ë¬ */
+  /* PC — 중앙 모달 */
   .drawer {
     position: fixed;
     top: 50%; left: 50%;
@@ -413,7 +415,7 @@
     pointer-events: auto;
   }
 
-  /* ëª¨ë°ì¼ â ë°íìí¸ */
+  /* 모바일 — 바텀시트 */
   @media (max-width: 580px) {
     .drawer {
       top: auto; left: 0; right: 0;
@@ -498,18 +500,18 @@
     line-height: 1.7;
     margin-top: 2px;
   }
-  /* ââ Aì: êµ¬ì¡°í ìì½ íë ââ */
+  /* ── A안: 구조화 요약 필드 ── */
   .drawer-category { font-size: 12px; font-weight: 600; color: #8a8aff; letter-spacing: 0.4px; }
   .drawer-field { display: flex; flex-direction: column; gap: 3px; }
   .drawer-field-label { font-size: 12px; font-weight: 700; color: #d0d0e0; letter-spacing: 0.2px; }
   .drawer-field-text { font-size: 14px; color: #a6a6b8; line-height: 1.6; }
-  /* ì¤ë¬´ ìí¥ë ë³ì  */
+  /* 실무 영향도 별점 */
   .drawer-stars { display: inline-flex; align-items: center; gap: 2px; font-size: 15px; letter-spacing: 1px; line-height: 1; }
   .drawer-stars .star-on { color: #ff7f3e; }
   .drawer-stars .star-off { color: #3a3a48; }
   .drawer-points { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 3px; }
   .drawer-points li { font-size: 14px; color: #a6a6b8; line-height: 1.45; }
-  /* ìëí° ì½ë©í¸ (ì¤ë¦¬ì§ë ë¼í Â· ìê°ì  ê°ì¡°) */
+  /* 에디터 코멘트 (오리지널 논평 · 시각적 강조) */
   .drawer-comment {
     display: flex; flex-direction: column; gap: 6px;
     margin-top: 2px;
@@ -600,10 +602,10 @@
     .footer-copy { font-size: 13px; }
     .footer-notice { font-size: 13px; }
     .footer-link { font-size: 13px; }
-    .to-top { display: flex; }   /* ëª¨ë°ì¼ììë§ ë¸ì¶ (íìë JSê° .showë¡ ì ì´) */
+    .to-top { display: flex; }   /* 모바일에서만 노출 (표시는 JS가 .show로 제어) */
   }
 
-  /* âââââââââââ ë°©ëªë¡ âââââââââââ */
+  /* ─────────── 방명록 ─────────── */
   .guestbook { max-width: 640px; margin: 64px auto 0; padding: 0 4px; }
   .gb-header { text-align: center; margin-bottom: 24px; }
   .gb-header h2 { font-family: 'Single Day', cursive; font-size: 32px; font-weight: 400; letter-spacing: 1px; color: #ffffff; }
@@ -616,7 +618,7 @@
     color: #e8e8f0; font-family: inherit; font-size: 16px; padding: 12px 14px; width: 100%;
   }
   .gb-nick::placeholder, .gb-pw::placeholder, .gb-content::placeholder { color: #666; }
-  /* ë¸ë¼ì°ì  ìëìì± ë°°ê²½ ê°ì  ì ê±° (í° ë°ì¤ ë°©ì§) */
+  /* 브라우저 자동완성 배경 강제 제거 (흰 박스 방지) */
   .gb-nick:-webkit-autofill, .gb-pw:-webkit-autofill, .gb-content:-webkit-autofill,
   .gb-nick:-webkit-autofill:focus, .gb-pw:-webkit-autofill:focus, .gb-content:-webkit-autofill:focus,
   .gb-modal-pw:-webkit-autofill, .gb-modal-pw:-webkit-autofill:focus {
@@ -668,7 +670,7 @@
     .gb-entry-actions .gb-act-edit, .gb-entry-actions .gb-act-del { min-height: 44px; min-width: 44px; font-size: 16px; padding: 0 12px; }
   }
 
-  /* âââââââââââ ì¹´ë ì¢ììÂ·ê³µì  ì¡ìë° âââââââââââ */
+  /* ─────────── 카드 좋아요·공유 액션바 ─────────── */
   .card-footer { justify-content: space-between; }
   .card-actions { display: flex; align-items: center; gap: 15px; }
   .act { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #8a8a99; transition: color .15s ease, transform .1s ease; }
@@ -684,21 +686,21 @@
     border: 1px solid #33333f; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 2000; }
   .gb-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-  /* âââââââââââ íì´ì§ë¤ì´ì (ë¤ì´ë²ì: ë²í¸=íë ì¸, íì´í=êµ¬ë¶) âââââââââââ */
+  /* ─────────── 페이지네이션 (네이버식: 번호=플레인, 화살표=구분) ─────────── */
   .gb-pagination { display: flex; justify-content: center; align-items: center; gap: 2px; margin-top: 28px; flex-wrap: wrap; }
   .gb-page-btn { min-width: 34px; height: 34px; padding: 0 10px; background: none; border: none; color: #8a8a99;
     font-size: 14px; cursor: pointer; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; transition: color .12s, background .12s; }
   .gb-page-btn:hover:not(:disabled) { color: #ffffff; background: #191922; }
   .gb-page-btn.active { color: #ffffff; font-weight: 700; position: relative; }
   .gb-page-btn.active::after { content: ''; position: absolute; left: 9px; right: 9px; bottom: 4px; height: 2px; background: #ff7f3e; border-radius: 2px; }
-  /* íì´í: íëë¦¬ ìë ë²í¼ + ë²í¸ì ê°ê²© */
+  /* 화살표: 테두리 있는 버튼 + 번호와 간격 */
   .gb-page-btn.gb-page-nav { border: 1px solid #222230; background: #191922; color: #a6a6b8; font-size: 13px; }
   .gb-page-btn.gb-page-nav:hover:not(:disabled) { border-color: #33333f; color: #ffffff; background: #191922; }
   .gb-page-nav.nav-prev { margin-right: 8px; }
   .gb-page-nav.nav-next { margin-left: 8px; }
   .gb-page-btn:disabled { opacity: 0.3; cursor: default; }
 
-  /* âââââââââââ ëë í¡í¡: ìì /ì­ì  Â· ì¸ë¼ì¸ í¸ì§ Â· ë¹ë² ëª¨ë¬ âââââââââââ */
+  /* ─────────── 디놀 톡톡: 수정/삭제 · 인라인 편집 · 비번 모달 ─────────── */
   .gb-entry-head { position: relative; }
   .gb-entry-actions { margin-left: auto; display: flex; gap: 6px; flex-shrink: 0; }
   .gb-act-edit, .gb-act-del { background: none; border: none; color: #5c5c68; font-size: 12px; cursor: pointer; padding: 4px 8px; font-family: inherit; display: inline-flex; align-items: center; justify-content: center; }
@@ -713,7 +715,7 @@
   .gb-edit-cancel { background: #23232e; border: none; color: #b0b0bc; }
   .gb-edit-cancel:hover { background: #2c2c3a; }
   .gb-edit-save { background: #c9ccd4; border: none; color: #191919; font-weight: 700; }
-  /* ë¹ë² íì¸ ëª¨ë¬ */
+  /* 비번 확인 모달 */
   .gb-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 3000; }
   .gb-modal-overlay.show { opacity: 1; pointer-events: auto; }
   .gb-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-46%); width: 320px; max-width: calc(100% - 40px);
@@ -738,40 +740,40 @@
 <body>
 
 <!--
-  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-  ëìì¸ ëì´í° â ì½íì¸  ìì§ ì ì±
-  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-  [í¬ë¡¤ë§ ê¸°ê°]
-  Â· í´ë¹ì¼ + ì ì¼ (ì: ì¤ë 2026-06-30 â 2026-06-29 ~ 2026-06-30)
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
 
-  [í¬ë¡¤ë§ ë²ì]
-  Â· ë´ì¤ ê¸°ì¬ + ìì¤ ê³µì  + ì¸ì¬ì´í¸ ìë£ ë± ë¤ìí ì½ìê±°ë¦¬
-  Â· ì¹´íê³ ë¦¬ë³ ìµì 4ê° ì´ì ìì§
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
 
-  [ì¸ì´ ë¹ì¨]
-  Â· ì¹ìë³ íêµ­ì´ ê¸°ì¬ : ìë¬¸ ê¸°ì¬ = 50:50 ì ì§
-  Â· ìë¬¸ ê¸°ì¬ë§ì¼ë¡ ì¹ìì´ ì±ìì§ì§ ìëë¡ íêµ­ì´ ìì¤ ì°ì  íì
-  Â· íêµ­ì´ ê¸°ì¬ íë³´: designdb.com, design.co.kr, kidp.or.kr,
-    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr ë±
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
 
-  [ì½íì¸  ê²ì¦ â í¬ë¡¤ë§ í ë°ëì ìí]
-  1. URL ì¤ë³µ íì¸ â ëì¼ URLì 1ê° ì¹´ëë§ íì©
-  2. ë ì§ íì¸ â ê¸°ì¬ ë³¸ë¬¸ì ì¤ì  ê²ì¬ì¼ì´ ìì§ ê¸°ê° ë´ì¸ì§ ê²ì¦
-  3. ì¹´ë íì´í â ëª©ì ì§ URL ì¼ì¹ íì¸
-     Â· ì¹´ëì íìë íì´íÂ·ë´ì©ì´ ë§í¬ ëì°© íì´ì§ì ì¤ì  ë´ì©ê³¼ ì¼ì¹í´ì¼ í¨
-     Â· URLì´ ëª©ë¡/ë©ì¸ íì´ì§ ë± ê¸°ì¬ê° ìë ê²½ì° ì¬ì© ê¸ì§
-     Â· ì¤ì  íì´ì§ë¥¼ ì´ì´ íì¸ëì§ ìì ë´ì©ì ì¹´ëì ê¸°ì¬íì§ ìì
-  4. ë¹ ë§í¬Â·ê¹¨ì§ ë§í¬ ì¬ì© ê¸ì§
-  5. ì¸ì´ ë¹ì¨ íì¸ â ì¹ìë³ KR:En = 50:50 ì¶©ì¡± ì¬ë¶ ìµì¢ ì ê²
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
 
-  [íê¸° ê·ì¹]
-  Â· ë ì§ íì: YYYY. MM. DD (íëì½ë©, replace ì°ì° ì¬ì© ê¸ì§)
-  Â· ìë¬¸ ê¸°ì¬ë§ En ë°°ì§ íì (êµ­ë¬¸ ê¸°ì¬ë ë°°ì§ ìì)
-  Â· íì¼ëª: Dinol_news_YYYYMMDD.html
-  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
 -->
 
-<!-- ââ DRAWER ââ -->
+<!-- ── DRAWER ── -->
 <div class="drawer-overlay" id="drawerOverlay"></div>
 <div class="drawer" id="drawer">
   <div class="drawer-header">
@@ -785,8 +787,8 @@
   <div class="drawer-body">
     <div class="drawer-toolbar">
       <div class="card-actions drawer-actions">
-        <span class="act act-like" id="drawerLike" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
-        <span class="act act-share" id="drawerShare" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
       </div>
       <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
         <button class="lang-btn active" id="btnKr">KR</button>
@@ -797,46 +799,46 @@
     <div class="drawer-title" id="drawerTitle"></div>
 
     <div class="drawer-field">
-      <div class="drawer-field-label">í ì¤ ìì½</div>
+      <div class="drawer-field-label">한 줄 요약</div>
       <div class="drawer-field-text" id="drawerOneline"></div>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">ë³¼ í¬ì¸í¸</div>
+      <div class="drawer-field-label">볼 포인트</div>
       <ul class="drawer-points" id="drawerPoints"></ul>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">ëìì´ë ê´ì </div>
+      <div class="drawer-field-label">디자이너 관점</div>
       <div class="drawer-field-text" id="drawerDesigner"></div>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">ì¤ë¬´ ìí¥ë</div>
+      <div class="drawer-field-label">실무 영향도</div>
       <div class="drawer-stars" id="drawerImpact"></div>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">ì¶ì²</div>
+      <div class="drawer-field-label">추천</div>
       <div class="drawer-field-text" id="drawerRecommend"></div>
     </div>
     <div class="drawer-comment" id="drawerCommentWrap">
-      <div class="drawer-comment-label">ð¬ ìëí° ì½ë©í¸</div>
+      <div class="drawer-comment-label">💬 에디터 코멘트</div>
       <div class="drawer-comment-text" id="drawerComment"></div>
     </div>
   </div>
   <div class="drawer-footer">
-    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">ìë¬¸ ë³´ê¸° â</a>
-    <button class="drawer-close-btn" id="drawerClose">ë«ê¸°</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
   </div>
 </div>
 
-<!-- ââ HEADER ââ -->
+<!-- ── HEADER ── -->
 <header>
-  <div class="site-title">ëìì¸ ëì´í°</div>
+  <div class="site-title">디자인 놀이터</div>
   <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
   <div class="header-sep"></div>
   <div class="site-date">July 1, 2026</div>
 </header>
 
 
-<!-- ââââââââââââââââââââââ AI ââââââââââââââââââââââ -->
+<!-- ══════════════════════ AI ══════════════════════ -->
 <div class="section">
   <div class="section-header">
     <h2>AI</h2>
@@ -845,95 +847,95 @@
   </div>
   <div class="grid">
 
-    <a class="card featured" href="https://zdnet.co.kr/view/?no=20260701161645" target="_blank" data-summary="ê³¼ê¸°ì íµë¶ê° í¼ì§ì»¬AI íµì¬ê¸°ì  íë³´ì ë°ì´í°Â·ì¸íë¼ êµ¬ì¶ì í¬í¨í 3ë ì§ì¤ ì¡ì± ë°©ìì ë°ííë¤. ì ì¡°Â·ëìÂ·êµ­ë°©Â·ëë´ 4ë ë¶ì¼ êµ­ê° ë°ì´í°ë¥¼ êµ¬ì¶íê³ , ê¸ë¡ë² í¼ì§ì»¬AI ìì¶ êµ­ê°ë¡ì ëì½ì ëª©íë¡ íë¤.">
+    <a class="card featured" href="https://zdnet.co.kr/view/?no=20260701161645" target="_blank" data-summary="과기정통부가 피지컬AI 핵심기술 확보와 데이터·인프라 구축을 포함한 3년 집중 육성 방안을 발표했다. 제조·농업·국방·돌봄 4대 분야 국가 데이터를 구축하고, 글로벌 피지컬AI 수출 국가로의 도약을 목표로 한다.">
       <div class="thumb g-violet">
         <div class="noise"></div>
-        <span class="thumb-label">ì ì±</span>
+        <span class="thumb-label">정책</span>
       </div>
       <div class="card-body">
-        <div class="card-source">ZDNet Korea Â· 2026. 07. 01</div>
-        <div class="card-title">ê³¼ê¸°ì íµë¶ "í¼ì§ì»¬AI ìì¶íë ëë¼ë¡"â¦3ë ë´ ì§ì¤ ì¡ì±</div>
+        <div class="card-source">ZDNet Korea · 2026. 07. 01</div>
+        <div class="card-title">과기정통부 "피지컬AI 수출하는 나라로"…3년 내 집중 육성</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
-    <a class="card" href="https://zdnet.co.kr/view/?no=20260701114115" target="_blank" data-summary="ì¼ì± íì´ëë¦¬ê° AI ì í ìëì ì íÂ·ì¸íë¼Â·ê³ ê°Â·íí¸ëë¥¼ ì°ê²°íë 'ë¥ìì¤' íë«í¼ ì ëµì ì ì¸íë¤. 2ëë¸ ê³µì  ë° HBM4ë¥¼ ìì¸ì êµ­ë´ì¸ ë°ëì²´ ìíê³ ì£¼ëê¶ì ê°ííë¤ë ë¡ëë§µì ê³µê°íë¤.">
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260701114115" target="_blank" data-summary="삼성 파운드리가 AI 전환 시대에 제품·인프라·고객·파트너를 연결하는 '넥서스' 플랫폼 전략을 선언했다. 2나노 공정 및 HBM4를 앞세워 국내외 반도체 생태계 주도권을 강화한다는 로드맵을 공개했다.">
       <div class="thumb g-navy">
         <div class="noise"></div>
-        <span class="thumb-label">ë°ëì²´</span>
+        <span class="thumb-label">반도체</span>
       </div>
       <div class="card-body">
-        <div class="card-source">ZDNet Korea Â· 2026. 07. 01</div>
-        <div class="card-title">ì¼ì± íì´ëë¦¬, AI ìë 'ë¥ìì¤' ì ì¸â¦"2ëë¸Â·HBM4ë¡ ìíê³ ì£¼ë"</div>
+        <div class="card-source">ZDNet Korea · 2026. 07. 01</div>
+        <div class="card-title">삼성 파운드리, AI 시대 '넥서스' 선언…"2나노·HBM4로 생태계 주도"</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
-    <a class="card" href="https://www.fnnews.com/news/202607011807584120" target="_blank" data-summary="ì ë¶ê° í¼ì§ì»¬AI ì£¼ëê¶ íë³´ë¥¼ ìí´ ë¡ë´Â·ë°ëì²´Â·ì¤ë§í¸í©í ë¦¬Â·ìì¨ì£¼íÂ·ëë¡ Â·ìë£ 6ê° ë¶ì¼ì ì¬í´ 16ì¡°ìì í¬ìíë¤. ì ë§ ì ëê¸°ìê³¼ ë©ê°íë¡ì í¸ë¥¼ ë°êµ´í´ AI ê¸°ë° ì ì¡°ì ëì íì ë³¸ê²© ì¶ì§íë¤.">
+    <a class="card" href="https://www.fnnews.com/news/202607011807584120" target="_blank" data-summary="정부가 피지컬AI 주도권 확보를 위해 로봇·반도체·스마트팩토리·자율주행·드론·의료 6개 분야에 올해 16조원을 투입한다. 유망 선도기업과 메가프로젝트를 발굴해 AI 기반 제조업 대전환을 본격 추진한다.">
       <div class="thumb g-slate">
         <div class="noise"></div>
-        <span class="thumb-label">í¬ì</span>
+        <span class="thumb-label">투자</span>
       </div>
       <div class="card-body">
-        <div class="card-source">íì´ë¸ìë´ì¤ Â· 2026. 07. 01</div>
-        <div class="card-title">AIë¡ ì ì¡°ì ëì íâ¦ ë¡ë´Â·ë°ëì²´ ë± 6ê° ë¶ì¼ì 16å í¬ì</div>
+        <div class="card-source">파이낸셜뉴스 · 2026. 07. 01</div>
+        <div class="card-title">AI로 제조업 대전환… 로봇·반도체 등 6개 분야에 16兆 투입</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/" target="_blank"
        data-summary="Anthropic released Claude Sonnet 5, a more powerful agentic model capable of autonomously using tools like browsers, terminals, and code interpreters. Priced lower than its predecessors, it marks a new cost-efficiency threshold for long-horizon AI agent tasks."
-       data-title-kr="Anthropic, ìì´ì í¸ ì¤íì ìí ì ë ´í ì ëª¨ë¸ 'Claude Sonnet 5' ì¶ì"
-       data-summary-kr="Anthropicì´ Claude Sonnet 5ë¥¼ ê³µê°íë¤. ë¸ë¼ì°ì Â·í°ë¯¸ëÂ·ì½ë ì¸í°íë¦¬í° ë± ëêµ¬ë¥¼ ìì¨ì ì¼ë¡ íì©íë ê°íë ìì´ì í¸ ëª¨ë¸ë¡, ì´ì  ë²ì ë³´ë¤ ë®ì ê°ê²©ì ì ê³µëë¤. ì¥ê¸° AI ìì´ì í¸ ììì ë¹ì© í¨ì¨ì± ê¸°ì¤ì ìë¡­ê² ì¤ì íë¤ë íê°ë¤.">
+       data-title-kr="Anthropic, 에이전트 실행을 위한 저렴한 신모델 'Claude Sonnet 5' 출시"
+       data-summary-kr="Anthropic이 Claude Sonnet 5를 공개했다. 브라우저·터미널·코드 인터프리터 등 도구를 자율적으로 활용하는 강화된 에이전트 모델로, 이전 버전보다 낮은 가격에 제공된다. 장기 AI 에이전트 작업의 비용 효율성 기준을 새롭게 설정했다는 평가다.">
       <div class="thumb g-crimson">
         <div class="noise"></div>
         <span class="thumb-label">Model</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">TechCrunch Â· 2026. 06. 30</div>
+        <div class="card-source">TechCrunch · 2026. 06. 30</div>
         <div class="card-title">Anthropic launches Claude Sonnet 5 as a cheaper way to run agents</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://techcrunch.com/2026/06/30/trump-drops-restrictions-on-anthropics-mythos-and-fable-models/" target="_blank"
        data-summary="The U.S. lifted export license requirements on Anthropic's Mythos and Fable models, restoring public global access to what are widely considered the most advanced AI models available today. The reversal follows intense industry lobbying and has immediate implications for international AI availability."
-       data-title-kr="í¸ë¼í, Anthropic MythosÂ·Fable ëª¨ë¸ ìì¶ ê·ì  ì ê²© í´ì "
-       data-summary-kr="ë¯¸êµ­ ì ë¶ê° Anthropicì MythosÂ·Fable ëª¨ë¸ì ëí ìì¶ íê° ìê±´ì ì² íí´ íì¡´ ìµê³  ìì¤ì¼ë¡ íê°ë°ë AI ëª¨ë¸ì ê¸ë¡ë² ì ê·¼ì´ ì¬ê°ëë¤. ìê³ì ê°ë ëì ë¡ë¹ ëì ì´ë£¨ì´ì§ ì´ë² ê²°ì ì êµ­ì  AI ì ê·¼ì±ì ì¦ê°ì ì¸ ìí¥ì ë¯¸ì¹ë¤.">
+       data-title-kr="트럼프, Anthropic Mythos·Fable 모델 수출 규제 전격 해제"
+       data-summary-kr="미국 정부가 Anthropic의 Mythos·Fable 모델에 대한 수출 허가 요건을 철회해 현존 최고 수준으로 평가받는 AI 모델의 글로벌 접근이 재개됐다. 업계의 강도 높은 로비 끝에 이루어진 이번 결정은 국제 AI 접근성에 즉각적인 영향을 미친다.">
       <div class="thumb g-rust">
         <div class="noise"></div>
         <span class="thumb-label">Policy</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">TechCrunch Â· 2026. 06. 30</div>
+        <div class="card-source">TechCrunch · 2026. 06. 30</div>
         <div class="card-title">Trump drops restrictions on Anthropic's Mythos and Fable models</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://techcrunch.com/2026/06/30/google-introduces-a-faster-cheaper-image-generator-with-nano-banana-2-lite/" target="_blank"
        data-summary="Google released Nano Banana 2 Lite, a significantly faster and more affordable AI image generator producing images in just four seconds. The model targets developers and businesses seeking high-quality generative imagery at a fraction of the previous cost."
-       data-title-kr="Google, ë¹ ë¥´ê³  ì ë ´í ì´ë¯¸ì§ ìì± AI 'Nano Banana 2 Lite' ê³µê°"
-       data-summary-kr="Googleì´ ì´ë¯¸ì§ ìì±ì ë¨ 4ì´ê° ê±¸ë¦¬ë AI ì´ë¯¸ì§ ìì±ê¸° Nano Banana 2 Liteë¥¼ ì¶ìíë¤. ê°ë°ìì ê¸°ìì ëìì¼ë¡ ê¸°ì¡´ ëë¹ í¨ì¬ ì ë ´í ë¹ì©ì ê³ íì§ ìì± ì´ë¯¸ì§ë¥¼ ì ê³µíë ê²ì´ ëª©íë¤.">
+       data-title-kr="Google, 빠르고 저렴한 이미지 생성 AI 'Nano Banana 2 Lite' 공개"
+       data-summary-kr="Google이 이미지 생성에 단 4초가 걸리는 AI 이미지 생성기 Nano Banana 2 Lite를 출시했다. 개발자와 기업을 대상으로 기존 대비 훨씬 저렴한 비용에 고품질 생성 이미지를 제공하는 것이 목표다.">
       <div class="thumb g-teal">
         <div class="noise"></div>
         <span class="thumb-label">Image AI</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">TechCrunch Â· 2026. 06. 30</div>
+        <div class="card-source">TechCrunch · 2026. 06. 30</div>
         <div class="card-title">Google introduces a faster, cheaper image generator with Nano Banana 2 Lite</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
   </div>
 </div>
 
 
-<!-- ââââââââââââââââââââââ DESIGN ââââââââââââââââââââââ -->
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
 <div class="section">
   <div class="section-header">
     <h2>Design</h2>
@@ -942,158 +944,158 @@
   </div>
   <div class="grid">
 
-    <a class="card featured" href="https://www.news1.kr/life-culture/general-cultural/6212516" target="_blank" data-summary="ì 7í ì¸ê³ë¬¸íì°ìí¬ë¼(WCIF 2026)ì´ 7ì 2~3ì¼ ëêµ¬ìì ì´ë¦°ë¤. ì¼ë³¸ ê±´ì¶ê° ì´ìê°ë¯¸ ì¤ì¼ì ì¤ì¤í¸ë¦¬ì ê±´ì¶ê° ë¯ë¼ë´ ì¼ëë¦¬ì¹ê° 'ëìë¥¼ ëìì¸íë ë¬¸íì í'ì ì£¼ì ë¡ ëë´íë©°, íì¼ ë¬¸ííë ¥ê³¼ ì§ì­ ë°ì  ë°©ìì í¨ê» ë¼ìíë¤.">
+    <a class="card featured" href="https://www.news1.kr/life-culture/general-cultural/6212516" target="_blank" data-summary="제7회 세계문화산업포럼(WCIF 2026)이 7월 2~3일 대구에서 열린다. 일본 건축가 이시가미 준야와 오스트리아 건축가 믈라덴 야드리치가 '도시를 디자인하는 문화의 힘'을 주제로 대담하며, 한일 문화협력과 지역 발전 방안을 함께 논의한다.">
       <div class="thumb g-forest">
         <div class="noise"></div>
-        <span class="thumb-label">ê±´ì¶</span>
+        <span class="thumb-label">건축</span>
       </div>
       <div class="card-body">
-        <div class="card-source">ë´ì¤1 Â· 2026. 06. 30</div>
-        <div class="card-title">ì¸ê³ë¬¸íì°ìí¬ë¼ 7ì ê°ë§â¦ëì ëìì¸ë¶í° íì¼ íë ¥ê¹ì§</div>
+        <div class="card-source">뉴스1 · 2026. 06. 30</div>
+        <div class="card-title">세계문화산업포럼 7월 개막…도시 디자인부터 한일 협력까지</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
-    <a class="card" href="https://www.hankyung.com/article/202607018271g" target="_blank" data-summary="K-í¨ì ë¸ëë ë§ëí´ì´ ì²ìì¼ë¡ ìì´ì¨ì´ ì»¬ë ìì ì ë³´ì´ë©° ì¡ì¸ìë¦¬ ì¹´íê³ ë¦¬ íì¥ì ë³¸ê²©ííë¤. í¹ì ì ê°ì±ì ì¸ ëìì¸ ìì´ë´í°í°ë¥¼ ìê²½ íë ìì ì ì©í´ ê¸°ì¡´ í¬ì¸µì ì¤ì¬ì¼ë¡ ë¹ ë¥¸ ë°ìì ì»ê³  ìë¤.">
+    <a class="card" href="https://www.hankyung.com/article/202607018271g" target="_blank" data-summary="K-패션 브랜드 마뗑킴이 처음으로 아이웨어 컬렉션을 선보이며 액세서리 카테고리 확장을 본격화했다. 특유의 감성적인 디자인 아이덴티티를 안경 프레임에 적용해 기존 팬층을 중심으로 빠른 반응을 얻고 있다.">
       <div class="thumb g-amber">
         <div class="noise"></div>
-        <span class="thumb-label">í¨ì</span>
+        <span class="thumb-label">패션</span>
       </div>
       <div class="card-body">
-        <div class="card-source">íêµ­ê²½ì  Â· 2026. 07. 01</div>
-        <div class="card-title">ë§ëí´, ì²« ìì´ì¨ì´ ì»¬ë ì ì¶ìâ¦ì¹´íê³ ë¦¬ íì¥ ìë</div>
+        <div class="card-source">한국경제 · 2026. 07. 01</div>
+        <div class="card-title">마뗑킴, 첫 아이웨어 컬렉션 출시…카테고리 확장 시동</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
-    <a class="card" href="https://www.newsis.com/view/NISX20260701_0003690673" target="_blank" data-summary="CJì¨ì¤íì¼ì´ 'ë¯¸ëì¸ì¦' IPë¥¼ íì©í ë¼ì´ë¸ì»¤ë¨¸ì¤ë¥¼ ì ë³´ìë¤. ìí ê°ë´ ì  ì¬ì  ê´ëê¶, íì í êµ¿ì¦, ì¤íë¼ì¸ ì´ë²¤í¸ë¥¼ í¨í¤ì§ë¡ ë¬¶ì´ ë¯¸ëì¸ì¦ ìºë¦­í° ì¸ê³ê´ì ë¼ì´ë¸ ì½íì¸ ë¡ êµ¬ííë¤.">
+    <a class="card" href="https://www.newsis.com/view/NISX20260701_0003690673" target="_blank" data-summary="CJ온스타일이 '미니언즈' IP를 활용한 라이브커머스를 선보였다. 영화 개봉 전 사전 관람권, 한정판 굿즈, 오프라인 이벤트를 패키지로 묶어 미니언즈 캐릭터 세계관을 라이브 콘텐츠로 구현했다.">
       <div class="thumb g-plum">
         <div class="noise"></div>
-        <span class="thumb-label">êµ¿ì¦</span>
+        <span class="thumb-label">굿즈</span>
       </div>
       <div class="card-body">
-        <div class="card-source">ë´ìì¤ Â· 2026. 07. 01</div>
-        <div class="card-title">CJì¨ì¤íì¼, 'ë¯¸ëì¸ì¦' ì¸ê³ê´ ë´ì ë¼ì´ë¸ì»¤ë¨¸ì¤ ì ë³´ì¸ë¤</div>
+        <div class="card-source">뉴시스 · 2026. 07. 01</div>
+        <div class="card-title">CJ온스타일, '미니언즈' 세계관 담은 라이브커머스 선보인다</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.dezeen.com/2026/07/01/five-architecture-design-events-july-dezeen-events-guide-2026/" target="_blank"
        data-summary="Dezeen's July 2026 guide highlights five must-attend architecture and design events: Ai Weiwei's Button Up! in Manchester, MoMA's Architects of Liberation in New York, the Isan Creative Festival in Thailand, New Designers at London's Business Design Centre, and the RA Summer Exhibition."
-       data-title-kr="7ì ëì¹ë©´ ì ë  ê±´ì¶Â·ëìì¸ ì´ë²¤í¸ 5ì  â Dezeen Events Guide"
-       data-summary-kr="Dezeenì´ ì ì í 2026ë 7ì íê´ ê±´ì¶Â·ëìì¸ íì¬ 5ì . ë§¨ì²´ì¤í° ìì´ ì¨ì´ì¨ì´ 'Button Up!' ì ì, ë´ì MoMA 'Architects of Liberation', íêµ­ ì´ì° í¬ë¦¬ìì´í°ë¸ íì¤í°ë², ë°ë Business Design Centreì New Designers, ê·¸ë¦¬ê³  RA ìë¨¸ ì ì.">
+       data-title-kr="7월 놓치면 안 될 건축·디자인 이벤트 5선 — Dezeen Events Guide"
+       data-summary-kr="Dezeen이 선정한 2026년 7월 필관 건축·디자인 행사 5선. 맨체스터 아이 웨이웨이 'Button Up!' 전시, 뉴욕 MoMA 'Architects of Liberation', 태국 이산 크리에이티브 페스티벌, 런던 Business Design Centre의 New Designers, 그리고 RA 서머 전시.">
       <div class="thumb g-indigo">
         <div class="noise"></div>
         <span class="thumb-label">Events</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">Dezeen Â· 2026. 07. 01</div>
-        <div class="card-title">Five architecture and design events in July â Dezeen Events Guide</div>
+        <div class="card-source">Dezeen · 2026. 07. 01</div>
+        <div class="card-title">Five architecture and design events in July — Dezeen Events Guide</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.dezeen.com/2026/06/30/world-monuments-fund-irreplaceable-american-usa-250/" target="_blank"
        data-summary="Heritage organization World Monuments Fund designated 10 American cultural sites as 'irreplaceable' for the country's 250th anniversary, spanning centuries of the built environment from Spanish-colonial missions to modern housing. Watts Towers in LA, Dallas City Hall, and New Orleans are among the featured places."
-       data-title-kr="ì¸ê³ê¸°ëë¬¼ê¸°ê¸, ë¯¸êµ­ ê±´êµ­ 250ì£¼ë ê¸°ë 'ëì²´ ë¶ê°' ì¥ì 10ê³³ ì ì "
-       data-summary-kr="ì ì°ë³´ì¡´ë¨ì²´ ì¸ê³ê¸°ëë¬¼ê¸°ê¸(WMF)ì´ ë¯¸êµ­ ê±´êµ­ 250ì£¼ëì ê¸°ëí´ ì¤íì¸ ìë¯¼ì§ ìë êµíë¶í° íë ì£¼ê±° ê±´ë¬¼ê¹ì§ ìëë¥¼ ìì°ë¥´ë 'ëì²´ ë¶ê°' ë¯¸êµ­ ë¬¸íì ì° 10ê³³ì ì§ì íë¤. LA ìì¸  íìì¤, ëë¬ì¤ ìì²­, ë´ì¬ë¦¬ì¸ì¤ ë±ì´ í¬í¨ëë¤.">
+       data-title-kr="세계기념물기금, 미국 건국 250주년 기념 '대체 불가' 장소 10곳 선정"
+       data-summary-kr="유산보존단체 세계기념물기금(WMF)이 미국 건국 250주년을 기념해 스페인 식민지 시대 교회부터 현대 주거 건물까지 시대를 아우르는 '대체 불가' 미국 문화유산 10곳을 지정했다. LA 와츠 타워스, 댈러스 시청, 뉴올리언스 등이 포함됐다.">
       <div class="thumb g-olive">
         <div class="noise"></div>
         <span class="thumb-label">Heritage</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">Dezeen Â· 2026. 06. 30</div>
+        <div class="card-source">Dezeen · 2026. 06. 30</div>
         <div class="card-title">World Monuments Fund names 10 "irreplaceable" American places for USA 250</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
     <a class="card" href="https://www.itsnicethat.com/articles/blanca-doba-bare-earth-graphic-design-project-010726" target="_blank"
        data-summary="Graphic designer Blanca Doba's brand identity for fictional beauty brand Bare Earth explores ornate typography and soft, delicate design elements that extend far beyond a wordmark. The project demonstrates how a visual identity can construct an entire brand world through considered aesthetic choices."
-       data-title-kr="ë¸ëëë¥¼ ë§ë ë¤ë ê±´ ì¸ê³ë¥¼ ì§ë ì¼ â Blanca Dobaì Bare Earth ìì´ë´í°í°"
-       data-summary-kr="ê·¸ëí½ ëìì´ë Blanca Dobaê° ê°ìì ë·°í° ë¸ëë Bare Earthë¥¼ ìí´ ì ìí ë¸ëë ìì´ë´í°í°. ì êµí íì´í¬ê·¸ëí¼ì ì¬ì¸í ëìì¸ ììë¡ ìëë§í¬ë¥¼ í¨ì¬ ë°ì´ëë ê²°ê³¼ë¬¼ì ë§ë¤ìë¤. ì ì¤í ë¯¸ì  ì íì´ ë¸ëë ì¸ê³ê´ ì ì²´ë¥¼ ì´ë»ê² êµ¬ì¶í  ì ìëì§ ë³´ì¬ì£¼ë íë¡ì í¸.">
+       data-title-kr="브랜드를 만든다는 건 세계를 짓는 일 — Blanca Doba의 Bare Earth 아이덴티티"
+       data-summary-kr="그래픽 디자이너 Blanca Doba가 가상의 뷰티 브랜드 Bare Earth를 위해 제작한 브랜드 아이덴티티. 정교한 타이포그래피와 섬세한 디자인 요소로 워드마크를 훨씬 뛰어넘는 결과물을 만들었다. 신중한 미적 선택이 브랜드 세계관 전체를 어떻게 구축할 수 있는지 보여주는 프로젝트.">
       <div class="thumb g-crimson">
         <div class="noise"></div>
         <span class="thumb-label">Branding</span>
         <span class="thumb-en">EN</span>
       </div>
       <div class="card-body">
-        <div class="card-source">It's Nice That Â· 2026. 07. 01</div>
-        <div class="card-title">Building a brand means building a world â Blanca Doba's identity for Bare Earth</div>
+        <div class="card-source">It's Nice That · 2026. 07. 01</div>
+        <div class="card-title">Building a brand means building a world — Blanca Doba's identity for Bare Earth</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="ì¢ìì"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="ê³µì "><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">â</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
     </a>
 
   </div>
 </div>
 
 <div class="archive-cta-wrap">
-  <a class="archive-cta" href="../../../archive.html">AI &amp; Design ìì¹´ì´ë¸</a>
-  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">ëìì¸ëì´í° ì¤íì±íë°©</a>
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
 </div>
 
 
 
-<!-- ââ ë°©ëªë¡ ââ -->
+<!-- ── 방명록 ── -->
 <section class="guestbook">
-  <div class="gb-header"><h2>ëë í¡í¡</h2></div>
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
   <div class="gb-form">
     <div class="gb-namerow">
-      <input class="gb-nick" type="text" placeholder="ëë¤ì (ë¶ì¼)" maxlength="20" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
-      <input class="gb-pw" type="password" inputmode="numeric" placeholder="ë¹ë°ë²í¸ 4ìë¦¬" maxlength="4" autocomplete="new-password">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="20" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4" autocomplete="new-password">
     </div>
-    <textarea class="gb-content" placeholder="ëìì¸ì ëí ìê²¬ì´ë ê¶ê¸í ì ì ìì ë¡­ê² ë¨ê²¨ë³´ì¸ì." maxlength="200"></textarea>
+    <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
     <div class="gb-row"><span></span><span class="gb-count" id="gbCount">0 / 200</span></div>
-    <button class="gb-submit" id="gbSubmit" disabled>ë±ë¡</button>
+    <button class="gb-submit" id="gbSubmit" disabled>등록</button>
   </div>
   <div class="gb-list" id="gbList"></div>
   <div class="gb-pagination" id="gbPager"></div>
 </section>
 
-<!-- ëë í¡í¡ ë¹ë² íì¸ ëª¨ë¬ -->
+<!-- 디놀 톡톡 비번 확인 모달 -->
 <div class="gb-modal-overlay" id="gbModalOverlay"></div>
 <div class="gb-modal" id="gbModal">
-  <div class="gb-modal-title" id="gbModalTitle">ë¹ë°ë²í¸ íì¸</div>
-  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="ë¹ë°ë²í¸" autocomplete="new-password">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
   <div class="gb-modal-err" id="gbModalErr"></div>
   <div class="gb-modal-btns">
-    <button class="gb-modal-cancel" id="gbModalCancel">ì·¨ì</button>
-    <button class="gb-modal-ok" id="gbModalOk">íì¸</button>
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
   </div>
 </div>
 
 
 
 
-<!-- ââ FOOTER ââ -->
+<!-- ── FOOTER ── -->
 <footer>
-  <p class="footer-copy">Â© 2026 ëìì¸ëì´í°. All rights reserved.</p>
-  <p class="footer-notice">ë³¸ ìë¹ì¤ì ëìì¸ ë° êµ¬ì±ì ëí ê¶ë¦¬ë ëìì¸ëì´í°ì ììµëë¤.<br>ì ê³µëë ì½íì¸ ì ì ìê¶ì ê° ì¸ë¡ ì¬ ë° ìì ìê¶ììê² ììµëë¤.</p>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
   <div class="footer-links">
-    <a class="footer-link" href="../../../privacy.html">ê°ì¸ì ë³´ì²ë¦¬ë°©ì¹¨</a>
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
   </div>
 </footer>
 
-<!-- ââ ë§¨ ìë¡ (ëª¨ë°ì¼ ì ì©, ì¤í¬ë¡¤ ì ë¸ì¶) ââ -->
-<button class="to-top" id="toTop" aria-label="ë§¨ ìë¡" title="ë§¨ ìë¡">â</button>
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
 
 
 <script>
-/* ââ ì½íì¸  ê²í  ë¡ì§ ââââââââââââââââââââââââââââââââââââââââââ
-   íì´ì§ ë¡ë ì ìëì¼ë¡ ìë í­ëª©ì ê²ì¬í©ëë¤.
-   1. ì¤ë³µ URL â ê°ì ë§í¬ê° 2ê° ì´ìì´ë©´ í´ë¹ ì¹´ëì ê²½ê³  íì
-   2. ë¹ ë§í¬ â hrefê° ìê±°ë '#'ì¸ ì¹´ë ê°ì§
-   ê°ë°/ê²í ì© íìì´ë©° ì½íì¸  ìì­ ìì ìì½ ë°°ëê° íìë©ëë¤.
-ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+/* ── 콘텐츠 검토 로직 ──────────────────────────────────────────
+   페이지 로드 시 자동으로 아래 항목을 검사합니다.
+   1. 중복 URL — 같은 링크가 2개 이상이면 해당 카드에 경고 표시
+   2. 빈 링크 — href가 없거나 '#'인 카드 감지
+   개발/검토용 표시이며 콘텐츠 영역 위에 요약 배너가 표시됩니다.
+──────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   const cards = [...document.querySelectorAll('a.card')];
 
-  /* ââ ë§¨ ìë¡ íë¡í ë²í¼ ââââââââââââââââââââââââââââââââââ
-     600px ì´ì ì¤í¬ë¡¤ëë©´ .showë¡ íì´ëì¸, í´ë¦­ ì ìë¨ì¼ë¡ ë¶ëë½ê² ì´ë.
-     ë¸ì¶ ìì²´ë CSS @media(max-width:580px)ììë§ display:flex â ëª¨ë°ì¼ ì ì©.
-  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+  /* ── 맨 위로 플로팅 버튼 ──────────────────────────────────
+     600px 이상 스크롤되면 .show로 페이드인, 클릭 시 상단으로 부드럽게 이동.
+     노출 자체는 CSS @media(max-width:580px)에서만 display:flex → 모바일 전용.
+  ──────────────────────────────────────────────────────────── */
   const toTop = document.getElementById('toTop');
   if (toTop) {
     const SHOW_AFTER = 600;
@@ -1108,10 +1110,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ââ ì½ì ìí (localStorage) ââââââââââââââââââââââââââââââ
-     ì¹´ëë¥¼ í ë² ì´ë(ëë¡ì´ ì¤í)íë©´ í´ë¹ URLì ê¸°ë¡íê³ ,
-     card-titleì .read í´ëì¤(font-weight 450, color #a3a3a3)ë¥¼ ë¶ì¬í©ëë¤.
-  ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+  /* ── 읽음 상태 (localStorage) ──────────────────────────────
+     카드를 한 번 열람(드로어 오픈)하면 해당 URL을 기록하고,
+     card-title에 .read 클래스(font-weight 450, color #a3a3a3)를 부여합니다.
+  ──────────────────────────────────────────────────────────── */
   const READ_KEY = 'dinol_read_20260701';
 
   function getReadUrls() {
@@ -1135,7 +1137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  /* ââ ëë¡ì´ (ì¬ë¼ì´ëì ìì½ í¨ë) ââ */
+  /* ── 드로어 (슬라이드업 요약 패널) ── */
   const drawer           = document.getElementById('drawer');
   const overlay          = document.getElementById('drawerOverlay');
   const drawerClose      = document.getElementById('drawerClose');
@@ -1157,7 +1159,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnKr            = document.getElementById('btnKr');
   const btnEn            = document.getElementById('btnEn');
 
-  /* 6íë: ê° íëì EN(ê¸°ë³¸)/KR ê° ë³´ê´ */
+  /* 6필드: 각 필드의 EN(기본)/KR 값 보관 */
   const F = {
     title:{}, oneline:{}, designer:{}, points:{}, recommend:{}
   };
@@ -1175,7 +1177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!n) { if (wrap) wrap.style.display = "none"; return; }
     if (wrap) wrap.style.display = "flex";
     let html = "";
-    for (let i = 1; i <= 5; i++) { html += "<span class='" + (i <= n ? "star-on" : "star-off") + "'>â</span>"; }
+    for (let i = 1; i <= 5; i++) { html += "<span class='" + (i <= n ? "star-on" : "star-off") + "'>★</span>"; }
     drawerImpact.innerHTML = html;
   }
 
@@ -1206,7 +1208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gradClass = [...thumb.classList].find(c => c.startsWith('g-')) || '';
     drawerThumb.className = `drawer-thumb ${gradClass}`;
 
-    /* ê¸°ì¡´ ì´ë¯¸ì§ ì ê±° í ì¹´ë ì¸ë¤ì¼ ì´ë¯¸ì§ ë³µì¬ */
+    /* 기존 이미지 제거 후 카드 썸네일 이미지 복사 */
     const prevImg = drawerThumb.querySelector('.thumb-img');
     if (prevImg) prevImg.remove();
     const cardImg = thumb.querySelector('img.thumb-img');
@@ -1224,11 +1226,11 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerSource.textContent = card.querySelector('.card-source')?.textContent || '';
 
     const d = card.dataset;
-    /* ì¹´íê³ ë¦¬(ì¸ì´ì¤ë¦½, ê³µì ) */
+    /* 카테고리(언어중립, 공유) */
     drawerCategory.textContent = d.category || '';
     drawerCategory.style.display = d.category ? 'block' : 'none';
 
-    /* ê¸°ë³¸ê°(EN ì¬ë¡¯) = ì¹´ë ì¸ì´, -kr ì¬ë¡¯ = íêµ­ì´(ìì¼ë©´ ê¸°ë³¸ê° ë³µì ) */
+    /* 기본값(EN 슬롯) = 카드 언어, -kr 슬롯 = 한국어(없으면 기본값 복제) */
     const baseTitle = card.querySelector('.card-title')?.textContent || '';
     F.title.en     = baseTitle;
     F.oneline.en   = d.summary   || '';
@@ -1242,21 +1244,21 @@ document.addEventListener('DOMContentLoaded', () => {
     F.points.kr    = d.pointsKr    || F.points.en;
     F.recommend.kr = d.recommendKr || F.recommend.en;
 
-    /* ìë¬¸ ê¸°ì¬(-kr ë²ì­ ìì) â í ê¸ ë¸ì¶, ê¸°ë³¸ KR / íêµ­ì´ ê¸°ì¬ â í ê¸ ì¨ê¹, KR ê° íì */
+    /* 영문 기사(-kr 번역 있음) → 토글 노출, 기본 KR / 한국어 기사 → 토글 숨김, KR 값 표시 */
     if (hasEn && d.titleKr) {
       drawerLangToggle.style.display = 'flex';
       setLang('kr');
     } else {
       drawerLangToggle.style.display = 'none';
-      setLang('kr'); /* íêµ­ì´ ê¸°ì¬: kr ì¬ë¡¯ì´ ê³§ ê¸°ë³¸ê° */
+      setLang('kr'); /* 한국어 기사: kr 슬롯이 곧 기본값 */
     }
 
     drawerCta.href = card.href;
 
-    /* ì¤ë¬´ ìí¥ë ë³ì  (ì¸ì´ ë¬´ê´) */
+    /* 실무 영향도 별점 (언어 무관) */
     renderStars(card.dataset.impactScore);
 
-    /* ìëí° ì½ë©í¸ (ì¸ì´ ë¬´ê´, ì£¼ê´ì  ë¼í) â ê° ìì¼ë©´ í­ëª© ì¨ê¹ */
+    /* 에디터 코멘트 (언어 무관, 주관적 논평) — 값 없으면 항목 숨김 */
     const commentText = (card.dataset.comment || '').trim();
     drawerComment.textContent = commentText;
     drawerCommentWrap.style.display = commentText ? 'flex' : 'none';
@@ -1289,7 +1291,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* 1. ì¤ë³µ URL ê²ì¬ */
+  /* 1. 중복 URL 검사 */
   const urlCount = {};
   cards.forEach(c => {
     const url = c.href;
@@ -1301,7 +1303,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.filter(c => c.href === url).forEach(card => {
       card.style.outline = '2px solid #ff4444';
       const badge = document.createElement('div');
-      badge.textContent = 'â  ì¤ë³µ ë§í¬';
+      badge.textContent = '⚠ 중복 링크';
       badge.style.cssText = [
         'position:absolute', 'top:0', 'left:0',
         'background:#ff4444', 'color:#fff',
@@ -1314,12 +1316,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* 2. ë¹ ë§í¬ ê²ì¬ */
+  /* 2. 빈 링크 검사 */
   const emptyLinks = cards.filter(c => !c.getAttribute('href') || c.getAttribute('href') === '#');
   emptyLinks.forEach(card => {
     card.style.outline = '2px solid #ffaa00';
     const badge = document.createElement('div');
-    badge.textContent = 'â  ë§í¬ ìì';
+    badge.textContent = '⚠ 링크 없음';
     badge.style.cssText = [
       'position:absolute', 'top:0', 'left:0',
       'background:#ffaa00', 'color:#000',
@@ -1331,11 +1333,11 @@ document.addEventListener('DOMContentLoaded', () => {
     card.prepend(badge);
   });
 
-  /* 3. ìì½ ë°°ë */
+  /* 3. 요약 배너 */
   const issues = dupeUrls.length + emptyLinks.length;
   if (issues > 0) {
     const banner = document.createElement('div');
-    banner.innerHTML = `â  ì½íì¸  ê²í  ê²°ê³¼: ì¤ë³µ ë§í¬ <b>${dupeUrls.length}ê±´</b>, ë¹ ë§í¬ <b>${emptyLinks.length}ê±´</b> ë°ê²¬ â ë¹¨ê°/ë¸ë íëë¦¬ ì¹´ëë¥¼ íì¸íì¸ì.`;
+    banner.innerHTML = `⚠ 콘텐츠 검토 결과: 중복 링크 <b>${dupeUrls.length}건</b>, 빈 링크 <b>${emptyLinks.length}건</b> 발견 — 빨간/노란 테두리 카드를 확인하세요.`;
     banner.style.cssText = [
       'position:fixed', 'bottom:20px', 'left:50%',
       'transform:translateX(-50%)',
@@ -1346,9 +1348,9 @@ document.addEventListener('DOMContentLoaded', () => {
       'white-space:nowrap'
     ].join(';');
     document.body.appendChild(banner);
-    console.warn('[ëìì¸ëì´í°] ê²í  ì¤ë¥:', { dupeUrls, emptyLinks: emptyLinks.map(c => c.querySelector('.card-title')?.textContent) });
+    console.warn('[디자인놀이터] 검토 오류:', { dupeUrls, emptyLinks: emptyLinks.map(c => c.querySelector('.card-title')?.textContent) });
   } else {
-    console.log('[ëìì¸ëì´í°] â ì½íì¸  ê²í  íµê³¼ â ì¤ë³µ ë§í¬ ìì, ë¹ ë§í¬ ìì');
+    console.log('[디자인놀이터] ✅ 콘텐츠 검토 통과 — 중복 링크 없음, 빈 링크 없음');
   }
 });
 </script>
