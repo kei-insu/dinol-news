@@ -431,13 +431,14 @@
     }
     .drawer.open { transform: translateY(0); }
     .drawer .drawer-footer { padding: 8px 20px calc(28px + env(safe-area-inset-bottom, 0px)); }
-    .drawer .drawer-source { font-size: 13px; }
-    .drawer .drawer-category { font-size: 13px; }
+    .drawer .drawer-source { font-size: 14px; }
+    .drawer .drawer-category { font-size: 14px; }
     .drawer .drawer-title { font-size: 18px; }
-    .drawer .drawer-field-label { font-size: 13px; }
-    .drawer .drawer-field-text { font-size: 15px; }
-    .drawer .drawer-points li { font-size: 15px; }
-    .drawer .drawer-comment-text { font-size: 15px; }
+    .drawer .drawer-field-label { font-size: 14px; }
+    .drawer .drawer-field-text { font-size: 16px; }
+    .drawer .drawer-points li { font-size: 16px; }
+    .drawer .drawer-comment-label { font-size: 14px; }
+    .drawer .drawer-comment-text { font-size: 16px; }
     .drawer .lang-btn { font-size: 12px; padding: 6px 14px; min-height: 0; min-width: 46px; border-radius: 5px; }
     #gbModal { width: 340px; padding: 28px 24px; }
     #gbModal .gb-modal-title { font-size: 18px; margin-bottom: 18px; }
@@ -455,10 +456,10 @@
     border-bottom: 1px solid #1e1e28;
   }
 
-  .drawer-source { font-size: 12px; color: #888; }
+  .drawer-source { font-size: 13px; color: #d0d0e0; }
 
   .drawer-thumb {
-    height: 140px;
+    height: 84px;
     position: relative;
     display: flex;
     align-items: center;
@@ -501,26 +502,26 @@
     margin-top: 2px;
   }
   /* ── A안: 구조화 요약 필드 ── */
-  .drawer-category { font-size: 12px; font-weight: 600; color: #8a8aff; letter-spacing: 0.4px; }
+  .drawer-category { font-size: 13px; font-weight: 600; color: #8a8aff; letter-spacing: 0.4px; }
   .drawer-field { display: flex; flex-direction: column; gap: 3px; }
-  .drawer-field-label { font-size: 12px; font-weight: 700; color: #d0d0e0; letter-spacing: 0.2px; }
-  .drawer-field-text { font-size: 14px; color: #a6a6b8; line-height: 1.6; }
+  .drawer-field-label { font-size: 13px; font-weight: 600; color: #d0d0e0; letter-spacing: 0.2px; }
+  .drawer-field-text { font-size: 15px; color: #cfcfda; line-height: 1.6; }
   /* 실무 영향도 별점 */
   .drawer-stars { display: inline-flex; align-items: center; gap: 2px; font-size: 15px; letter-spacing: 1px; line-height: 1; }
   .drawer-stars .star-on { color: #ff7f3e; }
   .drawer-stars .star-off { color: #3a3a48; }
   .drawer-points { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 3px; }
-  .drawer-points li { font-size: 14px; color: #a6a6b8; line-height: 1.45; }
-  /* ── 에디터 코멘트 (오리지널 논평 · 시각적 강조) ── */
+  .drawer-points li { font-size: 15px; color: #cfcfda; line-height: 1.45; }
+  /* ── 큐레이션 코멘트 (오리지널 논평 · 시각적 강조) ── */
   .drawer-comment {
     display: flex; flex-direction: column; gap: 6px;
     margin-top: 2px;
   }
   .drawer-comment-label {
     display: flex; align-items: center; gap: 5px;
-    font-size: 12px; font-weight: 700; color: #ff7f3e; letter-spacing: 0.2px;
+    font-size: 13px; font-weight: 600; color: #ff7f3e; letter-spacing: 0.2px;
   }
-  .drawer-comment-text { font-size: 14px; color: #cfcfda; line-height: 1.6; }
+  .drawer-comment-text { font-size: 15px; color: #cfcfda; line-height: 1.6; }
 
   .drawer-footer { padding: 8px 20px 20px; display: flex; flex-direction: row; gap: 10px; }
 
@@ -804,7 +805,7 @@
       <div class="drawer-field-text" id="drawerOneline"></div>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">볼 포인트</div>
+      <div class="drawer-field-label">인사이트 포인트</div>
       <ul class="drawer-points" id="drawerPoints"></ul>
     </div>
     <div class="drawer-field">
@@ -820,7 +821,7 @@
       <div class="drawer-field-text" id="drawerRecommend"></div>
     </div>
     <div class="drawer-comment" id="drawerCommentWrap">
-      <div class="drawer-comment-label">💬 에디터 코멘트</div>
+      <div class="drawer-comment-label">💬 큐레이션 코멘트</div>
       <div class="drawer-comment-text" id="drawerComment"></div>
     </div>
   </div>
@@ -865,7 +866,7 @@
         <div class="card-source">TechCrunch · 2026. 07. 02</div>
         <div class="card-title">Zuckerberg tells staff AI agents haven't progressed as fast as hoped</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
     <a class="card" href="https://www.reuters.com/business/retail-consumer/us-talks-with-ai-companies-voluntary-model-standards-ft-reports-2026-07-02/" target="_blank"
@@ -885,7 +886,7 @@
         <div class="card-source">Reuters · 2026. 07. 02</div>
         <div class="card-title">US in talks with AI companies over voluntary model-release standards</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
     <a class="card" href="https://www.reuters.com/business/trump-administration-anthropic-have-not-discussed-government-taking-stakes-firm-2026-07-02/" target="_blank"
@@ -905,7 +906,7 @@
         <div class="card-source">Reuters · 2026. 07. 02</div>
         <div class="card-title">Trump administration and Anthropic haven't discussed a government stake, source says</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
     <a class="card" href="https://www.etnews.com/20260701000492" target="_blank"
@@ -923,7 +924,7 @@
         <div class="card-source">전자신문 · 2026. 07. 01</div>
         <div class="card-title">화웨이 AI NPU 서버, 4분기 韓 상륙…엔비디아에 도전장</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
   </div>
@@ -956,7 +957,7 @@
         <div class="card-source">Elle Decor · 2026. 07. 02</div>
         <div class="card-title">The biggest 2026 design trends spotted at London's WOW!house</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
     <a class="card" href="https://www.dezeen.com/2026/07/01/five-architecture-design-events-july-dezeen-events-guide-2026/" target="_blank"
@@ -976,7 +977,7 @@
         <div class="card-source">Dezeen · 2026. 07. 01</div>
         <div class="card-title">Five architecture and design events in July from Dezeen</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
   </div>
@@ -995,7 +996,7 @@
   <div class="gb-header"><h2>디놀 톡톡</h2></div>
   <div class="gb-form">
     <div class="gb-namerow">
-      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="20" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
       <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4" autocomplete="new-password">
     </div>
     <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
@@ -1211,7 +1212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* 실무 영향도 별점 (언어 무관, 1~5) */
     renderStars(card.dataset.impactScore);
 
-    /* 에디터 코멘트 (언어 무관, 주관적 논평) — 값 없으면 항목 숨김 */
+    /* 큐레이션 코멘트 (언어 무관, 주관적 논평) — 값 없으면 항목 숨김 */
     const commentText = (card.dataset.comment || '').trim();
     drawerComment.textContent = commentText;
     drawerCommentWrap.style.display = commentText ? 'flex' : 'none';

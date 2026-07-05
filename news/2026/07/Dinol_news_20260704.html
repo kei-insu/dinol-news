@@ -431,13 +431,14 @@
     }
     .drawer.open { transform: translateY(0); }
     .drawer .drawer-footer { padding: 8px 20px calc(28px + env(safe-area-inset-bottom, 0px)); }
-    .drawer .drawer-source { font-size: 13px; }
-    .drawer .drawer-category { font-size: 13px; }
+    .drawer .drawer-source { font-size: 14px; }
+    .drawer .drawer-category { font-size: 14px; }
     .drawer .drawer-title { font-size: 18px; }
-    .drawer .drawer-field-label { font-size: 13px; }
-    .drawer .drawer-field-text { font-size: 15px; }
-    .drawer .drawer-points li { font-size: 15px; }
-    .drawer .drawer-comment-text { font-size: 15px; }
+    .drawer .drawer-field-label { font-size: 14px; }
+    .drawer .drawer-field-text { font-size: 16px; }
+    .drawer .drawer-points li { font-size: 16px; }
+    .drawer .drawer-comment-label { font-size: 14px; }
+    .drawer .drawer-comment-text { font-size: 16px; }
     .drawer .lang-btn { font-size: 12px; padding: 6px 14px; min-height: 0; min-width: 46px; border-radius: 5px; }
     #gbModal { width: 340px; padding: 28px 24px; }
     #gbModal .gb-modal-title { font-size: 18px; margin-bottom: 18px; }
@@ -455,10 +456,10 @@
     border-bottom: 1px solid #1e1e28;
   }
 
-  .drawer-source { font-size: 12px; color: #888; }
+  .drawer-source { font-size: 13px; color: #d0d0e0; }
 
   .drawer-thumb {
-    height: 140px;
+    height: 84px;
     position: relative;
     display: flex;
     align-items: center;
@@ -501,26 +502,26 @@
     margin-top: 2px;
   }
   /* ── A안: 구조화 요약 필드 ── */
-  .drawer-category { font-size: 12px; font-weight: 600; color: #8a8aff; letter-spacing: 0.4px; }
+  .drawer-category { font-size: 13px; font-weight: 600; color: #8a8aff; letter-spacing: 0.4px; }
   .drawer-field { display: flex; flex-direction: column; gap: 3px; }
-  .drawer-field-label { font-size: 12px; font-weight: 700; color: #d0d0e0; letter-spacing: 0.2px; }
-  .drawer-field-text { font-size: 14px; color: #a6a6b8; line-height: 1.6; }
+  .drawer-field-label { font-size: 13px; font-weight: 600; color: #d0d0e0; letter-spacing: 0.2px; }
+  .drawer-field-text { font-size: 15px; color: #cfcfda; line-height: 1.6; }
   /* 실무 영향도 별점 */
   .drawer-stars { display: inline-flex; align-items: center; gap: 2px; font-size: 15px; letter-spacing: 1px; line-height: 1; }
   .drawer-stars .star-on { color: #ff7f3e; }
   .drawer-stars .star-off { color: #3a3a48; }
   .drawer-points { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 3px; }
-  .drawer-points li { font-size: 14px; color: #a6a6b8; line-height: 1.45; }
-  /* 에디터 코멘트 (오리지널 논평 · 시각적 강조) */
+  .drawer-points li { font-size: 15px; color: #cfcfda; line-height: 1.45; }
+  /* 큐레이션 코멘트 (오리지널 논평 · 시각적 강조) */
   .drawer-comment {
     display: flex; flex-direction: column; gap: 6px;
     margin-top: 2px;
   }
   .drawer-comment-label {
     display: flex; align-items: center; gap: 5px;
-    font-size: 12px; font-weight: 700; color: #ff7f3e; letter-spacing: 0.2px;
+    font-size: 13px; font-weight: 600; color: #ff7f3e; letter-spacing: 0.2px;
   }
-  .drawer-comment-text { font-size: 14px; color: #cfcfda; line-height: 1.6; }
+  .drawer-comment-text { font-size: 15px; color: #cfcfda; line-height: 1.6; }
 
   .drawer-footer { padding: 8px 20px 20px; display: flex; flex-direction: row; gap: 10px; }
 
@@ -804,7 +805,7 @@
       <div class="drawer-field-text" id="drawerOneline"></div>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">볼 포인트</div>
+      <div class="drawer-field-label">인사이트 포인트</div>
       <ul class="drawer-points" id="drawerPoints"></ul>
     </div>
     <div class="drawer-field">
@@ -820,7 +821,7 @@
       <div class="drawer-field-text" id="drawerRecommend"></div>
     </div>
     <div class="drawer-comment" id="drawerCommentWrap">
-      <div class="drawer-comment-label">💬 에디터 코멘트</div>
+      <div class="drawer-comment-label">💬 큐레이션 코멘트</div>
       <div class="drawer-comment-text" id="drawerComment"></div>
     </div>
   </div>
@@ -866,7 +867,7 @@
         <div class="card-source">The Verge · 2026. 07. 03</div>
         <div class="card-title">Anthropic launches Claude Science, an AI workbench for drug discovery</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
     <a class="card" href="https://www.theverge.com/ai-artificial-intelligence/961265/midjourney-medical-ultrasound-scanner-behind-the-scenes-video" target="_blank"
@@ -877,7 +878,8 @@
        data-impact-score="2"
        data-points="Why an image-AI firm builds a scanner|The $74M+ healthcare bet|What 'physical AI products' look like" data-points-kr="이미지 AI 기업이 스캐너를 만드는 이유|7,400만 달러+ 헬스케어 베팅|'실물 AI 제품'의 모습"
        data-recommend="Save for physical-AI trend watching — note where generative AI is heading, no action needed yet" data-recommend-kr="'피지컬 AI' 트렌드 관찰용으로 저장하세요. 생성 AI의 방향만 기억해 두면 됩니다"
-       data-title-kr="미드저니, 60초 전신 초음파 스캐너 개발 중">
+       data-title-kr="미드저니, 60초 전신 초음파 스캐너 개발 중"
+       data-comment="이미지 생성 AI로 유명한 미드저니가 갑자기 '의료 스캐너'를 만든다니 뜬금없어 보이지만, 흐름은 하나로 이어집니다 — AI가 화면 밖 물리 세계로 나가고 있다는 것. 오늘 브리핑의 일본 '피지컬 AI' 카드와도 통합니다. 디자이너에게 이건 미리 준비할 신호입니다. 지금까지 우리가 다룬 건 대부분 '화면 속 픽셀'이었지만, AI가 기기·센서·하드웨어로 확장되면 '만질 수 있는 것의 경험'을 설계할 사람이 필요해집니다. 당장 뭘 바꾸라는 게 아니라, '화면이 전부가 아닐 수 있다'는 가능성을 열어두라는 이야기입니다.">
       <div class="thumb g-teal">
         <div class="noise"></div>
         <span class="thumb-label">SCANNER</span>
@@ -887,28 +889,7 @@
         <div class="card-source">The Verge · 2026. 07. 03</div>
         <div class="card-title">Midjourney is building a 60-second full-body ultrasound scanner</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
-    </a>
-
-    <a class="card" href="https://www.artificialintelligence-news.com/news/japan-ai-robots-2040-national-ai-model/" target="_blank"
-       data-category="AI · Policy · Robotics"
-       data-summary="Japan formally commissioned a domestic 'physical AI' model (consortium Noetra with SoftBank, Sony, Honda) backed by up to $6.1B, targeting 10M robots across 18 sectors by 2040." data-summary-kr="일본이 소프트뱅크·소니·혼다 등이 참여한 컨소시엄 '노에트라'에 최대 61억 달러를 투입해 자국 '피지컬 AI' 모델을 공식 위탁하고, 2040년까지 18개 분야에 로봇 1,000만 대 보급을 목표로 삼았습니다."
-       data-designer="National-scale 'physical AI' push (robots that read a room and act). Start thinking beyond the screen — spatial, sensor, and robot-interaction design will open up as embodied AI scales. Even a basic grasp of these now is a head start." data-designer-kr="국가 차원의 '피지컬 AI'(공간을 인식하고 행동하는 로봇) 추진입니다. 화면 너머를 생각하기 시작하세요. 체화된 AI가 커지면 공간·센서·로봇 인터랙션 설계 수요가 열립니다. 지금 기초만 잡아둬도 앞서갑니다."
-       data-impact="Low–Medium · Anyone tracking where AI goes next (robotics)" data-impact-kr="낮음~중간 · AI의 다음 방향(로보틱스)을 살피는 사람"
-       data-impact-score="3"
-       data-points="What 'sovereign/physical AI' means|Why robots for a labor shortage|Korea's near-simultaneous response" data-points-kr="'주권/피지컬 AI'의 의미|노동력 부족과 로봇 전략|거의 동시에 나온 한국의 대응"
-       data-recommend="Save for physical-AI landscape watching — revisit when robotics/spatial design becomes relevant to your work" data-recommend-kr="'피지컬 AI' 지형 파악용으로 저장하고, 로보틱스·공간 디자인이 내 일과 연결될 때 다시 보세요"
-       data-title-kr="일본, 자국 AI 모델 + 2040년까지 로봇 1,000만 대 국가 전략">
-      <div class="thumb g-crimson">
-        <div class="noise"></div>
-        <span class="thumb-label">ROBOTS</span>
-        <span class="thumb-en">EN</span>
-      </div>
-      <div class="card-body">
-        <div class="card-source">AI News · 2026. 07. 01</div>
-        <div class="card-title">Japan plans a sovereign AI model and 10 million robots by 2040</div>
-      </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
     <a class="card" href="https://techcrunch.com/2026/07/03/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/" target="_blank"
@@ -919,7 +900,8 @@
        data-impact-score="2"
        data-points="Plain definitions of LLM, RAG, RLHF|What 'hallucination' really means|Why vertical AI reduces hallucinations" data-points-kr="LLM·RAG·RLHF 쉬운 정의|'환각'의 진짜 의미|버티컬 AI가 환각을 줄이는 이유"
        data-recommend="Bookmark as your go-to AI glossary and share the link with non-AI teammates" data-recommend-kr="'AI 용어집'으로 북마크해 두고, AI에 익숙지 않은 동료에게 링크를 공유하세요"
-       data-title-kr="테크크런치, 자주 쓰는 AI 용어 정리 사전 (LLM·RAG·환각 등)">
+       data-title-kr="테크크런치, 자주 쓰는 AI 용어 정리 사전 (LLM·RAG·환각 등)"
+       data-comment="이건 화려한 뉴스는 아니지만, 디자이너에게 실질적으로 가장 쓸모 있는 카드일 수 있습니다. AI 프로젝트에서 디자이너가 겉도는 흔한 이유가 '개발자·PM이 쓰는 용어를 정확히 모르는 것'입니다. '환각(hallucination)', 'RAG', '파인튜닝' 같은 말을 알아듣고 쓸 수 있으면, 회의에서 위축되지 않고 오히려 설계에 개입할 지점을 짚어낼 수 있습니다. 북마크해 두고 헷갈리는 것부터 하나씩 익히세요. 좋은 협업은 '같은 언어를 쓰는 것'에서 시작합니다 — 디자인 실력만큼이나 이 공통 언어가 AI 시대의 경쟁력입니다.">
       <div class="thumb g-slate">
         <div class="noise"></div>
         <span class="thumb-label">TERMS</span>
@@ -929,7 +911,7 @@
         <div class="card-source">TechCrunch · 2026. 07. 03</div>
         <div class="card-title">TechCrunch's living glossary of common AI terms (LLM, RAG, hallucination…)</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
     <a class="card" href="https://www.yna.co.kr/view/AKR20260703004951072" target="_blank"
@@ -939,7 +921,8 @@
        data-impact="낮음~중간 · AI 서비스 기획자, 반도체·인프라 관심 실무자"
        data-impact-score="3"
        data-points="앤트로픽이 자체 AI 칩을 개발하는 배경|삼성 2나노·첨단 패키징 검토 내용|테슬라·엔비디아·애플 이은 대형 고객 확보 가능성"
-       data-recommend="AI 인프라 지형 파악용으로 저장하고, AI 서비스 기획 시 비용·성능 배경지식으로 참고하세요">
+       data-recommend="AI 인프라 지형 파악용으로 저장하고, AI 서비스 기획 시 비용·성능 배경지식으로 참고하세요"
+       data-comment="AI 기업들이 이제 '자기만의 칩'까지 직접 만들려 한다는 게 이 소식의 핵심입니다. 그동안 여러 카드에서 반복된 주제 — 반도체가 AI 도구 가격의 바닥을 정한다 — 의 연장선이죠. 앤트로픽이 삼성과 칩 생산을 논의한다는 건, 남의 칩(엔비디아)에 의존하지 않고 원가와 성능을 직접 통제하려는 움직임입니다. 디자이너가 직접 관여할 일은 없지만, 이런 뒷단 경쟁이 결국 우리가 쓰는 AI 툴의 가격·속도로 내려온다는 건 기억해 둘 만합니다. 지금 브리핑을 만들며 여러 번 봤듯, '왜 AI 도구가 자꾸 싸지고 빨라지는가'의 답이 바로 여기, 이 인프라 층에 있습니다.">
       <div class="thumb g-navy">
         <div class="noise"></div>
         <span class="thumb-label">반 도 체</span>
@@ -948,7 +931,7 @@
         <div class="card-source">연합뉴스 · 2026. 07. 03</div>
         <div class="card-title">앤트로픽, 자체 AI 칩 삼성전자와 생산 협의…2나노 검토</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
   </div>
 </div>
@@ -970,7 +953,8 @@
        data-impact-score="2"
        data-points="Soho as a new LDF district|The Mirumi bag-charm robot at Harrods|Studio residencies & appointments" data-points-kr="새 LDF 지구가 된 소호|해러즈에 입점한 미루미 가방 로봇|스튜디오 레지던시·인사 소식"
        data-recommend="Skim now for trend awareness, and save the London Design Festival dates (Sept 12–20) if you follow the scene" data-recommend-kr="지금 훑어 트렌드 감을 채우고, 업계를 챙긴다면 런던 디자인 페스티벌 일정(9/12~20)을 저장해 두세요"
-       data-title-kr="디자인 위크 다이제스트: 소호, 런던 디자인 페스티벌 지구로 + 가방 로봇">
+       data-title-kr="디자인 위크 다이제스트: 소호, 런던 디자인 페스티벌 지구로 + 가방 로봇"
+       data-comment="이런 '주간 다이제스트'는 개별 소식보다 '지금 디자인계가 어디에 관심을 두는가'를 읽는 도구로 쓰면 좋습니다. 소호가 디자인 페스티벌 지구가 됐다(도시·공간)거나, 가방에 매다는 로봇이 백화점에 입점한다(제품·감성 테크)는 소식이 한 다이제스트에 담긴 게 흥미롭습니다 — 공간부터 아기자기한 가젯까지, 디자인의 관심 폭이 그만큼 넓어졌다는 뜻이니까요. 월 1회 정도 이런 걸 훑으면, 클라이언트나 동료와 대화할 때 '지금 흐름을 아는' 디자이너로 보입니다. 트렌드는 외우는 게 아니라 꾸준히 노출되며 몸에 배는 것입니다.">
       <div class="thumb g-plum">
         <div class="noise"></div>
         <span class="thumb-label">TRENDS</span>
@@ -980,7 +964,7 @@
         <div class="card-source">Design Week · 2026. 07. 03</div>
         <div class="card-title">The Outline: Soho becomes a London Design Festival district, plus a bag-charm robot</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
 
     <a class="card" href="https://www.designweek.co.uk/xtool-launches-worlds-first-4-in-1-omni-printer-and-expands-european-operations/" target="_blank"
@@ -991,7 +975,9 @@
        data-impact-score="3"
        data-points="What a '4-in-1 Omni' printer does|The Atomm AI craft agent|Prices/editions & maker economy angle" data-points-kr="'4-in-1 옴니' 프린터의 기능|Atomm AI 크래프트 에이전트|가격·에디션과 메이커 이코노미 관점"
        data-recommend="Save as a fabrication-tool reference, and revisit if you plan to prototype or sell physical goods" data-recommend-kr="'제작 도구 사례'로 저장하고, 실물 제품을 시제품화하거나 판매할 계획이 생기면 다시 보세요"
-       data-title-kr="엑스툴, 세계 첫 4-in-1 '옴니' 프린터 공개">
+       data-title-kr="엑스툴, 세계 첫 4-in-1 '옴니' 프린터 공개"
+       data-comment="이 카드는 디자이너에게 실질적인 '기회'를 던집니다. 예전엔 실물 굿즈(스티커·의류·소품)를 만들려면 공장·외주가 필요했는데, 이런 데스크톱 프린터 하나로 목재·금속·유리·직물까지 소량 제작이 가능해집니다. 게다가 AI 디자인 보조까지 붙었죠. 화면 속 디자인만 하던 사람이 '실물을 만들어 파는' 쪽으로 넘어가는 문턱이 확 낮아졌다는 뜻입니다. 당장 사라는 게 아니라, '내 디자인이 화면을 벗어나 손에 쥘 수 있는 물건이 될 수 있다'는 선택지가 생겼다는 걸 기억해 두세요. 사이드 프로젝트나 굿즈 판매를 생각했다면, 지금이 진입 장벽이 가장 낮은 시점일 수 있습니다.">
+
       <div class="thumb g-amber">
         <div class="noise"></div>
         <span class="thumb-label">PRINTER</span>
@@ -1001,26 +987,7 @@
         <div class="card-source">Design Week · 2026. 07. 03</div>
         <div class="card-title">xTool unveils the world's first 4-in-1 'Omni' printer for makers</div>
       </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
-    </a>
-
-    <a class="card" href="https://design.co.kr/article/166406/" target="_blank"
-       data-category="디자인 · 전시 · 문화"
-       data-summary="디자인플러스가 이번 여름 서울에서 볼만한 전시 4곳을 큐레이션했습니다. 알렉스 카츠의 소형 회화전, 로버트 메이플소프 사진전, 조은의 한국화 기획전 등 장르를 넘나드는 전시를 소개합니다."
-       data-designer="색·구도·형태를 직접 보며 감각을 채우기 좋은 큐레이션입니다. 이번 달 안에 한 곳이라도 직접 다녀오세요. 화면 속 레퍼런스만으론 안 길러지는 스케일·질감·색의 감각은 실물 관람에서 나옵니다. 마음에 드는 작품은 사진보다 '왜 좋은지'를 메모로 남겨 안목 훈련에 쓰세요."
-       data-impact="낮음 · 전시·레퍼런스로 영감을 얻는 디자이너"
-       data-impact-score="2"
-       data-points="알렉스 카츠 소형 회화의 매력|메이플소프의 형태 언어(사진↔조각)|조은의 현대적 수묵채색"
-       data-recommend="주말 나들이 후보로 저장하고, 이번 달 안에 한 곳 방문해 실물 레퍼런스를 채우세요">
-      <div class="thumb g-violet">
-        <div class="noise"></div>
-        <span class="thumb-label">전 시</span>
-      </div>
-      <div class="card-body">
-        <div class="card-source">디자인플러스 · 2026. 07. 01</div>
-        <div class="card-title">올여름 눈여겨볼 서울 전시 4選</div>
-      </div>
-      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><span class="arrow">↗</span></div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
     </a>
   </div>
 </div>
@@ -1038,7 +1005,7 @@
   <div class="gb-header"><h2>디놀 톡톡</h2></div>
   <div class="gb-form">
     <div class="gb-namerow">
-      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="20" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
       <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4" autocomplete="new-password">
     </div>
     <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
@@ -1251,7 +1218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* 실무 영향도 별점 (언어 무관) */
     renderStars(card.dataset.impactScore);
 
-    /* 에디터 코멘트 (언어 무관, 주관적 논평) — 값 없으면 항목 숨김 */
+    /* 큐레이션 코멘트 (언어 무관, 주관적 논평) — 값 없으면 항목 숨김 */
     const commentText = (card.dataset.comment || '').trim();
     drawerComment.textContent = commentText;
     drawerCommentWrap.style.display = commentText ? 'flex' : 'none';

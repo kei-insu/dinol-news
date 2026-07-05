@@ -310,7 +310,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   updateSubmit();
 
   submit && submit.addEventListener("click", async () => {
-    const n = nick.value.trim(), b = content.value.trim(), p = pw.value.trim();
+    const n = nick.value.trim().slice(0, 12), b = content.value.trim(), p = pw.value.trim();
     if (!n) { alert("닉네임을 입력해주세요."); return; }
     if (!/^\d{4}$/.test(p)) { alert("비밀번호 4자리(숫자)를 입력해주세요."); return; }
     if (!b) { alert("내용을 입력해주세요."); return; }
