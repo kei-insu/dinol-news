@@ -111,9 +111,9 @@
     transition: transform .2s ease;
     line-height: 1;
     display: inline-block;
-    transform: scaleY(0.8);            /* 세로만 살짝 눌러 납작하게 */
+    transform: scaleY(0.8) rotate(180deg); /* 펼침(기본) → ▲ (2026-07-06 방향 반전, 브리핑과 동일) */
   }
-  .month-group.collapsed .month-chevron { transform: scaleY(0.8) rotate(180deg); }
+  .month-group.collapsed .month-chevron { transform: scaleY(0.8); } /* 접힘 → ▼ */
 
   .month-items {
     display: flex;
