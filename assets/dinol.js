@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* 기본값(EN 슬롯) = 카드 언어, -kr 슬롯 = 한국어(없으면 기본값 복제) */
     const baseTitle = card.querySelector('.card-title')?.textContent || '';
-    F.title.en     = baseTitle;
+    F.title.en     = d.titleEn || baseTitle;
     F.oneline.en   = d.summary   || '';
     F.designer.en  = d.designer  || '';
     F.points.en    = d.points    || '';
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     F.comment.kr   = d.commentKr  || F.comment.en;
 
     /* 영문 기사(-kr 번역 있음) → 토글 노출, 기본 KR / 한국어 기사 → 토글 숨김, KR 값 표시 */
-    if (hasEn && d.titleKr) {
+    if (hasEn && d.titleEn) {
       drawerLangToggle.style.display = 'flex';
       setLang('kr');
     } else {

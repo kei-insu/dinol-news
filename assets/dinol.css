@@ -172,12 +172,11 @@
   .thumb-label {
     position: relative;
     z-index: 1;
-    font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
-    font-weight: 300;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    font-weight: 500;
     font-size: 28px;
     color: rgba(255,255,255,0.42);
-    text-transform: uppercase;
-    letter-spacing: 7px;
+    letter-spacing: 1px;
     text-align: center;
     padding: 0 16px;
     line-height: 1.2;
@@ -584,7 +583,7 @@
     .section-header h2 { font-size: 16px; letter-spacing: 4px; }
     .grid { grid-template-columns: 1fr; gap: 10px; }
     .thumb { height: 110px; }
-    .thumb-label { font-size: 27px; letter-spacing: 5px; }
+    .thumb-label { font-size: 27px; letter-spacing: 0.5px; }
     .card-source { font-size: 12px; }
     .card-title { font-size: 17px; }
     .thumb-en { font-size: 14px; }
