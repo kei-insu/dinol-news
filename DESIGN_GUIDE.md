@@ -114,7 +114,7 @@
 
 **데이터 규칙 (카드 `data-*`)**
 - 공통: `data-category`
-- 기본 필드: `data-summary`(한 줄 요약) · `data-points`(인사이트 포인트, `|`구분) · `data-designer` · `data-impact` + `data-impact-score`(1~5 별점) · `data-recommend` · `data-comment`(큐레이션 코멘트)
+- 기본 필드: `data-summary`(한 줄 요약) · `data-points`(인사이트 포인트, `|`구분) · `data-designer` · `data-impact-score`(1~5 정수 별점 = 실무 영향도, 텍스트 `data-impact`는 미사용) · `data-recommend` · `data-comment`(큐레이션 코멘트)
 - 영문 카드: 위 기본(영문) + `-kr` 접미사(한국어) 각각 + `data-title-kr`(토글 유발). 한글 카드는 단일 언어 + `data-title-kr` 없음(토글 안 뜸)
 
 ## 6. 카드 썸네일 — 라벨 언어 정책
