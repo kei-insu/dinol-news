@@ -4,6 +4,22 @@
 
 ---
 
+## 공통 정책: 문서 자동 동기화 (필수)
+
+코드·UI·동작·구조를 수정할 때는, 그 내용을 문서화하는 **관련 문서를 같은 작업에서 반드시 함께 갱신**한다. 사용자의 별도 요청이 없어도 자동으로 반영한다. (문서와 코드가 어긋나면 다음 작업에서 같은 실수가 재발하므로 "코드 수정 = 문서 수정"을 한 세트로 처리한다.)
+
+- **대상 문서**: `design_guide.md`(디자인·UI·인터랙션 스펙) · `routine_instruction.md`(브리핑 생성 절차·카드 패턴) · `claude.md`(세션·정책) · `dinol_policy.md`(콘텐츠 정책) · `news_sources.md`(크롤링 소스)
+- **트리거 예**: 팝업 필드·`data-*` 속성, 카드 마크업, 셰브론·버튼·컬러 등 UI, 파일 구조·경로, READ_KEY 등 로직, 공용 CSS/JS 구조 변경
+- 변경 항목에는 날짜(예: `2026-07-06`)를 남겨 추적 가능하게 한다.
+
+### 파일명 규칙 (2026-07-06, 전면 소문자 통일)
+- **모든 파일 = 소문자.** 여러 단어는 밑줄(`_`) 또는 케밥(`-`)으로 연결한다.
+  - 문서(.md): `claude.md` · `design_guide.md` · `routine_instruction.md` · `news_sources.md` · `dinol_policy.md`
+  - 코드·자산·페이지: `dinol.css` · `dinol.js` · `dinol-firebase.js` · `template.html` · `index.html` · `index.json` · `archive.html` · `privacy.html`
+- **예외 — 일일 브리핑은 `Dinol_news_YYYYMMDD.html` 유지**(`news/YYYY/MM/`). `dinol.js`의 READ_KEY 정규식과 아카이브 URL 생성이 이 패턴에 묶여 있어 그대로 둔다.
+- 새 파일도 소문자 규칙을 따른다.
+---
+
 ## 자동 실행 절차
 
 ### 1. 오늘 날짜 확인
@@ -45,7 +61,7 @@
 ### 7. HTML 파일 생성 및 저장
 **Write 도구로 `/home/user/Dinol_news_YYYYMMDD.html` 에 저장한다. 텍스트 요약 출력 금지.**
 
-> **스타일 단일 기준(디자인 가이드):** 폰트 크기·굵기·컬러·자간, 버튼/아이콘 크기, 푸터 구조 등 모든 시각 스펙은 `template.html`을 **그대로 복사**한다. 임의로 값을 재생성하지 말 것. 전체 스펙 표는 `DESIGN_GUIDE.md` 참조. (핵심: 섹션헤더 AI/Design 21px·자간 7px, 버튼 텍스트 16px/w500, EN 배지 12px/italic·명도 유지, 썸네일 라벨 흰색 0.42, 푸터 저작권 13px·안내문 13px 한 덩어리(`<br>`)·개인정보처리방침 16px 밑줄.)
+> **스타일 단일 기준(디자인 가이드):** 폰트 크기·굵기·컬러·자간, 버튼/아이콘 크기, 푸터 구조 등 모든 시각 스펙은 `template.html`을 **그대로 복사**한다. 임의로 값을 재생성하지 말 것. 전체 스펙 표는 `design_guide.md` 참조. (핵심: 섹션헤더 AI/Design 21px·자간 7px, 버튼 텍스트 16px/w500, EN 배지 12px/italic·명도 유지, 썸네일 라벨 흰색 0.42, 푸터 저작권 13px·안내문 13px 한 덩어리(`<br>`)·개인정보처리방침 16px 밑줄.)
 
 구조는 참조 파일(`template.html`)과 동일하게:
 - 헤더: "디자인 놀이터" / "AI & Design News" / `.header-sep` (구분선) / 날짜

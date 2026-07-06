@@ -181,10 +181,13 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   function entryHTML(e) {
     const nk = e.nick.length > 12 ? e.nick.slice(0, 12) + "…" : e.nick;
     const timeStr = fmtTime(e.ts);
+    const isEditing = (editingId === e.id);
+    const actions = isEditing ? '' :
+      '<div class="gb-entry-actions"><button class="gb-act-edit" data-id="' + e.id + '">수정</button><button class="gb-act-del" data-id="' + e.id + '">삭제</button></div>';
     const head = '<div class="gb-entry-head"><span class="gb-entry-nick">' + avatar(e.nick) + " " + esc(nk) + '</span>' +
-      '<div class="gb-entry-actions"><button class="gb-act-edit" data-id="' + e.id + '">수정</button><button class="gb-act-del" data-id="' + e.id + '">삭제</button></div></div>' +
+      actions + '</div>' +
       '<div class="gb-entry-time">' + esc(timeStr) + '</div>';
-    if (editingId === e.id) {
+    if (isEditing) {
       return '<div class="gb-entry editing" data-id="' + e.id + '">' + head +
         '<div class="gb-edit-area"><textarea class="gb-edit-text" maxlength="200">' + esc(e.body) + '</textarea>' +
         '<div class="gb-edit-btns"><button class="gb-edit-cancel">취소</button><button class="gb-edit-save" data-id="' + e.id + '">저장</button></div></div></div>';

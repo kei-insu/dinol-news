@@ -95,9 +95,9 @@
     transition: transform 0.2s ease;
     line-height: 1;
     display: inline-block;
-    transform: scaleY(0.8);
+    transform: scaleY(0.8) rotate(180deg); /* 펼침(기본) → ▲ (2026-07-06 방향 반전) */
   }
-  .section.collapsed .section-chevron { transform: scaleY(0.8) rotate(180deg); }
+  .section.collapsed .section-chevron { transform: scaleY(0.8); } /* 접힘 → ▼ */
   .section .grid {
     overflow: hidden;
     transition: max-height 0.35s ease, opacity 0.25s ease, margin 0.25s ease;
@@ -517,7 +517,7 @@
     align-items: center;
     justify-content: center;
     min-height: 48px;
-    flex: 4;
+    flex: 3;
     background: #23232e;
     border: none;
     color: #b0b0bc;
@@ -561,7 +561,7 @@
     align-items: center;
     justify-content: center;
     min-height: 48px;
-    flex: 6;
+    flex: 7;
     background: #1e1e2e;
     border: 1px solid #2c2c48;
     color: #fff;

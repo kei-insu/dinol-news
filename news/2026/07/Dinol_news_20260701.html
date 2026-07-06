@@ -84,7 +84,7 @@
       <div class="drawer-field-text" id="drawerOneline"></div>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">인사이트 포인트</div>
+      <div class="drawer-field-label">핵심 인사이트</div>
       <ul class="drawer-points" id="drawerPoints"></ul>
     </div>
     <div class="drawer-field">
@@ -96,11 +96,11 @@
       <div class="drawer-stars" id="drawerImpact"></div>
     </div>
     <div class="drawer-field">
-      <div class="drawer-field-label">추천</div>
+      <div class="drawer-field-label">활용 추천</div>
       <div class="drawer-field-text" id="drawerRecommend"></div>
     </div>
     <div class="drawer-comment" id="drawerCommentWrap">
-      <div class="drawer-comment-label">💬 큐레이션 코멘트</div>
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
       <div class="drawer-comment-text" id="drawerComment"></div>
     </div>
   </div>
@@ -205,7 +205,9 @@
        data-impact-score="3"
        data-points="Sonnet 5 autonomously uses browsers, terminals, code interpreters|Priced lower, a new cost bar for agent tasks|Design shifts from 'AI answers' to 'AI acts'" data-points-kr="Sonnet 5는 브라우저·터미널·코드 인터프리터를 자율 사용|더 낮은 가격, 에이전트 작업의 새 비용 기준|'AI가 답한다'에서 'AI가 행동한다'로 설계 전환"
        data-recommend="Skim to understand where agent pricing is heading, and note the UX challenge of designing for AI that acts on its own" data-recommend-kr="에이전트 가격이 어디로 가는지 파악하고, '스스로 행동하는 AI'를 위한 UX 과제를 메모해 두세요"
-       data-comment="에이전트 모델의 핵심은 '가격이 내려간다'와 'AI가 스스로 행동한다' 두 가지입니다. 값이 싸지면 더 많은 서비스가 에이전트를 붙일 테고, 그러면 디자이너가 풀어야 할 새 숙제가 생깁니다. AI가 내 브라우저를 열고 뭔가를 실행할 때, 사용자는 그걸 어떻게 믿고, 어디서 멈추고, 무엇을 되돌릴 수 있는가.
+       data-comment="The heart of agent models is two things: 'prices are falling' and 'the AI acts on its own.' As it gets cheaper, more services will bolt on agents, which hands designers a new problem. When an AI opens my browser and does something, how does the user trust it, where do they stop it, and what can be undone?
+
+This isn't a 'pretty screen' problem, it's a 'trust and control' design problem. What separates a good AI product from a scary one will come down to exactly this." data-comment-kr="에이전트 모델의 핵심은 '가격이 내려간다'와 'AI가 스스로 행동한다' 두 가지입니다. 값이 싸지면 더 많은 서비스가 에이전트를 붙일 테고, 그러면 디자이너가 풀어야 할 새 숙제가 생깁니다. AI가 내 브라우저를 열고 뭔가를 실행할 때, 사용자는 그걸 어떻게 믿고, 어디서 멈추고, 무엇을 되돌릴 수 있는가.
 
 이건 '예쁜 화면'의 문제가 아니라 '신뢰와 통제'의 설계 문제입니다. 앞으로 좋은 AI 제품과 무서운 AI 제품을 가르는 건 바로 이 부분일 겁니다.">
       <div class="thumb g-crimson">
@@ -231,7 +233,11 @@
        data-impact-score="2"
        data-points="U.S. lifted export limits on Anthropic's Mythos·Fable|Restrictions came and went within roughly two weeks|Model access can shift with policy, not just tech" data-points-kr="미국, Anthropic Mythos·Fable 수출 제한 해제|통제가 약 2주 만에 도입·철회됨|모델 접근성은 기술뿐 아니라 정책으로도 바뀜"
        data-recommend="Note it as context on how policy affects model access; design your product so it isn't locked to one model" data-recommend-kr="정책이 모델 접근성에 어떻게 영향을 주는지 맥락으로만 알아두고, 제품을 한 모델에 종속시키지 않도록 설계하세요"
-       data-comment="이 소식의 실무적 교훈은 정치가 아니라 '의존의 위험'입니다. 최고 성능 모델이라도 정책 한 번에 며칠 사이 막히거나 풀릴 수 있다는 걸 이번 일이 보여줬습니다(6월 중순 통제 → 약 2주 뒤 해제).
+       data-comment="The practical lesson here isn't politics, it's the danger of dependence. This episode showed that even a top-performing model can be blocked or unblocked within days by a single policy call (controls in mid-June, lifted about two weeks later).
+
+Tie a product entirely to one model, and when that model disappears your service wobbles with it. That's why designing on the premise that 'the model is a swappable part' is the safer approach today.
+
+Whatever you think of export controls themselves, the takeaway for builders is simple: don't bet everything on one place." data-comment-kr="이 소식의 실무적 교훈은 정치가 아니라 '의존의 위험'입니다. 최고 성능 모델이라도 정책 한 번에 며칠 사이 막히거나 풀릴 수 있다는 걸 이번 일이 보여줬습니다(6월 중순 통제 → 약 2주 뒤 해제).
 
 제품을 특정 모델 하나에 완전히 묶어두면, 그 모델이 사라질 때 서비스도 흔들립니다. 그래서 요즘은 '모델은 갈아끼울 수 있는 부품'이라는 전제로 설계하는 게 안전합니다.
 
@@ -259,7 +265,11 @@
        data-impact-score="3"
        data-points="Images in ~4 seconds at a fraction of prior cost|Aimed at developers and businesses|Bottleneck shifts from making to choosing" data-points-kr="약 4초·기존 대비 저렴한 비용의 이미지 생성|개발자·기업 대상|병목이 '만들기'에서 '고르기'로 이동"
        data-recommend="Try it on real moodboard/comp tasks and decide where to let it draft vs. where you direct" data-recommend-kr="무드보드·시안 작업에 실제로 써보고, 어디를 AI에 맡기고 어디를 직접 이끌지 정하세요"
-       data-comment="같은 소식이 오늘 브리핑의 한국어 카드(인공지능신문)에도 있지만, 여기 TechCrunch 버전은 '개발자·기업용 도구'라는 각도가 조금 더 뚜렷합니다.
+       data-comment="The same news is in today's Korean card (AI Times), but this TechCrunch version leans a bit harder into the 'developer and enterprise tooling' angle.
+
+The core point bears repeating: once an image costs 4 seconds and a few cents, the era of rationing mockups is over. What used to be 'make three' becomes 'make thirty and pick.'
+
+So a designer's value shifts from 'drawing well' to 'knowing what's good.' The cheaper the tools get, the more expensive taste becomes." data-comment-kr="같은 소식이 오늘 브리핑의 한국어 카드(인공지능신문)에도 있지만, 여기 TechCrunch 버전은 '개발자·기업용 도구'라는 각도가 조금 더 뚜렷합니다.
 
 핵심은 반복해서 말할 만합니다. 이미지가 4초·몇십 원이 되면, 시안을 아끼던 시대가 끝납니다. 예전엔 3개 뽑던 걸 이제 30개 뽑고 고르는 게 일이 되죠.
 
@@ -288,7 +298,9 @@
        data-points="What 'sovereign/physical AI' means|Why robots for a labor shortage|Korea's near-simultaneous response" data-points-kr="'주권/피지컬 AI'의 의미|노동력 부족과 로봇 전략|거의 동시에 나온 한국의 대응"
        data-recommend="Save for physical-AI landscape watching; revisit when robotics/spatial design becomes relevant to your work" data-recommend-kr="'피지컬 AI' 지형 파악용으로 저장하고, 로보틱스·공간 디자인이 내 일과 연결될 때 다시 보세요"
        data-title-kr="일본, 자국 AI 모델 + 2040년까지 로봇 1,000만 대 국가 전략"
-       data-comment="숫자(61억 달러, 로봇 1,000만 대)보다 '피지컬 AI'라는 방향이 핵심입니다. 우리 7/1·7/2 브리핑에서 한국 정부의 '피지컬AI 수출국' 전략을 봤는데, 일본도 같은 곳을 향하고 있습니다. 즉 이건 한 나라의 일이 아니라 '화면 속 AI에서 몸을 가진 AI로'라는 세계적 전환입니다.
+       data-comment="More than the numbers ($6.1B, 10 million robots), the real point is the direction: 'physical AI.' In our 7/1 and 7/2 briefings we saw Korea's 'physical-AI export nation' strategy, and Japan is heading to the same place. So this isn't one country's story, it's a global shift from 'AI on screens' to 'AI with a body.'
+
+For designers this isn't distant news, it's a career compass. As robots, spaces and sensors multiply, someone has to design where they meet people. Even if you only touch apps today, it's worth knowing that the 'embodied AI' next door is growing at a national scale." data-comment-kr="숫자(61억 달러, 로봇 1,000만 대)보다 '피지컬 AI'라는 방향이 핵심입니다. 우리 7/1·7/2 브리핑에서 한국 정부의 '피지컬AI 수출국' 전략을 봤는데, 일본도 같은 곳을 향하고 있습니다. 즉 이건 한 나라의 일이 아니라 '화면 속 AI에서 몸을 가진 AI로'라는 세계적 전환입니다.
 
 디자이너에게 이건 먼 뉴스가 아니라 커리어의 방향타입니다. 로봇·공간·센서가 늘어나면, 그것들과 사람이 만나는 접점을 설계할 사람이 필요해집니다. 지금 앱만 다루더라도, '체화된 AI'라는 옆 동네가 국가 단위로 커지고 있다는 건 알아두면 좋습니다.">
       <div class="thumb g-crimson">
@@ -393,7 +405,9 @@
        data-impact-score="2"
        data-points="Ai Weiwei's Button Up! (Manchester), MoMA's Architects of Liberation|Isan Creative Festival (Thailand), New Designers (London)|A snapshot of what institutions are spotlighting now" data-points-kr="아이 웨이웨이 'Button Up!'(맨체스터), MoMA 'Architects of Liberation'|이산 크리에이티브 페스티벌(태국), New Designers(런던)|기관들이 지금 무엇을 조명하는지 보여주는 스냅숏"
        data-recommend="Bookmark it as a monthly culture-radar; pick one or two to explore online" data-recommend-kr="월간 문화 안테나로 저장하고, 한두 개는 온라인으로 찾아보세요"
-       data-comment="이런 '이벤트 가이드'는 참석 여부보다 '지금 디자인계가 무엇에 주목하나'를 읽는 용도로 쓰면 좋습니다. 아이 웨이웨이 같은 거장 전시부터 신진 졸업 전시(New Designers)까지 한 목록에 담겼다는 게 흥미롭습니다. 정상급과 신인이 같은 달의 화제라는 뜻이니까요.
+       data-comment="Guides like this are best used not to decide what to attend, but to read 'what the design world is paying attention to right now.' It's telling that a single list holds everything from a master like Ai Weiwei to emerging graduate shows (New Designers), meaning the established and the new are the same month's talking points.
+
+Even if you can't go, just seeing what major institutions choose to spotlight gives you a sense of where trends are heading. Skimming lists like this when inspiration runs dry is surprisingly helpful." data-comment-kr="이런 '이벤트 가이드'는 참석 여부보다 '지금 디자인계가 무엇에 주목하나'를 읽는 용도로 쓰면 좋습니다. 아이 웨이웨이 같은 거장 전시부터 신진 졸업 전시(New Designers)까지 한 목록에 담겼다는 게 흥미롭습니다. 정상급과 신인이 같은 달의 화제라는 뜻이니까요.
 
 직접 못 가더라도, 주요 기관이 무엇을 골라 조명하는지 보는 것만으로 트렌드의 방향이 잡힙니다. 영감이 마를 때 이런 목록을 훑는 습관은 의외로 큰 도움이 됩니다.">
 
@@ -421,7 +435,9 @@
        data-impact-score="2"
        data-points="WMF names 10 'irreplaceable' U.S. sites for the 250th anniversary|Spans colonial missions to modern housing|Watts Towers, Dallas City Hall, New Orleans included" data-points-kr="WMF, 건국 250주년 기념 '대체 불가' 미국 문화유산 10곳 선정|식민지 교회부터 현대 주거까지 시대를 아우름|LA 와츠 타워스·댈러스 시청·뉴올리언스 포함"
        data-recommend="Read as a thoughtful take on preservation; look up one or two sites for design-history context" data-recommend-kr="'보존'에 대한 사려 깊은 관점으로 읽고, 한두 곳은 디자인 역사 맥락으로 찾아보세요"
-       data-comment="디자인을 '새로 만드는 것'으로만 생각하기 쉽지만, '무엇을 남길 것인가'도 똑같이 디자인의 문제입니다. 이 목록이 흥미로운 건 화려한 기념물만이 아니라 평범한 현대 주거까지 '대체 불가'로 꼽았다는 점입니다. 무엇을 유산으로 볼 것인가에 대한 관점 자체가 하나의 선언이니까요.
+       data-comment="It's easy to think of design only as 'making something new,' but 'what to keep' is just as much a design question. What's interesting about this list is that it names not only grand monuments but ordinary contemporary housing as 'irreplaceable.' The very view of what counts as heritage is itself a statement.
+
+Buildings are, in the end, records that harden an era's values and aesthetics. It echoes the 'White House typography over 26 years' piece we saw: design always testifies to its time." data-comment-kr="디자인을 '새로 만드는 것'으로만 생각하기 쉽지만, '무엇을 남길 것인가'도 똑같이 디자인의 문제입니다. 이 목록이 흥미로운 건 화려한 기념물만이 아니라 평범한 현대 주거까지 '대체 불가'로 꼽았다는 점입니다. 무엇을 유산으로 볼 것인가에 대한 관점 자체가 하나의 선언이니까요.
 
 건물은 결국 그 시대의 가치와 미감을 굳혀놓은 기록입니다. 앞서 본 '백악관 타이포 26년사'와도 통하는데, 디자인은 언제나 그 시대를 증언합니다.">
 
@@ -449,7 +465,9 @@
        data-impact-score="3"
        data-points="Branding as 'world-building' beyond the logo|Letting typography anchor and drive the whole system|Ornate type + clean modern fonts (BN Cringe Sans, PP Mori)" data-points-kr="로고를 넘어 '세계 짓기'로서의 브랜딩|타이포그래피를 앵커 삼아 시스템 전체를 이끄는 법|장식적 서체 + 깔끔한 모던 폰트(BN Cringe Sans·PP Mori)의 조합"
        data-recommend="Read as a branding case study, and save it for when you need to argue that identity is more than a logo" data-recommend-kr="브랜딩 사례 연구로 읽고, '아이덴티티는 로고 그 이상'임을 설득해야 할 때 레퍼런스로 저장하세요"
-       data-comment="가상의 브랜드를 위한 '연습작'인데도 완성도가 높은 게 인상적입니다. 핵심은 '브랜드를 만든다 = 하나의 세계를 짓는다'는 태도입니다. 로고 하나 그리고 끝내는 게 아니라, 서체의 무드에서 출발해 색·이미지·장식까지 한 방향으로 밀고 나갔습니다.
+       data-comment="It's striking how polished this is even though it's a 'practice piece' for a fictional brand. The core is an attitude: 'building a brand means building a world.' Rather than drawing one logo and calling it done, it starts from the mood of the typeface and pushes color, imagery and ornament all in one direction.
+
+Also worth learning: the designer deliberately stepped away from the bold, Y2K style they're known for. A designer's skill isn't 'one thing done well' but 'how many different tones they can move between.' In an era where AI floods us with mockups, this sense for designing a mood is exactly the territory humans should hold." data-comment-kr="가상의 브랜드를 위한 '연습작'인데도 완성도가 높은 게 인상적입니다. 핵심은 '브랜드를 만든다 = 하나의 세계를 짓는다'는 태도입니다. 로고 하나 그리고 끝내는 게 아니라, 서체의 무드에서 출발해 색·이미지·장식까지 한 방향으로 밀고 나갔습니다.
 
 그리고 자기가 잘하던 볼드·Y2K 스타일을 일부러 벗어난 점도 배울 만합니다. 디자이너의 실력은 '잘하는 하나'가 아니라 '얼마나 다른 톤을 오갈 수 있는가'에서 갈립니다. AI가 시안을 쏟아내는 시대에, 이런 '분위기를 설계하는 감각'이야말로 사람이 지켜야 할 영역입니다.">
       <div class="thumb g-crimson">

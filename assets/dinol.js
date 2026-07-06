@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 6필드: 각 필드의 EN(기본)/KR 값 보관 */
   const F = {
-    title:{}, oneline:{}, designer:{}, points:{}, recommend:{}
+    title:{}, oneline:{}, designer:{}, points:{}, recommend:{}, comment:{}
   };
 
   function renderPoints(str) {
@@ -122,6 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const pWrap = drawerPoints.closest('.drawer-field');
     if (pWrap) pWrap.style.display = drawerPoints.children.length ? 'flex' : 'none';
     setField(drawerRecommend, F.recommend[k]);
+    const cmt = F.comment[k] || '';
+    drawerComment.textContent = cmt;
+    drawerCommentWrap.style.display = cmt.trim() ? 'flex' : 'none';
     btnKr.classList.toggle('active', k === 'kr');
     btnEn.classList.toggle('active', k === 'en');
   }
@@ -170,6 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
     F.points.kr    = d.pointsKr    || F.points.en;
     F.recommend.kr = d.recommendKr || F.recommend.en;
 
+    /* 큐레이션 코멘트: EN 카드는 data-comment(영문)+data-comment-kr(한국어), 한글 카드는 data-comment 단일 */
+    F.comment.en   = d.comment    || '';
+    F.comment.kr   = d.commentKr  || F.comment.en;
+
     /* 영문 기사(-kr 번역 있음) → 토글 노출, 기본 KR / 한국어 기사 → 토글 숨김, KR 값 표시 */
     if (hasEn && d.titleKr) {
       drawerLangToggle.style.display = 'flex';
@@ -183,11 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* 실무 영향도 별점 (언어 무관) */
     renderStars(card.dataset.impactScore);
-
-    /* 큐레이션 코멘트 (언어 무관, 주관적 논평) — 값 없으면 항목 숨김 */
-    const commentText = (card.dataset.comment || '').trim();
-    drawerComment.textContent = commentText;
-    drawerCommentWrap.style.display = commentText ? 'flex' : 'none';
 
     drawer.classList.add('open');
     overlay.classList.add('open');
