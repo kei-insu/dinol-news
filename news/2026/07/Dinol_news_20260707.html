@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 07</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 7, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.aitimes.kr/news/articleView.html?idxno=40833" target="_blank"
+       data-category="AI · 학회 · 연구"
+       data-summary="세계 최고 권위의 머신러닝 학회 ICML 2026이 7월 6일부터 11일까지 서울 코엑스에서 열린다. 전 세계 AI 연구자·기업 관계자 약 1만 5천 명이 참가하는 국내 최대 규모 국제 학술행사다."
+       data-points="NeurIPS·ICLR과 함께 세계 3대 ML 학회|생성형 AI·LLM·강화학습·컴퓨터비전·로보틱스 최신 연구 발표|7/6 튜토리얼·AI 엑스포, 7/7~9 메인 컨퍼런스"
+       data-designer="지금 AI 제품·서비스를 움직이는 기술 대부분이 이런 정상급 학회에서 먼저 공개됩니다. 디자이너에게도 '반년~1년 뒤 도구가 어디로 갈지' 방향을 미리 읽는 자리예요."
+       data-impact-score="4"
+       data-recommend="AI 흐름 읽는 기획·디자인 담당자 참고 · 팀 공유"
+       data-comment="논문 학회가 서울 한복판에서 열린다는 건, 한국이 'AI를 쓰는 나라'에서 'AI 방향을 논의하는 나라'로 옮겨가고 있다는 신호로 봅니다. 화려한 제품 발표는 아니지만, 여기서 나온 이야기가 1~2년 뒤 우리가 매일 쓰는 도구로 내려옵니다.
+
+당장 코엑스에 못 가더라도, 어떤 주제가 기조강연으로 다뤄지는지만 훑어도 '다음 판'이 보입니다.">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">AI 학회</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">인공지능신문 · 2026. 07. 06</div>
+        <div class="card-title">세계 3대 머신러닝 학회 'ICML 2026', 서울 코엑스 개막…AI 석학 1만 5천 명 집결</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.aitimes.kr/news/articleView.html?idxno=40737" target="_blank"
+       data-category="AI · 정책 · 인프라"
+       data-summary="정부가 반도체·피지컬 AI·AI 데이터센터를 세 축으로 하는 초대형 국가 전략을 발표했다. 서남권에만 800조 원 이상을 투입해 제2의 반도체 생산기지를 조성하고, 권역별로 기능을 나눠 배치한다."
+       data-points="서남권 800조·메모리 팹 4기|영남권은 휴머노이드 로봇 등 '피지컬 AI' 거점|전력·용수·부지 등 기반시설 정부 지원"
+       data-designer="'AI가 화면을 넘어 몸을 갖는' 피지컬 AI가 국가 단위 전략이 됐습니다. 로봇·공간·디바이스가 늘어날수록, 사람과 만나는 접점을 설계할 디자이너 수요도 함께 커집니다."
+       data-impact-score="3"
+       data-recommend="산업·정책 흐름 참고 · 로봇/하드웨어 관심자 저장"
+       data-comment="숫자(800조)보다 방향이 핵심이라고 봅니다. '소프트웨어 AI'만이 아니라 반도체·로봇·데이터센터 같은 물리적 토대에 국가가 베팅하기 시작했어요.
+
+화면 속 UI만 다루던 디자이너에게도, '만질 수 있는 AI 경험'이 점점 현실의 일감으로 다가온다는 신호로 읽힙니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">국가전략</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">인공지능신문 · 2026. 07. 03</div>
+        <div class="card-title">"AI 신대륙 선점 마지막 기회"…정부, 서남권 800조 '반도체·피지컬 AI·데이터센터' 3대 메가프로젝트</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://news.un.org/en/story/2026/07/1167862" target="_blank"
+       data-category="AI · Governance · Policy"
+       data-summary="The inaugural UN Global Dialogue on AI Governance opened in Geneva on July 6, bringing 169 countries together to debate how to regulate AI that is evolving faster than the rules meant to contain it." data-summary-kr="169개국이 참여하는 첫 UN 글로벌 AI 거버넌스 대화가 7월 6일 제네바에서 개막했다. 규칙보다 빠르게 진화하는 AI를 어떻게 규제할지가 핵심 의제다."
+       data-points="169 countries, largest multilateral AI governance talks yet|Bengio: science can't yet rule out catastrophic harm|Maria Ressa warns of an 'information Armageddon'" data-points-kr="169개국 참여, 역대 최대 다자 AI 거버넌스 논의|벤지오 '재앙적 피해 배제 못 한다'|마리아 레사 '정보 아마겟돈' 경고"
+       data-designer="When 'can you tell fact from fiction' becomes a governance question, trust and provenance turn into design problems too, from content labels to how AI answers are sourced." data-designer-kr="'진짜와 가짜를 구분할 수 있는가'가 거버넌스 문제가 되면, 신뢰와 출처 표시도 디자인 문제가 됩니다. 콘텐츠 라벨부터 AI 답변의 출처 표기까지요."
+       data-impact-score="4"
+       data-recommend="Worth a read for anyone shaping AI products · Share with policy-minded teams" data-recommend-kr="AI 제품 만드는 사람 일독 · 정책 관심 팀 공유"
+       data-comment="The headline is fear, but the useful part is the framing: information integrity is treated as the core battle. For anyone building with AI, that lands as a concrete design responsibility, not distant politics.
+
+How an interface signals what is AI-made, what is sourced, and what is uncertain is quietly becoming part of the job." data-comment-kr="헤드라인은 공포지만, 쓸모 있는 대목은 '정보의 진실성'을 핵심 전장으로 본다는 프레이밍입니다. AI로 뭔가 만드는 사람에겐 먼 정치가 아니라 구체적인 디자인 책임으로 다가와요.
+
+무엇이 AI가 만든 것이고, 출처가 어디이며, 무엇이 불확실한지를 인터페이스가 어떻게 알려줄지가 조용히 우리 일의 일부가 되고 있습니다."
+       data-title-en="Global push for AI governance amid warnings of 'catastrophic harm'">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">AI 거버넌스</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">UN News · 2026. 07. 06</div>
+        <div class="card-title">"재앙적 피해" 경고 속…UN, 제네바서 첫 글로벌 AI 거버넌스 대화 개막</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-6-2026" target="_blank"
+       data-category="AI · Industry · Models"
+       data-summary="Xiaomi's MiMo-V2-Pro became the most-used model on OpenRouter by weekly token volume, and Chinese providers now serve roughly 45% of all OpenRouter traffic, up from under 2% a year ago." data-summary-kr="샤오미의 MiMo-V2-Pro가 주간 토큰량 기준 오픈라우터 최다 사용 모델에 올랐다. 중국 모델의 트래픽 점유율은 1년 전 2% 미만에서 약 45%로 치솟았다."
+       data-points="Strong coding performance + 1M context + very low price|Chinese share of OpenRouter: under 2% to about 45% in a year|Performance-first adoption, attribution later" data-points-kr="강한 코딩 성능 + 100만 컨텍스트 + 초저가|오픈라우터 중국 점유율 1년 새 2%→45%|성능으로 먼저 신뢰, 브랜드는 나중에"
+       data-designer="The lesson for builders isn't geopolitics, it's that 'AI equals a US lab' is no longer a safe default. Choosing a model by cost, context and task is now a practical skill." data-designer-kr="핵심은 지정학이 아니라, 'AI = 미국 연구소'라는 전제가 더는 안전하지 않다는 점입니다. 비용·컨텍스트·용도로 모델을 고르는 게 실무 역량이 됐어요."
+       data-impact-score="3"
+       data-recommend="Useful for PMs and teams picking AI models · Share with dev teams" data-recommend-kr="모델 고르는 PM·팀 참고 · 개발팀 공유"
+       data-comment="A year ago this share was a rounding error; now it is nearly half the traffic. The takeaway isn't 'China won', it is that price and performance travel faster than brand loyalty.
+
+Designing on the assumption that your underlying model is swappable, not sacred, is the safer bet." data-comment-kr="1년 전엔 반올림하면 사라질 수치였는데, 지금은 트래픽의 절반에 가깝습니다. 교훈은 '중국이 이겼다'가 아니라, 가격과 성능이 브랜드 충성도보다 빨리 움직인다는 거예요.
+
+밑단 모델을 '신성불가침'이 아니라 '교체 가능한 부품'으로 보고 설계하는 게 안전합니다."
+       data-title-en="Chinese AI models surge to around 45% of OpenRouter traffic">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">중국 AI</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">BuildFastWithAI · 2026. 07. 06</div>
+        <div class="card-title">중국 AI 모델의 급부상…오픈라우터 트래픽 45%까지</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.yankodesign.com/2026/07/03/frank-gehrys-final-gift-to-abu-dhabi-is-a-building-that-moves-like-music/" target="_blank"
+       data-category="Design · Architecture"
+       data-summary="Frank Gehry spent decades making buildings feel alive; his last major design, revealed just weeks ago, may be the most fitting conclusion to that lifelong pursuit." data-summary-kr="수십 년간 '살아 있는 듯한' 건축을 추구해 온 프랭크 게리. 최근 공개된 그의 마지막 대형 설계는 그 평생의 여정에 가장 어울리는 마침표일지 모른다."
+       data-points="A late-career work from one of architecture's defining figures|Form that reads as movement and rhythm|A capstone to a lifelong pursuit of 'living' buildings" data-points-kr="건축 거장의 말년 대표작|움직임과 리듬으로 읽히는 형태|'살아 있는 건축' 평생 탐구의 정점"
+       data-designer="Gehry's work is a reminder that even the most sculptural form is problem-solving, not decoration; the feeling of movement is engineered, not accidental." data-designer-kr="게리의 작업은 아무리 조형적인 형태라도 '장식'이 아니라 '문제 해결'임을 일깨웁니다. 움직임의 느낌은 우연이 아니라 설계된 결과예요."
+       data-impact-score="3"
+       data-recommend="Inspiration for form-driven designers · Save for moodboards" data-recommend-kr="형태 감각 키우는 디자이너 참고 · 무드보드 저장"
+       data-comment="It's easy to file Gehry under 'sculptural spectacle', but the through-line of his career is making rigid material feel like it is in motion, an illusion that takes enormous discipline.
+
+Whatever medium you work in, 'engineering a feeling' rather than decorating a surface is the lesson worth taking." data-comment-kr="게리를 '조형적 볼거리'로만 분류하기 쉽지만, 그의 경력을 관통하는 건 단단한 재료를 '움직이는 것처럼' 보이게 만드는 일입니다. 엄청난 절제가 필요한 착시죠.
+
+어떤 매체로 일하든, 표면을 꾸미는 게 아니라 '느낌을 설계한다'는 태도가 가져갈 만한 교훈입니다."
+       data-title-en="Frank Gehry's final gift to Abu Dhabi is a building that moves like music">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">건축</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 03</div>
+        <div class="card-title">프랭크 게리의 마지막 선물…'음악처럼 움직이는' 아부다비 건축</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/04/the-kneeling-chair-from-1979-finally-gets-its-color-moment/" target="_blank"
+       data-category="Design · Furniture"
+       data-summary="A cult ergonomic seat from 1979 returns in a fresh palette, a reminder that a strong design can wait decades for the right moment to feel new again." data-summary-kr="1979년의 컬트 인체공학 의자가 새로운 색으로 돌아왔다. 좋은 디자인은 다시 새로워질 순간을 수십 년 기다릴 수 있다는 걸 보여준다."
+       data-points="A 1979 ergonomic classic, re-released|Color as the update, not a redesign|Proof that timeless form ages well" data-points-kr="1979년 인체공학 명작의 재출시|형태가 아니라 '색'만 바꾼 업데이트|시대를 타지 않는 형태의 증거"
+       data-designer="Sometimes the smartest update is the smallest one. Changing only the color shows real confidence in the original form, no need to redraw what already works." data-designer-kr="가장 영리한 업데이트가 가장 작은 업데이트일 때가 있습니다. 색만 바꾼다는 건 원형에 대한 자신감이에요. 이미 잘 되는 걸 다시 그릴 필요는 없죠."
+       data-impact-score="3"
+       data-recommend="For designers who love restraint · Share with product teams" data-recommend-kr="절제의 미학 좋아하는 디자이너 · 프로덕트팀 공유"
+       data-comment="The interesting move here is what they didn't touch. Re-coloring a 47-year-old design instead of 'improving' it is a quiet argument that the original was already right.
+
+In a field addicted to redesigns, knowing when to leave a form alone is its own skill." data-comment-kr="여기서 흥미로운 건 '건드리지 않은 부분'입니다. 47년 된 디자인을 '개선'하는 대신 색만 다시 입혔다는 건, 원형이 이미 옳았다는 조용한 주장이에요.
+
+리디자인에 중독된 업계에서, 형태를 언제 그대로 둘지 아는 것도 하나의 실력입니다."
+       data-title-en="The kneeling chair from 1979 finally gets its color moment">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">가구</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 04</div>
+        <div class="card-title">1979년 '무릎 의자', 마침내 색을 입다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/03/these-ceramics-look-hand-drawn-in-black-ink-but-theyre-actually-porcelain-pretending-to-be-paper/" target="_blank"
+       data-category="Design · Craft · Material"
+       data-summary="A ceramic series mimics the look of ink-on-paper sketches, using porcelain to imitate a completely different material and blurring the line between drawing and object." data-summary-kr="잉크로 그린 종이 스케치처럼 보이는 도자기 시리즈. 자기로 전혀 다른 재료를 흉내 내며, 그림과 사물의 경계를 흐린다."
+       data-points="Porcelain disguised as inked paper|Material illusion as the core concept|Craft that plays with perception" data-points-kr="잉크 묻은 종이로 위장한 자기|'재료 착시'가 핵심 콘셉트|지각을 갖고 노는 공예"
+       data-designer="Great material design often works by breaking expectations, making one material behave like another. It's the same trick good UI uses when a flat screen 'feels' physical." data-designer-kr="좋은 재료 디자인은 종종 기대를 깨는 데서 나옵니다. 한 재료가 다른 재료처럼 굴게 만드는 거죠. 납작한 화면이 '물성 있게' 느껴지게 하는 좋은 UI와 같은 수법이에요."
+       data-impact-score="3"
+       data-recommend="For designers who love material tricks · Save for inspiration" data-recommend-kr="재료 유희 좋아하는 디자이너 · 영감 저장"
+       data-comment="The whole piece rests on a double-take: your eye says 'paper', your hand would say 'ceramic'. That gap is where the delight lives.
+
+On screen we chase the same effect constantly, making pixels imply weight, texture and depth that aren't really there." data-comment-kr="이 작업은 '두 번 보게 되는 순간'에 기대고 있습니다. 눈은 '종이'라고 하는데 손은 '자기'라고 할 테니까요. 그 간극에 즐거움이 있어요.
+
+화면에서도 우리는 늘 같은 효과를 좇습니다. 실제로는 없는 무게·질감·깊이를 픽셀로 암시하는 일이죠."
+       data-title-en="These ceramics look hand-drawn in black ink, but they're porcelain pretending to be paper">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">공예</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 03</div>
+        <div class="card-title">검은 잉크로 그린 듯한 도자기…실은 '종이인 척하는 자기'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/04/the-air-purifier-that-rolls-toward-smoke-before-it-fills-the-room/" target="_blank"
+       data-category="Design · Product · Robotics"
+       data-summary="A concept air purifier abandons the 'sit in a corner' assumption, moving proactively toward smoke and pollution instead of waiting for bad air to reach it." data-summary-kr="'구석에 놓인다'는 전제를 버린 공기청정기 콘셉트. 나쁜 공기가 다가오길 기다리는 대신, 연기와 오염원을 향해 먼저 움직인다."
+       data-points="Proactive, mobile purification vs static units|Rethinks a decades-old product assumption|Robotics quietly entering everyday appliances" data-points-kr="고정형이 아닌 '능동 이동형' 정화|수십 년 된 제품 전제를 다시 질문|일상 가전에 스며드는 로보틱스"
+       data-designer="The design insight isn't the robot, it's the question: what if the product came to the problem? Challenging a default assumption is where most real innovation starts." data-designer-kr="디자인의 통찰은 '로봇'이 아니라 질문에 있습니다. '제품이 문제 쪽으로 가면 어떨까?' 기본 전제를 의심하는 데서 대부분의 진짜 혁신이 시작돼요."
+       data-impact-score="3"
+       data-recommend="For product and UX designers · Share when brainstorming" data-recommend-kr="제품·UX 디자이너 참고 · 브레인스토밍 때 공유"
+       data-comment="Most 'smart' appliances just bolt an app onto an old form. This one changes the behavior instead: the purifier hunts the problem rather than waiting for it.
+
+The reusable move for any designer is to attack the assumption ('it sits still') rather than the surface." data-comment-kr="대부분의 '스마트' 가전은 옛 형태에 앱만 붙입니다. 이건 대신 '행동'을 바꿨어요. 청정기가 문제를 기다리지 않고 사냥하러 갑니다.
+
+어떤 디자이너에게든 재사용 가능한 수법은, 표면이 아니라 전제('가만히 있는다')를 공격하는 것입니다."
+       data-title-en="The air purifier that rolls toward smoke before it fills the room">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">제품</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 04</div>
+        <div class="card-title">연기가 방을 채우기 전에 스스로 굴러가는 공기청정기</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4" autocomplete="new-password">
+    </div>
+    <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
+    <div class="gb-row"><span></span><span class="gb-count" id="gbCount">0 / 200</span></div>
+    <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
