@@ -1,0 +1,66 @@
+rules_version = '2';
+
+// ============================================================
+// 디자인 놀이터 — Firestore 보안 규칙
+// 비밀번호는 방명록과 동일하게 "클라이언트 검증"(SHA-256 해시 대조)이므로
+// 규칙은 App Check(콘솔에서 이미 강제됨) + 필드/길이 검증을 담당한다.
+// Firebase 콘솔 > Firestore Database > 규칙 에 붙여넣기.
+// (댓글 2026-07-07 추가: guestbook/{글}/comments + commentCount 갱신)
+// ============================================================
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── 좋아요 (기사 URL 기준 카운트) ──
+    match /likes/{id} {
+      allow read: if true;
+      allow write: if request.resource.data.count is int
+                   && request.resource.data.count >= 0;
+    }
+
+    // ── 방명록 글 ──
+    match /guestbook/{postId} {
+      allow read: if true;
+      allow create: if isValidPost(request.resource.data);
+      // 수정은 본문(body) 변경 또는 commentCount 갱신(댓글 추가/삭제)만 허용
+      allow update: if isBodyEdit() || isCommentCountUpdate();
+      allow delete: if true;
+
+      // ── 댓글 (서브컬렉션) ──
+      match /comments/{commentId} {
+        allow read: if true;
+        allow create: if isValidComment(request.resource.data);
+        allow update: if request.resource.data.body is string
+                      && request.resource.data.body.size() > 0
+                      && request.resource.data.body.size() <= 100
+                      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['body']);
+        allow delete: if true;
+      }
+    }
+
+    // ── helper ──
+    function isValidPost(d) {
+      return d.nick is string && d.nick.size() > 0 && d.nick.size() <= 12
+          && d.body is string && d.body.size() > 0 && d.body.size() <= 200
+          && d.pwHash is string && d.pwHash.size() == 64
+          && d.createdAt == request.time
+          && (!('commentCount' in d) || d.commentCount == 0);
+    }
+    function isValidComment(d) {
+      return d.nick is string && d.nick.size() > 0 && d.nick.size() <= 16
+          && d.body is string && d.body.size() > 0 && d.body.size() <= 100
+          && d.pwHash is string && d.pwHash.size() == 64
+          && d.createdAt == request.time;
+    }
+    function isBodyEdit() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['body'])
+          && request.resource.data.body is string
+          && request.resource.data.body.size() > 0
+          && request.resource.data.body.size() <= 200;
+    }
+    function isCommentCountUpdate() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['commentCount'])
+          && request.resource.data.commentCount is int
+          && request.resource.data.commentCount >= 0;
+    }
+  }
+}
