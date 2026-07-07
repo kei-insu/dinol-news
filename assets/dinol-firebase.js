@@ -178,6 +178,8 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   const ICON_KEBAB = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>';
   const ICON_BUBBLE = '<svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6" width="14" height="10.5" rx="4" fill="#6f66cc"/><rect x="3" y="4" width="14" height="10.5" rx="4" fill="#fff"/><path d="M6.5 14 L4.5 17.6 L10 14 Z" fill="#fff"/><circle cx="6.8" cy="9.2" r="1.15" fill="#6f66cc"/><circle cx="10" cy="9.2" r="1.15" fill="#6f66cc"/><circle cx="13.2" cy="9.2" r="1.15" fill="#6f66cc"/></svg>';
   const ICON_SMILE = '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.4"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.4" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r=".95" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r=".95" fill="#c9c9d4"/></svg>';
+  const ICON_EDIT = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>';
+  const ICON_TRASH = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/><path d="M10 11v5"/><path d="M14 11v5"/></svg>';
   function chev(up) { return '<svg class="gb-cchev' + (up ? ' up' : '') + '" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>'; }
 
   function fmtTime(ts) {
@@ -232,7 +234,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   function commentSectionHTML(pid) {
     const cs = cstate(pid);
     const toggle = '<button class="gb-ctoggle" data-post="' + pid + '">' + ICON_BUBBLE +
-      '<span class="gb-ctoggle-txt">댓글 ' + (cs.count || 0) + '</span>' + chev(cs.expanded) + '</button>';
+      '<span class="gb-ctoggle-txt">댓글 <span class="gb-cnum">' + (cs.count || 0) + '</span></span>' + chev(cs.expanded) + '</button>';
     if (!cs.expanded) return '<div class="gb-comments">' + toggle + '</div>';
     let inner;
     if (!cs.loaded) inner = '<div class="gb-cloading">댓글을 불러오는 중…</div>';
@@ -322,7 +324,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     closeMenu();
     const menu = document.createElement("div");
     menu.className = "gb-menu";
-    menu.innerHTML = '<button class="gb-menu-item gb-menu-edit">수정</button><button class="gb-menu-item gb-menu-del">삭제</button>';
+    menu.innerHTML = '<button class="gb-menu-item gb-menu-edit">' + ICON_EDIT + '수정</button><button class="gb-menu-item gb-menu-del">' + ICON_TRASH + '삭제</button>';
     menu.querySelector(".gb-menu-edit").addEventListener("click", (ev) => { ev.stopPropagation(); closeMenu(); openModal("edit", scope, pid, cid); });
     menu.querySelector(".gb-menu-del").addEventListener("click", (ev) => { ev.stopPropagation(); closeMenu(); openModal("delete", scope, pid, cid); });
     kebabBtn.parentNode.appendChild(menu); // head가 position:relative

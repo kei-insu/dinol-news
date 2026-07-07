@@ -727,7 +727,7 @@
 
   /* ─────────── 디놀 톡톡: 옵션(⋯) 메뉴 · 댓글 (2026-07-07) ─────────── */
   /* 옵션(⋯) 버튼 — 글·댓글 동일 크기·색 */
-  .gb-kebab { margin-left: auto; flex: 0 0 auto; background: none; border: none; padding: 6px; margin: -6px -6px -6px 0;
+  .gb-kebab { flex: 0 0 auto; background: none; border: none; padding: 6px; margin: -6px -6px -6px auto;
     color: #6c6c7a; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; line-height: 0; }
   .gb-kebab:hover { color: #c4c4d0; }
   .gb-kebab svg { display: block; }
@@ -735,8 +735,9 @@
   .gb-comment-head { position: relative; }
   .gb-menu { position: absolute; top: 100%; right: 0; margin-top: 4px; background: #23232f; border: 1px solid #34343f;
     border-radius: 10px; padding: 4px; min-width: 104px; z-index: 40; }
-  .gb-menu-item { display: flex; align-items: center; width: 100%; background: none; border: none; cursor: pointer;
+  .gb-menu-item { display: flex; align-items: center; gap: 8px; width: 100%; background: none; border: none; cursor: pointer;
     font-family: inherit; font-size: 13px; padding: 9px 14px; border-radius: 7px; text-align: left; }
+  .gb-menu-item svg { flex: 0 0 auto; }
   .gb-menu-edit { color: #dcdce4; }
   .gb-menu-del { color: #e46a6a; }
   .gb-menu-item:hover { background: #2d2d3a; }
@@ -747,7 +748,8 @@
     font-family: inherit; padding: 4px 6px; margin: -4px -6px; border-radius: 8px; }
   .gb-ctoggle svg { display: block; }
   .gb-ctoggle-txt { font-size: 13px; font-weight: 700; color: #FF7F3E; }
-  .gb-cchev { color: #FF7F3E; transition: transform .18s ease; }
+  .gb-cnum { color: #e0e0ea; }
+  .gb-cchev { color: #e0e0ea; transition: transform .18s ease; }
   .gb-cchev.up { transform: rotate(180deg); }
 
   /* 댓글 영역·목록 */
@@ -789,21 +791,21 @@
   .gb-cform-bar { position: relative; display: flex; align-items: center; margin-top: 8px; }
   .gb-csmile { background: none; border: none; cursor: pointer; padding: 6px; margin: -6px; line-height: 0; border-radius: 8px; }
   .gb-csmile svg { display: block; }
-  .gb-csubmit { margin-left: auto; background: none; border: none; cursor: pointer; font-family: inherit;
-    color: #FF7F3E; font-size: 14px; font-weight: 500; padding: 8px 12px; margin: -8px -12px -8px 0; border-radius: 8px; }
+  .gb-csubmit { background: none; border: none; cursor: pointer; font-family: inherit;
+    color: #FF7F3E; font-size: 14px; font-weight: 500; padding: 8px 12px; margin: -8px -12px -8px auto; border-radius: 8px; }
   .gb-csubmit:hover { color: #ff9560; }
 
   /* 이모지 피커 */
-  .gb-emoji-pick { position: absolute; left: 0; bottom: 100%; margin-bottom: 8px; background: #23232f; border: 1px solid #34343f;
-    border-radius: 12px; padding: 8px; display: grid; grid-template-columns: repeat(8, 1fr); gap: 2px; z-index: 40; width: 264px; max-width: calc(100vw - 60px); }
+  .gb-emoji-pick { position: absolute; left: 0; right: 0; bottom: 100%; margin-bottom: 8px; background: #23232f; border: 1px solid #34343f;
+    border-radius: 10px; padding: 8px; display: grid; grid-template-columns: repeat(8, 1fr); gap: 2px; z-index: 40; }
   .gb-emoji-btn { background: none; border: none; cursor: pointer; font-size: 18px; padding: 4px; border-radius: 8px; line-height: 1; }
   .gb-emoji-btn:hover { background: #2d2d3a; }
 
   @media (max-width: 580px) {
-    .gb-kebab { padding: 12px; margin: -12px -12px -12px 0; }
-    .gb-comment .gb-kebab { padding: 11px; margin: -11px -11px -11px 0; }
+    .gb-kebab { padding: 12px; margin: -12px -12px -12px auto; }
+    .gb-comment .gb-kebab { padding: 11px; margin: -11px -11px -11px auto; }
     .gb-csmile { padding: 12px; margin: -12px; }
-    .gb-csubmit { padding: 12px 14px; margin: -12px -14px -12px 0; }
+    .gb-csubmit { padding: 12px 14px; margin: -12px -14px -12px auto; }
     .gb-cnick, .gb-cpw, .gb-ccontent { font-size: 16px; }
     .gb-ctoggle-txt { font-size: 14px; }
     .gb-comment-nick, .gb-comment-body { font-size: 14px; }
