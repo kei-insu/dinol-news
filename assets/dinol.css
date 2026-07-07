@@ -789,25 +789,47 @@
   .gb-ccontent { width: 100%; min-height: 56px; resize: vertical; line-height: 1.5; padding-bottom: 22px; }
   .gb-ccount { position: absolute; right: 10px; bottom: 8px; font-size: 11px; color: #5f5f6b; pointer-events: none; }
   .gb-cform-bar { position: relative; display: flex; align-items: center; margin-top: 8px; }
-  .gb-csmile { background: none; border: none; cursor: pointer; padding: 6px; margin: -6px; line-height: 0; border-radius: 8px; }
+  .gb-csmile { background: none; border: none; cursor: pointer; padding: 5px; line-height: 0; border-radius: 8px; }
   .gb-csmile svg { display: block; }
-  .gb-csubmit { background: none; border: none; cursor: pointer; font-family: inherit;
-    color: #FF7F3E; font-size: 14px; font-weight: 500; padding: 8px 12px; margin: -8px -12px -8px auto; border-radius: 8px; }
+  .gb-cactions { margin-left: auto; display: flex; align-items: center; gap: 2px; }
+  .gb-ccancel { background: none; border: none; cursor: pointer; font-family: inherit; color: #8a8a99; font-size: 14px; font-weight: 500; padding: 7px 12px; border-radius: 8px; }
+  .gb-ccancel:hover { color: #d0d0dc; }
+  .gb-csubmit { background: none; border: none; cursor: pointer; font-family: inherit; color: #FF7F3E; font-size: 14px; font-weight: 500; padding: 7px 12px; border-radius: 8px; }
   .gb-csubmit:hover { color: #ff9560; }
+  .gb-cadd { margin-top: 4px; display: inline-flex; align-items: center; gap: 6px; background: #15151f; border: 1px solid #2a2a38; border-radius: 8px; color: #b0b0bc; font-size: 13px; font-family: inherit; padding: 9px 14px; cursor: pointer; transition: border-color .15s, color .15s; }
+  .gb-cadd:hover { border-color: #3a3a48; color: #e0e0ea; }
+  .gb-cadd svg { flex: 0 0 auto; }
 
   /* 이모지 피커 */
-  .gb-emoji-pick { position: absolute; left: 0; right: 0; bottom: 100%; margin-bottom: 8px; background: #23232f; border: 1px solid #34343f;
-    border-radius: 10px; padding: 8px; display: grid; grid-template-columns: repeat(8, 1fr); gap: 2px; z-index: 40; }
-  .gb-emoji-btn { background: none; border: none; cursor: pointer; font-size: 18px; padding: 4px; border-radius: 8px; line-height: 1; }
+  .gb-emoji-pick { position: absolute; left: 0; bottom: 100%; margin-bottom: 8px; background: #23232f; border: 1px solid #34343f;
+    border-radius: 10px; padding: 7px; display: grid; grid-template-columns: repeat(8, 32px); gap: 2px; z-index: 40; width: max-content; max-width: 100%; }
+  .gb-emoji-btn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; font-size: 18px; padding: 0; border-radius: 7px; line-height: 1; }
   .gb-emoji-btn:hover { background: #2d2d3a; }
+
+  /* 입력칸 스크롤바 — 드로어(카드 팝업)와 동일 */
+  .gb-ccontent, .gb-cedit-text, .gb-content, .gb-edit-text { scrollbar-width: thin; scrollbar-color: #33333f transparent; }
+  .gb-ccontent::-webkit-scrollbar, .gb-cedit-text::-webkit-scrollbar,
+  .gb-content::-webkit-scrollbar, .gb-edit-text::-webkit-scrollbar { width: 6px; }
+  .gb-ccontent::-webkit-scrollbar-track, .gb-cedit-text::-webkit-scrollbar-track,
+  .gb-content::-webkit-scrollbar-track, .gb-edit-text::-webkit-scrollbar-track { background: transparent; }
+  .gb-ccontent::-webkit-scrollbar-thumb, .gb-cedit-text::-webkit-scrollbar-thumb,
+  .gb-content::-webkit-scrollbar-thumb, .gb-edit-text::-webkit-scrollbar-thumb { background: #33333f; border-radius: 3px; }
+  .gb-ccontent::-webkit-scrollbar-thumb:hover, .gb-cedit-text::-webkit-scrollbar-thumb:hover,
+  .gb-content::-webkit-scrollbar-thumb:hover, .gb-edit-text::-webkit-scrollbar-thumb:hover { background: #45455a; }
 
   @media (max-width: 580px) {
     .gb-kebab { padding: 12px; margin: -12px -12px -12px auto; }
     .gb-comment .gb-kebab { padding: 11px; margin: -11px -11px -11px auto; }
-    .gb-csmile { padding: 12px; margin: -12px; }
-    .gb-csubmit { padding: 12px 14px; margin: -12px -14px -12px auto; }
+    .gb-csmile { padding: 8px; }
+    .gb-ccancel { padding: 11px 12px; }
+    .gb-csubmit { padding: 11px 14px; }
+    .gb-cadd { padding: 12px 16px; font-size: 14px; }
     .gb-cnick, .gb-cpw, .gb-ccontent { font-size: 16px; }
     .gb-ctoggle-txt { font-size: 14px; }
     .gb-comment-nick, .gb-comment-body { font-size: 14px; }
-    .gb-emoji-btn { font-size: 20px; padding: 6px; }
+    .gb-emoji-btn { font-size: 20px; }
+    .gb-kebab svg { width: 22px; height: 22px; }
+    .gb-menu { min-width: 140px; padding: 6px; border-radius: 12px; }
+    .gb-menu-item { font-size: 15px; padding: 13px 16px; gap: 10px; }
+    .gb-menu-item svg { width: 18px; height: 18px; }
   }

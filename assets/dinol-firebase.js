@@ -163,13 +163,13 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   // 글별 댓글 상태 (재렌더에도 유지) : postId -> {loaded, expanded, list, count, editingId}
   const commentState = {};
   function cstate(pid) {
-    if (!commentState[pid]) commentState[pid] = { loaded: false, expanded: false, list: [], count: 0, editingId: null };
+    if (!commentState[pid]) commentState[pid] = { loaded: false, expanded: false, list: [], count: 0, editingId: null, composerOpen: false };
     return commentState[pid];
   }
 
   const EMOJI = ["😀","😃","😄","😊","🙂","😎","🤓","🧐","🤩","😌","🥰","😉","😆","🤗","😙","🙃","😇","😺","🤠","😸"];
   function avatar(nk) { let h = 0; for (let i = 0; i < nk.length; i++) h = (h * 31 + nk.charCodeAt(i)) >>> 0; return EMOJI[h % EMOJI.length]; }
-  const CEMOJI = ["😀","😊","😎","🥰","😆","🤣","👍","👏","🔥","🎉","💜","✨","🙌","🥹","🤔","🙏"];
+  const CEMOJI = ["😀","😃","😄","😁","😆","😊","🙂","😉","😍","🥰","😎","🤩","😌","😂","🤣","🥹","😮","🤔","🙄","😅","😳","🥺","😭","😴","👍","👏","🙌","🙏","👌","💪","🤙","👀","❤️","💜","💙","🔥","✨","🎉","⭐","💯"];
 
   function digitsOnly(el, max = 4) { el && el.addEventListener("input", () => { el.value = el.value.replace(/\D/g, "").slice(0, max); }); }
   digitsOnly(pw, 4);
@@ -199,7 +199,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   // ── 댓글 아이템 HTML ──
   function commentHTML(pid, c) {
     const cs = cstate(pid);
-    const nk = c.nick.length > 16 ? c.nick.slice(0, 16) + "…" : c.nick;
+    const nk = c.nick.length > 12 ? c.nick.slice(0, 12) + "…" : c.nick;
     const timeStr = fmtTime(c.ts);
     if (cs.editingId === c.id) {
       return '<div class="gb-comment editing" data-cid="' + c.id + '">' +
@@ -220,13 +220,14 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   function composerHTML(pid) {
     return '<div class="gb-cform" data-post="' + pid + '">' +
       '<div class="gb-cform-row">' +
-        '<input class="gb-cnick" type="text" maxlength="16" placeholder="닉네임 (분야)">' +
+        '<input class="gb-cnick" type="text" maxlength="12" placeholder="닉네임 (분야)">' +
         '<input class="gb-cpw" type="password" inputmode="numeric" maxlength="4" placeholder="비밀번호 4자리">' +
       '</div>' +
       '<div class="gb-cform-body"><textarea class="gb-ccontent" maxlength="100" placeholder="댓글을 남겨보세요"></textarea>' +
       '<span class="gb-ccount">0 / 100</span></div>' +
       '<div class="gb-cform-bar"><button type="button" class="gb-csmile" aria-label="이모지">' + ICON_SMILE + '</button>' +
-      '<button class="gb-csubmit" data-post="' + pid + '">등록</button></div>' +
+      '<div class="gb-cactions"><button class="gb-ccancel" data-post="' + pid + '">취소</button>' +
+      '<button class="gb-csubmit" data-post="' + pid + '">등록</button></div></div>' +
     '</div>';
   }
 
@@ -240,8 +241,9 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     if (!cs.loaded) inner = '<div class="gb-cloading">댓글을 불러오는 중…</div>';
     else if (!cs.list.length) inner = '<div class="gb-cempty">첫 댓글을 남겨보세요.</div>';
     else inner = cs.list.map(c => commentHTML(pid, c)).join("");
+    const writer = cs.composerOpen ? composerHTML(pid) : ('<button class="gb-cadd" data-post="' + pid + '">' + ICON_EDIT + '댓글 달기</button>');
     return '<div class="gb-comments expanded">' + toggle +
-      '<div class="gb-carea"><div class="gb-clist">' + inner + '</div>' + composerHTML(pid) + '</div></div>';
+      '<div class="gb-carea"><div class="gb-clist">' + inner + '</div>' + writer + '</div></div>';
   }
 
   // ── 글 엔트리 HTML ──
@@ -424,7 +426,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   }
 
   async function addComment(pid, form, btn) {
-    const n = (form.querySelector(".gb-cnick").value || "").trim().slice(0, 16);
+    const n = (form.querySelector(".gb-cnick").value || "").trim().slice(0, 12);
     const p = (form.querySelector(".gb-cpw").value || "").trim();
     const b = (form.querySelector(".gb-ccontent").value || "").trim().slice(0, 100);
     if (!n) { alert("닉네임을 입력해주세요."); return; }
@@ -437,7 +439,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       try { await updateDoc(doc(db, "guestbook", pid), { commentCount: increment(1) }); } catch (e2) {}
       const cs = cstate(pid);
       cs.list.push({ id: ref.id, nick: n, body: b, pwHash, ts: new Date() });
-      cs.count = (cs.count || 0) + 1; cs.loaded = true; cs.expanded = true;
+      cs.count = (cs.count || 0) + 1; cs.loaded = true; cs.expanded = true; cs.composerOpen = false;
       renderList();
     } catch (err) { alert("댓글 등록에 실패했어요. 잠시 후 다시 시도해주세요."); btn.disabled = false; }
   }
@@ -457,8 +459,12 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     if (kebab) { ev.stopPropagation(); showMenu(kebab, kebab.classList.contains("gb-ckebab") ? "comment" : "post", kebab.dataset.post, kebab.dataset.cid); return; }
     const toggle = ev.target.closest(".gb-ctoggle");
     if (toggle) { toggleComments(toggle.dataset.post); return; }
+    const cadd = ev.target.closest(".gb-cadd");
+    if (cadd) { cstate(cadd.dataset.post).composerOpen = true; renderList(); return; }
     const csmile = ev.target.closest(".gb-csmile");
     if (csmile) { ev.stopPropagation(); toggleEmojiPicker(csmile); return; }
+    const ccancel = ev.target.closest(".gb-ccancel");
+    if (ccancel) { cstate(ccancel.dataset.post).composerOpen = false; renderList(); return; }
     const csubmit = ev.target.closest(".gb-csubmit");
     if (csubmit) { addComment(csubmit.dataset.post, csubmit.closest(".gb-cform"), csubmit); return; }
     const cCancel = ev.target.closest(".gb-cedit-cancel");
