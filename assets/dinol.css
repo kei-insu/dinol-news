@@ -639,7 +639,7 @@
   .gb-list { display: flex; flex-direction: column; gap: 12px; }
   .gb-entry { background: #191922; border: 1px solid #222230; border-radius: 14px; padding: 11px 16px; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
   .gb-entry:not(.editing):hover { transform: translateY(-3px); border-color: #2c2c40; box-shadow: 0 10px 36px rgba(0,0,0,0.5); }
-  .gb-entry-head { display: flex; align-items: center; gap: 8px; margin-bottom: 2px; }
+  .gb-entry-head { display: flex; align-items: center; gap: 8px; margin-bottom: -5px; }
   .gb-entry-nick { font-size: 14px; font-weight: 700; color: #ffffff; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: flex; align-items: center; gap: 2px; }
   .gb-emoji { font-size: 15px; margin-right: 1px; }
   .gb-entry-time { font-size: 11px; color: #888; margin-bottom: 4px; }
@@ -690,6 +690,7 @@
 
   /* ─────────── 디놀 톡톡: 수정/삭제 · 인라인 편집 · 비번 모달 ─────────── */
   .gb-entry-head { position: relative; }
+  .gb-entry.editing .gb-entry-head { margin-bottom: 2px; }
   .gb-entry-actions { margin-left: auto; display: flex; gap: 6px; flex-shrink: 0; }
   .gb-act-edit, .gb-act-del { background: none; border: none; color: #5c5c68; font-size: 12px; cursor: pointer; padding: 4px 8px; font-family: inherit; display: inline-flex; align-items: center; justify-content: center; }
   .gb-act-edit:hover { color: #ffffff; }
