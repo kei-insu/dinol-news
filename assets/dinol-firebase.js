@@ -242,12 +242,12 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     const cs = cstate(pid);
     if (!cs.expanded && !cs.composerOpen) return '';
     let html = '<div class="gb-comments">';
+    if (cs.composerOpen) html += composerHTML(pid);
     if (cs.expanded) {
       if (!cs.loaded) html += '<div class="gb-cloading">댓글을 불러오는 중…</div>';
       else if (!cs.list.length) html += '<div class="gb-cempty">첫 댓글을 남겨보세요.</div>';
       else html += '<div class="gb-clist">' + cs.list.map(c => commentHTML(pid, c)).join("") + '</div>';
     }
-    if (cs.composerOpen) html += composerHTML(pid);
     return html + '</div>';
   }
 
@@ -276,7 +276,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       '<div class="gb-entry-body">' + esc(e.body) + '</div>' +
       '<div class="gb-action-row">' +
       '<button class="gb-cwrite" data-post="' + e.id + '">댓글쓰기</button>' +
-      '<button class="gb-ctoggle" data-post="' + e.id + '">댓글 <span class="gb-cnum">' + (cs.count || 0) + '</span></button>' +
+      '<button class="gb-ctoggle" data-post="' + e.id + '">댓글 <span class="gb-cnum">' + (cs.count || 0) + '</span>' + chev(cs.expanded) + '</button>' +
       '</div>' +
       commentSectionHTML(e.id) +
       '</div></div></div>';
@@ -442,11 +442,9 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     renderList();
     if (cs.expanded && !cs.loaded) { await loadComments(pid); renderList(); }
   }
-  async function openComposer(pid) {
-    const cs = cstate(pid);
-    cs.composerOpen = true; cs.expanded = true;
+  function openComposer(pid) {
+    cstate(pid).composerOpen = true;
     renderList();
-    if (!cs.loaded) { await loadComments(pid); renderList(); }
   }
 
   async function addComment(pid, form, btn) {
@@ -462,8 +460,9 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       const ref = await addDoc(collection(db, "guestbook", pid, "comments"), { nick: n, body: b, pwHash, createdAt: serverTimestamp() });
       try { await updateDoc(doc(db, "guestbook", pid), { commentCount: increment(1) }); } catch (e2) {}
       const cs = cstate(pid);
-      cs.list.push({ id: ref.id, nick: n, body: b, pwHash, ts: new Date() });
-      cs.count = (cs.count || 0) + 1; cs.loaded = true; cs.expanded = true; cs.composerOpen = false;
+      cs.count = (cs.count || 0) + 1; cs.composerOpen = false; cs.expanded = true;
+      if (cs.loaded) cs.list.push({ id: ref.id, nick: n, body: b, pwHash, ts: new Date() });
+      else await loadComments(pid);
       renderList();
     } catch (err) { alert("댓글 등록에 실패했어요. 잠시 후 다시 시도해주세요."); btn.disabled = false; }
   }

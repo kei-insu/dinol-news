@@ -648,10 +648,15 @@
   .gb-entry-nick { font-size: 13px; font-weight: 700; color: #e6e6ef; min-width: 0; max-width: 60%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .gb-entry-time { font-size: 11px; color: #7c7c88; flex: 0 0 auto; }
   .gb-entry-body { font-size: 14px; color: #c6c6d2; line-height: 1.55; margin-top: 4px; white-space: pre-wrap; word-break: break-word; }
-  .gb-action-row { display: flex; align-items: center; gap: 14px; margin-top: 8px; }
-  .gb-cwrite, .gb-ctoggle { background: none; border: none; cursor: pointer; font-family: inherit; font-size: 12px; color: #8f8f9d; padding: 0; }
-  .gb-cwrite:hover, .gb-ctoggle:hover { color: #c4c4d0; }
-  .gb-cnum { color: #b6b6c2; font-weight: 600; }
+  .gb-action-row { display: flex; align-items: center; gap: 4px; margin-top: 7px; margin-left: -8px; }
+  .gb-cwrite, .gb-ctoggle { background: none; border: none; cursor: pointer; font-family: inherit; font-size: 12px; padding: 5px 8px; border-radius: 6px; }
+  .gb-cwrite { color: #8f8f9d; }
+  .gb-cwrite:hover { background: #202029; color: #c4c4d0; }
+  .gb-ctoggle { display: inline-flex; align-items: center; gap: 4px; color: #FF7F3E; }
+  .gb-ctoggle:hover { background: rgba(255,127,62,0.10); }
+  .gb-cnum { color: #FF7F3E; font-weight: 700; }
+  .gb-cchev { color: #FF7F3E; transition: transform .18s ease; }
+  .gb-cchev.up { transform: rotate(180deg); }
   .gb-empty { text-align: center; color: #666; font-size: 18px; padding: 20px 0; margin-top: 44px; }
   @media (max-width: 580px) {
     .guestbook { margin-top: 48px; }
@@ -814,7 +819,7 @@
     .gb-ccancel { padding: 11px 12px; }
     .gb-csubmit { padding: 11px 14px; }
     .gb-cnick, .gb-cpw, .gb-ccontent { font-size: 16px; }
-    .gb-cwrite, .gb-ctoggle { font-size: 13px; }
+    .gb-cwrite, .gb-ctoggle { font-size: 13px; padding: 7px 9px; }
     .gb-comment .gb-entry-nick { font-size: 13px; }
     .gb-comment .gb-entry-body { font-size: 14px; }
     .gb-emoji-btn { font-size: 20px; }
