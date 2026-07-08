@@ -617,18 +617,22 @@
     transition: background-color 9999s ease-in-out 0s;
   }
   .gb-nick:focus, .gb-pw:focus, .gb-content:focus { outline: none; border-color: #484848; }
-  .gb-content { min-height: 96px; resize: vertical; line-height: 1.6; }
-  .gb-row { display: flex; justify-content: space-between; align-items: center; }
-  .gb-count { font-size: 11px; color: #666; }
+  .gb-content-wrap { position: relative; }
+  .gb-content { min-height: 96px; resize: vertical; line-height: 1.6; padding-bottom: 30px; }
+  .gb-count { position: absolute; right: 14px; bottom: 12px; font-size: 11px; color: #6a6a6a; pointer-events: none; }
+  .gb-tbar { position: relative; display: flex; align-items: center; margin-top: 8px; }
+  .gb-tsmile { background: none; border: none; cursor: pointer; padding: 5px; line-height: 0; border-radius: 8px; }
+  .gb-tsmile svg { display: block; }
+  .gb-tsmile:hover { background: #262629; }
   .gb-captcha {
     height: 78px; border: 1px dashed #33333f; border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
     color: #666; font-size: 13px; background: rgba(255,255,255,0.02); letter-spacing: 0.3px;
   }
   .gb-submit {
-    align-self: center; width: 240px; max-width: 100%; min-height: 48px;
-    background: #2a2a32; color: #666; border: none; border-radius: 24px;
-    font-size: 16px; font-weight: 500; cursor: pointer; margin-top: 4px;
+    margin-left: auto; width: auto; padding: 9px 22px;
+    background: #2a2a32; color: #666; border: none; border-radius: 20px;
+    font-size: 15px; font-weight: 600; cursor: pointer;
     transition: background .15s, color .15s, opacity .15s;
   }
   .gb-submit:not(:disabled) { background: #c9ccd4; color: #191919; }
@@ -651,7 +655,7 @@
   .gb-action-row { display: flex; align-items: center; gap: 4px; margin-top: 7px; margin-left: -8px; }
   .gb-cwrite, .gb-ctoggle { background: none; border: none; cursor: pointer; font-family: inherit; font-size: 12px; padding: 5px 8px; border-radius: 6px; }
   .gb-cwrite { color: #8f8f9d; }
-  .gb-cwrite:hover { background: #202029; color: #c4c4d0; }
+  .gb-cwrite:hover { background: #262629; color: #c4c4d0; }
   .gb-ctoggle { display: inline-flex; align-items: center; gap: 4px; color: #FF7F3E; }
   .gb-ctoggle:hover { background: rgba(255,127,62,0.10); }
   .gb-cnum { color: #FF7F3E; font-weight: 700; }
@@ -741,7 +745,7 @@
   /* 옵션(⋯) 버튼 — 글·댓글 동일 크기·색 */
   .gb-kebab { flex: 0 0 auto; background: none; border: none; padding: 6px; margin: -6px -6px -6px auto;
     color: #6c6c7a; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; line-height: 0; }
-  .gb-kebab:hover { color: #c4c4d0; }
+  .gb-kebab:hover { background: #262629; color: #c4c4d0; }
   .gb-kebab svg { display: block; }
   /* 옵션 팝업 메뉴 (글·댓글 공용, 동일 스타일) */
   .gb-menu { position: absolute; top: 100%; right: 0; margin-top: 4px; background: #23232f; border: 1px solid #34343f;
@@ -789,11 +793,12 @@
   .gb-cform-bar { position: relative; display: flex; align-items: center; margin-top: 6px; }
   .gb-csmile { background: none; border: none; cursor: pointer; padding: 5px; line-height: 0; border-radius: 8px; }
   .gb-csmile svg { display: block; }
+  .gb-csmile:hover { background: #262629; }
   .gb-cactions { margin-left: auto; display: flex; align-items: center; gap: 2px; }
   .gb-ccancel { background: none; border: none; cursor: pointer; font-family: inherit; color: #8a8a8a; font-size: 14px; font-weight: 500; padding: 7px 10px; border-radius: 8px; }
-  .gb-ccancel:hover { color: #d0d0d0; }
+  .gb-ccancel:hover { background: #262629; color: #d0d0d0; }
   .gb-csubmit { background: none; border: none; cursor: pointer; font-family: inherit; color: #FF7F3E; font-size: 14px; font-weight: 500; padding: 7px 10px; border-radius: 8px; }
-  .gb-csubmit:hover { color: #ff9560; }
+  .gb-csubmit:hover { background: rgba(255,127,62,0.10); color: #ff9560; }
 
   /* 이모지 피커 */
   .gb-emoji-pick { position: absolute; left: 0; bottom: 100%; margin-bottom: 8px; background: #23232f; border: 1px solid #34343f;

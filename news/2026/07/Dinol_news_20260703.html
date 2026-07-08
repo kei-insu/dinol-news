@@ -441,9 +441,14 @@ And the insight that the core of those conditions is ultimately 'not making thin
       <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
       <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4" autocomplete="new-password">
     </div>
-    <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
-    <div class="gb-row"><span></span><span class="gb-count" id="gbCount">0 / 200</span></div>
-    <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
+      <span class="gb-count" id="gbCount">0 / 200</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.4"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.4" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r=".95" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r=".95" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
   </div>
   <div class="gb-list" id="gbList"></div>
   <div class="gb-pagination" id="gbPager"></div>

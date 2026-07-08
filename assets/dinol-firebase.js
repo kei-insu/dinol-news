@@ -370,7 +370,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   // 바깥 클릭 시 메뉴/피커 닫기
   document.addEventListener("click", (e) => {
     if (openMenu && !openMenu.contains(e.target)) closeMenu();
-    if (!e.target.closest(".gb-emoji-pick") && !e.target.closest(".gb-csmile")) closePickers();
+    if (!e.target.closest(".gb-emoji-pick") && !e.target.closest(".gb-csmile") && !e.target.closest(".gb-tsmile")) closePickers();
   });
 
   // ── 비번 확인 모달 (글/댓글 공용) ──
@@ -517,6 +517,27 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   [nick, pw, content].forEach(el => el && el.addEventListener("input", updateSubmit));
   content && content.addEventListener("input", () => { count.textContent = content.value.length + " / 200"; });
   updateSubmit();
+
+  // 상단 폼 이모지 (본문에만 삽입)
+  const gbSmile = document.getElementById("gbSmile");
+  if (gbSmile) {
+    gbSmile.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const existing = gbSmile.parentNode.querySelector(".gb-emoji-pick");
+      if (existing) { existing.remove(); return; }
+      closePickers(); closeMenu();
+      const pick = document.createElement("div");
+      pick.className = "gb-emoji-pick";
+      pick.innerHTML = CEMOJI.map(em => '<button type="button" class="gb-emoji-btn">' + em + '</button>').join("");
+      pick.addEventListener("click", (ev) => {
+        const b = ev.target.closest(".gb-emoji-btn"); if (!b) return; ev.stopPropagation();
+        content.value = (content.value + b.textContent).slice(0, 200);
+        count.textContent = content.value.length + " / 200";
+        updateSubmit(); content.focus();
+      });
+      gbSmile.parentNode.appendChild(pick);
+    });
+  }
 
   submit && submit.addEventListener("click", async () => {
     const n = nick.value.trim().slice(0, 12), b = content.value.trim(), p = pw.value.trim();
