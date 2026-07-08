@@ -630,7 +630,7 @@
     color: #666; font-size: 13px; background: rgba(255,255,255,0.02); letter-spacing: 0.3px;
   }
   .gb-submit {
-    margin-left: auto; width: auto; padding: 9px 22px;
+    margin-left: auto; width: auto; padding: 7px 20px;
     background: #2a2a32; color: #666; border: none; border-radius: 20px;
     font-size: 15px; font-weight: 600; cursor: pointer;
     transition: background .15s, color .15s, opacity .15s;
