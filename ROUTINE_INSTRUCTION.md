@@ -180,3 +180,32 @@ READ_KEY는 **자동 처리**된다 — `assets/dinol.js`가 파일명(`Dinol_ne
 ## 10. 완료 후
 PushNotification 도구로 아래 형식 알림 전송:
 `디자인놀이터 브리핑 생성 완료 — AI [N]카드 / Design [N]카드 / [YYYY-MM-DD]`
+
+## Claude Code 자동 생성 루틴 (크롤·큐레이션·빌드까지 / 검수·배포는 사람) — 2026-07-07
+
+트리거: 저장소에서 Claude Code에 "오늘 브리핑 만들어줘"(또는 기간 지정)로 실행.
+범위: **당일 브리핑 초안 생성까지. `git commit`/`push` 는 절대 하지 않는다**(사람이 검수 후 직접 배포).
+
+절차:
+1. **날짜·기간**: `index.json` 맨 앞(최근 발행일) 확인 → 그 다음날~오늘을 수집 창으로. 파일 날짜는 오늘 `YYYYMMDD`.
+2. **크롤링**: `news_sources.md`의 소스에서 web search/fetch로 AI·디자인 후보 수집.
+3. **선별(8장, AI 4 + Design 4 권장, 국내·해외 섞기)**:
+   - **기간 검증**: 각 기사의 실제 게재일이 수집 창 안인지 확인(창 밖 기사 제외).
+   - **중복 회피**: `news/` 하위 기존 브리핑과 `index.json`을 훑어 이미 쓴 URL/주제 제외.
+   - 국내 소재가 얇으면 해외 비중을 높여도 됨(모두 한글로 표시되므로).
+4. **카드 작성(규칙 = 위 §5~§7)**: 라벨·카드 제목 = 한글. 영문 기사는 영어 원제목을 `title_en`에. 영문 기사는 `*_en`/`*_kr` 이중언어. `impact` 1~5 정수. `comment`는 2~3문단(줄바꿈 `\n`). **em대시(—) 금지**. `grad`는 g-teal·g-navy·g-slate·g-plum·g-violet·g-amber·g-crimson·g-forest 중 8개.
+5. **`scripts/cards.json` 작성** (스키마 = `scripts/cards.example.json` 참고).
+6. **빌드**: `python scripts/build_briefing.py scripts/cards.json`
+7. 자가검증(카드 8·라벨 한글·em대시·impact) 실패 시 `cards.json` 고쳐 재빌드 → 통과까지.
+8. **정지**: 생성된 `news/YYYY/MM/Dinol_news_YYYYMMDD.html` 경로 + 카드 8장 요약 보고. **push 하지 않음.**
+
+사람(검수·배포):
+- 브라우저로 생성 파일 검수(제목·요약·출처·날짜·팝업 토글).
+- 이상 없으면 `git add news/2026/MM/Dinol_news_YYYYMMDD.html index.json` → commit → push.
+
+헤드리스로 돌릴 때(참고): `Bash(git*)`를 일부러 빼서 push를 원천 차단한다.
+```
+claude -p "오늘 브리핑 초안 생성(빌드까지, git push 금지)" \
+  --allowedTools "Read,Edit,Write,Bash(python*),WebSearch,WebFetch" \
+  --max-turns 40 --max-budget-usd 2
+```

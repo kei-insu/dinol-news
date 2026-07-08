@@ -93,3 +93,14 @@ PushNotification 도구로 생성 결과를 알린다.
 - 구조 참조: `/home/user/template.html`
 - 산출물: `/home/user/Dinol_news_YYYYMMDD.html`
 - 아카이브 목록: `/home/user/index.json` (아카이브 목록 원본)
+
+## 디놀 톡톡 댓글 기능 (2026-07-07)
+
+방명록 글에 댓글 추가. 서브컬렉션 `guestbook/{글ID}/comments/{댓글ID}` = `{nick, body, pwHash, createdAt}`. 비번 4자리·수정/삭제는 방명록과 동일(클라이언트 SHA-256 검증 + 마스터 481516). 댓글 100자.
+- 구현: `assets/dinol-firebase.js`(댓글 CRUD·지연로딩·⋯옵션메뉴·이모지피커), `assets/dinol.css`(댓글/옵션/피커 스타일), `firestore.rules`(서브컬렉션+commentCount 규칙).
+- **글·댓글 수정/삭제를 ⋯ 옵션 버튼(팝업)으로 통일**(상시노출 수정/삭제 버튼 폐기). 글 문서에 `commentCount` 필드로 "댓글 N" 표시(increment).
+- 캐비앗: 글 삭제 시 댓글 서브컬렉션은 자동 삭제 안 됨(고아 문서).
+- UI 스펙 상세는 design_guide.md §10.
+
+## 브리핑 자동 생성 (2026-07-07)
+Claude Code로 크롤·큐레이션·빌드까지 자동, 검수·배포는 사람. 상세 절차 = routine_instruction.md "Claude Code 자동 생성 루틴". 빌드는 `python scripts/build_briefing.py scripts/cards.json`(카드 JSON→HTML+index.json+자가검증, push 안 함). 카드 스키마 예시 = `scripts/cards.example.json`.
