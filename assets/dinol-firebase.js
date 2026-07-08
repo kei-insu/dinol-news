@@ -175,7 +175,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   digitsOnly(pw, 4);
 
   // ── 인라인 아이콘 (사이트엔 아이콘 폰트가 없으므로 SVG로 직접) ──
-  const ICON_KEBAB = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>';
+  const ICON_KEBAB = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>';
   const ICON_BUBBLE = '<svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6" width="14" height="10.5" rx="4" fill="#6f66cc"/><rect x="3" y="4" width="14" height="10.5" rx="4" fill="#fff"/><path d="M6.5 14 L4.5 17.6 L10 14 Z" fill="#fff"/><circle cx="6.8" cy="9.2" r="1.15" fill="#6f66cc"/><circle cx="10" cy="9.2" r="1.15" fill="#6f66cc"/><circle cx="13.2" cy="9.2" r="1.15" fill="#6f66cc"/></svg>';
   const ICON_SMILE = '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.4"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.4" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r=".95" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r=".95" fill="#c9c9d4"/></svg>';
   const ICON_EDIT = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>';
@@ -203,17 +203,23 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     const timeStr = fmtTime(c.ts);
     if (cs.editingId === c.id) {
       return '<div class="gb-comment editing" data-cid="' + c.id + '">' +
-        '<div class="gb-comment-head"><span class="gb-comment-nick">' + avatar(c.nick) + " " + esc(nk) + '</span>' +
-        '<span class="gb-comment-time">' + esc(timeStr) + '</span></div>' +
+        '<div class="gb-entry-row"><span class="gb-avatar gb-avatar-sm">' + avatar(c.nick) + '</span>' +
+        '<div class="gb-entry-main">' +
+        '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
+        '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
         '<div class="gb-cedit"><textarea class="gb-cedit-text" maxlength="100">' + esc(c.body) + '</textarea>' +
         '<div class="gb-cedit-btns"><button class="gb-cedit-cancel" data-post="' + pid + '">취소</button>' +
-        '<button class="gb-cedit-save" data-post="' + pid + '" data-cid="' + c.id + '">저장</button></div></div></div>';
+        '<button class="gb-cedit-save" data-post="' + pid + '" data-cid="' + c.id + '">저장</button></div></div>' +
+        '</div></div></div>';
     }
     return '<div class="gb-comment" data-cid="' + c.id + '">' +
-      '<div class="gb-comment-head"><span class="gb-comment-nick">' + avatar(c.nick) + " " + esc(nk) + '</span>' +
-      '<span class="gb-comment-time">' + esc(timeStr) + '</span>' +
+      '<div class="gb-entry-row"><span class="gb-avatar gb-avatar-sm">' + avatar(c.nick) + '</span>' +
+      '<div class="gb-entry-main">' +
+      '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
+      '<span class="gb-entry-time">' + esc(timeStr) + '</span>' +
       '<button class="gb-kebab gb-ckebab" data-post="' + pid + '" data-cid="' + c.id + '" aria-label="옵션">' + ICON_KEBAB + '</button></div>' +
-      '<div class="gb-comment-body">' + esc(c.body) + '</div></div>';
+      '<div class="gb-entry-body">' + esc(c.body) + '</div>' +
+      '</div></div></div>';
   }
 
   // ── 댓글 입력 폼 HTML ──
@@ -231,19 +237,18 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     '</div>';
   }
 
-  // ── 댓글 섹션(토글 + 영역) HTML ──
+  // ── 댓글 영역(리스트 + 컴포저). 토글/댓글쓰기 버튼은 글의 액션 행에 있음 ──
   function commentSectionHTML(pid) {
     const cs = cstate(pid);
-    const toggle = '<button class="gb-ctoggle" data-post="' + pid + '">' + ICON_BUBBLE +
-      '<span class="gb-ctoggle-txt">댓글 <span class="gb-cnum">' + (cs.count || 0) + '</span></span>' + chev(cs.expanded) + '</button>';
-    if (!cs.expanded) return '<div class="gb-comments">' + toggle + '</div>';
-    let inner;
-    if (!cs.loaded) inner = '<div class="gb-cloading">댓글을 불러오는 중…</div>';
-    else if (!cs.list.length) inner = '<div class="gb-cempty">첫 댓글을 남겨보세요.</div>';
-    else inner = cs.list.map(c => commentHTML(pid, c)).join("");
-    const writer = cs.composerOpen ? composerHTML(pid) : ('<button class="gb-cadd" data-post="' + pid + '">' + ICON_EDIT + '댓글 달기</button>');
-    return '<div class="gb-comments expanded">' + toggle +
-      '<div class="gb-carea"><div class="gb-clist">' + inner + '</div>' + writer + '</div></div>';
+    if (!cs.expanded && !cs.composerOpen) return '';
+    let html = '<div class="gb-comments">';
+    if (cs.expanded) {
+      if (!cs.loaded) html += '<div class="gb-cloading">댓글을 불러오는 중…</div>';
+      else if (!cs.list.length) html += '<div class="gb-cempty">첫 댓글을 남겨보세요.</div>';
+      else html += '<div class="gb-clist">' + cs.list.map(c => commentHTML(pid, c)).join("") + '</div>';
+    }
+    if (cs.composerOpen) html += composerHTML(pid);
+    return html + '</div>';
   }
 
   // ── 글 엔트리 HTML ──
@@ -252,18 +257,29 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     const timeStr = fmtTime(e.ts);
     if (editingId === e.id) {
       return '<div class="gb-entry editing" data-id="' + e.id + '">' +
-        '<div class="gb-entry-head"><span class="gb-entry-nick">' + avatar(e.nick) + " " + esc(nk) + '</span></div>' +
-        '<div class="gb-entry-time">' + esc(timeStr) + '</div>' +
+        '<div class="gb-entry-row"><span class="gb-avatar">' + avatar(e.nick) + '</span>' +
+        '<div class="gb-entry-main">' +
+        '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
+        '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
         '<div class="gb-edit-area"><textarea class="gb-edit-text" maxlength="200">' + esc(e.body) + '</textarea>' +
         '<div class="gb-edit-btns"><button class="gb-edit-cancel">취소</button>' +
-        '<button class="gb-edit-save" data-id="' + e.id + '">저장</button></div></div></div>';
+        '<button class="gb-edit-save" data-id="' + e.id + '">저장</button></div></div>' +
+        '</div></div></div>';
     }
-    const head = '<div class="gb-entry-head"><span class="gb-entry-nick">' + avatar(e.nick) + " " + esc(nk) + '</span>' +
-      '<button class="gb-kebab gb-pkebab" data-post="' + e.id + '" aria-label="옵션">' + ICON_KEBAB + '</button></div>';
-    return '<div class="gb-entry" data-id="' + e.id + '">' + head +
-      '<div class="gb-entry-time">' + esc(timeStr) + '</div>' +
+    const cs = cstate(e.id);
+    return '<div class="gb-entry" data-id="' + e.id + '">' +
+      '<div class="gb-entry-row"><span class="gb-avatar">' + avatar(e.nick) + '</span>' +
+      '<div class="gb-entry-main">' +
+      '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
+      '<span class="gb-entry-time">' + esc(timeStr) + '</span>' +
+      '<button class="gb-kebab gb-pkebab" data-post="' + e.id + '" aria-label="옵션">' + ICON_KEBAB + '</button></div>' +
       '<div class="gb-entry-body">' + esc(e.body) + '</div>' +
-      commentSectionHTML(e.id) + '</div>';
+      '<div class="gb-action-row">' +
+      '<button class="gb-cwrite" data-post="' + e.id + '">댓글쓰기</button>' +
+      '<button class="gb-ctoggle" data-post="' + e.id + '">댓글 <span class="gb-cnum">' + (cs.count || 0) + '</span></button>' +
+      '</div>' +
+      commentSectionHTML(e.id) +
+      '</div></div></div>';
   }
 
   function renderList() {
@@ -411,18 +427,26 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   if (mOverlay) mOverlay.addEventListener("click", closeModal);
 
   // ── 댓글 로드(지연) ──
+  async function loadComments(pid) {
+    const cs = cstate(pid);
+    if (cs.loaded) return;
+    try {
+      const snap = await getDocs(query(collection(db, "guestbook", pid, "comments"), orderBy("createdAt", "asc")));
+      cs.list = snap.docs.map(d => { const v = d.data(); return { id: d.id, nick: v.nick || "", body: v.body || "", pwHash: v.pwHash || "", ts: v.createdAt }; });
+      cs.loaded = true; cs.count = cs.list.length;
+    } catch (e) { cs.loaded = true; cs.list = []; }
+  }
   async function toggleComments(pid) {
     const cs = cstate(pid);
     cs.expanded = !cs.expanded;
-    if (cs.expanded && !cs.loaded) {
-      renderList(); // 로딩 표시
-      try {
-        const snap = await getDocs(query(collection(db, "guestbook", pid, "comments"), orderBy("createdAt", "asc")));
-        cs.list = snap.docs.map(d => { const v = d.data(); return { id: d.id, nick: v.nick || "", body: v.body || "", pwHash: v.pwHash || "", ts: v.createdAt }; });
-        cs.loaded = true; cs.count = cs.list.length;
-      } catch (e) { cs.loaded = true; cs.list = []; }
-    }
     renderList();
+    if (cs.expanded && !cs.loaded) { await loadComments(pid); renderList(); }
+  }
+  async function openComposer(pid) {
+    const cs = cstate(pid);
+    cs.composerOpen = true; cs.expanded = true;
+    renderList();
+    if (!cs.loaded) { await loadComments(pid); renderList(); }
   }
 
   async function addComment(pid, form, btn) {
@@ -459,8 +483,8 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     if (kebab) { ev.stopPropagation(); showMenu(kebab, kebab.classList.contains("gb-ckebab") ? "comment" : "post", kebab.dataset.post, kebab.dataset.cid); return; }
     const toggle = ev.target.closest(".gb-ctoggle");
     if (toggle) { toggleComments(toggle.dataset.post); return; }
-    const cadd = ev.target.closest(".gb-cadd");
-    if (cadd) { cstate(cadd.dataset.post).composerOpen = true; renderList(); return; }
+    const cwrite = ev.target.closest(".gb-cwrite");
+    if (cwrite) { openComposer(cwrite.dataset.post); return; }
     const csmile = ev.target.closest(".gb-csmile");
     if (csmile) { ev.stopPropagation(); toggleEmojiPicker(csmile); return; }
     const ccancel = ev.target.closest(".gb-ccancel");
