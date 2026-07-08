@@ -276,7 +276,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       '<div class="gb-entry-body">' + esc(e.body) + '</div>' +
       '<div class="gb-action-row">' +
       '<button class="gb-cwrite" data-post="' + e.id + '">댓글쓰기</button>' +
-      '<button class="gb-ctoggle" data-post="' + e.id + '">댓글 <span class="gb-cnum">' + (cs.count || 0) + '</span>' + chev(cs.expanded) + '</button>' +
+      ((cs.count || 0) > 0 ? '<button class="gb-ctoggle" data-post="' + e.id + '">댓글 <span class="gb-cnum">' + cs.count + '</span>' + chev(cs.expanded) + '</button>' : '') +
       '</div>' +
       commentSectionHTML(e.id) +
       '</div></div></div>';

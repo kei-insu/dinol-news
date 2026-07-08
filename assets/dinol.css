@@ -775,7 +775,7 @@
   .gb-cedit-save { background: #c9ccd4; border: none; color: #191919; font-weight: 700; }
 
   /* 댓글 입력 폼 */
-  .gb-cform { margin-top: 4px; padding-top: 10px; border-top: 1px solid #202028; }
+  .gb-cform { margin: 6px 0 4px; background: #17171f; border-radius: 12px; padding: 12px 13px; }
   .gb-cform-row { display: flex; align-items: center; gap: 8px; }
   .gb-cnick, .gb-cpw, .gb-ccontent { background: #111119; border: 1px solid #2a2a38; border-radius: 8px; color: #e8e8f0;
     font-family: inherit; font-size: 13px; padding: 8px 10px; box-sizing: border-box; }
@@ -815,10 +815,10 @@
   @media (max-width: 580px) {
     .gb-kebab { padding: 12px; margin: -12px -12px -12px auto; }
     .gb-comment .gb-kebab { padding: 11px; margin: -11px -11px -11px auto; }
-    .gb-csmile { padding: 8px; }
-    .gb-ccancel { padding: 11px 12px; }
-    .gb-csubmit { padding: 11px 14px; }
-    .gb-cnick, .gb-cpw, .gb-ccontent { font-size: 16px; }
+    .gb-csmile { padding: 9px; }
+    .gb-csmile svg { width: 24px; height: 24px; }
+    .gb-ccancel, .gb-csubmit { font-size: 15px; padding: 10px 14px; }
+    .gb-cnick, .gb-cpw, .gb-ccontent { font-size: 14px; }
     .gb-cwrite, .gb-ctoggle { font-size: 13px; padding: 7px 9px; }
     .gb-comment .gb-entry-nick { font-size: 13px; }
     .gb-comment .gb-entry-body { font-size: 14px; }
