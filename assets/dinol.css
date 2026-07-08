@@ -724,26 +724,26 @@
   .gb-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 3000; }
   .gb-modal-overlay.show { opacity: 1; pointer-events: auto; }
   .gb-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-46%); width: 320px; max-width: calc(100% - 40px);
-    background: #191922; border: 1px solid #2c2c40; border-radius: 16px; padding: 24px 22px; z-index: 3001;
+    background: #1c1c1c; border: 1px solid #363638; border-radius: 16px; padding: 24px 22px; z-index: 3001;
     opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
   .gb-modal.show { opacity: 1; pointer-events: auto; transform: translate(-50%,-50%); }
   .gb-modal-title { font-size: 16px; font-weight: 700; color: #fff; text-align: center; margin-bottom: 16px; }
-  .gb-modal-pw { width: 100%; background: #141419; border: 1px solid #222230; border-radius: 10px; color: #e8e8f0;
+  .gb-modal-pw { width: 100%; background: #242426; border: 1px solid #343436; border-radius: 10px; color: #e8e8f0;
     font-family: inherit; font-size: 15px; padding: 12px 14px; text-align: center; letter-spacing: 6px; box-sizing: border-box; }
   .gb-modal-pw::placeholder { color: #666; letter-spacing: normal; }
-  .gb-modal-pw:focus { outline: none; border-color: #33333f; }
+  .gb-modal-pw:focus { outline: none; border-color: #484848; }
   .gb-modal-err { color: #F64444; font-size: 13px; text-align: center; margin-top: 12px; margin-bottom: 4px; min-height: 18px; line-height: 1.4; }
   .gb-modal-btns { display: flex; gap: 8px; margin-top: 6px; }
   .gb-modal-btns button { flex: 1; border-radius: 10px; font-size: 16px; padding: 12px; min-height: 48px; cursor: pointer; font-family: inherit; font-weight: 500; }
-  .gb-modal-cancel { background: #23232e; border: none; color: #b0b0bc; }
+  .gb-modal-cancel { background: #2a2a2c; border: none; color: #b0b0bc; }
   .gb-modal-cancel:hover { background: #2c2c3a; }
   .gb-modal-ok { background: #c9ccd4; border: none; color: #191919; font-weight: 700; cursor: pointer; transition: background .15s; }
   .gb-modal-ok:not(:disabled):hover { background: #d9dce4; }
-  .gb-modal-ok:disabled { background: #2a2a32; color: #666; cursor: not-allowed; }
+  .gb-modal-ok:disabled { background: #2a2a2c; color: #666; cursor: not-allowed; }
 
   /* ─────────── 디놀 톡톡: 옵션(⋯) 메뉴 · 댓글 (2026-07-07) ─────────── */
   /* 옵션(⋯) 버튼 — 글·댓글 동일 크기·색 */
-  .gb-kebab { flex: 0 0 auto; background: none; border: none; padding: 6px; margin: -6px -6px -6px auto;
+  .gb-kebab { flex: 0 0 auto; background: none; border: none; padding: 6px; margin: -6px 0 -6px auto;
     color: #6c6c7a; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; line-height: 0; }
   .gb-kebab:hover { background: #262629; color: #c4c4d0; }
   .gb-kebab svg { display: block; }
@@ -818,8 +818,8 @@
   .gb-content::-webkit-scrollbar-thumb:hover, .gb-edit-text::-webkit-scrollbar-thumb:hover { background: #45455a; }
 
   @media (max-width: 580px) {
-    .gb-kebab { padding: 12px; margin: -12px -12px -12px auto; }
-    .gb-comment .gb-kebab { padding: 11px; margin: -11px -11px -11px auto; }
+    .gb-kebab { padding: 12px; margin: -12px 0 -12px auto; }
+    .gb-comment .gb-kebab { padding: 11px; margin: -11px 0 -11px auto; }
     .gb-csmile { padding: 9px; }
     .gb-csmile svg { width: 24px; height: 24px; }
     .gb-ccancel, .gb-csubmit { font-size: 15px; padding: 10px 14px; }
