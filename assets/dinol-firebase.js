@@ -521,6 +521,9 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   // 상단 폼 이모지 (본문에만 삽입)
   const gbSmile = document.getElementById("gbSmile");
   if (gbSmile) {
+    const toggleSmile = () => { gbSmile.style.display = content.value.trim() ? "inline-flex" : "none"; };
+    toggleSmile();
+    content && content.addEventListener("input", toggleSmile);
     gbSmile.addEventListener("click", (e) => {
       e.stopPropagation();
       const existing = gbSmile.parentNode.querySelector(".gb-emoji-pick");
@@ -550,7 +553,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       const ref = await addDoc(collection(db, "guestbook"), { nick: n, body: b, pwHash, commentCount: 0, createdAt: serverTimestamp() });
       entries.unshift({ id: ref.id, nick: n, body: b, pwHash, commentCount: 0, ts: new Date() });
       cstate(ref.id).count = 0;
-      nick.value = ""; pw.value = ""; content.value = ""; count.textContent = "0 / 200";
+      nick.value = ""; pw.value = ""; content.value = ""; count.textContent = "0 / 200"; if (gbSmile) gbSmile.style.display = "none";
       page = 1; moShown = PER; editingId = null; renderList(); updateSubmit();
     } catch (err) { alert("등록에 실패했어요. 잠시 후 다시 시도해주세요."); updateSubmit(); }
   });
