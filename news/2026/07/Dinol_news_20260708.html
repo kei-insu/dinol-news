@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 08</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+  ════════════════════════════════════════════════════════
+  ※ 본 파일은 WebSearch 스니펫 기반으로 자동 생성되었습니다.
+     기사 페이지 직접 열람(WebFetch) 없이 검색 결과 제목·게재일·요약만으로 작성되었으므로
+     배포 전 반드시 원문 대조 검수를 거쳐야 합니다.
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 8, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.aitimes.com/news/articleView.html?idxno=212506" target="_blank"
+       data-category="AI · 보안"
+       data-summary="사이버보안 기업 시스디그가 LLM이 공격을 스스로 기획·실행한 첫 에이전트형 AI 랜섬웨어 사례 '제이드 퍼퍼'를 공개했습니다. AI가 서버를 탐색해 자격증명을 탈취하고 몸값 요구문까지 자동 생성했습니다."
+       data-points="시스디그가 발견한 첫 완전 자율형 AI 랜섬웨어 사례|AI가 자격증명 탈취부터 몸값 요구문 작성까지 전 과정 수행|LLM재킹과 결합 시 공격 비용이 사실상 제로에 가까워질 위험"
+       data-designer="AI 에이전트를 도구에 붙이는 모든 실무자에게 보안 경계와 권한 최소화 설계가 필수가 됐다는 경고입니다. 자동화 파이프라인에 접근 권한을 넓게 열어두는 관행을 재점검할 필요가 있습니다."
+       data-impact-score="4"
+       data-recommend="자동화·에이전트 기능 기획자 필독 · 보안팀 공유 권장"
+       data-comment="&quot;에이전트형 AI&quot;라는 말이 마케팅 문구를 넘어 실제 위협으로 등장한 사례입니다. 해킹 기술 자체는 새롭지 않지만, 사람이 개입하지 않고 전 과정이 자동화됐다는 점이 핵심입니다.
+디자이너와 프로덕트 팀이 AI 에이전트에 시스템 접근 권한을 부여할 때, '무엇을 할 수 있는가'만큼 '무엇을 하지 못하게 막을 것인가'를 설계에 포함해야 한다는 시사점을 줍니다.
+스니펫 기반 정보이므로 세부 기술 내용은 원문에서 다시 확인하시길 권장합니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">랜섬웨어</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">AI타임스 · 2026. 07. 08</div>
+        <div class="card-title">AI가 스스로 계획하고 실행한 첫 랜섬웨어 '제이드 퍼퍼' 등장</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260707102607" target="_blank"
+       data-category="AI · 노동시장"
+       data-summary="샘 올트먼, 다리오 아모데이, 저커버그, 앤디 재시 등 빅테크 CEO들이 AI의 일자리 대체보다 생산성 향상과 신규 고용 가능성을 강조하는 쪽으로 메시지를 바꾸고 있습니다. 여론 악화가 배경으로 지목됩니다."
+       data-points="아모데이 '일자리 대체 경고는 대응 시간을 주려는 것' 해명|저커버그 '생산성이 자동화보다 빠르면 일자리는 늘어날 것'|AI 혁신 속도에 대한 여론 양극화가 메시지 전환의 배경"
+       data-designer="AI 도구 도입을 설득할 때 '대체'보다 '생산성 향상'을 프레이밍하는 흐름이 실무 커뮤니케이션에도 번질 수 있습니다. 다만 실제 고용 리스크가 사라진 것은 아니라는 점은 유의해야 합니다."
+       data-impact-score="3"
+       data-recommend="AI 도입 메시지 설계 시 참고 · 저장 추천"
+       data-comment="CEO들의 발언 톤 변화는 실제 기술 변화라기보다 여론 관리에 가깝습니다. &quot;AI가 일자리를 없앤다&quot;는 공포가 규제·인재 이탈로 이어질 수 있다는 우려가 읽힙니다.
+프로덕트팀 입장에서는 AI 기능을 소개할 때 이런 메시지 전환의 맥락을 참고하면 좋습니다. 다만 아모데이도 &quot;고용 리스크는 여전하다&quot;고 인정한 만큼, 낙관적 프레이밍만 따라가긴 어렵습니다.
+스니펫 기반 요약이니 발언 원문과 맥락은 기사에서 다시 확인하세요.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">일자리</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 07</div>
+        <div class="card-title">'AI가 일자리 없앤다더니'…빅테크 CEO들, 돌연 말 바꾼 이유</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://news.un.org/en/story/2026/07/1167873" target="_blank"
+       data-category="AI · Policy"
+       data-summary="UN Secretary-General António Guterres called for far-reaching global AI controls at the inaugural UN Global Dialogue on AI Governance in Geneva, demanding an international ban on lethal autonomous weapons systems ('killer robots') and an AI Child Safety Pledge." data-summary-kr="안토니우 구테흐스 UN 사무총장이 제네바에서 열린 첫 UN AI 거버넌스 글로벌 대화에서 광범위한 국제 AI 통제를 촉구했습니다. 인간의 통제 없이 표적을 선택하는 '킬러로봇'을 국제법으로 금지해야 한다고 강조했습니다."
+       data-designer="A reminder that AI governance debates now directly touch weapons and child safety, not just productivity tools — worth tracking if you work on AI policy or trust & safety features." data-designer-kr="AI 거버넌스 논의가 생산성 도구를 넘어 무기·아동안전 문제로 확장되고 있다는 신호입니다. 정책이나 신뢰·안전(Trust &amp; Safety) 기능을 다루는 실무자라면 주시할 필요가 있습니다."
+       data-points="Call to ban lethal autonomous weapon systems under international law|Push for an AI Child Safety Pledge to protect children online|Demand for equitable AI access for billions still offline" data-points-kr="인간 통제 없는 살상무기시스템(킬러로봇) 국제법 금지 촉구|아동 보호를 위한 AI 아동안전서약 제안|아직 인터넷에 접근하지 못하는 수십억 인구를 위한 공평한 AI 접근 요구"
+       data-impact-score="3"
+       data-recommend="Background reading for AI policy watchers · Optional" data-recommend-kr="AI 정책 동향 참고용 · 선택"
+       data-comment="Guterres's language was unusually blunt for a UN address, calling autonomous weapons &quot;morally repugnant&quot; and demanding a binding ban. It signals momentum is building beyond voluntary pledges toward treaty-level action.
+For teams building AI products, this is a reminder that public trust in AI is increasingly tied to how the technology is used in high-stakes, high-harm contexts, not just everyday tools.
+This card is based on search snippets - please verify exact quotes and dates against the original UN News article before citing it." data-comment-kr="구테흐스 총장의 발언은 UN 연설치고 이례적으로 직설적이었습니다. 자율살상무기를 &quot;도덕적으로 혐오스럽다&quot;고 규정하며 구속력 있는 금지를 요구한 점이 눈에 띕니다.
+AI 제품을 만드는 팀 입장에서는, 대중의 AI 신뢰가 일상 도구뿐 아니라 고위험 상황에서의 활용 방식에도 크게 좌우된다는 점을 시사합니다.
+이 카드는 검색 스니펫 기반으로 작성되었으니, 정확한 인용문과 날짜는 원문에서 다시 확인하시길 권장합니다."
+       data-title-en="From AI to 'killer robots': UN chief issues urgent governance call">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">킬러로봇</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">UN News · 2026. 07. 06</div>
+        <div class="card-title">구테흐스 UN 사무총장 '킬러로봇, 국제법으로 금지해야'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents/" target="_blank"
+       data-category="AI · Business"
+       data-summary="Vercel CEO Guillermo Rauch argues the AI stack should be modular, not locked to a single lab, as the company sees 6 million deployments a day and over 1 trillion tokens flowing through its AI gateway daily." data-summary-kr="버셀(Vercel) CEO 기예르모 라우흐가 AI 스택은 특정 모델 기업에 종속되지 않고 모듈화되어야 한다고 주장합니다. 버셀은 하루 600만 건의 배포와 1조 토큰 이상이 오가는 AI 게이트웨이를 운영 중입니다."
+       data-designer="Useful context for anyone architecting AI features — betting on one model provider is increasingly seen as a liability, not a strategy." data-designer-kr="AI 기능을 설계하는 실무자에게 유용한 맥락입니다. 하나의 모델 기업에만 의존하는 전략이 점점 리스크로 여겨지고 있습니다."
+       data-points="Shift from single-lab bets to plug-and-play AI stacks|Vercel's Eve framework and Sandbox for agent safety controls|Rauch's ambition to be 'the AWS of this generation'" data-points-kr="단일 모델사에 올인하던 흐름에서 조합형 AI 스택으로 전환|에이전트 안전 제어를 위한 버셀의 'Eve' 프레임워크와 샌드박스|'이 시대의 AWS가 되겠다'는 라우흐의 포부"
+       data-impact-score="3"
+       data-recommend="Worth a read for AI infrastructure planners · Save for reference" data-recommend-kr="AI 인프라 기획자 필독 · 참고 저장 추천"
+       data-comment="Rauch's framing echoes a broader industry shift: 2025's &quot;pick one lab and build everything on it&quot; mentality is giving way to composable stacks where model, harness, data, sandbox and gateway are separate, swappable layers.
+The Sandbox concept - controlling exactly what data an agent can access or export - is a practical pattern worth borrowing even outside Vercel's ecosystem.
+Snippet-based summary - check the full interview for direct quotes before referencing specifics." data-comment-kr="라우흐의 주장은 업계 전반의 흐름 변화를 보여줍니다. &quot;하나의 모델사에 올인&quot;하던 2025년식 접근이, 모델·하네스·데이터·샌드박스·게이트웨이를 각각 교체 가능한 레이어로 분리하는 방식으로 바뀌고 있습니다.
+에이전트가 접근·반출할 수 있는 데이터를 통제하는 '샌드박스' 개념은 버셀 생태계 밖에서도 참고할 만한 실용적인 패턴입니다.
+스니펫 기반 요약이므로 구체적인 인용은 원문 인터뷰에서 다시 확인하시길 권장합니다."
+       data-title-en="Vercel CEO Guillermo Rauch on the fight to split off models from agents">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">AI스택</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 06</div>
+        <div class="card-title">버셀 CEO '이제는 모델과 에이전트를 분리할 때'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.dezeen.com/2026/07/07/office-to-residential-conversion-building-at-risk-of-collapse-in-new-york/" target="_blank"
+       data-category="Design · Architecture"
+       data-summary="A Gensler-designed office-to-residential conversion in Midtown Manhattan, the city's largest such project, is at risk of collapse after support columns were found buckling on the 21st floor of the former Pfizer headquarters tower." data-summary-kr="게슬러(Gensler)가 설계한 미드타운 맨해튼의 오피스-주거 전환 프로젝트가 붕괴 위기에 놓였습니다. 옛 화이자 본사 건물 21층에서 지지 기둥이 휘어지는 것이 발견되며 대규모 대피가 이뤄졌습니다."
+       data-designer="A stark reminder that adaptive reuse at scale carries real structural risk — value engineering and phased construction sequencing deserve as much scrutiny as the design concept itself." data-designer-kr="대규모 리모델링(어댑티브 리유즈)에도 구조적 리스크가 따른다는 냉정한 사례입니다. 디자인 콘셉트 못지않게 시공 순서와 구조 검토도 세심하게 다뤄야 합니다."
+       data-points="City's largest office-to-residential conversion project at risk|Columns buckling and upper floors sagging on the 21st floor|Project plans 1,600 apartments, completion targeted for 2027" data-points-kr="뉴욕 최대 규모 오피스-주거 전환 프로젝트가 위기에 처함|21층 지지 기둥 휘어짐과 상층부 처짐 현상 발견|1,600세대 규모, 2027년 완공 목표였던 프로젝트"
+       data-impact-score="3"
+       data-recommend="Cautionary case study for adaptive reuse projects · Save for reference" data-recommend-kr="어댑티브 리유즈 프로젝트 참고 사례 · 저장 추천"
+       data-comment="Office-to-residential conversions have been championed as a solution to both empty office towers and housing shortages, but this incident is a reminder that adding nearly double the floors to an existing tower is structurally non-trivial.
+Worth watching how city officials and Gensler respond - the outcome could shape how ambitiously future conversion projects are engineered.
+Snippet-based summary - verify structural details and current status from the original article and follow-up coverage." data-comment-kr="오피스-주거 전환은 공실 오피스와 주택 부족 문제를 동시에 해결할 방안으로 주목받아 왔지만, 이번 사건은 기존 타워에 층수를 거의 두 배로 늘리는 작업이 구조적으로 결코 간단하지 않음을 보여줍니다.
+뉴욕시와 게슬러가 어떻게 대응하는지가 앞으로 전환 프로젝트들이 얼마나 공격적으로 설계될지에 영향을 줄 수 있어 지켜볼 만합니다.
+스니펫 기반 요약이니 구조적 세부사항과 현재 상황은 원문과 후속 보도에서 다시 확인하시길 권장합니다."
+       data-title-en="Office-to-residential development reportedly collapsing in New York">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">붕괴위기</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 07</div>
+        <div class="card-title">게슬러가 설계한 뉴욕 오피스-주거 전환 건물, 붕괴 위기</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/07/the-8-best-tech-gadgets-of-july-2026/" target="_blank"
+       data-category="Design · Product"
+       data-summary="Yanko Design rounds up July 2026's standout gadgets, including a 6mm-thick magnetic power bank and battery-free amplifying speakers, framing the month's design philosophy as restraint over feature-stacking." data-summary-kr="얀코디자인이 2026년 7월 주목할 만한 가젯들을 정리했습니다. 두께 6mm의 마그네틱 보조배터리와 전원 없이 작동하는 증폭 스피커 등이 포함되며, '기능을 더하기보다 덜어내는' 디자인 철학을 강조합니다."
+       data-designer="A useful snapshot of where consumer hardware design is heading — fewer features, sharper single-purpose execution, and materials doing more work than electronics." data-designer-kr="소비자 하드웨어 디자인의 방향을 보여주는 스냅샷입니다. 기능을 늘리기보다 하나의 목적에 집중하고, 전자장치보다 소재가 더 많은 역할을 하는 흐름입니다."
+       data-points="Xiaomi's 6mm, 98g magnetic power bank with silicon-carbon battery|Battery-free passive acoustic speakers with no charging or pairing|July's theme: restraint and single-purpose clarity over feature creep" data-points-kr="실리콘-카본 배터리 탑재, 두께 6mm·98g 샤오미 마그네틱 보조배터리|충전·페어링이 필요 없는 배터리 프리 증폭 스피커|기능 추가보다 절제와 목적성을 강조한 7월의 디자인 테마"
+       data-impact-score="2"
+       data-recommend="Good mood-board and reference material · Save for inspiration" data-recommend-kr="무드보드·레퍼런스 자료로 유용 · 영감 저장 추천"
+       data-comment="Roundups like this are a quick way to gauge where industrial design trends are heading without reading a dozen individual reviews.
+The recurring theme this month - restraint, single-purpose objects, materials-first thinking - lines up with what other design outlets are also flagging for 2026.
+Snippet-based summary - the full list and product details should be checked in the original article." data-comment-kr="이런 라운드업은 여러 개별 리뷰를 다 읽지 않고도 산업 디자인 트렌드의 방향을 빠르게 파악할 수 있는 방법입니다.
+이번 달 반복적으로 등장하는 주제 - 절제, 단일 목적성, 소재 중심 사고 - 는 다른 디자인 매체들이 2026년 트렌드로 꼽는 흐름과도 맞닿아 있습니다.
+스니펫 기반 요약이므로 전체 목록과 제품 세부사항은 원문에서 다시 확인하시길 권장합니다."
+       data-title-en="The 8 Best Tech Gadgets of July 2026">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">가젯</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 07</div>
+        <div class="card-title">얀코디자인이 꼽은 2026년 7월 최고의 테크 가젯 8</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.archdaily.com/1042807/architectures-of-movement-archdailys-july-editorial-focus" target="_blank"
+       data-category="Design · Architecture"
+       data-summary="ArchDaily's July editorial focus, 'Architectures of Movement,' examines how mobility, migration and temporary infrastructure — from the Maha Kumbh Mela's vanishing pontoon cities to refugee camps — reshape architecture's relationship to territory and belonging." data-summary-kr="아크데일리의 7월 편집 주제 '이동의 건축'은 마하 쿰브 멜라의 사라지는 부교 도시부터 난민 캠프까지, 이동성과 임시 인프라가 영토·소속의 개념을 어떻게 재구성하는지를 다룹니다."
+       data-designer="A rich framework for thinking about temporary and transient spatial design — relevant well beyond architecture, for anyone designing systems meant to appear, scale and disappear." data-designer-kr="임시적이고 일시적인 공간 설계를 사고하는 데 풍부한 틀을 제공합니다. 등장했다가 확장되고 사라지는 시스템을 설계하는 사람이라면 건축을 넘어 참고할 만합니다."
+       data-points="Maha Kumbh Mela's temporary city for 400 million pilgrims, then dismantled|Theme spans border architecture, refugee camps, co-living and migration|Movement framed as a defining spatial problem of the century" data-points-kr="4억 명이 모였다가 완전히 해체되는 마하 쿰브 멜라의 임시 도시|국경 건축·난민캠프·코리빙·이주를 아우르는 주제|이동성을 '이 시대를 정의하는 공간 문제'로 규정"
+       data-impact-score="2"
+       data-recommend="Thought-provoking read for spatial and systems thinkers · Save for reference" data-recommend-kr="공간·시스템 사고를 하는 이들에게 추천 · 참고 저장 권장"
+       data-comment="This is less a news item than a curatorial thesis, but it's a good prompt for reframing &quot;temporary architecture&quot; as infrastructure with its own design discipline, not an afterthought to permanent buildings.
+The Kumbh Mela example - a city larger than most national capitals, built and fully dismantled within weeks - is a striking anchor for the whole month's coverage.
+Snippet-based summary - the full editorial series will unfold over the month, so check ArchDaily directly for the complete set of articles." data-comment-kr="이 글은 뉴스보다는 큐레이션적 논지에 가깝지만, '임시 건축'을 영구 건축물의 부차적 개념이 아니라 그 자체의 설계 원리를 가진 인프라로 재조명한다는 점에서 흥미롭습니다.
+대부분의 국가 수도보다 큰 도시가 몇 주 만에 세워졌다가 완전히 해체되는 마하 쿰브 멜라 사례는 이번 달 전체 기획의 강렬한 출발점입니다.
+스니펫 기반 요약이며, 이번 달 편집 시리즈는 계속 이어질 예정이니 전체 글은 아크데일리에서 직접 확인하시길 권장합니다."
+       data-title-en="Architectures of Movement: ArchDaily's July Editorial Focus">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">이동성</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 07. 01</div>
+        <div class="card-title">아크데일리 7월 편집 주제 '이동의 건축' — 땅, 국경, 소속의 정치학</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.core77.com/posts/144609/Core77-Weekly-Roundup-6-29-26-to-7-2-26" target="_blank"
+       data-category="Design · Industrial Design"
+       data-summary="Core77's weekly design roundup highlights the Swerv, a three-wheeled electric trike built purely for a disorienting, thrilling ride, designed by a recent Imperial College London graduate who has since commercialized it." data-summary-kr="코어77의 주간 디자인 라운드업이 오직 짜릿한 주행감을 위해 만들어진 세 바퀴 전동 트라이크 '스워브'를 소개합니다. 임페리얼 칼리지 런던 졸업생이 설계해 이후 직접 상용화한 제품입니다."
+       data-designer="A good example of designing for pure emotional experience rather than utility — worth studying how an unconventional riding position alone becomes the product's entire value proposition." data-designer-kr="실용성이 아닌 순수한 감정적 경험을 위해 설계한 좋은 사례입니다. 특이한 라이딩 자세 하나만으로 제품의 핵심 가치를 만들어낸 방식을 살펴볼 만합니다."
+       data-points="Swerv trike designed purely to disorient and thrill the rider|Designer Kerim Taskin commercialized it via his company Sweren|Sold in street-legal, off-road and kids' versions, plus track sessions" data-points-kr="오직 짜릿함과 방향감각 교란을 위해 설계된 트라이크 '스워브'|디자이너 케림 타스킨이 자신의 회사 스웨렌을 통해 상용화|도로 주행용·오프로드용·키즈용 버전과 트랙 체험 세션으로 판매"
+       data-impact-score="2"
+       data-recommend="Fun reference for experience-driven product design · Optional" data-recommend-kr="경험 중심 제품 디자인 레퍼런스로 재미있음 · 선택"
+       data-comment="Most product design coverage centers on solving a functional problem, so it's refreshing to see a project whose entire pitch is &quot;this will make you feel something different.&quot;
+The path from graduate thesis project to a company selling multiple commercial variants is also a nice case study in productizing a one-off concept.
+Snippet-based summary - check the full roundup for the other projects it covers that week." data-comment-kr="대부분의 제품 디자인 기사는 기능적 문제 해결에 초점을 맞추는데, &quot;그저 다른 감각을 느끼게 해주겠다&quot;는 것이 전체 제안인 프로젝트를 보는 건 신선합니다.
+졸업 프로젝트에서 여러 버전을 판매하는 회사로 이어진 과정 역시 일회성 콘셉트를 제품화하는 좋은 사례입니다.
+스니펫 기반 요약이므로, 해당 주에 다룬 다른 프로젝트들도 원문 라운드업에서 확인하시길 권장합니다."
+       data-title-en="Core77 Weekly Roundup (6-29-26 to 7-2-26)">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">라운드업</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Core77 · 2026. 07. 02</div>
+        <div class="card-title">코어77 주간 라운드업 — 스릴을 위해서만 존재하는 세 바퀴 탈것 '스워브'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4" autocomplete="new-password">
+    </div>
+    <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
+    <div class="gb-row"><span></span><span class="gb-count" id="gbCount">0 / 200</span></div>
+    <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
