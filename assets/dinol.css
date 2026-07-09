@@ -554,14 +554,14 @@
     border-color: #3c3c58;
   }
 
-  .drawer-cta:hover { background: #26263a; border-color: #3a3a52; }
+  .drawer-cta:hover { background: #34345a; border-color: #3a3a52; }
   .drawer-cta {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 48px;
     flex: 7;
-    background: #1e1e2e;
+    background: #2c2c48;
     border: 1px solid #2c2c48;
     color: #fff;
     text-align: center;
@@ -617,6 +617,8 @@
     transition: background-color 9999s ease-in-out 0s;
   }
   .gb-nick:focus, .gb-pw:focus, .gb-content:focus { outline: none; border-color: #484848; }
+  /* 브라우저 기본 비밀번호 눈/지우기 아이콘 숨김 (Edge 등) */
+  input[type="password"]::-ms-reveal, input[type="password"]::-ms-clear { display: none; }
   .gb-content-wrap { position: relative; }
   .gb-content { min-height: 96px; resize: vertical; line-height: 1.6; padding-bottom: 30px; }
   .gb-count { position: absolute; right: 14px; bottom: 12px; font-size: 11px; color: #6a6a6a; pointer-events: none; }
@@ -635,11 +637,11 @@
     font-size: 15px; font-weight: 600; cursor: pointer;
     transition: background .15s, color .15s, opacity .15s;
   }
-  .gb-submit:not(:disabled) { background: #3D3894; color: #FF7F3E; }
-  .gb-submit:not(:disabled):hover { background: #47419f; }
+  .gb-submit:not(:disabled) { background: #FF7F3E; color: #ffffff; }
+  .gb-submit:not(:disabled):hover { background: #ff9560; }
   .gb-submit:disabled { background: #2a2a32; color: #666; cursor: not-allowed; }
-  .gb-submit.active { background: #3D3894; color: #FF7F3E; cursor: pointer; }
-  .gb-submit.active:hover { background: #47419f; }
+  .gb-submit.active { background: #FF7F3E; color: #ffffff; cursor: pointer; }
+  .gb-submit.active:hover { background: #ff9560; }
   .gb-list { display: flex; flex-direction: column; border-top: 1px solid #262630; padding-top: 4px; }
   /* 리스트형 — 박스 제거, 라인 구분 */
   .gb-entry { background: none; border: none; border-radius: 0; padding: 13px 2px; border-bottom: 1px solid #262630; }
@@ -666,7 +668,7 @@
     .guestbook { margin-top: 48px; }
     .gb-header h2 { font-size: 32px; letter-spacing: 1px; }
     .gb-namerow .gb-pw { flex: 0 0 130px; width: 130px; }
-    .gb-nick, .gb-pw, .gb-content { font-size: 15px; }
+    .gb-nick, .gb-pw, .gb-content { font-size: 16px; }
     .gb-entry-nick { font-size: 15px; }
     .gb-entry-body { font-size: 15px; }
     .gb-entry-time { font-size: 12px; }
@@ -737,8 +739,8 @@
   .gb-modal-btns button { flex: 1; border-radius: 10px; font-size: 16px; padding: 12px; min-height: 48px; cursor: pointer; font-family: inherit; font-weight: 500; }
   .gb-modal-cancel { background: #2a2a2c; border: none; color: #b0b0bc; }
   .gb-modal-cancel:hover { background: #2c2c3a; }
-  .gb-modal-ok { background: #c9ccd4; border: none; color: #191919; font-weight: 700; cursor: pointer; transition: background .15s; }
-  .gb-modal-ok:not(:disabled):hover { background: #d9dce4; }
+  .gb-modal-ok { background: #FF7F3E; border: none; color: #ffffff; font-weight: 700; cursor: pointer; transition: background .15s; }
+  .gb-modal-ok:not(:disabled):hover { background: #ff9560; }
   .gb-modal-ok:disabled { background: #2a2a2c; color: #666; cursor: not-allowed; }
 
   /* ─────────── 디놀 톡톡: 옵션(⋯) 메뉴 · 댓글 (2026-07-07) ─────────── */
@@ -820,10 +822,11 @@
   @media (max-width: 580px) {
     .gb-kebab { padding: 12px; margin: -12px 0 -12px auto; }
     .gb-comment .gb-kebab { padding: 11px; margin: -11px 0 -11px auto; }
-    .gb-csmile { padding: 9px; }
-    .gb-csmile svg { width: 24px; height: 24px; }
+    .gb-csmile, .gb-tsmile { padding: 11px; }
+    .gb-csmile svg, .gb-tsmile svg { width: 24px; height: 24px; }
+    .gb-cedit-text { font-size: 16px; }
     .gb-ccancel, .gb-csubmit { font-size: 15px; padding: 10px 14px; }
-    .gb-cnick, .gb-cpw, .gb-ccontent { font-size: 15px; }
+    .gb-cnick, .gb-cpw, .gb-ccontent { font-size: 16px; }
     .gb-cwrite, .gb-ctoggle { font-size: 13px; padding: 7px 9px; }
     .gb-comment .gb-entry-nick { font-size: 13px; }
     .gb-comment .gb-entry-body { font-size: 14px; }
