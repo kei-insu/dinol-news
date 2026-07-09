@@ -169,7 +169,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
 
   const EMOJI = ["😀","😃","😄","😊","🙂","😎","🤓","🧐","🤩","😌","🥰","😉","😆","🤗","😙","🙃","😇","😺","🤠","😸"];
   function avatar(nk) { let h = 0; for (let i = 0; i < nk.length; i++) h = (h * 31 + nk.charCodeAt(i)) >>> 0; return EMOJI[h % EMOJI.length]; }
-  const CEMOJI = ["😀","😃","😄","😁","😆","😊","🙂","😉","😍","🥰","😎","🤩","😌","😂","🤣","🥹","😮","🤔","🙄","😅","😳","🥺","😭","😴","👍","👏","🙌","🙏","👌","💪","🤙","👀","❤️","💜","💙","🔥","✨","🎉","⭐","💯"];
+  const CEMOJI = ["😀","😃","😄","😁","😆","😊","🙂","😉","😍","🥰","😎","🤩","😌","😙","😇","🥳","😂","🤣","🥹","😝","😜","🤪","😢","😭","🥺","😳","😮","🤔","🙄","😅","😴","😤","👍","👏","🙌","🙏","👌","💪","🤙","👀","🤗","🙈","❤️","💜","💙","🔥","✨","🎉"];
 
   function digitsOnly(el, max = 4) { el && el.addEventListener("input", () => { el.value = el.value.replace(/\D/g, "").slice(0, max); }); }
   digitsOnly(pw, 4);

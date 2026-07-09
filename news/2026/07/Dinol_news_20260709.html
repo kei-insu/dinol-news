@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 09</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 9, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.aitimes.com/news/articleView.html?idxno=212555" target="_blank"
+       data-category="AI · 정책 · 산업"
+       data-summary="트럼프 행정부가 안보 우려로 미뤄온 오픈AI 'GPT-5.6' 시리즈(솔·테라·루나)의 전면 출시를 승인했다. 미 상무부 산하 AI표준혁신센터의 추가 테스트를 거쳐 9일(현지시간) 일반 공개된다."
+       data-points="상무부 AI표준혁신센터의 추가 안전성 테스트 통과|플래그십 '솔'과 경량 모델 '테라'·'루나' 동시 출시|6월 AI 사이버보안 행정명령 이후 첫 대형 모델 출시 사례"
+       data-designer="정부 승인 절차가 모델 출시 일정에 직접 개입하는 사례가 늘면서, AI 기능을 제품에 통합할 때 출시 지연 리스크를 로드맵에 반영할 필요가 커졌습니다."
+       data-impact-score="3"
+       data-recommend="프런티어 모델 의존 제품 기획자 주시 필요 · 출시 일정 캘린더에 기록 추천"
+       data-comment="이번 승인은 단순한 제품 출시 뉴스가 아니라, 프런티어 AI 모델의 배포 자체가 정부 심사를 통과해야 하는 절차로 굳어지고 있다는 신호입니다. 6월 사이버보안 행정명령 이후 첫 대형 사례라는 점에서 앞으로 유사한 검증 절차가 반복될 가능성이 높습니다.
+디자이너나 프로덕트팀 입장에서는 '최신 모델이 나오면 바로 붙인다'는 전제가 더 이상 안전하지 않다는 뜻이기도 합니다. 정부 심사 일정에 따라 특정 국가·지역에서 기능이 늦게 열리는 상황을 미리 가정하고 로드맵을 짜는 편이 좋습니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">정식출시</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">AI타임스 · 2026. 07. 08</div>
+        <div class="card-title">미국 정부, 오픈AI 'GPT-5.6' 규제 풀었다…9일 글로벌 정식 출시</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.inven.co.kr/webzine/news/?news=318233" target="_blank"
+       data-category="AI · 게임 산업"
+       data-summary="NC AI 김민재 CTO가 ICML 부대행사 'AI for Games'에서 게임 제작·운영에서 AI의 현실을 점검했다. 텍스트·이미지 생성 AI가 기획·콘셉트 단계를 넘어 실제 에셋 제작 단계로 빠르게 확장 중이라고 밝혔다."
+       data-points="생성형 AI가 기획·콘셉트 디자인 단계에서 핵심 제작 단계로 확장|과대광고와 실제 현업 적용 사이 간극을 짚음|AI만으로는 '게임의 재미' 자체를 만들 수 없다는 진단"
+       data-designer="게임 기획·아트 파이프라인에 AI를 들이는 실무자라면, 에셋 생성 자동화와 '재미'를 만드는 창작 판단을 분리해서 설계하는 게 중요하다는 인사이트입니다."
+       data-impact-score="3"
+       data-recommend="게임업계 AI 파이프라인 담당자 참고 · 기획팀 공유 추천"
+       data-comment="게임 업계 안에서 나온 발언이라 더 신뢰가 갑니다. AI를 활용한 에셋 생성 자동화가 어디까지 왔는지, 그리고 어디서부터는 여전히 사람의 판단이 필요한지를 현업 CTO가 직접 구분해준 사례입니다.
+다른 콘텐츠 산업에도 그대로 적용되는 이야기입니다. 생성 도구가 반복 작업을 줄여주는 것과, 결과물의 '재미'나 '완성도'를 결정하는 것은 다른 층위의 일이라는 점을 다시 확인시켜 줍니다.">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">게임AI</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">인벤 · 2026. 07. 06</div>
+        <div class="card-title">NC AI 김민재 CTO "AI만으로 게임 재미 못 만든다"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.techtimes.com/articles/319766/20260706/itu-ai-summit-day-zero-what-new-44-member-un-commission-can-cannot-do.htm" target="_blank"
+       data-category="AI · Policy · Global Governance"
+       data-summary="Ahead of its first meeting in Geneva, the newly formed 44-member UN AI for Good Global Commission, co-chaired by Marc Benioff and Paul Kagame and including the CEOs of Nvidia, Amazon and Microsoft, is a framing and priority-setting body without formal decision-making power." data-summary-kr="마크 베니오프와 폴 카가메가 공동 의장을 맡고 엔비디아·아마존·마이크로소프트 CEO가 참여하는 44개국 규모의 UN AI 거버넌스 위원회가 제네바 첫 회의를 앞두고 있다. 다만 이번 회의는 의제 설정 성격이며 공식 의사결정 권한은 없다."
+       data-designer="A reminder that 'AI governance' headlines often mean agenda-setting, not binding rules yet, useful context before assuming new global standards are imminent." data-designer-kr="'AI 거버넌스' 헤드라인이 아직은 구속력 있는 규칙이 아니라 의제 설정 단계라는 점을 짚어주는 기사입니다. 글로벌 규제가 임박했다고 성급히 판단하지 않는 데 참고할 만합니다."
+       data-impact-score="2"
+       data-points="44 members including tech CEOs and heads of state|Co-chaired by Salesforce's Benioff and Rwanda's Kagame|First session is framing, not decision-making" data-points-kr="테크 CEO와 정상들을 포함한 44인 구성|세일즈포스 베니오프·르완다 카가메 공동 의장|첫 회의는 의사결정이 아닌 의제 설정 성격"
+       data-recommend="Background reading for policy watchers · Optional" data-recommend-kr="정책 동향 관찰용 배경 참고 · 선택"
+       data-comment="Useful counterweight to the 'UN launches AI governance' headlines that dominated coverage this week. The actual mandate is narrower: infrastructure, access gaps, and governance pathways, discussed rather than decided.
+Worth bookmarking as a baseline before the commission's next full session, so future coverage of 'decisions' can be checked against what this first meeting actually authorized." data-comment-kr="이번 주 쏟아진 'UN, AI 거버넌스 출범' 류의 헤드라인에 균형을 잡아주는 기사입니다. 실제 위임 범위는 인프라·접근성 격차·거버넌스 경로를 논의하는 수준이며, 아직 결정된 것은 없습니다.
+위원회의 다음 정기 회의 전에 기준점으로 저장해두면, 이후 '결정됐다'는 보도가 나올 때 실제 이번 첫 회의가 위임한 범위와 비교해볼 수 있습니다."
+       data-title-en="ITU AI Summit Day Zero: What the New 44-Member UN Commission Can and Cannot Do" data-title-kr="UN AI 거버넌스 위원회 출범, 44개국 참여에도 '결정권'은 없다">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">거버넌스</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Tech Times · 2026. 07. 06</div>
+        <div class="card-title">UN AI 거버넌스 위원회 출범, 44개국 참여에도 '결정권'은 없다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/08/these-ai-startups-are-growing-revenue-at-faster-and-faster-rates/" target="_blank"
+       data-category="AI · Business · Startups"
+       data-summary="TechCrunch rounds up AI startups whose annual recurring revenue is compounding faster with each milestone, including Anthropic surpassing $47B in revenue run rate, Sierra, and Glean crossing $300M ARR in six months." data-summary-kr="테크크런치가 마일스톤을 지날수록 성장 속도가 더 빨라지는 AI 스타트업들을 정리했다. 앤트로픽은 매출 실행률 470억 달러를 돌파했고, 시에라·글린 등도 ARR 증가 속도가 빨라지고 있다."
+       data-designer="A quick gut-check on which AI product categories (customer service agents, enterprise search, legal software) are converting hype into recurring revenue, useful signal for prioritizing AI-feature bets." data-designer-kr="어떤 AI 제품 카테고리(고객 서비스 에이전트, 엔터프라이즈 검색, 법률 소프트웨어)가 실제 반복 매출로 이어지고 있는지 가늠할 수 있는 자료입니다. AI 기능 우선순위를 정할 때 참고할 만합니다."
+       data-impact-score="3"
+       data-points="Anthropic crossed $47B revenue run rate in May|Sierra added $100M ARR in two quarters|Glean grew from $200M to $300M ARR in six months" data-points-kr="앤트로픽, 5월 매출 실행률 470억 달러 돌파|시에라, 두 분기 만에 ARR 1억 달러 추가|글린, 6개월 만에 ARR 2억→3억 달러 성장"
+       data-recommend="Good reference for AI product prioritization · Save" data-recommend-kr="AI 제품 우선순위 판단에 참고 · 저장 추천"
+       data-comment="The headline number worth remembering here isn't the size of these companies, it's the acceleration: each milestone is taking less time to reach than the last one. That's a different signal than raw revenue size.
+For teams pitching AI features internally, this is a useful reference point for what 'real' AI product-market fit looks like in revenue terms, as opposed to usage or engagement metrics alone." data-comment-kr="여기서 기억해둘 숫자는 회사들의 규모가 아니라 '가속도'입니다. 마일스톤 하나하나를 도달하는 데 걸리는 시간이 계속 짧아지고 있다는 점이 핵심입니다.
+내부에서 AI 기능을 제안할 때, 사용량·인게이지먼트 지표만이 아니라 매출 기준으로 '진짜 PMF'가 어떤 모습인지 참고하기 좋은 자료입니다."
+       data-title-en="These AI startups are growing revenue at faster and faster rates" data-title-kr="AI 스타트업들, 매출 성장 속도 갈수록 빨라진다">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">매출성장</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 08</div>
+        <div class="card-title">AI 스타트업들, 매출 성장 속도 갈수록 빨라진다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.archdaily.com/1042807/architectures-of-movement-archdailys-july-editorial-focus" target="_blank"
+       data-category="Design · Architecture · Editorial"
+       data-summary="ArchDaily announces 'Architectures of Movement' as its July 2026 editorial focus, exploring how migration, mobility, border architecture and temporary spaces reshape the field's relationship to territory, ownership and identity." data-summary-kr="아키데일리가 2026년 7월 편집 주제로 '움직임의 건축'을 발표했다. 이주와 이동성, 국경 건축, 임시 공간이 영토·소유·정체성에 대한 건축의 관계를 어떻게 재구성하는지 다룬다."
+       data-designer="A useful lens for spatial and product designers thinking beyond fixed, permanent solutions, worth following for case studies on temporary and adaptive design over the month." data-designer-kr="고정되고 영구적인 해법을 넘어서는 공간·제품 디자인을 고민할 때 참고할 만한 시선입니다. 한 달 동안 이어질 임시·적응형 디자인 사례들을 팔로우해볼 만합니다."
+       data-impact-score="2"
+       data-points="Focus spans migration, mobility and border architecture|Explores temporary and adaptive spatial typologies|Frames movement as reshaping territory and identity" data-points-kr="이주·이동성·국경 건축을 아우르는 주제|임시적·적응형 공간 유형 탐구|움직임이 영토와 정체성을 재구성하는 방식 조명"
+       data-recommend="Follow ArchDaily's July series · Bookmark" data-recommend-kr="아키데일리 7월 연재 팔로우 추천 · 북마크"
+       data-comment="Editorial-focus pieces like this are worth tracking less for the announcement itself and more as a preview of a month's worth of case studies to come. 'Movement' as a lens is broad enough to cover everything from refugee shelters to nomadic furniture.
+Worth revisiting later in July once the actual case studies publish, this piece is really just the table of contents." data-comment-kr="이런 편집 주제 발표 글은 그 자체보다, 한 달간 이어질 사례 연재의 예고편으로 보는 게 더 유용합니다. '움직임'이라는 렌즈는 난민 쉼터부터 유목적 가구까지 폭넓게 아우를 수 있는 주제입니다.
+7월 중 실제 사례 기사들이 올라온 뒤 다시 확인해볼 가치가 있습니다. 이 글 자체는 목차에 가깝습니다."
+       data-title-en="Architectures of Movement: ArchDaily's July Editorial Focus" data-title-kr="아키데일리 7월 편집 주제 '움직임의 건축', 이주·경계·유목적 삶을 다루다">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">움직임</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 07. 01</div>
+        <div class="card-title">아키데일리 7월 편집 주제 '움직임의 건축', 이주·경계·유목적 삶을 다루다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/08/the-8-best-edc-designs-of-july-2026/" target="_blank"
+       data-category="Design · Product · EDC"
+       data-summary="Yanko Design rounds up eight standout everyday-carry (EDC) designs for July 2026, each solving a specific carrying problem within the smallest footprint its category allows." data-summary-kr="얀코디자인이 2026년 7월 주목할 만한 EDC(일상 휴대용품) 디자인 8가지를 선정했다. 각 제품은 카테고리별 최소 부피 안에서 구체적인 휴대 문제를 해결하는 데 초점을 맞췄다."
+       data-designer="A compact reference for form-factor thinking, how much function can be compressed into a pocket-sized object, useful inspiration for product and industrial designers." data-designer-kr="얼마나 많은 기능을 주머니 크기 안에 압축할 수 있는지 보여주는 폼팩터 사례 모음입니다. 제품·산업 디자이너에게 좋은 영감이 될 만합니다."
+       data-impact-score="2"
+       data-points="Eight EDC products picked for July 2026|Each designed around real carrying constraints|Spans power banks to modular tools" data-points-kr="2026년 7월 선정 EDC 제품 8가지|실제 휴대 제약을 기준으로 설계된 제품들|보조배터리부터 모듈형 도구까지 다양"
+       data-recommend="Good mood-board source for product designers · Save" data-recommend-kr="제품 디자이너 무드보드 소스로 추천 · 저장"
+       data-comment="EDC roundups are a reliable pulse-check on where compact product design is heading, this month's picks lean hard into thinness and multi-functionality rather than adding new gimmicks.
+A quick, low-effort way to stay current on industrial design trends without digging through individual product launches one by one." data-comment-kr="EDC 모음 기사는 소형 제품 디자인의 흐름을 가볍게 짚어보기 좋은 창구입니다. 이번 달 선정작들은 새로운 기믹을 더하기보다 얇기와 다기능성에 집중한 편입니다.
+제품 출시를 하나하나 따라가지 않아도 산업 디자인 트렌드를 빠르게 훑을 수 있는 자료입니다."
+       data-title-en="The 8 Best EDC Designs of July 2026" data-title-kr="얀코디자인이 꼽은 2026년 7월 최고의 EDC 디자인 8선">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">EDC</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 08</div>
+        <div class="card-title">얀코디자인이 꼽은 2026년 7월 최고의 EDC 디자인 8선</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://design.co.kr/article/166406/" target="_blank"
+       data-category="디자인 · 전시 · 큐레이션"
+       data-summary="더위를 피해 둘러볼 만한 서울의 여름 전시 네 곳을 소개한다. 타데우스 로팍 서울의 알렉스 카츠 개인전부터 국제갤러리 한옥의 로버트 메이플소프전, 7월 중순 개막하는 그라운드 제로 이스트 전시까지 아우른다."
+       data-points="타데우스 로팍 서울, 알렉스 카츠 개인전 〈Studies〉 (5.22~8.1)|국제갤러리 한옥, 로버트 메이플소프 개인전 〈The Poetics of Form〉 (6.9~7.19)|그라운드 제로 이스트, 7월 17일 개막 예정 전시 포함"
+       data-designer="여름철 갤러리 전시 일정을 한 번에 정리해주는 큐레이션으로, 무드보드나 색채·구도 레퍼런스를 모을 때 빠르게 훑어보기 좋습니다."
+       data-impact-score="2"
+       data-recommend="전시 나들이 계획 시 참고 · 선택 저장"
+       data-comment="작가 라인업이 탄탄합니다. 알렉스 카츠와 로버트 메이플소프처럼 이미 검증된 거장들의 전시를 서울에서 볼 수 있다는 점에서, 색채·형태·인물 사진 레퍼런스가 필요한 디자이너에게 실용적인 목록입니다.
+전시 종료일이 제각각이라(8월 1일, 7월 19일 등) 일정을 미리 캘린더에 옮겨두는 걸 추천합니다.">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">서울전시</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인플러스 · 2026. 07. 02</div>
+        <div class="card-title">올여름, 눈여겨볼 서울 전시 4</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://news.seoul.go.kr/culture/archives/533444" target="_blank"
+       data-category="디자인 · 공공 · 미디어아트"
+       data-summary="광화문광장 해치마당 미디어월에서 '여름, 잠시 다른 세계'를 주제로 한 2026년 두 번째 전시가 7월 1일부터 8월 31일까지 매일 오후 6시부터 9시까지 진행된다."
+       data-points="광화문광장 해치마당 미디어월 활용 공공 미디어아트|'여름, 잠시 다른 세계'를 주제로 한 두 번째 전시|7월 1일부터 8월 31일까지 매일 오후 6~9시 상영"
+       data-designer="도심 공공 공간을 스크린 삼는 미디어월 전시로, 옥외 미디어 아트·모션 그래픽 작업의 실행 규모와 상영 운영 방식을 참고하기 좋은 사례입니다."
+       data-impact-score="1"
+       data-recommend="여름 저녁 산책 코스로 추천 · 미디어아트 실무자 참고"
+       data-comment="공공 미디어월은 완성도 높은 영상 하나만으로 끝나지 않고, 두 달 가까이 매일 반복 상영되는 운영 설계까지가 작업의 일부입니다. 상영 시간대를 저녁 6~9시로 한정한 것도 여름 야외 이용 패턴을 고려한 선택으로 보입니다.
+대형 옥외 스크린에서 작동하는 모션 그래픽을 준비 중이라면, 실제 운영 사례로 참고할 만합니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">미디어아트</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">서울특별시 · 2026. 07. 01</div>
+        <div class="card-title">2026 해치마당 미디어월 두 번째 전시 '여름, 잠시 다른 세계'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="4" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="200"></textarea>
+      <span class="gb-count" id="gbCount">0 / 200</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
