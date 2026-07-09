@@ -443,6 +443,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     if (cs.expanded && !cs.loaded) { await loadComments(pid); renderList(); }
   }
   function openComposer(pid) {
+    for (const k in commentState) { if (k !== pid) commentState[k].composerOpen = false; }
     cstate(pid).composerOpen = true;
     renderList();
   }
