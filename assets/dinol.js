@@ -177,13 +177,15 @@ document.addEventListener('DOMContentLoaded', () => {
     F.comment.en   = d.comment    || '';
     F.comment.kr   = d.commentKr  || F.comment.en;
 
-    /* 영문 기사(-kr 번역 있음) → 토글 노출, 기본 KR / 한국어 기사 → 토글 숨김, KR 값 표시 */
+    /* 영문 기사(-kr 번역 있음) → KR/EN 토글 / 한국어 기사 → KR만 활성 표시(EN 버튼 숨김, 토글 기능 없음) */
     if (hasEn && d.titleEn) {
       drawerLangToggle.style.display = 'flex';
+      btnEn.style.display = '';
       setLang('kr');
     } else {
-      drawerLangToggle.style.display = 'none';
-      setLang('kr'); /* 한국어 기사: kr 슬롯이 곧 기본값 */
+      drawerLangToggle.style.display = 'flex';
+      btnEn.style.display = 'none';
+      setLang('kr');
     }
 
     drawerCta.href = card.href;

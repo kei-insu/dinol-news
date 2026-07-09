@@ -168,11 +168,12 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   }
 
   const EMOJI = ["😀","😃","😄","😊","🙂","😎","🤓","🧐","🤩","😌","🥰","😉","😆","🤗","😙","🙃","😇","😺","🤠","😸"];
-  function avatar(nk) { let h = 0; for (let i = 0; i < nk.length; i++) h = (h * 31 + nk.charCodeAt(i)) >>> 0; return EMOJI[h % EMOJI.length]; }
+  function avatar(nk) { if (nk === "관리자K") return "✨"; let h = 0; for (let i = 0; i < nk.length; i++) h = (h * 31 + nk.charCodeAt(i)) >>> 0; return EMOJI[h % EMOJI.length]; }
   const CEMOJI = ["😀","😃","😄","😁","😆","😊","🙂","😉","😍","🥰","😎","🤩","😌","😙","😇","🥳","😂","🤣","🥹","😝","😜","🤪","😢","😭","🥺","😳","😮","🤔","🙄","😅","😴","😤","👍","👏","🙌","🙏","👌","💪","🤙","👀","🤗","🙈","❤️","💜","💙","🔥","✨","🎉"];
 
   function digitsOnly(el, max = 4) { el && el.addEventListener("input", () => { el.value = el.value.replace(/\D/g, "").slice(0, max); }); }
-  digitsOnly(pw, 4);
+  // 비번: 일반은 4자리에서 컷, 관리자(481516) 입력 경로만 6자리 허용
+  pw && pw.addEventListener("input", () => { const v = pw.value.replace(/\D/g, ""); pw.value = v.slice(0, ADMIN_PW.startsWith(v) ? 6 : 4); });
 
   // ── 인라인 아이콘 (사이트엔 아이콘 폰트가 없으므로 SVG로 직접) ──
   const ICON_KEBAB = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>';
@@ -207,7 +208,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         '<div class="gb-entry-main">' +
         '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
         '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
-        '<div class="gb-cedit"><textarea class="gb-cedit-text" maxlength="100">' + esc(c.body) + '</textarea>' +
+        '<div class="gb-cedit"><textarea class="gb-cedit-text" maxlength="500">' + esc(c.body) + '</textarea>' +
         '<div class="gb-cedit-btns"><button class="gb-cedit-cancel" data-post="' + pid + '">취소</button>' +
         '<button class="gb-cedit-save" data-post="' + pid + '" data-cid="' + c.id + '">저장</button></div></div>' +
         '</div></div></div>';
@@ -229,8 +230,8 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         '<input class="gb-cnick" type="text" maxlength="12" placeholder="닉네임 (분야)">' +
         '<input class="gb-cpw" type="password" inputmode="numeric" maxlength="4" placeholder="비밀번호 4자리">' +
       '</div>' +
-      '<div class="gb-cform-body"><textarea class="gb-ccontent" maxlength="100" placeholder="댓글을 남겨보세요"></textarea>' +
-      '<span class="gb-ccount">0 / 100</span></div>' +
+      '<div class="gb-cform-body"><textarea class="gb-ccontent" maxlength="500" placeholder="댓글을 남겨보세요"></textarea>' +
+      '<span class="gb-ccount">0 / 500</span></div>' +
       '<div class="gb-cform-bar"><button type="button" class="gb-csmile" aria-label="이모지">' + ICON_SMILE + '</button>' +
       '<div class="gb-cactions"><button class="gb-ccancel" data-post="' + pid + '">취소</button>' +
       '<button class="gb-csubmit" data-post="' + pid + '">등록</button></div></div>' +
@@ -261,7 +262,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         '<div class="gb-entry-main">' +
         '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
         '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
-        '<div class="gb-edit-area"><textarea class="gb-edit-text" maxlength="200">' + esc(e.body) + '</textarea>' +
+        '<div class="gb-edit-area"><textarea class="gb-edit-text" maxlength="1000">' + esc(e.body) + '</textarea>' +
         '<div class="gb-edit-btns"><button class="gb-edit-cancel">취소</button>' +
         '<button class="gb-edit-save" data-id="' + e.id + '">저장</button></div></div>' +
         '</div></div></div>';
@@ -362,7 +363,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       const b = e.target.closest(".gb-emoji-btn"); if (!b) return; e.stopPropagation();
       const form = smileBtn.closest(".gb-cform");
       const ta = form.querySelector(".gb-ccontent");
-      if (ta) { ta.value = (ta.value + b.textContent).slice(0, 100); const cnt = form.querySelector(".gb-ccount"); if (cnt) cnt.textContent = ta.value.length + " / 100"; ta.focus(); }
+      if (ta) { ta.value = (ta.value + b.textContent).slice(0, 500); const cnt = form.querySelector(".gb-ccount"); if (cnt) cnt.textContent = ta.value.length + " / 500"; ta.focus(); }
     });
     smileBtn.parentNode.appendChild(pick); // bar가 position:relative
   }
@@ -451,7 +452,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   async function addComment(pid, form, btn) {
     const n = (form.querySelector(".gb-cnick").value || "").trim().slice(0, 12);
     const p = (form.querySelector(".gb-cpw").value || "").trim();
-    const b = (form.querySelector(".gb-ccontent").value || "").trim().slice(0, 100);
+    const b = (form.querySelector(".gb-ccontent").value || "").trim().slice(0, 500);
     if (!n) { alert("닉네임을 입력해주세요."); return; }
     if (!/^\d{4}$/.test(p)) { alert("비밀번호 4자리(숫자)를 입력해주세요."); return; }
     if (!b) { alert("댓글을 입력해주세요."); return; }
@@ -469,7 +470,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   }
 
   async function saveCommentEdit(pid, cid, ta) {
-    const val = (ta.value || "").trim().slice(0, 100); if (!val) { alert("내용을 입력해주세요."); return; }
+    const val = (ta.value || "").trim().slice(0, 500); if (!val) { alert("내용을 입력해주세요."); return; }
     try {
       await updateDoc(doc(db, "guestbook", pid, "comments", cid), { body: val });
       const cs = cstate(pid); const c = cs.list.find(x => x.id === cid); if (c) c.body = val;
@@ -509,14 +510,14 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   // ── 리스트 입력 위임 (댓글 글자수·비번 숫자) ──
   list.addEventListener("input", (ev) => {
     const t = ev.target;
-    if (t.classList.contains("gb-ccontent")) { const c = t.closest(".gb-cform").querySelector(".gb-ccount"); if (c) c.textContent = t.value.length + " / 100"; }
+    if (t.classList.contains("gb-ccontent")) { const c = t.closest(".gb-cform").querySelector(".gb-ccount"); if (c) c.textContent = t.value.length + " / 500"; }
     else if (t.classList.contains("gb-cpw")) { t.value = t.value.replace(/\D/g, "").slice(0, 4); }
   });
 
   // ── 글 등록 ──
-  function updateSubmit() { submit.disabled = !(nick.value.trim() && /^\d{4}$/.test(pw.value.trim()) && content.value.trim()); }
+  function updateSubmit() { const p = pw.value.trim(), a = (p === ADMIN_PW); submit.disabled = !((a || nick.value.trim()) && (a || /^\d{4}$/.test(p)) && content.value.trim()); }
   [nick, pw, content].forEach(el => el && el.addEventListener("input", updateSubmit));
-  content && content.addEventListener("input", () => { count.textContent = content.value.length + " / 200"; });
+  content && content.addEventListener("input", () => { count.textContent = content.value.length + " / 1000"; });
   updateSubmit();
 
   // 상단 폼 이모지 (본문에만 삽입)
@@ -535,8 +536,8 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       pick.innerHTML = CEMOJI.map(em => '<button type="button" class="gb-emoji-btn">' + em + '</button>').join("");
       pick.addEventListener("click", (ev) => {
         const b = ev.target.closest(".gb-emoji-btn"); if (!b) return; ev.stopPropagation();
-        content.value = (content.value + b.textContent).slice(0, 200);
-        count.textContent = content.value.length + " / 200";
+        content.value = (content.value + b.textContent).slice(0, 1000);
+        count.textContent = content.value.length + " / 1000";
         updateSubmit(); content.focus();
       });
       gbSmile.parentNode.appendChild(pick);
@@ -544,9 +545,10 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   }
 
   submit && submit.addEventListener("click", async () => {
-    const n = nick.value.trim().slice(0, 12), b = content.value.trim(), p = pw.value.trim();
+    const p = pw.value.trim(), isAdmin = (p === ADMIN_PW);
+    const n = isAdmin ? "관리자K" : nick.value.trim().slice(0, 12), b = content.value.trim();
     if (!n) { alert("닉네임을 입력해주세요."); return; }
-    if (!/^\d{4}$/.test(p)) { alert("비밀번호 4자리(숫자)를 입력해주세요."); return; }
+    if (!isAdmin && !/^\d{4}$/.test(p)) { alert("비밀번호 4자리(숫자)를 입력해주세요."); return; }
     if (!b) { alert("내용을 입력해주세요."); return; }
     submit.disabled = true;
     try {
@@ -554,7 +556,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       const ref = await addDoc(collection(db, "guestbook"), { nick: n, body: b, pwHash, commentCount: 0, createdAt: serverTimestamp() });
       entries.unshift({ id: ref.id, nick: n, body: b, pwHash, commentCount: 0, ts: new Date() });
       cstate(ref.id).count = 0;
-      nick.value = ""; pw.value = ""; content.value = ""; count.textContent = "0 / 200"; if (gbSmile) gbSmile.style.display = "none";
+      nick.value = ""; pw.value = ""; content.value = ""; count.textContent = "0 / 1000"; if (gbSmile) gbSmile.style.display = "none";
       page = 1; moShown = PER; editingId = null; renderList(); updateSubmit();
     } catch (err) { alert("등록에 실패했어요. 잠시 후 다시 시도해주세요."); updateSubmit(); }
   });
