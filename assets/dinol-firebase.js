@@ -27,6 +27,8 @@ const RECAPTCHA_SITE_KEY = "6LcW4kQtAAAAAJ5-eZc-SpxCrQ37bfTaYHs7v_yd";
 
 // 관리자 마스터 비밀번호(스팸 정리용) — 아무 글/댓글이나 이 값으로 수정/삭제 가능
 const ADMIN_PW = "481516";
+let ADMIN_HASH = null;
+sha256(ADMIN_PW).then(h => { ADMIN_HASH = h; }); // 진짜 운영자 판별용(비번 해시)
 
 const app = initializeApp(firebaseConfig);
 
@@ -171,8 +173,8 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     return commentState[pid];
   }
 
-  const EMOJI = ["😀","😃","😄","😊","🙂","😎","🤓","🧐","🤩","😌","🥰","😉","😆","🤗","😙","🙃","😇","😺","🤠","😸"];
-  function avatar(nk) { if (nk === "운영자K") return "✨"; let h = 0; for (let i = 0; i < nk.length; i++) h = (h * 31 + nk.charCodeAt(i)) >>> 0; return EMOJI[h % EMOJI.length]; }
+  const EMOJI = ["😀","😃","😄","😁","😊","🙂","😎","🤓","🧐","🤩","😌","🥰","😉","😆","😙","🙃","😇","🤠","😏","🥳"];
+  function avatar(nk, pwHash) { if (ADMIN_HASH && pwHash === ADMIN_HASH) return "✨"; let h = 0; for (let i = 0; i < nk.length; i++) h = (h * 31 + nk.charCodeAt(i)) >>> 0; return EMOJI[h % EMOJI.length]; }
   const CEMOJI = ["😀","😃","😄","😁","😆","😊","🙂","😉","😍","🥰","😎","🤩","😌","😙","😇","🥳","😂","🤣","🥹","😝","😜","🤪","😢","😭","🥺","😳","😮","🤔","🙄","😅","😴","😤","👍","👏","🙌","🙏","👌","💪","🤙","👀","🤗","🙈","❤️","💜","💙","🔥","✨","🎉"];
 
   function digitsOnly(el, max = 4) { el && el.addEventListener("input", () => { el.value = el.value.replace(/\D/g, "").slice(0, max); }); }
@@ -208,7 +210,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     const timeStr = fmtTime(c.ts);
     if (cs.editingId === c.id) {
       return '<div class="gb-comment editing" data-cid="' + c.id + '">' +
-        '<div class="gb-entry-row"><span class="gb-avatar gb-avatar-sm">' + avatar(c.nick) + '</span>' +
+        '<div class="gb-entry-row"><span class="gb-avatar gb-avatar-sm">' + avatar(c.nick, c.pwHash) + '</span>' +
         '<div class="gb-entry-main">' +
         '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
         '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
@@ -218,7 +220,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         '</div></div></div>';
     }
     return '<div class="gb-comment" data-cid="' + c.id + '">' +
-      '<div class="gb-entry-row"><span class="gb-avatar gb-avatar-sm">' + avatar(c.nick) + '</span>' +
+      '<div class="gb-entry-row"><span class="gb-avatar gb-avatar-sm">' + avatar(c.nick, c.pwHash) + '</span>' +
       '<div class="gb-entry-main">' +
       '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
       '<span class="gb-entry-time">' + esc(timeStr) + '</span>' +
@@ -262,7 +264,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     const timeStr = fmtTime(e.ts);
     if (editingId === e.id) {
       return '<div class="gb-entry editing" data-id="' + e.id + '">' +
-        '<div class="gb-entry-row"><span class="gb-avatar">' + avatar(e.nick) + '</span>' +
+        '<div class="gb-entry-row"><span class="gb-avatar">' + avatar(e.nick, e.pwHash) + '</span>' +
         '<div class="gb-entry-main">' +
         '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
         '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
@@ -273,7 +275,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     }
     const cs = cstate(e.id);
     return '<div class="gb-entry" data-id="' + e.id + '">' +
-      '<div class="gb-entry-row"><span class="gb-avatar">' + avatar(e.nick) + '</span>' +
+      '<div class="gb-entry-row"><span class="gb-avatar">' + avatar(e.nick, e.pwHash) + '</span>' +
       '<div class="gb-entry-main">' +
       '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
       '<span class="gb-entry-time">' + esc(timeStr) + '</span>' +
@@ -569,6 +571,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   // ── 초기 로드 ──
   (async function load() {
     try {
+      if (!ADMIN_HASH) ADMIN_HASH = await sha256(ADMIN_PW); // 첫 렌더 전 운영자 해시 보장
       const snap = await getDocs(query(collection(db, "guestbook"), orderBy("createdAt", "desc")));
       entries = snap.docs.map(d => {
         const v = d.data();
