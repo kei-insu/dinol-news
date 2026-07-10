@@ -41,7 +41,21 @@
 | 2026-07-10 | 입력창 톤 통일 | 상단 폼·댓글 폼 입력칸을 동일 중립 그레이(bg #242426, 테두리 #343436, 포커스 #484848)로. 남색끼 제거. 폰트 데스크톱 15px, 모바일 16px(iOS 포커스 줌 방지). 카드·드로어는 사이트 남색 정체성 유지(입력창만 중립) | 완료 |
 | 2026-07-10 | 비번 눈 아이콘 | 브라우저 기본 비밀번호 눈/지우기 아이콘(::-ms-reveal, ::-ms-clear) CSS로 숨김. Edge 대상(Chrome은 원래 없음) | 완료 |
 
-## 4. 향후 로드맵 (미구현·기획)
+## 4. 브리핑 페이지 UI 요소 (template.html)
+
+| 날짜 | 기능 | 내용(상세) | 상태 |
+|---|---|---|---|
+| 2026-07-06 | 폰트 | Cormorant Garamond 300(디자인 놀이터) + Noto Sans KR 700(AI & Design News 46px) + Noto Serif KR 300(본문) | 완료 |
+| 2026-07-06 | 헤더 4줄 | "디자인 놀이터"(자간 5px #aaa) / "AI & Design News"(46px white) / `.header-sep`(1px×24px 구분선) / 날짜(11px 자간4px #888) | 완료 |
+| 2026-07-06 | 읽음 상태 | 카드 열람 시 `.card-title.read`(weight 450, #a3a3a3). localStorage `dinol_read_urls`(URL 배열)에 저장→재방문에도 유지. getReadUrls/markAsRead/applyReadState | 완료 |
+| 2026-07-06 | 카드 검증 JS | DOMContentLoaded 시: 중복 URL→빨간 테두리+⚠배지, 빈 링크→노란 테두리+⚠배지, 이슈 시 하단 고정 배너 | 완료 |
+| 2026-07-06 | 아카이브·카톡 버튼 | 카드 그리드 끝에 `.archive-cta-wrap`(세로, gap 12px). "AI & Design 아카이브"(.archive-cta, #c9ccd4, ./archive.html) + "디자인놀이터 오픈채팅방"(.kakao-cta, 카카오옐로우 #FEE500, open.kakao.com/o/g3XICwx). 둘 다 width 240·min-height 48·검정 텍스트 | 완료 |
+| 2026-07-06 | 맨 위로 버튼 | `.to-top`(#toTop). 모바일(≤580px)만, 스크롤 600px+ 시 `.show` 페이드인, 클릭 시 상단 스무스 스크롤 | 완료 |
+| 2026-07-06 | 그라디언트 | 썸네일 배경 클래스(g-indigo/violet/teal/crimson/forest/slate/amber/plum/olive/navy/rust 등 12종) + `.noise` + 중앙 라벨 | 완료 |
+| 2026-07-06 | 푸터 | © 저작권 3줄(13px, 안내문 `<br>` 한 덩어리) + 개인정보처리방침 링크(16px 밑줄). 아카이브는 위 pill 버튼으로 대체 | 완료 |
+| 2026-07-06 | AdSense(미완) | `<head>` 자동광고 스크립트 `ca-pub-XXXXXXXXXXXXXXXX` + ads.txt. **TODO: 실제 게시자 ID로 교체(template·브리핑·archive·privacy 4곳 + ads.txt)** | 진행중 |
+
+## 5. 향후 로드맵 (미구현·기획)
 
 | 날짜 | 코너 | 항목(상세) | 난이도 | 상태 |
 |---|---|---|---|---|

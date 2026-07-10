@@ -38,6 +38,8 @@
 | `design-guide.md` | UI·스타일 | 컬러·폰트·컴포넌트·톡톡 UI 규칙 | — |
 | `guardrails.md` | 배포·보안·위험 작업 전 | 하면 안 되는 것 | — |
 | `testing.md` | 배포 전 검증 | 검증 절차·체크리스트 | — |
+| `news_sources.md` | 브리핑 소스 선정 | 크롤링/큐레이션 소스 목록(12분류·RSS) | 07-06 |
+| `routine_instruction.md` | 루틴 이해·수정 | 브리핑 자동생성 절차(⚠️일부 구버전, 라이브는 WebSearch 전용) | 07-08 |
 
 ---
 
