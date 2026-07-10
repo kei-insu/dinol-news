@@ -50,7 +50,11 @@ function esc(s) {
 }
 function likeKey(url) {
   // 기사 URL → Firestore 문서 ID로 안전한 키
-  return url.replace(/[^a-zA-Z0-9]/g, "_").slice(0, 300) || "x";
+  // 브리핑 날짜(파일명 Dinol_news_YYYYMMDD)를 접두어로 붙여, 같은 URL이 다른 날 재등장해도 좋아요가 분리되게 함
+  const m = location.pathname.match(/Dinol_news_(\d{8})/);
+  const d = m ? m[1] + "_" : "";
+  const u = url.replace(/[^a-zA-Z0-9]/g, "_").slice(0, 280) || "x";
+  return d + u;
 }
 function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
 

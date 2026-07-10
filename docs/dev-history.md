@@ -56,6 +56,9 @@
 | 2026-07-06 | 푸터 | © 저작권 3줄(13px, 안내문 `<br>` 한 덩어리) + 개인정보처리방침 링크(16px 밑줄). 아카이브는 위 pill 버튼으로 대체 | 완료 |
 | 2026-07-06 | AdSense(미완) | `<head>` 자동광고 스크립트 `ca-pub-XXXXXXXXXXXXXXXX` + ads.txt. **TODO: 실제 게시자 ID로 교체(template·브리핑·archive·privacy 4곳 + ads.txt)** | 진행중 |
 
+| 2026-07-10 | 좋아요 key 날짜분리 | dinol-firebase.js | likeKey에 브리핑 날짜(Dinol_news_YYYYMMDD) 접두어 추가 → `20260710_<url>`. 같은 URL이 다른 날 재등장해도 좋아요 분리(이월 차단). ⚠️기존 URL-only 키 좋아요는 리셋됨 | 완료 |
+| 2026-07-10 | 발행 URL 대장 | published_urls.json, scripts/build_published_urls.py | 발행된 카드 URL을 {URL:최초발행일}로 저장. 스크립트로 전체 브리핑에서 재생성. 중복 발행 방지의 원본 | 완료 |
+
 ## 5. 향후 로드맵 (미구현·기획)
 
 | 날짜 | 코너 | 항목(상세) | 난이도 | 상태 |
