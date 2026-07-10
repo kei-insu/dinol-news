@@ -68,6 +68,12 @@
 └─ docs/                  ← 이 문서들
 ```
 
+### 배포 (매일 브리핑)
+- 브리핑 파일을 `news/YYYY/MM/`에 넣은 뒤, 터미널에서 **`./deploy.ps1`** 한 줄이면 끝(pull→add→commit→push 자동, 커밋 메시지에 오늘 날짜).
+- 메시지 지정: `./deploy.ps1 "add: 7/11 브리핑"`. 스크립트는 레포 루트 `deploy.ps1`.
+- 최초 1회만 실행권한: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
+- `firestore.rules`는 별도(콘솔 붙여넣기). 규칙 바꾼 날은 콘솔도 반영.
+
 ### 핵심 원칙
 | # | 원칙 |
 |---|---|

@@ -13,6 +13,7 @@
 |---|---|---|---|---|
 | 2026-07-06 | 공용 CSS/JS 분리 | dinol.css, dinol.js, dinol-firebase.js | 브리핑 HTML마다 중복되던 스타일·스크립트를 공용 에셋으로 분리. 각 브리핑은 `../../../assets/`로 참조(브리핑이 news/2026/MM/ 3단계 깊이라 상대경로 3단). 유지보수 시 파일 1개만 고치면 전체 반영 | 완료 |
 | 2026-07-08 | 브리핑 자동화 | scripts/build_briefing.py, Claude 루틴 | ①로컬: cards.json 읽어 template 복제→날짜별 HTML 생성 + index.json 갱신 + 자체검증(8카드·한글라벨·em대시 없음). Python 필요(사용자 PC 미설치 상태라 미실행). ②루틴: 매일 10시 Anthropic 서버에서 실행, WebSearch 스니펫만으로 생성(뉴스 도메인 WebFetch는 루틴 환경서 403 차단, raw.githubusercontent만 허용). 둘 다 push는 사람이 수동, 상호 보완 | 완료 |
+| 2026-07-10 | 배포 스크립트 | deploy.ps1 | `./deploy.ps1` 한 줄로 pull→add→commit→push. 커밋 메시지 자동(브리핑+오늘날짜) 또는 인수 지정. Set-Location으로 레포 이동 포함. 최초 1회 ExecutionPolicy RemoteSigned 필요 | 완료 |
 | 2026-07-10 | index 리다이렉트 | index.html | 방문자가 루트 접속 시 index.json의 최신 날짜를 읽어 최신 브리핑으로 자동 이동. 리다이렉트 실패 시 경고 아이콘+재시도 버튼 표시(에러 페이지 겸용) | 완료 |
 
 ## 2. 카드·드로어 (팝업) — dinol.js
