@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 12</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 12, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.aitimes.com/news/articleView.html?idxno=212534" target="_blank"
+       data-category="AI · 산업 · 경쟁전략"
+       data-summary="오픈AI와 앤트로픽이 와이콤비네이터(YC) 스타트업 등을 대상으로 수십억 원대 무료 토큰 크레딧 경쟁에 나섰다. 샘 알트먼 오픈AI CEO는 169개 스타트업에 최대 200만 달러 규모 토큰 크레딧을 지분과 맞바꾸는 방식으로 제안했다."
+       data-points="스타트업 락인을 노린 무료 토큰 경쟁의 배경|오픈AI, 169개 스타트업에 최대 200만달러 크레딧 제안|GPT-5.4 이후 좁혀진 오픈AI·앤트로픽 성능 격차"
+       data-designer="제품에 AI 기능을 붙이는 스타트업이라면 특정 모델에 조기 종속(lock-in)될 위험을 인지하고, 벤더 전환 비용을 낮추는 아키텍처 설계가 필요합니다."
+       data-impact-score="3"
+       data-recommend="AI 기반 스타트업 및 프로덕트팀 공유 추천"
+       data-comment="오픈AI와 앤트로픽이 스타트업 대상 무료 토큰 경쟁에 나선 배경에는 '락인' 전략이 있습니다. 초기에 특정 모델로 제품을 설계한 스타트업은 이후 다른 모델로 옮기는 비용이 커서, 결국 계속 같은 공급사를 쓰게 되는 구조입니다.
+
+이런 경쟁이 가능해진 건 최상위 모델 간 성능 격차가 예전만큼 크지 않기 때문이기도 합니다. GPT-5.4 출시 이후 오픈AI와 앤트로픽의 코딩 성능 차이가 눈에 띄게 줄었다는 평가가 이를 뒷받침합니다.
+
+AI 기능을 빠르게 얹어보려는 초기 스타트업 입장에서는 반가운 소식이지만, 무료 크레딧이 끝난 뒤의 비용 구조와 전환 비용까지 함께 따져보는 게 안전합니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">무료토큰</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">AI타임스 · 2026. 07. 08</div>
+        <div class="card-title">'공짜 AI 써보세요'…오픈AI·앤트로픽, 스타트업 대상 무료 토큰 경쟁 본격화</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.aitimes.com/news/articleView.html?idxno=212604" target="_blank"
+       data-category="AI · 모델 · 벤치마크"
+       data-summary="오픈AI가 9일(현지시간) 배포를 시작한 GPT-5.6 시리즈가 외부 평가기관 아티피셜 애널리시스 지능 지수 상위권을 휩쓸었다. 저가형 모델 '루나'까지 GLM-5.2급 지능을 구현하며 벤치마크 기준 자체가 바뀌고 있다는 평가다."
+       data-points="GPT-5.6 테라·루나, 솔 대비 50~80% 저렴한 비용|루나, GLM-5.2·제미나이 3.5 플래시급 지능 구현|중국계 모델(GLM-5.2·큐원 3.7 등) 상위권 밖으로 밀려남"
+       data-designer="가성비 좋은 저가형 모델이 늘어나면 AI 기능을 프로토타입에 붙이는 비용 장벽이 낮아집니다. 모델 선택 기준을 '최고 성능'에서 '작업당 비용 대비 성능'으로 옮겨볼 만합니다."
+       data-impact-score="3"
+       data-recommend="AI 기능 기획·개발자 참고용 저장 추천"
+       data-comment="GPT-5.6 시리즈의 등장으로 '누가 제일 똑똑한가'에서 '누가 더 저렴하게 비슷한 지능을 내는가'로 경쟁의 축이 옮겨가는 모습입니다. 특히 저가형 모델 '루나'가 상위권 오픈소스 모델급 지능을 내면서도 가격은 훨씬 낮다는 점이 눈에 띕니다.
+
+그동안 상위권을 지키던 중국계 모델들이 한꺼번에 순위 밖으로 밀려난 것도 주목할 대목입니다. 벤치마크 1위 자리가 몇 달 단위로 바뀌는 지금, 특정 모델에 대한 충성도보다는 작업별 비용 대비 성능을 계속 비교해보는 습관이 유용해 보입니다.
+
+다만 이런 벤치마크 순위가 실제 업무 품질과 정확히 비례하지는 않는다는 점은 참고할 필요가 있습니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">벤치마크</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">AI타임스 · 2026. 07. 10</div>
+        <div class="card-title">AA 순위 뒤흔든 GPT-5.6 시리즈…'루나', 대세 GLM-5.2 위협</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/09/can-ai-answer-the-3-trillion-question/" target="_blank"
+       data-category="AI · Infrastructure · Investment"
+       data-summary="With 2026 AI infrastructure spending estimated at $1.5 trillion, the AI industry needs to generate roughly $3 trillion in value to justify the data-center buildout, TechCrunch reports." data-summary-kr="2026년 AI 인프라 투자가 1조 5천억 달러에 달할 것으로 추정되는 가운데, 이 투자를 정당화하려면 AI 산업이 약 3조 달러 규모의 가치를 창출해야 한다고 테크크런치가 짚었다."
+       data-points="2026 AI infra spend estimated at $1.5T|Industry needs ~$3T in returns to justify it|Debate over whether AI revenue can catch up to capex" data-points-kr="2026년 AI 인프라 투자 약 1조 5천억 달러 추정|투자 정당화하려면 약 3조 달러 수익 필요|AI 매출이 설비투자(capex)를 따라잡을 수 있을지 논쟁"
+       data-designer="Whenever a client asks 'will AI pay for itself,' this is the macro backdrop: expect budget scrutiny on AI features that don't show clear ROI." data-designer-kr="'AI가 그만한 값을 하냐'는 질문을 받을 때 참고할 거시적 배경입니다. 명확한 ROI를 보여주지 못하는 AI 기능은 예산 심사가 깐깐해질 수 있습니다."
+       data-impact-score="3"
+       data-recommend="Useful context for anyone pitching AI features to leadership" data-recommend-kr="경영진에 AI 기능을 제안할 때 참고할 배경 자료로 추천"
+       data-comment="The headline number here is simple: about $1.5 trillion in AI infrastructure spending this year needs roughly $3 trillion in returns to make sense. That gap is the quiet subtext behind every 'is AI worth it' conversation happening in boardrooms right now.
+
+For teams building AI features, this is useful ammunition and a warning at once. It's ammunition because it shows the industry-wide stakes are real, not hype. It's a warning because it means scrutiny on individual AI features and their ROI is only going to get sharper as the macro math gets harder to ignore." data-comment-kr="핵심은 단순합니다. 올해 약 1조 5천억 달러에 달하는 AI 인프라 투자를 정당화하려면 약 3조 달러 규모의 수익이 나와야 한다는 것입니다. 이 격차가 지금 이사회마다 오가는 'AI가 그만한 값을 하는가'라는 질문의 배경입니다.
+
+AI 기능을 만드는 팀 입장에서는 이 수치가 무기이자 경고입니다. 업계 전체의 판돈이 결코 과장이 아니라는 근거가 되는 동시에, 개별 AI 기능의 ROI에 대한 심사가 앞으로 더 깐깐해질 거라는 신호이기도 합니다."
+       data-title-en="Can AI answer the $3 trillion question?">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">3조달러</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 09</div>
+        <div class="card-title">AI는 3조 달러짜리 질문에 답할 수 있을까</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.axios.com/2026/07/09/fed-warsh-task-force-andreessen" target="_blank"
+       data-category="AI · Policy · Economy"
+       data-summary="Fed Chair Kevin Warsh named five external task forces reviewing US monetary policy; a16z's Marc Andreessen will co-lead the Productivity and Jobs panel examining how AI reshapes work and growth." data-summary-kr="케빈 워시 연준 의장이 통화정책 전반을 점검할 5개 외부 태스크포스를 발족했다. a16z의 마크 안드레센이 AI가 생산성·고용에 미치는 영향을 다루는 '생산성·일자리' 패널을 공동 주도한다."
+       data-points="Andreessen co-leads Productivity and Jobs task force|Fed split on whether AI is disinflationary or inflationary|Recommendations expected by end of 2026" data-points-kr="안드레센, '생산성·일자리' 태스크포스 공동 주도|AI가 물가에 미칠 영향(디스인플레 vs 인플레)을 두고 연준 내 의견 갈려|연말까지 구체적 권고안 도출 목표"
+       data-designer="A prominent VC now has a seat at the Fed's policy table on AI, a sign that AI's economic narrative is moving from tech press to central-bank policy." data-designer-kr="실리콘밸리 VC가 연준 정책 테이블에 앉는다는 것은, AI를 둘러싼 경제 담론이 테크 업계를 넘어 중앙은행 정책 논의로 확장되고 있다는 신호입니다."
+       data-impact-score="2"
+       data-recommend="Background reading · Optional" data-recommend-kr="배경 참고용 · 선택"
+       data-comment="A venture capitalist sitting on a Federal Reserve task force would have been unthinkable a few years ago. That it's happening now, specifically on a panel about AI's effect on jobs and productivity, shows how central AI has become to how the Fed thinks about the economy.
+
+The underlying question (will AI productivity gains give the Fed room to cut rates, or will AI spending itself be inflationary) doesn't have a clean answer yet, which is exactly why outside voices like Andreessen's are being brought in.
+
+Worth bookmarking less for the AI-product angle and more as a barometer of how seriously policymakers now treat AI's macroeconomic weight." data-comment-kr="벤처캐피털리스트가 연준 태스크포스에 앉는다는 것은 몇 년 전만 해도 상상하기 어려운 일이었습니다. 그것도 AI가 일자리와 생산성에 미치는 영향을 다루는 패널이라는 점에서, AI가 연준의 경제 판단에 얼마나 중요해졌는지를 보여줍니다.
+
+'AI로 인한 생산성 향상이 연준에 금리 인하 여력을 줄 것인가, 아니면 AI 투자 자체가 물가를 자극할 것인가'라는 질문에는 아직 명확한 답이 없습니다. 그래서 안드레센 같은 외부 인사를 끌어들인 것이기도 합니다.
+
+AI 제품 관점보다는, 정책 입안자들이 AI의 거시경제적 비중을 얼마나 진지하게 다루기 시작했는지 보여주는 바로미터로 눈여겨볼 만합니다."
+       data-title-en="Marc Andreessen and former Walmart CEO are among the new Fed task force leaders">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">연준</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Axios · 2026. 07. 09</div>
+        <div class="card-title">연준, AI 태스크포스에 마크 안드레센 공동 의장으로 발탁</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.dezeen.com/2026/07/10/products-furnishings-lighting-seating-usa-america-dezeen-showroom/" target="_blank"
+       data-category="Design · Product"
+       data-summary="Dezeen Showroom rounds up seven new furniture, lighting and seating pieces from design brands based in the USA." data-summary-kr="Dezeen 쇼룸이 미국 기반 디자인 브랜드들이 선보인 가구·조명·좌석 신제품 일곱 가지를 소개했다."
+       data-points="Curated selection across furniture, lighting and seating|All brands based in the USA|Part of Dezeen's ongoing Showroom product series" data-points-kr="가구·조명·좌석을 아우른 선별 소개|모두 미국 기반 브랜드|Dezeen의 상시 연재 '쇼룸' 코너의 일부"
+       data-designer="A quick way to scan what US furniture brands are shipping right now, useful for material and form references in product work." data-designer-kr="지금 미국 가구 브랜드들이 내놓는 제품을 빠르게 훑어보기 좋습니다. 제품 작업의 소재·형태 레퍼런스로 유용합니다."
+       data-impact-score="2"
+       data-recommend="Good moodboard/reference source · Save for later" data-recommend-kr="무드보드·레퍼런스 소스로 좋음 · 저장 추천"
+       data-comment="Dezeen's Showroom format is a low-effort, high-frequency way to keep a pulse on what's shipping in furniture and lighting without following a dozen individual brands. This edition's US focus makes it a decent snapshot of where American design manufacturing is putting its energy right now.
+
+Nothing here is groundbreaking on its own, but as a recurring reference point it's genuinely useful for spotting material and form trends before they show up in bigger trend reports." data-comment-kr="Dezeen의 '쇼룸' 코너는 여러 브랜드를 일일이 팔로우하지 않고도 가구·조명 업계의 흐름을 가볍게 훑어볼 수 있는 포맷입니다. 이번 호는 미국 브랜드에 초점을 맞춰, 지금 미국 디자인 제조업이 어디에 에너지를 쏟고 있는지 어느 정도 가늠하게 해줍니다.
+
+개별 제품 하나하나가 혁신적이지는 않지만, 정기적으로 훑어보면 큰 트렌드 리포트에 실리기 전 소재·형태 흐름을 먼저 포착하는 데 실질적으로 도움이 됩니다."
+       data-title-en="Seven products by USA-based design brands">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">신제품</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 10</div>
+        <div class="card-title">Dezeen 쇼룸이 소개한 미국 디자인 브랜드 신제품 일곱 가지</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/09/riba-national-awards-2026-uk/" target="_blank"
+       data-category="Design · Architecture · Awards"
+       data-summary="RIBA named 32 National Award winners for 2026, over half in London, including a rammed-earth house, a dance theatre for Sadler's Wells and additions to York Minster. Winners advance to the Stirling Prize longlist." data-summary-kr="RIBA가 2026년 내셔널 어워드 수상작 32곳을 발표했다. 절반 이상이 런던에 위치하며, 흙다짐(rammed-earth) 주택과 새들러스 웰스 무용극장, 요크민스터 증축 등이 포함됐다. 수상작은 스털링상 롱리스트에 오른다."
+       data-points="32 winners, majority in London|Mix of housing, cultural and conservation projects|Feeds into the Stirling Prize shortlist (announced July 16)" data-points-kr="런던 위주 수상작 32곳|주거·문화·보존 프로젝트가 고루 포함|7월 16일 발표될 스털링상 숏리스트로 연결"
+       data-designer="A good annual snapshot of where UK architecture is putting its attention: retrofit and conservation are clearly having a moment alongside new-build culture spaces." data-designer-kr="영국 건축계가 지금 어디에 주목하는지 보여주는 연례 스냅샷입니다. 신축 문화공간과 함께 리트로핏·보존 프로젝트가 뚜렷한 흐름으로 보입니다."
+       data-impact-score="3"
+       data-recommend="Worth a browse for architecture and spatial designers" data-recommend-kr="건축·공간 디자이너에게 훑어볼 만한 자료"
+       data-comment="RIBA's National Awards function as an annual barometer for UK architecture, and this year's list leans heavily toward retrofit, conservation and cultural buildings rather than flashy new towers. The rammed-earth house alongside a major new dance theatre says a lot about where the profession's prestige currently sits.
+
+Worth revisiting on July 16 when the Stirling Prize shortlist is drawn from this same pool, that's when the conversation usually gets more interesting." data-comment-kr="RIBA 내셔널 어워드는 영국 건축계의 연례 바로미터 역할을 합니다. 올해 수상작은 화려한 신축 타워보다 리트로핏·보존·문화시설 쪽에 무게가 실렸습니다. 흙다짐 주택과 대형 신축 무용극장이 나란히 이름을 올린 것만 봐도 지금 건축계가 어디에 명예를 두는지 짐작할 수 있습니다.
+
+같은 명단에서 추려질 스털링상 숏리스트가 7월 16일 발표되는데, 그때 논의가 더 흥미로워질 가능성이 큽니다."
+       data-title-en="RIBA announces best British buildings for 2026">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">건축상</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 09</div>
+        <div class="card-title">RIBA, 2026년 최고의 영국 건축물 발표…32개 수상작 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/09/liz-galvez-shade-pavilion-los-angeles-earthen-comforts/" target="_blank"
+       data-category="Design · Installation · Craft"
+       data-summary="Architect Liz Gálvez built a courtyard pavilion titled Earthen Comforts: Airing Earth for Materials & Applications and Craft Contemporary in Los Angeles, using a post-and-beam structure wrapped in woven cord and earthen blocks to explore urban shade." data-summary-kr="건축가 리즈 갈베즈가 로스앤젤레스의 머티리얼즈&어플리케이션스·크래프트 컨템포러리를 위해 'Earthen Comforts: Airing Earth' 파빌리온을 세웠다. 목조 기둥보 구조에 엮은 끈과 흙벽돌을 두른 형태로 도심 그늘의 가능성을 탐구한다."
+       data-points="Annual summer pavilion commission since 2021|Wood post-and-beam frame wrapped in woven cord|Uses earthen blocks to explore heat resiliency" data-points-kr="2021년부터 이어온 여름 파빌리온 커미션 시리즈|목조 기둥보 구조에 엮은 끈으로 마감|흙벽돌로 폭염 대응 가능성 실험"
+       data-designer="A small-scale, material-driven experiment worth watching for anyone working on low-tech climate-responsive shade structures." data-designer-kr="저기술(low-tech) 방식의 기후 대응 그늘 구조물을 고민하는 이들에게 참고할 만한, 소재 중심의 소규모 실험입니다."
+       data-impact-score="2"
+       data-recommend="Niche but inspiring · Save for material research" data-recommend-kr="관심 있는 이들에게 영감 · 소재 리서치용 저장 추천"
+       data-comment="This is a small, almost invisible project compared to museum-scale architecture news, but that's exactly the point: it's a rare chance to see a named architect work at pavilion scale with genuinely low-tech materials like cord and earthen block.
+
+Worth a look for anyone tired of glossy renders and interested in what shade and thermal comfort can look like without mechanical systems." data-comment-kr="미술관급 대형 건축 뉴스에 비하면 작고 눈에 잘 띄지 않는 프로젝트지만, 그래서 오히려 의미가 있습니다. 이름 있는 건축가가 끈과 흙벽돌 같은 저기술 소재로 파빌리온 규모의 실험을 하는 모습을 보기 드물기 때문입니다.
+
+화려한 렌더링에 지친 분들, 기계 설비 없이 그늘과 열쾌적성을 어떻게 구현할 수 있는지 궁금한 분들에게 살펴볼 만합니다."
+       data-title-en="Liz Gálvez creates shade pavilion in LA with cord and stone">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">파빌리온</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 09</div>
+        <div class="card-title">리즈 갈베즈, 끈과 흙벽돌로 LA에 그늘 파빌리온 세우다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.archdaily.com/1054027/moma-opens-architects-of-liberation-exhibition-on-independence-era-west-african-modernism" target="_blank"
+       data-category="Design · Architecture · Exhibition"
+       data-summary="MoMA's new exhibition Architects of Liberation: Modernism in Western Africa (through January 2, 2027) surveys architecture from seven West African countries between the late 1950s and early 1980s, framed around independence-era nation-building." data-summary-kr="뉴욕 MoMA가 'Architects of Liberation: Modernism in Western Africa' 전시를 열었다(2027년 1월 2일까지). 1950년대 말부터 1980년대 초까지 서아프리카 7개국의 독립기 건축을 조명한다."
+       data-points="Spans seven countries: Benin, Cameroon, Côte d'Ivoire, Ghana, Nigeria, Senegal, Togo|Organised around cityscapes, education and housing|Features architects like Demas Nwoko and John Owusu Addo" data-points-kr="베냉·카메룬·코트디부아르·가나·나이지리아·세네갈·토고 7개국을 다룸|도시경관·교육·주거 등 주제로 구성|데마스 은워코, 존 오우수 아도 등 건축가 조명"
+       data-designer="A rare deep dive into non-Western modernism, valuable reference for anyone researching architecture's relationship to nation-building and identity." data-designer-kr="비서구권 모더니즘을 깊이 다루는 흔치 않은 전시입니다. 건축과 국가 정체성·건국 서사의 관계를 리서치하는 이들에게 좋은 참고 자료입니다."
+       data-impact-score="2"
+       data-recommend="Worth a visit if in NYC · Good research reference" data-recommend-kr="뉴욕 방문 시 관람 추천 · 리서치 자료로 유용"
+       data-comment="Western architectural history has a habit of skipping straight from colonial-era buildings to today, leaving out the decades right after independence when new nations were literally building their own image. This exhibition fills exactly that gap, across seven countries at once.
+
+It's a slow-burn kind of relevant, not urgent news, but the kind of research reference that's genuinely hard to find summarized this well anywhere else." data-comment-kr="서구 중심의 건축사 서술은 종종 식민지 시기 건물에서 곧장 현재로 건너뛰며, 신생국이 스스로의 이미지를 지어 올리던 독립 직후 수십 년을 비워두곤 합니다. 이번 전시는 7개국을 한번에 다루며 바로 그 공백을 채웁니다.
+
+당장 급한 뉴스는 아니지만, 이 정도로 잘 정리된 리서치 자료를 다른 곳에서 찾기 어렵다는 점에서 두고두고 참고할 가치가 있습니다."
+       data-title-en="MoMA opens Architects of Liberation exhibition on independence-era West African modernism">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">전시</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 07. 05</div>
+        <div class="card-title">MoMA, 서아프리카 독립기 모더니즘 건축 전시 개막</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
