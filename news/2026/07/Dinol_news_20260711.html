@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 11</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 11, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.cnbc.com/2026/07/07/meta-ai-muse-image.html" target="_blank"
+       data-category="AI · 이미지 생성 · Big Tech"
+       data-summary="Meta rolled out Muse Image, the first image generation model from Meta Superintelligence Labs, now available across the Meta AI app, Instagram Stories in the US and WhatsApp, with Facebook support coming soon." data-summary-kr="메타가 슈퍼인텔리전스랩의 첫 이미지 생성 모델 '뮤즈 이미지'를 공개했습니다. 메타 AI 앱과 미국 인스타그램 스토리, 왓츠앱에서 우선 제공되며 페이스북 지원도 곧 추가됩니다."
+       data-designer="An agentic image model that can search the web, run code and refine its own output signals a shift from single-shot generation to iterative, tool-using creative workflows." data-designer-kr="웹 검색과 코드 실행으로 결과물을 스스로 다듬는 에이전틱 이미지 모델이라는 점에서, 단발성 생성에서 반복 개선형 창작 워크플로로 무게중심이 옮겨가고 있음을 보여줍니다."
+       data-points="Agentic pipeline searches, codes and refines outputs|Draws on Instagram photos for social context|Free in Meta AI, deeper features in paid tiers" data-points-kr="웹 검색·코드 실행으로 결과물을 스스로 개선하는 에이전틱 구조|인스타그램 사진을 참조해 소셜 맥락을 반영|메타 AI에서 기본 무료, 고급 기능은 유료 플랜"
+       data-impact-score="4"
+       data-recommend="Worth testing for social and marketing creative teams · Watch the opt-out settings" data-recommend-kr="소셜·마케팅 크리에이티브팀은 직접 테스트해볼 만함 · 옵트아웃 설정 확인 필수"
+       data-comment="Meta positions Muse Image as more than a one-shot generator, letting it browse, code and iterate on its own output before returning a result. That agentic loop is the more interesting story than the image quality itself.
+The Instagram-photo integration and default opt-in setting have already triggered a backlash from users who don't want their likeness reused for AI generation, which is worth tracking as a policy signal for any product built on personal image data.
+For design teams evaluating AI image tools, the real test is whether the self-refinement loop actually reduces prompt iteration time versus tools like Midjourney or Nano Banana." data-comment-kr="메타는 뮤즈 이미지를 단순한 원샷 생성기가 아니라, 스스로 웹을 탐색하고 코드를 실행해 결과물을 다듬는 에이전틱 모델로 포지셔닝했습니다. 이미지 품질보다 이 반복 개선 루프 자체가 더 흥미로운 지점입니다.
+인스타그램 사진을 기본으로 참조하는 옵트인 설정 때문에 자신의 사진이 AI 생성에 쓰이는 것을 원치 않는 사용자들의 반발이 이미 나오고 있어, 개인 이미지 데이터를 다루는 제품이라면 정책적 신호로 주시할 필요가 있습니다.
+AI 이미지 도구를 검토하는 디자인팀이라면, 자체 개선 루프가 미드저니나 나노바나나 대비 실제로 프롬프트 반복 시간을 줄여주는지가 핵심 테스트 포인트입니다."
+       data-title-en="Meta debuts Muse Image, Superintelligence Labs' first AI image model" data-title-kr="메타, 슈퍼인텔리전스랩 첫 이미지 생성 AI '뮤즈 이미지' 공개">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">이미지생성</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">CNBC · 2026. 07. 07</div>
+        <div class="card-title">메타, 슈퍼인텔리전스랩 첫 이미지 생성 AI '뮤즈 이미지' 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/08/this-startup-thinks-robotics-is-about-to-have-its-chatgpt-moment/" target="_blank"
+       data-category="AI · 로보틱스 · 투자"
+       data-summary="General Intuition raised $320M at a $2.3B valuation to train physical-AI foundation models on video game footage, arguing gameplay data can teach robots to move and act in the real world." data-summary-kr="제너럴 인튜이션이 비디오 게임 영상으로 로봇의 물리적 행동을 학습시키는 파운데이션 모델을 개발하기 위해 3200억원(밸류에이션 2.3조원)을 조달했습니다. 게임 플레이 데이터가 로봇의 실제 움직임 학습에 쓰일 수 있다는 주장입니다."
+       data-designer="If gameplay data really transfers to robotics, expect a wave of embodied-AI products trained on data pools designers never thought were reusable." data-designer-kr="게임 데이터가 실제로 로보틱스에 전이된다면, 디자이너가 재사용 가능하다고 생각지 못했던 데이터 풀로 학습한 홈로봇·AR 인터랙션 제품들이 쏟아질 수 있습니다."
+       data-points="Model trained on gameplay footage powers a quadruped robot after 8 minutes of real-world data|Khosla Ventures leads, with Bezos and Schmidt joining|Total disclosed funding now $454M since October launch" data-points-kr="게임 영상으로 학습한 모델이 실제 데이터 8분만으로 4족 로봇을 구동|코슬라벤처스 주도, 베이조스·슈미트 참여|작년 10월 창업 이후 누적 조달액 4540억원"
+       data-impact-score="3"
+       data-recommend="Interesting for physical-AI and robotics-adjacent product teams · Optional for pure software designers" data-recommend-kr="피지컬 AI·로보틱스 인접 제품팀에 흥미로운 참고 자료 · 순수 소프트웨어 디자이너는 선택적으로"
+       data-comment="The core bet here is that video game physics engines are close enough to reality that a model trained on millions of hours of gameplay can transfer to controlling an actual robot body. Eight minutes of real-world fine-tuning is a striking number if it holds up.
+This is part of a broader pattern in 2026: foundation-model money is moving from pure chat/agent products toward embodied AI, following the same 'scale up, then fine-tune small' playbook that worked for LLMs.
+Worth bookmarking less for the immediate product and more as an early signal of where AI investment is heading next." data-comment-kr="핵심 베팅은 게임 물리 엔진이 현실과 충분히 비슷해서, 수백만 시간의 게임 플레이로 학습한 모델이 실제 로봇 제어로 전이될 수 있다는 것입니다. 이 주장이 사실이라면 실제 데이터 단 8분만의 파인튜닝은 놀라운 수치입니다.
+2026년의 큰 흐름과도 맞닿아 있습니다. 파운데이션 모델 투자금이 순수 챗봇·에이전트 제품에서 피지컬 AI로 옮겨가며, LLM에서 통했던 '대규모 사전학습 후 소규모 파인튜닝' 전략을 그대로 따르고 있습니다.
+당장의 제품보다는 AI 투자가 다음에 어디로 향할지 보여주는 초기 신호로 저장해둘 만합니다."
+       data-title-en="This startup thinks robotics is about to have its ChatGPT moment" data-title-kr="'로보틱스에도 챗GPT 모먼트가 온다'…제너럴 인튜이션, 3200억원 조달">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">로보틱스</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 08</div>
+        <div class="card-title">'로보틱스에도 챗GPT 모먼트가 온다'…제너럴 인튜이션, 3200억원 조달</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260710145252" target="_blank"
+       data-category="AI · 정책 · 인재"
+       data-summary="국가AI연구시스템이 과기정통부·IITP와 서울시·서초구, KAIST·고려대·포스텍·연세대 등 산학연이 참여하는 형태로 운영되며, 지난 3일 열린 '글로벌 AI 프론티어 심포지엄 2026'에는 국내외 연구자·업계 인사 약 1000명이 모였습니다."
+       data-designer="정부 주도 AI 연구 인프라가 커질수록 디자이너가 접근할 수 있는 국산 AI 도구·데이터셋의 폭도 넓어질 가능성이 있어, 국내 AI 생태계 지형을 파악해두면 좋습니다."
+       data-points="국가AI연구시스템의 산학연 협력 구조|7월 3일 '글로벌 AI 프론티어 심포지엄 2026' 개최, 약 1000명 참여|'AI Beyond Intelligence' 주제로 실물 세계 적용 강조"
+       data-impact-score="2"
+       data-recommend="국내 AI 정책 동향 참고용 · 정책 담당자 저장 추천"
+       data-comment="AI 3대 강국을 목표로 하는 국가AI연구시스템이 서울시·서초구의 지원 아래 주요 대학·기업과 함께 운영되고 있다는 소식입니다. 지난 3일 심포지엄에 국내외 연구자 약 1000명이 모였다는 점에서 규모가 작지 않습니다.
+디자이너 입장에서 당장 체감되는 변화는 크지 않지만, 국가 차원의 AI 연구 인프라가 확장되면 장기적으로 국산 AI 도구·데이터셋 접근성에 영향을 줄 수 있어 눈여겨볼 만합니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">국가전략</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 10</div>
+        <div class="card-title">[AI인재강국] AI 3대 강국으로 가는 길, 국가AI연구시스템에 있다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260710102724" target="_blank"
+       data-category="AI · 고객경험 · 스타트업"
+       data-summary="센드버드 마이크 보넷 CRO가 7월 9일 서울 롯데월드호텔에서 열린 '센드버드 스파크 코리아 2026'에서, 자사 AI CX 플랫폼 '딜라이트에이아이(delight.ai)' 기반의 차세대 AI 컨시어지 전략을 발표했습니다."
+       data-designer="'답변하는 AI'에서 '문제를 해결하는 AI'로의 전환은 CX뿐 아니라 프로덕트 전반의 AI 인터페이스 설계 기준을 바꿀 수 있는 메시지입니다."
+       data-points="7월 9일 '센드버드 스파크 코리아 2026' 개최|AI CX 플랫폼 '딜라이트에이아이' 기반 차세대 컨시어지 전략 공개|'답변'이 아닌 '해결' 중심으로 AI 경험 재설계 강조"
+       data-impact-score="3"
+       data-recommend="CX·챗봇 UX를 다루는 팀에 참고 추천 · 저장 후 공유"
+       data-comment="'답변하는 AI는 끝났다'는 메시지는 단순 응답형 챗봇 UX에서 실제로 업무를 완결짓는 에이전트형 UX로 CX 업계의 기준이 옮겨가고 있음을 보여줍니다.
+센드버드처럼 대화형 플랫폼을 오래 다뤄온 회사가 '해결'을 핵심 키워드로 내세운 점은, 앞으로 CX 디자인 브리프에도 '응답 정확도'보다 '문제 해결 완료율' 같은 지표가 자주 등장할 것이라는 신호로 읽힙니다.">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">고객경험</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 10</div>
+        <div class="card-title">[AI 리더스] 센드버드 CRO "답변하는 AI는 끝…고객은 해결 원한다"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.dezeen.com/2026/07/08/david-chipperfield-architects-faro-santander/" target="_blank"
+       data-category="Design · Architecture · Museum"
+       data-summary="David Chipperfield Architects has converted Santander bank's historic Pereda Building headquarters into the Faro Santander museum, opening 8 September 2026 with five gallery floors and an Outstanding BREEAM rating of 92.96." data-summary-kr="데이비드 치퍼필드 아키텍츠가 산탄데르 은행의 역사적 본점 건물 '페레다 빌딩'을 미술관 '파로 산탄데르'로 개조했습니다. 2026년 9월 8일 개관하며 5개 층의 전시 공간과 BREEAM 92.96점(Outstanding 등급)을 획득했습니다."
+       data-designer="A 9-year adaptive reuse of a 1795 bank HQ into public art space, showing how heritage retrofits can hit best-in-class sustainability scores while staying legible as architecture." data-designer-kr="1795년 지어진 은행 본점을 9년에 걸쳐 공공 미술관으로 리모델링한 사례로, 헤리티지 건물 재생이 최고 수준의 지속가능성 점수를 받으면서도 건축적 정체성을 유지할 수 있음을 보여줍니다."
+       data-points="10,000sqm office building converted into 5 gallery floors|World's highest BREEAM score for a museum, 92.96 (Outstanding)|Opens 8 September 2026 with the Banco Santander Collection" data-points-kr="1만 제곱미터 오피스 건물을 5개 층 갤러리로 전환|미술관·문화공간 중 세계 최고 BREEAM 점수 92.96(Outstanding) 기록|2026년 9월 8일 개관, 산탄데르은행 컬렉션 전시"
+       data-impact-score="3"
+       data-recommend="Great case study for adaptive reuse and heritage retrofit projects · Save for reference" data-recommend-kr="어댑티브 리유즈·헤리티지 리트로핏 사례로 훌륭함 · 레퍼런스 저장 추천"
+       data-comment="What stands out isn't the art collection but the sustainability number: a 92.96 Outstanding BREEAM score is being called the highest ever registered by a museum, on a building that started life in 1795. That's a strong argument for adaptive reuse over demolition-and-rebuild when clients ask about carbon.
+Nine years from project start to opening is also a useful reality check on how long a serious heritage conversion actually takes, useful context when scoping similar projects.
+Worth revisiting closer to the September opening for interior and gallery-design details." data-comment-kr="주목할 점은 소장품 자체보다 지속가능성 수치입니다. 1795년에 지어진 건물이 미술관·문화공간 중 역대 최고 수준인 BREEAM 92.96점(Outstanding)을 기록했다는 것은, 클라이언트가 탄소 문제를 물을 때 철거 후 신축 대신 어댑티브 리유즈를 설득할 강력한 근거가 됩니다.
+착공부터 개관까지 9년이 걸렸다는 점도, 본격적인 헤리티지 전환 프로젝트에 실제로 얼마나 시간이 드는지 가늠하는 데 유용한 참고치입니다.
+9월 개관 시점에 인테리어·전시 디자인 디테일을 다시 확인해볼 가치가 있습니다."
+       data-title-en="David Chipperfield Architects reveals Faro Santander museum" data-title-kr="데이비드 치퍼필드, 스페인 은행 본점을 미술관으로 재탄생시키다">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">뮤지엄건축</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 08</div>
+        <div class="card-title">데이비드 치퍼필드, 스페인 은행 본점을 미술관으로 재탄생시키다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/09/formafantasma-ecology-advisor-serpentine-galleries/" target="_blank"
+       data-category="Design · Art · Ecology"
+       data-summary="Studio Formafantasma has been named Serpentine Galleries' first-ever Lead R&D Fellows of Ecology, a three-year role examining curatorial process, daily operations and the gallery's civic role through an ecological lens." data-summary-kr="스튜디오 포르마판타스마가 런던 서펜타인 갤러리의 첫 '생태 부문 리드 R&D 펠로우'로 선임됐습니다. 큐레이션 과정, 일상 운영, 갤러리의 사회적 역할까지 생태적 관점에서 3년간 들여다보는 역할입니다."
+       data-designer="This isn't a single exhibition commission but an institution-wide advisory role, a template other cultural institutions may follow as sustainability becomes core mandate rather than a side project." data-designer-kr="단발성 전시 커미션이 아니라 기관 전반을 자문하는 역할이라는 점에서, 지속가능성이 부차적 프로젝트가 아닌 핵심 과제가 되는 흐름에서 다른 문화기관들이 참고할 만한 모델입니다."
+       data-points="First-ever Lead R&D Fellows of Ecology role at Serpentine|Three-year scope covering curation, operations, labour and civic role|Builds on Formafantasma's 2020 timber-industry show Cambio" data-points-kr="서펜타인 최초의 생태 부문 리드 R&D 펠로우 직책 신설|큐레이션·운영·노동·사회적 역할까지 아우르는 3년 계약|2020년 목재 산업을 다룬 전시 'Cambio'의 연장선"
+       data-impact-score="2"
+       data-recommend="Useful signal for anyone advising cultural institutions on sustainability · Optional read" data-recommend-kr="문화기관 지속가능성 자문에 관심 있다면 참고할 신호 · 선택적으로 읽어볼 것"
+       data-comment="Institutions naming design studios to ongoing advisory roles, rather than commissioning one-off green exhibitions, is a meaningful shift. It treats ecology as infrastructure rather than content.
+Formafantasma's track record (Cambio's timber research) suggests this won't be a symbolic appointment, worth watching how their recommendations actually change Serpentine's day-to-day operations over the next three years." data-comment-kr="기관이 일회성 친환경 전시를 커미션하는 대신 디자인 스튜디오를 상시 자문역으로 앉히는 것은 의미 있는 변화입니다. 생태를 콘텐츠가 아니라 인프라로 다루겠다는 태도로 읽힙니다.
+목재 산업을 파헤친 'Cambio'로 이미 실력을 증명한 포르마판타스마이기에 상징적 임명에 그치지 않을 가능성이 높고, 앞으로 3년간 이들의 제안이 서펜타인의 실제 운영을 어떻게 바꾸는지 지켜볼 만합니다."
+       data-title-en="Formafantasma announced as ecology advisor to Serpentine Galleries" data-title-kr="포르마판타스마, 서펜타인 갤러리 첫 생태 자문역에 선임">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">생태자문</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 09</div>
+        <div class="card-title">포르마판타스마, 서펜타인 갤러리 첫 생태 자문역에 선임</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/10/oakley-just-turned-a-math-paradox-into-a-997-sunglass/" target="_blank"
+       data-category="Design · Product · Eyewear"
+       data-summary="Oakley's Infiniloop sunglasses take conceptual inspiration from the Mobius strip, a mathematical paradox, arriving 14 July in limited quantities at $997." data-summary-kr="오클리의 신제품 선글라스 '인피니루프'가 뫼비우스의 띠라는 수학적 역설에서 형태적 영감을 얻었습니다. 7월 14일 한정 수량으로 997달러에 출시됩니다."
+       data-designer="A rare case of a mass eyewear brand shipping a genuinely form-first, concept-driven design at a premium price point rather than a seasonal colorway refresh." data-designer-kr="시즌별 컬러웨이 리프레시가 아니라, 형태 자체를 개념적으로 밀어붙인 디자인을 프리미엄 가격에 내놓은 보기 드문 대중 아이웨어 브랜드 사례입니다."
+       data-points="Form inspired by the Mobius strip's continuous, one-sided geometry|Priced at $997, positioned as a conceptual limited release|Drops 14 July in limited quantities" data-points-kr="뫼비우스의 띠의 연속적인 단면 구조에서 형태 영감을 가져옴|997달러로 콘셉트형 한정판으로 포지셔닝|7월 14일 한정 수량 출시"
+       data-impact-score="2"
+       data-recommend="Good mood-board reference for concept-driven product design · Optional" data-recommend-kr="콘셉트 중심 제품 디자인 무드보드 레퍼런스로 좋음 · 선택적으로"
+       data-comment="Eyewear rarely gets this conceptually ambitious outside of small independent labels, so a mainstream brand like Oakley shipping a Mobius-strip form at a $997 price point is a notable signal about where premium product design is heading.
+Worth studying less for the price and more for how a mathematical concept got translated into a wearable, manufacturable form without losing its idea." data-comment-kr="아이웨어가 이 정도로 개념적인 시도를 하는 경우는 소규모 독립 브랜드 밖에서는 드문데, 오클리 같은 메인스트림 브랜드가 뫼비우스의 띠 형태를 997달러에 내놓았다는 점은 프리미엄 제품 디자인의 방향성을 보여주는 신호입니다.
+가격보다는 수학적 개념이 어떻게 아이디어를 잃지 않으면서 착용 가능하고 양산 가능한 형태로 번역됐는지에 주목해서 볼 가치가 있습니다."
+       data-title-en="Oakley Just Turned a Math Paradox Into a $997 Sunglass" data-title-kr="오클리, 뫼비우스의 띠에서 영감받은 997달러 선글라스 '인피니루프' 공개">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">제품디자인</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 10</div>
+        <div class="card-title">오클리, 뫼비우스의 띠에서 영감받은 997달러 선글라스 '인피니루프' 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/10/get-ready-for-the-pavilion-that-was-designed-by-the-sun-itself/" target="_blank"
+       data-category="Design · Architecture · Installation"
+       data-summary="A pavilion design used a scale model of solar panels placed above a flat surface, letting the sun's shadows over eight hours become the raw geometry for the entire structure." data-summary-kr="태양광 패널 축소 모형을 평평한 면 위에 놓고, 8시간 동안 시시각각 변하는 태양의 그림자를 그대로 구조의 기본 형태로 삼은 파빌리온 디자인입니다."
+       data-designer="Using real solar-shadow data as a generative design input instead of a rendered simulation is a striking way to let environmental conditions author form directly." data-designer-kr="렌더링 시뮬레이션이 아니라 실제 태양광 그림자 데이터를 생성 디자인의 입력값으로 삼았다는 점에서, 환경 조건이 형태를 직접 만들어내는 방식이 인상적입니다."
+       data-points="Solar panel scale model cast real shadows over 8 hours|Shadow patterns became the structure's raw geometry|Environmental data used as direct generative design input" data-points-kr="태양광 패널 축소 모형으로 8시간 동안 실제 그림자 촬영|그림자 패턴을 그대로 구조의 기본 형태로 활용|환경 데이터를 생성 디자인의 직접적 입력값으로 사용"
+       data-impact-score="2"
+       data-recommend="Inspiring reference for generative and environmental design approaches · Save for research" data-recommend-kr="생성형·환경 기반 디자인 접근에 영감을 주는 레퍼런스 · 리서치 저장 추천"
+       data-comment="What makes this pavilion interesting isn't the final form but the method: instead of simulating sunlight in software, the designers photographed real shadows off a scaled solar panel model and let that data become the structure itself.
+It's a small but clear example of environmental-data-as-generative-input, a method worth borrowing even at building scale, not just for one-off installations." data-comment-kr="이 파빌리온에서 흥미로운 지점은 최종 형태가 아니라 방법론입니다. 소프트웨어로 햇빛을 시뮬레이션하는 대신, 태양광 패널 축소 모형에 실제로 드리운 그림자를 촬영해 그 데이터를 그대로 구조로 전환했습니다.
+일회성 설치 작업뿐 아니라 건축 스케일에서도 빌려올 만한, '환경 데이터를 생성 디자인의 입력값으로 쓰는' 방법론을 보여주는 작지만 명확한 사례입니다."
+       data-title-en="Get Ready for the Pavilion That Was Designed by the Sun Itself" data-title-kr="태양이 직접 설계한 파빌리온, 그림자로 완성된 건축">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">태양건축</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 10</div>
+        <div class="card-title">태양이 직접 설계한 파빌리온, 그림자로 완성된 건축</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>

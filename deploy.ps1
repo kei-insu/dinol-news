@@ -8,8 +8,10 @@
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
-# 0) Move to repo folder (edit this line if the path differs)
-Set-Location "C:\Users\jrdo\Desktop\dinol-news\dinol-news"
+# 0) Move to the repo folder = wherever THIS script lives (PC-independent).
+#    deploy.ps1 sits in the repo root, so this always lands on the right folder
+#    on any machine (kgblu / jrdo / etc). No hardcoded user path.
+Set-Location $PSScriptRoot
 
 # 1) Pull latest first (avoid conflicts from routine / other PC)
 Write-Host "`n[1/4] Pulling latest (git pull)..." -ForegroundColor Cyan
