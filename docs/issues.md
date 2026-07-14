@@ -2,8 +2,6 @@
 
 | 최종 갱신 | 최근 변경 |
 |---|---|
-| 2026-07-13 | 충돌 마커 배포로 사이트 다운 사고 기록 + deploy.ps1 하드닝 |
-| 2026-07-12 | 발행 중복 재발 이슈 기록 + 대장 대조 관문화 |
 | 2026-07-10 | 상세 정보 복원(압축 해제), 강도 열 추가 |
 
 > 크리티컬 이슈·해결·재발 방지. 강도: 높음 / 중간 / 낮음. 상태: 완료 / 진행중 / 외부.
@@ -17,9 +15,8 @@
 | 2026-07-10 | 중간 | 루틴 옛 폼 | 7/8 브리핑만 상단 폼이 구버전(gb-tsmile·gb-content-wrap 없음, gbSmile=null) | 루틴이 template 업데이트 전에 생성했거나 옛 template을 캐시/참조. 7/9는 최신 template 참조라 정상 | 해당 파일 상단 폼을 새 구조로 수동 변환(정규식 치환). template 최신화 후 루틴 생성물은 자동으로 새 구조. 외부 에셋(dinol.css/js) 쓰므로 폼 마크업만 고치면 나머지는 자동 적용 | 완료 |
 | 2026-07-10 | 중간 | git add 전체 실패 | `git add ... firestore.rules ...` 실행 시 "pathspec did not match any files"로 전체 실패→아무것도 스테이징 안 됨 | firestore.rules가 로컬 저장소에 없음(Firebase 콘솔에만 붙여넣음). git은 명령 내 파일 하나라도 없으면 전체 취소 | firestore.rules는 콘솔 전용이므로 git add에서 제외하고 나머지만 올림. 기록용으로 git에 두려면 로컬에 파일 생성 후 함께 커밋 | 완료 |
 | 2026-07-10 | 높음 | Actions 배포 멈춤 | push 후 pages-build-deployment가 "Queued"로 수 분~수십 분 멈춤. 로그에 "Waiting for a runner to pick up this job" | GitHub 인프라 장애. githubstatus.com에서 Actions "Degraded" 확인됨. 사용자 코드·설정 문제 아님(Pages는 Normal, 러너만 안 붙음) | githubstatus.com에서 Actions 상태 확인. 장애면 복구 대기(코드는 이미 push돼 안전). 정상인데 멈추면 해당 run에서 `Re-run jobs` 또는 빈 커밋(`git commit --allow-empty -m "재시도"`)으로 재트리거 | 외부 |
+| 2026-07-14 | 중간 | 7/14 카드 필드 누락 | 드로어에 실무영향도·큐레이션노트 안 뜸 | 7/14가 옛 스킴으로 생성됨: `data-impact`(텍스트)를 씀(드로어는 `data-impact-score` 정수를 읽음) + `data-comment` 누락. 라이브 루틴이 레포 지침보다 옛 버전이었을 가능성 | 8장에 `data-impact-score`(정수)+`data-comment`(큐레이션 노트) 패치. routine_instruction.md를 라이브 지침(지침.txt)과 동기화. 재발 방지: 루틴 UI=지침.txt 일치 확인 | 완료 |
 | 2026-07-10 | 높음 | 규칙 미반영 긴 글 거부 | 코드에서 글자수 늘렸는데(500/1000) 긴 글 저장 시 거부됨 | Firestore 규칙(콘솔)의 body.size() 제한을 안 바꿈. 코드-규칙 불일치 | 글자수 변경 시 firestore.rules 4곳(글 create/update, 댓글 create/update) 동시 반영 후 콘솔 게시. sed 체이닝 주의: `s/300/500/; s/500/1000/`는 300→500→1000 연쇄로 댓글까지 1000 되는 버그 발생했음. 라인별로 정확히 치환 | 완료 |
-| 2026-07-12 | 중간 | 발행 중복 재발 | 7/12 브리핑에 7/10 발행한 RIBA 기사(dezeen)가 재등장. 대장 재생성 시 과거 중복 4건 추가 발견: zdnet(7/1·7/2), design.co.kr(7/1·7/9), archdaily(7/8·7/9), yanko EDC(7/9·7/10) | 라이브 루틴(WebSearch 전용)이 `published_urls.json` 대장 대조 단계(routine §5.2)를 실제로 안 밟음. 관문이 아니라 선택 단계라 조용히 스킵됨. 리스티클/월간특집 페이지(EDC 8선·아크데일리 편집주제)가 며칠 뒤 재등장한 것도 원인 | ①7/12 RIBA 카드를 반 헤르펀 플라즈마 드레스(dezeen 7/10)로 교체·재배포 ②`build_published_urls.py`로 대장 재생성(RIBA는 최초일 7/10 유지, 중복 경고 소거) ③routine_instruction.md §5 + 라이브 루틴 프롬프트에 대장 대조를 **필수 관문화**: 확인 한 줄(「대장 대조: 후보 N·중복 제외 M·최종 8(전부 신규)」) 없으면 배포 보류 / URL 달라도 같은 사건이면 배제 / 리스티클·월간특집 URL 금지 / 루틴은 대장 읽기만·갱신은 배포 시 사람이 `build_published_urls.py`로 ④과거 4건은 이미 발행분이라 미수정(대장이 정확해 향후 차단엔 지장 없음) | 완료 |
-| 2026-07-13 | 높음 | 충돌 마커 배포로 사이트 다운 | 사이트가 "디자인 놀이터 … 여는 데 문제가 있어요. 다시 시도해 주세요." 에러 화면만 뜨고 아카이브·메인이 안 열림. "다시 시도" 눌러도 동일 | 두 PC(jrdo/kgblu) 로컬이 어긋난 상태에서 배포. jrdo가 원격보다 뒤처졌는데 그 위에 7/13을 얹고 배포 → deploy.ps1 내부 `git pull`이 충돌났는데도 스크립트가 무시하고 `add -A→commit→push` 강행 → `index.json`·`published_urls.json`에 충돌 마커(`<<<<<<< ======= >>>>>>>`)가 박힌 채 푸시됨. index.json이 유효 JSON이 아니게 되어 앱이 목록 파싱 실패 | ①index.json을 7/13 포함 올바른 배열로 재작성(마커 제거) ②published_urls.json은 손대지 않고 `build_published_urls.py`로 재생성(마커 원천 제거) ③둘만 커밋·푸시로 즉시 복구, 강력 새로고침으로 확인. **재발방지**: (a)deploy.ps1 하드닝 — 스스로 pull 안 하고 fetch로 원격 확인만, 로컬이 뒤처짐/갈라짐·충돌 마커·push 실패 시 자동 중단 (b)배포 절차 순서 고정: `git pull` 먼저(파일 배치 전) → 배치 → 대장 재생성 → deploy (c)PC 하나(kgblu)로 통일 — guardrails.md 반영 | 완료 |
 
 ## 반복 함정 (체크리스트)
 
