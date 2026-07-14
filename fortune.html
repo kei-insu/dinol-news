@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 디자이너 별자리 — 디자인 놀이터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700&family=Song+Myung&family=Jua&family=Do+Hyeon&family=Black+Han+Sans&family=Gaegu:wght@400;700&family=Nanum+Pen+Script&family=Nanum+Brush+Script&family=Gamja+Flower&family=Hi+Melody&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scrollbar-gutter:stable; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;
+    background:#000; color:#e8e8f0; padding:56px 24px 96px; min-height:100vh; -webkit-font-smoothing:antialiased; }
+  header { display:flex; flex-direction:column; align-items:center; gap:6px; margin-bottom:14px; }
+  .site-title { font-family:'Cormorant Garamond','Noto Serif KR',Georgia,serif; font-weight:300; font-size:18px; color:#aaa; letter-spacing:5px; }
+  .corner-name { font-family:'Noto Sans KR',sans-serif; font-size:40px; font-weight:700; letter-spacing:-1.5px; color:#fff; line-height:1.05; margin-top:6px; text-align:center; }
+  .corner-en { font-family:'Cormorant Garamond',serif; font-size:15px; letter-spacing:4px; color:#7a7a88; text-transform:uppercase; margin-top:2px; }
+  .disclaimer { display:block; text-align:center; font-size:12px; color:#6a6a78; letter-spacing:1px; margin:10px 0 46px; }
+  .disclaimer b { color:#ff7f3e; font-weight:600; }
+  .zodiac-grid { max-width:1080px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:780px){ .zodiac-grid{ grid-template-columns:repeat(2,1fr); gap:12px; } }
+  @media (max-width:480px){ .zodiac-grid{ grid-template-columns:1fr; } }
+  .z-card { position:relative; background:#111119; border:1px solid #22222e; border-radius:16px; padding:22px 20px 18px;
+    cursor:pointer; transition:transform .18s ease,border-color .18s ease,background .18s ease; display:flex; flex-direction:column; gap:12px; overflow:hidden; min-height:150px; }
+  .z-card:hover { transform:translateY(-3px); border-color:#3a3a48; background:#14141e; }
+  .z-card:focus-visible { outline:2px solid #ff7f3e; outline-offset:2px; }
+  .z-top { display:flex; align-items:center; gap:13px; }
+  .z-sym { width:46px; height:46px; flex:0 0 46px; border-radius:50%; display:grid; place-items:center; font-size:24px; color:#fff;
+    background:linear-gradient(145deg,#160830,#4a2a8c); box-shadow:inset 0 0 0 1px rgba(255,255,255,.06); }
+  .z-name { font-size:20px; font-weight:700; color:#fff; letter-spacing:-.3px; }
+  .z-msg { font-size:13.5px; line-height:1.6; color:#b7b7c6; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .z-cta { margin-top:auto; font-size:13px; font-weight:600; color:#ff7f3e; letter-spacing:.2px; display:inline-flex; align-items:center; gap:5px; }
+  .z-cta .arw { transition:transform .18s ease; } .z-card:hover .z-cta .arw { transform:translateX(3px); }
+  /* DRAWER */
+  .ov { position:fixed; inset:0; background:rgba(0,0,0,.66); backdrop-filter:blur(3px); display:none; z-index:50; }
+  .ov.open { display:block; }
+  .drawer { position:fixed; z-index:51; top:50%; left:50%; transform:translate(-50%,-46%) scale(.98); width:min(480px,92vw); max-height:88vh;
+    overflow-y:auto; background:#13131d; border:1px solid #26263a; border-radius:20px; padding:30px 28px 28px; opacity:0; pointer-events:none;
+    transition:opacity .2s ease,transform .2s ease; box-shadow:0 30px 80px rgba(0,0,0,.6); }
+  .drawer.open { opacity:1; pointer-events:auto; transform:translate(-50%,-50%) scale(1); }
+  /* 다크 스크롤바 */
+  .drawer::-webkit-scrollbar { width:8px; }
+  .drawer::-webkit-scrollbar-track { background:transparent; }
+  .drawer::-webkit-scrollbar-thumb { background:#2c2c3a; border-radius:8px; border:2px solid #13131d; }
+  .drawer::-webkit-scrollbar-thumb:hover { background:#3a3a4c; }
+  .drawer { scrollbar-width:thin; scrollbar-color:#2c2c3a transparent; }
+  @media (max-width:560px){ .drawer{ top:auto; bottom:0; left:0; transform:translateY(100%); width:100%; max-height:90vh; border-radius:20px 20px 0 0; padding:26px 22px calc(26px + env(safe-area-inset-bottom,0px)); } .drawer.open{ transform:translateY(0); } }
+  .d-close { position:absolute; top:16px; right:16px; width:34px; height:34px; border:none; border-radius:9px; background:#20202e; color:#c9ccd4; font-size:18px; cursor:pointer; line-height:1; z-index:2; }
+  .d-close:hover{ background:#2b2b3c; color:#fff; }
+  /* 타이틀 = 별자리 + 폰트/컬러 통합 */
+  .d-head { text-align:center; margin-bottom:20px; }
+  .d-sym { font-size:34px; line-height:1; }
+  .d-title { font-size:42px; line-height:1.12; margin-top:4px; }
+  .d-chips { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .chip { display:inline-flex; align-items:center; gap:7px; background:#1c1c28; border:1px solid #2a2a3a; border-radius:20px; padding:5px 12px 5px 10px; font-size:11.5px; color:#b7b7c6; }
+  .chip .clabel { color:#7c7c8e; }
+  .chip .cval { color:#e2e2ec; font-weight:600; }
+  .chip .aa { font-size:17px; line-height:1; }
+  .chip .dot { width:13px; height:13px; border-radius:50%; box-shadow:inset 0 0 0 1px rgba(255,255,255,.15); }
+  .chip .hex { color:#7c7c8e; font-variant-numeric:tabular-nums; font-size:10.5px; }
+  .d-msg { font-size:14.5px; line-height:1.7; color:#cdcdda; text-align:center; padding:0 2px; }
+  .d-block { margin-top:28px; }
+  .d-block-label { font-size:12px; font-weight:700; letter-spacing:1px; color:#ff7f3e; margin-bottom:16px; display:flex; align-items:center; gap:7px; }
+  /* 확률 */
+  .prob { display:grid; grid-template-columns:80px 1fr auto; grid-template-rows:auto auto; column-gap:12px; align-items:center; margin-bottom:16px; }
+  .prob-name { grid-column:1; grid-row:1; font-size:12px; color:#e2e2ec; font-weight:500; display:flex; gap:4px; align-items:center; white-space:normal; word-break:keep-all; line-height:1.25; }
+  .prob-name .pi { flex:0 0 auto; }
+  .prob-bar { grid-column:2; grid-row:1; height:7px; background:#26262f; border-radius:5px; overflow:hidden; }
+  .prob-fill { height:100%; background:linear-gradient(90deg,#ffb072,#ff7f3e); border-radius:5px; }
+  .prob-right { grid-column:3; grid-row:1; white-space:nowrap; text-align:right; }
+  .prob-right .pct { font-size:12.5px; color:#fff; font-weight:700; font-variant-numeric:tabular-nums; }
+  .prob-right .st { font-size:12px; color:#ff9e6e; font-weight:600; margin-left:7px; }
+  .prob-quip { grid-column:2 / 4; grid-row:2; font-size:12px; color:#9c9cb0; margin-top:6px; line-height:1.45; }
+  /* 궁합 관계도 */
+  .rel-wrap { background:#0e0e16; border:1px solid #22222e; border-radius:14px; padding:10px 6px 6px; }
+  .rel svg { width:100%; height:auto; display:block; }
+  .rel-summary { text-align:center; font-size:12.5px; color:#9c9cb0; margin:12px 2px 0; }
+  .rel-summary b { font-weight:600; } .rel-summary .good{ color:#ff9e6e; } .rel-summary .warn{ color:#8f8fa6; }
+  .legend { margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:8px 14px; }
+  .legend-item { display:flex; align-items:baseline; gap:6px; font-size:11px; color:#8f8fa6; line-height:1.35; }
+  .legend-item b { color:#c4c4d4; font-weight:600; white-space:nowrap; }
+  @media (max-width:400px){ .legend{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="site-title">디 자 인  놀 이 터</div>
+  <div class="corner-name">오늘의 디자이너 별자리</div>
+  <div class="corner-en">Today's Designer Zodiac</div>
+</header>
+<span class="disclaimer">✦ <b>재미로 보는 운세</b> ✦ 별자리 순서로 봅니다 · 순위는 없어요</span>
+
+<main class="zodiac-grid" id="grid"></main>
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="디자이너 운세"></aside>
+
+<script>
+const EMBEDDED = {
+ "date": "20260713",
+ "source": "freehoroscopeapi.com daily (preview)",
+ "signs": [
+  {
+   "sign": "aries",
+   "nameKo": "양자리",
+   "symbol": "♈",
+   "score": 4,
+   "message": "새로운 시도가 잘 풀리는 날. 망설이던 제안을 먼저 꺼내면 흐름이 열립니다. 속도를 내되 마무리 점검만 챙기세요.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 35,
+      "quip": "오늘은 야근 스멀스멀… 급한 불은 오전에 끄자"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 84,
+      "quip": "극강의 N 모드. 레퍼런스 하나가 판을 뒤집는다"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 70,
+      "quip": "첫 시안에 \"이걸로 가시죠\" 들을 각"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 72,
+      "quip": "\"조금만 더 크게요\"는 오늘 안 온다"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 66,
+      "quip": "작게 숨긴 디테일까지 누가 알아봐줌"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 4,
+      "quip": "먼저 다가가면 든든한 지원군",
+      "matchType": "영감형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 5,
+      "quip": "브레인스토밍하면 불꽃 튄다",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 3,
+      "quip": "속도만 맞추면 합이 좋음",
+      "matchType": "안정형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 4,
+      "quip": "미리 얘기하면 삽질 반감",
+      "matchType": "영감형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 3,
+      "quip": "큰 그림으로 어필하면 통함",
+      "matchType": "안정형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 4,
+      "quip": "자신감 있는 발표가 먹힘",
+      "matchType": "영감형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#FF6B4A",
+     "name": "차오르는 코랄"
+    },
+    "luckyFont": "Do Hyeon"
+   }
+  },
+  {
+   "sign": "taurus",
+   "nameKo": "황소자리",
+   "symbol": "♉",
+   "score": 3,
+   "message": "천천히, 그러나 확실하게. 오래 쥐고 있던 작업을 마무리하기 좋은 날입니다. 완벽보다 완료를 택하세요.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 60,
+      "quip": "느긋하게, 정시 퇴근 무난"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 45,
+      "quip": "급하게 짜내기보단 쌓아둔 데서 나온다"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 62,
+      "quip": "꾸준함이 신뢰로 돌아오는 날"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 58,
+      "quip": "고쳐도 결이 안 흐트러진다"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 48,
+      "quip": "튀진 않아도 은근한 완성도 인정"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 4,
+      "quip": "믿고 맡기는 사이",
+      "matchType": "영감형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 4,
+      "quip": "취향이 잘 맞음",
+      "matchType": "영감형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 3,
+      "quip": "마감 지키면 최고 파트너",
+      "matchType": "안정형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 3,
+      "quip": "안정적인 협업",
+      "matchType": "성장형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 4,
+      "quip": "꾸준함을 높이 삼",
+      "matchType": "영감형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 5,
+      "quip": "오래 갈 관계의 시작",
+      "matchType": "찰떡형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#C6A15B",
+     "name": "묵직한 황토"
+    },
+    "luckyFont": "Nanum Brush Script"
+   }
+  },
+  {
+   "sign": "gemini",
+   "nameKo": "쌍둥이자리",
+   "symbol": "♊",
+   "score": 5,
+   "message": "아이디어가 샘솟는 날. 여러 갈래 생각을 하나로 엮으면 반짝이는 결과가 나옵니다. 메모를 놓치지 마세요.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 48,
+      "quip": "수다 떨다 밤샐 위험… 타임박스 걸자"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 88,
+      "quip": "아이디어 폭주. 메모 못 따라갈 정도"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 65,
+      "quip": "말발로 시안 통과시키는 날"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 40,
+      "quip": "이것저것 만지다 왕복 좀 생김"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 72,
+      "quip": "번뜩임이 회의실 공기를 바꾼다"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 5,
+      "quip": "아이디어 핑퐁 최고",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 5,
+      "quip": "같이 있으면 시너지 폭발",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 4,
+      "quip": "말이 잘 통함",
+      "matchType": "영감형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 4,
+      "quip": "빠른 캐치",
+      "matchType": "영감형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 3,
+      "quip": "가끔 정리해서 전달하자",
+      "matchType": "안정형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 4,
+      "quip": "호기심을 자극",
+      "matchType": "영감형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#3FB6C4",
+     "name": "청량한 시안"
+    },
+    "luckyFont": "Jua"
+   }
+  },
+  {
+   "sign": "cancer",
+   "nameKo": "게자리",
+   "symbol": "♋",
+   "score": 3,
+   "message": "마음이 향하는 쪽에 답이 있는 날. 팀의 분위기를 살피는 당신의 감각이 빛납니다. 무리한 부탁은 부드럽게 거절해도 좋아요.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 55,
+      "quip": "분위기 챙기다 살짝 늦어질 수도"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 52,
+      "quip": "감정선 담은 무드가 잘 잡힌다"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 58,
+      "quip": "마음 담은 시안이 통하는 날"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 50,
+      "quip": "섬세하게 다듬다 반복 조금"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 60,
+      "quip": "따뜻한 디테일이 눈에 띈다"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 3,
+      "quip": "살뜰히 챙기면 마음 열림",
+      "matchType": "안정형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 5,
+      "quip": "공감대가 두터움",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 4,
+      "quip": "분위기 메이커 조합",
+      "matchType": "영감형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 3,
+      "quip": "차분히 소통",
+      "matchType": "성장형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 3,
+      "quip": "진심이 전해짐",
+      "matchType": "안정형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 4,
+      "quip": "오래 기억하는 관계",
+      "matchType": "영감형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#E88AA8",
+     "name": "포근한 로즈"
+    },
+    "luckyFont": "Gamja Flower"
+   }
+  },
+  {
+   "sign": "leo",
+   "nameKo": "사자자리",
+   "symbol": "♌",
+   "score": 5,
+   "message": "무대의 중심에 서는 날. 자신 있게 내민 안이 박수를 받습니다. 스포트라이트를 즐기되 크레딧은 나누세요.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 30,
+      "quip": "열정 넘쳐 야근 각… 그래도 즐겁다"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 75,
+      "quip": "큰 그림이 번쩍. 자신감이 아이디어를 키움"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 80,
+      "quip": "존재감으로 직행 컨펌"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 70,
+      "quip": "자잘한 수정쯤은 가볍게 방어"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 85,
+      "quip": "오늘의 주인공은 당신. 극찬 세례"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 4,
+      "quip": "당당함이 통함",
+      "matchType": "영감형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 4,
+      "quip": "같이 빛남",
+      "matchType": "영감형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 3,
+      "quip": "리드하면 잘 따라옴",
+      "matchType": "안정형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 4,
+      "quip": "실행력에 감탄",
+      "matchType": "영감형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 5,
+      "quip": "확실히 눈도장",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 5,
+      "quip": "팬으로 만듦",
+      "matchType": "찰떡형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#F5A623",
+     "name": "찬란한 골드"
+    },
+    "luckyFont": "Black Han Sans"
+   }
+  },
+  {
+   "sign": "virgo",
+   "nameKo": "처녀자리",
+   "symbol": "♍",
+   "score": 2,
+   "message": "디테일이 승부처인 날. 남들이 지나친 오류를 당신이 잡아냅니다. 너무 완벽을 좇다 지치지 않게, 80%에서 한 번 공유하세요.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 45,
+      "quip": "디테일 파다 야근 스멀"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 50,
+      "quip": "꼼꼼함이 남들 놓친 답을 찾는다"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 60,
+      "quip": "검수 끝엔 통과. 빈틈이 없다"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 78,
+      "quip": "기준 높아 수정 굴레를 잘 피함"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 42,
+      "quip": "티 안 나게 완벽… 알아주면 극찬"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 3,
+      "quip": "보고가 깔끔",
+      "matchType": "긴장형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 3,
+      "quip": "서로 보완",
+      "matchType": "성장형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 5,
+      "quip": "체크리스트 궁합 최고",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 4,
+      "quip": "꼼꼼함이 통함",
+      "matchType": "영감형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 3,
+      "quip": "근거로 설득",
+      "matchType": "안정형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 3,
+      "quip": "기대치 관리가 관건",
+      "matchType": "성장형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#7A8B5C",
+     "name": "차분한 세이지"
+    },
+    "luckyFont": "Noto Serif KR"
+   }
+  },
+  {
+   "sign": "libra",
+   "nameKo": "천칭자리",
+   "symbol": "♎",
+   "score": 4,
+   "message": "균형을 잡는 손끝이 좋은 날. 상충하는 의견 사이에서 우아한 절충안을 찾아냅니다. 결정을 미루지만 마세요.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 52,
+      "quip": "균형 맞추다 조금 늦어질 수도"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 60,
+      "quip": "상충 의견 사이 우아한 절충안"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 66,
+      "quip": "조화로운 시안이 잘 통한다"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 55,
+      "quip": "밸런스 잡다 왕복 조금"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 64,
+      "quip": "세련된 심미안이 주목받음"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 4,
+      "quip": "중재가 빛남",
+      "matchType": "영감형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 4,
+      "quip": "미감이 잘 맞음",
+      "matchType": "영감형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 4,
+      "quip": "합의 도출 능숙",
+      "matchType": "영감형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 3,
+      "quip": "의견 조율",
+      "matchType": "성장형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 4,
+      "quip": "세련됨을 인정",
+      "matchType": "영감형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 4,
+      "quip": "우아하게 설득",
+      "matchType": "영감형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#B48EAD",
+     "name": "은은한 라일락"
+    },
+    "luckyFont": "Song Myung"
+   }
+  },
+  {
+   "sign": "scorpio",
+   "nameKo": "전갈자리",
+   "symbol": "♏",
+   "score": 4,
+   "message": "깊이 파고들수록 좋은 날. 표면 아래의 진짜 문제를 꿰뚫어 봅니다. 집중력이 강한 만큼 휴식도 챙기세요.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 50,
+      "quip": "몰입하면 시간 순삭… 칼퇴는 의지로"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 70,
+      "quip": "표면 아래 진짜 문제를 꿰뚫는다"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 62,
+      "quip": "한 방에 설득하는 날"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 68,
+      "quip": "핵심만 남겨 수정 굴레 차단"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 72,
+      "quip": "날카로운 한 끗이 채택으로"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 3,
+      "quip": "진지한 신뢰",
+      "matchType": "안정형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 4,
+      "quip": "깊은 대화",
+      "matchType": "영감형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 4,
+      "quip": "본질을 공유",
+      "matchType": "영감형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 5,
+      "quip": "찰떡 호흡",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 4,
+      "quip": "전략으로 통함",
+      "matchType": "영감형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 3,
+      "quip": "경계 풀면 든든",
+      "matchType": "성장형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#5A4FCF",
+     "name": "심연의 보라"
+    },
+    "luckyFont": "Nanum Pen Script"
+   }
+  },
+  {
+   "sign": "sagittarius",
+   "nameKo": "사수자리",
+   "symbol": "♐",
+   "score": 5,
+   "message": "멀리 보는 눈이 트이는 날. 큰 그림을 던지면 사람들이 따라옵니다. 디테일은 팀에 맡기고 방향을 제시하세요.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 65,
+      "quip": "에너지 넘쳐도 오늘은 정시 퇴근"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 82,
+      "quip": "멀리 보는 눈이 트인다. 방향 제시각"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 70,
+      "quip": "비전으로 밀어붙여 통과"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 60,
+      "quip": "큰 틀 잡히면 수정도 빠르게 정리"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 74,
+      "quip": "포부가 주목받는 날"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 4,
+      "quip": "비전 공유가 신남",
+      "matchType": "영감형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 4,
+      "quip": "모험 궁합 최고",
+      "matchType": "영감형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 3,
+      "quip": "방향 제시가 통함",
+      "matchType": "안정형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 4,
+      "quip": "가능성으로 설득",
+      "matchType": "영감형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 5,
+      "quip": "큰 그림에 공감",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 4,
+      "quip": "확신을 전염",
+      "matchType": "영감형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#F27059",
+     "name": "선명한 선셋"
+    },
+    "luckyFont": "Hi Melody"
+   }
+  },
+  {
+   "sign": "capricorn",
+   "nameKo": "염소자리",
+   "symbol": "♑",
+   "score": 3,
+   "message": "차곡차곡 쌓는 하루. 오늘의 성실함이 다음 성과의 토대가 됩니다. 야망을 드러내되 겸손도 잊지 마세요.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 55,
+      "quip": "목표 향해 조금 더 달릴 수도"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 50,
+      "quip": "번뜩임보단 차곡차곡 쌓아 완성"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 64,
+      "quip": "완성도로 밀어 통과"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 62,
+      "quip": "기준 맞춰 수정 폭을 줄인다"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 58,
+      "quip": "성실함이 결실로, 조용한 인정"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 5,
+      "quip": "신뢰가 두터움",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 3,
+      "quip": "묵묵히 협업",
+      "matchType": "성장형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 4,
+      "quip": "계획이 잘 맞음",
+      "matchType": "영감형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 4,
+      "quip": "실현 가능성 검토",
+      "matchType": "영감형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 5,
+      "quip": "성실함을 인정",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 4,
+      "quip": "약속을 지킴",
+      "matchType": "영감형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#4A6670",
+     "name": "견고한 슬레이트"
+    },
+    "luckyFont": "Gaegu"
+   }
+  },
+  {
+   "sign": "aquarius",
+   "nameKo": "물병자리",
+   "symbol": "♒",
+   "score": 4,
+   "message": "남과 다른 각도가 무기가 되는 날. 익숙한 방식을 비틀면 답이 보입니다. 혼자 앞서가지 말고 한 명에게라도 먼저 공유하세요.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 45,
+      "quip": "아이디어가 늦게 터져 살짝 야근"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 78,
+      "quip": "남다른 각도. 극강의 N다운 발상"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 50,
+      "quip": "취향 타는 시안, 통하는 사람엔 확 통함"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 50,
+      "quip": "실험하다 왕복 좀 있는 날"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 60,
+      "quip": "독특함이 눈에 띄는 타이밍"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 3,
+      "quip": "자율 주면 잘함",
+      "matchType": "안정형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 4,
+      "quip": "결 다른 시너지",
+      "matchType": "영감형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 3,
+      "quip": "논리로 설득",
+      "matchType": "안정형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 5,
+      "quip": "실험도 함께면 현실화",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 2,
+      "quip": "근거를 곁들이자",
+      "matchType": "변수형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 3,
+      "quip": "취향 맞으면 팬",
+      "matchType": "성장형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#6B5BD6",
+     "name": "심야의 코발트"
+    },
+    "luckyFont": "Nanum Pen Script"
+   }
+  },
+  {
+   "sign": "pisces",
+   "nameKo": "물고기자리",
+   "symbol": "♓",
+   "score": 3,
+   "message": "상상이 현실로 스며드는 날. 감성적인 표현이 사람들의 마음을 건드립니다. 마감 감각만 붙잡으면 완벽합니다.",
+   "designer": {
+    "probs": [
+     {
+      "label": "칼퇴 운",
+      "icon": "🌙",
+      "pct": 50,
+      "quip": "몽상하다 살짝 늦어질 수도"
+     },
+     {
+      "label": "아이디어 운",
+      "icon": "💡",
+      "pct": 62,
+      "quip": "상상이 현실로 스며드는 날"
+     },
+     {
+      "label": "초안 통과 운",
+      "icon": "✅",
+      "pct": 55,
+      "quip": "분위기로 통과. 감성이 무기"
+     },
+     {
+      "label": "수정 굴레 피할 운",
+      "icon": "🛡",
+      "pct": 52,
+      "quip": "무드 다듬다 반복 조금"
+     },
+     {
+      "label": "디자인 칭찬 운",
+      "icon": "👏",
+      "pct": 60,
+      "quip": "감성 한 스푼이 좋은 인상으로"
+     }
+    ],
+    "matches": [
+     {
+      "name": "팀장",
+      "emoji": "👔",
+      "stars": 3,
+      "quip": "부드럽게 물들임",
+      "matchType": "긴장형"
+     },
+     {
+      "name": "동료 디자이너",
+      "emoji": "🎨",
+      "stars": 5,
+      "quip": "감성 궁합 좋음",
+      "matchType": "찰떡형"
+     },
+     {
+      "name": "기획자",
+      "emoji": "📋",
+      "stars": 3,
+      "quip": "무드 전달이 관건",
+      "matchType": "안정형"
+     },
+     {
+      "name": "개발자",
+      "emoji": "💻",
+      "stars": 3,
+      "quip": "분위기 공유",
+      "matchType": "성장형"
+     },
+     {
+      "name": "대표",
+      "emoji": "🏢",
+      "stars": 3,
+      "quip": "스토리로 설득",
+      "matchType": "안정형"
+     },
+     {
+      "name": "클라이언트",
+      "emoji": "🤝",
+      "stars": 4,
+      "quip": "마음으로 남음",
+      "matchType": "영감형"
+     }
+    ],
+    "luckyColor": {
+     "hex": "#5FA8D3",
+     "name": "물빛 아쿠아"
+    },
+    "luckyFont": "Gamja Flower"
+   }
+  }
+ ]
+};
+let FORTUNE = EMBEDDED;
+
+/* 확률 상태명 사다리(양극) — pct 0-20/21-40/41-60/61-80/81-100 */
+const STATE = {
+  '칼퇴 운':           ['야근 확정ㅠㅠ','야근 스멀','눈치 게임','칼퇴 가능','칼퇴 확정🎉'],
+  '아이디어 운':        ['막막함','실마리','감 잡힘','술술','번뜩임✨'],
+  '초안 통과 운':       ['재정비','삐끗','무난','컨펌 근접','직행 컨펌🚀'],
+  '수정 굴레 피할 운':  ['무한 수정🌀','수정 러시','왕복 예감','소폭 방어','완벽 방어🛡'],
+  '디자인 칭찬 운':     ['묻힘','소소한 반응','은근 관심','눈에 띔','극찬 세례👏']
+};
+function stateOf(label,pct){ const b=Math.max(0,Math.min(4,Math.floor(pct/20))); return (STATE[label]||['','','','',''])[b]; }
+
+/* 관계 타입 → 강도(선 굵기·최고/주의 판정). 별점 대체 */
+const TYPE_W = {'찰떡형':5,'영감형':4,'안정형':4,'성장형':3,'변수형':2,'긴장형':1};
+const LEGEND = [['찰떡형','말이 잘 통하고 속도가 붙음'],['영감형','아이디어를 자극함'],['안정형','편하게 협업'],['성장형','피드백은 세지만 도움'],['변수형','수정·변경 변동 큼'],['긴장형','조심, 그러나 영향 큼']];
+
+function renderGrid(){
+  const g=document.getElementById('grid'); g.innerHTML='';
+  FORTUNE.signs.forEach((s,i)=>{
+    const c=document.createElement('div'); c.className='z-card'; c.tabIndex=0; c.setAttribute('role','button');
+    c.innerHTML=`<div class="z-top"><div class="z-sym">${s.symbol}</div><div class="z-name">${s.nameKo}</div></div>
+      <div class="z-msg">${s.message}</div>
+      <span class="z-cta">디자이너 운세 <span class="arw">→</span></span>`;
+    const open=()=>openDrawer(i);
+    c.addEventListener('click',open);
+    c.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); }});
+    g.appendChild(c);
+  });
+}
+
+function relSVG(s){
+  const d=s.designer, color=d.luckyColor.hex;
+  const cx=160, cy=152, R=104;
+  const ang=[-90,-30,30,90,150,210];
+  const w=d.matches.map(m=>TYPE_W[m.matchType]||3);
+  const maxW=Math.max(...w); const topIdx=w.indexOf(maxW);
+  let lines='', nodes='';
+  d.matches.forEach((m,i)=>{
+    const a=ang[i]*Math.PI/180, nx=cx+R*Math.cos(a), ny=cy+R*Math.sin(a);
+    const isTop=(i===topIdx), sw=(1.2+w[i]*0.7).toFixed(1), op=(0.28+w[i]*0.12).toFixed(2);
+    const lc=isTop?color:'#454559';
+    lines+=`<line x1="${cx}" y1="${cy}" x2="${nx.toFixed(1)}" y2="${ny.toFixed(1)}" stroke="${lc}" stroke-width="${sw}" opacity="${op}" stroke-linecap="round"/>`;
+    const lx=cx+(nx-cx)*0.56, ly=cy+(ny-cy)*0.56, tw=m.matchType.length*10+10;
+    lines+=`<rect x="${(lx-tw/2).toFixed(1)}" y="${(ly-9).toFixed(1)}" width="${tw}" height="18" rx="9" fill="#0e0e16"/>`;
+    lines+=`<text x="${lx.toFixed(1)}" y="${(ly+3.5).toFixed(1)}" text-anchor="middle" font-size="10.5" font-weight="600" fill="${isTop?color:'#a2a2b6'}">${m.matchType}</text>`;
+    const below=ny>cy+2, lyName=below?ny+21:ny-15;
+    nodes+=`<text x="${nx.toFixed(1)}" y="${(ny+7).toFixed(1)}" text-anchor="middle" font-size="20">${m.emoji}</text>`;
+    nodes+=`<text x="${nx.toFixed(1)}" y="${lyName.toFixed(1)}" text-anchor="middle" font-size="10.5" font-weight="500" fill="#c4c4d4">${m.name}</text>`;
+  });
+  const center=`<circle cx="${cx}" cy="${cy}" r="25" fill="#181824" stroke="${color}" stroke-width="1.5"/>
+    <text x="${cx}" y="${cy-2}" text-anchor="middle" font-size="20" fill="${color}">${s.symbol}</text>
+    <text x="${cx}" y="${cy+14}" text-anchor="middle" font-size="9" fill="#8a8a9e">나</text>`;
+  return `<svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">${lines}${center}${nodes}</svg>`;
+}
+
+function openDrawer(i){
+  const s=FORTUNE.signs[i], d=s.designer, color=d.luckyColor.hex, font=d.luckyFont;
+  const probs=d.probs.map(p=>`
+    <div class="prob">
+      <span class="prob-name"><span class="pi">${p.icon}</span>${p.label}</span>
+      <span class="prob-bar"><span class="prob-fill" style="width:${p.pct}%"></span></span>
+      <span class="prob-right"><span class="pct">${p.pct}%</span><span class="st">${stateOf(p.label,p.pct)}</span></span>
+      <span class="prob-quip">${p.quip}</span>
+    </div>`).join('');
+  const w=d.matches.map(m=>TYPE_W[m.matchType]||3);
+  const best=d.matches[w.indexOf(Math.max(...w))].name, worst=d.matches[w.indexOf(Math.min(...w))].name;
+  const legend=LEGEND.map(l=>`<div class="legend-item"><b>${l[0]}</b> ${l[1]}</div>`).join('');
+  const dr=document.getElementById('drawer');
+  dr.innerHTML=`
+    <button class="d-close" aria-label="닫기">×</button>
+    <div class="d-head">
+      <div class="d-sym" style="color:${color}">${s.symbol}</div>
+      <div class="d-title" style="font-family:'${font}',sans-serif; color:${color}">${s.nameKo}</div>
+      <div class="d-chips">
+        <span class="chip"><span class="aa" style="font-family:'${font}',sans-serif; color:${color}">Aa</span><span class="clabel">오늘의 폰트</span><span class="cval">${font}</span></span>
+        <span class="chip"><span class="dot" style="background:${color}"></span><span class="clabel">오늘의 색</span><span class="cval">${d.luckyColor.name}</span><span class="hex">${color}</span></span>
+      </div>
+    </div>
+    <div class="d-msg">${s.message}</div>
+
+    <div class="d-block">
+      <div class="d-block-label">📊 오늘의 확률</div>${probs}
+    </div>
+
+    <div class="d-block">
+      <div class="d-block-label">🤝 오늘의 궁합</div>
+      <div class="rel-wrap"><div class="rel">${relSVG(s)}</div></div>
+      <div class="rel-summary">오늘 최고 궁합 <b class="good">${best}</b> · 주의 <b class="warn">${worst}</b></div>
+      <div class="legend">${legend}</div>
+    </div>`;
+  dr.querySelector('.d-close').addEventListener('click',closeDrawer);
+  document.getElementById('ov').classList.add('open'); dr.classList.add('open'); dr.scrollTop=0;
+}
+function closeDrawer(){ document.getElementById('ov').classList.remove('open'); document.getElementById('drawer').classList.remove('open'); }
+document.getElementById('ov').addEventListener('click',closeDrawer);
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDrawer(); });
+
+fetch('fortune.json').then(r=>r.ok?r.json():Promise.reject()).then(d=>{FORTUNE=d;renderGrid();}).catch(()=>renderGrid());
+</script>
+</body>
+</html>

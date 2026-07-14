@@ -1,0 +1,60 @@
+{
+  "date": "20260713",
+  "source": "freehoroscopeapi.com daily",
+  "signs": [
+    {
+      "sign": "aries",
+      "nameKo": "양자리",
+      "symbol": "♈",
+      "score": 4,
+      "message": "새로운 시도가 잘 풀리는 날입니다. 망설이던 제안을 먼저 꺼내면 흐름이 열립니다. 다만 속도를 내다 디테일을 놓치지 않도록 마무리 점검만 챙기세요.",
+      "designer": {
+        "probs": [
+          { "label": "야근", "icon": "🌙", "pct": 30, "quip": "칼퇴 각. 급한 불은 오전에 꺼진다" },
+          { "label": "외주", "icon": "💼", "pct": 55, "quip": "새 프로젝트 문의가 슬쩍 들어올 수도" },
+          { "label": "한번에 통과", "icon": "✅", "pct": 70, "quip": "첫 시안에 고개 끄덕이는 사람 많음" },
+          { "label": "3회+ 수정", "icon": "🔁", "pct": 25, "quip": "무한 수정의 굴레와는 거리가 먼 하루" },
+          { "label": "주목/채택", "icon": "🌟", "pct": 65, "quip": "당신 아이디어가 회의실 공기를 바꾼다" },
+          { "label": "리젝", "icon": "❌", "pct": 15, "quip": "반려돼도 방향은 맞다는 신호" }
+        ],
+        "matches": [
+          { "name": "팀장", "emoji": "👔", "stars": 4, "quip": "먼저 다가가면 의외로 든든한 지원군" },
+          { "name": "동료 디자이너", "emoji": "🎨", "stars": 5, "quip": "브레인스토밍하면 불꽃 튄다" },
+          { "name": "기획자", "emoji": "📋", "stars": 3, "quip": "속도 차이만 조율하면 합이 좋음" },
+          { "name": "개발자", "emoji": "💻", "stars": 4, "quip": "구현 얘기 미리 나누면 삽질 반감" },
+          { "name": "대표", "emoji": "🏢", "stars": 3, "quip": "큰 그림으로 어필하면 통한다" },
+          { "name": "클라이언트", "emoji": "🤝", "stars": 4, "quip": "자신감 있는 발표가 먹히는 날" }
+        ],
+        "luckyColor": { "hex": "#FF6B4A", "name": "차오르는 코랄" },
+        "luckyFont": "Do Hyeon"
+      }
+    },
+    {
+      "sign": "aquarius",
+      "nameKo": "물병자리",
+      "symbol": "♒",
+      "score": 3,
+      "message": "익숙한 방식을 살짝 비틀고 싶은 날입니다. 남과 다른 접근이 오히려 답이 됩니다. 다만 혼자 앞서가기보다 한 사람에게라도 미리 공유해두면 설득이 쉬워집니다.",
+      "designer": {
+        "probs": [
+          { "label": "야근", "icon": "🌙", "pct": 45, "quip": "아이디어가 늦게 터져 살짝 늦어질 수도" },
+          { "label": "외주", "icon": "💼", "pct": 40, "quip": "낯선 분야 제안이 흥미롭게 다가온다" },
+          { "label": "한번에 통과", "icon": "✅", "pct": 50, "quip": "취향 타는 시안, 통하는 사람엔 확 통함" },
+          { "label": "3회+ 수정", "icon": "🔁", "pct": 50, "quip": "디테일 실험하다 왕복이 좀 있는 날" },
+          { "label": "주목/채택", "icon": "🌟", "pct": 60, "quip": "독특함이 눈에 띄는 타이밍" },
+          { "label": "리젝", "icon": "❌", "pct": 30, "quip": "안 맞으면 쿨하게, 다음 게 더 좋다" }
+        ],
+        "matches": [
+          { "name": "팀장", "emoji": "👔", "stars": 3, "quip": "자율 주면 잘하는 걸 보여줄 기회" },
+          { "name": "동료 디자이너", "emoji": "🎨", "stars": 4, "quip": "결 다른 둘이 만나 재미난 결과" },
+          { "name": "기획자", "emoji": "📋", "stars": 3, "quip": "논리로 설득해두면 뒤탈 없음" },
+          { "name": "개발자", "emoji": "💻", "stars": 5, "quip": "실험적 아이디어도 함께면 현실화" },
+          { "name": "대표", "emoji": "🏢", "stars": 2, "quip": "너무 앞서가면 물음표, 근거를 곁들이자" },
+          { "name": "클라이언트", "emoji": "🤝", "stars": 3, "quip": "취향만 맞으면 팬이 되는 관계" }
+        ],
+        "luckyColor": { "hex": "#6B5BD6", "name": "심야의 코발트" },
+        "luckyFont": "Gaegu"
+      }
+    }
+  ]
+}
