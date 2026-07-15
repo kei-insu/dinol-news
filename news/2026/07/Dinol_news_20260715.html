@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 15</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 15, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://techcrunch.com/2026/07/14/the-real-ai-race-may-no-longer-be-at-the-frontier-open-models-hugging-face/" target="_blank"
+       data-category="AI · 산업 · 오픈소스"
+       data-summary="This spring, Chinese open-weight models made up 41% of downloads on Hugging Face, overtaking US models, and the six most popular models on OpenRouter are now all open Chinese models from Tencent, Xiaomi, DeepSeek, MiniMax and Z.ai — raising the question of how much frontier models still matter." data-summary-kr="올봄 허깅페이스 다운로드의 41%가 중국산 오픈웨이트 모델로, 미국 모델을 앞질렀습니다. 오픈라우터 인기 모델 상위 6개도 모두 텐센트·샤오미·딥시크·미니맥스·Z.ai 등 중국 오픈모델입니다. 저렴하고 커스터마이징 가능한 오픈모델이 실사용을 장악하면서 프런티어 모델의 의미를 되묻는 질문이 나옵니다."
+       data-points="Chinese open models = 41% of Hugging Face downloads this spring|OpenRouter's top 6 most-used models are all Chinese open-weight models|Raises doubt about how much frontier-model leadership still matters" data-points-kr="올봄 허깅페이스 다운로드의 41%가 중국 오픈모델|오픈라우터 최다 사용 모델 상위 6개 전부 중국 오픈웨이트|프런티어 모델 주도권의 의미에 의문 제기"
+       data-designer="If cheap, customizable open models are already winning in production, AI-powered design tools may increasingly be built on swappable open backends rather than a single frontier vendor." data-designer-kr="저렴하고 커스터마이징 가능한 오픈모델이 이미 실사용에서 앞서고 있다면, AI 디자인 도구도 하나의 프런티어 벤더가 아니라 교체 가능한 오픈 백엔드 위에 세워지는 흐름이 커질 수 있습니다."
+       data-impact-score="4"
+       data-recommend="Must-read for anyone choosing which AI model to build on" data-recommend-kr="어떤 AI 모델 위에 서비스를 만들지 고민 중이라면 필독"
+       data-comment="This is the story that quietly undercuts a year of frontier-model marketing: the models people actually run in production are shifting toward cheap, open, Chinese-built alternatives.
+For design and product teams, the practical takeaway isn't 'switch to a Chinese model'; it's that betting your roadmap on one closed frontier vendor is getting riskier as the gap between 'best' and 'good enough and free' narrows.
+Worth revisiting your AI-tool architecture with this in mind: how hard would it be to swap the model underneath your product today?" data-comment-kr="지난 1년간의 '프런티어 모델' 마케팅을 조용히 무너뜨리는 기사입니다. 실제 프로덕션에서 돌아가는 모델은 저렴하고 오픈된 중국산 모델 쪽으로 옮겨가고 있습니다.
+디자인·프로덕트 팀에게 실질적 시사점은 '중국 모델로 갈아타라'가 아니라, '최고'와 '충분히 좋고 공짜'의 격차가 줄어들수록 하나의 폐쇄형 프런티어 벤더에 로드맵을 거는 것이 점점 위험해진다는 점입니다.
+지금 내 제품 아래 깔린 모델을 얼마나 쉽게 교체할 수 있는지, 이번 기회에 AI 도구 아키텍처를 점검해볼 만합니다."
+       data-title-en="The real AI race may no longer be at the frontier">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">오픈소스</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 14</div>
+        <div class="card-title">오픈소스가 뒤흔든 AI 패권 경쟁…허깅페이스 다운로드 41%는 중국산</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/14/deepseek-reportedly-in-talks-to-raise-1-5b-then-ipo/" target="_blank"
+       data-category="AI · 비즈니스 · 투자"
+       data-summary="DeepSeek is reportedly preparing for an IPO debut as early as this year, while also seeking to raise about $1.5 billion in new funding at a roughly $71 billion valuation — a month after raising $7 billion at about $50 billion in its first outside funding round." data-summary-kr="딥시크가 이르면 올해 안에 IPO를 추진하는 것으로 알려졌습니다. 동시에 약 710억 달러 밸류에이션으로 15억 달러 규모의 신규 투자 유치도 모색 중인데, 이는 한 달 전 500억 달러 밸류에이션으로 첫 외부 투자 70억 달러를 유치한 직후입니다."
+       data-points="IPO could come as early as end of this year, originally targeted 2027|Seeking ~$1.5B at ~$71B valuation|Raised $7B a month earlier at ~$50B in its first outside round" data-points-kr="당초 2027년 목표였던 IPO, 올해 말로 앞당겨질 가능성|약 710억 달러 밸류에이션에 15억 달러 추가 유치 추진|한 달 전 500억 달러 밸류에이션으로 첫 외부 투자 70억 달러 유치"
+       data-designer="A fast-rising, richly funded open-model maker is exactly the kind of vendor that could reshape which AI backends design tools plug into next." data-designer-kr="빠르게 성장하며 대규모 자금을 확보한 오픈모델 제조사는, 앞으로 디자인 도구가 어떤 AI 백엔드에 연결될지를 바꿔놓을 만한 업체입니다."
+       data-impact-score="3"
+       data-recommend="Good context for anyone tracking the open-model funding landscape" data-recommend-kr="오픈모델 투자 지형을 지켜보는 이들에게 참고할 만한 배경 기사"
+       data-comment="The valuation jump here is the headline: from $50B to $71B in about a month says more about investor conviction in open models than any single benchmark result.
+Combined with the Hugging Face download numbers from the same day's frontier-race story, it paints a consistent picture: capital is following usage toward the open, cheaper end of the market." data-comment-kr="이 기사의 핵심은 밸류에이션 상승 속도입니다. 한 달 만에 500억 달러에서 710억 달러로 뛴 것은 어떤 벤치마크 결과보다도 오픈모델에 대한 투자자 확신을 잘 보여줍니다.
+같은 날 나온 '프런티어 경쟁' 기사의 허깅페이스 다운로드 수치와 겹쳐 보면, 자본이 실사용을 따라 저렴한 오픈모델 쪽으로 이동하고 있다는 일관된 그림이 그려집니다."
+       data-title-en="DeepSeek reportedly in talks to raise $1.5B, then IPO">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">딥시크</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 14</div>
+        <div class="card-title">딥시크, 710억달러 밸류에 1.5조원 추가 유치 추진…IPO도 준비</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.mt.co.kr/tech/2026/07/14/2026071410352898266" target="_blank"
+       data-category="AI · 정책 · 규제"
+       data-summary="정부가 14일 국무회의에서 'AI기본법 시행령' 개정안을 의결했습니다. 공공조달 시 AI 제품·서비스를 우대하는 확인 제도를 도입하고, AI 취약계층 지원 대상에 구직자와 경력보유여성을 새로 포함했습니다."
+       data-points="과기정통부 확인 거친 AI 제품·서비스, 조달 입찰·혁신제품 지정에서 우대|AI 취약계층에 장애인·고령자·기초수급자 외 구직자·경력보유여성 추가|1월 AI기본법 위임사항 구체화, 7월 21일부터 시행"
+       data-designer="공공조달 우대 제도가 생기면 공공 프로젝트를 수주하려는 AI 서비스·툴 기업에는 실질적인 진입장벽이자 기회가 됩니다. 관련 인증 절차를 미리 파악해두면 좋습니다."
+       data-impact-score="3"
+       data-recommend="공공부문 대상 AI 서비스를 준비 중이라면 저장 추천"
+       data-comment="이번 시행령의 핵심은 두 가지입니다. 하나는 'AI 제품·서비스 확인 제도'로 공공조달 시장에서 확인받은 AI 제품이 우대받는다는 점이고, 다른 하나는 AI 취약계층 범위를 구직자·경력보유여성까지 넓혔다는 점입니다.
+특히 확인 제도는 향후 공공 프로젝트를 노리는 스타트업·에이전시에는 넘어야 할 새로운 절차이자, 먼저 준비하면 유리한 기회가 될 수 있습니다.
+7월 21일 시행이라 실무 영향은 곧 시작됩니다. 관련 사업을 준비 중이라면 시행령 세부 요건을 미리 확인해두는 것이 좋습니다.">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">AI기본법</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">머니투데이 · 2026. 07. 14</div>
+        <div class="card-title">구직자·경력보유여성도 AI 구독료 지원…'AI기본법 시행령' 국무회의 통과</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260714151628" target="_blank"
+       data-category="AI · 인프라 · 정책"
+       data-summary="국가AI전략위원회가 14일 'AI데이터센터 산업 생태계 활성화 회의'를 열고 GPU 공급 문제 등 AI데이터센터(AIDC) 확충을 늦추는 병목 요인을 점검했습니다. 정부는 반도체·AI데이터센터·피지컬AI를 3대 메가 프로젝트로 삼아 550조원을 투입할 계획입니다."
+       data-points="국가AI전략위, GPU 공급난 등 AIDC 병목 요인 점검|반도체·AIDC·피지컬AI 3대 메가 프로젝트에 550조원 투입 계획|8.4GW급 AIDC, 2028년초 착공 목표로 2029년부터 순차 가동"
+       data-designer="AI 인프라 확충 속도는 결국 국내에서 쓸 수 있는 AI 서비스의 비용과 응답 속도에 영향을 줍니다. 대규모 AI 기능을 설계할 때 인프라 타임라인을 참고할 만합니다."
+       data-impact-score="2"
+       data-recommend="AI 인프라 정책 흐름을 챙기는 실무자에게 참고용"
+       data-comment="550조원, 8.4GW라는 숫자 자체보다 눈여겨볼 것은 '병목'이라는 표현입니다. 정부도 GPU 공급과 AIDC 건설 속도가 계획을 못 따라가고 있다는 걸 인정한 셈입니다.
+2028년 착공, 2029년 가동이라는 일정은 상당히 먼 미래라, 당장 국내 AI 서비스 비용이나 속도가 이번 발표로 달라지지는 않습니다. 장기 트렌드 참고용으로 저장해두는 정도면 충분합니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">데이터센터</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 14</div>
+        <div class="card-title">정부, AI 데이터센터 병목 해소한다…GPU 공급 생태계 육성 논의</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.dezeen.com/2026/07/14/nerihu-mandarin-oriental-the-landmark-facade-hong-kong/" target="_blank"
+       data-category="Design · Architecture · Hospitality"
+       data-summary="Design studio Neri&Hu has upgraded the facade of Mandarin Oriental The Landmark hotel in Hong Kong, using staggered terracotta tiles that resemble a woven tapestry." data-summary-kr="디자인 스튜디오 네리앤후가 홍콩 만다린 오리엔탈 더 랜드마크 호텔의 파사드를 새 단장했습니다. 엇갈리게 배치한 테라코타 타일로 마치 직물을 짠 듯한 '도시의 태피스트리' 질감을 냈습니다."
+       data-points="Staggered terracotta tiles create a woven-tapestry texture|Facade upgrade for Mandarin Oriental The Landmark, Hong Kong|By Shanghai/London-based studio Neri&Hu" data-points-kr="엇갈린 테라코타 타일로 직물 같은 질감 연출|홍콩 만다린 오리엔탈 더 랜드마크 파사드 리뉴얼|상하이·런던 기반 스튜디오 네리앤후 작업"
+       data-designer="A good reference for material-driven facade upgrades on existing buildings: proof that cladding alone can radically shift a hotel's street presence." data-designer-kr="기존 건물의 파사드를 소재만으로 완전히 바꾼 좋은 레퍼런스입니다. 클래딩 하나로 호텔의 거리 인상을 얼마나 바꿀 수 있는지 보여줍니다."
+       data-impact-score="3"
+       data-recommend="Save for facade and material research" data-recommend-kr="파사드·소재 리서치용으로 저장 추천"
+       data-comment="Facade retrofits are an underrated design problem: you're not designing from scratch, you're re-skinning something that already has a structure, context and neighbors.
+The terracotta tapestry effect here is a nice case study in how a single repeated material, staggered rather than uniform, can read as texture and pattern instead of a flat surface." data-comment-kr="파사드 리트로핏은 저평가된 디자인 과제입니다. 백지에서 시작하는 게 아니라, 이미 구조와 맥락과 이웃 건물이 있는 곳을 다시 '입히는' 작업이기 때문입니다.
+이번 테라코타 태피스트리 효과는 동일한 소재라도 균일하게가 아니라 엇갈리게 배치하면 평평한 표면이 아니라 질감과 패턴으로 읽힌다는 걸 잘 보여주는 사례입니다."
+       data-title-en="Neri&Hu wraps Hong Kong hotel in 'urban tapestry' facade">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">파사드</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 14</div>
+        <div class="card-title">네리앤후, 홍콩 만다린 오리엔탈 호텔에 '도시의 태피스트리' 파사드</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/14/huawei-built-a-200mp-camera-phone-that-finally-shows-your-true-colors/" target="_blank"
+       data-category="Design · Product · Tech"
+       data-summary="Huawei launched the Pura 90s Pro and Pro Max in Kuala Lumpur under a 'Rhythm of Colour' design language, with gradient colorways and a True-to-Colour Camera 2.0 system built to match what the sensor captures to what the eye actually sees." data-summary-kr="화웨이가 쿠알라룸푸르에서 '리듬 오브 컬러(Rhythm of Colour)'를 테마로 Pura 90s Pro·Pro Max를 공개했습니다. 그라데이션 컬러웨이와, 센서가 담는 색과 눈이 보는 색의 간극을 좁히는 '트루투컬러 카메라 2.0'이 핵심입니다."
+       data-points="Design language 'Rhythm of Colour' with gradient chassis finishes|True-to-Colour Camera 2.0 aims to close sensor-vs-eye color gap|Pro Max adds 200MP telephoto on a 1/1.28-inch sensor, doubling as macro" data-points-kr="그라데이션 마감의 '리듬 오브 컬러' 디자인 언어|센서-눈 색상 간극을 좁히는 트루투컬러 카메라 2.0|Pro Max는 1/1.28인치 센서 2억 화소 망원 카메라가 매크로 겸용"
+       data-designer="Color-accuracy as the design brief, not just the camera spec sheet: an interesting case of imaging hardware and product aesthetics being designed together." data-designer-kr="색 정확도를 카메라 스펙표가 아니라 디자인 브리프 자체로 삼은 사례입니다. 이미징 하드웨어와 제품 미감을 함께 설계한 흥미로운 예입니다."
+       data-impact-score="2"
+       data-recommend="Worth a look for CMF and product designers tracking gradient finishes" data-recommend-kr="그라데이션 마감 트렌드를 좇는 CMF·제품 디자이너에게 참고 추천"
+       data-comment="The interesting design move here isn't the megapixel count, it's tying the whole product story, chassis color and camera output alike, to a single idea of 'true color.'
+When a spec (color accuracy) becomes the design narrative instead of a footnote, it tends to produce more coherent CMF work across the whole device rather than a camera bump bolted onto a generic slab." data-comment-kr="이 제품에서 흥미로운 지점은 화소 수가 아니라, 섀시 색상과 카메라 출력까지 '진짜 색'이라는 하나의 아이디어로 묶어냈다는 점입니다.
+스펙(색 정확도)이 각주가 아니라 디자인 서사 자체가 되면, 범용 슬래브에 카메라만 얹은 느낌이 아니라 기기 전체에 걸쳐 더 일관된 CMF 작업으로 이어지는 경향이 있습니다."
+       data-title-en="Huawei Built a 200MP Camera Phone That Finally Shows Your True Colors">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">카메라</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 14</div>
+        <div class="card-title">화웨이, '진짜 색'을 담는 2억 화소 카메라폰 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/14/9631-mountain-ridge-place-studio-b-studio-brother-john-boulder-colorado/" target="_blank"
+       data-category="Design · Architecture · Residential"
+       data-summary="Studio Brother John worked with Studio B Architecture + Interiors on 9631 Mountain Ridge Place, a home in Boulder, Colorado that makes the most of its mountainous site and replaces a structure destroyed in a wildfire." data-summary-kr="스튜디오 브라더 존이 스튜디오 B 아키텍처+인테리어와 협업해 콜로라도 볼더의 '9631 마운틴 리지 플레이스'를 완성했습니다. 산악 지형을 최대한 활용했고, 산불로 소실된 기존 건물 자리에 새로 지었습니다."
+       data-points="Replaces a home lost to wildfire on the same site|Design responds directly to a steep mountainous site|Collaboration between Studio Brother John and Studio B" data-points-kr="산불로 소실된 기존 주택 자리에 새로 건립|가파른 산악 지형에 맞춘 설계|스튜디오 브라더 존과 스튜디오 B의 협업"
+       data-designer="A useful case study in designing for wildfire-prone sites, worth studying for anyone doing resilient residential architecture in similar terrain." data-designer-kr="산불 위험 지역을 위한 설계 사례로 참고할 만합니다. 비슷한 지형에서 회복탄력적인 주거 건축을 다루는 이들에게 유용합니다."
+       data-impact-score="2"
+       data-recommend="Reference for wildfire-resilient residential design" data-recommend-kr="산불 지역 대응 주거 건축 레퍼런스로 저장 추천"
+       data-comment="Rebuilding on a site that just burned is a specific and increasingly common brief: the project has to answer for the disaster before it answers for anything else.
+Worth watching for how the studios handled materials and siting to reduce future wildfire risk, since that's becoming a standard question in mountain and wildland-adjacent residential work." data-comment-kr="얼마 전 불에 탄 자리에 다시 짓는다는 것은 특수하면서도 점점 흔해지는 과제입니다. 다른 무엇보다 재난에 대한 답을 먼저 내놓아야 하는 프로젝트입니다.
+향후 산불 위험을 줄이기 위해 소재와 배치를 어떻게 다뤘는지 눈여겨볼 만합니다. 산악·산림 인접 주거 프로젝트에서 점점 표준 질문이 되고 있는 부분이기 때문입니다."
+       data-title-en="Studio B and Studio Brother John create mountain home in Boulder">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">산악주택</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 14</div>
+        <div class="card-title">산불로 소실된 자리에…볼더의 산악 주택 새로 서다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/14/nokia-unveils-nostalgic-dumbphones-with-dedicated-ai-button/" target="_blank"
+       data-category="Design · Product · Tech"
+       data-summary="HMD launched a range of retro Nokia brick phones with limited internet capabilities and a dedicated AI-assistant button built into the centre of the keypad." data-summary-kr="HMD가 인터넷 기능을 제한한 복고풍 노키아 '벽돌폰' 라인업을 새로 선보였습니다. 키패드 정중앙에는 AI 어시스턴트 전용 버튼을 넣었습니다."
+       data-points="Retro Nokia brick-phone form factor with deliberately limited internet|Dedicated AI-assistant button placed at the centre of the keypad|Positioned as a nostalgic, low-distraction alternative to smartphones" data-points-kr="인터넷 기능을 의도적으로 제한한 복고풍 벽돌폰 폼팩터|키패드 중앙에 AI 어시스턴트 전용 버튼 배치|스마트폰 대비 저자극·향수 콘셉트로 포지셔닝"
+       data-designer="A sharp bit of positioning: pairing a deliberately 'dumb' form factor with a single AI button says a lot about which single feature a brand thinks still deserves a dedicated hardware slot." data-designer-kr="포지셔닝이 영리합니다. 일부러 '멍청한' 폼팩터에 AI 버튼 하나만 붙인 것은, 브랜드가 어떤 기능 하나만큼은 전용 하드웨어 자리를 내줄 가치가 있다고 보는지를 잘 보여줍니다."
+       data-impact-score="2"
+       data-recommend="Interesting reference for minimal-hardware, single-purpose product design" data-recommend-kr="미니멀 하드웨어·단일 기능 제품 설계에 흥미로운 참고 사례"
+       data-comment="This is a nice contradiction to sit with: a phone designed to do less, with one deliberate exception carved out for AI.
+It's a useful prompt for any hardware or app design brief: if you could only keep one 'smart' feature and strip everything else, which one would earn the dedicated button?" data-comment-kr="덜 하도록 설계된 폰에 딱 하나, AI를 위한 예외를 둔다는 모순이 흥미롭습니다.
+하드웨어든 앱이든 '스마트' 기능을 딱 하나만 남기고 나머지를 다 걷어낸다면 무엇에 전용 버튼을 내줄 것인가, 어떤 브리프에도 곱씹어볼 만한 질문입니다."
+       data-title-en="Nokia launches nostalgic dumbphones with dedicated AI button">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">AI버튼</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 14</div>
+        <div class="card-title">노키아, AI 버튼 하나 남긴 복고풍 '벽돌폰' 새 라인업</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
