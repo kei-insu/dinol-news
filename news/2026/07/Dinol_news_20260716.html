@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 16</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 16, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.etnews.com/20260715000320" target="_blank"
+       data-category="AI · 정책·리더십"
+       data-summary="대한상공회의소 제49회 제주포럼이 개막해 최태원 회장이 &quot;AI는 먼저 올라타는 이에게는 새 출발선이지만, 비켜서는 이에게는 넘을 수 없는 벽이 될 것&quot;이라며 기업의 AI 활용 역량을 강조했다."
+       data-points="최태원 &quot;경영진이 AI를 이해하고 좋은 질문을 던져야&quot;|약 500명의 기업인·상의 회장단 참석|산업·디지털 물결처럼 AI도 놓치지 말아야 한다는 메시지"
+       data-designer="리더십 메시지지만 실무 디자이너에게도 '좋은 질문을 던지는 능력'은 AI 협업 도구를 다루는 핵심 역량으로 그대로 적용됩니다."
+       data-impact-score="2"
+       data-recommend="국내 기업 AI 전환 흐름 파악용 · 가볍게 참고"
+       data-comment="국내 대기업 총수가 공개 석상에서 AI 활용을 '생존 문제'로 규정했다는 점이 눈에 띕니다. 특히 '경영진이 AI를 이해하고 좋은 질문을 던질 수 있어야 한다'는 발언은, 실무 도구로서의 AI가 결국 사용자의 질문 설계 능력에 달려 있다는 점을 다시 확인시켜줍니다.
+
+디자이너 입장에서도 마찬가지입니다. 프롬프트를 얼마나 구체적으로, 맥락 있게 작성하느냐가 AI 도구의 결과물 품질을 좌우합니다. 이번 발언은 조직 전체가 AI 리터러시를 갖춰야 한다는 신호로 읽힙니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">리더십</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">전자신문 · 2026. 07. 15</div>
+        <div class="card-title">최태원 "AI 물결 먼저 올라타야"…대한상의 제주포럼 개막</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/" target="_blank"
+       data-category="AI · 비즈니스·엔터프라이즈"
+       data-summary="Anthropic and Blackstone's joint venture 'Ode with Anthropic,' a $1.5B AI-implementation company launched in May with Hellman & Friedman and Goldman Sachs, is betting that embedding forward-deployed engineers into enterprises, not building models, is the next trillion-dollar opportunity." data-summary-kr="앤트로픽과 블랙스톤이 5월 출범시킨 15억 달러 규모 합작사 'Ode with Anthropic'이, 모델 개발이 아닌 기업에 엔지니어를 직접 배치하는 'AI 구현' 사업을 다음 조 단위 기회로 보고 있다는 소식입니다. 헬먼앤프리드먼, 골드만삭스 등도 참여했습니다."
+       data-points="Ode with Anthropic is a $1.5B implementation-focused JV|Forward-deployed engineers embed directly in enterprise clients|Backed by Blackstone, Hellman & Friedman, Goldman Sachs" data-points-kr="Ode with Anthropic, 15억 달러 규모 '구현' 중심 합작사|엔지니어를 기업 현장에 직접 배치하는 방식|블랙스톤·헬먼앤프리드먼·골드만삭스 등이 후원"
+       data-designer="A reminder that AI's business value increasingly comes from integration and workflow-fitting, not raw model capability, a lesson for anyone productizing AI-assisted design tools." data-designer-kr="AI의 사업적 가치가 모델 자체보다 '통합과 워크플로우 적합성'에서 나온다는 신호입니다. AI 보조 디자인 도구를 만드는 이들에게도 시사점이 있습니다."
+       data-impact-score="3"
+       data-recommend="Useful context for AI product strategy teams · Save for reference" data-recommend-kr="AI 제품 전략 담당자 참고 · 저장 추천"
+       data-comment="This deal quietly signals where the smart money thinks AI's real bottleneck is: not model quality, but the messy work of fitting AI into existing enterprise workflows. Forward-deployed engineering is a service model borrowed from Palantir's playbook, and its adoption by an AI lab is telling.
+
+For anyone building design tools or products on top of frontier models, the takeaway is similar: raw capability is table stakes; integration and change management are where the value, and the revenue, actually lives." data-comment-kr="이번 소식은 AI 업계에서 진짜 병목이 모델 성능이 아니라 '기존 업무 흐름에 AI를 어떻게 끼워 넣을지'에 있다는 것을 조용히 보여줍니다. 현장 배치형 엔지니어링은 팔란티어의 방식을 빌려온 것인데, AI 랩이 이를 채택했다는 점이 흥미롭습니다.
+
+프런티어 모델 위에 디자인 도구나 제품을 만드는 사람들에게도 시사점은 비슷합니다. 원천 성능은 이제 기본값이고, 실제 가치와 매출은 통합과 변화 관리에서 나온다는 것입니다."
+       data-title-en="Anthropic, Blackstone bet the next trillion-dollar AI business is implementation, not just models">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">구현</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 15</div>
+        <div class="card-title">앤트로픽·블랙스톤 "다음 조 단위 AI 사업은 '모델'이 아닌 '구현'"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/15/vint-cerf-is-working-on-a-plan-to-unleash-ai-agents-on-the-open-internet/" target="_blank"
+       data-category="AI · 인프라·표준"
+       data-summary="Vint Cerf, the co-creator of TCP/IP who recently left Google after 20 years, is advising Innovation Labs on 'DNSid,' a system giving AI agents cryptographically verifiable identities tied to domain names, aiming to make the open internet safe for agent-to-agent interaction." data-summary-kr="TCP/IP 공동개발자이자 최근 구글을 떠난 빈트 서프가, AI 에이전트에게 도메인 이름과 연결된 암호학적 신원을 부여하는 'DNSid' 시스템 개발에 자문으로 참여합니다. AI 에이전트 간 상호작용이 안전하게 이뤄지도록 하는 것이 목표입니다."
+       data-points="DNSid ties agent identity to existing domain-name infrastructure|Built by Innovation Labs, a subsidiary of DNS registry Identity Digital|Cerf: agentic AI will force interoperability and standardization" data-points-kr="DNSid는 에이전트 신원을 기존 도메인 인프라에 연결|DNS 등록기관 Identity Digital 자회사 Innovation Labs가 개발|서프 &quot;에이전트형 AI는 결국 상호운용성·표준화를 요구할 것&quot;"
+       data-designer="A foundational infrastructure move, if agent identity standards succeed, they'll shape how design/product tools authenticate and trust AI agents acting on a user's behalf." data-designer-kr="인프라 차원의 근본적인 움직임입니다. 에이전트 신원 표준이 자리 잡으면, 사용자를 대신해 행동하는 AI 에이전트를 디자인·제품 도구가 어떻게 인증하고 신뢰할지도 이 표준에 좌우될 것입니다."
+       data-impact-score="3"
+       data-recommend="Worth tracking for anyone building agentic AI features · Bookmark" data-recommend-kr="에이전트형 AI 기능을 만든다면 주시 추천 · 북마크"
+       data-comment="It's notable that the internet's original architect is now working on the plumbing for its next phase: one where agents, not just people, are first-class citizens on the network. DNSid's approach of tying identity to domain names is pragmatic, it reuses infrastructure the whole internet already trusts.
+
+If this or a similar standard gains traction, expect AI-agent authentication to become as unremarkable as HTTPS certificates are today: invisible when it works, a big deal when it doesn't." data-comment-kr="인터넷의 원조 설계자가 이제 에이전트도 하나의 독립된 네트워크 참여자가 되는 다음 단계의 '배관 공사'를 맡고 있다는 점이 인상적입니다. DNSid가 신원을 도메인 이름에 연결하는 방식은 실용적입니다. 인터넷 전체가 이미 신뢰하는 인프라를 재활용하기 때문입니다.
+
+이 표준 혹은 유사한 것이 자리 잡는다면, AI 에이전트 인증도 지금의 HTTPS 인증서처럼 평소엔 눈에 띄지 않다가 문제가 생기면 크게 부각되는 존재가 될 것입니다."
+       data-title-en="Vint Cerf is working on a plan to unleash AI agents on the open internet">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">에이전트표준</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 15</div>
+        <div class="card-title">'인터넷의 아버지' 빈트 서프, AI 에이전트용 신원 표준 개발 나서</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/15/indian-ai-coding-startup-emergent-becomes-a-unicorn-just-over-a-year-after-launch/" target="_blank"
+       data-category="AI · 스타트업·투자"
+       data-summary="Emergent, an Indian AI coding startup letting non-technical users build production apps, raised a $130M Series C led by Creaegis at a $1.5B valuation, a 5x jump in six months, with 200,000+ paying customers and $120M ARR." data-summary-kr="비개발자도 프로덕션급 앱을 만들 수 있게 해주는 인도 AI 코딩 스타트업 이머전트가 크리애기스 주도로 1억 3천만 달러 시리즈C를 유치, 기업가치 15억 달러를 달성했습니다. 6개월 만에 5배 상승이며, 유료 고객 20만 명 이상·연매출 1억 2천만 달러를 기록 중입니다."
+       data-points="$1.5B valuation, up 5x in six months|200,000+ paying customers, $120M ARR up 70% in 4 months|Competes with Lovable, Replit, Cursor in crowded AI-coding space" data-points-kr="기업가치 15억 달러, 6개월 새 5배 성장|유료 고객 20만 명 이상, 4개월 새 70% 오른 연매출 1.2억 달러|Lovable·Replit·Cursor와 경쟁하는 AI 코딩 시장"
+       data-designer="No-code/vibe-coding tools like Emergent lower the barrier for designers to prototype functional products themselves, worth watching as a potential design-to-build shortcut." data-designer-kr="이머전트 같은 노코드·바이브 코딩 도구는 디자이너가 직접 동작하는 프로토타입을 만드는 장벽을 낮춥니다. 디자인, 구현을 잇는 지름길로 지켜볼 만합니다."
+       data-impact-score="3"
+       data-recommend="Interesting for designers curious about AI-assisted building · Optional" data-recommend-kr="AI 기반 제작에 관심 있는 디자이너에게 흥미로운 소식 · 선택"
+       data-comment="The vibe-coding category keeps minting unicorns at a startling pace, and Emergent's growth curve, $120M ARR up 70% in just four months, shows real usage, not just hype-driven valuation.
+
+For designers, tools in this category matter less as coding replacements and more as fast, disposable prototyping surfaces: sketch an idea, get something clickable in minutes, then decide whether it's worth real engineering investment." data-comment-kr="바이브 코딩 카테고리가 놀라운 속도로 유니콘을 배출하고 있는데, 이머전트의 성장 곡선(4개월 만에 연매출 70% 증가)은 단순한 밸류에이션 과열이 아니라 실제 사용량을 보여줍니다.
+
+디자이너 입장에서 이런 도구는 코딩을 대체한다기보다, 아이디어를 스케치하면 몇 분 만에 클릭 가능한 결과물이 나오는 '빠르고 소모적인 프로토타이핑 표면'으로서 더 의미가 있습니다. 그 다음 진짜 엔지니어링 투자를 할지 결정하면 됩니다."
+       data-title-en="Indian AI coding startup Emergent becomes a unicorn with $130M Series C">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">유니콘</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 15</div>
+        <div class="card-title">인도 AI 코딩 스타트업 '이머전트', 창업 1년 만에 유니콘 등극</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.yankodesign.com/2026/07/15/korean-studio-just-designed-a-pencil-that-looks-like-an-idea/" target="_blank"
+       data-category="Design · Product"
+       data-summary="Daegu-based studio QSEODESIGN, run by industrial designer MinGyu Seo, designed the 'IDEA Pencil,' its body an extruded gear shape symbolizing iterative thinking, its eraser shaped like a lightbulb." data-summary-kr="대구를 기반으로 활동하는 산업디자이너 서민규의 QSEODESIGN 스튜디오가 '아이디어(IDEA) 펜슬'을 선보였습니다. 몸체는 반복적 사고 과정을 상징하는 기어 형태로, 지우개는 전구 모양으로 디자인했습니다."
+       data-points="Body shaped as an extruded gear, a metaphor for iterative thinking|Eraser designed as a lightbulb, the universal 'idea' symbol|Consistent minimal, quiet aesthetic from ArtCenter-trained designer" data-points-kr="반복적 사고 과정을 은유하는 기어 형태의 몸체|'아이디어'의 상징인 전구 모양 지우개|아트센터 출신 디자이너의 절제되고 조용한 미학"
+       data-designer="A small object that turns an abstract concept, the act of thinking, into a tangible, giftable form. Great case study in metaphor-driven product design." data-designer-kr="'생각하는 행위'라는 추상적 개념을 손에 잡히는 형태로 구현한 작은 오브제입니다. 은유 기반 제품 디자인의 좋은 사례입니다."
+       data-impact-score="2"
+       data-recommend="Good reference for concept-driven product design · Save" data-recommend-kr="콘셉트 중심 제품 디자인 레퍼런스로 추천 · 저장"
+       data-comment="There's something disarming about designing an object for 'having an idea' rather than for a functional task, it's closer to a piece of conceptual sculpture than office supply. The gear-shaped body is a clever bit of visual storytelling.
+
+Worth studying for anyone doing metaphor-driven product or brand design: the whole piece works because both symbols (gear = process, bulb = insight) are instantly legible without any explanation needed." data-comment-kr="'무언가를 만드는 도구'가 아니라 '아이디어를 갖는다는 행위' 자체를 위한 오브제를 디자인했다는 점이 신선합니다. 사무용품이라기보다 개념적 조각에 더 가깝습니다. 기어 형태의 몸체는 영리한 시각적 스토리텔링입니다.
+
+은유 기반의 제품·브랜드 디자인을 하는 사람이라면 참고할 만합니다. 기어(과정)와 전구(통찰)라는 두 상징 모두 별도 설명 없이 즉각 읽힌다는 점에서 이 작업이 성립합니다."
+       data-title-en="Korean Studio Just Designed a Pencil That Looks Like an Idea">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">아이디어연필</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 15</div>
+        <div class="card-title">대구 스튜디오 QSEODESIGN, '아이디어'를 형상화한 연필 'IDEA Pencil'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/15/ikea-kompishang-affordable-portable-furniture-short-term-rentals/" target="_blank"
+       data-category="Design · Product · Sustainability"
+       data-summary="IKEA launched Kompishang, a 12-piece collection of affordable, portable furniture and homeware (nothing over £70) aimed at young people and students who move house often, including a wardrobe organiser that doubles as a backpack." data-summary-kr="이케아가 자주 이사하는 청년·학생층을 겨냥한 12종의 저렴한 이동형 가구·소품 컬렉션 '콤피스행'을 출시했습니다. 최고가는 70파운드를 넘지 않으며, 백팩으로도 쓸 수 있는 옷장 정리함 등이 포함됩니다."
+       data-points="12-piece collection, nothing priced over £70|Wardrobe organiser doubles as a backpack|Targets renters and students who move frequently" data-points-kr="12종 컬렉션, 최고가 70파운드 이하|백팩 겸용 옷장 정리함 포함|자주 이사하는 세입자·학생층 겨냥"
+       data-designer="A clear example of designing for a life-stage need (frequent relocation) rather than a fixed space, portability and modularity as the core brief, not an afterthought." data-designer-kr="고정된 공간이 아니라 '자주 이사한다'는 생애주기적 니즈를 위해 설계한 좋은 사례입니다. 이동성과 모듈성이 부가 요소가 아니라 핵심 브리프입니다."
+       data-impact-score="2"
+       data-recommend="Good reference for furniture/product designers on portability briefs · Save" data-recommend-kr="이동성 중심 브리프를 다루는 가구·제품 디자이너에게 참고 추천 · 저장"
+       data-comment="IKEA has quietly built a strong track record of designing for constrained, transient living, this collection continues that line by treating 'moving without a car' as the central design constraint rather than an edge case.
+
+The backpack-organiser hybrid is the standout: it's a good reminder that dual-function objects work best when both functions are genuinely needed by the same user, at different moments." data-comment-kr="이케아는 제한적이고 유동적인 주거 형태를 위한 디자인에서 꾸준히 좋은 실적을 쌓아왔습니다. 이번 컬렉션도 '차 없이 이사하기'를 예외적 상황이 아니라 핵심 설계 제약으로 다룬다는 점에서 그 연장선에 있습니다.
+
+백팩 겸용 정리함이 가장 눈에 띕니다. 두 가지 기능이 진짜로 같은 사용자에게, 서로 다른 시점에 필요할 때 겸용 오브제가 가장 잘 작동한다는 것을 다시 보여줍니다."
+       data-title-en="IKEA releases portable furniture designed to be moved without a car">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">이동가구</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 15</div>
+        <div class="card-title">이케아, 차 없이도 옮길 수 있는 이동형 가구 '콤피스행' 출시</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.archdaily.com/1148657/omas-the-martin-completes-as-part-of-the-transformation-of-amsterdams-former-bijlmerbajes-prison" target="_blank"
+       data-category="Design · Architecture"
+       data-summary="OMA's David Gianotten and Mariano Sagasta completed 'The Martin,' a residential tower of four interlocking volumes with continuous balconies and moss-covered atria, part of the 7.5-hectare redevelopment of Amsterdam's former Bijlmerbajes prison into an energy-neutral neighborhood." data-summary-kr="OMA의 데이비드 지아노텐과 마리아노 사가스타가 설계한 주거타워 '더 마틴'이 완공됐습니다. 연속된 발코니와 이끼로 덮인 아트리움을 갖춘 네 개의 매스가 맞물린 형태로, 암스테르담 옛 바이럼바예스 감옥을 에너지 자립형 주거지로 재개발하는 7.5헥타르 프로젝트의 일부입니다."
+       data-points="Four interlocking volumes with wraparound balconies|98% of demolished-prison materials reused or recycled|Units from ~50sqm to 140sqm, moss-covered communal atria" data-points-kr="발코니로 감싼 네 개의 맞물린 매스 구조|철거된 감옥 자재의 98%를 재사용·재활용|약 50㎡~140㎡ 유닛, 이끼로 덮인 공용 아트리움"
+       data-designer="A strong case study in adaptive large-scale redevelopment, the 98% material-reuse figure is a benchmark worth citing in any sustainability-focused pitch." data-designer-kr="대규모 적응형 재개발의 좋은 사례입니다. 98%라는 자재 재사용 수치는 지속가능성을 다루는 어떤 제안서에서도 인용할 만한 기준점입니다."
+       data-impact-score="3"
+       data-recommend="Strong reference for adaptive reuse and sustainable redevelopment · Save" data-recommend-kr="적응형 재사용·지속가능 재개발 레퍼런스로 강력 추천 · 저장"
+       data-comment="Turning a prison into housing is already a loaded symbolic move, but OMA leans into it with restraint rather than spectacle, the moss atria and material-reuse numbers do more storytelling than any facade gesture could.
+
+The 98% material-reuse figure stands out as genuinely rare at this scale; most 'sustainable redevelopment' claims don't survive contact with an actual demolition budget." data-comment-kr="감옥을 주거지로 바꾼다는 것 자체가 이미 상징적으로 무거운 작업인데, OMA는 화려한 제스처 대신 절제된 접근을 택했습니다. 이끼 아트리움과 자재 재사용 수치가 어떤 파사드 연출보다 더 많은 이야기를 전합니다.
+
+98%라는 자재 재사용 수치는 이 정도 규모에서 실제로 보기 드문 성과입니다. 대부분의 '지속가능한 재개발' 주장은 실제 철거 예산 앞에서 무너지곤 합니다."
+       data-title-en="OMA's The Martin Completes as Part of the Transformation of Amsterdam's Former Bijlmerbajes Prison">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">감옥재생</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 07. 15</div>
+        <div class="card-title">OMA의 '더 마틴', 암스테르담 옛 바이럼바예스 감옥 재개발 프로젝트로 완공</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/15/louis-vuitton-unveils-bespoke-trophy-trunk-for-fifa-world-cup-2026-ahead-of-the-final/" target="_blank"
+       data-category="Design · Branding · Packaging"
+       data-summary="Louis Vuitton unveiled its official 2026 FIFA World Cup Trophy Trunk, wrapped entirely in LV Monogram canvas with gold 'V' panels, made to carry the trophy out of the New York/New Jersey stadium after Sunday's final." data-summary-kr="루이비통이 2026 FIFA 월드컵 공식 트로피 트렁크를 공개했습니다. 전면 LV 모노그램 캔버스로 감싸고 금색 'V' 패널을 장식했으며, 일요일 결승 후 뉴욕·뉴저지 스타디움에서 우승 트로피를 운반하는 데 쓰입니다."
+       data-points="Fully wrapped in LV Monogram canvas|Gold 'V' panels for Vuitton and Victory|Used to carry the trophy out after Sunday's final at NY/NJ Stadium" data-points-kr="전면 LV 모노그램 캔버스 마감|빅토리와 비통을 동시에 뜻하는 금색 'V' 패널|일요일 결승전 후 뉴욕·뉴저지 스타디움에서 트로피 운반용으로 사용"
+       data-designer="A tight brand-heritage exercise, reusing a single iconic material (Monogram canvas) and a one-letter motif to carry maximum brand weight in a single ceremonial object." data-designer-kr="브랜드 헤리티지를 압축적으로 활용한 사례입니다. 하나의 상징적 소재(모노그램 캔버스)와 한 글자 모티프만으로 의전용 오브제에 최대한의 브랜드 무게감을 담았습니다."
+       data-impact-score="1"
+       data-recommend="Light read for branding/luxury design fans · Optional" data-recommend-kr="브랜딩·럭셔리 디자인에 관심 있다면 가볍게 · 선택"
+       data-comment="This is a low-stakes but well-executed piece of ceremonial branding, the trunk itself does no functional work beyond looking expensive on camera for a few minutes, and that's precisely the point.
+
+Worth a glance for the restraint: no logo overload, just monogram canvas and a single gold letter doing double duty as both brand mark and message ('V' for Victory)." data-comment-kr="기능적으로는 카메라 앞에서 몇 분간 비싸 보이는 것 외에 할 일이 없는, 부담 없지만 잘 만든 의전용 브랜딩입니다. 그리고 그것이 바로 이 작업의 핵심입니다.
+
+절제된 접근이 눈여겨볼 만합니다. 로고를 과하게 넣지 않고, 모노그램 캔버스와 금색 글자 하나만으로 브랜드 마크이자 메시지('V'=Victory)를 동시에 전달합니다."
+       data-title-en="Louis Vuitton Unveils Bespoke Trophy Trunk for FIFA World Cup 2026 Ahead of the Final">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">트로피트렁크</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 15</div>
+        <div class="card-title">루이비통, 2026 월드컵 결승 앞두고 트로피 전용 트렁크 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
