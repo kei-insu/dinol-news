@@ -12,6 +12,9 @@ import {
 import {
   initializeAppCheck, ReCaptchaV3Provider
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app-check.js";
+import {
+  getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD84D4xoyD74W263XBiy7uRfNX-Oree5Xo",
@@ -25,12 +28,28 @@ const firebaseConfig = {
 // reCAPTCHA v3 사이트 키 (공개용)
 const RECAPTCHA_SITE_KEY = "6LcW4kQtAAAAAJ5-eZc-SpxCrQ37bfTaYHs7v_yd";
 
-// 관리자 마스터 비밀번호(스팸 정리용) — 아무 글/댓글이나 이 값으로 수정/삭제 가능
-const ADMIN_PW = "481516";
-let ADMIN_HASH = null;
-sha256(ADMIN_PW).then(h => { ADMIN_HASH = h; }); // 진짜 운영자 판별용(비번 해시)
+// 운영자 권한 — Firebase Auth 세션으로만 판별한다.
+// ⛔ 코드에 마스터 비밀번호를 두지 않는다(공개 노출됨). guardrails.md 참조.
+let IS_ADMIN = false;
 
 const app = initializeApp(firebaseConfig);
+
+// ── 운영자 인증 (Firebase Auth) ──
+// 로그인: 브라우저 콘솔에서  dinolAdmin.login("운영자이메일", "비밀번호")
+// 로그아웃: dinolAdmin.logout()
+const auth = getAuth(app);
+onAuthStateChanged(auth, u => {
+  IS_ADMIN = !!u;
+  document.body && document.body.classList.toggle("is-admin", IS_ADMIN);
+  if (typeof window.__dinolOnAdminChange === "function") window.__dinolOnAdminChange(IS_ADMIN);
+});
+window.dinolAdmin = {
+  login: (email, pw) => signInWithEmailAndPassword(auth, email, pw)
+    .then(() => { console.log("운영자 로그인 완료"); return true; })
+    .catch(e => { console.error("로그인 실패:", e.code); return false; }),
+  logout: () => signOut(auth).then(() => console.log("로그아웃 완료")),
+  get isAdmin() { return IS_ADMIN; }
+};
 
 // App Check (reCAPTCHA v3) — 봇/스팸 차단. 사용자에겐 보이지 않음.
 try {
@@ -174,12 +193,12 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   }
 
   const EMOJI = ["😀","😃","😄","😁","😊","🙂","😎","🤓","🧐","🤩","😌","🥰","😉","😆","😙","🙃","😇","🤠","😏","🥳"];
-  function avatar(nk, pwHash) { if (ADMIN_HASH && pwHash === ADMIN_HASH) return "✨"; let h = 0; for (let i = 0; i < nk.length; i++) h = (h * 31 + nk.charCodeAt(i)) >>> 0; return EMOJI[h % EMOJI.length]; }
+  function avatar(nk, isAdminDoc) { if (isAdminDoc === true) return "✨"; let h = 0; for (let i = 0; i < nk.length; i++) h = (h * 31 + nk.charCodeAt(i)) >>> 0; return EMOJI[h % EMOJI.length]; }
   const CEMOJI = ["😀","😃","😄","😁","😆","😊","🙂","😉","😍","🥰","😎","🤩","😌","😙","😇","🥳","😂","🤣","🥹","😝","😜","🤪","😢","😭","🥺","😳","😮","🤔","🙄","😅","😴","😤","👍","👏","🙌","🙏","👌","💪","🤙","👀","🤗","🙈","❤️","💜","💙","🔥","✨","🎉"];
 
   function digitsOnly(el, max = 4) { el && el.addEventListener("input", () => { el.value = el.value.replace(/\D/g, "").slice(0, max); }); }
-  // 비번: 일반은 4자리에서 컷, 관리자(481516) 입력 경로만 6자리 허용
-  pw && pw.addEventListener("input", () => { const v = pw.value.replace(/\D/g, ""); pw.value = v.slice(0, ADMIN_PW.startsWith(v) ? 6 : 4); });
+  // 비번: 4자리 고정 (운영자 권한은 Firebase Auth 세션으로 판별하므로 예외 없음)
+  pw && pw.addEventListener("input", () => { pw.value = pw.value.replace(/\D/g, "").slice(0, 4); });
 
   // ── 인라인 아이콘 (사이트엔 아이콘 폰트가 없으므로 SVG로 직접) ──
   const ICON_KEBAB = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>';
@@ -210,7 +229,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     const timeStr = fmtTime(c.ts);
     if (cs.editingId === c.id) {
       return '<div class="gb-comment editing" data-cid="' + c.id + '">' +
-        '<div class="gb-entry-row"><span class="gb-avatar gb-avatar-sm">' + avatar(c.nick, c.pwHash) + '</span>' +
+        '<div class="gb-entry-row"><span class="gb-avatar gb-avatar-sm">' + avatar(c.nick, c.admin) + '</span>' +
         '<div class="gb-entry-main">' +
         '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
         '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
@@ -220,7 +239,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         '</div></div></div>';
     }
     return '<div class="gb-comment" data-cid="' + c.id + '">' +
-      '<div class="gb-entry-row"><span class="gb-avatar gb-avatar-sm">' + avatar(c.nick, c.pwHash) + '</span>' +
+      '<div class="gb-entry-row"><span class="gb-avatar gb-avatar-sm">' + avatar(c.nick, c.admin) + '</span>' +
       '<div class="gb-entry-main">' +
       '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
       '<span class="gb-entry-time">' + esc(timeStr) + '</span>' +
@@ -264,7 +283,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     const timeStr = fmtTime(e.ts);
     if (editingId === e.id) {
       return '<div class="gb-entry editing" data-id="' + e.id + '">' +
-        '<div class="gb-entry-row"><span class="gb-avatar">' + avatar(e.nick, e.pwHash) + '</span>' +
+        '<div class="gb-entry-row"><span class="gb-avatar">' + avatar(e.nick, e.admin) + '</span>' +
         '<div class="gb-entry-main">' +
         '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
         '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
@@ -275,7 +294,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     }
     const cs = cstate(e.id);
     return '<div class="gb-entry" data-id="' + e.id + '">' +
-      '<div class="gb-entry-row"><span class="gb-avatar">' + avatar(e.nick, e.pwHash) + '</span>' +
+      '<div class="gb-entry-row"><span class="gb-avatar">' + avatar(e.nick, e.admin) + '</span>' +
       '<div class="gb-entry-main">' +
       '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
       '<span class="gb-entry-time">' + esc(timeStr) + '</span>' +
@@ -409,7 +428,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       const cs = cstate(pending.pid); const c = cs.list.find(x => x.id === pending.cid); if (!c) { closeModal(); return; } pwHash = c.pwHash;
     }
     const inputHash = await sha256(input);
-    const ok = (input === ADMIN_PW) || (pwHash && inputHash === pwHash);
+    const ok = IS_ADMIN || (pwHash && inputHash === pwHash);
     if (!ok) { mErr.textContent = "비밀번호가 일치하지 않습니다."; return; }
     const { action, scope, pid, cid } = pending; closeModal();
     if (scope === "post") {
@@ -457,7 +476,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
 
   async function addComment(pid, form, btn) {
     const p = (form.querySelector(".gb-cpw").value || "").trim();
-    const isAdmin = (p === ADMIN_PW);
+    const isAdmin = IS_ADMIN;
     const n = isAdmin ? "운영자K" : (form.querySelector(".gb-cnick").value || "").trim().slice(0, 12);
     const b = (form.querySelector(".gb-ccontent").value || "").trim().slice(0, 500);
     if (!n) { alert("닉네임을 입력해주세요."); return; }
@@ -466,7 +485,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     btn.disabled = true;
     try {
       const pwHash = await sha256(p);
-      const ref = await addDoc(collection(db, "guestbook", pid, "comments"), { nick: n, body: b, pwHash, createdAt: serverTimestamp() });
+      const ref = await addDoc(collection(db, "guestbook", pid, "comments"), { nick: n, body: b, pwHash, admin: isAdmin, createdAt: serverTimestamp() });
       try { await updateDoc(doc(db, "guestbook", pid), { commentCount: increment(1) }); } catch (e2) {}
       const cs = cstate(pid);
       cs.count = (cs.count || 0) + 1; cs.composerOpen = false; cs.expanded = true;
@@ -518,11 +537,11 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   list.addEventListener("input", (ev) => {
     const t = ev.target;
     if (t.classList.contains("gb-ccontent")) { const c = t.closest(".gb-cform").querySelector(".gb-ccount"); if (c) c.textContent = t.value.length + " / 500"; }
-    else if (t.classList.contains("gb-cpw")) { const v = t.value.replace(/\D/g, ""); t.value = v.slice(0, ADMIN_PW.startsWith(v) ? 6 : 4); }
+    else if (t.classList.contains("gb-cpw")) { t.value = t.value.replace(/\D/g, "").slice(0, 4); }
   });
 
   // ── 글 등록 ──
-  function updateSubmit() { const p = pw.value.trim(), a = (p === ADMIN_PW); submit.disabled = !((a || nick.value.trim()) && (a || /^\d{4}$/.test(p)) && content.value.trim()); }
+  function updateSubmit() { const p = pw.value.trim(), a = IS_ADMIN; submit.disabled = !((a || nick.value.trim()) && (a || /^\d{4}$/.test(p)) && content.value.trim()); }
   [nick, pw, content].forEach(el => el && el.addEventListener("input", updateSubmit));
   content && content.addEventListener("input", () => { count.textContent = content.value.length + " / 1000"; });
   updateSubmit();
@@ -552,7 +571,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   }
 
   submit && submit.addEventListener("click", async () => {
-    const p = pw.value.trim(), isAdmin = (p === ADMIN_PW);
+    const p = pw.value.trim(), isAdmin = IS_ADMIN;
     const n = isAdmin ? "운영자K" : nick.value.trim().slice(0, 12), b = content.value.trim();
     if (!n) { alert("닉네임을 입력해주세요."); return; }
     if (!isAdmin && !/^\d{4}$/.test(p)) { alert("비밀번호 4자리(숫자)를 입력해주세요."); return; }
@@ -560,7 +579,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     submit.disabled = true;
     try {
       const pwHash = await sha256(p);
-      const ref = await addDoc(collection(db, "guestbook"), { nick: n, body: b, pwHash, commentCount: 0, createdAt: serverTimestamp() });
+      const ref = await addDoc(collection(db, "guestbook"), { nick: n, body: b, pwHash, admin: isAdmin, commentCount: 0, createdAt: serverTimestamp() });
       entries.unshift({ id: ref.id, nick: n, body: b, pwHash, commentCount: 0, ts: new Date() });
       cstate(ref.id).count = 0;
       nick.value = ""; pw.value = ""; content.value = ""; count.textContent = "0 / 1000"; if (gbSmile) gbSmile.style.display = "none";
@@ -571,7 +590,6 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   // ── 초기 로드 ──
   (async function load() {
     try {
-      if (!ADMIN_HASH) ADMIN_HASH = await sha256(ADMIN_PW); // 첫 렌더 전 운영자 해시 보장
       const snap = await getDocs(query(collection(db, "guestbook"), orderBy("createdAt", "desc")));
       entries = snap.docs.map(d => {
         const v = d.data();

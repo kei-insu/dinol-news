@@ -1,4 +1,5 @@
 {
+ "http://www.koreatimes.com/article/20260715/1621548": "20260717",
  "https://design.co.kr/article/166406/": "20260701",
  "https://imnews.imbc.com/news/2026/politics/article/6834985_36912.html": "20260703",
  "https://money.usnews.com/investing/news/articles/2026-07-08/spacexai-launches-grok-4-5-model-for-coding-agentic-tasks": "20260710",
@@ -25,7 +26,9 @@
  "https://techcrunch.com/2026/07/14/deepseek-reportedly-in-talks-to-raise-1-5b-then-ipo/": "20260715",
  "https://techcrunch.com/2026/07/14/the-real-ai-race-may-no-longer-be-at-the-frontier-open-models-hugging-face/": "20260715",
  "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/": "20260716",
+ "https://techcrunch.com/2026/07/15/backed-by-60m-in-funding-oak-steps-out-of-stealth-to-fix-the-identity-mess-that-ai-agents-are-making-worse/": "20260717",
  "https://techcrunch.com/2026/07/15/indian-ai-coding-startup-emergent-becomes-a-unicorn-just-over-a-year-after-launch/": "20260716",
+ "https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/": "20260717",
  "https://techcrunch.com/2026/07/15/vint-cerf-is-working-on-a-plan-to-unleash-ai-agents-on-the-open-internet/": "20260716",
  "https://theladylearner.com/3513/": "20260706",
  "https://timesofindia.indiatimes.com/business/india-business/govt-may-look-at-a-separate-legal-framework-for-ai-secretary/articleshow/132170345.cms": "20260703",
@@ -47,6 +50,7 @@
  "https://www.archdaily.com/1054027/moma-opens-architects-of-liberation-exhibition-on-independence-era-west-african-modernism": "20260712",
  "https://www.archdaily.com/1092216/studio-campo-baeza-and-maoda-win-competition-to-design-ecuadors-new-national-museum-in-quito": "20260713",
  "https://www.archdaily.com/1092491/antara-residence-ark-architecture-studio": "20260714",
+ "https://www.archdaily.com/1148650/a-temporary-train-station-for-roskilde-festival-royal-danish-academy": "20260717",
  "https://www.archdaily.com/1148657/omas-the-martin-completes-as-part-of-the-transformation-of-amsterdams-former-bijlmerbajes-prison": "20260716",
  "https://www.artificialintelligence-news.com/news/japan-ai-robots-2040-national-ai-model/": "20260701",
  "https://www.axios.com/2026/07/03/anthropic-ai-models-revived-behind-the-scenes": "20260706",
@@ -80,6 +84,7 @@
  "https://www.dezeen.com/2026/07/14/nerihu-mandarin-oriental-the-landmark-facade-hong-kong/": "20260715",
  "https://www.dezeen.com/2026/07/14/nokia-unveils-nostalgic-dumbphones-with-dedicated-ai-button/": "20260715",
  "https://www.dezeen.com/2026/07/15/ikea-kompishang-affordable-portable-furniture-short-term-rentals/": "20260716",
+ "https://www.dezeen.com/2026/07/16/riba-stirling-prize-2026-shortlist/": "20260717",
  "https://www.elledecor.com/design-decorate/trends/a71683847/london-wowhouse-trends-ideas-2026/": "20260703",
  "https://www.etnews.com/20260701000152": "20260702",
  "https://www.etnews.com/20260701000364": "20260702",
@@ -90,6 +95,7 @@
  "https://www.fnnews.com/news/202607011807584120": "20260701",
  "https://www.hankyung.com/article/202607018271g": "20260701",
  "https://www.inven.co.kr/webzine/news/?news=318233": "20260709",
+ "https://www.itsnicethat.com/articles/ana-miminoshvili-illustration-discover-160726": "20260717",
  "https://www.itsnicethat.com/articles/blanca-doba-bare-earth-graphic-design-project-010726": "20260701",
  "https://www.itsnicethat.com/articles/chris-panicker-pitchfork-selects-graphic-design-project-070726": "20260713",
  "https://www.itsnicethat.com/articles/koto-cctype-typography-project-080726": "20260713",
@@ -123,6 +129,7 @@
  "https://www.yankodesign.com/2026/07/14/huawei-built-a-200mp-camera-phone-that-finally-shows-your-true-colors/": "20260715",
  "https://www.yankodesign.com/2026/07/15/korean-studio-just-designed-a-pencil-that-looks-like-an-idea/": "20260716",
  "https://www.yankodesign.com/2026/07/15/louis-vuitton-unveils-bespoke-trophy-trunk-for-fifa-world-cup-2026-ahead-of-the-final/": "20260716",
+ "https://www.yankodesign.com/2026/07/16/xpeng-l03-brings-ex-ferrari-designer-and-520-km-range-to-europe/": "20260717",
  "https://www.yna.co.kr/view/AKR20260703004951072": "20260704",
  "https://zdnet.co.kr/view/?no=20260701114115": "20260701",
  "https://zdnet.co.kr/view/?no=20260701161645": "20260701",
@@ -131,5 +138,6 @@
  "https://zdnet.co.kr/view/?no=20260710145252": "20260711",
  "https://zdnet.co.kr/view/?no=20260713095215": "20260714",
  "https://zdnet.co.kr/view/?no=20260714003534": "20260714",
- "https://zdnet.co.kr/view/?no=20260714151628": "20260715"
+ "https://zdnet.co.kr/view/?no=20260714151628": "20260715",
+ "https://zdnet.co.kr/view/?no=20260716132158": "20260717"
 }

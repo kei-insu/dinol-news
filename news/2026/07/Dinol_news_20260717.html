@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 17</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 17, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://zdnet.co.kr/view/?no=20260716132158" target="_blank"
+       data-category="AI · 정책 · 거버넌스"
+       data-summary="이재명 대통령이 미국·중국 중심 AI 생태계에 대한 의존도를 낮추기 위해 초기 단계부터 언어·데이터 협력체계를 구축하는 '한국형 AI 동맹'이 필요하다고 밝혔다."
+       data-points="미·중 AI 모델 의존이 초래할 국가적 리스크 우려|해외 기업의 서비스 중단·정책 변경 사례(미토스 사태) 언급|초기 단계부터 언어·데이터 국제 협력체계 구축 강조"
+       data-designer="국가 차원의 AI 주권 논의는 결국 어떤 모델·플랫폼을 실무에서 쓸 수 있는지를 좌우합니다. 국산 AI 생태계 다변화 흐름을 도구 선택 전략에 반영할 필요가 있습니다."
+       data-impact-score="3"
+       data-recommend="정책 동향 참고 · AI 서비스 기획자 저장 추천"
+       data-comment="이번 발언은 단순한 정치적 수사가 아니라, 정부가 실제로 GPU 인프라·데이터센터·피지컬AI에 대규모 투자를 결정한 직후 나온 것이라 무게감이 다릅니다. '모두의 AI' 보급 계획과 맞물려 국산 AI 모델·인프라 사용을 유도하는 정책 기조가 뚜렷해지고 있습니다.
+디자인·프로덕트 실무자 입장에서는 특정 해외 모델에만 의존한 워크플로우가 규제·정책 변화에 취약할 수 있다는 신호로 읽힙니다. 로컬 모델·오픈소스 대안을 함께 검토해두는 것이 리스크 분산에 도움이 될 것입니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">AI동맹</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 16</div>
+        <div class="card-title">이재명 대통령 "한국형 AI 동맹 필요…미·중 모델 의존도 낮춰야"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="http://www.koreatimes.com/article/20260715/1621548" target="_blank"
+       data-category="AI · 빅테크 · M&amp;A"
+       data-summary="애플이 자체 개발한 'M2 울트라' 서버 칩의 AI 처리 성능 한계에 부딪히면서 반도체 스타트업 인수를 검토 중이다. 차세대 칩 '발트라' 개발도 지연되며 구글 클라우드의 엔비디아 칩에 의존하고 있는 상황이다."
+       data-points="자체 서버 칩 성능 부족으로 대형 모델 구동에 어려움|차세대 칩 '발트라' 개발 일정 지연, M7 울트라 기반 칩은 2029년 예상|복수 반도체 스타트업에 인수 의향 타진, 투자은행과도 협의"
+       data-designer="애플조차 자체 칩만으로 AI 인프라를 감당하지 못한다는 사실은, AI 기능을 제품에 통합하려는 모든 팀에게 인프라 종속 리스크를 다시 생각하게 합니다."
+       data-impact-score="2"
+       data-recommend="배경 지식 참고 · 선택"
+       data-comment="애플이 시리 개편을 위해 자체 서버에서 구글 제미나이를 시험했지만 맥 기반 칩이 대형 모델을 감당하지 못했다는 대목이 흥미롭습니다. 하드웨어 자체 설계 역량이 강한 기업조차 AI 시대의 칩 병목에서 자유롭지 못하다는 뜻입니다.
+이번 소식은 프런티어 AI 인프라가 소수 기업(엔비디아, 브로드컴 등)에 집중되는 구조적 문제를 다시 보여줍니다. AI 기능을 계획하는 실무자라면 특정 벤더의 캐파에 전적으로 의존하지 않는 설계가 필요하다는 점을 참고할 만합니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">반도체</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">코리아타임스(미주 한국일보) · 2026. 07. 15</div>
+        <div class="card-title">애플, AI 서버칩 경쟁력 위해 반도체기업 인수 타진</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/" target="_blank"
+       data-category="AI · Open Model · Research"
+       data-summary="Thinking Machines Lab, founded by former OpenAI CTO Mira Murati, released its first in-house AI model, Inkling — an open-weight mixture-of-experts system with 975 billion total parameters, activating about 41 billion per task." data-summary-kr="전 OpenAI CTO 미라 무라티가 설립한 씽킹머신스랩이 첫 자체 개발 AI 모델 '잉클링'을 공개했다. 9,750억 개 파라미터를 가진 오픈웨이트 MoE 모델로, 작업당 약 410억 개만 활성화하는 구조다."
+       data-points="Open-weight, downloadable and modifiable by developers|975B total params, ~41B active per task (MoE)|Bets against one-size-fits-all frontier models" data-points-kr="개발자가 다운로드·수정 가능한 오픈웨이트 모델|총 9,750억 파라미터 중 작업당 약 410억만 활성화(MoE)|범용 거대 모델 일변도 전략에 반기"
+       data-designer="A sign that specialized, efficient open models may reshape which AI teams can afford to run in-house — relevant for anyone evaluating build-vs-buy for AI features." data-designer-kr="특화형·경량 오픈 모델이 늘어나면 사내에서 직접 운용 가능한 AI의 범위가 넓어집니다. AI 기능을 자체 구축할지 외부 API에 의존할지 판단할 때 참고할 신호입니다."
+       data-impact-score="3"
+       data-recommend="Worth tracking for AI infra decisions · Save for reference" data-recommend-kr="AI 인프라 의사결정 시 주시 · 참고 저장 추천"
+       data-comment="Mira Murati's Thinking Machines Lab finally entered the model race directly with an open-weight release, after being known mostly for infra and tooling work.
+Unlike frontier labs betting on one giant model to do everything, Inkling's MoE design activates only what's needed — an efficiency bet that also gives companies more room to customize for their own infrastructure." data-comment-kr="미라 무라티가 OpenAI를 떠나 설립한 씽킹머신스가 드디어 첫 모델을 오픈웨이트로 공개했다는 점이 상징적입니다. 그동안 인프라·툴링 위주로 알려졌던 회사가 직접 모델 경쟁에 뛰어든 셈입니다.
+'하나의 거대 모델이 모든 것을 해결한다'는 프런티어 랩들의 접근과 달리, MoE 구조로 필요한 부분만 활성화하는 효율성에 베팅한 점이 눈에 띕니다. 오픈웨이트라 기업이 자체 인프라에 맞게 커스터마이징할 여지가 크다는 점도 실무적으로 의미가 있습니다."
+       data-title-en="Thinking Machines amps up its bet against one-size-fits-all AI with its first open model, Inkling">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">오픈모델</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 15</div>
+        <div class="card-title">씽킹머신스, 첫 오픈모델 '잉클링' 공개…"AI는 원사이즈핏올 아니다"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/15/backed-by-60m-in-funding-oak-steps-out-of-stealth-to-fix-the-identity-mess-that-ai-agents-are-making-worse/" target="_blank"
+       data-category="AI · Security · Identity"
+       data-summary="Israeli startup Oak emerged from stealth with $60M in funding to build a unified control plane governing identity across an organization, as AI agents working alongside humans strain identity tools built for the cloud era." data-summary-kr="이스라엘 스타트업 '오크'가 6,000만 달러 시드 투자를 받고 스텔스 모드에서 벗어났다. 사람과 AI 에이전트가 함께 일하는 환경에서 기존 클라우드 시대의 아이덴티티 관리 도구가 한계를 드러내자, 조직 전반의 아이덴티티를 통합 관리하는 컨트롤 플레인을 구축한다."
+       data-points="$60M seed funding for unified identity control plane|AI agents strain identity tools built for cloud era|Targets orgs with mixed human/agent workforces" data-points-kr="통합 아이덴티티 컨트롤 플레인에 6,000만 달러 시드 투자|AI 에이전트 확산으로 기존 아이덴티티 도구 한계 노출|사람·에이전트가 혼재한 조직을 타깃"
+       data-designer="As AI agents get their own logins and permissions, identity and access design becomes a core UX problem, not just a backend concern." data-designer-kr="AI 에이전트가 자체 로그인·권한을 갖게 되면서 아이덴티티·접근 설계는 백엔드만의 문제가 아니라 핵심 UX 과제가 되고 있습니다."
+       data-impact-score="3"
+       data-recommend="Relevant for teams building agentic products · Save for reference" data-recommend-kr="에이전트 제품 기획팀에 유용 · 참고 저장 추천"
+       data-comment="As AI agents start acting like real work accounts, tracking 'who (or what) actually did this' has become a genuine headache — Oak's launch signals investors now see this as a real market.
+For product designers, deciding what permissions an agent gets and how that's surfaced in the UI is a design challenge waiting just around the corner. Thinking through permission UX early pays off once agentic features ship." data-comment-kr="AI 에이전트가 실제 업무 계정처럼 행동하기 시작하면서, '누가(무엇이) 이 작업을 수행했는가'를 추적하는 문제가 새로운 골칫거리로 떠오르고 있습니다. 오크의 등장은 이 문제가 이제 투자자들도 주목하는 시장이 됐다는 신호입니다.
+프로덕트 디자이너 입장에서도 에이전트에게 어떤 권한을, 어떤 UI로 부여하고 통제할지는 곧 마주할 설계 과제입니다. 권한 관리 UX를 미리 고민해두면 향후 에이전트 기능을 붙일 때 유리할 것입니다."
+       data-title-en="Backed by $60M in funding, Oak steps out of stealth to fix the identity mess that AI agents are making worse">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">아이덴티티</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 15</div>
+        <div class="card-title">6,000만 달러 시드 확보한 '오크', AI 에이전트발 '아이덴티티 혼란' 해결 나서</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.archdaily.com/1148650/a-temporary-train-station-for-roskilde-festival-royal-danish-academy" target="_blank"
+       data-category="Design · Architecture · Education"
+       data-summary="Royal Danish Academy architecture students designed a demountable, reusable train station for Roskilde Festival, which for eight days each summer becomes Denmark's fourth-largest 'city' as over 125,000 people arrive by train." data-summary-kr="로열 데니시 아카데미 건축과 학생들이 로스킬레 페스티벌을 위한 해체·재사용 가능한 임시 기차역을 설계했다. 매년 여름 8일간 12만 5천 명 이상이 기차로 몰려들며 덴마크 4번째로 큰 '도시'가 되는 축제 현장을 위한 프로젝트다."
+       data-points="Designed and built by 30 second-year architecture students|Components can be dismantled, stored and reused each year|Prioritizes resource reuse over short-term consumption" data-points-kr="건축과 2학년생 30명이 직접 설계·시공|구성 요소를 매년 해체·보관·재사용 가능|단기 소비보다 자원 재사용을 우선하는 설계"
+       data-designer="A compact case study in designing for disassembly and community-built infrastructure — useful reference for temporary/pop-up spatial projects." data-designer-kr="분해·재사용을 전제로 한 설계와 커뮤니티 참여형 시공의 좋은 사례입니다. 팝업·임시 공간 프로젝트를 기획할 때 참고할 만합니다."
+       data-impact-score="2"
+       data-recommend="Good reference for temporary structure design · Save for portfolio research" data-recommend-kr="임시 구조물 설계 레퍼런스로 유용 · 포트폴리오 리서치용 저장 추천"
+       data-comment="It's remarkable that a student project actually serves over 120,000 real users every year. It's also an education model that gives students real load-bearing, real-user design experience instead of purely theoretical exercises.
+This dismantle-store-reuse modular approach translates directly to festival and pop-up retail planning. It's a good example of sustainability built into the structure itself rather than treated as a marketing point." data-comment-kr="학생 프로젝트임에도 매년 12만 명 이상이 실제로 이용하는 실전 인프라라는 점이 특별합니다. 이론이 아니라 실제 사용자와 하중을 견뎌야 하는 설계 경험을 학생들에게 제공하는 교육 모델이기도 합니다.
+해체·보관·재사용을 전제로 한 모듈형 설계는 페스티벌·팝업 스토어 등 단기 공간 기획에도 그대로 적용할 수 있는 접근입니다. 지속가능성을 명분이 아니라 구조 자체에 내재시킨 사례로 눈여겨볼 만합니다."
+       data-title-en="A Temporary Train Station for Roskilde Festival / Royal Danish Academy">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">임시역사</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 07. 16</div>
+        <div class="card-title">로스킬레 페스티벌을 위한 임시 기차역 / 로열 데니시 아카데미</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/16/riba-stirling-prize-2026-shortlist/" target="_blank"
+       data-category="Design · Architecture · Awards"
+       data-summary="RIBA revealed the six-strong shortlist for its 30th annual Stirling Prize, the UK's top architecture award, with all buildings located in England — two in London, two in Cambridge, one in Essex and one in Hertfordshire." data-summary-kr="영국왕립건축가협회(RIBA)가 30주년을 맞은 스털링상 최종 후보 6곳을 발표했다. 모두 잉글랜드 소재로 런던 2곳, 케임브리지 2곳, 에식스·하트퍼드셔 각 1곳이 이름을 올렸다."
+       data-points="30th anniversary of the Stirling Prize, UK's top architecture award|Paddington Square by Renzo Piano Building Workshop + Adamson Associates among finalists|All six shortlisted projects located in England" data-points-kr="영국 최고 건축상 '스털링상' 30주년|렌초 피아노+아담슨 어소시에이츠의 패딩턴 스퀘어 등이 최종 후보|최종 후보 6곳 모두 잉글랜드 소재"
+       data-designer="A useful yearly benchmark of what UK institutions consider architectural excellence — worth comparing against past shortlists to spot shifting priorities." data-designer-kr="영국 건축계가 어떤 기준으로 '우수함'을 정의하는지 매년 확인할 수 있는 지표입니다. 지난 수상작들과 비교하며 트렌드 변화를 읽어볼 만합니다."
+       data-impact-score="2"
+       data-recommend="Good for tracking UK architecture trends · Optional" data-recommend-kr="영국 건축 트렌드 추적용 · 선택"
+       data-comment="It's a bit disappointing that all six finalists are located in England, but the 30th-anniversary milestone will likely draw extra attention to this year's eventual winner.
+Paddington Square's 55x55m cube form combining exposed steel structure and curtain walls stands out — a sign that formal experimentation is still very much alive in large-scale commercial architecture." data-comment-kr="최종 후보 6곳이 전부 잉글랜드에 몰려있다는 점은 다소 아쉽지만, 30주년이라는 상징성 때문에 올해 수상작에 관심이 더 쏠릴 것으로 보입니다.
+패딩턴 스퀘어처럼 55x55m 정육면체 형태에 노출 철골 구조와 커튼월을 결합한 프로젝트가 눈에 띕니다. 대형 상업 건축에서도 조형적 실험이 계속되고 있다는 신호로 읽힙니다."
+       data-title-en="RIBA unveils Stirling Prize 2026 shortlist">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">건축상</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 16</div>
+        <div class="card-title">영국왕립건축가협회, 2026 스털링상 최종 후보 6곳 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/ana-miminoshvili-illustration-discover-160726" target="_blank"
+       data-category="Design · Illustration · Editorial"
+       data-summary="Illustrator Ana Miminoshvili cuts straight to the core of stories through low fantasy and reimagined realities, avoiding overcomplication in editorial illustration." data-summary-kr="일러스트레이터 아나 미미노슈빌리가 로우 판타지와 재해석된 현실을 통해 이야기의 핵심만을 간결하게 담아내는 작업 방식을 소개한다. 편집 일러스트에서 과도한 설명을 덜어내는 방법을 보여준다."
+       data-points="Focuses on 'low fantasy' and reimagined everyday realities|Prioritizes narrative clarity over visual complexity|Editorial illustration case study on restraint" data-points-kr="'로우 판타지'와 재해석된 일상 현실에 집중|시각적 복잡함보다 서사적 명료함 우선|절제를 보여주는 편집 일러스트 사례 연구"
+       data-designer="A good reminder that editorial illustration succeeds through selective simplification, not maximal detail — useful for anyone briefing illustrators or designing editorial visuals." data-designer-kr="편집 일러스트는 디테일을 쌓기보다 선택적으로 덜어낼 때 힘이 생긴다는 점을 다시 확인시켜줍니다. 일러스트레이터에게 브리핑하거나 에디토리얼 비주얼을 기획할 때 참고할 만합니다."
+       data-impact-score="2"
+       data-recommend="Good reference for editorial art direction · Save for mood boards" data-recommend-kr="에디토리얼 아트디렉션 레퍼런스로 좋음 · 무드보드 저장 추천"
+       data-comment="This interview shows that 'not over-explaining' is actually the harder skill — it pinpoints exactly the trap many junior illustrators and designers fall into.
+The 'low fantasy' framing is also an interesting keyword worth borrowing: sitting between full fantasy and full realism, it's an attitude toward compressing a story that's worth referencing in brand illustration planning too." data-comment-kr="'과도하게 설명하지 않는 것'이 오히려 더 어려운 기술이라는 걸 보여주는 인터뷰입니다. 많은 주니어 일러스트레이터·디자이너가 빠지기 쉬운 함정을 정확히 짚습니다.
+로우 판타지라는 다소 생소한 키워드도 흥미롭습니다. 완전한 판타지도, 완전한 사실주의도 아닌 중간 지점에서 이야기를 압축하는 방식은 브랜드 일러스트레이션 기획에도 참고할 만한 태도입니다."
+       data-title-en="How do you avoid overcomplicating an editorial illustration? Ana Miminoshvili has mastered the art">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">일러스트</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 07. 16</div>
+        <div class="card-title">편집 일러스트, 과도해지지 않는 법은? 아나 미미노슈빌리의 답</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/16/xpeng-l03-brings-ex-ferrari-designer-and-520-km-range-to-europe/" target="_blank"
+       data-category="Design · Product · Automotive"
+       data-summary="XPeng unveiled the L03, a global-facing SUV coupe combining sleek design, family-friendly practicality and software-first ambition, developed by a global design team led by former Ferrari exterior design chief JuanMa López." data-summary-kr="중국 전기차 업체 XPeng이 SUV 쿠페 'L03'을 공개했다. 전 페라리 익스테리어 디자인 총괄 후안마 로페즈가 이끄는 글로벌 디자인팀이 세련된 조형과 실용성, 소프트웨어 중심 전략을 결합해 완성했다."
+       data-points="Led by ex-Ferrari exterior design chief JuanMa López|SUV coupe form blends sleekness with family practicality|520 km range targeting European market entry" data-points-kr="전 페라리 익스테리어 디자인 총괄이 팀 리드|세련된 조형과 실용성을 결합한 SUV 쿠페 형태|520km 주행거리로 유럽 시장 공략"
+       data-designer="A case study in how legacy supercar design language gets translated into mainstream, software-heavy EVs — relevant for product and transportation designers watching the EV design convergence." data-designer-kr="슈퍼카 디자인 언어가 대중적인 소프트웨어 중심 전기차로 어떻게 옮겨가는지 보여주는 사례입니다. EV 디자인이 하나로 수렴하는 흐름을 보는 제품·모빌리티 디자이너에게 유용합니다."
+       data-impact-score="2"
+       data-recommend="Good reference for automotive/product design trends · Optional" data-recommend-kr="자동차·제품 디자인 트렌드 참고용 · 선택"
+       data-comment="It's telling in itself that a former Ferrari designer drew a mainstream electric SUV — the supercar's formal language is now trickling down to the family-car market.
+The 520 km range spec and software-first approach, aimed squarely at Europe, show Chinese EV brands shifting their competitive strategy from pure price to design and technology." data-comment-kr="페라리 출신 디자이너가 대중 전기 SUV를 그렸다는 점 자체가 상징적입니다. 슈퍼카의 조형 언어가 이제 패밀리카 시장까지 내려오고 있다는 뜻이니까요.
+유럽 진출을 겨냥한 520km 주행거리 스펙과 소프트웨어 중심 설계는 중국 EV 브랜드들이 단순히 가격 경쟁이 아니라 디자인·기술 경쟁으로 전략을 옮기고 있음을 보여줍니다."
+       data-title-en="XPeng L03 Brings Ex-Ferrari Designer and 520 km Range to Europe">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">모빌리티</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 16</div>
+        <div class="card-title">전 페라리 디자이너가 그린 XPeng L03, 520km 주행거리로 유럽 상륙</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>

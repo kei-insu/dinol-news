@@ -8,94 +8,230 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700&family=Song+Myung&family=Jua&family=Do+Hyeon&family=Black+Han+Sans&family=Gaegu:wght@400;700&family=Nanum+Pen+Script&family=Nanum+Brush+Script&family=Gamja+Flower&family=Hi+Melody&display=swap" rel="stylesheet">
 <style>
+  /* ============================================================
+     타이포그래피 시스템 — docs/design-guide.md 1장 (2026-07-15)
+     10단계 스케일(크기/행간): 40/48 · 36/44 · 32/40 · 28/36 · 24/32 · 20/28 · 18/26 · 16/26 · 14/20 · 12/16
+     px 하드코딩 금지. 반응형은 아래 :root 한 곳에서만 처리.
+     ⚠️ 행간이 px라 상속되면 자식이 엉뚱한 값을 물려받는다 → 크기·행간은 항상 쌍으로 적용.
+     ※ 다른 영역(뉴스·톡톡) 전환 시 이 :root 블록을 assets/dinol.css로 승격.
+     ============================================================ */
+  :root{
+    /* 프리미티브: 스케일 단계 (크기/행간 쌍 · 의미 없음) */
+    --step-40-fs:40px; --step-40-lh:48px;
+    --step-36-fs:36px; --step-36-lh:44px;
+    --step-32-fs:32px; --step-32-lh:40px;
+    --step-28-fs:28px; --step-28-lh:36px;
+    --step-24-fs:24px; --step-24-lh:32px;
+    --step-20-fs:20px; --step-20-lh:28px;
+    --step-18-fs:18px; --step-18-lh:26px;
+    --step-16-fs:16px; --step-16-lh:26px;
+    --step-14-fs:14px; --step-14-lh:20px;
+    --step-12-fs:12px; --step-12-lh:16px;
+
+    /* 시맨틱: 역할 → 단계 */
+    --fs-display:var(--step-40-fs); --lh-display:var(--step-40-lh);
+    --fs-h1:var(--step-32-fs);      --lh-h1:var(--step-32-lh);
+    --fs-h2:var(--step-24-fs);      --lh-h2:var(--step-24-lh);
+    --fs-h3:var(--step-20-fs);      --lh-h3:var(--step-20-lh);
+    --fs-title:var(--step-18-fs);   --lh-title:var(--step-18-lh);
+    --fs-body:var(--step-16-fs);    --lh-body:var(--step-16-lh);
+    --fs-body-sm:var(--step-14-fs); --lh-body-sm:var(--step-14-lh);
+    --fs-caption:var(--step-12-fs); --lh-caption:var(--step-12-lh);
+
+    /* ── 컴포넌트 시스템 (design-guide 2장) ── */
+    --size-xs:28px; --size-s:32px; --size-m:40px; --size-l:48px; --size-xl:56px;
+    --touch-min:44px;
+    --icon-s:16px; --icon-m:20px; --icon-l:24px; --icon-xl:32px;
+    --space-1:4px;  --space-2:8px;  --space-3:12px; --space-4:16px;
+    --space-5:20px; --space-6:24px; --space-8:32px; --space-10:40px; --space-12:48px;
+    --radius-s:4px; --radius-m:8px; --radius-l:12px; --radius-xl:16px; --radius-full:999px;
+    --border-thin:1px; --border-strong:2px;
+
+    /* ══ 컬러: 프리미티브 (이 페이지에서 소비되는 것만 · 전역 팔레트는 design-guide 4-2) ══ */
+    --neutral-0:#ffffff;
+    --neutral-100:#cfcfda;
+    --neutral-300:#b0b0bc;
+    --neutral-350:#a9adbe;
+    --neutral-400:#999999;
+    --neutral-500:#8a8a99;
+    --neutral-700:#3a3a48;
+    --neutral-750:#33333f;
+    --neutral-800:#2c2c3a;
+    --neutral-825:#2a2a32;
+    --neutral-850:#26262f;
+    --neutral-875:#23232e;
+    --neutral-880:#222230;
+    --neutral-925:#191922;
+    --neutral-960:#13131d;
+    --neutral-975:#111119;
+    --neutral-985:#0e0e16;
+    --neutral-1000:#0d0d12;
+    --orange-300:#ffb072;
+    --orange-400:#ff9e6e;
+    --orange-500:#ff7f3e;
+
+    /* ══ 컬러: 시맨틱 (컴포넌트는 이것만 참조) ══ */
+    --color-bg-base:var(--neutral-1000);
+    --color-bg-sunken:var(--neutral-985);
+    --color-bg-surface:var(--neutral-975);
+    --color-bg-elevated:var(--neutral-960);
+    --color-bg-raised:var(--neutral-925);
+    --color-bg-secondary:var(--neutral-875);
+    --color-bg-hover:var(--neutral-800);
+    --color-bg-track:var(--neutral-850);
+    --color-bg-disabled:var(--neutral-825);
+
+    --color-text-primary:var(--neutral-0);
+    --color-text-body:var(--neutral-100);
+    --color-text-secondary:var(--neutral-300);
+    --color-text-tertiary:var(--neutral-350);
+    --color-text-meta:var(--neutral-400);
+    --color-text-muted:var(--neutral-500);
+    --color-text-accent:var(--orange-500);
+    --color-text-accent-soft:var(--orange-400);
+
+    --color-border-subtle:var(--neutral-880);
+    --color-border-default:var(--neutral-750);
+    --color-border-strong:var(--neutral-700);
+    --color-border-focus:var(--orange-500);
+    --color-accent-grad-from:var(--orange-300);
+    --color-accent-grad-to:var(--orange-500);
+  }
+  /* 모바일(≤580px): 제목류만 한 칸 내림. 본문류는 PC·MO 동일 */
+  @media (max-width:580px){
+    :root{
+      --fs-display:var(--step-36-fs); --lh-display:var(--step-36-lh);
+      --fs-h1:var(--step-28-fs);      --lh-h1:var(--step-28-lh);
+      --fs-h2:var(--step-20-fs);      --lh-h2:var(--step-20-lh);
+      --fs-h3:var(--step-18-fs);      --lh-h3:var(--step-18-lh);
+    }
+  }
+
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scrollbar-gutter:stable; }
   body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;
-    background:#000; color:#e8e8f0; padding:56px 24px 96px; min-height:100vh; -webkit-font-smoothing:antialiased; }
-  header { display:flex; flex-direction:column; align-items:center; gap:6px; margin-bottom:14px; }
-  .site-title { font-family:'Cormorant Garamond','Noto Serif KR',Georgia,serif; font-weight:300; font-size:18px; color:#aaa; letter-spacing:5px; }
-  .corner-name { font-family:'Noto Sans KR',sans-serif; font-size:40px; font-weight:700; letter-spacing:-1.5px; color:#fff; line-height:1.05; margin-top:6px; text-align:center; }
-  .corner-en { font-family:'Cormorant Garamond',serif; font-size:15px; letter-spacing:4px; color:#7a7a88; text-transform:uppercase; margin-top:2px; }
-  .disclaimer { display:block; text-align:center; font-size:12px; color:#6a6a78; letter-spacing:1px; margin:10px 0 46px; }
-  .disclaimer b { color:#ff7f3e; font-weight:600; }
-  .zodiac-grid { max-width:1080px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  @media (max-width:780px){ .zodiac-grid{ grid-template-columns:repeat(2,1fr); gap:12px; } }
-  @media (max-width:480px){ .zodiac-grid{ grid-template-columns:1fr; } }
-  .z-card { position:relative; background:#111119; border:1px solid #22222e; border-radius:16px; padding:22px 20px 18px;
-    cursor:pointer; transition:transform .18s ease,border-color .18s ease,background .18s ease; display:flex; flex-direction:column; gap:12px; overflow:hidden; min-height:150px; }
-  .z-card:hover { transform:translateY(-3px); border-color:#3a3a48; background:#14141e; }
-  .z-card:focus-visible { outline:2px solid #ff7f3e; outline-offset:2px; }
-  .z-top { display:flex; align-items:center; gap:13px; }
-  .z-sym { width:46px; height:46px; flex:0 0 46px; border-radius:50%; display:grid; place-items:center; font-size:24px; color:#fff;
-    background:linear-gradient(145deg,#160830,#4a2a8c); box-shadow:inset 0 0 0 1px rgba(255,255,255,.06); }
-  .z-name { font-size:20px; font-weight:700; color:#fff; letter-spacing:-.3px; }
-  .z-msg { font-size:13.5px; line-height:1.6; color:#b7b7c6; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
-  .z-cta { margin-top:auto; font-size:13px; font-weight:600; color:#ff7f3e; letter-spacing:.2px; display:inline-flex; align-items:center; gap:5px; }
-  .z-cta .arw { transition:transform .18s ease; } .z-card:hover .z-cta .arw { transform:translateX(3px); }
-  /* DRAWER */
+    background:var(--color-bg-base); color:var(--color-text-body); padding:var(--space-12) var(--space-6) var(--space-12); min-height:100vh; -webkit-font-smoothing:antialiased;
+    font-size:var(--fs-body); line-height:var(--lh-body); }
+
+  /* ── 헤더 ── */
+  header { display:flex; flex-direction:column; align-items:center; gap:var(--space-2); margin-bottom:var(--space-12); }
+  .site-title { font-family:'Cormorant Garamond','Noto Serif KR',Georgia,serif;
+    font-size:var(--fs-title); line-height:var(--lh-title); font-weight:300; color:var(--color-text-tertiary); letter-spacing:5px; }
+  .corner-name { font-size:var(--fs-display); line-height:var(--lh-display); font-weight:700; letter-spacing:-1.5px; color:var(--color-text-primary); margin-top:var(--space-2); text-align:center; }
+  .corner-name .edition { display:block; font-size:var(--fs-h3); line-height:var(--lh-h3); font-weight:400; letter-spacing:1px; color:var(--color-text-accent); margin-top:var(--space-2); }
+
+  /* ── 메인 그리드: 3열 × 4행 ── */
+  .zodiac-grid { max-width:880px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-4); }
+  @media (max-width:820px){ .zodiac-grid{ grid-template-columns:repeat(2,1fr); gap:var(--space-3); } }
+  @media (max-width:480px){ .zodiac-grid{ grid-template-columns:repeat(2,1fr); gap:var(--space-3); } }
+
+  /* ── 카드 ── */
+  .z-card { position:relative; background:var(--color-bg-surface); border:var(--border-thin) solid var(--color-border-subtle); border-radius:var(--radius-xl);
+    padding:var(--space-4); cursor:pointer; transition:transform .18s ease,border-color .18s ease,background .18s ease;
+    display:flex; flex-direction:row; align-items:center; gap:var(--space-3); overflow:hidden; }
+  .z-card:hover { transform:translateY(-3px); border-color:var(--color-border-strong); background:var(--color-bg-raised); }
+  .z-card:focus-visible { outline:var(--border-strong) solid var(--color-border-focus); outline-offset:var(--space-1); }
+  /* 별자리 이미지 자리 — 원형 더미 (페이지 고유값 · 이미지 추가 예정) */
+  .z-illust { flex:0 0 64px; width:64px; height:64px; border-radius:var(--radius-full);
+    background:var(--color-bg-disabled); overflow:hidden; }
+  .z-illust img { width:100%; height:100%; object-fit:cover; display:block; }
+  .z-body { flex:1 1 auto; min-width:0; display:flex; flex-direction:column; justify-content:center; gap:var(--space-1); }
+  .z-name { font-size:var(--fs-h3); line-height:var(--lh-h3); font-weight:700; color:var(--color-text-primary); letter-spacing:-.3px; }
+  .z-en { font-size:var(--fs-caption); line-height:var(--lh-caption); font-weight:500; color:var(--color-text-muted); letter-spacing:1.5px; text-transform:uppercase; }
+  .z-date { font-size:var(--fs-body-sm); line-height:var(--lh-body-sm); font-weight:400; color:var(--color-text-meta); margin-top:var(--space-1); font-variant-numeric:tabular-nums; }
+  /* 모바일: 2열 유지 위해 세로 스택 (가로 배치는 텍스트 폭이 부족) */
+  @media (max-width:580px){
+    .z-card{ flex-direction:column; align-items:center; text-align:center; gap:var(--space-2); padding:var(--space-4) var(--space-2); }
+    .z-illust{ flex:0 0 auto; width:56px; height:56px; }
+    .z-body{ align-items:center; width:100%; }
+  }
+
+  /* ── 팝업(드로어) ── */
   .ov { position:fixed; inset:0; background:rgba(0,0,0,.66); backdrop-filter:blur(3px); display:none; z-index:50; }
   .ov.open { display:block; }
-  .drawer { position:fixed; z-index:51; top:50%; left:50%; transform:translate(-50%,-46%) scale(.98); width:min(480px,92vw); max-height:88vh;
-    overflow-y:auto; background:#13131d; border:1px solid #26263a; border-radius:20px; padding:30px 28px 28px; opacity:0; pointer-events:none;
+  .drawer { position:fixed; z-index:51; top:50%; left:50%; transform:translate(-50%,-46%) scale(.98); width:min(560px,92vw); max-height:90vh;
+    overflow-y:auto; background:var(--color-bg-elevated); border:var(--border-thin) solid var(--color-border-subtle); border-radius:var(--radius-xl); padding:var(--space-6); opacity:0; pointer-events:none;
     transition:opacity .2s ease,transform .2s ease; box-shadow:0 30px 80px rgba(0,0,0,.6); }
   .drawer.open { opacity:1; pointer-events:auto; transform:translate(-50%,-50%) scale(1); }
-  /* 다크 스크롤바 */
-  .drawer::-webkit-scrollbar { width:8px; }
+  .drawer::-webkit-scrollbar { width:6px; }
   .drawer::-webkit-scrollbar-track { background:transparent; }
-  .drawer::-webkit-scrollbar-thumb { background:#2c2c3a; border-radius:8px; border:2px solid #13131d; }
-  .drawer::-webkit-scrollbar-thumb:hover { background:#3a3a4c; }
-  .drawer { scrollbar-width:thin; scrollbar-color:#2c2c3a transparent; }
-  @media (max-width:560px){ .drawer{ top:auto; bottom:0; left:0; transform:translateY(100%); width:100%; max-height:90vh; border-radius:20px 20px 0 0; padding:26px 22px calc(26px + env(safe-area-inset-bottom,0px)); } .drawer.open{ transform:translateY(0); } }
-  .d-close { position:absolute; top:16px; right:16px; width:34px; height:34px; border:none; border-radius:9px; background:#20202e; color:#c9ccd4; font-size:18px; cursor:pointer; line-height:1; z-index:2; }
-  .d-close:hover{ background:#2b2b3c; color:#fff; }
-  /* 타이틀 = 별자리 + 폰트/컬러 통합 */
-  .d-head { text-align:center; margin-bottom:20px; }
-  .d-sym { font-size:34px; line-height:1; }
-  .d-title { font-size:42px; line-height:1.12; margin-top:4px; }
-  .d-chips { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-top:14px; }
-  .chip { display:inline-flex; align-items:center; gap:7px; background:#1c1c28; border:1px solid #2a2a3a; border-radius:20px; padding:5px 12px 5px 10px; font-size:11.5px; color:#b7b7c6; }
-  .chip .clabel { color:#7c7c8e; }
-  .chip .cval { color:#e2e2ec; font-weight:600; }
-  .chip .aa { font-size:17px; line-height:1; }
-  .chip .dot { width:13px; height:13px; border-radius:50%; box-shadow:inset 0 0 0 1px rgba(255,255,255,.15); }
-  .chip .hex { color:#7c7c8e; font-variant-numeric:tabular-nums; font-size:10.5px; }
-  .d-msg { font-size:14.5px; line-height:1.7; color:#cdcdda; text-align:center; padding:0 2px; }
-  .d-block { margin-top:28px; }
-  .d-block-label { font-size:12px; font-weight:700; letter-spacing:1px; color:#ff7f3e; margin-bottom:16px; display:flex; align-items:center; gap:7px; }
-  /* 확률 */
-  .prob { display:grid; grid-template-columns:80px 1fr auto; grid-template-rows:auto auto; column-gap:12px; align-items:center; margin-bottom:16px; }
-  .prob-name { grid-column:1; grid-row:1; font-size:12px; color:#e2e2ec; font-weight:500; display:flex; gap:4px; align-items:center; white-space:normal; word-break:keep-all; line-height:1.25; }
-  .prob-name .pi { flex:0 0 auto; }
-  .prob-bar { grid-column:2; grid-row:1; height:7px; background:#26262f; border-radius:5px; overflow:hidden; }
-  .prob-fill { height:100%; background:linear-gradient(90deg,#ffb072,#ff7f3e); border-radius:5px; }
-  .prob-right { grid-column:3; grid-row:1; white-space:nowrap; text-align:right; }
-  .prob-right .pct { font-size:12.5px; color:#fff; font-weight:700; font-variant-numeric:tabular-nums; }
-  .prob-right .st { font-size:12px; color:#ff9e6e; font-weight:600; margin-left:7px; }
-  .prob-quip { grid-column:2 / 4; grid-row:2; font-size:12px; color:#9c9cb0; margin-top:6px; line-height:1.45; }
-  /* 궁합 관계도 */
-  .rel-wrap { background:#0e0e16; border:1px solid #22222e; border-radius:14px; padding:10px 6px 6px; }
+  .drawer::-webkit-scrollbar-thumb { background:var(--color-border-default); border-radius:var(--radius-full); }
+  .drawer { scrollbar-width:thin; scrollbar-color:var(--color-border-default) transparent; }
+  @media (max-width:580px){ .drawer{ top:auto; bottom:0; left:0; transform:translateY(100%); width:100%; max-height:90vh; border-radius:var(--radius-xl) var(--radius-xl) 0 0; padding:var(--space-5) var(--space-4) calc(var(--space-6) + env(safe-area-inset-bottom,0px)); } .drawer.open{ transform:translateY(0); } }
+  .d-close { position:absolute; top:var(--space-3); right:var(--space-3); width:var(--size-m); height:var(--size-m);
+    border:none; border-radius:var(--radius-m); background:var(--color-bg-secondary); color:var(--color-text-secondary);
+    font-size:var(--fs-title); line-height:1; cursor:pointer; z-index:2; display:grid; place-items:center; }
+  /* 터치 타깃 최소 44px 확보 (외형 40px 유지) */
+  .d-close::after{ content:""; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:var(--touch-min); height:var(--touch-min); }
+  .d-close:hover{ background:var(--color-bg-hover); color:var(--color-text-primary); }
+  .d-close:focus-visible{ outline:var(--border-strong) solid var(--color-border-focus); outline-offset:var(--space-1); }
+
+  .d-head { text-align:center; margin-bottom:var(--space-6); }
+  .d-symbox { width:88px; height:88px; margin:0 auto; border-radius:var(--radius-l); background:var(--color-bg-disabled); overflow:hidden; display:grid; place-items:center;
+    font-size:var(--fs-h1); line-height:1; color:var(--color-text-body); }
+  .d-symbox img { width:100%; height:100%; object-fit:cover; display:block; }
+  .d-title { font-size:var(--fs-h1); line-height:var(--lh-h1); font-weight:700; color:var(--color-text-primary); margin-top:var(--space-3); letter-spacing:-.5px; }
+  .d-en { font-size:var(--fs-caption); line-height:var(--lh-caption); font-weight:500; color:var(--color-text-muted); letter-spacing:2px; text-transform:uppercase; margin-top:var(--space-1); }
+  .d-date { font-size:var(--fs-body-sm); line-height:var(--lh-body-sm); font-weight:400; color:var(--color-text-meta); margin-top:var(--space-1); font-variant-numeric:tabular-nums; }
+  
+
+  @media (max-width:580px){ .d-symbox{ width:80px; height:80px; } }
+  .d-msg { font-size:var(--fs-body); line-height:var(--lh-body); font-weight:400; color:var(--color-text-body); text-align:center; }
+
+  .d-block { margin-top:var(--space-8); }
+  /* 섹션 라벨: 크기를 키우지 않고 body/600 + 포인트 컬러로 위계 */
+  .d-block-label { font-size:var(--fs-body); line-height:var(--lh-body); font-weight:600; color:var(--color-text-accent); margin-bottom:var(--space-4); display:flex; align-items:center; gap:var(--space-2); }
+
+  /* 오늘의 확률 — 2단 구성: [항목명 … 확률·상태] / [설명] / [게이지] */
+  .prob { margin-bottom:var(--space-6); }
+  .prob-head { display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-3); }
+  .prob-name { font-size:var(--fs-body-sm); line-height:var(--lh-body-sm); font-weight:600; color:var(--color-text-body);
+    display:flex; align-items:center; gap:var(--space-1); white-space:nowrap; }
+  .prob-right { white-space:nowrap; flex:0 0 auto; }
+  .prob-right .pct { font-size:var(--fs-body); line-height:var(--lh-body); font-weight:700; color:var(--color-text-primary); font-variant-numeric:tabular-nums; }
+  .prob-right .sep { color:var(--color-text-muted); margin:0 var(--space-1); }
+  .prob-right .st { font-size:var(--fs-body-sm); font-weight:600; color:var(--color-text-accent-soft); }
+  .prob-quip { font-size:var(--fs-body-sm); line-height:var(--lh-body-sm); font-weight:400; color:var(--color-text-tertiary); margin-top:var(--space-1); }
+  .prob-bar { height:8px; /* 게이지 두께 = 로컬 값 */ background:var(--color-bg-track); border-radius:var(--radius-full);
+    overflow:hidden; margin-top:var(--space-3); }
+  .prob-fill { height:100%; background:linear-gradient(90deg,var(--color-accent-grad-from),var(--color-accent-grad-to)); border-radius:var(--radius-full); }
+
+  /* 오늘의 기운 */
+  .aura { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-2); }
+  .aura-item { background:var(--color-bg-raised); border:var(--border-thin) solid var(--color-border-subtle); border-radius:var(--radius-l); padding:var(--space-4); display:flex; align-items:center; gap:var(--space-3); min-width:0; }
+  .aura-ico { flex:0 0 auto; width:var(--size-s); height:var(--size-s); border-radius:var(--radius-m); display:grid; place-items:center; background:var(--color-bg-secondary); font-size:var(--fs-title); line-height:1; }
+  .aura-meta { min-width:0; }
+  .aura-label { font-size:var(--fs-body-sm); line-height:var(--lh-body-sm); font-weight:600; color:var(--color-text-body); }
+  .aura-value { font-size:var(--fs-body); line-height:var(--lh-body); font-weight:600; color:var(--color-text-primary); margin-top:var(--space-1); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .aura-hex { font-size:var(--fs-caption); line-height:var(--lh-caption); font-weight:400; color:var(--color-text-muted); margin-top:var(--space-1); font-variant-numeric:tabular-nums; }
+  @media (max-width:580px){ .aura{ grid-template-columns:1fr; } }
+
+  /* 오늘의 궁합 */
+  .rel-wrap { background:var(--color-bg-sunken); border:var(--border-thin) solid var(--color-border-subtle); border-radius:var(--radius-l); padding:var(--space-3) var(--space-2) var(--space-2); }
   .rel svg { width:100%; height:auto; display:block; }
-  .rel-summary { text-align:center; font-size:12.5px; color:#9c9cb0; margin:12px 2px 0; }
-  .rel-summary b { font-weight:600; } .rel-summary .good{ color:#ff9e6e; } .rel-summary .warn{ color:#8f8fa6; }
-  .legend { margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:8px 14px; }
-  .legend-item { display:flex; align-items:baseline; gap:6px; font-size:11px; color:#8f8fa6; line-height:1.35; }
-  .legend-item b { color:#c4c4d4; font-weight:600; white-space:nowrap; }
-  @media (max-width:400px){ .legend{ grid-template-columns:1fr; } }
+  .rel-summary { text-align:center; font-size:var(--fs-body-sm); line-height:var(--lh-body-sm); font-weight:400; color:var(--color-text-tertiary); margin:var(--space-3) 0 0; }
+  .rel-summary b { font-weight:600; } .rel-summary .good{ color:var(--color-text-accent-soft); } .rel-summary .warn{ color:var(--color-text-muted); }
+  .legend { margin-top:var(--space-4); display:grid; grid-template-columns:1fr 1fr; gap:var(--space-2) var(--space-3); }
+  .legend-item { display:flex; align-items:baseline; gap:var(--space-1); font-size:var(--fs-caption); line-height:var(--lh-caption); font-weight:400; color:var(--color-text-muted); }
+  .legend-item b { color:var(--color-text-body); font-weight:600; white-space:nowrap; }
+  @media (max-width:580px){ .legend{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
 <header>
   <div class="site-title">디 자 인  놀 이 터</div>
-  <div class="corner-name">오늘의 디자이너 별자리</div>
-  <div class="corner-en">Today's Designer Zodiac</div>
+  <h1 class="corner-name">오늘의 별자리<span class="edition">- 디자이너편 -</span></h1>
 </header>
-<span class="disclaimer">✦ <b>재미로 보는 운세</b> ✦ 별자리 순서로 봅니다 · 순위는 없어요</span>
 
 <main class="zodiac-grid" id="grid"></main>
 <div class="ov" id="ov"></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="디자이너 운세"></aside>
 
 <script>
+/* CSS 컬러 토큰을 JS에서 읽는다 (하드코딩 금지 — design-guide 4장) */
+const CV = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
 const EMBEDDED = {
  "date": "20260713",
  "source": "freehoroscopeapi.com daily (preview)",
@@ -1192,6 +1328,22 @@ const STATE = {
   '수정 굴레 피할 운':  ['무한 수정🌀','수정 러시','왕복 예감','소폭 방어','완벽 방어🛡'],
   '디자인 칭찬 운':     ['묻힘','소소한 반응','은근 관심','눈에 띔','극찬 세례👏']
 };
+/* 별자리 고정 메타 — 영문명·기간 (fortune.json 스키마와 무관하게 sign 값으로 참조) */
+const SIGN_META = {
+  aries:      { en:"Aries",       date:"03.21 ~ 04.19"  },
+  taurus:     { en:"Taurus",      date:"04.20 ~ 05.20"  },
+  gemini:     { en:"Gemini",      date:"05.21 ~ 06.21"  },
+  cancer:     { en:"Cancer",      date:"06.22 ~ 07.22"  },
+  leo:        { en:"Leo",         date:"07.23 ~ 08.22"  },
+  virgo:      { en:"Virgo",       date:"08.23 ~ 09.22"  },
+  libra:      { en:"Libra",       date:"09.23 ~ 10.22" },
+  scorpio:    { en:"Scorpio",     date:"10.23 ~ 11.21"},
+  sagittarius:{ en:"Sagittarius", date:"11.22 ~ 12.21"},
+  capricorn:  { en:"Capricorn",   date:"12.22 ~ 01.19" },
+  aquarius:   { en:"Aquarius",    date:"01.20 ~ 02.18"  },
+  pisces:     { en:"Pisces",      date:"02.19 ~ 03.20"  }
+};
+
 function stateOf(label,pct){ const b=Math.max(0,Math.min(4,Math.floor(pct/20))); return (STATE[label]||['','','','',''])[b]; }
 
 /* 관계 타입 → 강도(선 굵기·최고/주의 판정). 별점 대체 */
@@ -1201,10 +1353,15 @@ const LEGEND = [['찰떡형','말이 잘 통하고 속도가 붙음'],['영감�
 function renderGrid(){
   const g=document.getElementById('grid'); g.innerHTML='';
   FORTUNE.signs.forEach((s,i)=>{
+    const meta = SIGN_META[s.sign] || {en:'', date:''};
     const c=document.createElement('div'); c.className='z-card'; c.tabIndex=0; c.setAttribute('role','button');
-    c.innerHTML=`<div class="z-top"><div class="z-sym">${s.symbol}</div><div class="z-name">${s.nameKo}</div></div>
-      <div class="z-msg">${s.message}</div>
-      <span class="z-cta">디자이너 운세 <span class="arw">→</span></span>`;
+    c.setAttribute('aria-label', s.nameKo + ' 운세 보기');
+    c.innerHTML=`<div class="z-illust"></div>
+      <div class="z-body">
+        <div class="z-name">${s.nameKo}</div>
+        <div class="z-en">${meta.en}</div>
+        <div class="z-date">${meta.date}</div>
+      </div>`;
     const open=()=>openDrawer(i);
     c.addEventListener('click',open);
     c.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); }});
@@ -1222,29 +1379,32 @@ function relSVG(s){
   d.matches.forEach((m,i)=>{
     const a=ang[i]*Math.PI/180, nx=cx+R*Math.cos(a), ny=cy+R*Math.sin(a);
     const isTop=(i===topIdx), sw=(1.2+w[i]*0.7).toFixed(1), op=(0.28+w[i]*0.12).toFixed(2);
-    const lc=isTop?color:'#454559';
+    const lc=isTop?color:CV('--color-border-strong');
     lines+=`<line x1="${cx}" y1="${cy}" x2="${nx.toFixed(1)}" y2="${ny.toFixed(1)}" stroke="${lc}" stroke-width="${sw}" opacity="${op}" stroke-linecap="round"/>`;
     const lx=cx+(nx-cx)*0.56, ly=cy+(ny-cy)*0.56, tw=m.matchType.length*10+10;
-    lines+=`<rect x="${(lx-tw/2).toFixed(1)}" y="${(ly-9).toFixed(1)}" width="${tw}" height="18" rx="9" fill="#0e0e16"/>`;
-    lines+=`<text x="${lx.toFixed(1)}" y="${(ly+3.5).toFixed(1)}" text-anchor="middle" font-size="10.5" font-weight="600" fill="${isTop?color:'#a2a2b6'}">${m.matchType}</text>`;
+    lines+=`<rect x="${(lx-tw/2).toFixed(1)}" y="${(ly-9).toFixed(1)}" width="${tw}" height="18" rx="9" fill="${CV('--color-bg-sunken')}"/>`;
+    lines+=`<text x="${lx.toFixed(1)}" y="${(ly+3.5).toFixed(1)}" text-anchor="middle" font-size="10.5" font-weight="600" fill="${isTop?color:CV('--color-text-tertiary')}">${m.matchType}</text>`;
     const below=ny>cy+2, lyName=below?ny+21:ny-15;
     nodes+=`<text x="${nx.toFixed(1)}" y="${(ny+7).toFixed(1)}" text-anchor="middle" font-size="20">${m.emoji}</text>`;
-    nodes+=`<text x="${nx.toFixed(1)}" y="${lyName.toFixed(1)}" text-anchor="middle" font-size="10.5" font-weight="500" fill="#c4c4d4">${m.name}</text>`;
+    nodes+=`<text x="${nx.toFixed(1)}" y="${lyName.toFixed(1)}" text-anchor="middle" font-size="10.5" font-weight="500" fill="${CV('--color-text-body')}">${m.name}</text>`;
   });
-  const center=`<circle cx="${cx}" cy="${cy}" r="25" fill="#181824" stroke="${color}" stroke-width="1.5"/>
+  const center=`<circle cx="${cx}" cy="${cy}" r="25" fill="${CV('--color-bg-raised')}" stroke="${color}" stroke-width="1.5"/>
     <text x="${cx}" y="${cy-2}" text-anchor="middle" font-size="20" fill="${color}">${s.symbol}</text>
-    <text x="${cx}" y="${cy+14}" text-anchor="middle" font-size="9" fill="#8a8a9e">나</text>`;
+    <text x="${cx}" y="${cy+14}" text-anchor="middle" font-size="9" fill="${CV('--color-text-muted')}">나</text>`;
   return `<svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">${lines}${center}${nodes}</svg>`;
 }
 
 function openDrawer(i){
   const s=FORTUNE.signs[i], d=s.designer, color=d.luckyColor.hex, font=d.luckyFont;
+  const meta = SIGN_META[s.sign] || {en:'', date:''};
   const probs=d.probs.map(p=>`
     <div class="prob">
-      <span class="prob-name"><span class="pi">${p.icon}</span>${p.label}</span>
-      <span class="prob-bar"><span class="prob-fill" style="width:${p.pct}%"></span></span>
-      <span class="prob-right"><span class="pct">${p.pct}%</span><span class="st">${stateOf(p.label,p.pct)}</span></span>
-      <span class="prob-quip">${p.quip}</span>
+      <div class="prob-head">
+        <span class="prob-name"><span class="pi">${p.icon}</span>${p.label}</span>
+        <span class="prob-right"><span class="pct">${p.pct}%</span><span class="sep">·</span><span class="st">${stateOf(p.label,p.pct)}</span></span>
+      </div>
+      <div class="prob-quip">${p.quip}</div>
+      <div class="prob-bar"><span class="prob-fill" style="width:${p.pct}%"></span></div>
     </div>`).join('');
   const w=d.matches.map(m=>TYPE_W[m.matchType]||3);
   const best=d.matches[w.indexOf(Math.max(...w))].name, worst=d.matches[w.indexOf(Math.min(...w))].name;
@@ -1252,20 +1412,47 @@ function openDrawer(i){
   const dr=document.getElementById('drawer');
   dr.innerHTML=`
     <button class="d-close" aria-label="닫기">×</button>
+
+    <!-- 1. 심볼 이미지 → 2. 한글 별자리명 → 3. 영문 별자리명 -->
     <div class="d-head">
-      <div class="d-sym" style="color:${color}">${s.symbol}</div>
-      <div class="d-title" style="font-family:'${font}',sans-serif; color:${color}">${s.nameKo}</div>
-      <div class="d-chips">
-        <span class="chip"><span class="aa" style="font-family:'${font}',sans-serif; color:${color}">Aa</span><span class="clabel">오늘의 폰트</span><span class="cval">${font}</span></span>
-        <span class="chip"><span class="dot" style="background:${color}"></span><span class="clabel">오늘의 색</span><span class="cval">${d.luckyColor.name}</span><span class="hex">${color}</span></span>
-      </div>
+      <div class="d-symbox">${s.symbol}</div>
+      <div class="d-title">${s.nameKo}</div>
+      <div class="d-en">${meta.en}</div>
+      <div class="d-date">${meta.date}</div>
     </div>
+
+    <!-- 4. 진짜 별자리 운세 -->
     <div class="d-msg">${s.message}</div>
 
+    <!-- 5. 오늘의 확률 -->
     <div class="d-block">
-      <div class="d-block-label">📊 오늘의 확률</div>${probs}
+      <div class="d-block-label">📊 오늘의 확률</div>
+      ${probs}
     </div>
 
+    <!-- 6. 오늘의 폰트 · 오늘의 컬러 -->
+    <div class="d-block">
+      <div class="d-block-label">🎨 오늘의 기운</div>
+      <div class="aura">
+        <div class="aura-item">
+          <span class="aura-ico" style="font-family:'${font}',sans-serif; color:${color}">Aa</span>
+          <span class="aura-meta">
+            <span class="aura-label">오늘의 폰트</span>
+            <div class="aura-value">${font}</div>
+          </span>
+        </div>
+        <div class="aura-item">
+          <span class="aura-ico" style="background:${color}"></span>
+          <span class="aura-meta">
+            <span class="aura-label">오늘의 컬러</span>
+            <div class="aura-value">${d.luckyColor.name}</div>
+            <div class="aura-hex">${color}</div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. 오늘의 궁합 -->
     <div class="d-block">
       <div class="d-block-label">🤝 오늘의 궁합</div>
       <div class="rel-wrap"><div class="rel">${relSVG(s)}</div></div>
