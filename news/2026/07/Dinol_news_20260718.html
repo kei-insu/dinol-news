@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 18</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 18, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.techtimes.com/articles/320736/20260716/rebuilt-gemini-35-pro-misses-third-deadline-google-eyes-stopgap-release.htm" target="_blank"
+       data-category="AI · Big Tech · 제품"
+       data-summary="Google's rebuilt Gemini 3.5 Pro has missed its third launch deadline after reliability issues including hallucinations, with the company reportedly considering a stopgap release while engineering continues." data-summary-kr="구글이 재구축한 제미나이 3.5 프로가 환각 등 안정성 문제로 세 번째 출시 기한도 넘겼습니다. 회사는 엔지니어링을 이어가는 동안 임시방편 출시를 검토 중인 것으로 전해집니다."
+       data-points="Third consecutive deadline missed after base model was scrapped and rebuilt|Hallucinations and reliability gaps cited as the core blocker|Comes as Claude Fable 5 and GPT-5.6 already shipped this summer" data-points-kr="베이스 모델을 폐기하고 재구축한 뒤에도 세 번째 기한 연속 지연|환각과 안정성 문제가 핵심 걸림돌로 지목|같은 여름 Claude Fable 5·GPT-5.6는 이미 출시된 상황"
+       data-designer="A reminder that flashy roadmap dates are provisional, not commitments, plan feature bets around a model's actual GA date, not its announced one." data-designer-kr="화려한 로드맵 일정은 확정이 아니라 잠정치라는 점을 다시 보여줍니다. 기능 기획은 발표된 날짜가 아니라 실제 정식 출시일을 기준으로 세우는 게 안전합니다."
+       data-impact-score="3"
+       data-recommend="Worth tracking if your roadmap depends on Gemini 3.5 Pro capabilities · Skip if you don't build on Google's models" data-recommend-kr="제미나이 3.5 프로 기능에 의존하는 로드맵이라면 주시 필요 · 구글 모델 기반이 아니라면 건너뛰어도 무방"
+       data-comment="Three missed deadlines in a row is a notable stumble for a company that usually ships on schedule. The reported cause, structural failures in recursive tool-calling discovered after the original base model was scrapped, suggests this wasn't a marketing delay but a real technical wall.
+
+For teams building AI features, the lesson is less about Google specifically and more about planning discipline: treat any unreleased model's capabilities as speculative until GA, and keep a fallback path that doesn't assume a specific ship date." data-comment-kr="세 번의 연속 지연은 평소 일정을 잘 지키던 구글치고는 눈에 띄는 실수입니다. 보도에 따르면 베이스 모델을 폐기한 뒤 재귀적 도구 호출(recursive tool-calling)에서 구조적 결함이 발견됐다고 하니, 단순한 마케팅상의 지연이 아니라 실제 기술적 벽에 부딪힌 것으로 보입니다.
+
+AI 기능을 만드는 팀 입장에서는 구글만의 문제라기보다 일정 관리의 교훈에 가깝습니다. 미출시 모델의 기능은 정식 출시(GA) 전까지는 어디까지나 추정치로 다뤄야 하고, 특정 출시일을 전제로 하지 않는 대체 경로를 마련해 두는 게 안전합니다."
+       data-title-en="Rebuilt Gemini 3.5 Pro Misses Third Deadline, Google Eyes Stopgap Release" data-title-kr="재구축된 제미나이 3.5 프로, 세 번째 기한도 놓쳐...구글 임시방편 검토">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">지연</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Tech Times · 2026. 07. 16</div>
+        <div class="card-title">재구축된 제미나이 3.5 프로, 세 번째 기한도 놓쳐...구글 임시방편 검토</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/16/google-continues-its-renaming-streak-by-turning-notebooklm-to-gemini-notebook/" target="_blank"
+       data-category="AI · 제품 · UX"
+       data-summary="Google has renamed NotebookLM to Gemini Notebook, keeping it as a standalone research tool while adding a secure cloud sandbox that can run code inside notebooks for Pro users." data-summary-kr="구글이 노트북LM을 '제미나이 노트북'으로 개명했습니다. 독립 리서치 도구 정체성은 유지하면서, Pro 사용자를 위해 노트 안에서 코드를 실행할 수 있는 보안 클라우드 환경을 추가했습니다."
+       data-points="New blue-purple Gemini-branded logo replaces the NotebookLM mark|Pro users get in-notebook code execution for deeper data analysis|Notebooks now sync across the Gemini app and Search's AI Mode" data-points-kr="노트북LM 로고 대신 파랑·보라 제미나이 브랜드 로고 적용|Pro 사용자는 노트 안에서 코드 실행으로 심화 데이터 분석 가능|노트가 제미나이 앱과 검색 AI 모드 전반에 동기화"
+       data-designer="A case study in product renaming without losing an established user base, worth studying if you're planning a rebrand of a beloved tool." data-designer-kr="기존 사용자층을 잃지 않으면서 제품명을 바꾼 사례입니다. 애착이 큰 도구의 리브랜딩을 앞두고 있다면 참고할 만합니다."
+       data-impact-score="2"
+       data-recommend="Useful if you use NotebookLM/Gemini Notebook for research workflows · Minor for others" data-recommend-kr="리서치 워크플로에 노트북LM·제미나이 노트북을 쓰는 경우 유용 · 그 외에는 참고 수준"
+       data-comment="Renaming a product with 30 million-plus users is a genuine risk, users build muscle memory around a name, and folding it into the Gemini family could read as losing its distinct identity as a research tool.
+
+Google's bet seems to be that tighter integration (notebooks syncing into the Gemini app and Search) outweighs that risk. Whether NotebookLM's specific, source-grounded research use case survives being absorbed into a broader Gemini brand is worth watching over the next few months." data-comment-kr="3천만 명이 넘는 사용자를 가진 제품의 이름을 바꾸는 건 실질적인 리스크입니다. 사용자는 이름에 익숙해져 있고, 제미나이 패밀리로 편입되면 리서치 도구로서의 고유한 정체성이 흐려질 수 있습니다.
+
+구글의 판단은 제미나이 앱·검색과의 긴밀한 통합이 그 리스크를 상쇄한다는 쪽으로 보입니다. 출처 기반 리서치라는 노트북LM만의 쓰임새가 더 넓은 제미나이 브랜드에 흡수되고도 살아남을지는 앞으로 몇 달간 지켜볼 대목입니다."
+       data-title-en="Google renames NotebookLM to Gemini Notebook" data-title-kr="구글, 노트북LM을 '제미나이 노트북'으로 개명">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">리브랜딩</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 16</div>
+        <div class="card-title">구글, 노트북LM을 '제미나이 노트북'으로 개명</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.npr.org/2026/07/17/nx-s1-5897285/chinas-xi-calls-for-step-up-of-global-effort-in-ai-as-us-curbs-squeeze-chinas-tech-access" target="_blank"
+       data-category="AI · 정책 · 국제"
+       data-summary="At the opening of the 2026 World AI Conference in Shanghai, his first in-person appearance at the event, Xi Jinping called AI development a 'symphony of global cooperation' and launched the World AI Cooperation Organization, as US export curbs continue to squeeze China's tech access." data-summary-kr="시진핑 중국 국가주석이 2026 세계인공지능대회(WAIC) 개막식에 첫 대면 참석해 AI 발전은 '글로벌 협력의 교향곡'이 되어야 한다고 밝히며 세계AI협력기구(WAICO) 출범을 선언했습니다. 미국의 수출 규제로 중국의 기술 접근이 계속 제한되는 가운데 나온 발언입니다."
+       data-points="Xi's first in-person WAIC appearance since the event launched in 2018|New World AI Cooperation Organization to be headquartered in Shanghai|China to offer 5,000 AI training slots to developing countries over 5 years" data-points-kr="2018년 시작된 WAIC에 시진핑이 처음으로 직접 참석|신설 세계AI협력기구(WAICO), 상하이에 본부 설치 예정|중국, 향후 5년간 개발도상국에 AI 교육 기회 5,000건 제공 계획"
+       data-designer="Signals a widening split between US-aligned and China-aligned AI ecosystems, worth tracking if your tools or supply chain touch either bloc." data-designer-kr="미국 진영과 중국 진영 AI 생태계의 간극이 커지고 있다는 신호입니다. 사용 중인 도구나 공급망이 어느 한쪽과 얽혀 있다면 주시할 필요가 있습니다."
+       data-impact-score="2"
+       data-recommend="Background reading for anyone tracking AI geopolitics · Optional for pure product work" data-recommend-kr="AI 지정학 흐름을 추적한다면 배경 지식으로 유용 · 순수 제품 작업에는 선택적 참고"
+       data-comment="Xi's personal appearance, a first since WAIC began in 2018, signals how central AI has become to China's national strategy, not just an industry conference but a platform for launching a rival governance body.
+
+The pitch of 'cooperation' sits awkwardly against the reality of tightening US export controls on chips and, per other coverage this week, competing open-weight model releases like Kimi K3 that are closing the gap with US labs. Expect the framing of 'one global AI' versus 'two AI blocs' to keep resurfacing through the rest of the year." data-comment-kr="2018년 WAIC가 시작된 이래 시진핑이 처음 직접 참석했다는 사실 자체가, AI가 단순한 산업 행사를 넘어 중국의 국가 전략 중심에 있음을 보여줍니다. 이번엔 경쟁 거버넌스 기구를 출범시키는 자리로도 쓰였습니다.
+
+'협력'이라는 메시지는 미국의 반도체 수출 규제 강화, 그리고 이번 주 다른 보도에서 나온 Kimi K3 같은 오픈웨이트 모델의 격차 축소라는 현실과는 다소 어긋나 보입니다. '하나의 글로벌 AI'와 '두 개의 AI 진영'이라는 프레임 대립은 하반기 내내 반복될 것으로 보입니다."
+       data-title-en="China's Xi calls for step-up of global effort in AI, as US curbs squeeze China's tech access" data-title-kr="시진핑 'AI는 글로벌 협력이어야'...美 규제 속 세계AI협력기구 출범">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">글로벌AI</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">NPR · 2026. 07. 17</div>
+        <div class="card-title">시진핑 'AI는 글로벌 협력이어야'...美 규제 속 세계AI협력기구 출범</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260717225520" target="_blank"
+       data-category="AI · 반도체 · 정책"
+       data-summary="미국이 AI 인프라의 기반인 메모리 반도체의 중국 소싱을 제한하려는 움직임을 보이는 가운데, 중국은 2.8조 파라미터 오픈웨이트 모델 'Kimi K3'를 공개하며 정반대 방향으로 움직이고 있습니다. 칼럼은 이 대비 속에서 한국이 취해야 할 전략적 선택을 짚습니다."
+       data-designer="메모리·모델이라는 서로 다른 층위에서 벌어지는 미중 경쟁이 결국 국내 AI 인프라 비용과 도구 접근성에 영향을 줄 수 있는 흐름입니다."
+       data-impact-score="3"
+       data-points="미 의회, AI 인프라 핵심인 메모리의 중국산 소싱 제한 요구|중국 문샷AI, 2.8조 파라미터 오픈웨이트 'Kimi K3' 공개(가중치는 7월 27일 공개 예정)|메모리를 잠그는 미국과 모델을 여는 중국 사이, 한국의 전략적 포지셔닝 과제"
+       data-recommend="AI 인프라·정책 동향을 챙기는 실무자에게 추천 · 저장 후 후속 보도와 비교해보기"
+       data-comment="WAIC 개막과 Kimi K3 공개가 겹친 시점에 나온 칼럼이라 시의성이 있습니다. 메모리(하드웨어)는 잠그고 모델(소프트웨어)은 여는 미중의 상반된 움직임을 한 프레임으로 정리한 관점이 눈에 띕니다.
+
+다만 특정 언론사의 오피니언 칼럼이라는 점에서, 실제 정책 변화로 이어지는지는 후속 보도로 재확인하는 게 좋습니다. 한국의 반도체·AI 산업 양쪽에 걸쳐 있는 독자라면 저장해둘 만합니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">미중경쟁</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 17</div>
+        <div class="card-title">메모리 잠그는 미국, 모델 여는 중국...한국의 선택은</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.dezeen.com/2026/07/15/robert-wun-haute-couture-dress-balloons-childsplay/" target="_blank"
+       data-category="Design · Fashion · Couture"
+       data-summary="Hong Kong-born designer Robert Wun's Autumn Winter 2026 haute couture show in Paris, titled Childsplay, covered garments in clusters of balloons, stuffed toys and paint splatters across 25 looks tracing the stages of childhood." data-summary-kr="홍콩 출신 디자이너 로버트 운이 파리에서 선보인 2026년 가을·겨울 오트 쿠튀르 컬렉션 '차일즈플레이'는 풍선 다발, 봉제 인형, 물감 자국으로 뒤덮인 25벌의 룩으로 유년기의 단계를 그려냈습니다."
+       data-points="25 looks structured as a timeline of childhood|Opening look: Jackson Pollock-style splatter on a ballroom silhouette|Final look: black gown with a cape of balloons on the crinoline" data-points-kr="유년기의 흐름을 담은 25벌의 룩 구성|첫 룩은 볼룸 실루엣에 잭슨 폴록풍 물감 자국|마지막 룩은 크리놀린에 풍선 케이프를 두른 블랙 가운"
+       data-designer="A strong example of narrative-driven collection design, each look reads as a chapter, useful reference for building a cohesive story across a multi-piece body of work." data-designer-kr="룩 하나하나가 하나의 장(chapter)처럼 읽히는 서사 중심 컬렉션 설계의 좋은 사례입니다. 여러 작업물을 하나의 이야기로 엮을 때 참고할 만합니다."
+       data-impact-score="2"
+       data-recommend="Good mood-board and materiality reference for fashion/spatial storytelling · Optional for other disciplines" data-recommend-kr="패션·공간 스토리텔링 무드보드 소스로 유용 · 다른 분야는 선택적 참고"
+       data-comment="What stands out isn't just the balloons as material, it's the structuring device: 25 looks as a literal timeline of growing up gives an otherwise wild collection a legible spine.
+
+Wun's closing note, that balloons are 'beautiful and joyous, yet fragile and not meant to last', is doing double duty as a statement about childhood and about couture itself, a nice example of a material choice reinforcing the concept rather than just decorating it." data-comment-kr="눈에 띄는 건 풍선이라는 소재 자체보다, 이를 엮어낸 구조입니다. 성장 과정을 25벌의 룩으로 시간순 배치한 방식이 자칫 산만할 수 있는 컬렉션에 명확한 축을 부여합니다.
+
+운이 마지막에 남긴 '아름답고 즐겁지만, 연약하고 오래가지 않는다'는 풍선에 대한 코멘트는 유년기와 쿠튀르 자체 모두를 가리키는 중의적 표현입니다. 소재 선택이 단순 장식이 아니라 콘셉트를 강화하는 좋은 예시입니다."
+       data-title-en="Robert Wun adorns couture gown with kaleidoscope of colourful balloons" data-title-kr="로버트 운, 알록달록 풍선으로 뒤덮은 쿠튀르 드레스 선보여">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">쿠튀르</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 15</div>
+        <div class="card-title">로버트 운, 알록달록 풍선으로 뒤덮은 쿠튀르 드레스 선보여</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/16/studio-fuksas-tbilisi-rike-concert-hall-halt/" target="_blank"
+       data-category="Design · Architecture · Preservation"
+       data-summary="Studio Fuksas has called for a halt to the demolition of its Rike Concert Hall in Tbilisi, offering to work with Georgian authorities on alternatives after the building's owner obtained a permit to demolish it by December 25, having sat unopened for over a decade." data-summary-kr="이탈리아 건축사무소 스튜디오 푹사스가 자사 설계작인 트빌리시 리케 콘서트홀의 철거 중단을 요청했습니다. 소유주가 12월 25일까지 철거 가능한 허가를 받은 가운데, 조지아 당국과 함께 대안을 모색하겠다고 밝혔습니다."
+       data-points="Building completed around 2012 but never opened to the public|Sold to current owner Makro Constructions in 2025 after years of vacancy|Demolition permit sets a deadline of December 25 to dismantle the building" data-points-kr="2012년경 완공됐지만 한 번도 대중에 개방되지 못함|수년간 공실 상태였다가 2025년 현 소유주 마크로 컨스트럭션에 매각|철거 허가에 따라 12월 25일까지 건물 해체 기한 설정"
+       data-designer="A cautionary case for architects: a completed, award-recognised building can still be lost entirely if it never finds an operating use, worth factoring adaptive-reuse thinking in early." data-designer-kr="완공되고 수상 경력까지 있는 건물이라도 운영 주체를 못 찾으면 통째로 사라질 수 있다는 경고성 사례입니다. 설계 초기 단계부터 적응형 재사용(adaptive reuse) 가능성을 고려할 필요가 있습니다."
+       data-impact-score="2"
+       data-recommend="Relevant for architects and heritage/preservation-focused designers · Background context for others" data-recommend-kr="건축가, 유산·보존 분야 디자이너에게 유용 · 그 외에는 배경 지식으로 참고"
+       data-comment="A decade of vacancy followed by a demolition order is a familiar pattern for ambitious civic architecture that outlives the political will that commissioned it, Rike Concert Hall was abandoned after a 2012 change in government and never recovered momentum.
+
+Studio Fuksas stepping in now, offering to co-design alternatives rather than simply objecting, is a more constructive response than the usual open letter. Whether Tbilisi's authorities take the offer before the December deadline will say a lot about how much cultural-preservation pressure can actually move a demolition permit once issued." data-comment-kr="10년의 공실 끝에 철거 명령이 내려진 흐름은, 설계를 발주한 정치적 의지가 사라진 뒤에도 살아남아야 하는 야심찬 공공건축이 흔히 겪는 패턴입니다. 리케 콘서트홀은 2012년 정권 교체 이후 방치됐고 이후 추진 동력을 회복하지 못했습니다.
+
+스튜디오 푹사스가 단순 반대 성명이 아니라 대안 설계를 함께 모색하겠다고 나선 점은 비교적 건설적인 대응입니다. 12월 기한 전에 트빌리시 당국이 이 제안을 받아들일지가, 이미 발급된 철거 허가를 문화 보존 압력이 실제로 되돌릴 수 있는지를 가늠하는 시험대가 될 것입니다."
+       data-title-en="Demolition of Tbilisi concert hall 'a significant cultural setback,' says Studio Fuksas" data-title-kr="'문화적 손실' 스튜디오 푹사스, 트빌리시 콘서트홀 철거 중단 요청">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">보존위기</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 16</div>
+        <div class="card-title">'문화적 손실' 스튜디오 푹사스, 트빌리시 콘서트홀 철거 중단 요청</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/matter-of-new-new-typography-graphic-design-publication-project-150726" target="_blank"
+       data-category="Design · Graphic · Typography"
+       data-summary="Design studio Matter Of has published New New Typography, a book of essays, images and typography from collaborators that questions whether type design is still bound by 20th-century principles." data-summary-kr="디자인 스튜디오 매터 오브가 협업자들의 에세이·이미지·타이포그래피를 모은 책 'New New Typography'를 펴냈습니다. 타이포그래피 디자인이 여전히 20세기 원칙에 갇혀 있는지를 묻는 내용입니다."
+       data-points="Functions as both an essay collection and a type-design manual|Multiple collaborators contribute images and typographic experiments|Frames itself explicitly as an 'anti-design' investigation of inherited rules" data-points-kr="에세이집이자 타이포그래피 디자인 매뉴얼로 기능|여러 협업자가 이미지와 타이포그래피 실험을 기고|기존 규칙에 도전하는 '반디자인' 탐구를 표방"
+       data-designer="A good prompt to revisit which typographic 'rules' you follow out of habit versus actual legibility or brand need." data-designer-kr="습관적으로 지켜온 타이포그래피 '규칙'과, 실제 가독성·브랜드 필요에 의한 규칙을 구분해보게 만드는 좋은 계기입니다."
+       data-impact-score="2"
+       data-recommend="Worth a browse for type and graphic designers · Good studio-library pickup" data-recommend-kr="타이포그래피·그래픽 디자이너에게 훑어볼 만함 · 스튜디오 서가에 들여놓기 좋은 책"
+       data-comment="Books that question typographic orthodoxy are common, what's less common is framing it explicitly as a manual, implying the studio wants readers to actually apply the ideas rather than just admire them.
+
+Whether 'anti-design' holds up as a coherent stance or ends up as a loose collection of interesting experiments will depend on how the essays and the type specimens talk to each other, worth judging in person rather than from a summary." data-comment-kr="타이포그래피의 정설에 의문을 제기하는 책은 흔하지만, 이를 명시적으로 '매뉴얼'이라 표방한 점은 눈에 띕니다. 독자가 아이디어를 감상하는 데 그치지 않고 실제로 적용해보길 바란다는 의도로 읽힙니다.
+
+'반디자인'이 하나의 일관된 태도로 성립할지, 아니면 흥미로운 실험들의 느슨한 모음에 그칠지는 에세이와 타입 스펙시먼이 서로 얼마나 대화하는지에 달려 있습니다. 요약만으로 판단하기보다 직접 살펴볼 가치가 있습니다."
+       data-title-en="Are we stuck in the typographic principles of the 20th century? Matter Of's new anti-design manual investigates" data-title-kr="우리는 아직 20세기 타이포그래피에 갇혀 있을까, 매터 오브의 '반(反)디자인' 매뉴얼">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">타이포</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 07. 15</div>
+        <div class="card-title">우리는 아직 20세기 타이포그래피에 갇혀 있을까, 매터 오브의 '반(反)디자인' 매뉴얼</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/17/pulsar-feinmann-f01-noctua-edition-mouse-has-active-cooling-fan-inside-for-sweaty-gamers/" target="_blank"
+       data-category="Design · Product · Gaming"
+       data-summary="Pulsar's Feinmann F01 Noctua Edition gaming mouse packs a 40mm Noctua NF-A4x10 5V PWM fan inside a ventilated carbon-composite shell to actively cool sweaty hands, going on sale July 21." data-summary-kr="펄사의 게이밍 마우스 '파인만 F01 노크투아 에디션'은 통풍이 되는 카본 컴포지트 셸 안에 40mm 노크투아 NF-A4x10 5V PWM 팬을 내장해 손의 땀을 능동적으로 식혀줍니다. 7월 21일 출시 예정입니다."
+       data-points="40mm Noctua PWM fan built into a ventilated carbon-composite shell|Targets competitive gamers dealing with palm sweat during long sessions|Collaboration pairs a mouse maker with a cooling-fan specialist brand" data-points-kr="통풍 셸 안에 40mm 노크투아 PWM 팬 내장|장시간 플레이 중 손바닥 땀에 시달리는 경쟁 게이머 겨냥|마우스 제조사와 쿨링팬 전문 브랜드의 협업 제품"
+       data-designer="A neat example of solving a real ergonomic complaint (sweaty grip) with a mechanical rather than purely material solution, worth noting when a coating or texture change alone won't fix a physical-comfort problem." data-designer-kr="손에 땀이 차는 실사용 불편을 소재 변경이 아니라 기계적 해법(팬)으로 푼 사례입니다. 표면 코팅이나 질감 변경만으로는 물리적 불편이 해결되지 않을 때 참고할 만합니다."
+       data-impact-score="1"
+       data-recommend="Fun reference for hardware/product designers working on ergonomics · Niche interest otherwise" data-recommend-kr="인체공학을 다루는 하드웨어·제품 디자이너에게 재미있는 레퍼런스 · 그 외에는 관심사에 따라 선택"
+       data-comment="An internal fan in a mouse sounds like a novelty until you consider how much competitive gaming performance actually degrades with a slick, sweaty grip, this is solving a real friction point, not manufacturing one.
+
+The brand pairing with Noctua, known almost exclusively for PC cooling fans, is also a smart bit of ingredient-branding: it borrows Noctua's reputation for quiet, reliable cooling to reassure buyers the fan won't be an annoying whine next to their ear." data-comment-kr="마우스 안에 팬을 넣는다는 아이디어는 다소 기발하게 들리지만, 손이 미끄러워지는 상황이 실제 경쟁 게이밍 퍼포먼스를 얼마나 떨어뜨리는지 생각하면 억지로 만든 문제가 아니라 실질적인 불편을 해결한 사례입니다.
+
+PC 쿨링팬으로 잘 알려진 노크투아와의 협업은 일종의 '재료 브랜딩(ingredient branding)' 전략이기도 합니다. 조용하고 안정적인 쿨링으로 유명한 노크투아의 평판을 빌려, 팬 소음이 거슬리지 않을 거라는 신뢰를 소비자에게 주는 방식입니다."
+       data-title-en="Pulsar Feinmann F01 Noctua Edition mouse has active cooling fan inside for sweaty gamers" data-title-kr="손에 땀 차는 게이머를 위해, 내장 쿨링팬 단 펄사 파인만 F01 노크투아 에디션 마우스">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">쿨링마우스</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 17</div>
+        <div class="card-title">손에 땀 차는 게이머를 위해, 내장 쿨링팬 단 펄사 파인만 F01 노크투아 에디션 마우스</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
