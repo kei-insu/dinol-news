@@ -216,7 +216,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
         '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
         '<div class="gb-cedit"><textarea class="gb-cedit-text" maxlength="500">' + esc(c.body) + '</textarea>' +
-        '<div class="gb-cedit-btns"><button class="gb-cedit-cancel" data-post="' + pid + '">취소</button>' +
+        '<div class="gb-cedit-btns"><button type="button" class="gb-cesmile" aria-label="이모지" style="margin-right:auto">' + ICON_SMILE + '</button><button class="gb-cedit-cancel" data-post="' + pid + '">취소</button>' +
         '<button class="gb-cedit-save" data-post="' + pid + '" data-cid="' + c.id + '">저장</button></div></div>' +
         '</div></div></div>';
     }
@@ -270,7 +270,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
         '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
         '<div class="gb-edit-area"><textarea class="gb-edit-text" maxlength="1000">' + esc(e.body) + '</textarea>' +
-        '<div class="gb-edit-btns"><button class="gb-edit-cancel">취소</button>' +
+        '<div class="gb-edit-btns"><button type="button" class="gb-esmile" aria-label="이모지" style="margin-right:auto">' + ICON_SMILE + '</button><button class="gb-edit-cancel">취소</button>' +
         '<button class="gb-edit-save" data-id="' + e.id + '">저장</button></div></div>' +
         '</div></div></div>';
     }
@@ -374,11 +374,26 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     });
     smileBtn.parentNode.appendChild(pick); // bar가 position:relative
   }
+  // 범용 피커: 임의 textarea에 삽입 (수정 모드용)
+  function openEmojiPickerInto(smileBtn, ta, maxLen) {
+    const existing = smileBtn.parentNode.querySelector(".gb-emoji-pick");
+    if (existing) { existing.remove(); return; }
+    closePickers(); closeMenu();
+    smileBtn.parentNode.style.position = "relative";
+    const pick = document.createElement("div");
+    pick.className = "gb-emoji-pick";
+    pick.innerHTML = CEMOJI.map(em => '<button type="button" class="gb-emoji-btn">' + em + '</button>').join("");
+    pick.addEventListener("click", (e) => {
+      const b = e.target.closest(".gb-emoji-btn"); if (!b) return; e.stopPropagation();
+      if (ta) { ta.value = (ta.value + b.textContent).slice(0, maxLen); ta.focus(); }
+    });
+    smileBtn.parentNode.appendChild(pick);
+  }
 
   // 바깥 클릭 시 메뉴/피커 닫기
   document.addEventListener("click", (e) => {
     if (openMenu && !openMenu.contains(e.target)) closeMenu();
-    if (!e.target.closest(".gb-emoji-pick") && !e.target.closest(".gb-csmile") && !e.target.closest(".gb-tsmile")) closePickers();
+    if (!e.target.closest(".gb-emoji-pick") && !e.target.closest(".gb-csmile") && !e.target.closest(".gb-tsmile") && !e.target.closest(".gb-esmile") && !e.target.closest(".gb-cesmile")) closePickers();
   });
 
   // ── 비번 확인 모달 (글/댓글 공용) ──
@@ -496,6 +511,10 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     if (cwrite) { openComposer(cwrite.dataset.post); return; }
     const csmile = ev.target.closest(".gb-csmile");
     if (csmile) { ev.stopPropagation(); toggleEmojiPicker(csmile); return; }
+    const esmile = ev.target.closest(".gb-esmile");
+    if (esmile) { ev.stopPropagation(); openEmojiPickerInto(esmile, esmile.closest(".gb-entry").querySelector(".gb-edit-text"), 1000); return; }
+    const cesmile = ev.target.closest(".gb-cesmile");
+    if (cesmile) { ev.stopPropagation(); openEmojiPickerInto(cesmile, cesmile.closest(".gb-cedit").querySelector(".gb-cedit-text"), 500); return; }
     const ccancel = ev.target.closest(".gb-ccancel");
     if (ccancel) { cstate(ccancel.dataset.post).composerOpen = false; renderList(); return; }
     const csubmit = ev.target.closest(".gb-csubmit");
