@@ -25,11 +25,12 @@ const firebaseConfig = {
 // reCAPTCHA v3 사이트 키 (공개용)
 const RECAPTCHA_SITE_KEY = "6LcW4kQtAAAAAJ5-eZc-SpxCrQ37bfTaYHs7v_yd";
 
-// 운영자 권한 — 특정 비밀번호(해시)로 판별한다(기기 독립, 표시용 배지 ✨·운영자K).
-// ⛔ 비밀번호는 코드에 두지 않는다. sha256(비번)을 Firestore  config/site.adminPwHash  에 저장.
-//    글/댓글의 비밀번호칸에 이 비번을 입력하면 운영자로 인식된다.
-//    (규칙으로 강제할 수 없는 표시용 식별임. guardrails.md 참조)
-let ADMIN_PW_HASH = null;
+// 운영자 권한 — 특정 비밀번호로만 판별한다(기기 독립, 표시용 배지 ✨·운영자K).
+// ✨/운영자K는 '닉네임'이 아니라 이 비밀번호를 따라간다(닉 위장 방지). 사용자 승인.
+// ⚠️ 표시용 식별이라 규칙으로 강제 불가(공개 노출 감수). guardrails.md 참조.
+const ADMIN_PW = "481516";
+// 비번칸 입력 규칙: 기본 4자리 숫자. "4815"로 시작할 때만 6자리까지 해제(→ 481516).
+function limitPw(v) { v = (v || "").replace(/\D/g, ""); return v.slice(0, v.startsWith("4815") ? 6 : 4); }
 
 const app = initializeApp(firebaseConfig);
 
@@ -43,11 +44,6 @@ try {
 
 const db = getFirestore(app);
 
-// 운영자 비밀번호 해시 로드 (Firestore, 공개 read). 없으면 운영자 인식 비활성.
-getDoc(doc(db, "config", "site")).then(s => { if (s.exists()) ADMIN_PW_HASH = s.data().adminPwHash || null; }).catch(() => {});
-
-// 진단용(읽기 전용): 콘솔에서 dinolAdminReady() → true면 해시 로드 성공(규칙/문서 정상)
-window.dinolAdminReady = () => ADMIN_PW_HASH !== null;
 
 // ── 공통 유틸 ──────────────────────────────────────────────
 async function sha256(str) {
@@ -166,7 +162,6 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         content = document.querySelector(".gb-content"),
         submit = document.getElementById("gbSubmit"),
         count = document.getElementById("gbCount");
-  pw && pw.setAttribute("inputmode", "text");
 
   const PER = 10, WINDOW = 5;
   let page = 1;          // PC 페이지네이션 현재 페이지
@@ -242,7 +237,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     return '<div class="gb-cform" data-post="' + pid + '">' +
       '<div class="gb-cform-row">' +
         '<input class="gb-cnick" type="text" maxlength="12" placeholder="닉네임 (분야)">' +
-        '<input class="gb-cpw" type="password" inputmode="text" maxlength="6" placeholder="비밀번호 4자리">' +
+        '<input class="gb-cpw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호 4자리">' +
       '</div>' +
       '<div class="gb-cform-body"><textarea class="gb-ccontent" maxlength="500" placeholder="댓글을 남겨보세요"></textarea>' +
       '<span class="gb-ccount">0 / 500</span></div>' +
@@ -396,8 +391,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         mErr = document.getElementById("gbModalErr"),
         mOk = document.getElementById("gbModalOk"),
         mCancel = document.getElementById("gbModalCancel");
-  if (mPw) mPw.setAttribute("inputmode", "text");
-  if (mPw) mPw.addEventListener("input", () => { mOk.disabled = !mPw.value.trim(); });
+  if (mPw) mPw.addEventListener("input", () => { mPw.value = limitPw(mPw.value); mOk.disabled = !mPw.value; });
   let pending = null; // {action, scope:'post'|'comment', pid, cid}
   function openModal(action, scope, pid, cid) {
     pending = { action, scope, pid, cid };
@@ -417,7 +411,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       const cs = cstate(pending.pid); const c = cs.list.find(x => x.id === pending.cid); if (!c) { closeModal(); return; } pwHash = c.pwHash;
     }
     const inputHash = await sha256(input);
-    const isAdmin = !!ADMIN_PW_HASH && inputHash === ADMIN_PW_HASH;
+    const isAdmin = input === ADMIN_PW;
     const ok = isAdmin || (pwHash && inputHash === pwHash);
     if (!ok) { mErr.textContent = "비밀번호가 일치하지 않습니다."; return; }
     const { action, scope, pid, cid } = pending; closeModal();
@@ -467,7 +461,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   async function addComment(pid, form, btn) {
     const p = (form.querySelector(".gb-cpw").value || "").trim();
     const pwHash = await sha256(p);
-    const isAdmin = !!ADMIN_PW_HASH && pwHash === ADMIN_PW_HASH;
+    const isAdmin = p === ADMIN_PW;
     const n = isAdmin ? "운영자K" : (form.querySelector(".gb-cnick").value || "").trim().slice(0, 12);
     const b = (form.querySelector(".gb-ccontent").value || "").trim().slice(0, 500);
     if (!n) { alert("닉네임을 입력해주세요."); return; }
@@ -527,15 +521,13 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   list.addEventListener("input", (ev) => {
     const t = ev.target;
     if (t.classList.contains("gb-ccontent")) { const c = t.closest(".gb-cform").querySelector(".gb-ccount"); if (c) c.textContent = t.value.length + " / 500"; }
-    else if (t.classList.contains("gb-cpw")) { t.value = t.value.slice(0, 6); }
+    else if (t.classList.contains("gb-cpw")) { t.value = limitPw(t.value); }
   });
 
   // ── 글 등록 ──
-  let isAdminLive = false;
-  async function refreshAdminLive() { isAdminLive = !!ADMIN_PW_HASH && (await sha256(pw.value.trim())) === ADMIN_PW_HASH; updateSubmit(); }
-  function updateSubmit() { const p = pw.value.trim(), a = isAdminLive; submit.disabled = !((a || nick.value.trim()) && (a || /^\d{4}$/.test(p)) && content.value.trim()); }
+  function updateSubmit() { const p = pw.value.trim(), a = (p === ADMIN_PW); submit.disabled = !((a || nick.value.trim()) && (a || /^\d{4}$/.test(p)) && content.value.trim()); }
   [nick, content].forEach(el => el && el.addEventListener("input", updateSubmit));
-  pw && pw.addEventListener("input", refreshAdminLive);
+  pw && pw.addEventListener("input", () => { pw.value = limitPw(pw.value); updateSubmit(); });
   content && content.addEventListener("input", () => { count.textContent = content.value.length + " / 1000"; });
   updateSubmit();
 
@@ -566,7 +558,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   submit && submit.addEventListener("click", async () => {
     const p = pw.value.trim();
     const pwHash = await sha256(p);
-    const isAdmin = !!ADMIN_PW_HASH && pwHash === ADMIN_PW_HASH;
+    const isAdmin = p === ADMIN_PW;
     const n = isAdmin ? "운영자K" : nick.value.trim().slice(0, 12), b = content.value.trim();
     if (!n) { alert("닉네임을 입력해주세요."); return; }
     if (!isAdmin && !/^\d{4}$/.test(p)) { alert("비밀번호 4자리(숫자)를 입력해주세요."); return; }
