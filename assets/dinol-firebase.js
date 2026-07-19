@@ -12,9 +12,6 @@ import {
 import {
   initializeAppCheck, ReCaptchaV3Provider
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app-check.js";
-import {
-  getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD84D4xoyD74W263XBiy7uRfNX-Oree5Xo",
@@ -28,28 +25,13 @@ const firebaseConfig = {
 // reCAPTCHA v3 사이트 키 (공개용)
 const RECAPTCHA_SITE_KEY = "6LcW4kQtAAAAAJ5-eZc-SpxCrQ37bfTaYHs7v_yd";
 
-// 운영자 권한 — Firebase Auth 세션으로만 판별한다.
-// ⛔ 코드에 마스터 비밀번호를 두지 않는다(공개 노출됨). guardrails.md 참조.
-let IS_ADMIN = false;
+// 운영자 권한 — 특정 비밀번호(해시)로 판별한다(기기 독립, 표시용 배지 ✨·운영자K).
+// ⛔ 비밀번호는 코드에 두지 않는다. sha256(비번)을 Firestore  config/site.adminPwHash  에 저장.
+//    글/댓글의 비밀번호칸에 이 비번을 입력하면 운영자로 인식된다.
+//    (규칙으로 강제할 수 없는 표시용 식별임. guardrails.md 참조)
+let ADMIN_PW_HASH = null;
 
 const app = initializeApp(firebaseConfig);
-
-// ── 운영자 인증 (Firebase Auth) ──
-// 로그인: 브라우저 콘솔에서  dinolAdmin.login("운영자이메일", "비밀번호")
-// 로그아웃: dinolAdmin.logout()
-const auth = getAuth(app);
-onAuthStateChanged(auth, u => {
-  IS_ADMIN = !!u;
-  document.body && document.body.classList.toggle("is-admin", IS_ADMIN);
-  if (typeof window.__dinolOnAdminChange === "function") window.__dinolOnAdminChange(IS_ADMIN);
-});
-window.dinolAdmin = {
-  login: (email, pw) => signInWithEmailAndPassword(auth, email, pw)
-    .then(() => { console.log("운영자 로그인 완료"); return true; })
-    .catch(e => { console.error("로그인 실패:", e.code); return false; }),
-  logout: () => signOut(auth).then(() => console.log("로그아웃 완료")),
-  get isAdmin() { return IS_ADMIN; }
-};
 
 // App Check (reCAPTCHA v3) — 봇/스팸 차단. 사용자에겐 보이지 않음.
 try {
@@ -60,6 +42,9 @@ try {
 } catch (e) { /* App Check 초기화 실패 시에도 앱은 계속 동작 */ }
 
 const db = getFirestore(app);
+
+// 운영자 비밀번호 해시 로드 (Firestore, 공개 read). 없으면 운영자 인식 비활성.
+getDoc(doc(db, "config", "site")).then(s => { if (s.exists()) ADMIN_PW_HASH = s.data().adminPwHash || null; }).catch(() => {});
 
 // ── 공통 유틸 ──────────────────────────────────────────────
 async function sha256(str) {
@@ -407,8 +392,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         mErr = document.getElementById("gbModalErr"),
         mOk = document.getElementById("gbModalOk"),
         mCancel = document.getElementById("gbModalCancel");
-  digitsOnly(mPw, 6);
-  if (mPw) mPw.addEventListener("input", () => { mOk.disabled = !/^\d{4,6}$/.test(mPw.value); });
+  if (mPw) mPw.addEventListener("input", () => { mOk.disabled = !mPw.value.trim(); });
   let pending = null; // {action, scope:'post'|'comment', pid, cid}
   function openModal(action, scope, pid, cid) {
     pending = { action, scope, pid, cid };
@@ -420,7 +404,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   async function confirmModal() {
     if (!pending) return;
     const input = mPw.value.trim();
-    if (!/^\d{4,6}$/.test(input)) { mErr.textContent = "비밀번호를 입력하세요."; return; }
+    if (!input) { mErr.textContent = "비밀번호를 입력하세요."; return; }
     let pwHash;
     if (pending.scope === "post") {
       const e = entries.find(x => x.id === pending.pid); if (!e) { closeModal(); return; } pwHash = e.pwHash;
@@ -428,7 +412,8 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       const cs = cstate(pending.pid); const c = cs.list.find(x => x.id === pending.cid); if (!c) { closeModal(); return; } pwHash = c.pwHash;
     }
     const inputHash = await sha256(input);
-    const ok = IS_ADMIN || (pwHash && inputHash === pwHash);
+    const isAdmin = !!ADMIN_PW_HASH && inputHash === ADMIN_PW_HASH;
+    const ok = isAdmin || (pwHash && inputHash === pwHash);
     if (!ok) { mErr.textContent = "비밀번호가 일치하지 않습니다."; return; }
     const { action, scope, pid, cid } = pending; closeModal();
     if (scope === "post") {
@@ -476,7 +461,8 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
 
   async function addComment(pid, form, btn) {
     const p = (form.querySelector(".gb-cpw").value || "").trim();
-    const isAdmin = IS_ADMIN;
+    const pwHash = await sha256(p);
+    const isAdmin = !!ADMIN_PW_HASH && pwHash === ADMIN_PW_HASH;
     const n = isAdmin ? "운영자K" : (form.querySelector(".gb-cnick").value || "").trim().slice(0, 12);
     const b = (form.querySelector(".gb-ccontent").value || "").trim().slice(0, 500);
     if (!n) { alert("닉네임을 입력해주세요."); return; }
@@ -484,7 +470,6 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     if (!b) { alert("댓글을 입력해주세요."); return; }
     btn.disabled = true;
     try {
-      const pwHash = await sha256(p);
       const ref = await addDoc(collection(db, "guestbook", pid, "comments"), { nick: n, body: b, pwHash, admin: isAdmin, createdAt: serverTimestamp() });
       try { await updateDoc(doc(db, "guestbook", pid), { commentCount: increment(1) }); } catch (e2) {}
       const cs = cstate(pid);
@@ -537,12 +522,15 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   list.addEventListener("input", (ev) => {
     const t = ev.target;
     if (t.classList.contains("gb-ccontent")) { const c = t.closest(".gb-cform").querySelector(".gb-ccount"); if (c) c.textContent = t.value.length + " / 500"; }
-    else if (t.classList.contains("gb-cpw")) { t.value = t.value.replace(/\D/g, "").slice(0, 4); }
+    else if (t.classList.contains("gb-cpw")) { t.value = t.value.slice(0, 6); }
   });
 
   // ── 글 등록 ──
-  function updateSubmit() { const p = pw.value.trim(), a = IS_ADMIN; submit.disabled = !((a || nick.value.trim()) && (a || /^\d{4}$/.test(p)) && content.value.trim()); }
-  [nick, pw, content].forEach(el => el && el.addEventListener("input", updateSubmit));
+  let isAdminLive = false;
+  async function refreshAdminLive() { isAdminLive = !!ADMIN_PW_HASH && (await sha256(pw.value.trim())) === ADMIN_PW_HASH; updateSubmit(); }
+  function updateSubmit() { const p = pw.value.trim(), a = isAdminLive; submit.disabled = !((a || nick.value.trim()) && (a || /^\d{4}$/.test(p)) && content.value.trim()); }
+  [nick, content].forEach(el => el && el.addEventListener("input", updateSubmit));
+  pw && pw.addEventListener("input", refreshAdminLive);
   content && content.addEventListener("input", () => { count.textContent = content.value.length + " / 1000"; });
   updateSubmit();
 
@@ -571,14 +559,15 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   }
 
   submit && submit.addEventListener("click", async () => {
-    const p = pw.value.trim(), isAdmin = IS_ADMIN;
+    const p = pw.value.trim();
+    const pwHash = await sha256(p);
+    const isAdmin = !!ADMIN_PW_HASH && pwHash === ADMIN_PW_HASH;
     const n = isAdmin ? "운영자K" : nick.value.trim().slice(0, 12), b = content.value.trim();
     if (!n) { alert("닉네임을 입력해주세요."); return; }
     if (!isAdmin && !/^\d{4}$/.test(p)) { alert("비밀번호 4자리(숫자)를 입력해주세요."); return; }
     if (!b) { alert("내용을 입력해주세요."); return; }
     submit.disabled = true;
     try {
-      const pwHash = await sha256(p);
       const ref = await addDoc(collection(db, "guestbook"), { nick: n, body: b, pwHash, admin: isAdmin, commentCount: 0, createdAt: serverTimestamp() });
       entries.unshift({ id: ref.id, nick: n, body: b, pwHash, admin: isAdmin, commentCount: 0, ts: new Date() });
       cstate(ref.id).count = 0;
