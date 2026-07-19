@@ -181,8 +181,6 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
   const CEMOJI = ["😀","😃","😄","😁","😆","😊","🙂","😉","😍","🥰","😎","🤩","😌","😙","😇","🥳","😂","🤣","🥹","😝","😜","🤪","😢","😭","🥺","😳","😮","🤔","🙄","😅","😴","😤","👍","👏","🙌","🙏","👌","💪","🤙","👀","🤗","🙈","❤️","💜","💙","🔥","✨","🎉"];
 
   function digitsOnly(el, max = 4) { el && el.addEventListener("input", () => { el.value = el.value.replace(/\D/g, "").slice(0, max); }); }
-  // 비번: 4자리 고정 (운영자 권한은 Firebase Auth 세션으로 판별하므로 예외 없음)
-  pw && pw.addEventListener("input", () => { pw.value = pw.value.replace(/\D/g, "").slice(0, 4); });
 
   // ── 인라인 아이콘 (사이트엔 아이콘 폰트가 없으므로 SVG로 직접) ──
   const ICON_KEBAB = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>';
