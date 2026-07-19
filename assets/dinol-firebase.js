@@ -458,7 +458,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     if (cs.loaded) return;
     try {
       const snap = await getDocs(query(collection(db, "guestbook", pid, "comments"), orderBy("createdAt", "asc")));
-      cs.list = snap.docs.map(d => { const v = d.data(); return { id: d.id, nick: v.nick || "", body: v.body || "", pwHash: v.pwHash || "", ts: v.createdAt }; });
+      cs.list = snap.docs.map(d => { const v = d.data(); return { id: d.id, nick: v.nick || "", body: v.body || "", pwHash: v.pwHash || "", admin: v.admin === true, ts: v.createdAt }; });
       cs.loaded = true; cs.count = cs.list.length;
     } catch (e) { cs.loaded = true; cs.list = []; }
   }
@@ -489,7 +489,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       try { await updateDoc(doc(db, "guestbook", pid), { commentCount: increment(1) }); } catch (e2) {}
       const cs = cstate(pid);
       cs.count = (cs.count || 0) + 1; cs.composerOpen = false; cs.expanded = true;
-      if (cs.loaded) cs.list.push({ id: ref.id, nick: n, body: b, pwHash, ts: new Date() });
+      if (cs.loaded) cs.list.push({ id: ref.id, nick: n, body: b, pwHash, admin: isAdmin, ts: new Date() });
       else await loadComments(pid);
       renderList();
     } catch (err) { alert("댓글 등록에 실패했어요. 잠시 후 다시 시도해주세요."); btn.disabled = false; }
@@ -580,7 +580,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     try {
       const pwHash = await sha256(p);
       const ref = await addDoc(collection(db, "guestbook"), { nick: n, body: b, pwHash, admin: isAdmin, commentCount: 0, createdAt: serverTimestamp() });
-      entries.unshift({ id: ref.id, nick: n, body: b, pwHash, commentCount: 0, ts: new Date() });
+      entries.unshift({ id: ref.id, nick: n, body: b, pwHash, admin: isAdmin, commentCount: 0, ts: new Date() });
       cstate(ref.id).count = 0;
       nick.value = ""; pw.value = ""; content.value = ""; count.textContent = "0 / 1000"; if (gbSmile) gbSmile.style.display = "none";
       page = 1; moShown = PER; editingId = null; renderList(); updateSubmit();
@@ -593,7 +593,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
       const snap = await getDocs(query(collection(db, "guestbook"), orderBy("createdAt", "desc")));
       entries = snap.docs.map(d => {
         const v = d.data();
-        return { id: d.id, nick: v.nick || "", body: v.body || "", pwHash: v.pwHash || "", commentCount: v.commentCount || 0, ts: v.createdAt };
+        return { id: d.id, nick: v.nick || "", body: v.body || "", pwHash: v.pwHash || "", admin: v.admin === true, commentCount: v.commentCount || 0, ts: v.createdAt };
       });
       entries.forEach(e => { cstate(e.id).count = e.commentCount || 0; });
       renderList();
