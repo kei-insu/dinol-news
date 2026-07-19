@@ -382,7 +382,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     smileBtn.parentNode.style.position = "relative";
     const pick = document.createElement("div");
     pick.className = "gb-emoji-pick";
-    pick.innerHTML = CEMOJI.map(em => '<button type="button" class="gb-emoji-btn">' + em + '</button>').join("");
+    pick.innerHTML = CEMOJI.map(em => '<button type="button" class="gb-emoji-btn" style="font-size:21px;padding:0">' + em + '</button>').join("");
     pick.addEventListener("click", (e) => {
       const b = e.target.closest(".gb-emoji-btn"); if (!b) return; e.stopPropagation();
       if (ta) { ta.value = (ta.value + b.textContent).slice(0, maxLen); ta.focus(); }
