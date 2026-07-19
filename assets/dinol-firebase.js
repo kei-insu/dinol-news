@@ -216,7 +216,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
         '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
         '<div class="gb-cedit"><textarea class="gb-cedit-text" maxlength="500">' + esc(c.body) + '</textarea>' +
-        '<div class="gb-cedit-btns"><button type="button" class="gb-cesmile" aria-label="이모지" style="margin-right:auto">' + ICON_SMILE + '</button><button class="gb-cedit-cancel" data-post="' + pid + '">취소</button>' +
+        '<div class="gb-cedit-btns"><button type="button" class="gb-cesmile" aria-label="이모지" style="margin-right:auto;background:none;border:none;padding:5px;line-height:0;border-radius:8px">' + ICON_SMILE + '</button><button class="gb-cedit-cancel" data-post="' + pid + '">취소</button>' +
         '<button class="gb-cedit-save" data-post="' + pid + '" data-cid="' + c.id + '">저장</button></div></div>' +
         '</div></div></div>';
     }
@@ -270,7 +270,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         '<div class="gb-entry-head"><span class="gb-entry-nick">' + esc(nk) + '</span>' +
         '<span class="gb-entry-time">' + esc(timeStr) + '</span></div>' +
         '<div class="gb-edit-area"><textarea class="gb-edit-text" maxlength="1000">' + esc(e.body) + '</textarea>' +
-        '<div class="gb-edit-btns"><button type="button" class="gb-esmile" aria-label="이모지" style="margin-right:auto">' + ICON_SMILE + '</button><button class="gb-edit-cancel">취소</button>' +
+        '<div class="gb-edit-btns"><button type="button" class="gb-esmile" aria-label="이모지" style="margin-right:auto;background:none;border:none;padding:5px;line-height:0;border-radius:8px">' + ICON_SMILE + '</button><button class="gb-edit-cancel">취소</button>' +
         '<button class="gb-edit-save" data-id="' + e.id + '">저장</button></div></div>' +
         '</div></div></div>';
     }
