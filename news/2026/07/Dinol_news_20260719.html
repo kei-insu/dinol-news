@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 19</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 19, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://zdnet.co.kr/view/?no=20260718202637" target="_blank"
+       data-category="AI · 보안"
+       data-summary="모니터랩이 기업용 생성형 AI 보안 솔루션 'GenAI 시큐리티'를 고도화해, 부서·업무별 세분화된 보안 정책과 개발자 환경까지 아우르는 통제 범위를 지원한다고 밝혔습니다."
+       data-points="부서·업무 특성별 맞춤 보안 정책 지원|프롬프트 인젝션·민감정보 유출 등 위협 정밀 분류|챗GPT·제미나이·클로드 등 주요 생성형 AI 접근제어"
+       data-designer="생성형 AI를 실무에 도입하는 조직이라면 프롬프트 단위 보안 통제가 필수가 되는 흐름을 보여줍니다. AI 툴 도입을 기획하는 실무자에게 참고할 만합니다."
+       data-impact-score="3"
+       data-recommend="AI 보안 정책을 검토 중인 조직 참고 · IT/보안 담당자 저장 추천"
+       data-comment="생성형 AI가 업무 전반에 스며들면서, 보안의 초점이 네트워크 경계에서 '프롬프트' 단위로 옮겨가고 있음을 보여주는 사례입니다. 챗GPT·제미나이·클로드처럼 여러 AI 서비스를 동시에 쓰는 환경에서, 부서별로 다른 민감도 기준을 적용할 수 있다는 점이 눈에 띕니다.
+디자이너 입장에서도 남 일이 아닙니다. 클라이언트 데이터나 미공개 프로젝트 정보를 AI 도구에 무심코 입력하는 일이 잦아지는 만큼, 조직 차원의 가드레일이 어떻게 설계되는지 알아두면 협업 시 유용합니다.
+다만 이런 솔루션이 실제 창작 워크플로우의 속도를 얼마나 늦추는지는 아직 검증되지 않았습니다. 보안과 생산성의 균형을 어떻게 잡는지 후속 사례를 지켜볼 필요가 있습니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">보안</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 18</div>
+        <div class="card-title">"생성형 AI 보안, 프롬프트 단위로 정교해진다"…모니터랩 'GenAI 시큐리티' 고도화</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/17/why-the-first-gpu-financiers-are-turning-to-inference-chips-in-a-400-million-deal/" target="_blank"
+       data-category="AI · 인프라 · 투자"
+       data-summary="AI inference cloud startup General Compute secured a $400 million loan from Upper90, reportedly the first deal to use inference-specific chips (rather than GPUs) as collateral." data-summary-kr="AI 추론 클라우드 스타트업 제너럴컴퓨트가 업퍼90으로부터 4억 달러 대출을 확보했습니다. GPU가 아닌 추론 전용 칩을 담보로 잡은 최초 사례로 알려졌습니다."
+       data-points="First loan collateralized by inference chips, not GPUs|Built on SambaNova silicon, power-efficient and water-cooling-free|Signals market shift toward cheaper open-model inference infrastructure" data-points-kr="GPU 아닌 추론 칩을 담보로 한 최초 대출|샘바노바 실리콘 기반, 전력 효율적이고 수랭 불필요|저렴한 오픈모델 추론 인프라로의 시장 이동 신호"
+       data-designer="A sign that AI infrastructure economics are diversifying beyond Nvidia GPUs — worth tracking if your team relies on inference costs for AI-powered design tools." data-designer-kr="AI 인프라 경제가 엔비디아 GPU를 넘어 다변화되고 있다는 신호입니다. AI 기반 디자인 도구의 추론 비용에 의존하는 팀이라면 주시할 만합니다."
+       data-impact-score="2"
+       data-recommend="Background reading for AI-infra watchers · Optional" data-recommend-kr="AI 인프라 동향 참고용 · 선택"
+       data-comment="This is a quiet but telling infrastructure story. For the past few years, virtually all AI-chip financing has been backed by Nvidia GPUs. This deal breaks that pattern by using inference-specific silicon as collateral instead.
+The bigger picture: as more companies deploy already-trained open models rather than training new frontier ones, the economics shift from raw compute power to efficient, cheaper inference. That has knock-on effects for anyone building AI features into products — including design tools.
+It is a niche story for most designers, but it is a useful signal of where AI tooling costs may be headed over the next year." data-comment-kr="조용하지만 시사하는 바가 큰 인프라 뉴스입니다. 그동안 AI 칩 관련 금융은 대부분 엔비디아 GPU를 담보로 이뤄졌는데, 이번 거래는 추론 전용 실리콘을 담보로 썼다는 점에서 다릅니다.
+큰 그림에서 보면, 새 프런티어 모델을 훈련하기보다 이미 학습된 오픈 모델을 배포하는 기업이 늘면서, 경제성의 중심이 원초적 연산력에서 효율적이고 저렴한 추론으로 옮겨가고 있습니다. 이는 제품에 AI 기능을 넣는 모든 팀, 디자인 도구 제작사에도 영향을 미칩니다.
+대다수 디자이너에게는 다소 먼 이야기일 수 있지만, 앞으로 1년간 AI 툴 비용이 어디로 향할지 보여주는 유용한 신호입니다."
+       data-title-en="Why the first GPU financiers are turning to inference chips in a $400 million deal">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">인프라</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 17</div>
+        <div class="card-title">GPU 아닌 추론 칩이 담보로…AI 인프라 대출의 새 흐름</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/16/google-vids-now-lets-you-star-in-your-own-ai-videos/" target="_blank"
+       data-category="AI · 생성형 · 영상"
+       data-summary="Google is adding personalized AI avatars to Vids, letting users create videos starring a digital version of themselves, powered by its Gemini Omni multimodal model." data-summary-kr="구글이 영상 편집 도구 Vids에 개인화된 AI 아바타 기능을 추가했습니다. 셀피와 음성 녹음으로 만든 디지털 아바타가 등장하는 영상을 제미나이 옴니 모델로 만들 수 있습니다."
+       data-points="Custom avatar from a selfie and voice sample|Gemini Omni generates video from prompts and reference images|Avatars watermarked with SynthID, 18+ only in select regions" data-points-kr="셀피·음성 샘플로 맞춤 아바타 생성|프롬프트·참조 이미지로 제미나이 옴니가 영상 제작|SynthID 워터마크 적용, 일부 지역 18세 이상만 이용 가능"
+       data-designer="Personal AI avatars in mainstream video tools push 'synthetic self' content into everyday workflows — worth testing for social/marketing video work, with an eye on likeness and consent norms." data-designer-kr="일반 영상 도구에 개인 AI 아바타가 들어오면서 '합성된 나'가 일상 업무에 스며들고 있습니다. 소셜·마케팅 영상 작업에 테스트해볼 만하지만, 초상권·동의 기준을 함께 살펴야 합니다."
+       data-impact-score="3"
+       data-recommend="Try if you produce social/marketing video · Share with video teams" data-recommend-kr="소셜·마케팅 영상 제작자 테스트 추천 · 영상팀 공유"
+       data-comment="Avatar-based AI video is moving from novelty apps into mainstream productivity tools, which is a meaningful shift. Google tying this to a verified account and SynthID watermarking suggests an attempt to build guardrails in from the start, rather than bolting them on later.
+For designers and marketers, this lowers the barrier to producing talking-head style content without a camera crew — useful for quick explainers, onboarding videos, or localized versions of the same script.
+The age and region restrictions hint at how cautious Google is being about likeness misuse, which is worth watching as the feature expands." data-comment-kr="아바타 기반 AI 영상이 신기한 앱을 넘어 주류 생산성 도구로 들어오고 있다는 점이 의미 있습니다. 구글이 이를 인증된 계정과 SynthID 워터마크에 묶은 것은, 나중에 덧붙이기보다 처음부터 안전장치를 넣으려는 시도로 보입니다.
+디자이너·마케터 입장에서는 촬영팀 없이도 인물 등장 콘텐츠를 만들 수 있는 장벽이 낮아진다는 의미입니다. 빠른 설명 영상, 온보딩 영상, 같은 스크립트의 현지화 버전 제작에 유용할 수 있습니다.
+연령·지역 제한을 두는 것을 보면 구글도 초상 오남용에 신중하게 접근하고 있음을 알 수 있습니다. 기능이 확대되는 과정을 지켜볼 필요가 있습니다."
+       data-title-en="Google Vids now lets you star in your own AI videos">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">영상AI</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 16</div>
+        <div class="card-title">구글 Vids, 이제 '내가 출연하는' AI 영상을 만든다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.etnews.com/20260716000170" target="_blank"
+       data-category="AI · 로보틱스 · 산업"
+       data-summary="현대차그룹이 소프트뱅크가 보유한 보스턴 다이내믹스 지분 10%에 대한 풋옵션을 행사해 지분 100% 확보에 나섰습니다. 2028년부터 현대차그룹 메타플랜트 아메리카에 휴머노이드 로봇 아틀라스를 투입할 계획입니다."
+       data-points="소프트뱅크 보유 지분 10% 풋옵션 행사|2028년 HMGMA에 아틀라스 부품 분류 작업 투입|2030년부터 실제 조립 공정까지 작업 영역 확대"
+       data-designer="물리적 AI·휴머노이드 로봇이 실제 생산라인에 투입되는 시점이 구체화되고 있습니다. 산업 현장을 위한 UX·인터랙션 설계 수요가 늘어날 신호입니다."
+       data-impact-score="3"
+       data-recommend="제조·로보틱스 UX에 관심 있다면 저장 추천 · 산업 동향 참고"
+       data-comment="보스턴 다이내믹스는 2021년 현대차그룹에 인수된 이후에도 소프트뱅크가 일부 지분을 유지해왔는데, 이번 풋옵션 행사로 완전 자회사화 수순을 밟게 됐습니다. 로봇 개발사에 대한 지배력을 강화해 물리적 AI 전략을 가속하려는 의도로 읽힙니다.
+주목할 부분은 아틀라스의 실제 투입 로드맵입니다. 2028년 부품 분류 작업부터 시작해 2030년 조립 공정까지 단계적으로 확대한다는 계획인데, 이는 로봇이 사람과 함께 일하는 산업 현장의 인터페이스·안전 설계가 곧 실무 이슈가 된다는 뜻이기도 합니다.
+디자이너에게는 다소 먼 이야기처럼 보일 수 있지만, 협동로봇·현장 인터랙션 UX는 앞으로 몇 년간 빠르게 커질 영역입니다. 미리 흐름을 익혀두는 것도 나쁘지 않습니다.">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">로보틱스</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">전자신문 · 2026. 07. 16</div>
+        <div class="card-title">현대차그룹, 보스턴 다이내믹스 지분 100% 확보…아틀라스 2028년 투입</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.designweek.co.uk/design-leader-jay-topham-unfound-studio/" target="_blank"
+       data-category="Design · Interview · Leadership"
+       data-summary="Design Week's leader interview series profiles Jay Topham, founder and creative director of Unfound Studio, on where he finds inspiration and how his team works." data-summary-kr="디자인위크의 리더 인터뷰 시리즈가 언파운드 스튜디오의 창업자 겸 크리에이티브 디렉터 제이 톱햄을 조명했습니다. 영감의 원천과 팀 운영 방식을 다룹니다."
+       data-points="Kicks off every project at Reference Point, a library/bookshop/bar, to stay off Pinterest|Values friction — best work comes from tight timelines and flipped assumptions|Five questions on design, five on leadership" data-points-kr="핀터레스트 대신 도서관·서점·바를 겸한 '레퍼런스 포인트'에서 프로젝트 시작|마찰을 가치 있게 여김, 빠듯한 일정과 뒤집힌 전제에서 최고의 결과물이 나온다고 언급|디자인 5문항·리더십 5문항 인터뷰"
+       data-designer="A candid look at how a working studio leader actually sources inspiration and manages a team, useful for studio owners and creative directors alike." data-designer-kr="실제 스튜디오 리더가 영감을 얻고 팀을 이끄는 방식을 솔직하게 들여다본 인터뷰입니다. 스튜디오 대표·크리에이티브 디렉터에게 참고가 됩니다."
+       data-impact-score="2"
+       data-recommend="Good read for studio leads and creative directors · Save for reference" data-recommend-kr="스튜디오 리더·크리에이티브 디렉터 필독 · 참고 저장"
+       data-comment="Design leader interviews like this one are easy to skim past, but they are useful precisely because they are unglamorous — real talk about process rather than polished case studies.
+Topham's point about deliberately avoiding Pinterest in favor of a physical space is a small but pointed statement about where good ideas actually come from, especially at a moment when AI moodboard generators make the Pinterest-scroll habit even easier to fall into.
+Worth a few minutes for anyone running a small studio or thinking about how to structure a team's creative process." data-comment-kr="이런 리더 인터뷰는 무심코 지나치기 쉽지만, 화려하게 포장된 케이스 스터디가 아니라 실제 작업 과정을 솔직하게 담고 있다는 점에서 가치가 있습니다.
+핀터레스트 대신 물리적 공간을 택했다는 톱햄의 언급은, 좋은 아이디어가 실제로 어디서 나오는지에 대한 작지만 날카로운 지적입니다. AI 무드보드 생성기가 핀터레스트 스크롤 습관을 더 쉽게 만드는 지금 시점에 더욱 그렇습니다.
+작은 스튜디오를 운영하거나 팀의 창작 프로세스를 고민하는 사람이라면 몇 분 투자할 만합니다."
+       data-title-en="design/leader: Jay Topham, Unfound Studio">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">인터뷰</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Design Week · 2026. 07. 18</div>
+        <div class="card-title">언파운드 스튜디오 제이 톱햄이 말하는 영감과 리더십</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.archdaily.com/1148825/house-in-san-isidro" target="_blank"
+       data-category="Design · Architecture · Residential"
+       data-summary="On a narrow 1,700-square-foot lot in San Isidro, Buenos Aires, Ábode arq built a three-story-plus-basement family home that finds room for greenery at every level, including two tiered green roofs." data-summary-kr="부에노스아이레스 산 이시드로의 좁은 대지(약 158㎡)에, Ábode arq가 지하 포함 4개 층 규모의 가족 주택을 지었습니다. 층마다 녹지를 확보했고, 두 단의 옥상 정원도 갖췄습니다."
+       data-points="Built vertically on a compact 1,700 sq ft lot|Front pool, dense rear patio, two tiered green roofs|Photography by Félix Niikado" data-points-kr="약 158㎡의 협소 대지에 수직으로 증축|앞마당 풀, 밀도 높은 뒷마당 파티오, 2단 옥상 정원|사진 펠릭스 니이카도"
+       data-designer="A compact-lot case study in stacking green space vertically rather than sacrificing it — a useful reference for dense urban residential projects." data-designer-kr="협소 대지에서 녹지를 포기하지 않고 수직으로 쌓아올린 사례입니다. 고밀도 도심 주거 프로젝트에 참고할 만합니다."
+       data-impact-score="3"
+       data-recommend="Save for compact-lot residential reference · Good for mood boards" data-recommend-kr="협소주택 레퍼런스로 저장 추천 · 무드보드용으로도 좋음"
+       data-comment="Small-lot housing is one of the more universally relevant typologies right now, as urban land gets scarcer and more expensive across most major cities. This project's response — stacking rather than spreading — is a familiar move, but the tiered green roofs and dense rear patio show real care in fighting the tendency for compact homes to feel airless.
+What stands out is the front-yard pool on such a tight footprint. It is a bold allocation of scarce space toward a single amenity, and signals a clear prioritization decision by the architects and clients.
+Worth bookmarking for anyone working on narrow urban infill sites." data-comment-kr="협소주택은 도시 대지가 점점 좁고 비싸지는 지금 가장 보편적으로 참고할 만한 유형 중 하나입니다. 이 프로젝트가 택한 '수직으로 쌓기'는 익숙한 해법이지만, 2단 옥상 정원과 밀도 높은 뒷마당 파티오는 협소주택이 답답해지기 쉬운 경향에 진지하게 맞선 흔적을 보여줍니다.
+특히 눈에 띄는 것은 이렇게 좁은 대지에 앞마당 풀을 배치한 결정입니다. 희소한 공간을 하나의 어메니티에 과감히 할애한 선택으로, 건축가와 건축주의 우선순위를 잘 보여줍니다.
+좁고 긴 도심 자투리 부지 작업을 하는 사람이라면 저장해둘 만합니다."
+       data-title-en="House in San Isidro / Ábode arq">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">협소주택</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 07. 17</div>
+        <div class="card-title">산 이시드로의 협소주택, 층마다 녹지를 쌓다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.archdaily.com/1148770/diriyah-biennale-foundation-public-programs-building-ariel-andre-golem" target="_blank"
+       data-category="Design · Architecture · Cultural"
+       data-summary="Architect Ariel André and studio GOLEM completed a 960-square-metre Public Programs Building for the Diriyah Biennale Foundation in Saudi Arabia, supporting year-round workshops, panels and public gatherings." data-summary-kr="건축가 아리엘 앙드레와 스튜디오 GOLEM이 사우디아라비아 디리야 비엔날레 재단을 위한 960㎡ 규모의 퍼블릭 프로그램 빌딩을 완공했습니다. 연중 워크숍·패널·공개 행사를 지원하는 공간입니다."
+       data-points="960 sqm public programs building, completed 2026|Supports the Diriyah Biennale Foundation's year-round programming|Photography by Laurian Ghinitoiu" data-points-kr="2026년 완공, 규모 960㎡의 퍼블릭 프로그램 빌딩|디리야 비엔날레 재단의 연중 프로그램 지원 시설|사진 로리앙 기니토이우"
+       data-designer="A case study in purpose-built cultural infrastructure for biennales — relevant for anyone designing flexible public-program spaces rather than one-off exhibition pavilions." data-designer-kr="비엔날레를 위한 맞춤형 문화 인프라 사례입니다. 일회성 전시 파빌리온이 아니라 유연한 공공 프로그램 공간을 설계하는 이들에게 참고가 됩니다."
+       data-impact-score="2"
+       data-recommend="Reference for cultural/public program architecture · Optional" data-recommend-kr="문화시설·공공프로그램 건축 레퍼런스 · 선택"
+       data-comment="Biennales usually rely on temporary pavilions and repurposed venues, so a purpose-built, permanent Public Programs Building signals the Diriyah Biennale Foundation is investing in long-term institutional infrastructure rather than one-off spectacle.
+That distinction matters architecturally — a building meant to host workshops and panels year-round needs different flexibility and durability than a temporary exhibition space designed around a single opening.
+For architects and cultural-space designers, this is a useful data point on how biennale organizations are maturing their physical footprint as these events become recurring institutions rather than one-time shows." data-comment-kr="비엔날레는 보통 임시 파빌리온이나 용도 변경된 공간에 의존하는데, 상설 퍼블릭 프로그램 빌딩을 짓는다는 것은 디리야 비엔날레 재단이 일회성 이벤트가 아니라 장기적인 제도적 인프라에 투자하고 있다는 신호입니다.
+이 차이는 건축적으로도 중요합니다. 연중 워크숍·패널을 소화해야 하는 건물은 단발성 오프닝을 위한 전시 공간과는 다른 유연성과 내구성이 필요하기 때문입니다.
+건축가와 문화공간 디자이너에게는, 비엔날레 조직이 일회성 행사에서 반복되는 제도로 성숙해가면서 물리적 거점을 어떻게 갖춰가는지 보여주는 유용한 사례입니다."
+       data-title-en="Diriyah Biennale Foundation Public Programs Building / Ariel André-GOLEM">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">문화시설</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 07. 17</div>
+        <div class="card-title">디리야 비엔날레 재단의 상설 퍼블릭 프로그램 빌딩</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.dezeen.com/2026/07/16/studio-font-casa-diez-pies-mexico/" target="_blank"
+       data-category="Design · Architecture · Residential"
+       data-summary="Studio Font completed Casa Diez Pies, a 250-square-metre home in Mazunte, Mexico, raised on 10 concrete columns to step down a coastal cliff overlooking the Pacific while minimizing impact on the site's vegetation." data-summary-kr="스튜디오 폰트가 멕시코 마순테에 완공한 250㎡ 규모의 'Casa Diez Pies'(카사 디에스 피에스)는 10개의 콘크리트 기둥 위에 세워져, 태평양이 내려다보이는 해안 절벽을 따라 내려가면서도 식생 훼손을 최소화했습니다."
+       data-points="10 concrete columns double as structure, stairs, bathrooms and storage|250 sqm home steps down a steep coastal cliff in Mazunte|Architect: Raquel Font, Studio Font" data-points-kr="10개의 콘크리트 기둥이 구조·계단·욕실·수납을 겸함|마순테의 가파른 해안 절벽을 따라 내려가는 250㎡ 주택|건축가 라켈 폰트, 스튜디오 폰트"
+       data-designer="A clean example of making structural necessity do triple duty as program and spatial experience — each column is load-bearing, circulation, and room all at once." data-designer-kr="구조적 필요를 프로그램·공간 경험까지 겸하게 만든 깔끔한 사례입니다. 기둥 하나하나가 하중 지지, 동선, 방의 역할을 동시에 합니다."
+       data-impact-score="3"
+       data-recommend="Great reference for sloped-site and structural-expression projects · Save" data-recommend-kr="경사지·구조 표현 프로젝트 레퍼런스로 훌륭 · 저장 추천"
+       data-comment="Building on a steep coastal slope usually forces a choice between heavy earthwork or an elevated structure, and Studio Font's column solution is an elegant version of the latter. Naming the house after the ten support columns (Casa Diez Pies, or 'Ten-Foot House') signals how central this structural idea is to the whole concept.
+What makes it more than a simple pilotis move is that each column is doing double duty — housing stairs, bathrooms, or storage — so structure and program are fused rather than layered on top of each other.
+For anyone designing on a difficult slope, this is a strong reference for how to turn a structural constraint into the organizing idea of a project instead of hiding it." data-comment-kr="가파른 해안 경사지에 짓는다는 것은 보통 대규모 토목공사와 고가 구조물 사이에서 선택해야 한다는 뜻인데, 스튜디오 폰트의 기둥 해법은 후자를 우아하게 풀어낸 사례입니다. 집 이름을 지지 기둥 10개에서 따온 '카사 디에스 피에스(열 개의 발 집)'로 지은 것부터가, 이 구조적 아이디어가 전체 콘셉트의 핵심임을 보여줍니다.
+이 프로젝트가 단순한 필로티 이상인 이유는, 기둥 하나하나가 계단·욕실·수납을 겸하게 만들어 구조와 프로그램을 층층이 쌓기보다 하나로 융합했다는 점입니다.
+까다로운 경사지에서 작업하는 사람이라면, 구조적 제약을 숨기지 않고 프로젝트를 조직하는 아이디어로 전환한 강력한 레퍼런스가 될 것입니다."
+       data-title-en="Studio Font perches cliffside Mexico home atop concrete columns">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">경사지주택</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Dezeen · 2026. 07. 16</div>
+        <div class="card-title">절벽 위 10개의 기둥이 떠받치는 멕시코 해안 주택</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
