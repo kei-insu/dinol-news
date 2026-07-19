@@ -46,6 +46,9 @@ const db = getFirestore(app);
 // 운영자 비밀번호 해시 로드 (Firestore, 공개 read). 없으면 운영자 인식 비활성.
 getDoc(doc(db, "config", "site")).then(s => { if (s.exists()) ADMIN_PW_HASH = s.data().adminPwHash || null; }).catch(() => {});
 
+// 진단용(읽기 전용): 콘솔에서 dinolAdminReady() → true면 해시 로드 성공(규칙/문서 정상)
+window.dinolAdminReady = () => ADMIN_PW_HASH !== null;
+
 // ── 공통 유틸 ──────────────────────────────────────────────
 async function sha256(str) {
   const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
@@ -163,6 +166,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         content = document.querySelector(".gb-content"),
         submit = document.getElementById("gbSubmit"),
         count = document.getElementById("gbCount");
+  pw && pw.setAttribute("inputmode", "text");
 
   const PER = 10, WINDOW = 5;
   let page = 1;          // PC 페이지네이션 현재 페이지
@@ -238,7 +242,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
     return '<div class="gb-cform" data-post="' + pid + '">' +
       '<div class="gb-cform-row">' +
         '<input class="gb-cnick" type="text" maxlength="12" placeholder="닉네임 (분야)">' +
-        '<input class="gb-cpw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호 4자리">' +
+        '<input class="gb-cpw" type="password" inputmode="text" maxlength="6" placeholder="비밀번호 4자리">' +
       '</div>' +
       '<div class="gb-cform-body"><textarea class="gb-ccontent" maxlength="500" placeholder="댓글을 남겨보세요"></textarea>' +
       '<span class="gb-ccount">0 / 500</span></div>' +
@@ -392,6 +396,7 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
         mErr = document.getElementById("gbModalErr"),
         mOk = document.getElementById("gbModalOk"),
         mCancel = document.getElementById("gbModalCancel");
+  if (mPw) mPw.setAttribute("inputmode", "text");
   if (mPw) mPw.addEventListener("input", () => { mOk.disabled = !mPw.value.trim(); });
   let pending = null; // {action, scope:'post'|'comment', pid, cid}
   function openModal(action, scope, pid, cid) {
