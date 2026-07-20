@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 20</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 20, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://techcrunch.com/2026/07/19/netflix-paid-587m-for-ben-afflecks-ai-filmmaking-startup/" target="_blank"
+       data-category="AI · 미디어 · 비즈니스"
+       data-summary="Netflix paid $587 million in cash for InterPositive, an AI filmmaking startup co-founded by actor-director Ben Affleck." data-summary-kr="넷플릭스가 배우 겸 감독 벤 애플렉이 공동 창업한 AI 영화 제작 스타트업 '인터포지티브(InterPositive)'를 5억 8,700만 달러 현금에 인수했습니다."
+       data-designer="Signals AI tooling moving deeper into high-budget content pipelines, worth watching which production workflows get automated versus kept human-led." data-designer-kr="AI 도구가 고예산 콘텐츠 제작 파이프라인 깊숙이 들어오고 있다는 신호입니다. 어떤 제작 워크플로가 자동화되고 어떤 부분이 사람 중심으로 남는지 지켜볼 만합니다."
+       data-impact-score="3"
+       data-points="Netflix's largest AI-content acquisition to date|InterPositive's AI filmmaking tools|What it signals for AI's role in Hollywood production" data-points-kr="넷플릭스 역대 최대 규모 AI 콘텐츠 인수|인터포지티브의 AI 영화 제작 도구|할리우드 제작에서 AI 역할 확대 신호"
+       data-recommend="Worth a read for media/AI-tooling watchers" data-recommend-kr="미디어·AI 도구 트렌드 관심자 필독"
+       data-comment="넷플릭스가 벤 애플렉의 AI 영화 스타트업을 6천만 달러대가 아닌 5억 달러대에 인수했다는 점에서, 이는 실험적 투자가 아니라 본격적인 제작 인프라 베팅으로 읽힙니다. 콘텐츠 대기업이 AI 제작 도구를 사내로 흡수하는 흐름은 앞으로 더 빨라질 가능성이 큽니다.
+
+디자이너·기획자 입장에서는 '어디까지 AI가 대체하고 어디부터 사람이 남는가'라는 질문이 이제 영화 제작 같은 고관여 크리에이티브 영역까지 번지고 있다는 점을 주목할 필요가 있습니다. 인수 금액과 스타트업의 구체적 기술 스택은 아직 스니펫 수준 정보이므로, 정식 발표 자료로 추가 확인을 권합니다." data-comment-kr="넷플릭스가 벤 애플렉의 AI 영화 스타트업을 6천만 달러대가 아닌 5억 달러대에 인수했다는 점에서, 이는 실험적 투자가 아니라 본격적인 제작 인프라 베팅으로 읽힙니다. 콘텐츠 대기업이 AI 제작 도구를 사내로 흡수하는 흐름은 앞으로 더 빨라질 가능성이 큽니다.
+
+디자이너·기획자 입장에서는 '어디까지 AI가 대체하고 어디부터 사람이 남는가'라는 질문이 이제 영화 제작 같은 고관여 크리에이티브 영역까지 번지고 있다는 점을 주목할 필요가 있습니다. 인수 금액과 스타트업의 구체적 기술 스택은 아직 스니펫 수준 정보이므로, 정식 발표 자료로 추가 확인을 권합니다."
+       data-title-en="Netflix paid $587M for Ben Affleck's AI filmmaking startup" data-title-kr="넷플릭스, 벤 애플렉의 AI 영화 제작 스타트업 5억 8,700만 달러에 인수">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">AI 인수</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 19</div>
+        <div class="card-title">넷플릭스, 벤 애플렉의 AI 영화 제작 스타트업 5억 8,700만 달러에 인수</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.aitimes.kr/news/articleView.html?idxno=41020" target="_blank"
+       data-category="AI · 광고 · 플랫폼"
+       data-summary="네이버가 7월 14~15일 '2026 네이버 그로쓰 써밋'을 열고 AI 기반 광고 기술과 상품 전략을 공개했습니다. 검색 플랫폼을 넘어 AI 플랫폼으로 진화하면서 'AI에게 발견되는 브랜드'라는 새로운 광고 역할을 제시했습니다."
+       data-points="패션·뷰티·식음료·게임 등 180개 국내외 브랜드사 참여|AI 브리핑·AI 탭 등 생성형 검색 위에 광고 솔루션 '애드부스트' 접목|롱테일 검색 쿼리 전년比 2.5배 성장, 7월 21일부터 AI 브리핑 광고 시작"
+       data-designer="검색이 '요약·대화형'으로 바뀌면서 브랜드 노출 방식도 재편되고 있음을 보여줍니다. 브랜드·마케팅 디자인 담당자라면 'AI가 브랜드를 어떻게 발견하고 요약하는가'를 염두에 둘 시점입니다."
+       data-impact-score="3"
+       data-recommend="브랜드·마케팅 디자이너 참고 · AI 검색 노출 전략 검토 시 저장"
+       data-comment="검색 결과가 '링크 목록'에서 'AI가 요약한 답변'으로 바뀌는 흐름은 브랜드 노출의 규칙을 근본적으로 흔듭니다. 사용자가 직접 클릭하던 자리를 AI 요약이 대신하면, 브랜드가 그 요약 안에 어떻게 인용되고 표현되는지가 새로운 승부처가 됩니다.
+네이버가 '검색을 넘어 행동으로, AI에게 발견되는 브랜드의 조건'을 키노트로 내세운 건 이 변화를 정면으로 겨냥한 것입니다. 광고가 단순 노출을 넘어 'AI가 이해하고 추천할 수 있는 형태의 브랜드 자산'을 만드는 일로 확장되고 있다는 신호입니다.
+디자이너 입장에서도 남 일이 아닙니다. 브랜드 메시지와 비주얼을 사람뿐 아니라 AI가 파싱하기 좋게 구조화하는 감각이 점점 중요해질 것입니다.">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">AI 광고</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">인공지능신문 · 2026. 07. 16</div>
+        <div class="card-title">'AI 광고, 어떻게 잘 할까'…네이버, AI 최적화 광고 전략 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260714151142" target="_blank"
+       data-category="AI · 디자인 · 도구"
+       data-summary="피그마가 AI 에이전트를 품은 '지능형 캔버스'를 공개했습니다. 코드를 캔버스의 레이어처럼 다루는 '코드 레이어', 모션·셰이더 기능, 지난해 인수한 '위브(Weave)'의 생성형 AI 워크플로우를 통합해 디자인과 개발을 하나의 흐름으로 잇습니다."
+       data-points="코드를 피그마 캔버스의 레이어로 다뤄 디자인·개발 연속성 강화|여러 생성형 AI 모델을 단계별로 제어하는 '위브' 워크플로우 통합|애니메이션·화면전환·3D를 만드는 모션·셰이더 신설, AI 프롬프트로 모션 생성"
+       data-designer="AI가 만든 결과를 그대로 받기보다 '창의적 통제권'을 사용자에게 두는 방향을 표방한 점이 핵심입니다. UI·UX 디자이너라면 디자인과 코드의 경계가 흐려지는 워크플로우 변화를 직접 체감할 업데이트입니다."
+       data-impact-score="3"
+       data-recommend="UI·UX·프로덕트 디자이너 필독 · 디자인-개발 협업 워크플로우 검토 시 저장"
+       data-comment="디자인 도구가 'AI로 무엇을 자동 생성하느냐'를 넘어 'AI 결과를 어떻게 통제하느냐'로 무게중심을 옮기고 있습니다. 피그마가 위브를 소개하며 강조한 건 자동화가 아니라 창의적 통제권으로, 여러 AI 모델을 조합해 원하는 결과에 다가가도록 제어력을 높인 점을 차별점으로 내세웠습니다.
+특히 코드를 캔버스의 레이어처럼 다루는 '코드 레이어'는 기획-디자인-개발로 이어지던 순차적 3단계 구조를 흔듭니다. 디자이너와 개발자가 같은 캔버스에서 프로토타입을 오가면, 핸드오프라는 개념 자체가 옅어질 수 있습니다.
+AI 에이전트로 산출물이 조직 곳곳에 흩어지는 '사일로' 현상을 짚은 대목도 현실적입니다. 도구가 강력해질수록 결과물을 어디에 모으고 어떻게 관리할지가 디자인 조직의 새로운 과제가 됩니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">AI 디자인</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 14</div>
+        <div class="card-title">AI 에이전트 품은 피그마, 디자인·개발 잇는 '지능형 캔버스' 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/" target="_blank"
+       data-category="AI · 반도체 · 정책"
+       data-summary="Following Nvidia CEO Jensen Huang's visit, Tokyo committed up to 1 trillion yen ($6.2B) over five years, betting on homegrown 'physical AI.'" data-summary-kr="엔비디아 CEO 젠슨 황의 방일 이후, 일본 정부가 자국산 '피지컬 AI' 육성에 5년간 최대 1조 엔(약 62억 달러)을 투입하기로 했습니다."
+       data-designer="Physical AI investment races are intensifying across Asia, relevant backdrop for teams working on robotics or embodied-AI products." data-designer-kr="아시아 전역에서 피지컬 AI 투자 경쟁이 격화되고 있습니다. 로봇·임바디드 AI 제품을 다루는 팀이라면 배경 지식으로 알아둘 만합니다."
+       data-impact-score="3"
+       data-points="Japan's $6.2B five-year physical-AI investment|Context of Jensen Huang's Japan visit|Regional stakes in the physical-AI investment race" data-points-kr="일본의 5년간 62억 달러 규모 피지컬 AI 투자|젠슨 황 방일이라는 배경|피지컬 AI 투자 경쟁의 지역적 함의"
+       data-recommend="Save for infrastructure/physical-AI trend tracking" data-recommend-kr="인프라·피지컬 AI 동향 추적용 저장 추천"
+       data-comment="1조 엔이라는 숫자 자체보다 주목할 점은, 이제 각국 정부가 '피지컬 AI'를 반도체·인프라 수준의 국가 전략 과제로 다루기 시작했다는 흐름입니다. 한국의 피지컬 AI 얼라이언스 논의와 맞물려 지역 간 경쟁 구도로 읽을 수 있습니다.
+
+다만 투자 발표의 세부 집행 계획이나 구체적 수혜 기업 명단은 스니펫에 드러나지 않으므로, 실제 정책 문서를 통한 추가 확인이 필요합니다." data-comment-kr="1조 엔이라는 숫자 자체보다 주목할 점은, 이제 각국 정부가 '피지컬 AI'를 반도체·인프라 수준의 국가 전략 과제로 다루기 시작했다는 흐름입니다. 한국의 피지컬 AI 얼라이언스 논의와 맞물려 지역 간 경쟁 구도로 읽을 수 있습니다.
+
+다만 투자 발표의 세부 집행 계획이나 구체적 수혜 기업 명단은 스니펫에 드러나지 않으므로, 실제 정책 문서를 통한 추가 확인이 필요합니다."
+       data-title-en="What to watch for after Jensen Huang's Japan visit" data-title-kr="젠슨 황 방일 이후, 일본의 '피지컬 AI' 62억 달러 베팅">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">피지컬AI</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 19</div>
+        <div class="card-title">젠슨 황 방일 이후, 일본의 '피지컬 AI' 62억 달러 베팅</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.yankodesign.com/2026/07/19/a-35m%C2%B2-summerhouse-designed-like-a-space-habitat/" target="_blank"
+       data-category="Design · Architecture · Sustainability"
+       data-summary="SAGA Space Architects, known for space-habitat design (LUNARK, the ISS's Circadian Light system), applied those principles to EcoNeo, a 35m² low-carbon summerhouse in Asnæs, Denmark that sleeps six and cuts emissions by roughly 80% versus an average Danish summerhouse." data-summary-kr="우주 거주지 설계로 알려진 SAGA Space Architects(루나크, ISS 서캐디언 라이트 시스템)가 그 원칙을 지상 건축에 적용해, 덴마크 아스내스에 6인 가족이 묵을 수 있는 35㎡ 저탄소 서머하우스 'EcoNeo'를 선보였습니다. 평균적인 덴마크 서머하우스 대비 탄소 배출을 약 80% 줄였습니다."
+       data-designer="A clean case study in cross-domain transfer: the space-constrained, resource-efficient thinking behind space habitats applied directly to sustainable housing on Earth." data-designer-kr="우주 건축의 공간·자원 제약 사고방식을 지상의 지속가능한 주거에 그대로 옮겨온 깔끔한 크로스도메인 사례입니다."
+       data-impact-score="3"
+       data-points="Space-habitat design principles applied to Earth architecture|~80% lower carbon emissions than an average summerhouse|Compact living, biogenic materials, digital fabrication" data-points-kr="우주 거주지 설계 원칙을 지상 건축에 적용|평균 대비 탄소 배출 약 80% 절감|콤팩트 리빙·생물 기반 소재·디지털 패브리케이션"
+       data-recommend="Save for sustainable/compact housing research" data-recommend-kr="지속가능·콤팩트 주거 리서치 자료로 저장 추천"
+       data-comment="루나크 달 거주지 실험과 ISS 조명 시스템을 만든 스튜디오가 '지구에서 가장 제약이 많은 건축'이라 할 우주 거주지의 논리를 여름 별장에 그대로 적용했다는 점이 흥미롭습니다. 탄소 배출 80% 절감이라는 수치는 우주 건축 특유의 자원 효율 사고가 실제 성과로 이어진 사례로 볼 수 있습니다.
+
+콤팩트 리빙과 생물 기반 소재, 디지털 패브리케이션을 결합한 접근은 국내 소형 주택·세컨드하우스 설계에도 참고할 지점이 많습니다. 다만 시공비나 실제 거주 후기 등 디테일은 스니펫 정보만으로는 확인되지 않아, 관심 있다면 원문과 아크데일리 등 추가 자료를 함께 살펴보길 권합니다." data-comment-kr="루나크 달 거주지 실험과 ISS 조명 시스템을 만든 스튜디오가 '지구에서 가장 제약이 많은 건축'이라 할 우주 거주지의 논리를 여름 별장에 그대로 적용했다는 점이 흥미롭습니다. 탄소 배출 80% 절감이라는 수치는 우주 건축 특유의 자원 효율 사고가 실제 성과로 이어진 사례로 볼 수 있습니다.
+
+콤팩트 리빙과 생물 기반 소재, 디지털 패브리케이션을 결합한 접근은 국내 소형 주택·세컨드하우스 설계에도 참고할 지점이 많습니다. 다만 시공비나 실제 거주 후기 등 디테일은 스니펫 정보만으로는 확인되지 않아, 관심 있다면 원문과 아크데일리 등 추가 자료를 함께 살펴보길 권합니다."
+       data-title-en="A 35m² Summerhouse Designed Like a Space Habitat" data-title-kr="우주 거주지처럼 설계한 35㎡ 서머하우스 'EcoNeo'">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">친환경 건축</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 19</div>
+        <div class="card-title">우주 거주지처럼 설계한 35㎡ 서머하우스 'EcoNeo'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://designcompass.org/2026/07/09/gangnam-unni-rebrand-2026/" target="_blank"
+       data-category="디자인 · 브랜딩 · BX"
+       data-summary="미용의료 플랫폼 '강남언니'가 새 브랜드 아이덴티티를 공개했습니다. 국내에서 쌓은 브랜드 경험과 해외 서비스 경험을 하나의 체계로 통합하고, 로고·심볼·색상·타이포그래피·일러스트레이션까지 디자인 시스템 전반을 재정비했습니다."
+       data-points="국내·해외로 흩어져 있던 브랜드 자산을 하나의 체계로 통합|앱·웹·마케팅·오프라인까지 일관된 BX와 인터페이스 적용|일본·태국 등 글로벌 이용자에게 동일한 브랜드 경험 제공 목표"
+       data-designer="서비스가 국내를 넘어 글로벌 헬스케어 브랜드로 확장할 때, 흩어진 디자인 자산을 어떻게 하나의 시스템으로 묶는지 보여주는 사례입니다. BX·브랜딩 디자이너에게 참고가 됩니다."
+       data-impact-score="2"
+       data-recommend="BX·브랜딩 디자이너 참고 · 글로벌 확장기 디자인 시스템 통합 사례 저장"
+       data-comment="서비스가 여러 나라로 뻗어나가면 각국에서 따로 자란 로고·색상·톤이 어느새 서로 다른 얼굴을 갖게 됩니다. 강남언니의 이번 리브랜딩은 그 흩어진 얼굴을 하나로 모으는 작업입니다. 친근함이라는 기존 인상은 지키되, 글로벌 서비스에 어울리는 간결한 형태로 다듬었습니다.
+핵심은 '보이는 로고'보다 '보이지 않는 시스템'입니다. 앱·웹·마케팅·오프라인, 그리고 병원 탐색부터 예약까지 이어지는 흐름에 같은 인터페이스 언어를 적용해 국가별로 관리되던 자산을 하나로 통합했습니다.
+리브랜딩이 단순한 로고 교체가 아니라 글로벌 확장을 위한 운영 기반 정비라는 점에서, 서비스를 키우는 단계의 브랜딩 실무자에게 참고할 만한 사례입니다.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">BX</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인 나침반 · 2026. 07. 09</div>
+        <div class="card-title">강남언니 리브랜딩, 내 선택에 확신을</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://design.co.kr/article/168300/" target="_blank"
+       data-category="디자인 · 브랜딩 · 그래픽"
+       data-summary="데이팅 앱 틴더가 약 10년 만에 브랜드 아이덴티티를 전면 개편했습니다. 스튜디오 포르투 로샤(Porto Rocha)와 함께 로고·타이포그래피·모션 시스템을 새로 짜고, Z세대를 겨냥해 '모순적인 시대의 사랑'이라는 정서를 브랜드 언어로 끌어들였습니다."
+       data-points="포르투 로샤가 워드마크·전용 서체·모션 시스템을 새로 설계|스와이프 애니메이션 등 핵심 인터랙션의 시각 언어 재정비|'데이팅 칼럼니스트' 같은 브랜드 보이스로 톤앤매너 차별화"
+       data-designer="기능은 그대로 두고 브랜드의 '태도와 목소리'를 다시 쓴 리브랜딩입니다. 오래된 서비스 브랜드가 세대 교체기에 어떻게 정체성을 재정비하는지 브랜딩·모션 디자이너에게 참고가 됩니다."
+       data-impact-score="2"
+       data-recommend="브랜딩·모션 디자이너 참고 · 서비스 리브랜딩 사례 저장"
+       data-comment="10년 가까이 굳어진 앱 아이덴티티를 손대는 일은 위험이 큽니다. 사용자에게 각인된 로고·컬러·제스처를 바꾸면 낯섦과 반발이 따르기 때문입니다. 틴더는 로고와 서체뿐 아니라 스와이프 같은 핵심 인터랙션의 시각 언어까지 다시 짜며 이 위험을 정면으로 감수했습니다.
+특히 '데이팅 칼럼니스트'라는 가상의 목소리를 브랜드 보이스로 세운 점이 눈에 띕니다. 로고 교체를 넘어, 브랜드가 세상을 바라보고 말 거는 태도 자체를 재설계한 것입니다.
+정체성이 굳은 서비스가 새로운 세대와 다시 관계 맺으려 할 때 무엇을 지키고 무엇을 바꿔야 하는지, 브랜딩 실무자에게 생각할 거리를 주는 사례입니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">브랜딩</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인플러스 · 2026. 07. 17</div>
+        <div class="card-title">모순적인 시대의 사랑, 틴더 리브랜딩 프로젝트</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/18/forget-smart-homes-moooi-is-designing-homes-that-feel-alive/" target="_blank"
+       data-category="Design · Interior · Brand"
+       data-summary="For its 25th anniversary in Milan, Moooi built a multi-sensory installation with choreographer Yoann Bourgeois layering light, movement and scent, framing a design philosophy centered on how spaces feel, including an AI-scent collaboration with EveryHuman that translates mood into custom room fragrance." data-summary-kr="밀라노에서 열린 브랜드 25주년 설치작에서 무이(Moooi)는 안무가 요안 부르주아와 함께 빛·움직임·향을 겹겹이 쌓은 다감각 공간을 선보였습니다. '공간이 어떻게 느껴지는가'를 중심에 둔 철학을 제시했고, 이버리휴먼(EveryHuman)과의 협업으로 기분을 맞춤 향으로 번역하는 AI 향기 프로젝트도 포함됐습니다."
+       data-designer="A useful counter-narrative to spec-sheet smart-home design: treating mood and atmosphere as design materials in their own right." data-designer-kr="스펙 중심의 스마트홈 디자인에 대한 유효한 반론입니다. 분위기와 감각을 디자인 재료 그 자체로 다루는 접근이 인상적입니다."
+       data-impact-score="3"
+       data-points="25th-anniversary installation with choreographer Yoann Bourgeois|Design philosophy centered on feeling over smart-home features|AI x scent collaboration with EveryHuman" data-points-kr="안무가 요안 부르주아와의 25주년 설치작|스마트 기능보다 '느낌'을 중심에 둔 철학|이버리휴먼과의 AI 향기 협업"
+       data-recommend="Worth reading for interior/experience designers" data-recommend-kr="인테리어·경험 디자이너 필독 추천"
+       data-comment="스마트홈 담론이 대개 기기·자동화 스펙 경쟁으로 흐르는 것과 달리, 무이는 '이 공간에 들어섰을 때 어떤 기분이 드는가'라는 질문을 출발점으로 삼았다는 점이 눈에 띕니다. 안무가와의 협업으로 빛·움직임·향을 레이어링한 설치는 인테리어를 감각 경험으로 재정의하려는 시도로 읽힙니다.
+
+특히 AI를 활용해 기분을 향으로 번역하는 이버리휴먼과의 협업은, AI가 반드시 화면이나 자동화 기능으로만 구현될 필요는 없다는 걸 보여줍니다. 다만 이 협업이 실제 상용화 제품인지 전시용 컨셉인지는 스니펫만으로는 명확하지 않아 원문 확인이 필요합니다." data-comment-kr="스마트홈 담론이 대개 기기·자동화 스펙 경쟁으로 흐르는 것과 달리, 무이는 '이 공간에 들어섰을 때 어떤 기분이 드는가'라는 질문을 출발점으로 삼았다는 점이 눈에 띕니다. 안무가와의 협업으로 빛·움직임·향을 레이어링한 설치는 인테리어를 감각 경험으로 재정의하려는 시도로 읽힙니다.
+
+특히 AI를 활용해 기분을 향으로 번역하는 이버리휴먼과의 협업은, AI가 반드시 화면이나 자동화 기능으로만 구현될 필요는 없다는 걸 보여줍니다. 다만 이 협업이 실제 상용화 제품인지 전시용 컨셉인지는 스니펫만으로는 명확하지 않아 원문 확인이 필요합니다."
+       data-title-en="Forget Smart Homes, Moooi Is Designing Homes That Feel Alive" data-title-kr="'스마트홈은 잊어라' 무이가 그리는 살아있는 듯한 집">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">인테리어</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 18</div>
+        <div class="card-title">'스마트홈은 잊어라' 무이가 그리는 살아있는 듯한 집</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
