@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 22</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 22, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://zdnet.co.kr/view/?no=20260721163403" target="_blank"
+       data-category="AI · 정책"
+       data-summary="중국의 딥시크·키미 등 AI 모델이 성능과 비용 경쟁력을 앞세워 미국 중심의 AI 시장 구도를 흔들고 있는 가운데, 미중 양국이 동시에 AI 접근을 제한하는 조치에 나서며 기술 패권 경쟁이 새 국면에 접어들었다."
+       data-points="중국산 오픈웨이트 모델의 성능·가격 경쟁력 부상|미국, 자국 기업의 중국 AI 모델 사용 제한 검토|중국도 자국 AI 생태계 보호 위해 맞대응"
+       data-designer="AI 인프라·모델 선택지가 지정학 이슈로 번지는 흐름입니다. 서비스에 특정 모델을 종속적으로 쓰는 설계는 향후 접근 제한 리스크를 안고 갈 수 있습니다."
+       data-impact-score="3"
+       data-recommend="AI 정책 동향 참고 · 인프라 담당자 저장 추천"
+       data-comment="딥시크에 이어 문샷의 키미 같은 중국산 오픈웨이트 모델이 성능과 가격 양면에서 존재감을 키우면서, 미국 중심으로 짜여 있던 AI 생태계의 구도가 흔들리고 있습니다. 이번 기사는 이 흐름에 대한 미중 양국의 반응이 '동시 빗장'이라는 형태로 나타나고 있다는 점을 짚습니다.
+
+특히 눈여겨볼 부분은 기술 우위 경쟁이 단순한 성능 비교를 넘어 접근 제한·규제라는 정책 수단으로 옮겨가고 있다는 점입니다. 특정 국가의 모델에 의존하는 서비스나 도구를 설계하고 있다면, 이런 규제 리스크를 미리 고려해 대체 옵션을 마련해두는 것이 안전합니다.
+
+다만 이 기사는 스니펫 기반 요약이라 구체적인 제한 조치의 범위나 시행 시점 등 세부 사실은 원문에서 반드시 확인이 필요합니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">AI패권</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 21</div>
+        <div class="card-title">[AI는 지금] 딥시크·키미 뜨자 美·中 동시에 빗장…AI 패권 전쟁 확전</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/" target="_blank"
+       data-category="AI · 저작권"
+       data-summary="A federal judge has granted final approval to Anthropic's landmark $1.5 billion settlement resolving a class-action copyright lawsuit brought by authors over training data." data-summary-kr="연방 판사가 앤트로픽이 훈련 데이터 관련 저작자들의 집단소송을 해결하기 위해 제시한 15억 달러 규모의 저작권 합의를 최종 승인했습니다."
+       data-points="Final approval of the $1.5B settlement|Resolves author class-action over training data|Sets a benchmark for AI copyright disputes" data-points-kr="15억 달러 합의 최종 승인|훈련 데이터 관련 저작자 집단소송 해소|AI 저작권 분쟁의 새 기준점 제시"
+       data-designer="This settlement is likely to become a reference point for how AI companies handle training-data disputes going forward — worth tracking if your work touches AI-generated or AI-assisted content." data-designer-kr="이 합의는 앞으로 AI 기업들이 훈련 데이터 분쟁을 다루는 방식의 기준점이 될 가능성이 높습니다. AI 생성·보조 콘텐츠를 다루는 실무자라면 주시할 만합니다."
+       data-impact-score="3"
+       data-recommend="Useful context for anyone working with AI-generated content · Save for reference" data-recommend-kr="AI 생성 콘텐츠를 다루는 실무자에게 참고할 만함 · 저장 추천"
+       data-comment="A federal judge's final approval closes a major chapter in the ongoing legal reckoning between AI labs and content creators. The $1.5 billion figure makes this one of the largest copyright settlements tied to AI training data to date.
+
+For teams building on top of foundation models, settlements like this are a useful signal of where the legal boundaries around training data are settling — even if the terms don't apply directly to your work.
+
+Note: this summary is based on search snippets, not the full court filing — check the original reporting for exact settlement terms and next steps." data-comment-kr="연방 판사의 최종 승인으로 AI 랩과 콘텐츠 창작자 사이의 법적 공방 중 굵직한 한 장이 마무리됐습니다. 15억 달러라는 규모는 AI 훈련 데이터와 관련된 저작권 합의 중 역대급으로 꼽힙니다.
+
+파운데이션 모델 위에서 서비스를 만드는 팀이라면, 이런 합의 사례를 통해 훈련 데이터를 둘러싼 법적 경계가 어떻게 정리되고 있는지 가늠해볼 수 있습니다.
+
+다만 이 요약은 검색 스니펫 기반이라 합의의 구체적 조건이나 후속 절차는 원문 확인이 필요합니다."
+       data-title-en="Anthropic's landmark $1.5B copyright settlement is approved">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">저작권합의</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 20</div>
+        <div class="card-title">앤트로픽 15억 달러 저작권 합의, 법원 최종 승인</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/20/natural-raises-30m-to-reinvent-payments-for-ai-agents-and-take-on-stripe/" target="_blank"
+       data-category="AI · 스타트업"
+       data-summary="Startup Natural has raised $30 million to build a payments infrastructure designed for autonomous AI agents, positioning itself as a challenger to Stripe as agents begin executing more sophisticated tasks." data-summary-kr="AI 에이전트가 점점 더 복잡한 작업을 자율적으로 수행하게 되면서, 스타트업 '내추럴'이 에이전트 전용 결제 인프라를 구축하기 위해 3천만 달러를 투자받았습니다. 스트라이프에 도전하는 모양새입니다."
+       data-points="$30M raised for AI-agent-native payments infra|Targets autonomous agent transaction flows|Positions directly against incumbent Stripe" data-points-kr="AI 에이전트 전용 결제 인프라에 3천만 달러 투자|자율 에이전트의 거래 처리를 겨냥|기존 강자 스트라이프와 직접 경쟁 구도"
+       data-designer="As agents start transacting on users' behalf, the UX and trust design around agent-initiated payments becomes a new design surface — worth watching even outside fintech." data-designer-kr="에이전트가 사용자를 대신해 결제를 수행하기 시작하면, 에이전트발 결제의 UX와 신뢰 설계가 새로운 디자인 영역이 됩니다. 핀테크 밖에서도 주목할 만합니다."
+       data-impact-score="2"
+       data-recommend="Interesting if you follow AI-agent infrastructure · Optional read" data-recommend-kr="AI 에이전트 인프라에 관심 있다면 흥미로운 소식 · 선택적 읽기"
+       data-comment="Payments for autonomous AI agents is a genuinely new problem space — existing rails like Stripe were built for humans clicking 'buy,' not for agents making rapid-fire micro-transactions on a user's behalf.
+
+Natural's bet is that this gap is big enough to build a challenger business on. Whether that's true depends on how quickly agentic commerce actually takes off, which is still an open question industry-wide.
+
+This is based on search snippets — the specifics of Natural's product and go-to-market aren't fully verified here." data-comment-kr="자율 AI 에이전트를 위한 결제는 사실상 새로운 문제 영역입니다. 스트라이프 같은 기존 결제 레일은 사람이 직접 '구매' 버튼을 누르는 것을 전제로 설계됐지, 에이전트가 사용자를 대신해 빠르게 소액 결제를 반복하는 상황을 염두에 두지 않았습니다.
+
+내추럴은 이 빈틈이 새로운 도전자 기업을 키울 만큼 크다는 데 베팅한 셈입니다. 실제로 그럴지는 에이전트 커머스가 얼마나 빨리 확산되느냐에 달려 있고, 이는 업계 전체에서 아직 열려 있는 질문입니다.
+
+이 요약은 검색 스니펫 기반이며, 내추럴의 구체적 제품·진출 전략은 원문에서 추가 확인이 필요합니다."
+       data-title-en="Natural raises $30M to reinvent payments for AI agents — and take on Stripe">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">에이전트결제</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 20</div>
+        <div class="card-title">AI 에이전트 결제 스타트업 '내추럴', 3천만 달러 투자 유치…스트라이프에 도전장</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260721125217" target="_blank"
+       data-category="AI · 보안"
+       data-summary="클라우드플레어가 사용자 행동 패턴을 분석해 AI 봇을 식별하고 차단하는 신제품 '프리커서'를 출시했습니다. AI 크롤러·에이전트 트래픽이 급증하는 가운데 나온 방어 솔루션입니다."
+       data-points="사용자 행동 분석 기반 AI 봇 탐지·차단|AI 크롤러·에이전트 트래픽 급증에 대응|웹 퍼블리셔·서비스 운영자를 위한 방어 계층"
+       data-designer="AI 에이전트가 웹을 돌아다니는 시대에는 '이 트래픽이 사람인지 에이전트인지'를 구분하는 것 자체가 제품 설계 이슈가 됩니다. 서비스 접근 제어·UX에도 영향을 줄 수 있는 흐름입니다."
+       data-impact-score="2"
+       data-recommend="웹 서비스 운영자·보안 담당자 참고 · 선택 저장"
+       data-comment="AI 크롤러와 에이전트가 웹을 돌아다니는 트래픽이 늘면서, '이게 사람인지 봇인지'를 구분하는 문제가 다시 부상하고 있습니다. 클라우드플레어의 프리커서는 이런 흐름에 대한 인프라 차원의 대응책입니다.
+
+과거의 봇 차단이 단순 트래픽 패턴 기반이었다면, 이제는 AI 에이전트의 정교한 행동을 구분해야 하는 만큼 더 정밀한 행동 분석이 필요해졌습니다. 자사 서비스에 AI 크롤링 이슈가 있다면 참고할 만합니다.
+
+검색 스니펫 기반 요약이라 프리커서의 구체적 기술 방식이나 가격 정책 등은 원문에서 확인이 필요합니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">봇차단</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 21</div>
+        <div class="card-title">클라우드플레어, AI 봇 차단 신제품 '프리커서' 출시</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.yankodesign.com/2026/07/21/this-70-japanese-candle-burns-from-the-inside-out-lights-a-room-better-than-anything-else-on-your-shelf/" target="_blank"
+       data-category="Design · Product"
+       data-summary="Rooted in the design of the chouchin — traditional Japanese paper lanterns once used at festivals and izakaya doorways — this $70 candle holder holds its shape while the flame quietly glows from within." data-summary-kr="축제와 이자카야 입구를 밝히던 일본 전통 초롱 '초친(提灯)'에서 영감을 받은 7만원대 양초입니다. 불꽃이 안쪽에서 은은하게 퍼지며 형태를 유지하는 것이 특징입니다."
+       data-points="Inspired by traditional Japanese chouchin lanterns|Holds its form while lit from inside|Priced around $70 as a shelf/decor object" data-points-kr="일본 전통 초롱 초친에서 영감을 얻은 디자인|내부에서 빛나면서도 형태를 유지|약 7만원대의 소품형 조명 오브제"
+       data-designer="A nice example of how a functional object (a candle) can carry cultural reference without becoming a literal replica — worth studying for product-to-heritage translation work." data-designer-kr="기능적 사물(양초)이 문화적 레퍼런스를 노골적인 복제 없이 담아내는 좋은 사례입니다. 전통을 제품으로 번역하는 작업에 참고할 만합니다."
+       data-impact-score="2"
+       data-recommend="Good moodboard/product-design reference · Optional" data-recommend-kr="무드보드·제품 디자인 레퍼런스로 좋음 · 선택 저장"
+       data-comment="There's a specific design challenge in taking a familiar cultural object — here, the chouchin lantern — and translating it into a new functional form without it reading as a costume-y reference. This candle seems to lean on the 'glowing from within' quality of the lantern rather than copying its literal shape, which is the harder and more interesting move.
+
+It's a small object, but it's a useful case study for anyone doing heritage-inspired product work: what's the one quality of the reference worth keeping, and what can be let go?
+
+Based on a search snippet — exact materials, dimensions and sourcing aren't independently verified here." data-comment-kr="초친(제등)처럼 익숙한 문화적 사물을 새로운 기능적 형태로 옮기면서도 코스튬처럼 느껴지지 않게 만드는 것은 꽤 까다로운 디자인 과제입니다. 이 양초는 초롱의 형태를 그대로 베끼기보다 '안에서 은은히 빛나는' 성질에 집중한 것으로 보이는데, 이게 더 어렵고 흥미로운 접근입니다.
+
+작은 오브제지만, 전통에서 영감을 받은 제품 작업을 할 때 '레퍼런스의 어떤 성질을 남기고 어떤 걸 버릴지' 고민하는 데 참고할 만한 사례입니다.
+
+검색 스니펫 기반 요약으로, 정확한 소재·크기·제작 방식 등은 별도 확인이 필요합니다."
+       data-title-en="This $70 Japanese Candle Burns From the Inside Out & Lights a Room Better Than Anything Else on Your Shelf">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">일본양초</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 21</div>
+        <div class="card-title">일본 전통 초롱에서 영감받은 $70 양초, 안에서부터 빛을 밝히다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://designcompass.org/2026/07/20/sonata-health-brand-identity/" target="_blank"
+       data-category="디자인 · 브랜딩 · UX"
+       data-summary="미국 예방 의료 서비스 '소나타(SONATA)'가 뉴욕·샌프란시스코·LA에서 출범하며 브랜드 아이덴티티를 공개했습니다. 뉴욕 스튜디오 리틀 플레인스가 네이밍부터 브랜드 전략, 비주얼 아이덴티티, 모션, 제품 인터페이스까지 전 과정을 설계했습니다."
+       data-points="칼라 릴리 꽃을 대표 그래픽으로, 임상 데이터에 부드럽고 인간적인 인상 부여|모션은 꽃을 '호흡하듯' 천천히 움직여 정밀한 의료와 돌봄의 균형 표현|제품 UX는 복잡한 건강 데이터를 쉬운 언어로 한 단계씩 이해하도록 구성"
+       data-designer="정밀함을 앞세우기보다 사용자가 자기 몸의 정보에 차분히 집중하도록 설계한 점이 핵심입니다. 화면 전환과 움직임 자체를 신뢰 형성 장치로 쓴 접근은 UX·브랜딩 디자이너에게 좋은 참고가 됩니다."
+       data-impact-score="3"
+       data-recommend="UX·UI·브랜딩 디자이너 참고 · 데이터 서비스의 신뢰 설계 사례 저장"
+       data-comment="의료·데이터 서비스는 정밀함과 전문성을 강조하다 차갑고 위압적으로 보이기 쉽습니다. 소나타는 칼라 릴리라는 유기적 그래픽과 호흡하듯 느린 모션으로, 수학적으로 정밀한 시스템에 인간적인 온도를 더했습니다.
+특히 움직임과 화면 전환 자체를 신뢰의 언어로 활용한 점이 눈에 띕니다. 데이터를 빠르게 쏟아내는 대신 한 단계씩 이해시키고, 각 의사결정에서 의료진과의 연결을 드러내며 사용자가 안심하고 몰입하도록 설계했습니다.
+브랜드 아이덴티티가 로고에 그치지 않고 모션과 제품 UX까지 하나의 경험으로 이어진 사례로, 시각·인터랙션·정보 설계를 함께 다루는 디자이너에게 참고할 만합니다.">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">UX</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인 나침반 · 2026. 07. 20</div>
+        <div class="card-title">소나타, 예술적 경험으로 푸는 의료 데이터</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.archdaily.com/1181271/de-jonghe-residence-restoration-michel-architects" target="_blank"
+       data-category="Design · Architecture"
+       data-summary="Michel Architects has restored the De Jonghe Residence, a 1959 Los Angeles hillside house designed by Lloyd Wright, son of Frank Lloyd Wright." data-summary-kr="미셸 아키텍츠가 로스앤젤레스 언덕에 위치한 1959년작 '드종게 저택'을 복원했습니다. 설계자는 프랭크 로이드 라이트의 아들인 로이드 라이트입니다."
+       data-points="Original 1959 design by Lloyd Wright|Hillside site in Los Angeles|Restoration led by Michel Architects" data-points-kr="1959년 로이드 라이트가 설계한 원본 주택|로스앤젤레스 언덕 지형에 위치|미셸 아키텍츠가 복원 작업 진행"
+       data-designer="Restoration work like this is a good reminder that respecting an original architect's intent while making a house livable today is its own design discipline, distinct from new-build work." data-designer-kr="이런 복원 작업은 원 설계자의 의도를 존중하면서도 오늘날 거주 가능한 집으로 만드는 것이 신축과는 또 다른 디자인 영역임을 보여줍니다."
+       data-impact-score="2"
+       data-recommend="Good reference for restoration/heritage architecture work · Save" data-recommend-kr="복원·헤리티지 건축 작업에 참고할 만함 · 저장 추천"
+       data-comment="Restoring a house by Lloyd Wright — working in his father Frank Lloyd Wright's long shadow — comes with a particular kind of pressure: the building carries architectural pedigree, but it also needs to function as a home. Michel Architects' work on the De Jonghe Residence is a case study in that balance.
+
+Hillside sites like this one in Los Angeles add their own constraints, from structural considerations to how the house negotiates its slope. Worth a look for anyone interested in restoration architecture or mid-century residential work.
+
+Summary based on search snippets — details of the specific interventions made during restoration aren't verified here and should be checked against the original piece." data-comment-kr="프랭크 로이드 라이트의 아들인 로이드 라이트가 설계한 집을 복원하는 작업에는 특유의 부담이 따릅니다. 건축적 계보를 지닌 건물이면서도 실제로 사람이 사는 집으로 기능해야 하기 때문입니다. 미셸 아키텍츠의 드종게 저택 작업은 이 균형을 보여주는 사례입니다.
+
+로스앤젤레스 언덕이라는 대지 조건도 구조적 고려와 경사 대응 방식 등 나름의 제약을 더합니다. 복원 건축이나 중세기(미드센추리) 주거 작업에 관심 있다면 살펴볼 만합니다.
+
+검색 스니펫 기반 요약으로, 복원 과정에서의 구체적 개입 내용은 원문에서 별도로 확인이 필요합니다."
+       data-title-en="De Jonghe Residence Restoration / Michel Architects">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">리노베이션</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 07. 20</div>
+        <div class="card-title">로이드 라이트가 설계한 '드종게 저택' 복원 프로젝트</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://design.co.kr/article/168419/" target="_blank"
+       data-category="디자인 · 브랜딩 · 리테일"
+       data-summary="일본 패밀리마트가 '다음 세대의 편의점'을 표방하는 플래그십 '파미마 파크 아자부다이'를 공개했습니다. 스트리트 컬처의 거장 니고가 크리에이티브 디렉터를, 원더월이 공간 디자인을 맡아 건축·패션·브랜딩을 결합한 새로운 리테일 경험을 제안합니다."
+       data-points="루프톱 포레스트·통유리 파사드로 편의점을 '머무는 목적지'로 재정의|자체 의류 브랜드 '컨비니언스 웨어'와 숍인숍·피팅룸·인터랙티브 터치스크린 도입|공식 캐릭터 IP를 건축·굿즈·의류 전반에 적용해 문화 플랫폼으로 확장"
+       data-designer="편의점이라는 익숙한 형식을 브랜드 경험의 무대로 재해석한 사례입니다. 공간·그래픽·패션·캐릭터 IP를 하나의 세계관으로 엮는 방식이 리테일·브랜딩 디자이너에게 참고가 됩니다."
+       data-impact-score="2"
+       data-recommend="리테일·브랜딩·공간 디자이너 참고 · 브랜드 경험 설계 사례 저장"
+       data-comment="편의점은 효율과 편리가 전부인 공간으로 여겨져 왔습니다. 파미마 파크는 그 통념을 뒤집어, 일부러 찾아가고 싶은 목적지라는 목표 아래 건축·패션·그래픽을 한데 묶었습니다. 니고의 세계관과 원더월의 공간 설계가 편의점의 문법을 넘어섭니다.
+자체 의류 브랜드, 숍인숍, 피팅룸, 인터랙티브 터치스크린까지 더해 매장을 경험의 장으로 만든 점이 흥미롭습니다. 상품을 파는 곳을 넘어 브랜드를 체험하는 공간으로 확장한 셈입니다.
+새로 개발한 공식 캐릭터 IP를 공간·굿즈·의류에 유기적으로 연결해 하나의 문화 플랫폼으로 진화시킨 전략은, 브랜드를 시스템으로 사고하는 실무자에게 참고할 만한 사례입니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">리테일</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인플러스 · 2026. 07. 21</div>
+        <div class="card-title">다음 세대의 편의점을 실험하는 패밀리마트, 파미마 파크</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
