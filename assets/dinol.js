@@ -107,8 +107,19 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerImpact.innerHTML = html;
   }
 
+  /* 단락 렌더링: 줄바꿈을 <p>로 분리해 단락 간 여백 확보 (2026-07-23) */
+  function renderParagraphs(el, val) {
+    el.textContent = '';
+    const parts = String(val || '').split(/\n+/).map(s => s.trim()).filter(Boolean);
+    parts.forEach(t => {
+      const p = document.createElement('p');
+      p.textContent = t;
+      el.appendChild(p);
+    });
+  }
+
   function setField(el, val) {
-    el.textContent = val || '';
+    renderParagraphs(el, val);
     const wrap = el.closest('.drawer-field');
     if (wrap) wrap.style.display = (val && val.trim()) ? 'flex' : 'none';
   }
@@ -123,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pWrap) pWrap.style.display = drawerPoints.children.length ? 'flex' : 'none';
     setField(drawerRecommend, F.recommend[k]);
     const cmt = F.comment[k] || '';
-    drawerComment.textContent = cmt;
+    renderParagraphs(drawerComment, cmt);
     drawerCommentWrap.style.display = cmt.trim() ? 'flex' : 'none';
     btnKr.classList.toggle('active', k === 'kr');
     btnEn.classList.toggle('active', k === 'en');

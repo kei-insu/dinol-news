@@ -1,4 +1,5 @@
 {
+ "http://www.enewstoday.co.kr/news/articleView.html?idxno=2451500": "20260723",
  "http://www.koreatimes.com/article/20260715/1621548": "20260717",
  "https://design.co.kr/article/166406/": "20260701",
  "https://design.co.kr/article/167983/": "20260719",
@@ -9,6 +10,7 @@
  "https://designcompass.org/2026/07/09/gangnam-unni-rebrand-2026/": "20260720",
  "https://designcompass.org/2026/07/14/7-eleven-korea-new-visual-identity/": "20260721",
  "https://designcompass.org/2026/07/20/sonata-health-brand-identity/": "20260722",
+ "https://designcompass.org/2026/07/21/coca-cola-global-visual-identity/": "20260723",
  "https://imnews.imbc.com/news/2026/politics/article/6834985_36912.html": "20260703",
  "https://money.usnews.com/investing/news/articles/2026-07-08/spacexai-launches-grok-4-5-model-for-coding-agentic-tasks": "20260710",
  "https://news.seoul.go.kr/culture/archives/533444": "20260709",
@@ -45,6 +47,8 @@
  "https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/": "20260720",
  "https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/": "20260722",
  "https://techcrunch.com/2026/07/20/natural-raises-30m-to-reinvent-payments-for-ai-agents-and-take-on-stripe/": "20260722",
+ "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/": "20260723",
+ "https://techcrunch.com/2026/07/21/openai-says-hugging-face-was-breached-by-its-pre-release-models/": "20260723",
  "https://theladylearner.com/3513/": "20260706",
  "https://timesofindia.indiatimes.com/business/india-business/govt-may-look-at-a-separate-legal-framework-for-ai-secretary/articleshow/132170345.cms": "20260703",
  "https://timesofindia.indiatimes.com/technology/tech-news/sriram-krishnan-donald-trumps-outgoing-ai-advisor-calls-out-ai-leaders-for-terrible-job-it-is-own-due-to-your-own-doomer-messaging-that-/articleshow/132190327.cms": "20260703",
@@ -70,6 +74,7 @@
  "https://www.archdaily.com/1148657/omas-the-martin-completes-as-part-of-the-transformation-of-amsterdams-former-bijlmerbajes-prison": "20260716",
  "https://www.archdaily.com/1148825/house-in-san-isidro": "20260719",
  "https://www.archdaily.com/1148884/splitscape-residence-spacedna": "20260721",
+ "https://www.archdaily.com/1181246/lifeline-community-centre-assemble": "20260723",
  "https://www.archdaily.com/1181271/de-jonghe-residence-restoration-michel-architects": "20260722",
  "https://www.artificialintelligence-news.com/news/japan-ai-robots-2040-national-ai-model/": "20260701",
  "https://www.axios.com/2026/07/03/anthropic-ai-models-revived-behind-the-scenes": "20260706",
@@ -123,6 +128,7 @@
  "https://www.itsnicethat.com/articles/blanca-doba-bare-earth-graphic-design-project-010726": "20260701",
  "https://www.itsnicethat.com/articles/chris-panicker-pitchfork-selects-graphic-design-project-070726": "20260713",
  "https://www.itsnicethat.com/articles/koto-cctype-typography-project-080726": "20260713",
+ "https://www.itsnicethat.com/articles/kurt-bauer-photography-discover-220726": "20260723",
  "https://www.itsnicethat.com/articles/matter-of-new-new-typography-graphic-design-publication-project-150726": "20260718",
  "https://www.itsnicethat.com/features/robert-beatty-illustration-spotlight-200726": "20260721",
  "https://www.itsnicethat.com/features/the-poster-festival-warsaw-round-up-graphic-design-spotlight-020726": "20260703",
@@ -178,6 +184,8 @@
  "https://zdnet.co.kr/view/?no=20260716132158": "20260717",
  "https://zdnet.co.kr/view/?no=20260717225520": "20260718",
  "https://zdnet.co.kr/view/?no=20260718202637": "20260719",
+ "https://zdnet.co.kr/view/?no=20260721081311": "20260723",
  "https://zdnet.co.kr/view/?no=20260721125217": "20260722",
- "https://zdnet.co.kr/view/?no=20260721163403": "20260722"
+ "https://zdnet.co.kr/view/?no=20260721163403": "20260722",
+ "https://zdnet.co.kr/view/?no=20260722062732": "20260723"
 }

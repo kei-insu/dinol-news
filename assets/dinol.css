@@ -492,6 +492,9 @@
   .drawer-field { display: flex; flex-direction: column; gap: 3px; }
   .drawer-field-label { font-size: 13px; font-weight: 550; color: #f1f2f7; letter-spacing: 0.2px; }
   .drawer-field-text { font-size: 15px; font-weight: 350; color: #cfcfda; line-height: 1.6; white-space: pre-line; }
+  /* 단락 간 여백: 줄바꿈 시 한 칸 띄워 가독성 확보 (2026-07-23) */
+  .drawer-field-text p { margin: 0; }
+  .drawer-field-text p + p { margin-top: 0.75em; }
   /* 실무 영향도 별점 */
   .drawer-stars { display: inline-flex; align-items: center; gap: 2px; font-size: 15px; letter-spacing: 1px; line-height: 1; }
   .drawer-stars .star-on { color: #ff7f3e; }
@@ -508,6 +511,8 @@
     font-size: 13px; font-weight: 550; color: #ff7f3e; letter-spacing: 0.2px;
   }
   .drawer-comment-text { font-size: 15px; font-weight: 350; color: #cfcfda; line-height: 1.6; white-space: pre-line; }
+  .drawer-comment-text p { margin: 0; }
+  .drawer-comment-text p + p { margin-top: 0.75em; }
 
   .drawer-footer { padding: 8px 20px 20px; display: flex; flex-direction: row; gap: 10px; }
 
