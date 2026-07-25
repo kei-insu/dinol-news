@@ -1,0 +1,65 @@
+rules_version = '2';
+// ============================================================
+// 디자인 놀이터 — Firestore 보안 규칙
+// (운영자 2026-07-19: Auth 제거, config/site.adminPwHash 비번 방식.
+//  admin 필드는 표시용이라 규칙상 boolean만 검증, 강제는 클라이언트 측.)
+// ============================================================
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 좋아요
+    match /likes/{id} {
+      allow read: if true;
+      allow write: if request.resource.data.count is int
+                   && request.resource.data.count >= 0;
+    }
+    // 운영자 비밀번호 해시 (읽기 공개 / 쓰기는 콘솔에서만)
+    match /config/{doc} {
+      allow read: if true;
+      allow write: if false;
+    }
+    // 방명록 글
+    match /guestbook/{postId} {
+      allow read: if true;
+      allow create: if isValidPost(request.resource.data);
+      allow update: if isBodyEdit() || isCommentCountUpdate();
+      allow delete: if true;
+      // 댓글
+      match /comments/{commentId} {
+        allow read: if true;
+        allow create: if isValidComment(request.resource.data);
+        allow update: if request.resource.data.body is string
+                      && request.resource.data.body.size() > 0
+                      && request.resource.data.body.size() <= 500
+                      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['body']);
+        allow delete: if true;
+      }
+    }
+    // helper
+    function isValidPost(d) {
+      return d.nick is string && d.nick.size() > 0 && d.nick.size() <= 12
+          && d.body is string && d.body.size() > 0 && d.body.size() <= 1000
+          && d.pwHash is string && d.pwHash.size() == 64
+          && d.createdAt == request.time
+          && (!('commentCount' in d) || d.commentCount == 0)
+          && (!('admin' in d) || d.admin is bool);
+    }
+    function isValidComment(d) {
+      return d.nick is string && d.nick.size() > 0 && d.nick.size() <= 16
+          && d.body is string && d.body.size() > 0 && d.body.size() <= 500
+          && d.pwHash is string && d.pwHash.size() == 64
+          && d.createdAt == request.time
+          && (!('admin' in d) || d.admin is bool);
+    }
+    function isBodyEdit() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['body'])
+          && request.resource.data.body is string
+          && request.resource.data.body.size() > 0
+          && request.resource.data.body.size() <= 1000;
+    }
+    function isCommentCountUpdate() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['commentCount'])
+          && request.resource.data.commentCount is int
+          && request.resource.data.commentCount >= 0;
+    }
+  }
+}
