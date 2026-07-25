@@ -1,0 +1,57 @@
+{
+  "contentId": "20260714-design-001",
+  "date": "2026-07-14",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-13"
+  },
+  "url": "https://www.dezeen.com/2026/07/13/mesh-89-device-palestinian-drivers-checkpoint-closures/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 제품 · 소셜임팩트",
+    "en": "Design · Product · Social Impact"
+  },
+  "title": {
+    "kr": "팔레스타인 운전자를 위한 검문소 알림 기기 '메시-89'",
+    "en": "Mesh-89 device lets Palestinian drivers stay ahead of checkpoint closures"
+  },
+  "summary": {
+    "kr": "센트럴 세인트 마틴스 졸업생 주드 아부호모스가 만든 '메시-89'는 별 모양으로 위장한 오프그리드 LoRa 통신 기기입니다. 통신망이 차단된 상황에서도 서안지구 89개 상시 검문소의 상태를 빨강·노랑·초록으로 실시간 공유할 수 있습니다.",
+    "en": "Central Saint Martins graduate Joud Abuhomos designed Mesh-89, an off-grid LoRa device disguised in a star-shaped 'cultural camouflage' that lets Palestinian drivers share real-time red/yellow/green status on the West Bank's 89 permanent checkpoints, working even when cellular signals are jammed."
+  },
+  "points": {
+    "kr": [
+      "압수를 피하기 위한 '문화적 위장'으로서의 별 모양",
+      "통신 차단 상황에서도 작동하는 LoRa 라디오",
+      "저비용 ESP32·Wio-SX1262 모듈로 제작"
+    ],
+    "en": [
+      "Star shape as 'cultural camouflage' against confiscation",
+      "LoRa radio works when cellular is jammed",
+      "Built on low-cost ESP32 and Wio-SX1262 modules"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "ux-designer"
+  ],
+  "designer": {
+    "kr": "형태를 위장 수단으로 활용하고 라디오 기반의 극도로 단순한 UX로 실질적 문제를 해결한, 역경 속 디자인(design-for-adversity)의 좋은 사례입니다. 인프라에 의존하지 않는 접근이 인상적입니다.",
+    "en": "A sharp example of design-for-adversity: a deliberately unassuming form factor for concealment, paired with dead-simple radio-based UX, solves a real, high-stakes daily problem without relying on infrastructure."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "사회적 임팩트 디자인 필독 · 레퍼런스 저장 추천",
+    "en": "Must-see for social-impact design · Save for reference"
+  },
+  "comment": {
+    "kr": "역경을 위한 디자인의 인상적인 사례다. LoRa 메시 기기를 눈에 안 띄는 '문화 공예품' 형태로 위장한 선택 자체가 핵심 UX다. 은폐를 기능으로 삼고, 긴장 상황에서도 쓸 수 있을 만큼 조작을 단순화했다.\n소셜임팩트·하드웨어 디자이너에게 이건 '좋은 디자인'의 기준을 매끈함이 아니라 맥락 적합성으로 옮겨놓는다. 때로 가장 책임 있는 폼팩터는 '디자인한 티가 전혀 안 나는' 것이다.",
+    "en": "A striking example of design-for-adversity. Disguising a LoRa mesh device inside an unremarkable 'cultural artifact' form is itself the core UX decision: concealment as a feature, paired with operation simple enough to use under stress.\nFor social-impact and hardware designers, it reframes 'good design' away from polish toward fitness-for-context. Sometimes the most responsible form factor is the one that doesn't look designed at all."
+  },
+  "thumbLabel": "체크포인트",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

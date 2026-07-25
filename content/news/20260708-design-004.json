@@ -1,0 +1,56 @@
+{
+  "contentId": "20260708-design-004",
+  "date": "2026-07-08",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Core77",
+    "publishedAt": "2026-07-02"
+  },
+  "url": "https://www.core77.com/posts/144609/Core77-Weekly-Roundup-6-29-26-to-7-2-26",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 산업디자인",
+    "en": "Design · Industrial Design"
+  },
+  "title": {
+    "kr": "코어77 주간 라운드업 — 스릴을 위해서만 존재하는 세 바퀴 탈것 '스워브'",
+    "en": "Core77 Weekly Roundup (6-29-26 to 7-2-26)"
+  },
+  "summary": {
+    "kr": "코어77의 주간 디자인 라운드업이 오직 짜릿한 주행감을 위해 만들어진 세 바퀴 전동 트라이크 '스워브'를 소개합니다. 임페리얼 칼리지 런던 졸업생이 설계해 이후 직접 상용화한 제품입니다.",
+    "en": "Core77's weekly design roundup highlights the Swerv, a three-wheeled electric trike built purely for a disorienting, thrilling ride, designed by a recent Imperial College London graduate who has since commercialized it."
+  },
+  "points": {
+    "kr": [
+      "오직 짜릿함과 방향감각 교란을 위해 설계된 트라이크 '스워브'",
+      "디자이너 케림 타스킨이 자신의 회사 스웨렌을 통해 상용화",
+      "도로 주행용·오프로드용·키즈용 버전과 트랙 체험 세션으로 판매"
+    ],
+    "en": [
+      "Swerv trike designed purely to disorient and thrill the rider",
+      "Designer Kerim Taskin commercialized it via his company Sweren",
+      "Sold in street-legal, off-road and kids' versions, plus track sessions"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "실용성이 아닌 순수한 감정적 경험을 위해 설계한 좋은 사례입니다. 특이한 라이딩 자세 하나만으로 제품의 핵심 가치를 만들어낸 방식을 살펴볼 만합니다.",
+    "en": "A good example of designing for pure emotional experience rather than utility — worth studying how an unconventional riding position alone becomes the product's entire value proposition."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "경험 중심 제품 디자인 레퍼런스로 재미있음 · 선택",
+    "en": "Fun reference for experience-driven product design · Optional"
+  },
+  "comment": {
+    "kr": "대부분의 제품 디자인 기사는 기능적 문제 해결에 초점을 맞추는데, \"그저 다른 감각을 느끼게 해주겠다\"는 것이 전체 제안인 프로젝트를 보는 건 신선합니다.\n졸업 프로젝트에서 여러 버전을 판매하는 회사로 이어진 과정 역시 일회성 콘셉트를 제품화하는 좋은 사례입니다.\n스니펫 기반 요약이므로, 해당 주에 다룬 다른 프로젝트들도 원문 라운드업에서 확인하시길 권장합니다.",
+    "en": "Most product design coverage centers on solving a functional problem, so it's refreshing to see a project whose entire pitch is \"this will make you feel something different.\"\nThe path from graduate thesis project to a company selling multiple commercial variants is also a nice case study in productizing a one-off concept.\nSnippet-based summary - check the full roundup for the other projects it covers that week."
+  },
+  "thumbLabel": "라운드업",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

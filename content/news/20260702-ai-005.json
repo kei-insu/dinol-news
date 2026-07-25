@@ -1,0 +1,54 @@
+{
+  "contentId": "20260702-ai-005",
+  "date": "2026-07-02",
+  "section": "ai",
+  "order": 5,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-01"
+  },
+  "url": "https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 웹 · 콘텐츠",
+    "en": "AI · Web · Content"
+  },
+  "title": {
+    "kr": "클라우드플레어, AI 기업에 퍼블리셔 콘텐츠 이용료 부과하는 새 정책 발표",
+    "en": "Cloudflare's new policy pushes AI companies to pay for publishers' content"
+  },
+  "summary": {
+    "kr": "클라우드플레어가 오는 9월 15일부터 광고가 게재된 페이지에서 검색·에이전트·학습 기능이 혼합된 'mixed-use' 크롤러를 기본적으로 차단하는 새 정책을 발표했습니다. AI 기업들이 퍼블리셔 콘텐츠 이용에 대가를 지불하도록 유도하는 조치입니다.",
+    "en": "From September 15, Cloudflare will block mixed-use crawlers on ad-served pages by default, pushing AI companies to pay for publishers' content."
+  },
+  "points": {
+    "kr": [
+      "클라우드플레어, 광고 페이지의 'mixed-use' 크롤러 차단(9/15)",
+      "AI 기업이 퍼블리셔 콘텐츠에 대가 지불하도록 유도",
+      "'AI가 웹을 읽는' 경제 구조가 바뀌는 신호"
+    ],
+    "en": [
+      "Cloudflare to block 'mixed-use' crawlers on ad pages (Sept 15)",
+      "Pushes AI firms to pay for publishers' content",
+      "The economics of 'AI reading the web' are shifting"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "이건 'AI가 웹을 읽을 때 누가 돈을 받는가'의 문제입니다. 크롤러가 콘텐츠에 값을 치러야 한다면, 퍼블리싱의 경제 구조와 '콘텐츠를 어떻게 노출·차단·수익화할 것인가'라는 설계가 흔들리기 시작합니다. 콘텐츠 사이트를 만들거나 애드센스식 수익화를 고민한다면, 이 변화가 열린 웹을 어떻게 바꾸는지 지켜볼 만합니다.",
+    "en": "This is about who gets paid when AI reads the web. If crawlers must pay for content, the economics of publishing, and the design of how content is served, gated, and monetized, start shifting. Anyone designing content sites or thinking about AdSense-style monetization should watch how this reshapes the open web."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "콘텐츠·수익화 사이트를 운영하거나 계획한다면 맥락으로 따라가 보세요",
+    "en": "Follow as context if you run or plan a content/monetized site"
+  },
+  "comment": {
+    "kr": "이 카드는 이 브리핑을 만드는 우리에게도 남 일이 아닙니다. AI가 웹 콘텐츠를 공짜로 학습·요약해 가던 흐름에, '읽을 거면 값을 내라'는 반대 압력이 생기는 겁니다. 콘텐츠를 만드는 쪽(퍼블리셔)과 긁어가는 쪽(AI) 사이의 힘의 균형이 조정되는 국면이죠.\n\n애드센스로 수익화를 준비하는 사이트라면, 앞으로 '내 콘텐츠가 어떻게 노출되고, 누가 그걸로 돈을 버는가'라는 질문이 점점 중요해집니다. 열린 웹의 규칙이 다시 쓰이는 중입니다.",
+    "en": "This card hits close to home for those of us making this briefing. Against the tide of AI freely training on and summarizing web content, a counter-pressure is forming: 'if you're going to read it, pay.' It's a moment where the balance of power between those who make content (publishers) and those who scrape it (AI) is being renegotiated.\n\nFor a site preparing to monetize with AdSense, the question 'how is my content shown, and who profits from it' only grows more important. The rules of the open web are being rewritten."
+  },
+  "thumbLabel": "콘텐츠",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

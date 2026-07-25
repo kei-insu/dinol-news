@@ -1,0 +1,56 @@
+{
+  "contentId": "20260711-design-002",
+  "date": "2026-07-11",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-09"
+  },
+  "url": "https://www.dezeen.com/2026/07/09/formafantasma-ecology-advisor-serpentine-galleries/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 미술 · 생태",
+    "en": "Design · Art · Ecology"
+  },
+  "title": {
+    "kr": "포르마판타스마, 서펜타인 갤러리 첫 생태 자문역에 선임",
+    "en": "Formafantasma announced as ecology advisor to Serpentine Galleries"
+  },
+  "summary": {
+    "kr": "스튜디오 포르마판타스마가 런던 서펜타인 갤러리의 첫 '생태 부문 리드 R&D 펠로우'로 선임됐습니다. 큐레이션 과정, 일상 운영, 갤러리의 사회적 역할까지 생태적 관점에서 3년간 들여다보는 역할입니다.",
+    "en": "Studio Formafantasma has been named Serpentine Galleries' first-ever Lead R&D Fellows of Ecology, a three-year role examining curatorial process, daily operations and the gallery's civic role through an ecological lens."
+  },
+  "points": {
+    "kr": [
+      "서펜타인 최초의 생태 부문 리드 R&D 펠로우 직책 신설",
+      "큐레이션·운영·노동·사회적 역할까지 아우르는 3년 계약",
+      "2020년 목재 산업을 다룬 전시 'Cambio'의 연장선"
+    ],
+    "en": [
+      "First-ever Lead R&D Fellows of Ecology role at Serpentine",
+      "Three-year scope covering curation, operations, labour and civic role",
+      "Builds on Formafantasma's 2020 timber-industry show Cambio"
+    ]
+  },
+  "positions": [
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "단발성 전시 커미션이 아니라 기관 전반을 자문하는 역할이라는 점에서, 지속가능성이 부차적 프로젝트가 아닌 핵심 과제가 되는 흐름에서 다른 문화기관들이 참고할 만한 모델입니다.",
+    "en": "This isn't a single exhibition commission but an institution-wide advisory role, a template other cultural institutions may follow as sustainability becomes core mandate rather than a side project."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "문화기관 지속가능성 자문에 관심 있다면 참고할 신호 · 선택적으로 읽어볼 것",
+    "en": "Useful signal for anyone advising cultural institutions on sustainability · Optional read"
+  },
+  "comment": {
+    "kr": "기관이 일회성 친환경 전시를 커미션하는 대신 디자인 스튜디오를 상시 자문역으로 앉히는 것은 의미 있는 변화입니다. 생태를 콘텐츠가 아니라 인프라로 다루겠다는 태도로 읽힙니다.\n목재 산업을 파헤친 'Cambio'로 이미 실력을 증명한 포르마판타스마이기에 상징적 임명에 그치지 않을 가능성이 높고, 앞으로 3년간 이들의 제안이 서펜타인의 실제 운영을 어떻게 바꾸는지 지켜볼 만합니다.",
+    "en": "Institutions naming design studios to ongoing advisory roles, rather than commissioning one-off green exhibitions, is a meaningful shift. It treats ecology as infrastructure rather than content.\nFormafantasma's track record (Cambio's timber research) suggests this won't be a symbolic appointment, worth watching how their recommendations actually change Serpentine's day-to-day operations over the next three years."
+  },
+  "thumbLabel": "생태자문",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

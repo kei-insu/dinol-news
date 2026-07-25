@@ -1,0 +1,56 @@
+{
+  "contentId": "20260722-design-001",
+  "date": "2026-07-22",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-21"
+  },
+  "url": "https://www.yankodesign.com/2026/07/21/this-70-japanese-candle-burns-from-the-inside-out-lights-a-room-better-than-anything-else-on-your-shelf/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 제품",
+    "en": "Design · Product"
+  },
+  "title": {
+    "kr": "일본 전통 초롱에서 영감받은 $70 양초, 안에서부터 빛을 밝히다",
+    "en": "This $70 Japanese Candle Burns From the Inside Out & Lights a Room Better Than Anything Else on Your Shelf"
+  },
+  "summary": {
+    "kr": "축제와 이자카야 입구를 밝히던 일본 전통 초롱 '초친(提灯)'에서 영감을 받은 7만원대 양초입니다. 불꽃이 안쪽에서 은은하게 퍼지며 형태를 유지하는 것이 특징입니다.",
+    "en": "Rooted in the design of the chouchin — traditional Japanese paper lanterns once used at festivals and izakaya doorways — this $70 candle holder holds its shape while the flame quietly glows from within."
+  },
+  "points": {
+    "kr": [
+      "일본 전통 초롱 초친에서 영감을 얻은 디자인",
+      "내부에서 빛나면서도 형태를 유지",
+      "약 7만원대의 소품형 조명 오브제"
+    ],
+    "en": [
+      "Inspired by traditional Japanese chouchin lanterns",
+      "Holds its form while lit from inside",
+      "Priced around $70 as a shelf/decor object"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "기능적 사물(양초)이 문화적 레퍼런스를 노골적인 복제 없이 담아내는 좋은 사례입니다. 전통을 제품으로 번역하는 작업에 참고할 만합니다.",
+    "en": "A nice example of how a functional object (a candle) can carry cultural reference without becoming a literal replica — worth studying for product-to-heritage translation work."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "무드보드·제품 디자인 레퍼런스로 좋음 · 선택 저장",
+    "en": "Good moodboard/product-design reference · Optional"
+  },
+  "comment": {
+    "kr": "초친(제등)처럼 익숙한 문화적 사물을 새로운 기능적 형태로 옮기면서도 코스튬처럼 느껴지지 않게 만드는 것은 꽤 까다로운 디자인 과제입니다. 이 양초는 초롱의 형태를 그대로 베끼기보다 '안에서 은은히 빛나는' 성질에 집중한 것으로 보이는데, 이게 더 어렵고 흥미로운 접근입니다.\n\n작은 오브제지만, 전통에서 영감을 받은 제품 작업을 할 때 '레퍼런스의 어떤 성질을 남기고 어떤 걸 버릴지' 고민하는 데 참고할 만한 사례입니다.\n\n검색 스니펫 기반 요약으로, 정확한 소재·크기·제작 방식 등은 별도 확인이 필요합니다.",
+    "en": "There's a specific design challenge in taking a familiar cultural object — here, the chouchin lantern — and translating it into a new functional form without it reading as a costume-y reference. This candle seems to lean on the 'glowing from within' quality of the lantern rather than copying its literal shape, which is the harder and more interesting move.\n\nIt's a small object, but it's a useful case study for anyone doing heritage-inspired product work: what's the one quality of the reference worth keeping, and what can be let go?\n\nBased on a search snippet — exact materials, dimensions and sourcing aren't independently verified here."
+  },
+  "thumbLabel": "일본양초",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

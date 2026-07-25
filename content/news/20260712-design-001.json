@@ -1,0 +1,56 @@
+{
+  "contentId": "20260712-design-001",
+  "date": "2026-07-12",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-10"
+  },
+  "url": "https://www.dezeen.com/2026/07/10/products-furnishings-lighting-seating-usa-america-dezeen-showroom/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 제품",
+    "en": "Design · Product"
+  },
+  "title": {
+    "kr": "Dezeen 쇼룸이 소개한 미국 디자인 브랜드 신제품 일곱 가지",
+    "en": "Seven products by USA-based design brands"
+  },
+  "summary": {
+    "kr": "Dezeen 쇼룸이 미국 기반 디자인 브랜드들이 선보인 가구·조명·좌석 신제품 일곱 가지를 소개했다.",
+    "en": "Dezeen Showroom rounds up seven new furniture, lighting and seating pieces from design brands based in the USA."
+  },
+  "points": {
+    "kr": [
+      "가구·조명·좌석을 아우른 선별 소개",
+      "모두 미국 기반 브랜드",
+      "Dezeen의 상시 연재 '쇼룸' 코너의 일부"
+    ],
+    "en": [
+      "Curated selection across furniture, lighting and seating",
+      "All brands based in the USA",
+      "Part of Dezeen's ongoing Showroom product series"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "지금 미국 가구 브랜드들이 내놓는 제품을 빠르게 훑어보기 좋습니다. 제품 작업의 소재·형태 레퍼런스로 유용합니다.",
+    "en": "A quick way to scan what US furniture brands are shipping right now, useful for material and form references in product work."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "무드보드·레퍼런스 소스로 좋음 · 저장 추천",
+    "en": "Good moodboard/reference source · Save for later"
+  },
+  "comment": {
+    "kr": "Dezeen의 '쇼룸' 코너는 여러 브랜드를 일일이 팔로우하지 않고도 가구·조명 업계의 흐름을 가볍게 훑어볼 수 있는 포맷입니다. 이번 호는 미국 브랜드에 초점을 맞춰, 지금 미국 디자인 제조업이 어디에 에너지를 쏟고 있는지 어느 정도 가늠하게 해줍니다.\n\n개별 제품 하나하나가 혁신적이지는 않지만, 정기적으로 훑어보면 큰 트렌드 리포트에 실리기 전 소재·형태 흐름을 먼저 포착하는 데 실질적으로 도움이 됩니다.",
+    "en": "Dezeen's Showroom format is a low-effort, high-frequency way to keep a pulse on what's shipping in furniture and lighting without following a dozen individual brands. This edition's US focus makes it a decent snapshot of where American design manufacturing is putting its energy right now.\n\nNothing here is groundbreaking on its own, but as a recurring reference point it's genuinely useful for spotting material and form trends before they show up in bigger trend reports."
+  },
+  "thumbLabel": "신제품",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

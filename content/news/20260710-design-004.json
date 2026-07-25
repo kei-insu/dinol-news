@@ -1,0 +1,56 @@
+{
+  "contentId": "20260710-design-004",
+  "date": "2026-07-10",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-03"
+  },
+  "url": "https://www.dezeen.com/2026/07/03/big-dymak-headquarters-denmark/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 소재",
+    "en": "Design · Architecture · Material"
+  },
+  "title": {
+    "kr": "BIG, 뫼비우스 지붕의 원형 목조 사옥 '다이막 헤드쿼터' 완공",
+    "en": "BIG arranges undulating Dymak headquarters around courtyard"
+  },
+  "summary": {
+    "kr": "건축사무소 BIG가 덴마크 오덴세에 자재 공급사 다이막의 신사옥을 완공했습니다. 뫼비우스 띠 형태 지붕을 두른 2,800제곱미터 규모 원형 목조 건물로, 사무 공간과 쇼룸을 개방형 중정 주위에 배치했습니다.",
+    "en": "Architecture studio BIG completed Dymak's headquarters in Odense, Denmark, a 2,800-square-metre circular mass-timber building with a Mobius-strip-like roof, combining offices and showrooms around an open courtyard."
+  },
+  "points": {
+    "kr": [
+      "목조·점토 타일·점토 모르타르·잘피(eelgrass)로 내재 탄소 절감",
+      "건물 자체가 다이막 자재 포트폴리오를 보여주는 살아있는 카탈로그 역할",
+      "중정 주변에 체육관 등 공용 공간 배치"
+    ],
+    "en": [
+      "Mass timber, clay tiles, clay mortar and eelgrass used to lower embodied carbon",
+      "Building doubles as a living catalogue for Dymak's material portfolio",
+      "Includes shared social spaces such as a gym around the central courtyard"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "소재 자체가 마케팅이 되는 좋은 사례입니다. 건물이 곧 제품 카탈로그인 셈이라, 소재 선택이 지속가능성과 브랜드 스토리텔링 두 역할을 동시에 짊어지고 있습니다.",
+    "en": "A strong case study in materials-as-marketing, when your building literally is your product catalogue, material choices carry both a sustainability and brand-storytelling load at once."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "지속가능 소재 스토리텔링 건축 사례로 참고 추천",
+    "en": "Good reference for sustainable material storytelling in architecture"
+  },
+  "comment": {
+    "kr": "다이막 신사옥은 사실상 그 안에서 일할 수 있는 쇼룸입니다. 목조, 점토, 잘피 등 모든 소재 선택이 곧 회사 제품군을 위한 세일즈 피치 역할을 겸합니다.\n지속가능성과 브랜드 정체성이 애초에 분리된 목표가 아니었던 건축 브리프의 깔끔한 사례입니다.",
+    "en": "Dymak's headquarters is essentially a showroom you can work inside, every material choice, mass timber, clay, eelgrass, doubles as a sales pitch for the company's own product line.\nIt is a clean example of a building brief where sustainability and brand identity were never separate goals to begin with."
+  },
+  "thumbLabel": "목조건축",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

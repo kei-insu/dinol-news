@@ -1,0 +1,54 @@
+{
+  "contentId": "20260703-ai-005",
+  "date": "2026-07-03",
+  "section": "ai",
+  "order": 5,
+  "source": {
+    "name": "Times of India",
+    "publishedAt": "2026-07-03"
+  },
+  "url": "https://timesofindia.indiatimes.com/business/india-business/govt-may-look-at-a-separate-legal-framework-for-ai-secretary/articleshow/132170345.cms",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 인도",
+    "en": "AI · Policy · India"
+  },
+  "title": {
+    "kr": "인도, AI 전용 법률 체계 검토…IT부 장관 '별도 입법을 볼 때 됐다'",
+    "en": "India may create a separate legal framework for AI, says IT Secretary"
+  },
+  "summary": {
+    "kr": "인도 IT부 장관 S. 크리슈난이 기존 IT법을 늘려 적용하는 대신 'AI 전용 법률 체계를 검토할 때가 됐다'고 밝혔습니다. 세계 최대 IT 시장 중 하나가 AI 특화 규제를 만들 수 있다는 초기 신호입니다.",
+    "en": "India's IT Secretary S. Krishnan said 'the time has come' to consider a dedicated legal framework for AI, rather than stretching existing IT laws. It's an early signal that one of the world's largest tech markets may write AI-specific rules."
+  },
+  "points": {
+    "kr": [
+      "인도가 AI 전용 법을 검토하는 이유",
+      "미국의 '새 규제기관 없음' 기조와의 대비",
+      "'국가별로 갈리는 AI 규제'가 제품에 주는 의미"
+    ],
+    "en": [
+      "Why India may write AI-specific law",
+      "The contrast with the US 'no new regulator' stance",
+      "What 'divergent AI rules by country' means for products"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "거대 시장들이 AI 전용 법으로 움직인다는 구체적 신호입니다.\n\n여러 지역을 다루는 제품이라면 'AI 규제'를 (GDPR처럼) 지역마다 갈리는 실제 설계 제약으로 다루기 시작하세요. 동의 흐름·고지·설명 가능성이 국가마다 달라질 수 있습니다.",
+    "en": "A concrete signal that big markets are moving toward AI-specific law. If your product touches multiple regions, start treating 'AI regulation' as a real, divergent design constraint (like GDPR was) rather than a distant abstraction: consent flows, disclosures, explainability may differ by country."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "규제 흐름을 표시하는 북마크로 저장하고, 여러 지역 대상 AI 기능을 기획할 때 다시 보세요",
+    "en": "Bookmark as a regulatory-trend marker, and revisit when you plan multi-region AI features"
+  },
+  "comment": {
+    "kr": "앞의 크리슈난 카드가 'AI판 FDA는 없다'는 규제 회의론이라면, 이 인도 카드는 그 반대 방향의 구체적 움직임입니다. 논쟁이 어떻든, 큰 시장들은 결국 각자의 AI 법을 쓰기 시작합니다.\n\nGDPR이 그랬듯, 규제는 언젠가 디자이너의 화면 위로 내려옵니다. 동의 흐름, 데이터 처리 고지, 설명 가능성 같은 형태로요. 지금은 멀어 보여도, 'AI 규제는 곧 UX 요구사항이 된다'는 감각을 미리 가진 사람이 나중에 덜 당황합니다.",
+    "en": "If the earlier Krishnan card was regulatory skepticism ('there's no FDA for AI'), this India card is a concrete move in the opposite direction. Whatever the debate, big markets eventually start writing their own AI laws.\n\nAs GDPR did, regulation eventually lands on the designer's screen, as consent flows, data-handling notices and explainability. It looks far off now, but whoever builds the instinct early that AI regulation soon becomes a UX requirement panics less later."
+  },
+  "thumbLabel": "규제",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

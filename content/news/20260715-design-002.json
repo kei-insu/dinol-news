@@ -1,0 +1,56 @@
+{
+  "contentId": "20260715-design-002",
+  "date": "2026-07-15",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-14"
+  },
+  "url": "https://www.yankodesign.com/2026/07/14/huawei-built-a-200mp-camera-phone-that-finally-shows-your-true-colors/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 테크",
+    "en": "Design · Product · Tech"
+  },
+  "title": {
+    "kr": "화웨이, '진짜 색'을 담는 2억 화소 카메라폰 공개",
+    "en": "Huawei Built a 200MP Camera Phone That Finally Shows Your True Colors"
+  },
+  "summary": {
+    "kr": "화웨이가 쿠알라룸푸르에서 '리듬 오브 컬러(Rhythm of Colour)'를 테마로 Pura 90s Pro·Pro Max를 공개했습니다. 그라데이션 컬러웨이와, 센서가 담는 색과 눈이 보는 색의 간극을 좁히는 '트루투컬러 카메라 2.0'이 핵심입니다.",
+    "en": "Huawei launched the Pura 90s Pro and Pro Max in Kuala Lumpur under a 'Rhythm of Colour' design language, with gradient colorways and a True-to-Colour Camera 2.0 system built to match what the sensor captures to what the eye actually sees."
+  },
+  "points": {
+    "kr": [
+      "그라데이션 마감의 '리듬 오브 컬러' 디자인 언어",
+      "센서-눈 색상 간극을 좁히는 트루투컬러 카메라 2.0",
+      "Pro Max는 1/1.28인치 센서 2억 화소 망원 카메라가 매크로 겸용"
+    ],
+    "en": [
+      "Design language 'Rhythm of Colour' with gradient chassis finishes",
+      "True-to-Colour Camera 2.0 aims to close sensor-vs-eye color gap",
+      "Pro Max adds 200MP telephoto on a 1/1.28-inch sensor, doubling as macro"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "색 정확도를 카메라 스펙표가 아니라 디자인 브리프 자체로 삼은 사례입니다. 이미징 하드웨어와 제품 미감을 함께 설계한 흥미로운 예입니다.",
+    "en": "Color-accuracy as the design brief, not just the camera spec sheet: an interesting case of imaging hardware and product aesthetics being designed together."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "그라데이션 마감 트렌드를 좇는 CMF·제품 디자이너에게 참고 추천",
+    "en": "Worth a look for CMF and product designers tracking gradient finishes"
+  },
+  "comment": {
+    "kr": "이 제품에서 흥미로운 지점은 화소 수가 아니라, 섀시 색상과 카메라 출력까지 '진짜 색'이라는 하나의 아이디어로 묶어냈다는 점입니다.\n스펙(색 정확도)이 각주가 아니라 디자인 서사 자체가 되면, 범용 슬래브에 카메라만 얹은 느낌이 아니라 기기 전체에 걸쳐 더 일관된 CMF 작업으로 이어지는 경향이 있습니다.",
+    "en": "The interesting design move here isn't the megapixel count, it's tying the whole product story, chassis color and camera output alike, to a single idea of 'true color.'\nWhen a spec (color accuracy) becomes the design narrative instead of a footnote, it tends to produce more coherent CMF work across the whole device rather than a camera bump bolted onto a generic slab."
+  },
+  "thumbLabel": "카메라",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

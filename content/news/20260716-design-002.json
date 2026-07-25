@@ -1,0 +1,56 @@
+{
+  "contentId": "20260716-design-002",
+  "date": "2026-07-16",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-15"
+  },
+  "url": "https://www.dezeen.com/2026/07/15/ikea-kompishang-affordable-portable-furniture-short-term-rentals/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 지속가능성",
+    "en": "Design · Product · Sustainability"
+  },
+  "title": {
+    "kr": "이케아, 차 없이도 옮길 수 있는 이동형 가구 '콤피스행' 출시",
+    "en": "IKEA releases portable furniture designed to be moved without a car"
+  },
+  "summary": {
+    "kr": "이케아가 자주 이사하는 청년·학생층을 겨냥한 12종의 저렴한 이동형 가구·소품 컬렉션 '콤피스행'을 출시했습니다. 최고가는 70파운드를 넘지 않으며, 백팩으로도 쓸 수 있는 옷장 정리함 등이 포함됩니다.",
+    "en": "IKEA launched Kompishang, a 12-piece collection of affordable, portable furniture and homeware (nothing over £70) aimed at young people and students who move house often, including a wardrobe organiser that doubles as a backpack."
+  },
+  "points": {
+    "kr": [
+      "12종 컬렉션, 최고가 70파운드 이하",
+      "백팩 겸용 옷장 정리함 포함",
+      "자주 이사하는 세입자·학생층 겨냥"
+    ],
+    "en": [
+      "12-piece collection, nothing priced over £70",
+      "Wardrobe organiser doubles as a backpack",
+      "Targets renters and students who move frequently"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "고정된 공간이 아니라 '자주 이사한다'는 생애주기적 니즈를 위해 설계한 좋은 사례입니다. 이동성과 모듈성이 부가 요소가 아니라 핵심 브리프입니다.",
+    "en": "A clear example of designing for a life-stage need (frequent relocation) rather than a fixed space, portability and modularity as the core brief, not an afterthought."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "이동성 중심 브리프를 다루는 가구·제품 디자이너에게 참고 추천 · 저장",
+    "en": "Good reference for furniture/product designers on portability briefs · Save"
+  },
+  "comment": {
+    "kr": "이케아는 제한적이고 유동적인 주거 형태를 위한 디자인에서 꾸준히 좋은 실적을 쌓아왔습니다. 이번 컬렉션도 '차 없이 이사하기'를 예외적 상황이 아니라 핵심 설계 제약으로 다룬다는 점에서 그 연장선에 있습니다.\n\n백팩 겸용 정리함이 가장 눈에 띕니다. 두 가지 기능이 진짜로 같은 사용자에게, 서로 다른 시점에 필요할 때 겸용 오브제가 가장 잘 작동한다는 것을 다시 보여줍니다.",
+    "en": "IKEA has quietly built a strong track record of designing for constrained, transient living, this collection continues that line by treating 'moving without a car' as the central design constraint rather than an edge case.\n\nThe backpack-organiser hybrid is the standout: it's a good reminder that dual-function objects work best when both functions are genuinely needed by the same user, at different moments."
+  },
+  "thumbLabel": "이동가구",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

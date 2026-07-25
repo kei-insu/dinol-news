@@ -1,0 +1,54 @@
+{
+  "contentId": "20260712-ai-004",
+  "date": "2026-07-12",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Axios",
+    "publishedAt": "2026-07-09"
+  },
+  "url": "https://www.axios.com/2026/07/09/fed-warsh-task-force-andreessen",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 경제",
+    "en": "AI · Policy · Economy"
+  },
+  "title": {
+    "kr": "연준, AI 태스크포스에 마크 안드레센 공동 의장으로 발탁",
+    "en": "Marc Andreessen and former Walmart CEO are among the new Fed task force leaders"
+  },
+  "summary": {
+    "kr": "케빈 워시 연준 의장이 통화정책 전반을 점검할 5개 외부 태스크포스를 발족했다. a16z의 마크 안드레센이 AI가 생산성·고용에 미치는 영향을 다루는 '생산성·일자리' 패널을 공동 주도한다.",
+    "en": "Fed Chair Kevin Warsh named five external task forces reviewing US monetary policy; a16z's Marc Andreessen will co-lead the Productivity and Jobs panel examining how AI reshapes work and growth."
+  },
+  "points": {
+    "kr": [
+      "안드레센, '생산성·일자리' 태스크포스 공동 주도",
+      "AI가 물가에 미칠 영향(디스인플레 vs 인플레)을 두고 연준 내 의견 갈려",
+      "연말까지 구체적 권고안 도출 목표"
+    ],
+    "en": [
+      "Andreessen co-leads Productivity and Jobs task force",
+      "Fed split on whether AI is disinflationary or inflationary",
+      "Recommendations expected by end of 2026"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "실리콘밸리 VC가 연준 정책 테이블에 앉는다는 것은, AI를 둘러싼 경제 담론이 테크 업계를 넘어 중앙은행 정책 논의로 확장되고 있다는 신호입니다.",
+    "en": "A prominent VC now has a seat at the Fed's policy table on AI, a sign that AI's economic narrative is moving from tech press to central-bank policy."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "배경 참고용 · 선택",
+    "en": "Background reading · Optional"
+  },
+  "comment": {
+    "kr": "벤처캐피털리스트가 연준 태스크포스에 앉는다는 것은 몇 년 전만 해도 상상하기 어려운 일이었습니다. 그것도 AI가 일자리와 생산성에 미치는 영향을 다루는 패널이라는 점에서, AI가 연준의 경제 판단에 얼마나 중요해졌는지를 보여줍니다.\n\n'AI로 인한 생산성 향상이 연준에 금리 인하 여력을 줄 것인가, 아니면 AI 투자 자체가 물가를 자극할 것인가'라는 질문에는 아직 명확한 답이 없습니다. 그래서 안드레센 같은 외부 인사를 끌어들인 것이기도 합니다.\n\nAI 제품 관점보다는, 정책 입안자들이 AI의 거시경제적 비중을 얼마나 진지하게 다루기 시작했는지 보여주는 바로미터로 눈여겨볼 만합니다.",
+    "en": "A venture capitalist sitting on a Federal Reserve task force would have been unthinkable a few years ago. That it's happening now, specifically on a panel about AI's effect on jobs and productivity, shows how central AI has become to how the Fed thinks about the economy.\n\nThe underlying question (will AI productivity gains give the Fed room to cut rates, or will AI spending itself be inflationary) doesn't have a clean answer yet, which is exactly why outside voices like Andreessen's are being brought in.\n\nWorth bookmarking less for the AI-product angle and more as a barometer of how seriously policymakers now treat AI's macroeconomic weight."
+  },
+  "thumbLabel": "연준",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

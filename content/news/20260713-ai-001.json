@@ -1,0 +1,54 @@
+{
+  "contentId": "20260713-ai-001",
+  "date": "2026-07-13",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-10"
+  },
+  "url": "https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 빅테크 · 법률",
+    "en": "AI · Big Tech · Legal"
+  },
+  "title": {
+    "kr": "애플, OpenAI에 영업비밀 도용 소송 제기",
+    "en": "Apple sues OpenAI over alleged trade secret theft"
+  },
+  "summary": {
+    "kr": "애플이 OpenAI를 상대로 연방법원에 영업비밀 도용 소송을 제기했습니다. 탕 탄 최고하드웨어책임자 등 경영진이 조직적으로 애플 엔지니어를 영입해 기밀 하드웨어·실리콘 기술을 빼냈다고 주장하며, OpenAI에 근무 중인 전 애플 직원 400명 이상을 근거로 들었습니다.",
+    "en": "Apple filed a lawsuit against OpenAI in federal court, alleging a coordinated campaign by senior leadership including Chief Hardware Officer Tang Tan to recruit Apple engineers and extract confidential hardware and silicon trade secrets, citing over 400 former Apple employees now at OpenAI."
+  },
+  "points": {
+    "kr": [
+      "탕 탄 CHO의 채용 과정에서 애플 프로젝트 코드네임 사용 의혹",
+      "전 애플 엔지니어 400명 이상이 OpenAI 재직 중",
+      "반환되지 않은 애플 노트북에서 기밀 문서 다운로드 정황"
+    ],
+    "en": [
+      "Alleged use of Apple project code names during OpenAI recruiting",
+      "400+ former Apple employees now work at OpenAI",
+      "Unreturned laptop allegedly used to download confidential files"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "AI 인재 전쟁이 실제 법적 리스크로 번질 수 있다는 신호입니다. AI 하드웨어 제품을 만드는 팀이라면 경쟁사 인력 영입 시 지식재산권 경계를 점검할 필요가 있습니다.",
+    "en": "A reminder that the AI talent war has real legal exposure: device and hardware teams building AI products should audit IP boundaries when hiring across competitors."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 하드웨어 팀을 위한 배경 참고 · 선택",
+    "en": "Background reading for AI hardware teams · Optional"
+  },
+  "comment": {
+    "kr": "하드웨어 경쟁사 간 AI 인재 영입을 법원이 어떻게 다룰지 가늠할 수 있는 상징적 사건입니다.\n소송 증거개시(discovery) 과정에서 애플의 AI 기기 로드맵이 드러날 가능성도 있어 지켜볼 만합니다.",
+    "en": "A high-profile case that could set precedent for how courts treat AI talent poaching between hardware rivals.\nWorth watching if Apple's own AI device roadmap becomes clearer through the discovery process."
+  },
+  "thumbLabel": "소송",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

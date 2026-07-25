@@ -1,0 +1,54 @@
+{
+  "contentId": "20260718-ai-003",
+  "date": "2026-07-18",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "NPR",
+    "publishedAt": "2026-07-17"
+  },
+  "url": "https://www.npr.org/2026/07/17/nx-s1-5897285/chinas-xi-calls-for-step-up-of-global-effort-in-ai-as-us-curbs-squeeze-chinas-tech-access",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 국제",
+    "en": "AI · Policy · Global"
+  },
+  "title": {
+    "kr": "시진핑 'AI는 글로벌 협력이어야'...美 규제 속 세계AI협력기구 출범",
+    "en": "China's Xi calls for step-up of global effort in AI, as US curbs squeeze China's tech access"
+  },
+  "summary": {
+    "kr": "시진핑 중국 국가주석이 2026 세계인공지능대회(WAIC) 개막식에 첫 대면 참석해 AI 발전은 '글로벌 협력의 교향곡'이 되어야 한다고 밝히며 세계AI협력기구(WAICO) 출범을 선언했습니다. 미국의 수출 규제로 중국의 기술 접근이 계속 제한되는 가운데 나온 발언입니다.",
+    "en": "At the opening of the 2026 World AI Conference in Shanghai, his first in-person appearance at the event, Xi Jinping called AI development a 'symphony of global cooperation' and launched the World AI Cooperation Organization, as US export curbs continue to squeeze China's tech access."
+  },
+  "points": {
+    "kr": [
+      "2018년 시작된 WAIC에 시진핑이 처음으로 직접 참석",
+      "신설 세계AI협력기구(WAICO), 상하이에 본부 설치 예정",
+      "중국, 향후 5년간 개발도상국에 AI 교육 기회 5,000건 제공 계획"
+    ],
+    "en": [
+      "Xi's first in-person WAIC appearance since the event launched in 2018",
+      "New World AI Cooperation Organization to be headquartered in Shanghai",
+      "China to offer 5,000 AI training slots to developing countries over 5 years"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "미국 진영과 중국 진영 AI 생태계의 간극이 커지고 있다는 신호입니다. 사용 중인 도구나 공급망이 어느 한쪽과 얽혀 있다면 주시할 필요가 있습니다.",
+    "en": "Signals a widening split between US-aligned and China-aligned AI ecosystems, worth tracking if your tools or supply chain touch either bloc."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 지정학 흐름을 추적한다면 배경 지식으로 유용 · 순수 제품 작업에는 선택적 참고",
+    "en": "Background reading for anyone tracking AI geopolitics · Optional for pure product work"
+  },
+  "comment": {
+    "kr": "2018년 WAIC가 시작된 이래 시진핑이 처음 직접 참석했다는 사실 자체가, AI가 단순한 산업 행사를 넘어 중국의 국가 전략 중심에 있음을 보여줍니다. 이번엔 경쟁 거버넌스 기구를 출범시키는 자리로도 쓰였습니다.\n\n'협력'이라는 메시지는 미국의 반도체 수출 규제 강화, 그리고 이번 주 다른 보도에서 나온 Kimi K3 같은 오픈웨이트 모델의 격차 축소라는 현실과는 다소 어긋나 보입니다. '하나의 글로벌 AI'와 '두 개의 AI 진영'이라는 프레임 대립은 하반기 내내 반복될 것으로 보입니다.",
+    "en": "Xi's personal appearance, a first since WAIC began in 2018, signals how central AI has become to China's national strategy, not just an industry conference but a platform for launching a rival governance body.\n\nThe pitch of 'cooperation' sits awkwardly against the reality of tightening US export controls on chips and, per other coverage this week, competing open-weight model releases like Kimi K3 that are closing the gap with US labs. Expect the framing of 'one global AI' versus 'two AI blocs' to keep resurfacing through the rest of the year."
+  },
+  "thumbLabel": "글로벌AI",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

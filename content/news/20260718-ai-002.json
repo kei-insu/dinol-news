@@ -1,0 +1,57 @@
+{
+  "contentId": "20260718-ai-002",
+  "date": "2026-07-18",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-16"
+  },
+  "url": "https://techcrunch.com/2026/07/16/google-continues-its-renaming-streak-by-turning-notebooklm-to-gemini-notebook/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 제품 · UX",
+    "en": "AI · Product · UX"
+  },
+  "title": {
+    "kr": "구글, 노트북LM을 '제미나이 노트북'으로 개명",
+    "en": "Google renames NotebookLM to Gemini Notebook"
+  },
+  "summary": {
+    "kr": "구글이 노트북LM을 '제미나이 노트북'으로 개명했습니다. 독립 리서치 도구 정체성은 유지하면서, Pro 사용자를 위해 노트 안에서 코드를 실행할 수 있는 보안 클라우드 환경을 추가했습니다.",
+    "en": "Google has renamed NotebookLM to Gemini Notebook, keeping it as a standalone research tool while adding a secure cloud sandbox that can run code inside notebooks for Pro users."
+  },
+  "points": {
+    "kr": [
+      "노트북LM 로고 대신 파랑·보라 제미나이 브랜드 로고 적용",
+      "Pro 사용자는 노트 안에서 코드 실행으로 심화 데이터 분석 가능",
+      "노트가 제미나이 앱과 검색 AI 모드 전반에 동기화"
+    ],
+    "en": [
+      "New blue-purple Gemini-branded logo replaces the NotebookLM mark",
+      "Pro users get in-notebook code execution for deeper data analysis",
+      "Notebooks now sync across the Gemini app and Search's AI Mode"
+    ]
+  },
+  "positions": [
+    "brand-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "기존 사용자층을 잃지 않으면서 제품명을 바꾼 사례입니다. 애착이 큰 도구의 리브랜딩을 앞두고 있다면 참고할 만합니다.",
+    "en": "A case study in product renaming without losing an established user base, worth studying if you're planning a rebrand of a beloved tool."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "리서치 워크플로에 노트북LM·제미나이 노트북을 쓰는 경우 유용 · 그 외에는 참고 수준",
+    "en": "Useful if you use NotebookLM/Gemini Notebook for research workflows · Minor for others"
+  },
+  "comment": {
+    "kr": "3천만 명이 넘는 사용자를 가진 제품의 이름을 바꾸는 건 실질적인 리스크입니다. 사용자는 이름에 익숙해져 있고, 제미나이 패밀리로 편입되면 리서치 도구로서의 고유한 정체성이 흐려질 수 있습니다.\n\n구글의 판단은 제미나이 앱·검색과의 긴밀한 통합이 그 리스크를 상쇄한다는 쪽으로 보입니다. 출처 기반 리서치라는 노트북LM만의 쓰임새가 더 넓은 제미나이 브랜드에 흡수되고도 살아남을지는 앞으로 몇 달간 지켜볼 대목입니다.",
+    "en": "Renaming a product with 30 million-plus users is a genuine risk, users build muscle memory around a name, and folding it into the Gemini family could read as losing its distinct identity as a research tool.\n\nGoogle's bet seems to be that tighter integration (notebooks syncing into the Gemini app and Search) outweighs that risk. Whether NotebookLM's specific, source-grounded research use case survives being absorbed into a broader Gemini brand is worth watching over the next few months."
+  },
+  "thumbLabel": "리브랜딩",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

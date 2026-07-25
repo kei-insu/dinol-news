@@ -1,0 +1,56 @@
+{
+  "contentId": "20260721-design-002",
+  "date": "2026-07-21",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-20"
+  },
+  "url": "https://www.archdaily.com/1148884/splitscape-residence-spacedna",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 주거",
+    "en": "Design · Architecture · Residential"
+  },
+  "title": {
+    "kr": "스플릿스케이프 레지던스 / 스페이스DNA",
+    "en": "Splitscape Residence / SpaceDNA"
+  },
+  "summary": {
+    "kr": "인도 스튜디오 스페이스DNA가 2026년 코임바토르에 완공한 '스플릿스케이프 레지던스'는 평면이 아닌 단면(섹션)을 공간감을 만드는 주요 설계 도구로 삼은 주택이다.",
+    "en": "Indian studio SpaceDNA's Splitscape Residence, completed in 2026 in Coimbatore, explores how architectural section, rather than plan, can become the primary tool for creating spatial generosity in a compact home."
+  },
+  "points": {
+    "kr": [
+      "2026년 인도 코임바토르 완공",
+      "평면 대신 단면(섹션)을 핵심 설계 도구로 활용",
+      "제한된 대지에서 넉넉한 공간감 추구"
+    ],
+    "en": [
+      "Completed 2026 in Coimbatore, India",
+      "Uses architectural section as the main design driver",
+      "Aims for spatial generosity within a compact footprint"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "좁은 도심 대지의 주거 프로젝트에 좋은 참고 사례다. 평면 중심 설계에 비해 단면 중심 설계는 상대적으로 덜 활용되는 전략이다.",
+    "en": "A good case study for residential projects on tight urban plots. Section-driven design is an underused lever compared to plan-driven layouts."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "협소 대지·주거 설계 참고용으로 저장 추천",
+    "en": "Save for residential/compact-site design reference"
+  },
+  "comment": {
+    "kr": "단면 중심 설계는 파사드나 평면 작업에 비해 주류 매체에서 상대적으로 덜 다뤄지는 주제라 좋은 반례가 된다. 특히 평면의 유연성이 제한적인 좁은 도심 대지에서 작업하는 디자이너에게 유용하다.\n코임바토르는 건축 매체가 흔히 주목하는 대도시가 아니라는 점에서, 익숙한 대도시 바깥에서도 탄탄한 단면 중심 사고가 이뤄지고 있음을 상기시킨다.\n단면 전략이 공간적으로 어떻게 구현됐는지 정확히 확인하려면 아크데일리 원문의 도면·사진을 참고하는 것이 좋다.",
+    "en": "Section-driven design gets less attention in mainstream coverage than facade or plan work, so this is a useful counter-example, especially relevant for designers working on narrow urban infill lots where plan flexibility is limited.\nCoimbatore isn't a typical architecture-media hotspot, which makes this a good reminder that strong section-based thinking is happening well outside the usual metropolitan spotlight.\nFull drawings and photos in the original ArchDaily piece would help confirm exactly how the section strategy plays out spatially."
+  },
+  "thumbLabel": "단면주택",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

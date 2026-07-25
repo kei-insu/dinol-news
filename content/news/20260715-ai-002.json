@@ -1,0 +1,54 @@
+{
+  "contentId": "20260715-ai-002",
+  "date": "2026-07-15",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-14"
+  },
+  "url": "https://techcrunch.com/2026/07/14/deepseek-reportedly-in-talks-to-raise-1-5b-then-ipo/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 비즈니스 · 투자",
+    "en": "AI · Business · Investment"
+  },
+  "title": {
+    "kr": "딥시크, 710억달러 밸류에 1.5조원 추가 유치 추진…IPO도 준비",
+    "en": "DeepSeek reportedly in talks to raise $1.5B, then IPO"
+  },
+  "summary": {
+    "kr": "딥시크가 이르면 올해 안에 IPO를 추진하는 것으로 알려졌습니다. 동시에 약 710억 달러 밸류에이션으로 15억 달러 규모의 신규 투자 유치도 모색 중인데, 이는 한 달 전 500억 달러 밸류에이션으로 첫 외부 투자 70억 달러를 유치한 직후입니다.",
+    "en": "DeepSeek is reportedly preparing for an IPO debut as early as this year, while also seeking to raise about $1.5 billion in new funding at a roughly $71 billion valuation — a month after raising $7 billion at about $50 billion in its first outside funding round."
+  },
+  "points": {
+    "kr": [
+      "당초 2027년 목표였던 IPO, 올해 말로 앞당겨질 가능성",
+      "약 710억 달러 밸류에이션에 15억 달러 추가 유치 추진",
+      "한 달 전 500억 달러 밸류에이션으로 첫 외부 투자 70억 달러 유치"
+    ],
+    "en": [
+      "IPO could come as early as end of this year, originally targeted 2027",
+      "Seeking ~$1.5B at ~$71B valuation",
+      "Raised $7B a month earlier at ~$50B in its first outside round"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "빠르게 성장하며 대규모 자금을 확보한 오픈모델 제조사는, 앞으로 디자인 도구가 어떤 AI 백엔드에 연결될지를 바꿔놓을 만한 업체입니다.",
+    "en": "A fast-rising, richly funded open-model maker is exactly the kind of vendor that could reshape which AI backends design tools plug into next."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "오픈모델 투자 지형을 지켜보는 이들에게 참고할 만한 배경 기사",
+    "en": "Good context for anyone tracking the open-model funding landscape"
+  },
+  "comment": {
+    "kr": "이 기사의 핵심은 밸류에이션 상승 속도입니다. 한 달 만에 500억 달러에서 710억 달러로 뛴 것은 어떤 벤치마크 결과보다도 오픈모델에 대한 투자자 확신을 잘 보여줍니다.\n같은 날 나온 '프런티어 경쟁' 기사의 허깅페이스 다운로드 수치와 겹쳐 보면, 자본이 실사용을 따라 저렴한 오픈모델 쪽으로 이동하고 있다는 일관된 그림이 그려집니다.",
+    "en": "The valuation jump here is the headline: from $50B to $71B in about a month says more about investor conviction in open models than any single benchmark result.\nCombined with the Hugging Face download numbers from the same day's frontier-race story, it paints a consistent picture: capital is following usage toward the open, cheaper end of the market."
+  },
+  "thumbLabel": "딥시크",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

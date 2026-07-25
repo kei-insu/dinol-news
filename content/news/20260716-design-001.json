@@ -1,0 +1,56 @@
+{
+  "contentId": "20260716-design-001",
+  "date": "2026-07-16",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-15"
+  },
+  "url": "https://www.yankodesign.com/2026/07/15/korean-studio-just-designed-a-pencil-that-looks-like-an-idea/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 제품",
+    "en": "Design · Product"
+  },
+  "title": {
+    "kr": "대구 스튜디오 QSEODESIGN, '아이디어'를 형상화한 연필 'IDEA Pencil'",
+    "en": "Korean Studio Just Designed a Pencil That Looks Like an Idea"
+  },
+  "summary": {
+    "kr": "대구를 기반으로 활동하는 산업디자이너 서민규의 QSEODESIGN 스튜디오가 '아이디어(IDEA) 펜슬'을 선보였습니다. 몸체는 반복적 사고 과정을 상징하는 기어 형태로, 지우개는 전구 모양으로 디자인했습니다.",
+    "en": "Daegu-based studio QSEODESIGN, run by industrial designer MinGyu Seo, designed the 'IDEA Pencil,' its body an extruded gear shape symbolizing iterative thinking, its eraser shaped like a lightbulb."
+  },
+  "points": {
+    "kr": [
+      "반복적 사고 과정을 은유하는 기어 형태의 몸체",
+      "'아이디어'의 상징인 전구 모양 지우개",
+      "아트센터 출신 디자이너의 절제되고 조용한 미학"
+    ],
+    "en": [
+      "Body shaped as an extruded gear, a metaphor for iterative thinking",
+      "Eraser designed as a lightbulb, the universal 'idea' symbol",
+      "Consistent minimal, quiet aesthetic from ArtCenter-trained designer"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "'생각하는 행위'라는 추상적 개념을 손에 잡히는 형태로 구현한 작은 오브제입니다. 은유 기반 제품 디자인의 좋은 사례입니다.",
+    "en": "A small object that turns an abstract concept, the act of thinking, into a tangible, giftable form. Great case study in metaphor-driven product design."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "콘셉트 중심 제품 디자인 레퍼런스로 추천 · 저장",
+    "en": "Good reference for concept-driven product design · Save"
+  },
+  "comment": {
+    "kr": "'무언가를 만드는 도구'가 아니라 '아이디어를 갖는다는 행위' 자체를 위한 오브제를 디자인했다는 점이 신선합니다. 사무용품이라기보다 개념적 조각에 더 가깝습니다. 기어 형태의 몸체는 영리한 시각적 스토리텔링입니다.\n\n은유 기반의 제품·브랜드 디자인을 하는 사람이라면 참고할 만합니다. 기어(과정)와 전구(통찰)라는 두 상징 모두 별도 설명 없이 즉각 읽힌다는 점에서 이 작업이 성립합니다.",
+    "en": "There's something disarming about designing an object for 'having an idea' rather than for a functional task, it's closer to a piece of conceptual sculpture than office supply. The gear-shaped body is a clever bit of visual storytelling.\n\nWorth studying for anyone doing metaphor-driven product or brand design: the whole piece works because both symbols (gear = process, bulb = insight) are instantly legible without any explanation needed."
+  },
+  "thumbLabel": "아이디어연필",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

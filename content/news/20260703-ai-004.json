@@ -1,0 +1,54 @@
+{
+  "contentId": "20260703-ai-004",
+  "date": "2026-07-03",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Times of India",
+    "publishedAt": "2026-07-03"
+  },
+  "url": "https://timesofindia.indiatimes.com/technology/tech-news/sriram-krishnan-donald-trumps-outgoing-ai-advisor-calls-out-ai-leaders-for-terrible-job-it-is-own-due-to-your-own-doomer-messaging-that-/articleshow/132190327.cms",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 거버넌스 · 오피니언",
+    "en": "AI · Governance · Opinion"
+  },
+  "title": {
+    "kr": "트럼프 前 AI 자문 '규제기관(FDA) 안 만든다'…AI 반발은 업계의 '파멸론' 탓",
+    "en": "Trump's outgoing AI adviser: 'no FDA for AI,' blames doomer messaging"
+  },
+  "summary": {
+    "kr": "트럼프 행정부의 퇴임 AI 자문 스리람 크리슈난이 파이낸셜타임스에 '이 정부에서 AI판 FDA(전담 규제기관)는 없을 것'이라며, 대중의 AI 반발은 업계 스스로의 '둠(doomer·파멸론)' 메시징 탓이라고 비판했습니다. 존재론적 경고로 겁을 준 뒤 서사를 통제하지 못했다는 것입니다.",
+    "en": "Sriram Krishnan, Trump's outgoing AI adviser, told the FT there will be 'no FDA for AI' under this administration and blamed the public AI backlash on the industry's own 'doomer' messaging, arguing that leaders scared people with existential warnings and then lost control of the narrative."
+  },
+  "points": {
+    "kr": [
+      "트럼프 정부에서 'AI판 FDA 없다'는 이유",
+      "'둠 메시징이 역풍을 불렀다'는 주장",
+      "프레이밍이 같은 AI를 '위험'으로도 '과장'으로도 만드는 방식"
+    ],
+    "en": [
+      "Why 'no FDA for AI' under Trump",
+      "The 'doomer messaging backfired' argument",
+      "How framing turns the same AI into risk or hype"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "같은 AI가 말하는 사람에 따라 '존재적 위험'도 '과장된 공포'도 된다는 걸 관찰하세요.\n\n이 '프레이밍 읽기' 능력은 AI 과열과 공포를 더 또렷이 보고 설계에 반영하는 데 도움이 됩니다. 카피를 쓰든, 제품이 자기 AI를 어떻게 설명할지 정하든 말이죠.",
+    "en": "Notice how the same AI is framed as 'existential risk' or 'overhyped fear' depending on who's speaking; this framing literacy helps you read (and design around) AI hype and panic more clearly, whether you're writing copy or shaping how a product talks about its own AI."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 거버넌스 논쟁의 '규제 완화' 쪽 시각으로 읽고, 작동하는 프레이밍을 관찰하세요",
+    "en": "Read as the deregulation side of the AI-governance debate; note the framing at work"
+  },
+  "comment": {
+    "kr": "크리슈난의 주장에는 뼈아픈 진실이 하나 있습니다. AI 업계가 '잘못하면 인류가 멸망한다'고 스스로 겁을 준 뒤, 그 공포의 통제권을 잃었다는 지적입니다. 다만 '그러니 규제하지 말자'는 결론은 별개 문제입니다.\n\n디자이너에게 중요한 건 어느 쪽이 옳으냐가 아니라, 같은 기술이 화자에 따라 '위험'도 '과장'도 된다는 사실 자체입니다. 이 프레이밍을 읽을 줄 알아야, AI를 다루는 제품의 톤과 메시지를 흔들리지 않고 설계할 수 있습니다.",
+    "en": "There's a painful truth in Krishnan's argument: the AI industry scared everyone with 'get it wrong and humanity ends,' then lost control of that fear. That said, 'so let's not regulate' is a separate conclusion.\n\nWhat matters for designers isn't which side is right, but the fact itself that the same technology reads as either 'danger' or 'hype' depending on who's speaking. Being able to read this framing is what lets you design the tone and message of AI products without wobbling."
+  },
+  "thumbLabel": "논쟁",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

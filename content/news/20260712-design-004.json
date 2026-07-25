@@ -1,0 +1,56 @@
+{
+  "contentId": "20260712-design-004",
+  "date": "2026-07-12",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-05"
+  },
+  "url": "https://www.archdaily.com/1054027/moma-opens-architects-of-liberation-exhibition-on-independence-era-west-african-modernism",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 전시",
+    "en": "Design · Architecture · Exhibition"
+  },
+  "title": {
+    "kr": "MoMA, 서아프리카 독립기 모더니즘 건축 전시 개막",
+    "en": "MoMA opens Architects of Liberation exhibition on independence-era West African modernism"
+  },
+  "summary": {
+    "kr": "뉴욕 MoMA가 'Architects of Liberation: Modernism in Western Africa' 전시를 열었다(2027년 1월 2일까지). 1950년대 말부터 1980년대 초까지 서아프리카 7개국의 독립기 건축을 조명한다.",
+    "en": "MoMA's new exhibition Architects of Liberation: Modernism in Western Africa (through January 2, 2027) surveys architecture from seven West African countries between the late 1950s and early 1980s, framed around independence-era nation-building."
+  },
+  "points": {
+    "kr": [
+      "베냉·카메룬·코트디부아르·가나·나이지리아·세네갈·토고 7개국을 다룸",
+      "도시경관·교육·주거 등 주제로 구성",
+      "데마스 은워코, 존 오우수 아도 등 건축가 조명"
+    ],
+    "en": [
+      "Spans seven countries: Benin, Cameroon, Côte d'Ivoire, Ghana, Nigeria, Senegal, Togo",
+      "Organised around cityscapes, education and housing",
+      "Features architects like Demas Nwoko and John Owusu Addo"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "비서구권 모더니즘을 깊이 다루는 흔치 않은 전시입니다. 건축과 국가 정체성·건국 서사의 관계를 리서치하는 이들에게 좋은 참고 자료입니다.",
+    "en": "A rare deep dive into non-Western modernism, valuable reference for anyone researching architecture's relationship to nation-building and identity."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "뉴욕 방문 시 관람 추천 · 리서치 자료로 유용",
+    "en": "Worth a visit if in NYC · Good research reference"
+  },
+  "comment": {
+    "kr": "서구 중심의 건축사 서술은 종종 식민지 시기 건물에서 곧장 현재로 건너뛰며, 신생국이 스스로의 이미지를 지어 올리던 독립 직후 수십 년을 비워두곤 합니다. 이번 전시는 7개국을 한번에 다루며 바로 그 공백을 채웁니다.\n\n당장 급한 뉴스는 아니지만, 이 정도로 잘 정리된 리서치 자료를 다른 곳에서 찾기 어렵다는 점에서 두고두고 참고할 가치가 있습니다.",
+    "en": "Western architectural history has a habit of skipping straight from colonial-era buildings to today, leaving out the decades right after independence when new nations were literally building their own image. This exhibition fills exactly that gap, across seven countries at once.\n\nIt's a slow-burn kind of relevant, not urgent news, but the kind of research reference that's genuinely hard to find summarized this well anywhere else."
+  },
+  "thumbLabel": "전시",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

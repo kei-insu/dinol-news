@@ -1,0 +1,56 @@
+{
+  "contentId": "20260718-design-002",
+  "date": "2026-07-18",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-16"
+  },
+  "url": "https://www.dezeen.com/2026/07/16/studio-fuksas-tbilisi-rike-concert-hall-halt/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 보존",
+    "en": "Design · Architecture · Preservation"
+  },
+  "title": {
+    "kr": "'문화적 손실' 스튜디오 푹사스, 트빌리시 콘서트홀 철거 중단 요청",
+    "en": "Demolition of Tbilisi concert hall 'a significant cultural setback,' says Studio Fuksas"
+  },
+  "summary": {
+    "kr": "이탈리아 건축사무소 스튜디오 푹사스가 자사 설계작인 트빌리시 리케 콘서트홀의 철거 중단을 요청했습니다. 소유주가 12월 25일까지 철거 가능한 허가를 받은 가운데, 조지아 당국과 함께 대안을 모색하겠다고 밝혔습니다.",
+    "en": "Studio Fuksas has called for a halt to the demolition of its Rike Concert Hall in Tbilisi, offering to work with Georgian authorities on alternatives after the building's owner obtained a permit to demolish it by December 25, having sat unopened for over a decade."
+  },
+  "points": {
+    "kr": [
+      "2012년경 완공됐지만 한 번도 대중에 개방되지 못함",
+      "수년간 공실 상태였다가 2025년 현 소유주 마크로 컨스트럭션에 매각",
+      "철거 허가에 따라 12월 25일까지 건물 해체 기한 설정"
+    ],
+    "en": [
+      "Building completed around 2012 but never opened to the public",
+      "Sold to current owner Makro Constructions in 2025 after years of vacancy",
+      "Demolition permit sets a deadline of December 25 to dismantle the building"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "완공되고 수상 경력까지 있는 건물이라도 운영 주체를 못 찾으면 통째로 사라질 수 있다는 경고성 사례입니다. 설계 초기 단계부터 적응형 재사용(adaptive reuse) 가능성을 고려할 필요가 있습니다.",
+    "en": "A cautionary case for architects: a completed, award-recognised building can still be lost entirely if it never finds an operating use, worth factoring adaptive-reuse thinking in early."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "건축가, 유산·보존 분야 디자이너에게 유용 · 그 외에는 배경 지식으로 참고",
+    "en": "Relevant for architects and heritage/preservation-focused designers · Background context for others"
+  },
+  "comment": {
+    "kr": "10년의 공실 끝에 철거 명령이 내려진 흐름은, 설계를 발주한 정치적 의지가 사라진 뒤에도 살아남아야 하는 야심찬 공공건축이 흔히 겪는 패턴입니다. 리케 콘서트홀은 2012년 정권 교체 이후 방치됐고 이후 추진 동력을 회복하지 못했습니다.\n\n스튜디오 푹사스가 단순 반대 성명이 아니라 대안 설계를 함께 모색하겠다고 나선 점은 비교적 건설적인 대응입니다. 12월 기한 전에 트빌리시 당국이 이 제안을 받아들일지가, 이미 발급된 철거 허가를 문화 보존 압력이 실제로 되돌릴 수 있는지를 가늠하는 시험대가 될 것입니다.",
+    "en": "A decade of vacancy followed by a demolition order is a familiar pattern for ambitious civic architecture that outlives the political will that commissioned it, Rike Concert Hall was abandoned after a 2012 change in government and never recovered momentum.\n\nStudio Fuksas stepping in now, offering to co-design alternatives rather than simply objecting, is a more constructive response than the usual open letter. Whether Tbilisi's authorities take the offer before the December deadline will say a lot about how much cultural-preservation pressure can actually move a demolition permit once issued."
+  },
+  "thumbLabel": "보존위기",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

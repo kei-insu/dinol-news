@@ -1,0 +1,56 @@
+{
+  "contentId": "20260722-design-003",
+  "date": "2026-07-22",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-20"
+  },
+  "url": "https://www.archdaily.com/1181271/de-jonghe-residence-restoration-michel-architects",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축",
+    "en": "Design · Architecture"
+  },
+  "title": {
+    "kr": "로이드 라이트가 설계한 '드종게 저택' 복원 프로젝트",
+    "en": "De Jonghe Residence Restoration / Michel Architects"
+  },
+  "summary": {
+    "kr": "미셸 아키텍츠가 로스앤젤레스 언덕에 위치한 1959년작 '드종게 저택'을 복원했습니다. 설계자는 프랭크 로이드 라이트의 아들인 로이드 라이트입니다.",
+    "en": "Michel Architects has restored the De Jonghe Residence, a 1959 Los Angeles hillside house designed by Lloyd Wright, son of Frank Lloyd Wright."
+  },
+  "points": {
+    "kr": [
+      "1959년 로이드 라이트가 설계한 원본 주택",
+      "로스앤젤레스 언덕 지형에 위치",
+      "미셸 아키텍츠가 복원 작업 진행"
+    ],
+    "en": [
+      "Original 1959 design by Lloyd Wright",
+      "Hillside site in Los Angeles",
+      "Restoration led by Michel Architects"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "이런 복원 작업은 원 설계자의 의도를 존중하면서도 오늘날 거주 가능한 집으로 만드는 것이 신축과는 또 다른 디자인 영역임을 보여줍니다.",
+    "en": "Restoration work like this is a good reminder that respecting an original architect's intent while making a house livable today is its own design discipline, distinct from new-build work."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "복원·헤리티지 건축 작업에 참고할 만함 · 저장 추천",
+    "en": "Good reference for restoration/heritage architecture work · Save"
+  },
+  "comment": {
+    "kr": "프랭크 로이드 라이트의 아들인 로이드 라이트가 설계한 집을 복원하는 작업에는 특유의 부담이 따릅니다. 건축적 계보를 지닌 건물이면서도 실제로 사람이 사는 집으로 기능해야 하기 때문입니다. 미셸 아키텍츠의 드종게 저택 작업은 이 균형을 보여주는 사례입니다.\n\n로스앤젤레스 언덕이라는 대지 조건도 구조적 고려와 경사 대응 방식 등 나름의 제약을 더합니다. 복원 건축이나 중세기(미드센추리) 주거 작업에 관심 있다면 살펴볼 만합니다.\n\n검색 스니펫 기반 요약으로, 복원 과정에서의 구체적 개입 내용은 원문에서 별도로 확인이 필요합니다.",
+    "en": "Restoring a house by Lloyd Wright — working in his father Frank Lloyd Wright's long shadow — comes with a particular kind of pressure: the building carries architectural pedigree, but it also needs to function as a home. Michel Architects' work on the De Jonghe Residence is a case study in that balance.\n\nHillside sites like this one in Los Angeles add their own constraints, from structural considerations to how the house negotiates its slope. Worth a look for anyone interested in restoration architecture or mid-century residential work.\n\nSummary based on search snippets — details of the specific interventions made during restoration aren't verified here and should be checked against the original piece."
+  },
+  "thumbLabel": "리노베이션",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

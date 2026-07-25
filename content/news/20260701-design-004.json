@@ -1,0 +1,54 @@
+{
+  "contentId": "20260701-design-004",
+  "date": "2026-07-01",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-01"
+  },
+  "url": "https://www.dezeen.com/2026/07/01/five-architecture-design-events-july-dezeen-events-guide-2026/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 이벤트 · 문화",
+    "en": "Design · Events · Culture"
+  },
+  "title": {
+    "kr": "7월 놓치면 안 될 건축·디자인 이벤트 5선 (Dezeen Events Guide)",
+    "en": "Five architecture and design events in July, Dezeen Events Guide"
+  },
+  "summary": {
+    "kr": "Dezeen이 선정한 2026년 7월 필관 건축·디자인 행사 5선. 맨체스터 아이 웨이웨이 'Button Up!' 전시, 뉴욕 MoMA 'Architects of Liberation', 태국 이산 크리에이티브 페스티벌, 런던 Business Design Centre의 New Designers, 그리고 RA 서머 전시입니다.",
+    "en": "Dezeen's July 2026 guide highlights five must-attend architecture and design events: Ai Weiwei's Button Up! in Manchester, MoMA's Architects of Liberation in New York, the Isan Creative Festival in Thailand, New Designers at London's Business Design Centre, and the RA Summer Exhibition."
+  },
+  "points": {
+    "kr": [
+      "아이 웨이웨이 'Button Up!'(맨체스터), MoMA 'Architects of Liberation'",
+      "이산 크리에이티브 페스티벌(태국), New Designers(런던)",
+      "기관들이 지금 무엇을 조명하는지 보여주는 스냅숏"
+    ],
+    "en": [
+      "Ai Weiwei's Button Up! (Manchester), MoMA's Architects of Liberation",
+      "Isan Creative Festival (Thailand), New Designers (London)",
+      "A snapshot of what institutions are spotlighting now"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "아이 웨이웨이부터 신진 졸업 전시까지, 이달 볼 만한 것들을 추린 목록입니다.\n\n직접 못 가더라도 주요 기관들이 무엇을 조명하는지 훑어보는 것만으로 지금 디자인 문화의 관심이 어디로 향하는지 빠르게 읽을 수 있습니다.",
+    "en": "A curated shortlist of what's worth seeing this month, from Ai Weiwei to graduate showcases. Even if you can't attend, scanning what major institutions choose to spotlight is a fast way to read where design culture's attention is heading right now."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "월간 문화 안테나로 저장하고, 한두 개는 온라인으로 찾아보세요",
+    "en": "Bookmark it as a monthly culture-radar; pick one or two to explore online"
+  },
+  "comment": {
+    "kr": "이런 '이벤트 가이드'는 참석 여부보다 '지금 디자인계가 무엇에 주목하나'를 읽는 용도로 쓰면 좋습니다. 아이 웨이웨이 같은 거장 전시부터 신진 졸업 전시(New Designers)까지 한 목록에 담겼다는 게 흥미롭습니다. 정상급과 신인이 같은 달의 화제라는 뜻이니까요.\n\n직접 못 가더라도, 주요 기관이 무엇을 골라 조명하는지 보는 것만으로 트렌드의 방향이 잡힙니다. 영감이 마를 때 이런 목록을 훑는 습관은 의외로 큰 도움이 됩니다.",
+    "en": "Guides like this are best used not to decide what to attend, but to read 'what the design world is paying attention to right now.' It's telling that a single list holds everything from a master like Ai Weiwei to emerging graduate shows (New Designers), meaning the established and the new are the same month's talking points.\n\nEven if you can't go, just seeing what major institutions choose to spotlight gives you a sense of where trends are heading. Skimming lists like this when inspiration runs dry is surprisingly helpful."
+  },
+  "thumbLabel": "이벤트",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}

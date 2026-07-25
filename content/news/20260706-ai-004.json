@@ -1,0 +1,56 @@
+{
+  "contentId": "20260706-ai-004",
+  "date": "2026-07-06",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Axios",
+    "publishedAt": "2026-07-03"
+  },
+  "url": "https://www.axios.com/2026/07/03/anthropic-ai-models-revived-behind-the-scenes",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 거버넌스",
+    "en": "AI · Policy · Governance"
+  },
+  "title": {
+    "kr": "세계 최고 AI 모델들은 어떻게 되살아났나…20일간의 막후",
+    "en": "How the world's top AI models were revived"
+  },
+  "summary": {
+    "kr": "앤트로픽의 Fable·Mythos 모델이 탈옥 우려를 둘러싼 20일간의 미 정부 접근 중단 끝에 7월 1일 복구됐습니다. 프런티어 모델의 '출시 방식' 자체에 오래 남을 영향을 남겼습니다.",
+    "en": "Anthropic's Fable and Mythos models returned online on July 1 after a 20-day US government suspension over a disputed jailbreaking concern, with lasting effects on how frontier models get released."
+  },
+  "points": {
+    "kr": [
+      "모델이 중단·복구된 경위",
+      "'출시 프로세스' 불확실성이 로드맵에 주는 의미",
+      "모델 가용성 리스크를 감안한 설계"
+    ],
+    "en": [
+      "Why the models were suspended and restored",
+      "What release-process uncertainty means for roadmaps",
+      "Designing for model-availability risk"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "우리가 기대는 AI 도구가 정책 이슈로 하루아침에 사라질 수 있다는 신호입니다. 특정 모델 하나에 제품 핵심을 강하게 묶지 않는 설계가 안전합니다.",
+    "en": "A reminder that the tools we design around can vanish overnight for policy reasons, build fallbacks and avoid hard-coupling a product's core value to one model."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "AI 제품팀 일독 추천 · PM 공유",
+    "en": "Worth a read for AI product teams · Share with PMs"
+  },
+  "comment": {
+    "kr": "핵심은 '아무리 좋은 모델이라도 정책 한 번에 20일씩 못 쓸 수 있다'는 사실이라고 봅니다. 기술 성능만큼이나 '누가 언제 끊을 수 있는가'가 실무 리스크가 된 시대입니다.\n\n특정 AI에 제품의 핵심 가치를 통째로 묶어두는 설계는 그만큼 위험합니다. 대안 경로를 미리 확보해 두는 게 안전해요.",
+    "en": "The real lesson here isn't model quality, it's that even a top model can be pulled offline for 20 days by a single policy call. 'Who can cut you off, and when' is now as much a practical risk as raw capability.\n\nHard-wiring a product's core value to one AI is risky in exactly this way. Keeping a fallback path ready is the safer bet."
+  },
+  "thumbLabel": "정책",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

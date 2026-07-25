@@ -1,0 +1,54 @@
+{
+  "contentId": "20260704-design-001",
+  "date": "2026-07-04",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Design Week",
+    "publishedAt": "2026-07-03"
+  },
+  "url": "https://www.designweek.co.uk/the-outline-design-guidance-soho-and-a-bag-robot-03-07-2026/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 산업 · 다이제스트",
+    "en": "Design · Industry · Digest"
+  },
+  "title": {
+    "kr": "디자인 위크 다이제스트: 소호, 런던 디자인 페스티벌 지구로 + 가방 로봇",
+    "en": "The Outline: Soho becomes a London Design Festival district, plus a bag-charm robot"
+  },
+  "summary": {
+    "kr": "디자인 위크 주간 다이제스트입니다. 소호가 처음으로 런던 디자인 페스티벌 공식 지구(9/12~20)로 지정됐고, 유카이의 가방 참 로봇 '미루미'가 해러즈에 입점합니다.",
+    "en": "Design Week's weekly digest: for the first time Soho becomes an official London Design Festival district (12–20 Sept), and Yukai's 'Mirumi' bag-charm robot arrives at Harrods."
+  },
+  "points": {
+    "kr": [
+      "새 LDF 지구가 된 소호",
+      "해러즈에 입점한 미루미 가방 로봇",
+      "스튜디오 레지던시·인사 소식"
+    ],
+    "en": [
+      "Soho as a new LDF district",
+      "The Mirumi bag-charm robot at Harrods",
+      "Studio residencies & appointments"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "디자인 업계의 흐름을 짚는 콘텐츠입니다. 월 1회 훑는 습관으로 트렌드 감을 최신으로 유지하세요. 이벤트·리테일·제품 문화의 흐름을 알면 클라이언트 대화에서 '지금 감각 있는' 디자이너로 보입니다.",
+    "en": "A pulse-check on the design industry. Skim it as a monthly habit to keep your trend radar current; knowing what's happening in events, retail, and product culture makes your work feel timely and informed in client conversations."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "지금 훑어 트렌드 감을 채우고, 업계를 챙긴다면 런던 디자인 페스티벌 일정(9/12~20)을 저장해 두세요",
+    "en": "Skim now for trend awareness, and save the London Design Festival dates (Sept 12–20) if you follow the scene"
+  },
+  "comment": {
+    "kr": "이런 '주간 다이제스트'는 개별 소식보다 '지금 디자인계가 어디에 관심을 두는가'를 읽는 도구로 쓰면 좋습니다. 소호가 디자인 페스티벌 지구가 됐다(도시·공간)거나, 가방에 매다는 로봇이 백화점에 입점한다(제품·감성 테크)는 소식이 한 다이제스트에 담긴 게 흥미롭습니다. 공간부터 아기자기한 가젯까지, 디자인의 관심 폭이 그만큼 넓어졌다는 뜻이니까요.\n\n월 1회 정도 이런 걸 훑으면, 클라이언트나 동료와 대화할 때 '지금 흐름을 아는' 디자이너로 보입니다. 트렌드는 외우는 게 아니라 꾸준히 노출되며 몸에 배는 것입니다.",
+    "en": "A 'weekly digest' like this is best used to read 'where the design world's attention sits now' rather than for individual items. It's interesting that a single digest holds both 'Soho becoming a design-festival district' (space) and 'a bag-charm robot arriving in a department store' (product, emotional tech). From spaces to cute gadgets, design's range of interest has widened that much.\n\nSkim one of these about once a month and you'll come across as a designer 'who knows the current flow' when talking to clients or peers. Trends aren't memorized, they seep in through steady exposure."
+  },
+  "thumbLabel": "트렌드",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

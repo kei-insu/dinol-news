@@ -1,0 +1,56 @@
+{
+  "contentId": "20260718-ai-001",
+  "date": "2026-07-18",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "Tech Times",
+    "publishedAt": "2026-07-16"
+  },
+  "url": "https://www.techtimes.com/articles/320736/20260716/rebuilt-gemini-35-pro-misses-third-deadline-google-eyes-stopgap-release.htm",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 빅테크 · 제품",
+    "en": "AI · Big Tech · Product"
+  },
+  "title": {
+    "kr": "재구축된 제미나이 3.5 프로, 세 번째 기한도 놓쳐...구글 임시방편 검토",
+    "en": "Rebuilt Gemini 3.5 Pro Misses Third Deadline, Google Eyes Stopgap Release"
+  },
+  "summary": {
+    "kr": "구글이 재구축한 제미나이 3.5 프로가 환각 등 안정성 문제로 세 번째 출시 기한도 넘겼습니다. 회사는 엔지니어링을 이어가는 동안 임시방편 출시를 검토 중인 것으로 전해집니다.",
+    "en": "Google's rebuilt Gemini 3.5 Pro has missed its third launch deadline after reliability issues including hallucinations, with the company reportedly considering a stopgap release while engineering continues."
+  },
+  "points": {
+    "kr": [
+      "베이스 모델을 폐기하고 재구축한 뒤에도 세 번째 기한 연속 지연",
+      "환각과 안정성 문제가 핵심 걸림돌로 지목",
+      "같은 여름 Claude Fable 5·GPT-5.6는 이미 출시된 상황"
+    ],
+    "en": [
+      "Third consecutive deadline missed after base model was scrapped and rebuilt",
+      "Hallucinations and reliability gaps cited as the core blocker",
+      "Comes as Claude Fable 5 and GPT-5.6 already shipped this summer"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "화려한 로드맵 일정은 확정이 아니라 잠정치라는 점을 다시 보여줍니다. 기능 기획은 발표된 날짜가 아니라 실제 정식 출시일을 기준으로 세우는 게 안전합니다.",
+    "en": "A reminder that flashy roadmap dates are provisional, not commitments, plan feature bets around a model's actual GA date, not its announced one."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "제미나이 3.5 프로 기능에 의존하는 로드맵이라면 주시 필요 · 구글 모델 기반이 아니라면 건너뛰어도 무방",
+    "en": "Worth tracking if your roadmap depends on Gemini 3.5 Pro capabilities · Skip if you don't build on Google's models"
+  },
+  "comment": {
+    "kr": "세 번의 연속 지연은 평소 일정을 잘 지키던 구글치고는 눈에 띄는 실수입니다. 보도에 따르면 베이스 모델을 폐기한 뒤 재귀적 도구 호출(recursive tool-calling)에서 구조적 결함이 발견됐다고 하니, 단순한 마케팅상의 지연이 아니라 실제 기술적 벽에 부딪힌 것으로 보입니다.\n\nAI 기능을 만드는 팀 입장에서는 구글만의 문제라기보다 일정 관리의 교훈에 가깝습니다. 미출시 모델의 기능은 정식 출시(GA) 전까지는 어디까지나 추정치로 다뤄야 하고, 특정 출시일을 전제로 하지 않는 대체 경로를 마련해 두는 게 안전합니다.",
+    "en": "Three missed deadlines in a row is a notable stumble for a company that usually ships on schedule. The reported cause, structural failures in recursive tool-calling discovered after the original base model was scrapped, suggests this wasn't a marketing delay but a real technical wall.\n\nFor teams building AI features, the lesson is less about Google specifically and more about planning discipline: treat any unreleased model's capabilities as speculative until GA, and keep a fallback path that doesn't assume a specific ship date."
+  },
+  "thumbLabel": "지연",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

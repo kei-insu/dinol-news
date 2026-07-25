@@ -1,0 +1,57 @@
+{
+  "contentId": "20260702-design-004",
+  "date": "2026-07-02",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-01"
+  },
+  "url": "https://www.dezeen.com/2026/07/01/tokyo-tomi-hotel-ginza-keiji-ashizawa-design/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 숙박",
+    "en": "Design · Architecture · Hospitality"
+  },
+  "title": {
+    "kr": "'안목 있는 친구의 집' 같은 도쿄 8객실 부티크 호텔",
+    "en": "Eight-room Tokyo hotel designed to feel like staying \"at the home of a tasteful friend\""
+  },
+  "summary": {
+    "kr": "일본 디자이너 아시자와 케이지가 도쿄의 옛 호스텔을 개조해 객실 8개 규모의 부티크 호텔 '토미 호텔 긴자'로 재탄생시켰습니다. 층마다 하나의 스위트만 배치해 '안목 있는 친구의 집'에 머무는 듯한 경험을 제공합니다.",
+    "en": "Designer Keiji Ashizawa converted a former Tokyo hostel into an eight-room boutique hotel, placing one suite per floor for an intimate, home-like stay."
+  },
+  "points": {
+    "kr": [
+      "도쿄 옛 호스텔을 8객실 부티크 호텔로 개조",
+      "층당 스위트 하나로 친밀감·프라이버시 확보",
+      "건물의 제약을 경험의 핵심으로 전환"
+    ],
+    "en": [
+      "Former Tokyo hostel reborn as an 8-room boutique hotel",
+      "One suite per floor for intimacy and privacy",
+      "Turning a building's constraints into the core experience"
+    ]
+  },
+  "positions": [
+    "space-designer",
+    "architect"
+  ],
+  "designer": {
+    "kr": "'층마다 스위트 하나'는 강한 디자인 결정입니다. 객실 수를 포기하는 대신 친밀감과 프라이버시를 얻었으니까요.\n\n제약(작고 높은 옛 건물)을 한계가 아니라 경험의 핵심으로 바꾼 사례입니다. 디지털이든 물리든 '느낌을 설계하는' 사람에게 좋은 공간 사고의 예시입니다.",
+    "en": "One suite per floor is a strong design decision; it trades room count for a sense of intimacy and privacy. It's a reminder that constraints (a small, tall old building) can become the core of the experience rather than a limitation. Good spatial thinking for anyone designing 'felt' experiences, digital or physical."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "제약이 어떻게 콘셉트가 됐는지 보세요; 경험 디자인의 좋은 레퍼런스입니다",
+    "en": "Look at how the constraint became the concept; good reference for experience design"
+  },
+  "comment": {
+    "kr": "'층마다 스위트 하나'라는 결정이 이 프로젝트의 전부입니다. 좁고 높은 옛 건물이라는 제약을, 객실을 많이 넣는 대신 '한 층을 통째로 쓰는 친밀한 경험'으로 뒤집었습니다.\n\n앞서 현대카드 카드에서도 봤듯, 좋은 디자인은 자주 이렇게 나옵니다. 제약을 없애려 하지 않고 그 제약을 콘셉트의 중심으로 삼는 것. 물리 공간 이야기지만, '느낌을 설계한다'는 점에서 화면을 다루는 우리에게도 그대로 통하는 사고방식입니다.",
+    "en": "The decision of 'one suite per floor' is the whole project. It flips the constraint of a narrow, tall old building into 'an intimate experience of using a whole floor,' instead of cramming in more rooms.\n\nAs we saw earlier with the Hyundai Card piece, good design often works like this: not trying to erase a constraint, but making that constraint the center of the concept. It's a physical-space story, but as an act of 'designing a feeling' it maps directly onto our work on screens."
+  },
+  "thumbLabel": "호텔",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

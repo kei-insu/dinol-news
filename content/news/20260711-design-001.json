@@ -1,0 +1,57 @@
+{
+  "contentId": "20260711-design-001",
+  "date": "2026-07-11",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-08"
+  },
+  "url": "https://www.dezeen.com/2026/07/08/david-chipperfield-architects-faro-santander/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축 · 미술관",
+    "en": "Design · Architecture · Museum"
+  },
+  "title": {
+    "kr": "데이비드 치퍼필드, 스페인 은행 본점을 미술관으로 재탄생시키다",
+    "en": "David Chipperfield Architects reveals Faro Santander museum"
+  },
+  "summary": {
+    "kr": "데이비드 치퍼필드 아키텍츠가 산탄데르 은행의 역사적 본점 건물 '페레다 빌딩'을 미술관 '파로 산탄데르'로 개조했습니다. 2026년 9월 8일 개관하며 5개 층의 전시 공간과 BREEAM 92.96점(Outstanding 등급)을 획득했습니다.",
+    "en": "David Chipperfield Architects has converted Santander bank's historic Pereda Building headquarters into the Faro Santander museum, opening 8 September 2026 with five gallery floors and an Outstanding BREEAM rating of 92.96."
+  },
+  "points": {
+    "kr": [
+      "1만 제곱미터 오피스 건물을 5개 층 갤러리로 전환",
+      "미술관·문화공간 중 세계 최고 BREEAM 점수 92.96(Outstanding) 기록",
+      "2026년 9월 8일 개관, 산탄데르은행 컬렉션 전시"
+    ],
+    "en": [
+      "10,000sqm office building converted into 5 gallery floors",
+      "World's highest BREEAM score for a museum, 92.96 (Outstanding)",
+      "Opens 8 September 2026 with the Banco Santander Collection"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "1795년 지어진 은행 본점을 9년에 걸쳐 공공 미술관으로 리모델링한 사례로, 헤리티지 건물 재생이 최고 수준의 지속가능성 점수를 받으면서도 건축적 정체성을 유지할 수 있음을 보여줍니다.",
+    "en": "A 9-year adaptive reuse of a 1795 bank HQ into public art space, showing how heritage retrofits can hit best-in-class sustainability scores while staying legible as architecture."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "어댑티브 리유즈·헤리티지 리트로핏 사례로 훌륭함 · 레퍼런스 저장 추천",
+    "en": "Great case study for adaptive reuse and heritage retrofit projects · Save for reference"
+  },
+  "comment": {
+    "kr": "주목할 점은 소장품 자체보다 지속가능성 수치입니다. 1795년에 지어진 건물이 미술관·문화공간 중 역대 최고 수준인 BREEAM 92.96점(Outstanding)을 기록했다는 것은, 클라이언트가 탄소 문제를 물을 때 철거 후 신축 대신 어댑티브 리유즈를 설득할 강력한 근거가 됩니다.\n착공부터 개관까지 9년이 걸렸다는 점도, 본격적인 헤리티지 전환 프로젝트에 실제로 얼마나 시간이 드는지 가늠하는 데 유용한 참고치입니다.\n9월 개관 시점에 인테리어·전시 디자인 디테일을 다시 확인해볼 가치가 있습니다.",
+    "en": "What stands out isn't the art collection but the sustainability number: a 92.96 Outstanding BREEAM score is being called the highest ever registered by a museum, on a building that started life in 1795. That's a strong argument for adaptive reuse over demolition-and-rebuild when clients ask about carbon.\nNine years from project start to opening is also a useful reality check on how long a serious heritage conversion actually takes, useful context when scoping similar projects.\nWorth revisiting closer to the September opening for interior and gallery-design details."
+  },
+  "thumbLabel": "뮤지엄건축",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

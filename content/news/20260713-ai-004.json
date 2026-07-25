@@ -1,0 +1,54 @@
+{
+  "contentId": "20260713-ai-004",
+  "date": "2026-07-13",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-12"
+  },
+  "url": "https://techcrunch.com/2026/07/12/techcrunch-mobility-a-robotaxi-ultimatum/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 모빌리티 · 로보틱스",
+    "en": "AI · Mobility · Robotics"
+  },
+  "title": {
+    "kr": "우버-웨이모, 피닉스 로보택시 파트너십 종료",
+    "en": "TechCrunch Mobility: A robotaxi ultimatum"
+  },
+  "summary": {
+    "kr": "우버와 웨이모의 피닉스 로보택시 파트너십이 종료됐습니다. 두 회사는 애틀랜타·오스틴에서는 협력을 이어가고 있어, AI 기반 로보택시 동맹의 향방에 관심이 쏠립니다.",
+    "en": "Uber and Waymo's robotaxi partnership in Phoenix has ended, even as the two companies continue collaborating in Atlanta and Austin, raising questions about the future shape of AI-driven robotaxi alliances."
+  },
+  "points": {
+    "kr": [
+      "피닉스 파트너십 종료, 애틀랜타·오스틴은 지속",
+      "로보택시 동맹 구도 변화의 신호",
+      "AI 자율주행 경쟁력이 여전히 핵심 변수"
+    ],
+    "en": [
+      "Phoenix partnership ends, Atlanta and Austin continue",
+      "Signals shifting dynamics in robotaxi alliances",
+      "AI-driven autonomy remains central to the competition"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "자율주행 모빌리티는 응용 AI를 가장 눈에 띄게 보여주는 분야입니다. 파트너십이 도시별로 갈라지면서 차량 내 UX와 서비스 디자인이 어떻게 달라지는지 지켜볼 만합니다.",
+    "en": "Autonomous mobility is a visible showcase of applied AI, worth watching how in-vehicle UX and service design diverge as partnerships fragment city by city."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "모빌리티·서비스 디자이너에게 흥미로운 참고 자료 · 선택",
+    "en": "Interesting for mobility and service designers · Optional"
+  },
+  "comment": {
+    "kr": "간판급 AI 파트너십도 상업적 조건 앞에서 갈라질 수 있음을 보여주는 사례입니다.\n각 회사가 독자 노선을 걸으며 앱·차량 내 경험을 어떻게 바꿔 나갈지 지켜볼 만합니다.",
+    "en": "A reminder that even flagship AI partnerships can fracture over commercial terms.\nWorth watching how each company's in-app and in-vehicle experience evolves as they pursue separate paths."
+  },
+  "thumbLabel": "로보택시",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

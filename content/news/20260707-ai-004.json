@@ -1,0 +1,56 @@
+{
+  "contentId": "20260707-ai-004",
+  "date": "2026-07-07",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "BuildFastWithAI",
+    "publishedAt": "2026-07-06"
+  },
+  "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-6-2026",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 산업 · 모델",
+    "en": "AI · Industry · Models"
+  },
+  "title": {
+    "kr": "중국 AI 모델의 급부상…오픈라우터 트래픽 45%까지",
+    "en": "Chinese AI models surge to around 45% of OpenRouter traffic"
+  },
+  "summary": {
+    "kr": "샤오미의 MiMo-V2-Pro가 주간 토큰량 기준 오픈라우터 최다 사용 모델에 올랐다. 중국 모델의 트래픽 점유율은 1년 전 2% 미만에서 약 45%로 치솟았다.",
+    "en": "Xiaomi's MiMo-V2-Pro became the most-used model on OpenRouter by weekly token volume, and Chinese providers now serve roughly 45% of all OpenRouter traffic, up from under 2% a year ago."
+  },
+  "points": {
+    "kr": [
+      "강한 코딩 성능 + 100만 컨텍스트 + 초저가",
+      "오픈라우터 중국 점유율 1년 새 2%→45%",
+      "성능으로 먼저 신뢰, 브랜드는 나중에"
+    ],
+    "en": [
+      "Strong coding performance + 1M context + very low price",
+      "Chinese share of OpenRouter: under 2% to about 45% in a year",
+      "Performance-first adoption, attribution later"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "핵심은 지정학이 아니라, 'AI = 미국 연구소'라는 전제가 더는 안전하지 않다는 점입니다. 비용·컨텍스트·용도로 모델을 고르는 게 실무 역량이 됐어요.",
+    "en": "The lesson for builders isn't geopolitics, it's that 'AI equals a US lab' is no longer a safe default. Choosing a model by cost, context and task is now a practical skill."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "모델 고르는 PM·팀 참고 · 개발팀 공유",
+    "en": "Useful for PMs and teams picking AI models · Share with dev teams"
+  },
+  "comment": {
+    "kr": "1년 전엔 반올림하면 사라질 수치였는데, 지금은 트래픽의 절반에 가깝습니다. 교훈은 '중국이 이겼다'가 아니라, 가격과 성능이 브랜드 충성도보다 빨리 움직인다는 거예요.\n\n밑단 모델을 '신성불가침'이 아니라 '교체 가능한 부품'으로 보고 설계하는 게 안전합니다.",
+    "en": "A year ago this share was a rounding error; now it is nearly half the traffic. The takeaway isn't 'China won', it is that price and performance travel faster than brand loyalty.\n\nDesigning on the assumption that your underlying model is swappable, not sacred, is the safer bet."
+  },
+  "thumbLabel": "중국 AI",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

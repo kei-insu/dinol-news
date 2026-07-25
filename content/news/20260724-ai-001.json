@@ -1,0 +1,54 @@
+{
+  "contentId": "20260724-ai-001",
+  "date": "2026-07-24",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-23"
+  },
+  "url": "https://techcrunch.com/2026/07/23/experts-say-exploiting-anthropics-fable-isnt-how-kimi-k3-got-so-good/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 정책 · 지정학",
+    "en": "AI · Policy · Geopolitics"
+  },
+  "title": {
+    "kr": "전문가들 'Kimi K3, 앤스로픽 모델 도용 아니다' 백악관 주장에 반박",
+    "en": "Experts say exploiting Anthropic's Fable isn't how Kimi K3 got so good"
+  },
+  "summary": {
+    "kr": "백악관 과학기술정책실장 마이클 크라티오스가 중국 문샷AI의 Kimi K3가 앤스로픽 Fable 모델을 무단 증류(distillation)해 만들어졌다고 주장했지만, AI 연구자들은 기술적 시간표상 그 주장이 성립하기 어렵다고 반박했습니다.",
+    "en": "White House OSTP director Michael Kratsios accused China's Moonshot AI of building Kimi K3 through unauthorized distillation of Anthropic's Fable model and banned Nvidia chips, but AI researchers say the technical timeline doesn't support the claim."
+  },
+  "points": {
+    "kr": [
+      "크라티오스의 증류·칩 밀수 주장",
+      "기술 증거·학습 로그 미공개",
+      "Laude Institute·Allen Institute·OpenAI 연구자들의 반박"
+    ],
+    "en": [
+      "Kratsios's distillation and chip-smuggling claims",
+      "No technical evidence or training logs released",
+      "Researchers from Laude Institute, Allen Institute, OpenAI push back"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "AI 모델 출처 논쟁은 증거보다 빠르게 퍼진다는 것을 보여주는 사례입니다. 어떤 모델 위에 서비스를 구축할지 판단할 때 건강한 회의가 필요합니다.",
+    "en": "A reminder that AI-model provenance claims move fast and often outrun the evidence, so healthy skepticism helps when evaluating which models to build on."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "중국산 오픈모델 검토 팀에게 배경 참고용",
+    "en": "Background read for teams evaluating Chinese open models"
+  },
+  "comment": {
+    "kr": "이번 논쟁은 미중 AI 패권 경쟁이 기술 공방을 넘어 정치적 수사로 옮겨가고 있음을 보여줍니다. 정부 고위 관계자가 구체적 증거 없이 특정 기업을 저격하는 방식은 이례적이며, 연구자 커뮤니티의 즉각적인 반박이 뒤따랐다는 점도 주목할 만합니다.\n실무자 입장에서는 어떤 모델을 프로덕트에 채택할지 결정할 때 이런 정치적 노이즈와 실제 성능·라이선스 리스크를 분리해서 봐야 합니다. 오픈모델 생태계가 커질수록 이런 출처 논쟁은 계속 반복될 가능성이 높습니다.",
+    "en": "This dispute shows how the US-China AI rivalry is spilling from technical competition into political rhetoric. A senior administration official leveling specific allegations without public evidence, followed by swift pushback from independent researchers, is a pattern worth watching.\nFor teams evaluating open models, the practical takeaway is to separate the political noise from actual performance and licensing risk. Expect more of these provenance disputes as the open-model ecosystem grows."
+  },
+  "thumbLabel": "모델 증류 논란",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

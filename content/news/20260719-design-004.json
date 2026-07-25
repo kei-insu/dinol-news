@@ -1,0 +1,56 @@
+{
+  "contentId": "20260719-design-004",
+  "date": "2026-07-19",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-16"
+  },
+  "url": "https://www.dezeen.com/2026/07/16/studio-font-casa-diez-pies-mexico/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 주거",
+    "en": "Design · Architecture · Residential"
+  },
+  "title": {
+    "kr": "절벽 위 10개의 기둥이 떠받치는 멕시코 해안 주택",
+    "en": "Studio Font perches cliffside Mexico home atop concrete columns"
+  },
+  "summary": {
+    "kr": "스튜디오 폰트가 멕시코 마순테에 완공한 250㎡ 규모의 'Casa Diez Pies'(카사 디에스 피에스)는 10개의 콘크리트 기둥 위에 세워져, 태평양이 내려다보이는 해안 절벽을 따라 내려가면서도 식생 훼손을 최소화했습니다.",
+    "en": "Studio Font completed Casa Diez Pies, a 250-square-metre home in Mazunte, Mexico, raised on 10 concrete columns to step down a coastal cliff overlooking the Pacific while minimizing impact on the site's vegetation."
+  },
+  "points": {
+    "kr": [
+      "10개의 콘크리트 기둥이 구조·계단·욕실·수납을 겸함",
+      "마순테의 가파른 해안 절벽을 따라 내려가는 250㎡ 주택",
+      "건축가 라켈 폰트, 스튜디오 폰트"
+    ],
+    "en": [
+      "10 concrete columns double as structure, stairs, bathrooms and storage",
+      "250 sqm home steps down a steep coastal cliff in Mazunte",
+      "Architect: Raquel Font, Studio Font"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "구조적 필요를 프로그램·공간 경험까지 겸하게 만든 깔끔한 사례입니다. 기둥 하나하나가 하중 지지, 동선, 방의 역할을 동시에 합니다.",
+    "en": "A clean example of making structural necessity do triple duty as program and spatial experience — each column is load-bearing, circulation, and room all at once."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "경사지·구조 표현 프로젝트 레퍼런스로 훌륭 · 저장 추천",
+    "en": "Great reference for sloped-site and structural-expression projects · Save"
+  },
+  "comment": {
+    "kr": "가파른 해안 경사지에 짓는다는 것은 보통 대규모 토목공사와 고가 구조물 사이에서 선택해야 한다는 뜻인데, 스튜디오 폰트의 기둥 해법은 후자를 우아하게 풀어낸 사례입니다. 집 이름을 지지 기둥 10개에서 따온 '카사 디에스 피에스(열 개의 발 집)'로 지은 것부터가, 이 구조적 아이디어가 전체 콘셉트의 핵심임을 보여줍니다.\n이 프로젝트가 단순한 필로티 이상인 이유는, 기둥 하나하나가 계단·욕실·수납을 겸하게 만들어 구조와 프로그램을 층층이 쌓기보다 하나로 융합했다는 점입니다.\n까다로운 경사지에서 작업하는 사람이라면, 구조적 제약을 숨기지 않고 프로젝트를 조직하는 아이디어로 전환한 강력한 레퍼런스가 될 것입니다.",
+    "en": "Building on a steep coastal slope usually forces a choice between heavy earthwork or an elevated structure, and Studio Font's column solution is an elegant version of the latter. Naming the house after the ten support columns (Casa Diez Pies, or 'Ten-Foot House') signals how central this structural idea is to the whole concept.\nWhat makes it more than a simple pilotis move is that each column is doing double duty — housing stairs, bathrooms, or storage — so structure and program are fused rather than layered on top of each other.\nFor anyone designing on a difficult slope, this is a strong reference for how to turn a structural constraint into the organizing idea of a project instead of hiding it."
+  },
+  "thumbLabel": "경사지주택",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

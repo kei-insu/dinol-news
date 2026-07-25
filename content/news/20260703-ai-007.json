@@ -1,0 +1,54 @@
+{
+  "contentId": "20260703-ai-007",
+  "date": "2026-07-03",
+  "section": "ai",
+  "order": 7,
+  "source": {
+    "name": "Business Insider",
+    "publishedAt": "2026-07-02"
+  },
+  "url": "https://www.businessinsider.com/sam-altman-ai-reshape-material-conditions-human-life-2026-7",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 거버넌스 · 오피니언",
+    "en": "AI · Governance · Opinion"
+  },
+  "title": {
+    "kr": "샘 올트먼 'AI가 인간 삶의 물질적 조건을 재편할 것'…미국 주도 국제 포럼 제안",
+    "en": "Sam Altman: AI 'will reshape the material conditions of human life'"
+  },
+  "summary": {
+    "kr": "오픈AI CEO 샘 올트먼이 파이낸셜타임스 기고에서 'AI가 전기 이후 유례없는 규모로 인간 삶의 물질적 조건을 재편할 것'이라며, IAEA를 본뜬 '미국 주도 국제 AI 포럼'을 제안했습니다. 규칙을 지키는 국가·기업에만 기술 접근을 허용하자는 구상입니다.",
+    "en": "In an FT op-ed, OpenAI CEO Sam Altman wrote that AI 'will reshape the material conditions of human life' on a scale not seen since electricity, and proposed a 'US-led international forum' (modeled on the IAEA) to set safety standards and grant AI access only to those who follow the rules."
+  },
+  "points": {
+    "kr": [
+      "올트먼의 '미국 주도 포럼': 누가 들어가고 누가 정하나",
+      "IAEA(핵)를 모델로 든 이유",
+      "긴장: 안전 기준 vs 미국 권력 집중"
+    ],
+    "en": [
+      "Altman's 'US-led forum': who's in, who decides",
+      "Why he cites the IAEA (nuclear) as a model",
+      "The tension: safety standards vs concentrating US power"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "프런티어 랩 CEO가 'AI를 어떻게 통치할 것인가'를 공개적으로 주장한 글입니다. 이 카드를 같은 브리핑의 유엔 보고서·'AI에 FDA는 없다' 카드와 함께 읽어보세요. AI 거버넌스에 대한 자기 관점을 세우는 것이, 이제 디자이너의 기본 교양이 되어가고 있습니다.",
+    "en": "A frontier-lab CEO openly lobbying for how AI should be governed globally. Read this alongside the UN report and the 'no-FDA-for-AI' view in this brief; forming your own take on AI governance is becoming part of being a literate designer, not optional background noise."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 거버넌스 논쟁의 '한 축'으로 읽고, 오늘 브리핑의 유엔·크리슈난 카드와 비교해 보세요",
+    "en": "Read as one side of the AI-governance debate, then compare with the UN and Krishnan cards in today's brief"
+  },
+  "comment": {
+    "kr": "올트먼의 제안을 그대로 믿을 필요는 없습니다. '미국 주도 국제 포럼'은 안전을 명분으로 하지만, 결국 규칙을 정하는 자리에 누가 앉느냐의 문제이기도 합니다. 오늘 브리핑을 유엔(중립적 경고) → 올트먼(미국 주도 통합) → 크리슈난(규제 자체 반대) 순으로 읽으면, 같은 'AI 거버넌스'가 얼마나 다른 이해관계로 갈라지는지 한눈에 보입니다. 큐레이션의 재미는 하나의 정답이 아니라 이 대립을 나란히 놓는 데 있다고 생각합니다.",
+    "en": "You don't have to take Altman's proposal at face value. A 'US-led international forum' is justified by safety, but it's also a question of who gets to sit at the rule-making table. Read today's briefing in the order UN (neutral warning), then Altman (US-led coordination), then Krishnan (against regulation itself), and you see at a glance how the same 'AI governance' splits into very different interests. The fun of curation, I think, is placing these clashes side by side rather than offering one right answer."
+  },
+  "thumbLabel": "올트먼",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

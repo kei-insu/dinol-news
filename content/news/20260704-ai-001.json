@@ -1,0 +1,57 @@
+{
+  "contentId": "20260704-ai-001",
+  "date": "2026-07-04",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "The Verge",
+    "publishedAt": "2026-07-03"
+  },
+  "url": "https://www.theverge.com/ai-artificial-intelligence/961311/anthropic-claude-science-ai-drug-development",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 과학 · 제약",
+    "en": "AI · Science · Pharma"
+  },
+  "title": {
+    "kr": "앤트로픽, 신약 개발용 AI 작업공간 '클로드 사이언스' 공개",
+    "en": "Anthropic launches Claude Science, an AI workbench for drug discovery"
+  },
+  "summary": {
+    "kr": "앤트로픽이 연구자·제약 산업을 겨냥한 AI 작업공간 '클로드 사이언스'를 공개하고, 자체 신약 개발 랩까지 시작했습니다.",
+    "en": "Anthropic released Claude Science, an AI workbench aimed at researchers and the pharma industry, and is starting its own in-house drug discovery lab."
+  },
+  "points": {
+    "kr": [
+      "클로드 사이언스의 실제 기능",
+      "AI가 버티컬(전문화)로 가는 이유",
+      "앤트로픽의 신약 개발 직접 진출"
+    ],
+    "en": [
+      "What Claude Science actually does",
+      "Why AI is going vertical (specialized)",
+      "Anthropic entering drug discovery itself"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "service-designer"
+  ],
+  "designer": {
+    "kr": "프런티어 AI가 전문 '버티컬' 도구로 확장되는 신호입니다. 지금부터 특정 도메인(연구·법률·의료 등) 워크플로우 UX를 공부해 두세요. 범용 AI 화면 설계보다 '한 분야를 깊이 아는 디자이너'의 가치가 커집니다.",
+    "en": "A signal that frontier AI is moving into specialized 'vertical' tools. Start studying domain-specific workflow UX now; expertise in a niche (research, legal, medical) will matter more than generic AI-UI skills."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "지금 훑어보고, 다음 프로젝트 기획 때 다시 볼 '버티컬 AI 사례'로 북마크하세요",
+    "en": "Skim now, then bookmark as a vertical-AI reference to revisit when scoping your next project"
+  },
+  "comment": {
+    "kr": "범용 AI가 아니라 '특정 분야에 특화된 AI'가 표준이 되는 흐름이 뚜렷해지고 있습니다. 디자이너 입장에서 이건 남 일이 아닙니다. 우리가 매일 쓰는 디자인 툴도 결국 범용 챗봇이 아니라 '디자인 특화 에이전트'로 재편될 신호로 읽힙니다.\n\n지금 눈여겨봐야 할 건 기능 자체보다, 전문 도구가 AI를 어떻게 자기 워크플로우 안으로 녹여내는가입니다.",
+    "en": "The trend of 'AI specialized for a specific field,' rather than general-purpose AI, becoming the norm is getting clearer. For designers this isn't someone else's story: it reads as a signal that the design tools we use daily will be reshaped into 'design-specialized agents' rather than general chatbots.\n\nWhat to watch now is less the features themselves and more how professional tools fold AI into their own workflows."
+  },
+  "thumbLabel": "특화 AI",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}

@@ -1,0 +1,56 @@
+{
+  "contentId": "20260711-design-003",
+  "date": "2026-07-11",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-10"
+  },
+  "url": "https://www.yankodesign.com/2026/07/10/oakley-just-turned-a-math-paradox-into-a-997-sunglass/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 아이웨어",
+    "en": "Design · Product · Eyewear"
+  },
+  "title": {
+    "kr": "오클리, 뫼비우스의 띠에서 영감받은 997달러 선글라스 '인피니루프' 공개",
+    "en": "Oakley Just Turned a Math Paradox Into a $997 Sunglass"
+  },
+  "summary": {
+    "kr": "오클리의 신제품 선글라스 '인피니루프'가 뫼비우스의 띠라는 수학적 역설에서 형태적 영감을 얻었습니다. 7월 14일 한정 수량으로 997달러에 출시됩니다.",
+    "en": "Oakley's Infiniloop sunglasses take conceptual inspiration from the Mobius strip, a mathematical paradox, arriving 14 July in limited quantities at $997."
+  },
+  "points": {
+    "kr": [
+      "뫼비우스의 띠의 연속적인 단면 구조에서 형태 영감을 가져옴",
+      "997달러로 콘셉트형 한정판으로 포지셔닝",
+      "7월 14일 한정 수량 출시"
+    ],
+    "en": [
+      "Form inspired by the Mobius strip's continuous, one-sided geometry",
+      "Priced at $997, positioned as a conceptual limited release",
+      "Drops 14 July in limited quantities"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "시즌별 컬러웨이 리프레시가 아니라, 형태 자체를 개념적으로 밀어붙인 디자인을 프리미엄 가격에 내놓은 보기 드문 대중 아이웨어 브랜드 사례입니다.",
+    "en": "A rare case of a mass eyewear brand shipping a genuinely form-first, concept-driven design at a premium price point rather than a seasonal colorway refresh."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "콘셉트 중심 제품 디자인 무드보드 레퍼런스로 좋음 · 선택적으로",
+    "en": "Good mood-board reference for concept-driven product design · Optional"
+  },
+  "comment": {
+    "kr": "아이웨어가 이 정도로 개념적인 시도를 하는 경우는 소규모 독립 브랜드 밖에서는 드문데, 오클리 같은 메인스트림 브랜드가 뫼비우스의 띠 형태를 997달러에 내놓았다는 점은 프리미엄 제품 디자인의 방향성을 보여주는 신호입니다.\n가격보다는 수학적 개념이 어떻게 아이디어를 잃지 않으면서 착용 가능하고 양산 가능한 형태로 번역됐는지에 주목해서 볼 가치가 있습니다.",
+    "en": "Eyewear rarely gets this conceptually ambitious outside of small independent labels, so a mainstream brand like Oakley shipping a Mobius-strip form at a $997 price point is a notable signal about where premium product design is heading.\nWorth studying less for the price and more for how a mathematical concept got translated into a wearable, manufacturable form without losing its idea."
+  },
+  "thumbLabel": "제품디자인",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

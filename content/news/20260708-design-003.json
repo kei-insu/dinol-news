@@ -1,0 +1,56 @@
+{
+  "contentId": "20260708-design-003",
+  "date": "2026-07-08",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-01"
+  },
+  "url": "https://www.archdaily.com/1042807/architectures-of-movement-archdailys-july-editorial-focus",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축",
+    "en": "Design · Architecture"
+  },
+  "title": {
+    "kr": "아크데일리 7월 편집 주제 '이동의 건축' — 땅, 국경, 소속의 정치학",
+    "en": "Architectures of Movement: ArchDaily's July Editorial Focus"
+  },
+  "summary": {
+    "kr": "아크데일리의 7월 편집 주제 '이동의 건축'은 마하 쿰브 멜라의 사라지는 부교 도시부터 난민 캠프까지, 이동성과 임시 인프라가 영토·소속의 개념을 어떻게 재구성하는지를 다룹니다.",
+    "en": "ArchDaily's July editorial focus, 'Architectures of Movement,' examines how mobility, migration and temporary infrastructure — from the Maha Kumbh Mela's vanishing pontoon cities to refugee camps — reshape architecture's relationship to territory and belonging."
+  },
+  "points": {
+    "kr": [
+      "4억 명이 모였다가 완전히 해체되는 마하 쿰브 멜라의 임시 도시",
+      "국경 건축·난민캠프·코리빙·이주를 아우르는 주제",
+      "이동성을 '이 시대를 정의하는 공간 문제'로 규정"
+    ],
+    "en": [
+      "Maha Kumbh Mela's temporary city for 400 million pilgrims, then dismantled",
+      "Theme spans border architecture, refugee camps, co-living and migration",
+      "Movement framed as a defining spatial problem of the century"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "임시적이고 일시적인 공간 설계를 사고하는 데 풍부한 틀을 제공합니다. 등장했다가 확장되고 사라지는 시스템을 설계하는 사람이라면 건축을 넘어 참고할 만합니다.",
+    "en": "A rich framework for thinking about temporary and transient spatial design — relevant well beyond architecture, for anyone designing systems meant to appear, scale and disappear."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "공간·시스템 사고를 하는 이들에게 추천 · 참고 저장 권장",
+    "en": "Thought-provoking read for spatial and systems thinkers · Save for reference"
+  },
+  "comment": {
+    "kr": "이 글은 뉴스보다는 큐레이션적 논지에 가깝지만, '임시 건축'을 영구 건축물의 부차적 개념이 아니라 그 자체의 설계 원리를 가진 인프라로 재조명한다는 점에서 흥미롭습니다.\n대부분의 국가 수도보다 큰 도시가 몇 주 만에 세워졌다가 완전히 해체되는 마하 쿰브 멜라 사례는 이번 달 전체 기획의 강렬한 출발점입니다.\n스니펫 기반 요약이며, 이번 달 편집 시리즈는 계속 이어질 예정이니 전체 글은 아크데일리에서 직접 확인하시길 권장합니다.",
+    "en": "This is less a news item than a curatorial thesis, but it's a good prompt for reframing \"temporary architecture\" as infrastructure with its own design discipline, not an afterthought to permanent buildings.\nThe Kumbh Mela example - a city larger than most national capitals, built and fully dismantled within weeks - is a striking anchor for the whole month's coverage.\nSnippet-based summary - the full editorial series will unfold over the month, so check ArchDaily directly for the complete set of articles."
+  },
+  "thumbLabel": "이동성",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

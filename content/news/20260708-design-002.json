@@ -1,0 +1,56 @@
+{
+  "contentId": "20260708-design-002",
+  "date": "2026-07-08",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-07"
+  },
+  "url": "https://www.yankodesign.com/2026/07/07/the-8-best-tech-gadgets-of-july-2026/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품",
+    "en": "Design · Product"
+  },
+  "title": {
+    "kr": "얀코디자인이 꼽은 2026년 7월 최고의 테크 가젯 8",
+    "en": "The 8 Best Tech Gadgets of July 2026"
+  },
+  "summary": {
+    "kr": "얀코디자인이 2026년 7월 주목할 만한 가젯들을 정리했습니다. 두께 6mm의 마그네틱 보조배터리와 전원 없이 작동하는 증폭 스피커 등이 포함되며, '기능을 더하기보다 덜어내는' 디자인 철학을 강조합니다.",
+    "en": "Yanko Design rounds up July 2026's standout gadgets, including a 6mm-thick magnetic power bank and battery-free amplifying speakers, framing the month's design philosophy as restraint over feature-stacking."
+  },
+  "points": {
+    "kr": [
+      "실리콘-카본 배터리 탑재, 두께 6mm·98g 샤오미 마그네틱 보조배터리",
+      "충전·페어링이 필요 없는 배터리 프리 증폭 스피커",
+      "기능 추가보다 절제와 목적성을 강조한 7월의 디자인 테마"
+    ],
+    "en": [
+      "Xiaomi's 6mm, 98g magnetic power bank with silicon-carbon battery",
+      "Battery-free passive acoustic speakers with no charging or pairing",
+      "July's theme: restraint and single-purpose clarity over feature creep"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "소비자 하드웨어 디자인의 방향을 보여주는 스냅샷입니다. 기능을 늘리기보다 하나의 목적에 집중하고, 전자장치보다 소재가 더 많은 역할을 하는 흐름입니다.",
+    "en": "A useful snapshot of where consumer hardware design is heading — fewer features, sharper single-purpose execution, and materials doing more work than electronics."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "무드보드·레퍼런스 자료로 유용 · 영감 저장 추천",
+    "en": "Good mood-board and reference material · Save for inspiration"
+  },
+  "comment": {
+    "kr": "이런 라운드업은 여러 개별 리뷰를 다 읽지 않고도 산업 디자인 트렌드의 방향을 빠르게 파악할 수 있는 방법입니다.\n이번 달 반복적으로 등장하는 주제 - 절제, 단일 목적성, 소재 중심 사고 - 는 다른 디자인 매체들이 2026년 트렌드로 꼽는 흐름과도 맞닿아 있습니다.\n스니펫 기반 요약이므로 전체 목록과 제품 세부사항은 원문에서 다시 확인하시길 권장합니다.",
+    "en": "Roundups like this are a quick way to gauge where industrial design trends are heading without reading a dozen individual reviews.\nThe recurring theme this month - restraint, single-purpose objects, materials-first thinking - lines up with what other design outlets are also flagging for 2026.\nSnippet-based summary - the full list and product details should be checked in the original article."
+  },
+  "thumbLabel": "가젯",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

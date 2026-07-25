@@ -1,0 +1,57 @@
+{
+  "contentId": "20260701-design-006",
+  "date": "2026-07-01",
+  "section": "design",
+  "order": 6,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-01"
+  },
+  "url": "https://www.itsnicethat.com/articles/blanca-doba-bare-earth-graphic-design-project-010726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 타이포그래피",
+    "en": "Design · Branding · Typography"
+  },
+  "title": {
+    "kr": "브랜드를 만든다는 건 세계를 짓는 일, Blanca Doba의 Bare Earth 아이덴티티",
+    "en": "Building a brand means building a world: Blanca Doba's identity for Bare Earth"
+  },
+  "summary": {
+    "kr": "독학으로 3년 만에 성장한 디자이너 블랑카 도바가 가상의 뷰티 브랜드 'Bare Earth'의 아이덴티티를 만들었습니다. 로고에서 멈추지 않고 섬세한 톤, 장식적 타이포그래피, 레이스 테두리, 눌린 꽃 이미지로 하나의 '세계'를 지었습니다. 브랜딩은 워드마크가 아니라 세계를 짓는 일이라는 걸 보여줍니다.",
+    "en": "Graphic designer Blanca Doba's brand identity for fictional beauty brand Bare Earth explores ornate typography and soft, delicate design elements that extend far beyond a wordmark. The project demonstrates how a visual identity can construct an entire brand world through considered aesthetic choices."
+  },
+  "points": {
+    "kr": [
+      "로고를 넘어 '세계 짓기'로서의 브랜딩",
+      "타이포그래피를 앵커 삼아 시스템 전체를 이끄는 법",
+      "장식적 서체 + 깔끔한 모던 폰트(BN Cringe Sans·PP Mori)의 조합"
+    ],
+    "en": [
+      "Branding as 'world-building' beyond the logo",
+      "Letting typography anchor and drive the whole system",
+      "Ornate type + clean modern fonts (BN Cringe Sans, PP Mori)"
+    ]
+  },
+  "positions": [
+    "brand-designer",
+    "typographer"
+  ],
+  "designer": {
+    "kr": "도바는 타이포그래피에서 출발해 로고·색·이미지가 모두 그 무드를 따라오게 했습니다. 요소를 따로따로 만들지 말고, 하나의 앵커(주로 서체)에서 브랜드 '분위기'를 잡고 나머지를 거기에 맞춰보세요.\n\n또 그녀가 늘 하던 볼드·Y2K 스타일 밖으로 나갔다는 점도 눈여겨볼 만합니다. 폭이 곧 실력입니다.",
+    "en": "Doba started from typography and let it drive the whole system: logo, colour, imagery all followed the type's mood. Try building a brand 'atmosphere' from one anchor (often type) and let everything else follow, instead of designing each element in isolation. Notice too how she stepped outside her usual bold/Y2K style; range matters."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "브랜딩 사례 연구로 읽고, '아이덴티티는 로고 그 이상'임을 설득해야 할 때 레퍼런스로 저장하세요",
+    "en": "Read as a branding case study, and save it for when you need to argue that identity is more than a logo"
+  },
+  "comment": {
+    "kr": "가상의 브랜드를 위한 '연습작'인데도 완성도가 높은 게 인상적입니다. 핵심은 '브랜드를 만든다 = 하나의 세계를 짓는다'는 태도입니다. 로고 하나 그리고 끝내는 게 아니라, 서체의 무드에서 출발해 색·이미지·장식까지 한 방향으로 밀고 나갔습니다.\n\n그리고 자기가 잘하던 볼드·Y2K 스타일을 일부러 벗어난 점도 배울 만합니다. 디자이너의 실력은 '잘하는 하나'가 아니라 '얼마나 다른 톤을 오갈 수 있는가'에서 갈립니다. AI가 시안을 쏟아내는 시대에, 이런 '분위기를 설계하는 감각'이야말로 사람이 지켜야 할 영역입니다.",
+    "en": "It's striking how polished this is even though it's a 'practice piece' for a fictional brand. The core is an attitude: 'building a brand means building a world.' Rather than drawing one logo and calling it done, it starts from the mood of the typeface and pushes color, imagery and ornament all in one direction.\n\nAlso worth learning: the designer deliberately stepped away from the bold, Y2K style they're known for. A designer's skill isn't 'one thing done well' but 'how many different tones they can move between.' In an era where AI floods us with mockups, this sense for designing a mood is exactly the territory humans should hold."
+  },
+  "thumbLabel": "브랜딩",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

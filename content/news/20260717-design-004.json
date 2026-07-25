@@ -1,0 +1,56 @@
+{
+  "contentId": "20260717-design-004",
+  "date": "2026-07-17",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-16"
+  },
+  "url": "https://www.yankodesign.com/2026/07/16/xpeng-l03-brings-ex-ferrari-designer-and-520-km-range-to-europe/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 자동차",
+    "en": "Design · Product · Automotive"
+  },
+  "title": {
+    "kr": "전 페라리 디자이너가 그린 XPeng L03, 520km 주행거리로 유럽 상륙",
+    "en": "XPeng L03 Brings Ex-Ferrari Designer and 520 km Range to Europe"
+  },
+  "summary": {
+    "kr": "중국 전기차 업체 XPeng이 SUV 쿠페 'L03'을 공개했다. 전 페라리 익스테리어 디자인 총괄 후안마 로페즈가 이끄는 글로벌 디자인팀이 세련된 조형과 실용성, 소프트웨어 중심 전략을 결합해 완성했다.",
+    "en": "XPeng unveiled the L03, a global-facing SUV coupe combining sleek design, family-friendly practicality and software-first ambition, developed by a global design team led by former Ferrari exterior design chief JuanMa López."
+  },
+  "points": {
+    "kr": [
+      "전 페라리 익스테리어 디자인 총괄이 팀 리드",
+      "세련된 조형과 실용성을 결합한 SUV 쿠페 형태",
+      "520km 주행거리로 유럽 시장 공략"
+    ],
+    "en": [
+      "Led by ex-Ferrari exterior design chief JuanMa López",
+      "SUV coupe form blends sleekness with family practicality",
+      "520 km range targeting European market entry"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "슈퍼카 디자인 언어가 대중적인 소프트웨어 중심 전기차로 어떻게 옮겨가는지 보여주는 사례입니다. EV 디자인이 하나로 수렴하는 흐름을 보는 제품·모빌리티 디자이너에게 유용합니다.",
+    "en": "A case study in how legacy supercar design language gets translated into mainstream, software-heavy EVs — relevant for product and transportation designers watching the EV design convergence."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "자동차·제품 디자인 트렌드 참고용 · 선택",
+    "en": "Good reference for automotive/product design trends · Optional"
+  },
+  "comment": {
+    "kr": "페라리 출신 디자이너가 대중 전기 SUV를 그렸다는 점 자체가 상징적입니다. 슈퍼카의 조형 언어가 이제 패밀리카 시장까지 내려오고 있다는 뜻이니까요.\n유럽 진출을 겨냥한 520km 주행거리 스펙과 소프트웨어 중심 설계는 중국 EV 브랜드들이 단순히 가격 경쟁이 아니라 디자인·기술 경쟁으로 전략을 옮기고 있음을 보여줍니다.",
+    "en": "It's telling in itself that a former Ferrari designer drew a mainstream electric SUV — the supercar's formal language is now trickling down to the family-car market.\nThe 520 km range spec and software-first approach, aimed squarely at Europe, show Chinese EV brands shifting their competitive strategy from pure price to design and technology."
+  },
+  "thumbLabel": "모빌리티",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

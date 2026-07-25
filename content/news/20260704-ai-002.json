@@ -1,0 +1,54 @@
+{
+  "contentId": "20260704-ai-002",
+  "date": "2026-07-04",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "The Verge",
+    "publishedAt": "2026-07-03"
+  },
+  "url": "https://www.theverge.com/ai-artificial-intelligence/961265/midjourney-medical-ultrasound-scanner-behind-the-scenes-video",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 의료 · 하드웨어",
+    "en": "AI · Healthcare · Hardware"
+  },
+  "title": {
+    "kr": "미드저니, 60초 전신 초음파 스캐너 개발 중",
+    "en": "Midjourney is building a 60-second full-body ultrasound scanner"
+  },
+  "summary": {
+    "kr": "AI 이미지 생성기 미드저니가 7,400만 달러 이상을 투자해 전신 초음파 검진 사업을 준비 중이며, 스캐너 비하인드 영상을 공개했습니다.",
+    "en": "AI image generator Midjourney is investing over $74M to build a whole-body ultrasound screening business, revealing behind-the-scenes video of the scanner."
+  },
+  "points": {
+    "kr": [
+      "이미지 AI 기업이 스캐너를 만드는 이유",
+      "7,400만 달러+ 헬스케어 베팅",
+      "'실물 AI 제품'의 모습"
+    ],
+    "en": [
+      "Why an image-AI firm builds a scanner",
+      "The $74M+ healthcare bet",
+      "What 'physical AI products' look like"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "생성 AI 기업이 실물 의료 하드웨어로 진출한 사례입니다. 'AI 제품=화면'이라는 틀을 깨고, 기기·센서를 위한 설계도 연습해 두세요. AI가 물리 세계로 갈수록 화면 밖 경험 설계 역량이 필요해집니다.",
+    "en": "A generative-AI company moving into physical medical hardware. Broaden your definition of 'AI product'; practice designing for devices and sensors, not just screens, as AI moves into the physical world."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "'피지컬 AI' 트렌드 관찰용으로 저장하세요. 생성 AI의 방향만 기억해 두면 됩니다",
+    "en": "Save for physical-AI trend watching; note where generative AI is heading, no action needed yet"
+  },
+  "comment": {
+    "kr": "이미지 생성 AI로 유명한 미드저니가 갑자기 '의료 스캐너'를 만든다니 뜬금없어 보이지만, 흐름은 하나로 이어집니다. AI가 화면 밖 물리 세계로 나가고 있다는 것. 오늘 브리핑의 일본 '피지컬 AI' 카드와도 통합니다.\n\n디자이너에게 이건 미리 준비할 신호입니다. 지금까지 우리가 다룬 건 대부분 '화면 속 픽셀'이었지만, AI가 기기·센서·하드웨어로 확장되면 '만질 수 있는 것의 경험'을 설계할 사람이 필요해집니다. 당장 뭘 바꾸라는 게 아니라, '화면이 전부가 아닐 수 있다'는 가능성을 열어두라는 이야기입니다.",
+    "en": "Midjourney, famous for image generation, suddenly making a 'medical scanner' looks random, but the thread is one: AI is moving out beyond the screen into the physical world. It connects with today's Japan 'physical AI' card.\n\nFor designers this is a signal to prepare early. Most of what we've handled has been 'pixels on a screen,' but as AI expands into devices, sensors and hardware, someone will be needed to design 'the experience of touchable things.' It's not asking you to change anything today, just to keep open the possibility that the screen may not be everything."
+  },
+  "thumbLabel": "스캐너",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

@@ -1,0 +1,56 @@
+{
+  "contentId": "20260717-design-001",
+  "date": "2026-07-17",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-16"
+  },
+  "url": "https://www.archdaily.com/1148650/a-temporary-train-station-for-roskilde-festival-royal-danish-academy",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축 · 교육",
+    "en": "Design · Architecture · Education"
+  },
+  "title": {
+    "kr": "로스킬레 페스티벌을 위한 임시 기차역 / 로열 데니시 아카데미",
+    "en": "A Temporary Train Station for Roskilde Festival / Royal Danish Academy"
+  },
+  "summary": {
+    "kr": "로열 데니시 아카데미 건축과 학생들이 로스킬레 페스티벌을 위한 해체·재사용 가능한 임시 기차역을 설계했다. 매년 여름 8일간 12만 5천 명 이상이 기차로 몰려들며 덴마크 4번째로 큰 '도시'가 되는 축제 현장을 위한 프로젝트다.",
+    "en": "Royal Danish Academy architecture students designed a demountable, reusable train station for Roskilde Festival, which for eight days each summer becomes Denmark's fourth-largest 'city' as over 125,000 people arrive by train."
+  },
+  "points": {
+    "kr": [
+      "건축과 2학년생 30명이 직접 설계·시공",
+      "구성 요소를 매년 해체·보관·재사용 가능",
+      "단기 소비보다 자원 재사용을 우선하는 설계"
+    ],
+    "en": [
+      "Designed and built by 30 second-year architecture students",
+      "Components can be dismantled, stored and reused each year",
+      "Prioritizes resource reuse over short-term consumption"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "분해·재사용을 전제로 한 설계와 커뮤니티 참여형 시공의 좋은 사례입니다. 팝업·임시 공간 프로젝트를 기획할 때 참고할 만합니다.",
+    "en": "A compact case study in designing for disassembly and community-built infrastructure — useful reference for temporary/pop-up spatial projects."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "임시 구조물 설계 레퍼런스로 유용 · 포트폴리오 리서치용 저장 추천",
+    "en": "Good reference for temporary structure design · Save for portfolio research"
+  },
+  "comment": {
+    "kr": "학생 프로젝트임에도 매년 12만 명 이상이 실제로 이용하는 실전 인프라라는 점이 특별합니다. 이론이 아니라 실제 사용자와 하중을 견뎌야 하는 설계 경험을 학생들에게 제공하는 교육 모델이기도 합니다.\n해체·보관·재사용을 전제로 한 모듈형 설계는 페스티벌·팝업 스토어 등 단기 공간 기획에도 그대로 적용할 수 있는 접근입니다. 지속가능성을 명분이 아니라 구조 자체에 내재시킨 사례로 눈여겨볼 만합니다.",
+    "en": "It's remarkable that a student project actually serves over 120,000 real users every year. It's also an education model that gives students real load-bearing, real-user design experience instead of purely theoretical exercises.\nThis dismantle-store-reuse modular approach translates directly to festival and pop-up retail planning. It's a good example of sustainability built into the structure itself rather than treated as a marketing point."
+  },
+  "thumbLabel": "임시역사",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

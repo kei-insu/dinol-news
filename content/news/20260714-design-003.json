@@ -1,0 +1,56 @@
+{
+  "contentId": "20260714-design-003",
+  "date": "2026-07-14",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-13"
+  },
+  "url": "https://www.dezeen.com/2026/07/13/art-deco-apartment-sydney-ysg/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 인테리어 · 리노베이션",
+    "en": "Design · Interior · Renovation"
+  },
+  "title": {
+    "kr": "YSG, 아르데코 살려낸 시드니 아파트 '더 젠틀맨'",
+    "en": "YSG draws on art deco for Sydney apartment revamp"
+  },
+  "summary": {
+    "kr": "시드니의 YSG 스튜디오가 1929년 아르데코 건물 내 95제곱미터 아파트를 전면 리노베이션했습니다. '더 젠틀맨'이라 이름 붙인 이 집은 장신인 두 클라이언트를 위해 출입구 높이를 높이면서도 원본 아치트레이브를 보존해 재설치했습니다.",
+    "en": "Sydney studio YSG fully renovated a 95-sq-m 1929 art deco apartment in Redfern, dubbed 'The Gentleman,' raising entryway heights for its tall clients while preserving and reinstating original architraves with chamfered surfaces and Balkan-inspired geometric motifs."
+  },
+  "points": {
+    "kr": [
+      "2미터가 넘는 클라이언트를 위해 높인 출입구",
+      "1929년산 원본 아치트레이브 보존·재설치",
+      "발칸 킬림 문양에서 착안한 기하학적 모티프"
+    ],
+    "en": [
+      "Entryways raised for clients over 2m tall",
+      "Original 1929 architraves preserved and reinstated",
+      "Balkan cilim-inspired geometric motifs throughout"
+    ]
+  },
+  "positions": [
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "거주자의 필요에 맞춰 비례를 조정하면서도 100년 가까운 원본 디테일을 물리적으로 보존·재설치한, 존중 있는 헤리티지 리노베이션의 좋은 사례입니다.",
+    "en": "A good case study in respectful heritage renovation: modifying proportions for the occupants' needs while physically preserving and reinstating century-old original details."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "헤리티지 인테리어 리노베이션 레퍼런스로 추천",
+    "en": "Great reference for heritage interior renovation"
+  },
+  "comment": {
+    "kr": "결이 좋은 헤리티지 리노베이션의 본보기다. YSG는 1929년 아르데코 원형을 물리적으로 보존하면서, 지금 사람들이 실제로 사는 방식에 맞춰 비례를 손봤다. 변화와 보존을 한 동작 안에 담았다.\n오래된 건물을 다루는 인테리어 디자이너에게, 헤리티지 작업이 공간을 박제하는 게 아님을 일깨운다. 원형이 여전히 읽히도록 '조심스럽게 편집'하는 일이다.",
+    "en": "A model of respectful heritage renovation. YSG adjusts proportions for how people actually live now while physically preserving the 1929 art deco fabric: change and conservation held in one move.\nFor interior designers working with old buildings, it's a reminder that heritage work isn't freezing a space in time. It's editing carefully enough that the original still reads."
+  },
+  "thumbLabel": "아르데코",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

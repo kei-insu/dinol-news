@@ -1,0 +1,57 @@
+{
+  "contentId": "20260704-ai-003",
+  "date": "2026-07-04",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-03"
+  },
+  "url": "https://techcrunch.com/2026/07/03/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 레퍼런스 · 교육",
+    "en": "AI · Reference · Education"
+  },
+  "title": {
+    "kr": "테크크런치, 자주 쓰는 AI 용어 정리 사전 (LLM·RAG·환각 등)",
+    "en": "TechCrunch's living glossary of common AI terms (LLM, RAG, hallucination…)"
+  },
+  "summary": {
+    "kr": "테크크런치가 LLM·추론·파인튜닝·증류·환각 등 자주 쓰는 AI 용어를 쉬운 말로 풀어쓴 '살아있는' 사전을 업데이트했습니다.",
+    "en": "TechCrunch updated its evergreen AI glossary: plain-English definitions of terms like LLM, inference, fine-tuning, distillation, and hallucination, as a living reference."
+  },
+  "points": {
+    "kr": [
+      "LLM·RAG·RLHF 쉬운 정의",
+      "'환각'의 진짜 의미",
+      "버티컬 AI가 환각을 줄이는 이유"
+    ],
+    "en": [
+      "Plain definitions of LLM, RAG, RLHF",
+      "What 'hallucination' really means",
+      "Why vertical AI reduces hallucinations"
+    ]
+  },
+  "positions": [
+    "ux-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "직군 간 협업에 유용한 공통 용어집입니다. 북마크해 두고 헷갈리는 용어부터 훑어보세요. PM·개발자와 같은 AI 언어로 말할수록 AI 프로젝트에서 더 날카로운 협업자가 됩니다.",
+    "en": "A handy shared vocabulary for cross-functional work. Bookmark it and skim the terms you're fuzzy on; speaking the same AI language as PMs and engineers makes you a sharper collaborator in AI projects."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "'AI 용어집'으로 북마크해 두고, AI에 익숙지 않은 동료에게 링크를 공유하세요",
+    "en": "Bookmark as your go-to AI glossary and share the link with non-AI teammates"
+  },
+  "comment": {
+    "kr": "이건 화려한 뉴스는 아니지만, 디자이너에게 실질적으로 가장 쓸모 있는 카드일 수 있습니다. AI 프로젝트에서 디자이너가 겉도는 흔한 이유가 '개발자·PM이 쓰는 용어를 정확히 모르는 것'입니다. '환각(hallucination)', 'RAG', '파인튜닝' 같은 말을 알아듣고 쓸 수 있으면, 회의에서 위축되지 않고 오히려 설계에 개입할 지점을 짚어낼 수 있습니다.\n\n북마크해 두고 헷갈리는 것부터 하나씩 익히세요. 좋은 협업은 '같은 언어를 쓰는 것'에서 시작합니다. 디자인 실력만큼이나 이 공통 언어가 AI 시대의 경쟁력입니다.",
+    "en": "This isn't flashy news, but it may be the most practically useful card here for designers. A common reason designers drift on AI projects is 'not precisely knowing the terms developers and PMs use.' If you can understand and use words like 'hallucination,' 'RAG' and 'fine-tuning,' you won't shrink in meetings; you'll spot exactly where to step into the design.\n\nBookmark it and learn the confusing ones one at a time. Good collaboration starts with 'speaking the same language.' As much as design skill, this shared vocabulary is an edge in the AI era."
+  },
+  "thumbLabel": "AI 용어",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

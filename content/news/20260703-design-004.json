@@ -1,0 +1,57 @@
+{
+  "contentId": "20260703-design-004",
+  "date": "2026-07-03",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Design Week",
+    "publishedAt": "2026-07-02"
+  },
+  "url": "https://www.designweek.co.uk/design-leader-form-brands-studios-alex-andlaw/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 리더십 · 인터뷰",
+    "en": "Design · Leadership · Interview"
+  },
+  "title": {
+    "kr": "디자인 리더 인터뷰: 폼 브랜즈 스튜디오의 알렉스 앤드로",
+    "en": "design/leader: FORM Brands Studio's Alex Andlaw"
+  },
+  "summary": {
+    "kr": "디자인 위크의 '디자인 리더' 시리즈에서 폼 브랜즈 스튜디오의 알렉스 앤드로가 스튜디오 운영을 돌아봅니다. 단순함의 가치, 리더십이란 결국 남들이 좋은 일을 해낼 조건을 만드는 것이라는 점, 그리고 일을 과하게 복잡하게 만들려는 충동을 참는 법에 대해 이야기합니다.",
+    "en": "In Design Week's design/leader series, FORM Brands Studio's Alex Andlaw reflects on running a studio: the value of simplicity, why leadership is mostly about creating conditions for others to do good work, and resisting the urge to over-complicate."
+  },
+  "points": {
+    "kr": [
+      "단순함이 미학이 아니라 리더십 역량인 이유",
+      "'남이 잘할 조건을 만드는' 것으로서의 리더십",
+      "일을 과하게 복잡하게 만들려는 충동 다스리기"
+    ],
+    "en": [
+      "Why simplicity is a leadership skill, not just an aesthetic",
+      "Leadership as 'creating conditions' for others",
+      "Resisting the urge to over-complicate work"
+    ]
+  },
+  "positions": [
+    "design-lead",
+    "brand-designer"
+  ],
+  "designer": {
+    "kr": "스튜디오·팀을 이끌거나 언젠가 이끌 디자이너를 위한 솔직한 인터뷰입니다. 지금 맡은 일에서 '내가 더 잘하는 것'과 '남이 잘하도록 돕는 것' 중 어디에 시간을 쓰는지 돌아보세요. 시니어로 갈수록 후자의 비중이 커지고, 이 인터뷰가 그 전환의 좋은 참고가 됩니다.",
+    "en": "An honest interview for designers who lead (or will lead) a team. Reflect on where your time goes between 'doing great work myself' and 'helping others do great work.' As you become senior, the second matters more, and this piece is a useful mirror for that shift."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "팀을 이끌거나 이끌고 싶다면 읽고, 프로젝트가 과하게 복잡해질 때 다시 볼 문장 한두 개를 저장하세요",
+    "en": "Read if you lead or want to lead, and save a quote or two to revisit when a project starts feeling over-complicated"
+  },
+  "comment": {
+    "kr": "이 인터뷰에서 가장 오래 남는 건 '단순함'을 미감이 아니라 리더십의 문제로 다룬 대목입니다. 주니어 땐 '내가 얼마나 잘 만드느냐'가 전부지만, 시니어·리더가 되면 '남이 잘 만들 조건을 어떻게 만드느냐'로 질문이 바뀝니다.\n\n그리고 그 조건의 핵심이 결국 '복잡하게 만들지 않는 것'이라는 통찰이 인상적입니다. 디자인이든 조직이든, 잘하는 사람은 더하는 게 아니라 덜어낼 줄 아는 것 같습니다.",
+    "en": "What stays with me longest from this interview is the passage treating 'simplicity' not as an aesthetic but as a matter of leadership. As a junior, 'how well I make things' is everything; as a senior or leader, the question shifts to 'how do I create the conditions for others to make things well.'\n\nAnd the insight that the core of those conditions is ultimately 'not making things complicated' is striking. In design or in organizations, the good ones seem to know how to subtract, not add."
+  },
+  "thumbLabel": "리더십",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

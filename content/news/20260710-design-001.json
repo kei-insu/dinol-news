@@ -1,0 +1,56 @@
+{
+  "contentId": "20260710-design-001",
+  "date": "2026-07-10",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-09"
+  },
+  "url": "https://www.dezeen.com/2026/07/09/riba-national-awards-2026-uk/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축 · 수상",
+    "en": "Design · Architecture · Awards"
+  },
+  "title": {
+    "kr": "영국건축가협회, 2026년 최고의 영국 건축물 발표",
+    "en": "RIBA announces best British buildings for 2026"
+  },
+  "summary": {
+    "kr": "영국왕립건축가협회(RIBA)가 2026년 내셔널 어워드 수상작 32곳을 발표했습니다. 대다수가 런던 소재이며, 보존·리트로핏 프로젝트부터 문화예술 공간, 현대 주택까지 다양합니다.",
+    "en": "RIBA named 32 winners of its National Awards 2026, the majority in London, spanning conservation and retrofit projects, arts and cultural spaces, and contemporary housing."
+  },
+  "points": {
+    "kr": [
+      "32개 수상작 발표, 대다수가 런던 소재",
+      "램드어스(다짐흙) 주택, 대학 캠퍼스, 스코틀랜드 하일랜드 코티지 등이 주요 수상작에 포함",
+      "수상작은 7월 16일 발표될 스털링상 후보 자격 획득"
+    ],
+    "en": [
+      "32 winners announced, majority based in London",
+      "Mix of a rammed-earth house, a university campus and a Scottish Highlands cottage among highlights",
+      "Winners now eligible for the Stirling Prize shortlist, announced 16 July"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "영국 심사위원단이 지금 무엇을 높이 평가하는지 보여주는 연례 스냅샷입니다. 리트로핏·보존 프로젝트가 대형 신축과 나란히 수상했다는 점에서 업계 우선순위의 방향을 읽을 수 있습니다.",
+    "en": "A useful annual snapshot of what UK juries are rewarding right now, retrofit and conservation projects standing alongside major new builds signals where the profession's priorities are heading."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "영국 건축 트렌드 참고용 · 스털링상 발표 후속 추적용 저장 추천",
+    "en": "Good reference for UK architecture trends · Save for Stirling Prize follow-up"
+  },
+  "comment": {
+    "kr": "32곳이라는 수상 규모는 꽤 넓지만, 보존·리트로핏 프로젝트가 신축 문화시설·주택과 나란히 상을 받았다는 점이 눈에 띕니다. 철거보다 기존 구조물 재활용을 밀어붙이는 영국 건축계의 전반적 흐름과 맞닿아 있습니다.\n진짜 관전 포인트는 7월 16일입니다. 이 32곳 중에서 스털링상 후보가 추려지므로, 이번 발표는 사실상 다음 이슈에 대한 예고편에 가깝습니다.",
+    "en": "32 winners is a wide net, but the fact that conservation and retrofit projects sit alongside new cultural buildings and housing is worth noting, it tracks with the broader UK push toward reusing existing structures over demolition.\nThe real story continues on 16 July when the Stirling Prize shortlist is drawn from this pool, so this list is really a preview of what to watch next."
+  },
+  "thumbLabel": "건축상",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260705-ai-002",
+  "date": "2026-07-05",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "Variety",
+    "publishedAt": "2026-07-04"
+  },
+  "url": "https://variety.com/2026/film/news/midjourney-studios-ai-copyright-discovery-1236800902/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 창작 · 저작권",
+    "en": "AI · Creative · Copyright"
+  },
+  "title": {
+    "kr": "미드저니, 자신을 고소한 디즈니·유니버설·워너에 '당신들의 AI 사용도 공개하라' 역공",
+    "en": "Midjourney demands Disney, Universal, Warner reveal their own AI use"
+  },
+  "summary": {
+    "kr": "이미지 생성 AI 미드저니가 자신을 저작권 침해로 고소한 디즈니·유니버설·워너브러더스에게 '당신들도 내부적으로 AI를 어떻게 쓰는지 법정에서 공개하라'고 역으로 요구했습니다. 스튜디오들은 2025년 미드저니가 자사 캐릭터(다스베이더·슈퍼맨·심슨 등)를 무단 생성하게 한다며 최대 작품당 15만 달러를 청구했고, 미드저니는 '공개 이미지 학습은 공정 이용이며 스튜디오도 같은 일을 한다'는 논리로 맞서고 있습니다.",
+    "en": "AI image generator Midjourney is pushing a federal court to force Disney, Universal and Warner Bros. to disclose how they use AI internally, as part of its defense in the studios' 2025 copyright suit. Midjourney argues training on public images is fair use, and that the studios may be doing the very thing they're suing over."
+  },
+  "points": {
+    "kr": [
+      "스튜디오들이 AI의 저작권 캐릭터 생성을 두고 미드저니 제소(2025)",
+      "미드저니는 '공정 이용' + '당신들도 한다'(unclean hands)로 반격",
+      "판결이 생성형 AI와 창작자 전체의 선례가 될 수 있음"
+    ],
+    "en": [
+      "Studios sued Midjourney (2025) over AI-generated copyrighted characters",
+      "Midjourney counters with 'fair use' + 'you do it too' (unclean hands)",
+      "The ruling could set precedent for all generative AI and creators"
+    ]
+  },
+  "positions": [
+    "illustrator",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "이 소송은 '디자이너·창작자가 생성형 AI를 어디까지 써도 되는가'를 규정할 싸움입니다. 핵심 질문은 이겁니다. 저작권 있는 캐릭터로 AI를 학습시키는 건 '도둑질'인가 '공정 이용'인가.\n\n법원이 어느 쪽으로 판단하든, AI 도구로 무엇을 만들어도 법적으로 안전한지가 여기서 정해집니다. AI 이미지 생성을 조금이라도 쓴다면 눈여겨볼 사건입니다.",
+    "en": "This is the fight that will define how designers and creators can (and can't) use generative AI. At its heart: is training AI on copyrighted characters 'theft' or 'fair use'? However the court rules, it will shape what's legally safe to make with these tools, worth watching closely if AI image generation is anywhere near your workflow."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "AI·저작권의 풍향계로 이 사건을 따라가세요; 안전하게 만들 수 있는 범위가 여기서 갈립니다",
+    "en": "Follow this case as the bellwether for AI-and-copyright; it affects what you can safely make"
+  },
+  "comment": {
+    "kr": "이 소송은 우리 모두의 일입니다. AI로 이미지를 만드는 순간, 우리는 '이 결과물이 누군가의 저작권을 침해하는가'라는 질문 위에 서 있게 됐으니까요.\n\n재미있는 건 미드저니의 반격 논리입니다. '당신들(할리우드 스튜디오)도 내부적으로 AI를 쓰면서 왜 우리만 고소하냐'는 거죠. 이게 사실로 드러나면 '업계 관행'이라는 방어가 성립합니다.\n\n어느 쪽이 이기든, 이 판결은 디자이너가 AI 도구로 무엇을 만들어도 되는지의 경계선을 그을 겁니다. 도구가 강력해질수록, 그 도구를 '어디까지 써도 되는가'라는 법적·윤리적 감각이 실력만큼 중요해집니다.",
+    "en": "This lawsuit is everyone's business. The moment we make an image with AI, we stand on the question 'does this output infringe someone's copyright?'\n\nWhat's interesting is Midjourney's counter-logic: 'you (Hollywood studios) use AI internally too, so why sue only us?' If that proves true, an 'industry practice' defense holds.\n\nWhichever side wins, this ruling will draw the line on what designers may make with AI tools. The more powerful the tool, the more a legal and ethical sense of 'how far you may use it' matters as much as skill."
+  },
+  "thumbLabel": "저작권",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

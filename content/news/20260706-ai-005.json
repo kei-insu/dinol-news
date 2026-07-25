@@ -1,0 +1,57 @@
+{
+  "contentId": "20260706-ai-005",
+  "date": "2026-07-06",
+  "section": "ai",
+  "order": 5,
+  "source": {
+    "name": "Figma Blog",
+    "publishedAt": "2026-06-24"
+  },
+  "url": "https://www.figma.com/blog/config-2026-recap/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 디자인 툴 · UX",
+    "en": "AI · Design Tool · UX"
+  },
+  "title": {
+    "kr": "피그마 Config 2026, 모션·셰이더·생성형 플러그인 그리고 7월 '코드 레이어'",
+    "en": "Config 2026: New materials, new tools and a more expressive canvas"
+  },
+  "summary": {
+    "kr": "Config 2026에서 피그마가 네이티브 모션(타임라인·키프레임), AI 셰이더 필, 말로 만드는 생성형 플러그인, Weave 노드 워크플로를 캔버스에 얹었습니다. '코드 레이어' 얼리액세스는 7월 시작.",
+    "en": "At Config 2026, Figma added native motion (timeline + keyframes), AI-generated shader fills, describe-to-build generative plugins and Weave node workflows on the canvas, with Code Layers early access starting in July."
+  },
+  "points": {
+    "kr": [
+      "피그마 모션 타임라인·키프레임",
+      "AI 셰이더 필·생성형 플러그인",
+      "7월 도착하는 코드 레이어"
+    ],
+    "en": [
+      "Figma Motion timeline and keyframes",
+      "AI shader fills and generative plugins",
+      "Code Layers arriving in July"
+    ]
+  },
+  "positions": [
+    "ui-designer",
+    "ux-designer"
+  ],
+  "designer": {
+    "kr": "피그마가 모션·이펙트·코드를 한 파일로 끌어모으고 있습니다. Adobe로 넘나드는 수고는 줄지만, 그만큼 익혀야 할 도구 범위도 넓어집니다.",
+    "en": "Figma keeps pulling motion, effects and code into one file, less tool-hopping to Adobe, but also pressure to learn a broader toolset."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "디자인 시스템팀 베타 체험 추천 · 프로덕트팀 공유",
+    "en": "Design-system teams should try the betas · Share with your product team"
+  },
+  "comment": {
+    "kr": "모션·셰이더·코드까지 한 파일로 들어오면서, 피그마가 'UI를 그리는 툴'에서 '만드는 것 전부를 담는 캔버스'로 넘어가고 있다고 봅니다. Adobe 영역을 정면으로 파고든 셈이죠.\n\n도구의 경계가 흐려질수록 디자이너에게 요구되는 범위도 함께 넓어집니다. 편해지는 만큼, 무엇을 만들지 판단하는 '방향 설정' 역량이 더 중요해질 거예요.",
+    "en": "With motion, shaders and code all landing in one file, Figma is shifting from 'a tool to draw UI' toward 'a canvas that holds everything you make', moving straight into Adobe's territory.\n\nAs tool boundaries blur, so does the range expected of designers. The easier production gets, the more that 'deciding what to make' becomes the real differentiating skill."
+  },
+  "thumbLabel": "피그마",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

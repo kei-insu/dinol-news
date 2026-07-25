@@ -1,0 +1,56 @@
+{
+  "contentId": "20260711-design-004",
+  "date": "2026-07-11",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-10"
+  },
+  "url": "https://www.yankodesign.com/2026/07/10/get-ready-for-the-pavilion-that-was-designed-by-the-sun-itself/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 설치",
+    "en": "Design · Architecture · Installation"
+  },
+  "title": {
+    "kr": "태양이 직접 설계한 파빌리온, 그림자로 완성된 건축",
+    "en": "Get Ready for the Pavilion That Was Designed by the Sun Itself"
+  },
+  "summary": {
+    "kr": "태양광 패널 축소 모형을 평평한 면 위에 놓고, 8시간 동안 시시각각 변하는 태양의 그림자를 그대로 구조의 기본 형태로 삼은 파빌리온 디자인입니다.",
+    "en": "A pavilion design used a scale model of solar panels placed above a flat surface, letting the sun's shadows over eight hours become the raw geometry for the entire structure."
+  },
+  "points": {
+    "kr": [
+      "태양광 패널 축소 모형으로 8시간 동안 실제 그림자 촬영",
+      "그림자 패턴을 그대로 구조의 기본 형태로 활용",
+      "환경 데이터를 생성 디자인의 직접적 입력값으로 사용"
+    ],
+    "en": [
+      "Solar panel scale model cast real shadows over 8 hours",
+      "Shadow patterns became the structure's raw geometry",
+      "Environmental data used as direct generative design input"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "렌더링 시뮬레이션이 아니라 실제 태양광 그림자 데이터를 생성 디자인의 입력값으로 삼았다는 점에서, 환경 조건이 형태를 직접 만들어내는 방식이 인상적입니다.",
+    "en": "Using real solar-shadow data as a generative design input instead of a rendered simulation is a striking way to let environmental conditions author form directly."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "생성형·환경 기반 디자인 접근에 영감을 주는 레퍼런스 · 리서치 저장 추천",
+    "en": "Inspiring reference for generative and environmental design approaches · Save for research"
+  },
+  "comment": {
+    "kr": "이 파빌리온에서 흥미로운 지점은 최종 형태가 아니라 방법론입니다. 소프트웨어로 햇빛을 시뮬레이션하는 대신, 태양광 패널 축소 모형에 실제로 드리운 그림자를 촬영해 그 데이터를 그대로 구조로 전환했습니다.\n일회성 설치 작업뿐 아니라 건축 스케일에서도 빌려올 만한, '환경 데이터를 생성 디자인의 입력값으로 쓰는' 방법론을 보여주는 작지만 명확한 사례입니다.",
+    "en": "What makes this pavilion interesting isn't the final form but the method: instead of simulating sunlight in software, the designers photographed real shadows off a scaled solar panel model and let that data become the structure itself.\nIt's a small but clear example of environmental-data-as-generative-input, a method worth borrowing even at building scale, not just for one-off installations."
+  },
+  "thumbLabel": "태양건축",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

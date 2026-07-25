@@ -1,0 +1,57 @@
+{
+  "contentId": "20260713-design-003",
+  "date": "2026-07-13",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-08"
+  },
+  "url": "https://www.itsnicethat.com/articles/koto-cctype-typography-project-080726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 타이포그래피 · 브랜딩",
+    "en": "Design · Typography · Branding"
+  },
+  "title": {
+    "kr": "코토, 자체 타입 파운드리 'CC타입' 출범",
+    "en": "Koto launches CCType foundry to create typefaces that meet the demands of modern brands"
+  },
+  "summary": {
+    "kr": "브랜딩 스튜디오 코토가 자체 타입 파운드리 'CC타입'을 출범했습니다. 첫 서체인 'CC 타임라인'은 초기 영국 금속활자, 스위스·독일 모더니즘 사진식자, 현대 디지털 타이포그래피를 결합한 디스플레이 세리프체입니다.",
+    "en": "Branding studio Koto launched its own type foundry, CCType, debuting with CC Timeline, a display serif blending early British metal type, Swiss/German modernist photo-typesetting, and contemporary digital type."
+  },
+  "points": {
+    "kr": [
+      "첫 서체 'CC 타임라인'은 역사적·현대적 영향을 결합",
+      "현대 브랜드 요구에 직접 대응하는 파운드리 설립",
+      "에이전시들의 자체 타입 자산 투자 흐름을 보여줌"
+    ],
+    "en": [
+      "First typeface CC Timeline blends historic and modern influences",
+      "Foundry built to serve modern brand needs directly",
+      "Signals agencies investing in proprietary type assets"
+    ]
+  },
+  "positions": [
+    "typographer",
+    "brand-designer"
+  ],
+  "designer": {
+    "kr": "브랜딩 에이전시가 커스텀 타입을 외주 자산이 아닌 핵심 지식재산으로 다루기 시작했다는 신호입니다. 장기적인 브랜드 시스템을 구축하는 스튜디오라면 참고할 만합니다.",
+    "en": "A useful signal that branding agencies are treating custom type as core IP, not just a commissioned asset, worth watching for studios building long-term brand systems."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "브랜드·타입 디자이너에게 참고 추천 · 저장 권장",
+    "en": "Worth a look for brand and type designers · Save for reference"
+  },
+  "comment": {
+    "kr": "에이전시가 자체 파운드리를 여는 흐름이 늘고 있습니다. 일회성 외주 작업이던 서체 제작이 지속적인 제품 라인으로 바뀌는 셈입니다.\n'CC 타임라인'이 보여주는 금속활자의 질감과 모더니즘 구조의 결합은 실제 타입 스펙시먼을 자세히 살펴볼 가치가 있습니다.",
+    "en": "Agencies launching their own foundries is a growing trend, turning what used to be a one-off commission into an ongoing product line.\nCC Timeline's mix of historic metal-type texture and modernist structure is worth a closer type-specimen look."
+  },
+  "thumbLabel": "타이포그래피",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

@@ -1,0 +1,54 @@
+{
+  "contentId": "20260713-ai-002",
+  "date": "2026-07-13",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-08"
+  },
+  "url": "https://techcrunch.com/2026/07/08/sambanova-draws-1b-at-11b-valuation-in-series-f-first-close/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 인프라 · 투자",
+    "en": "AI · Infrastructure · Investment"
+  },
+  "title": {
+    "kr": "샴바노바, 1조원 규모 시리즈F 1차 클로징...기업가치 11조원",
+    "en": "AI chip maker SambaNova raises $1B at $11B valuation"
+  },
+  "summary": {
+    "kr": "AI 컴퓨팅 기업 샴바노바가 제너럴 애틀랜틱 주도로 10억 달러 규모 시리즈F 1차 클로징을 완료하며 기업가치 110억 달러를 인정받았습니다. JP모건체이스가 추론 인프라 파트너로 합류했습니다.",
+    "en": "AI compute company SambaNova closed the first tranche of a $1B Series F led by General Atlantic at an $11B valuation, with JPMorgan Chase joining as an inference-infrastructure partner."
+  },
+  "points": {
+    "kr": [
+      "제너럴 애틀랜틱 주도 10억 달러 라운드, 추가 투자자 합류 예정",
+      "JP모건체이스, 추론 인프라 파트너로 참여",
+      "차세대 SN50 칩 2026년 하반기 출하 시작"
+    ],
+    "en": [
+      "General Atlantic leads $1B round, more investors to join",
+      "JPMorgan Chase named inference-infrastructure partner",
+      "Next-gen SN50 chip begins shipping in H2 2026"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "엔비디아 대안 AI 칩 기업에 대규모 기업 자본이 몰리고 있다는 신호입니다. AI 기반 디자인 도구의 추론 비용을 검토 중이라면 주목할 만합니다.",
+    "en": "Signals that AI chip alternatives to Nvidia are attracting serious enterprise capital, worth tracking if you're evaluating inference-cost tradeoffs for AI-powered design tools."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 인프라 동향 참고용 · 선택",
+    "en": "Background for AI infra watchers · Optional"
+  },
+  "comment": {
+    "kr": "JP모건 같은 은행까지 대안 추론 인프라에 베팅하면서, AI 칩 시장이 엔비디아 중심에서 다변화되고 있음을 보여줍니다.\n디자인 실무와 직접 관련은 적지만, AI 도구 가격 전망을 세우는 데 참고할 만한 배경 정보입니다.",
+    "en": "Another sign that the AI chip market is diversifying beyond Nvidia, with banks like JPMorgan betting on alternative inference infrastructure.\nNot directly design-relevant, but useful context for anyone forecasting AI tool pricing."
+  },
+  "thumbLabel": "투자",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

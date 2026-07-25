@@ -1,0 +1,54 @@
+{
+  "contentId": "20260717-ai-004",
+  "date": "2026-07-17",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-15"
+  },
+  "url": "https://techcrunch.com/2026/07/15/backed-by-60m-in-funding-oak-steps-out-of-stealth-to-fix-the-identity-mess-that-ai-agents-are-making-worse/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 보안 · 신원",
+    "en": "AI · Security · Identity"
+  },
+  "title": {
+    "kr": "6,000만 달러 시드 확보한 '오크', AI 에이전트발 '아이덴티티 혼란' 해결 나서",
+    "en": "Backed by $60M in funding, Oak steps out of stealth to fix the identity mess that AI agents are making worse"
+  },
+  "summary": {
+    "kr": "이스라엘 스타트업 '오크'가 6,000만 달러 시드 투자를 받고 스텔스 모드에서 벗어났다. 사람과 AI 에이전트가 함께 일하는 환경에서 기존 클라우드 시대의 아이덴티티 관리 도구가 한계를 드러내자, 조직 전반의 아이덴티티를 통합 관리하는 컨트롤 플레인을 구축한다.",
+    "en": "Israeli startup Oak emerged from stealth with $60M in funding to build a unified control plane governing identity across an organization, as AI agents working alongside humans strain identity tools built for the cloud era."
+  },
+  "points": {
+    "kr": [
+      "통합 아이덴티티 컨트롤 플레인에 6,000만 달러 시드 투자",
+      "AI 에이전트 확산으로 기존 아이덴티티 도구 한계 노출",
+      "사람·에이전트가 혼재한 조직을 타깃"
+    ],
+    "en": [
+      "$60M seed funding for unified identity control plane",
+      "AI agents strain identity tools built for cloud era",
+      "Targets orgs with mixed human/agent workforces"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "AI 에이전트가 자체 로그인·권한을 갖게 되면서 아이덴티티·접근 설계는 백엔드만의 문제가 아니라 핵심 UX 과제가 되고 있습니다.",
+    "en": "As AI agents get their own logins and permissions, identity and access design becomes a core UX problem, not just a backend concern."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "에이전트 제품 기획팀에 유용 · 참고 저장 추천",
+    "en": "Relevant for teams building agentic products · Save for reference"
+  },
+  "comment": {
+    "kr": "AI 에이전트가 실제 업무 계정처럼 행동하기 시작하면서, '누가(무엇이) 이 작업을 수행했는가'를 추적하는 문제가 새로운 골칫거리로 떠오르고 있습니다. 오크의 등장은 이 문제가 이제 투자자들도 주목하는 시장이 됐다는 신호입니다.\n프로덕트 디자이너 입장에서도 에이전트에게 어떤 권한을, 어떤 UI로 부여하고 통제할지는 곧 마주할 설계 과제입니다. 권한 관리 UX를 미리 고민해두면 향후 에이전트 기능을 붙일 때 유리할 것입니다.",
+    "en": "As AI agents start acting like real work accounts, tracking 'who (or what) actually did this' has become a genuine headache — Oak's launch signals investors now see this as a real market.\nFor product designers, deciding what permissions an agent gets and how that's surfaced in the UI is a design challenge waiting just around the corner. Thinking through permission UX early pays off once agentic features ship."
+  },
+  "thumbLabel": "아이덴티티",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

@@ -1,0 +1,54 @@
+{
+  "contentId": "20260709-ai-003",
+  "date": "2026-07-09",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "Tech Times",
+    "publishedAt": "2026-07-06"
+  },
+  "url": "https://www.techtimes.com/articles/319766/20260706/itu-ai-summit-day-zero-what-new-44-member-un-commission-can-cannot-do.htm",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 글로벌 거버넌스",
+    "en": "AI · Policy · Global Governance"
+  },
+  "title": {
+    "kr": "UN AI 거버넌스 위원회 출범, 44개국 참여에도 '결정권'은 없다",
+    "en": "ITU AI Summit Day Zero: What the New 44-Member UN Commission Can and Cannot Do"
+  },
+  "summary": {
+    "kr": "마크 베니오프와 폴 카가메가 공동 의장을 맡고 엔비디아·아마존·마이크로소프트 CEO가 참여하는 44개국 규모의 UN AI 거버넌스 위원회가 제네바 첫 회의를 앞두고 있다. 다만 이번 회의는 의제 설정 성격이며 공식 의사결정 권한은 없다.",
+    "en": "Ahead of its first meeting in Geneva, the newly formed 44-member UN AI for Good Global Commission, co-chaired by Marc Benioff and Paul Kagame and including the CEOs of Nvidia, Amazon and Microsoft, is a framing and priority-setting body without formal decision-making power."
+  },
+  "points": {
+    "kr": [
+      "테크 CEO와 정상들을 포함한 44인 구성",
+      "세일즈포스 베니오프·르완다 카가메 공동 의장",
+      "첫 회의는 의사결정이 아닌 의제 설정 성격"
+    ],
+    "en": [
+      "44 members including tech CEOs and heads of state",
+      "Co-chaired by Salesforce's Benioff and Rwanda's Kagame",
+      "First session is framing, not decision-making"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "'AI 거버넌스' 헤드라인이 아직은 구속력 있는 규칙이 아니라 의제 설정 단계라는 점을 짚어주는 기사입니다. 글로벌 규제가 임박했다고 성급히 판단하지 않는 데 참고할 만합니다.",
+    "en": "A reminder that 'AI governance' headlines often mean agenda-setting, not binding rules yet, useful context before assuming new global standards are imminent."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "정책 동향 관찰용 배경 참고 · 선택",
+    "en": "Background reading for policy watchers · Optional"
+  },
+  "comment": {
+    "kr": "이번 주 쏟아진 'UN, AI 거버넌스 출범' 류의 헤드라인에 균형을 잡아주는 기사입니다. 실제 위임 범위는 인프라·접근성 격차·거버넌스 경로를 논의하는 수준이며, 아직 결정된 것은 없습니다.\n위원회의 다음 정기 회의 전에 기준점으로 저장해두면, 이후 '결정됐다'는 보도가 나올 때 실제 이번 첫 회의가 위임한 범위와 비교해볼 수 있습니다.",
+    "en": "Useful counterweight to the 'UN launches AI governance' headlines that dominated coverage this week. The actual mandate is narrower: infrastructure, access gaps, and governance pathways, discussed rather than decided.\nWorth bookmarking as a baseline before the commission's next full session, so future coverage of 'decisions' can be checked against what this first meeting actually authorized."
+  },
+  "thumbLabel": "거버넌스",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

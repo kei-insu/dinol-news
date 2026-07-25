@@ -1,0 +1,57 @@
+{
+  "contentId": "20260721-ai-004",
+  "date": "2026-07-21",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-20"
+  },
+  "url": "https://www.yankodesign.com/2026/07/20/weaves-8000-isaac-1-is-the-home-robot-that-dresses-like-furniture/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 로보틱스 · 홈",
+    "en": "AI · Robotics · Home"
+  },
+  "title": {
+    "kr": "위브의 8000달러 홈로봇 '아이작 1', 가구처럼 입다",
+    "en": "Weave's $8,000 Isaac 1 Is the Home Robot That Dresses Like Furniture"
+  },
+  "summary": {
+    "kr": "위브(Weave)의 홈로봇 '아이작 1'은 8000달러 가격에, 전형적인 로봇처럼 보이지 않고 가구처럼 자연스럽게 어우러지도록 디자인됐다. 사전 주문이 시작됐고 올가을 캘리포니아부터 첫 배송이 예정돼 있다.",
+    "en": "Weave's Isaac 1 is a home robot priced at $8,000 designed to visually blend in as a piece of furniture rather than look like a conventional robot, with pre-orders open and first deliveries expected in California this fall."
+  },
+  "points": {
+    "kr": [
+      "8000달러 가격, 가구 같은 형태를 지향",
+      "사전 주문 시작, 올가을 캘리포니아부터 첫 배송",
+      "로봇처럼 보이지 않고 집안에 자연스럽게 녹아드는 것이 설계 목표"
+    ],
+    "en": [
+      "Priced at $8,000, positioned as a furniture-like object",
+      "Pre-orders open, first deliveries fall 2026 in California",
+      "Design goal: blend into the home rather than look robotic"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "홈로봇이 가전제품이 아니라 가구의 디자인 문법을 따라가기 시작했다는 신호다. 실체를 가진(embodied) AI 제품을 설계하는 이들이라면 눈여겨볼 만하다.",
+    "en": "A clear signal that home robotics is starting to take product-design cues from furniture, not consumer electronics. Worth watching for anyone designing embodied AI products."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "실체형 AI·홈로봇 제품 디자인 참고 자료로 추천",
+    "en": "Relevant reference for embodied AI / home robotics product design"
+  },
+  "comment": {
+    "kr": "8000달러라는 가격은 대중 시장과는 거리가 있지만, '가구처럼 위장한다'는 전략이 더 흥미로운 설계 결정이다. 대부분의 홈로봇이 빠지는 언캐니 밸리 문제를 우회하는 방식이기 때문이다.\n로봇과 AI 기반 기기가 집 안으로 들어오면서, 산업디자이너들이 기술을 과시하기보다 위장과 가정적 물성 쪽에 더 힘을 싣는 흐름은 2026년 홈테크 디자인의 더 큰 패턴과 맞닿아 있다.\n가구급 소재와 마감이 정당화되기 어려운 저가 구간까지 이 접근이 확장될 수 있을지는 지켜볼 지점이다.",
+    "en": "The $8,000 price point puts Isaac 1 well beyond mass-market territory, but the 'disguise it as furniture' strategy is the more interesting design decision here: it sidesteps the uncanny-valley problem that most home robots run into.\nThis fits a broader pattern in 2026 home-tech design: as robots and AI-driven devices enter the home, industrial designers seem to be leaning harder into camouflage and domestic materiality rather than showing off the technology.\nWhether this approach scales to lower price points, where furniture-grade materials and finishing get harder to justify, is the open question."
+  },
+  "thumbLabel": "홈로봇",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260713-design-004",
+  "date": "2026-07-13",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-07"
+  },
+  "url": "https://www.itsnicethat.com/articles/chris-panicker-pitchfork-selects-graphic-design-project-070726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 그래픽 · 편집",
+    "en": "Design · Graphic · Editorial"
+  },
+  "title": {
+    "kr": "피치포크 디자이너 크리스 파니커, '셀렉츠' 비주얼의 즉흥성",
+    "en": "The \"glitchy, jittery\" visuals of this Pitchfork designer are made with serendipity and his new favourite motion software"
+  },
+  "summary": {
+    "kr": "피치포크의 시니어 디자이너 크리스 파니커가 매주 발행되는 플레이리스트 '셀렉츠'의 비주얼을 담당합니다. 고정된 템플릿 대신 새로운 모션 소프트웨어로 즉흥적으로 작업해 글리치하고 들쭉날쭉한 효과를 만들어냅니다.",
+    "en": "Pitchfork senior designer Chris Panicker creates the weekly visuals for its 'Selects' playlist using glitchy, jittery motion effects built through improvisation with new software rather than fixed templates."
+  },
+  "points": {
+    "kr": [
+      "고정 템플릿 대신 즉흥적으로 매주 비주얼 제작",
+      "새 모션 소프트웨어가 글리치 미감을 만듦",
+      "정기 발행 주기와 밀접하게 연결된 에디토리얼 디자인"
+    ],
+    "en": [
+      "Weekly visuals made through improvisation, not templates",
+      "New motion software drives the glitchy aesthetic",
+      "Editorial design tied tightly to a recurring publishing cadence"
+    ]
+  },
+  "positions": [
+    "editorial-designer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "반복되는 에디토리얼 포맷일수록 경직된 시스템보다 과정 중심의 변주가 유리하다는 점을 보여줍니다. 주간·정기 콘텐츠를 디자인하는 이들에게 유효합니다.",
+    "en": "A good reminder that recurring editorial formats benefit from process-driven variation rather than rigid systems, relevant for anyone designing weekly or recurring content."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "모션·에디토리얼 디자이너에게 좋은 영감 · 선택",
+    "en": "Nice inspiration for motion and editorial designers · Optional"
+  },
+  "comment": {
+    "kr": "템플릿 중심 콘텐츠 디자인에 대한 신선한 반례입니다. 도구가 만들어내는 우연을 반복 가능한 창작 프로세스로 받아들인 접근이 흥미롭습니다.\n높은 빈도로 비주얼 콘텐츠를 만드는 팀이 시각적 놀라움을 더하고 싶다면 참고할 만합니다.",
+    "en": "A refreshing counterpoint to template-driven content design, embracing tool-driven happy accidents as a repeatable creative process.\nWorth a look for teams producing high-frequency visual content who want more visual surprise."
+  },
+  "thumbLabel": "에디토리얼",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

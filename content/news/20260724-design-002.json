@@ -1,0 +1,56 @@
+{
+  "contentId": "20260724-design-002",
+  "date": "2026-07-24",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-22"
+  },
+  "url": "https://www.yankodesign.com/2026/07/22/the-3-in-1-wireless-charger-youd-actually-want-to-leave-in-view/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 산업디자인",
+    "en": "Design · Product · Industrial Design"
+  },
+  "title": {
+    "kr": "책상 위에 그냥 올려두고 싶은 3in1 무선충전기, ADAM elements Mag 3 Ultra",
+    "en": "The 3-in-1 Wireless Charger You'd Actually Want to Leave in View"
+  },
+  "summary": {
+    "kr": "ADAM elements의 'Mag 3 Ultra'는 접이식 3in1 충전 스테이션으로, 숨기지 않고 책상 위에 그대로 두고 싶은 디자인을 지향합니다.",
+    "en": "ADAM elements' Mag 3 Ultra is a foldable 3-in-1 charging station designed to look good enough to leave visible on a desk rather than hidden away."
+  },
+  "points": {
+    "kr": [
+      "휴대성을 고려한 접이식 폼팩터",
+      "폰·워치·이어버드 동시 충전",
+      "기능성 넘어 '오브제'로 설계"
+    ],
+    "en": [
+      "Foldable form factor for portability",
+      "Charges phone, watch, earbuds together",
+      "Designed as a desk object, not just a utility"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "충전기라는 범용 카테고리를 소재와 접이 구조만으로 '오브제'급으로 끌어올린 좋은 사례입니다.",
+    "en": "A good example of turning a commodity category (chargers) into a considered object through material and folding-geometry choices."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "제품·ID 디자이너를 위한 간단한 영감 소스",
+    "en": "Quick inspiration for product/ID designers"
+  },
+  "comment": {
+    "kr": "충전기처럼 매일 쓰지만 미관상 숨기고 싶었던 제품군을 정면으로 끌어내는 시도가 늘고 있습니다. 접이식 구조로 휴대성과 데스크 오브제로서의 존재감을 동시에 잡으려 한 점이 눈에 띕니다.\n다만 이런 '보여주고 싶은 전자기기' 트렌드는 이미 여러 브랜드가 시도해온 영역이라, 차별화 포인트가 접힘 메커니즘의 완성도나 소재 마감에서 갈릴 것으로 보입니다. 실제 사용성(발열, 충전 속도)에 대한 정보는 스니펫만으로는 확인이 어려워 추가 확인이 필요합니다.",
+    "en": "There's a growing trend of pulling everyday-but-usually-hidden objects like chargers into plain sight. The folding structure here tries to deliver both portability and desk-object presence at once.\nSince 'chargers you want to display' is already a crowded space, differentiation will likely come down to the quality of the folding mechanism and material finish rather than the concept alone. Real-world usability details like heat and charging speed aren't confirmed by the snippet alone, so worth verifying further."
+  },
+  "thumbLabel": "충전기",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

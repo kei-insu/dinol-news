@@ -1,0 +1,54 @@
+{
+  "contentId": "20260709-ai-004",
+  "date": "2026-07-09",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-08"
+  },
+  "url": "https://techcrunch.com/2026/07/08/these-ai-startups-are-growing-revenue-at-faster-and-faster-rates/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 비즈니스 · 스타트업",
+    "en": "AI · Business · Startups"
+  },
+  "title": {
+    "kr": "AI 스타트업들, 매출 성장 속도 갈수록 빨라진다",
+    "en": "These AI startups are growing revenue at faster and faster rates"
+  },
+  "summary": {
+    "kr": "테크크런치가 마일스톤을 지날수록 성장 속도가 더 빨라지는 AI 스타트업들을 정리했다. 앤트로픽은 매출 실행률 470억 달러를 돌파했고, 시에라·글린 등도 ARR 증가 속도가 빨라지고 있다.",
+    "en": "TechCrunch rounds up AI startups whose annual recurring revenue is compounding faster with each milestone, including Anthropic surpassing $47B in revenue run rate, Sierra, and Glean crossing $300M ARR in six months."
+  },
+  "points": {
+    "kr": [
+      "앤트로픽, 5월 매출 실행률 470억 달러 돌파",
+      "시에라, 두 분기 만에 ARR 1억 달러 추가",
+      "글린, 6개월 만에 ARR 2억→3억 달러 성장"
+    ],
+    "en": [
+      "Anthropic crossed $47B revenue run rate in May",
+      "Sierra added $100M ARR in two quarters",
+      "Glean grew from $200M to $300M ARR in six months"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "어떤 AI 제품 카테고리(고객 서비스 에이전트, 엔터프라이즈 검색, 법률 소프트웨어)가 실제 반복 매출로 이어지고 있는지 가늠할 수 있는 자료입니다. AI 기능 우선순위를 정할 때 참고할 만합니다.",
+    "en": "A quick gut-check on which AI product categories (customer service agents, enterprise search, legal software) are converting hype into recurring revenue, useful signal for prioritizing AI-feature bets."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 제품 우선순위 판단에 참고 · 저장 추천",
+    "en": "Good reference for AI product prioritization · Save"
+  },
+  "comment": {
+    "kr": "여기서 기억해둘 숫자는 회사들의 규모가 아니라 '가속도'입니다. 마일스톤 하나하나를 도달하는 데 걸리는 시간이 계속 짧아지고 있다는 점이 핵심입니다.\n내부에서 AI 기능을 제안할 때, 사용량·인게이지먼트 지표만이 아니라 매출 기준으로 '진짜 PMF'가 어떤 모습인지 참고하기 좋은 자료입니다.",
+    "en": "The headline number worth remembering here isn't the size of these companies, it's the acceleration: each milestone is taking less time to reach than the last one. That's a different signal than raw revenue size.\nFor teams pitching AI features internally, this is a useful reference point for what 'real' AI product-market fit looks like in revenue terms, as opposed to usage or engagement metrics alone."
+  },
+  "thumbLabel": "매출성장",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

@@ -1,0 +1,56 @@
+{
+  "contentId": "20260724-design-001",
+  "date": "2026-07-24",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-22"
+  },
+  "url": "https://www.archdaily.com/1181284/urban-revivo-sanlitun-flagship-store-mvrdv",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축 · 리테일",
+    "en": "Design · Architecture · Retail"
+  },
+  "title": {
+    "kr": "MVRDV, 베이징 산리툰에 '컬러 체인징' 파사드의 플래그십 스토어 완공",
+    "en": "Urban Revivo Sanlitun Flagship Store / MVRDV"
+  },
+  "summary": {
+    "kr": "MVRDV가 베이징 산리툰 지구에 패션 리테일러 어반리바이보의 플래그십 스토어를 완공했습니다. 색이 변하는 독특한 파사드가 특징입니다.",
+    "en": "MVRDV completed a flagship store for fashion retailer Urban Revivo in Beijing's Sanlitun district, featuring a distinctive color-changing facade."
+  },
+  "points": {
+    "kr": [
+      "리테일 랜드마크가 되는 컬러체인징 파사드",
+      "베이징 핵심 상권 산리툰에 위치",
+      "표현적 리테일 건축을 이어가는 MVRDV"
+    ],
+    "en": [
+      "Color-changing facade as a retail landmark",
+      "Located in Beijing's high-traffic Sanlitun district",
+      "MVRDV's continued exploration of expressive retail architecture"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "하나의 소재·조명 장치가 어떻게 매장을 '목적지'로 만드는지 보여주는 좋은 레퍼런스입니다. 브랜딩·공간 디자이너 모두에게 참고가 됩니다.",
+    "en": "A strong reference for how a single material/lighting gesture can turn a retail box into a destination, relevant for branding and spatial designers alike."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "리테일·브랜딩 무드보드 저장 추천",
+    "en": "Save for retail/branding mood boards"
+  },
+  "comment": {
+    "kr": "패션 리테일에서 파사드가 곧 브랜드 경험이 되는 흐름이 계속되고 있습니다. MVRDV는 색이 변하는 표면이라는, 비교적 단순한 장치 하나로 매장 전체를 랜드마크화하는 전략을 자주 씁니다.\n국내에서도 플래그십 스토어 경쟁이 치열해지는 만큼, 이런 '한 방'있는 파사드 전략은 공간·그래픽 디자이너 모두에게 참고할 가치가 있습니다. 다만 사진만으로는 실제 색 변화 속도나 야간 연출 디테일까지 확인하기 어려워, 관심 있다면 추가 영상 자료를 찾아보는 것을 추천합니다.",
+    "en": "Facades doubling as brand experience is a persistent trend in fashion retail, and MVRDV frequently uses a single, relatively simple device, a color-shifting surface, to turn an entire store into a landmark.\nAs flagship-store competition intensifies in Korea too, this kind of single strong facade move is worth studying for both spatial and graphic designers. Photos alone don't fully convey the color-transition timing or night lighting details, so it's worth seeking out video documentation if you're interested."
+  },
+  "thumbLabel": "플래그십",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

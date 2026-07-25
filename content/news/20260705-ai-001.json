@@ -1,0 +1,54 @@
+{
+  "contentId": "20260705-ai-001",
+  "date": "2026-07-05",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-04"
+  },
+  "url": "https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 유럽 · 스타트업",
+    "en": "AI · Europe · Startup"
+  },
+  "title": {
+    "kr": "미스트랄, 230억 달러 밸류 조달 추진…유럽의 오픈AI 대항마 현주소",
+    "en": "What is Mistral AI? Everything to know about the OpenAI competitor"
+  },
+  "summary": {
+    "kr": "프랑스 AI 기업 미스트랄이 약 35억 달러를 230억 달러 밸류로 조달 중이며, 이번 여름 오픈웨이트 신모델을 예고했습니다. 연매출이 1년 새 2천만→4억 달러로 급증했지만, 여전히 오픈AI·앤트로픽에 비하면 소규모입니다.",
+    "en": "Mistral, the French AI lab, is reportedly raising ~$3.5B at a $23B valuation and has an open-weight model coming this summer. Its ARR jumped from $20M to over $400M in a year, but it's still a fraction of OpenAI or Anthropic."
+  },
+  "points": {
+    "kr": [
+      "미스트랄이 'Palantir식' 전략(현장 배치 엔지니어)을 쓰는 이유",
+      "오픈웨이트 전략 vs 미국의 폐쇄형 랩",
+      "미국 최전선 랩보다는 여전히 작지만, 유럽에선 확실한 선두"
+    ],
+    "en": [
+      "Why Mistral follows a 'Palantir playbook' (forward-deployed engineers)",
+      "Open-weight strategy vs closed US labs",
+      "Still far smaller than US frontier labs, but Europe's clear leader"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "유럽의 '주권·오픈' AI 대안이 성숙하고 있습니다.\nEU 대상 제품·도구를 만든다면 미스트랄을 후보로 기억해 두세요. 오픈웨이트와 GDPR 친화 포지셔닝 덕에 데이터 통제·비용이 중요할 때 현실적 선택지가 됩니다.",
+    "en": "Europe's 'sovereign, open' AI alternative is maturing. If you build tools or ship products in the EU, keep Mistral on your radar. Open weights and GDPR-friendly positioning make it a realistic option when data control or cost matters."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 벤더를 고른다면 읽어보고, 기획 주기마다 재검토할 '유럽·오픈웨이트 선택지'로 미스트랄을 저장하세요",
+    "en": "Read if you pick AI vendors, and bookmark Mistral as a European/open-weight option to reconsider each planning cycle"
+  },
+  "comment": {
+    "kr": "미스트랄 이야기의 핵심은 밸류 숫자가 아니라 '오픈웨이트 + 유럽 주권'이라는 포지셔닝이라고 봅니다. 미국 빅랩들이 폐쇄 모델로 갈 때, 자체 호스팅과 데이터 통제를 원하는 조직에게 미스트랄은 유일하게 진지한 대안이 됐습니다.\n\n디자이너·기획자에게 시사점은 분명합니다. 'AI = 오픈AI/앤트로픽'이라는 기본값을 의심하고, 프로젝트 성격(비용·규제·데이터)에 따라 모델을 고르는 감각이 점점 실무 역량이 되어갑니다.",
+    "en": "The heart of the Mistral story, I think, isn't the valuation figure but the positioning: 'open weights plus European sovereignty.' As the big US labs go closed, Mistral has become the only serious alternative for organizations that want self-hosting and data control.\n\nThe implication for designers and planners is clear. Doubting the default of 'AI equals OpenAI or Anthropic,' and choosing a model by the nature of the project (cost, regulation, data), is increasingly becoming a practical skill."
+  },
+  "thumbLabel": "미스트랄",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}

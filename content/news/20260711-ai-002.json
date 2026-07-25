@@ -1,0 +1,54 @@
+{
+  "contentId": "20260711-ai-002",
+  "date": "2026-07-11",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-08"
+  },
+  "url": "https://techcrunch.com/2026/07/08/this-startup-thinks-robotics-is-about-to-have-its-chatgpt-moment/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 로보틱스 · 투자",
+    "en": "AI · Robotics · Investment"
+  },
+  "title": {
+    "kr": "'로보틱스에도 챗GPT 모먼트가 온다'…제너럴 인튜이션, 3200억원 조달",
+    "en": "This startup thinks robotics is about to have its ChatGPT moment"
+  },
+  "summary": {
+    "kr": "제너럴 인튜이션이 비디오 게임 영상으로 로봇의 물리적 행동을 학습시키는 파운데이션 모델을 개발하기 위해 3200억원(밸류에이션 2.3조원)을 조달했습니다. 게임 플레이 데이터가 로봇의 실제 움직임 학습에 쓰일 수 있다는 주장입니다.",
+    "en": "General Intuition raised $320M at a $2.3B valuation to train physical-AI foundation models on video game footage, arguing gameplay data can teach robots to move and act in the real world."
+  },
+  "points": {
+    "kr": [
+      "게임 영상으로 학습한 모델이 실제 데이터 8분만으로 4족 로봇을 구동",
+      "코슬라벤처스 주도, 베이조스·슈미트 참여",
+      "작년 10월 창업 이후 누적 조달액 4540억원"
+    ],
+    "en": [
+      "Model trained on gameplay footage powers a quadruped robot after 8 minutes of real-world data",
+      "Khosla Ventures leads, with Bezos and Schmidt joining",
+      "Total disclosed funding now $454M since October launch"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "게임 데이터가 실제로 로보틱스에 전이된다면, 디자이너가 재사용 가능하다고 생각지 못했던 데이터 풀로 학습한 홈로봇·AR 인터랙션 제품들이 쏟아질 수 있습니다.",
+    "en": "If gameplay data really transfers to robotics, expect a wave of embodied-AI products trained on data pools designers never thought were reusable."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "피지컬 AI·로보틱스 인접 제품팀에 흥미로운 참고 자료 · 순수 소프트웨어 디자이너는 선택적으로",
+    "en": "Interesting for physical-AI and robotics-adjacent product teams · Optional for pure software designers"
+  },
+  "comment": {
+    "kr": "핵심 베팅은 게임 물리 엔진이 현실과 충분히 비슷해서, 수백만 시간의 게임 플레이로 학습한 모델이 실제 로봇 제어로 전이될 수 있다는 것입니다. 이 주장이 사실이라면 실제 데이터 단 8분만의 파인튜닝은 놀라운 수치입니다.\n2026년의 큰 흐름과도 맞닿아 있습니다. 파운데이션 모델 투자금이 순수 챗봇·에이전트 제품에서 피지컬 AI로 옮겨가며, LLM에서 통했던 '대규모 사전학습 후 소규모 파인튜닝' 전략을 그대로 따르고 있습니다.\n당장의 제품보다는 AI 투자가 다음에 어디로 향할지 보여주는 초기 신호로 저장해둘 만합니다.",
+    "en": "The core bet here is that video game physics engines are close enough to reality that a model trained on millions of hours of gameplay can transfer to controlling an actual robot body. Eight minutes of real-world fine-tuning is a striking number if it holds up.\nThis is part of a broader pattern in 2026: foundation-model money is moving from pure chat/agent products toward embodied AI, following the same 'scale up, then fine-tune small' playbook that worked for LLMs.\nWorth bookmarking less for the immediate product and more as an early signal of where AI investment is heading next."
+  },
+  "thumbLabel": "로보틱스",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

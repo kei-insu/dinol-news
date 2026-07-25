@@ -1,0 +1,56 @@
+{
+  "contentId": "20260708-design-001",
+  "date": "2026-07-08",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-07"
+  },
+  "url": "https://www.dezeen.com/2026/07/07/office-to-residential-conversion-building-at-risk-of-collapse-in-new-york/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축",
+    "en": "Design · Architecture"
+  },
+  "title": {
+    "kr": "게슬러가 설계한 뉴욕 오피스-주거 전환 건물, 붕괴 위기",
+    "en": "Office-to-residential development reportedly collapsing in New York"
+  },
+  "summary": {
+    "kr": "게슬러(Gensler)가 설계한 미드타운 맨해튼의 오피스-주거 전환 프로젝트가 붕괴 위기에 놓였습니다. 옛 화이자 본사 건물 21층에서 지지 기둥이 휘어지는 것이 발견되며 대규모 대피가 이뤄졌습니다.",
+    "en": "A Gensler-designed office-to-residential conversion in Midtown Manhattan, the city's largest such project, is at risk of collapse after support columns were found buckling on the 21st floor of the former Pfizer headquarters tower."
+  },
+  "points": {
+    "kr": [
+      "뉴욕 최대 규모 오피스-주거 전환 프로젝트가 위기에 처함",
+      "21층 지지 기둥 휘어짐과 상층부 처짐 현상 발견",
+      "1,600세대 규모, 2027년 완공 목표였던 프로젝트"
+    ],
+    "en": [
+      "City's largest office-to-residential conversion project at risk",
+      "Columns buckling and upper floors sagging on the 21st floor",
+      "Project plans 1,600 apartments, completion targeted for 2027"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "대규모 리모델링(어댑티브 리유즈)에도 구조적 리스크가 따른다는 냉정한 사례입니다. 디자인 콘셉트 못지않게 시공 순서와 구조 검토도 세심하게 다뤄야 합니다.",
+    "en": "A stark reminder that adaptive reuse at scale carries real structural risk — value engineering and phased construction sequencing deserve as much scrutiny as the design concept itself."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "어댑티브 리유즈 프로젝트 참고 사례 · 저장 추천",
+    "en": "Cautionary case study for adaptive reuse projects · Save for reference"
+  },
+  "comment": {
+    "kr": "오피스-주거 전환은 공실 오피스와 주택 부족 문제를 동시에 해결할 방안으로 주목받아 왔지만, 이번 사건은 기존 타워에 층수를 거의 두 배로 늘리는 작업이 구조적으로 결코 간단하지 않음을 보여줍니다.\n뉴욕시와 게슬러가 어떻게 대응하는지가 앞으로 전환 프로젝트들이 얼마나 공격적으로 설계될지에 영향을 줄 수 있어 지켜볼 만합니다.\n스니펫 기반 요약이니 구조적 세부사항과 현재 상황은 원문과 후속 보도에서 다시 확인하시길 권장합니다.",
+    "en": "Office-to-residential conversions have been championed as a solution to both empty office towers and housing shortages, but this incident is a reminder that adding nearly double the floors to an existing tower is structurally non-trivial.\nWorth watching how city officials and Gensler respond - the outcome could shape how ambitiously future conversion projects are engineered.\nSnippet-based summary - verify structural details and current status from the original article and follow-up coverage."
+  },
+  "thumbLabel": "붕괴위기",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

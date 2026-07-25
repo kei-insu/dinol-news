@@ -1,0 +1,56 @@
+{
+  "contentId": "20260717-ai-003",
+  "date": "2026-07-17",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-15"
+  },
+  "url": "https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 오픈모델 · 연구",
+    "en": "AI · Open Model · Research"
+  },
+  "title": {
+    "kr": "씽킹머신스, 첫 오픈모델 '잉클링' 공개…\"AI는 원사이즈핏올 아니다\"",
+    "en": "Thinking Machines amps up its bet against one-size-fits-all AI with its first open model, Inkling"
+  },
+  "summary": {
+    "kr": "전 OpenAI CTO 미라 무라티가 설립한 씽킹머신스랩이 첫 자체 개발 AI 모델 '잉클링'을 공개했다. 9,750억 개 파라미터를 가진 오픈웨이트 MoE 모델로, 작업당 약 410억 개만 활성화하는 구조다.",
+    "en": "Thinking Machines Lab, founded by former OpenAI CTO Mira Murati, released its first in-house AI model, Inkling — an open-weight mixture-of-experts system with 975 billion total parameters, activating about 41 billion per task."
+  },
+  "points": {
+    "kr": [
+      "개발자가 다운로드·수정 가능한 오픈웨이트 모델",
+      "총 9,750억 파라미터 중 작업당 약 410억만 활성화(MoE)",
+      "범용 거대 모델 일변도 전략에 반기"
+    ],
+    "en": [
+      "Open-weight, downloadable and modifiable by developers",
+      "975B total params, ~41B active per task (MoE)",
+      "Bets against one-size-fits-all frontier models"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "특화형·경량 오픈 모델이 늘어나면 사내에서 직접 운용 가능한 AI의 범위가 넓어집니다. AI 기능을 자체 구축할지 외부 API에 의존할지 판단할 때 참고할 신호입니다.",
+    "en": "A sign that specialized, efficient open models may reshape which AI teams can afford to run in-house — relevant for anyone evaluating build-vs-buy for AI features."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "AI 인프라 의사결정 시 주시 · 참고 저장 추천",
+    "en": "Worth tracking for AI infra decisions · Save for reference"
+  },
+  "comment": {
+    "kr": "미라 무라티가 OpenAI를 떠나 설립한 씽킹머신스가 드디어 첫 모델을 오픈웨이트로 공개했다는 점이 상징적입니다. 그동안 인프라·툴링 위주로 알려졌던 회사가 직접 모델 경쟁에 뛰어든 셈입니다.\n'하나의 거대 모델이 모든 것을 해결한다'는 프런티어 랩들의 접근과 달리, MoE 구조로 필요한 부분만 활성화하는 효율성에 베팅한 점이 눈에 띕니다. 오픈웨이트라 기업이 자체 인프라에 맞게 커스터마이징할 여지가 크다는 점도 실무적으로 의미가 있습니다.",
+    "en": "Mira Murati's Thinking Machines Lab finally entered the model race directly with an open-weight release, after being known mostly for infra and tooling work.\nUnlike frontier labs betting on one giant model to do everything, Inkling's MoE design activates only what's needed — an efficiency bet that also gives companies more room to customize for their own infrastructure."
+  },
+  "thumbLabel": "오픈모델",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

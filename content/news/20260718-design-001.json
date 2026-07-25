@@ -1,0 +1,56 @@
+{
+  "contentId": "20260718-design-001",
+  "date": "2026-07-18",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-15"
+  },
+  "url": "https://www.dezeen.com/2026/07/15/robert-wun-haute-couture-dress-balloons-childsplay/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 패션 · 쿠튀르",
+    "en": "Design · Fashion · Couture"
+  },
+  "title": {
+    "kr": "로버트 운, 알록달록 풍선으로 뒤덮은 쿠튀르 드레스 선보여",
+    "en": "Robert Wun adorns couture gown with kaleidoscope of colourful balloons"
+  },
+  "summary": {
+    "kr": "홍콩 출신 디자이너 로버트 운이 파리에서 선보인 2026년 가을·겨울 오트 쿠튀르 컬렉션 '차일즈플레이'는 풍선 다발, 봉제 인형, 물감 자국으로 뒤덮인 25벌의 룩으로 유년기의 단계를 그려냈습니다.",
+    "en": "Hong Kong-born designer Robert Wun's Autumn Winter 2026 haute couture show in Paris, titled Childsplay, covered garments in clusters of balloons, stuffed toys and paint splatters across 25 looks tracing the stages of childhood."
+  },
+  "points": {
+    "kr": [
+      "유년기의 흐름을 담은 25벌의 룩 구성",
+      "첫 룩은 볼룸 실루엣에 잭슨 폴록풍 물감 자국",
+      "마지막 룩은 크리놀린에 풍선 케이프를 두른 블랙 가운"
+    ],
+    "en": [
+      "25 looks structured as a timeline of childhood",
+      "Opening look: Jackson Pollock-style splatter on a ballroom silhouette",
+      "Final look: black gown with a cape of balloons on the crinoline"
+    ]
+  },
+  "positions": [
+    "fashion-designer"
+  ],
+  "designer": {
+    "kr": "룩 하나하나가 하나의 장(chapter)처럼 읽히는 서사 중심 컬렉션 설계의 좋은 사례입니다. 여러 작업물을 하나의 이야기로 엮을 때 참고할 만합니다.",
+    "en": "A strong example of narrative-driven collection design, each look reads as a chapter, useful reference for building a cohesive story across a multi-piece body of work."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "패션·공간 스토리텔링 무드보드 소스로 유용 · 다른 분야는 선택적 참고",
+    "en": "Good mood-board and materiality reference for fashion/spatial storytelling · Optional for other disciplines"
+  },
+  "comment": {
+    "kr": "눈에 띄는 건 풍선이라는 소재 자체보다, 이를 엮어낸 구조입니다. 성장 과정을 25벌의 룩으로 시간순 배치한 방식이 자칫 산만할 수 있는 컬렉션에 명확한 축을 부여합니다.\n\n운이 마지막에 남긴 '아름답고 즐겁지만, 연약하고 오래가지 않는다'는 풍선에 대한 코멘트는 유년기와 쿠튀르 자체 모두를 가리키는 중의적 표현입니다. 소재 선택이 단순 장식이 아니라 콘셉트를 강화하는 좋은 예시입니다.",
+    "en": "What stands out isn't just the balloons as material, it's the structuring device: 25 looks as a literal timeline of growing up gives an otherwise wild collection a legible spine.\n\nWun's closing note, that balloons are 'beautiful and joyous, yet fragile and not meant to last', is doing double duty as a statement about childhood and about couture itself, a nice example of a material choice reinforcing the concept rather than just decorating it."
+  },
+  "thumbLabel": "쿠튀르",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

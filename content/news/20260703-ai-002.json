@@ -1,0 +1,54 @@
+{
+  "contentId": "20260703-ai-002",
+  "date": "2026-07-03",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "Reuters",
+    "publishedAt": "2026-07-02"
+  },
+  "url": "https://www.reuters.com/business/retail-consumer/us-talks-with-ai-companies-voluntary-model-standards-ft-reports-2026-07-02/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 거버넌스",
+    "en": "AI · Policy · Governance"
+  },
+  "title": {
+    "kr": "미국 정부, AI 기업과 '모델 출시 자율 표준' 협의 중",
+    "en": "US in talks with AI companies over voluntary model-release standards"
+  },
+  "summary": {
+    "kr": "미국 정부가 AI 기업들과 새 모델 출시에 대한 자율 표준을 협의 중입니다. 벤치마크·일정·접근 권한 기준을 정하는 내용으로, 이르면 다음 주 발표 가능성이 제기됩니다.",
+    "en": "The US government is in advanced talks with AI firms on voluntary standards for releasing new models: setting benchmarks, timelines and access rules, with an announcement possible within a week."
+  },
+  "points": {
+    "kr": [
+      "표준이 정할 벤치마크·일정",
+      "접근 규칙이 도구 사용성에 미칠 영향",
+      "6월 출시 전 테스트 행정명령과의 연결"
+    ],
+    "en": [
+      "What benchmarks/timelines the standards may set",
+      "How access rules could affect tool availability",
+      "Ties to June executive order on pre-release testing"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "출시 거버넌스는 새 AI 기능이 디자이너가 쓰는 도구에 언제·어떻게 도달할지를 좌우합니다. 앞으로 단계적·제한적 출시가 늘어날 것으로 보입니다.",
+    "en": "Release governance shapes when and how new AI capabilities reach the tools designers use; expect more staged, gated rollouts."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "최신 모델 의존 시 주시 · 참고 저장",
+    "en": "Track if you depend on latest models · Save for reference"
+  },
+  "comment": {
+    "kr": "정부가 AI 기업들과 '새 모델을 내놓을 때 지켜야 할 최소 기준'을 만든다는 소식입니다. 벤치마크·일정·접근 권한 같은 걸 정하는 건데, 강제 규제가 아니라 '자율 표준'이라는 게 특징입니다.\n\n디자이너에게 직접적인 영향은 아직 작지만, 방향은 알아둘 만합니다. 앞서 여러 카드에서 봤듯, 이런 표준은 결국 '설명 가능성·안전장치' 같은 형태로 제품 화면 위로 내려옵니다. 지금은 먼 정책 이야기 같아도, 'AI 규제는 언젠가 UX 요구사항이 된다'는 흐름의 초기 신호입니다.",
+    "en": "News that the government is building 'minimum standards for releasing new models' with AI companies, covering benchmarks, timelines and access, with the twist that it's a 'voluntary standard' rather than hard regulation.\n\nThe direct impact on designers is still small, but the direction is worth knowing. As we've seen across several cards, such standards eventually land on product screens as 'explainability' and 'safety guards.' It looks like distant policy now, but it's an early signal that AI regulation eventually becomes a UX requirement."
+  },
+  "thumbLabel": "정책",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

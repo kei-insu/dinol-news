@@ -1,0 +1,56 @@
+{
+  "contentId": "20260710-design-003",
+  "date": "2026-07-10",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-08"
+  },
+  "url": "https://www.yankodesign.com/2026/07/08/the-8-best-edc-designs-of-july-2026/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품",
+    "en": "Design · Product"
+  },
+  "title": {
+    "kr": "2026년 7월 최고의 EDC 디자인 8선",
+    "en": "The 8 Best EDC Designs of July 2026"
+  },
+  "summary": {
+    "kr": "Yanko Design이 실제로 어떻게 휴대되고 쓰이는지를 기준으로, 여름 한 달을 버틸 EDC(일상 휴대품) 8가지를 골랐습니다. 새로움보다 크기와 메커니즘의 실용성을 우선했습니다.",
+    "en": "Yanko Design's July everyday-carry roundup features tools built around how items actually get carried and used across a full summer month, prioritizing footprint and mechanism over novelty."
+  },
+  "points": {
+    "kr": [
+      "카테고리 내 최소 크기를 기준으로 선정",
+      "실제 휴대·사용 패턴에 맞춘 메커니즘 설계",
+      "Yanko Design의 월간 EDC 시리즈 중 하나"
+    ],
+    "en": [
+      "Selection criteria centers on smallest footprint for the category",
+      "Mechanisms designed around real carry and use patterns",
+      "Part of Yanko Design's monthly EDC series"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "EDC 디자인은 작은 크기 안에서 제약을 얼마나 잘 푸느냐에 성패가 갈립니다. 소형 하드웨어나 여행용 제품 라인을 설계한다면 참고할 만한 사례 모음입니다.",
+    "en": "EDC design lives or dies on constraint-solving within a tiny footprint, a good study set for anyone designing compact hardware or travel-friendly product lines."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "소형 제품 디자인 레퍼런스로 저장 추천",
+    "en": "Good reference set for compact product design · Save"
+  },
+  "comment": {
+    "kr": "EDC 디자인이 흥미로운 카테고리인 이유는 제약이 늘 가혹하고 일관되기 때문입니다. 주머니 크기, 무게, 한 손 조작 같은 조건들이죠. 그래서 이런 모음 기사는 지금 소형 폼팩터 문제를 잘 풀고 있는 사례를 가늠하는 괜찮은 지표가 됩니다.\n쇼핑 리스트보다는 레퍼런스 세트로 보는 게 맞습니다.",
+    "en": "What makes EDC design interesting as a category is that the constraints are brutal and consistent, pocket size, weight, one-handed operation, so roundups like this end up being a decent proxy for who is solving compact-form problems well right now.\nWorth treating as a reference set rather than a shopping list."
+  },
+  "thumbLabel": "일상소품",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

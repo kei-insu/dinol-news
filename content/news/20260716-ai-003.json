@@ -1,0 +1,56 @@
+{
+  "contentId": "20260716-ai-003",
+  "date": "2026-07-16",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-15"
+  },
+  "url": "https://techcrunch.com/2026/07/15/vint-cerf-is-working-on-a-plan-to-unleash-ai-agents-on-the-open-internet/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 인프라 · 표준",
+    "en": "AI · Infrastructure · Standards"
+  },
+  "title": {
+    "kr": "'인터넷의 아버지' 빈트 서프, AI 에이전트용 신원 표준 개발 나서",
+    "en": "Vint Cerf is working on a plan to unleash AI agents on the open internet"
+  },
+  "summary": {
+    "kr": "TCP/IP 공동개발자이자 최근 구글을 떠난 빈트 서프가, AI 에이전트에게 도메인 이름과 연결된 암호학적 신원을 부여하는 'DNSid' 시스템 개발에 자문으로 참여합니다. AI 에이전트 간 상호작용이 안전하게 이뤄지도록 하는 것이 목표입니다.",
+    "en": "Vint Cerf, the co-creator of TCP/IP who recently left Google after 20 years, is advising Innovation Labs on 'DNSid,' a system giving AI agents cryptographically verifiable identities tied to domain names, aiming to make the open internet safe for agent-to-agent interaction."
+  },
+  "points": {
+    "kr": [
+      "DNSid는 에이전트 신원을 기존 도메인 인프라에 연결",
+      "DNS 등록기관 Identity Digital 자회사 Innovation Labs가 개발",
+      "서프 \"에이전트형 AI는 결국 상호운용성·표준화를 요구할 것\""
+    ],
+    "en": [
+      "DNSid ties agent identity to existing domain-name infrastructure",
+      "Built by Innovation Labs, a subsidiary of DNS registry Identity Digital",
+      "Cerf: agentic AI will force interoperability and standardization"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "인프라 차원의 근본적인 움직임입니다. 에이전트 신원 표준이 자리 잡으면, 사용자를 대신해 행동하는 AI 에이전트를 디자인·제품 도구가 어떻게 인증하고 신뢰할지도 이 표준에 좌우될 것입니다.",
+    "en": "A foundational infrastructure move, if agent identity standards succeed, they'll shape how design/product tools authenticate and trust AI agents acting on a user's behalf."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "에이전트형 AI 기능을 만든다면 주시 추천 · 북마크",
+    "en": "Worth tracking for anyone building agentic AI features · Bookmark"
+  },
+  "comment": {
+    "kr": "인터넷의 원조 설계자가 이제 에이전트도 하나의 독립된 네트워크 참여자가 되는 다음 단계의 '배관 공사'를 맡고 있다는 점이 인상적입니다. DNSid가 신원을 도메인 이름에 연결하는 방식은 실용적입니다. 인터넷 전체가 이미 신뢰하는 인프라를 재활용하기 때문입니다.\n\n이 표준 혹은 유사한 것이 자리 잡는다면, AI 에이전트 인증도 지금의 HTTPS 인증서처럼 평소엔 눈에 띄지 않다가 문제가 생기면 크게 부각되는 존재가 될 것입니다.",
+    "en": "It's notable that the internet's original architect is now working on the plumbing for its next phase: one where agents, not just people, are first-class citizens on the network. DNSid's approach of tying identity to domain names is pragmatic, it reuses infrastructure the whole internet already trusts.\n\nIf this or a similar standard gains traction, expect AI-agent authentication to become as unremarkable as HTTPS certificates are today: invisible when it works, a big deal when it doesn't."
+  },
+  "thumbLabel": "에이전트표준",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

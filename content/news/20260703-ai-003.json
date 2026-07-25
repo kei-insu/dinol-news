@@ -1,0 +1,54 @@
+{
+  "contentId": "20260703-ai-003",
+  "date": "2026-07-03",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "Reuters",
+    "publishedAt": "2026-07-02"
+  },
+  "url": "https://www.reuters.com/business/trump-administration-anthropic-have-not-discussed-government-taking-stakes-firm-2026-07-02/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 비즈니스",
+    "en": "AI · Policy · Business"
+  },
+  "title": {
+    "kr": "'트럼프 행정부-Anthropic, 정부 지분 논의 없었다' 소식통",
+    "en": "Trump administration and Anthropic haven't discussed a government stake, source says"
+  },
+  "summary": {
+    "kr": "소식통에 따르면 트럼프 행정부와 Anthropic은 정부의 지분 취득을 논의한 적이 없습니다. OpenAI가 미국 정부에 5% 지분을 논의했다는 FT 보도 이후 나온 해명입니다.",
+    "en": "A source says the Trump administration and Anthropic have not discussed the government taking a stake in the firm, after an FT report that OpenAI discussed giving the US a 5% stake."
+  },
+  "points": {
+    "kr": [
+      "OpenAI 5% 지분에 대한 FT 보도 내용",
+      "워싱턴이 AI 밸류에이션을 주시하는 이유",
+      "최근 수출 통제 조치와의 연결"
+    ],
+    "en": [
+      "What the FT reported about OpenAI's 5% stake",
+      "Why Washington is scrutinizing AI valuations",
+      "How it ties to recent export-control moves"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "프런티어 AI가 정부와 얼마나 밀접해지는지를 보여줍니다. 여러분이 쓰는 AI 도구의 공급사가 점점 정치적 감독을 받는다는 신호입니다.",
+    "en": "Signals how tightly frontier AI is entangling with government; the vendors behind your AI tools face growing political oversight."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "배경 참고용 · 선택",
+    "en": "Background reading · Optional"
+  },
+  "comment": {
+    "kr": "이 카드는 오늘 브리핑에서 디자인 실무와 가장 거리가 멉니다(별점도 최저). 'OpenAI가 미국 정부에 지분 5%를 논의했다'는 FT 보도가 나오자, Anthropic은 '우리는 그런 논의 없었다'고 선을 그은 해명성 소식입니다.\n\n다만 큰 그림에서 짚어둘 점은 있습니다. AI 기업과 국가의 관계가 점점 밀착되고 있다는 배경이죠. 그게 모델 접근성·규제로 이어지면 결국 우리가 쓰는 도구에도 영향이 옵니다. 관심 분야가 아니라면 가볍게 넘겨도 좋은 카드입니다.",
+    "en": "This card is the furthest from design practice in today's briefing (its rating is the lowest, too). After an FT report that 'OpenAI discussed a 5% stake with the US government,' Anthropic drew a line, clarifying it had held no such talks.\n\nStill, one thing worth noting in the big picture: the relationship between AI companies and the state is tightening. If that feeds into model access and regulation, it eventually reaches the tools we use. If it's not your area, this is a card you can skim past."
+  },
+  "thumbLabel": "지분",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

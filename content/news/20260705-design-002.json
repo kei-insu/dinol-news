@@ -1,0 +1,56 @@
+{
+  "contentId": "20260705-design-002",
+  "date": "2026-07-05",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-02"
+  },
+  "url": "https://www.yankodesign.com/2026/07/02/fiat-multiplina-concept-rincarnates-classic-multipla-as-a-clever-four-seat-electric-urban-vehicle/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 모빌리티",
+    "en": "Design · Product · Mobility"
+  },
+  "title": {
+    "kr": "피아트 멀티플리나 콘셉트: 1956년 명작을 4인승 도시형 전기차로 되살리다",
+    "en": "Fiat Multiplina concept reinvents a classic as a clever four-seat urban EV"
+  },
+  "summary": {
+    "kr": "피아트가 4인승 콤팩트 전기차 '멀티플리나 콘셉트'를 공개했습니다. 1956년 피아트 600 멀티플라(공간 효율의 초기 명작)에서 영감을 받아, 최소한의 외형에 최대한의 실내 공간이라는 철학을 현대 전기 플랫폼으로 재해석했습니다. 2인승 '토폴리노'와 일반 승용차 사이의 '잃어버린 고리'를 자처하며, 도시 저배출 구역이 늘어나는 흐름 속 짧은 거리 이동에 맞춘 실용적 대안을 지향합니다. 2028년 양산 목표입니다.",
+    "en": "Fiat revealed the Multiplina Concept, a compact four-seat EV inspired by the 1956 Fiat 600 Multipla. It revives that car's 'maximum interior in minimal exterior' philosophy on a modern electric platform, positioned as the 'missing link' between the two-seat Topolino and a full car. Production is targeted for 2028."
+  },
+  "points": {
+    "kr": [
+      "1956년 피아트 600 멀티플라를 되살린 4인승 콤팩트 전기차",
+      "밀집·저배출 도시를 위한 '최대 실내, 최소 외형'",
+      "마이크로카와 일반차 사이의 '잃어버린 고리'(2028 양산)"
+    ],
+    "en": [
+      "Four-seat compact EV reviving the 1956 Fiat 600 Multipla",
+      "'Max interior, min exterior' for dense, low-emission cities",
+      "Positioned as the 'missing link' between micro-car and full car (2028)"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "제약과 유산을 다루는 영리한 교훈입니다. 피아트는 더 크고 화려한 차를 좇지 않고, 70년 전 아이디어(최대 공간·최소 크기)를 되살렸습니다. 그게 오늘의 밀집된 저배출 도시에 맞기 때문이죠.\n\n좋은 디자인은 종종 예상된 문제(더 큰 힘·크기)가 아니라 진짜 문제(도시의 공간)를 푸는 것이고, 앞으로 가기 위해 언제 뒤를 돌아봐야 하는지 아는 것입니다.",
+    "en": "A smart lesson in constraint and heritage. Fiat didn't chase a bigger, flashier car. It revived a 70-year-old idea (max space, min footprint) because it fits today's dense, low-emission cities. Good design often means solving the real problem (city space) rather than the expected one (more power/size), and knowing when to look backward to move forward."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "유산과 제약이 콘셉트를 이끄는 방식을 보세요; 좋은 모빌리티 디자인 레퍼런스입니다",
+    "en": "Note how heritage + constraint drives the concept; good mobility-design reference"
+  },
+  "comment": {
+    "kr": "이 콘셉트가 똑똑한 건 '더 큰 차'라는 뻔한 답을 거부했다는 점입니다. 도시가 붐비고 저배출 구역이 늘어나는 지금, 진짜 문제는 '힘'이 아니라 '공간'이라는 걸 정확히 짚었죠. 그래서 70년 전 명작(작은 외형에 넉넉한 실내)의 철학을 되살린 겁니다.\n\n디자인에서 '복고'는 종종 게으른 향수로 흐르지만, 이건 다릅니다. 옛 아이디어가 오늘의 문제에 딱 맞아떨어져서 소환된 거니까요.\n\n앞으로 나아가기 위해 뒤를 돌아보는 것, 그리고 예상된 문제 대신 진짜 문제를 푸는 것. 화면 디자인에도 그대로 적용되는 태도입니다.",
+    "en": "What makes this concept smart is that it refuses the obvious answer of 'a bigger car.' With cities crowding and low-emission zones spreading, it pinpoints that the real problem isn't 'power' but 'space.' So it revives the philosophy of a 70-year-old classic: a small exterior with a roomy interior.\n\nIn design, 'retro' often slides into lazy nostalgia, but this is different, an old idea summoned because it fits today's problem exactly.\n\nLooking back in order to move forward, and solving the real problem instead of the assumed one. It's an attitude that applies directly to screen design too."
+  },
+  "thumbLabel": "전기차",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

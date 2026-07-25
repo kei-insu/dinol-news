@@ -1,0 +1,56 @@
+{
+  "contentId": "20260715-ai-001",
+  "date": "2026-07-15",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-14"
+  },
+  "url": "https://techcrunch.com/2026/07/14/the-real-ai-race-may-no-longer-be-at-the-frontier-open-models-hugging-face/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 산업 · 오픈소스",
+    "en": "AI · Industry · Open Source"
+  },
+  "title": {
+    "kr": "오픈소스가 뒤흔든 AI 패권 경쟁…허깅페이스 다운로드 41%는 중국산",
+    "en": "The real AI race may no longer be at the frontier"
+  },
+  "summary": {
+    "kr": "올봄 허깅페이스 다운로드의 41%가 중국산 오픈웨이트 모델로, 미국 모델을 앞질렀습니다. 오픈라우터 인기 모델 상위 6개도 모두 텐센트·샤오미·딥시크·미니맥스·Z.ai 등 중국 오픈모델입니다. 저렴하고 커스터마이징 가능한 오픈모델이 실사용을 장악하면서 프런티어 모델의 의미를 되묻는 질문이 나옵니다.",
+    "en": "This spring, Chinese open-weight models made up 41% of downloads on Hugging Face, overtaking US models, and the six most popular models on OpenRouter are now all open Chinese models from Tencent, Xiaomi, DeepSeek, MiniMax and Z.ai — raising the question of how much frontier models still matter."
+  },
+  "points": {
+    "kr": [
+      "올봄 허깅페이스 다운로드의 41%가 중국 오픈모델",
+      "오픈라우터 최다 사용 모델 상위 6개 전부 중국 오픈웨이트",
+      "프런티어 모델 주도권의 의미에 의문 제기"
+    ],
+    "en": [
+      "Chinese open models = 41% of Hugging Face downloads this spring",
+      "OpenRouter's top 6 most-used models are all Chinese open-weight models",
+      "Raises doubt about how much frontier-model leadership still matters"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "저렴하고 커스터마이징 가능한 오픈모델이 이미 실사용에서 앞서고 있다면, AI 디자인 도구도 하나의 프런티어 벤더가 아니라 교체 가능한 오픈 백엔드 위에 세워지는 흐름이 커질 수 있습니다.",
+    "en": "If cheap, customizable open models are already winning in production, AI-powered design tools may increasingly be built on swappable open backends rather than a single frontier vendor."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "어떤 AI 모델 위에 서비스를 만들지 고민 중이라면 필독",
+    "en": "Must-read for anyone choosing which AI model to build on"
+  },
+  "comment": {
+    "kr": "지난 1년간의 '프런티어 모델' 마케팅을 조용히 무너뜨리는 기사입니다. 실제 프로덕션에서 돌아가는 모델은 저렴하고 오픈된 중국산 모델 쪽으로 옮겨가고 있습니다.\n디자인·프로덕트 팀에게 실질적 시사점은 '중국 모델로 갈아타라'가 아니라, '최고'와 '충분히 좋고 공짜'의 격차가 줄어들수록 하나의 폐쇄형 프런티어 벤더에 로드맵을 거는 것이 점점 위험해진다는 점입니다.\n지금 내 제품 아래 깔린 모델을 얼마나 쉽게 교체할 수 있는지, 이번 기회에 AI 도구 아키텍처를 점검해볼 만합니다.",
+    "en": "This is the story that quietly undercuts a year of frontier-model marketing: the models people actually run in production are shifting toward cheap, open, Chinese-built alternatives.\nFor design and product teams, the practical takeaway isn't 'switch to a Chinese model'; it's that betting your roadmap on one closed frontier vendor is getting riskier as the gap between 'best' and 'good enough and free' narrows.\nWorth revisiting your AI-tool architecture with this in mind: how hard would it be to swap the model underneath your product today?"
+  },
+  "thumbLabel": "오픈소스",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

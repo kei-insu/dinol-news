@@ -1,0 +1,56 @@
+{
+  "contentId": "20260710-ai-001",
+  "date": "2026-07-10",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-09"
+  },
+  "url": "https://techcrunch.com/2026/07/09/openai-launches-its-new-family-of-models-with-gpt-5-6/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 모델 출시",
+    "en": "AI · Model Launch"
+  },
+  "title": {
+    "kr": "OpenAI, GPT-5.6 신모델군 'Sol·Terra·Luna' 정식 출시",
+    "en": "OpenAI launches its new family of models with GPT-5.6"
+  },
+  "summary": {
+    "kr": "OpenAI가 GPT-5.6을 챗GPT·코덱스·API 전반에 정식 출시했습니다. 에이전트용 최상위 모델 Sol, 균형형 Terra, 대용량 저비용용 Luna로 3단계 라인업을 구성했습니다.",
+    "en": "OpenAI made GPT-5.6 generally available across ChatGPT, Codex and the API, launching three tiers, Sol, Terra and Luna, for agentic, balanced and high-volume workloads respectively."
+  },
+  "points": {
+    "kr": [
+      "Sol은 에이전틱 코딩·생물학·사이버보안에 특화, 서브에이전트를 쓰는 'ultra' 모드 신설",
+      "Terra는 GPT-5.5급 성능을 절반 가격에 제공",
+      "Luna는 대용량·저비용 파이프라인에 최적화된 가격 책정"
+    ],
+    "en": [
+      "Sol targets agentic coding, biology and cybersecurity tasks with a new 'ultra' sub-agent mode",
+      "Terra offers GPT-5.5-class performance at roughly half the price",
+      "Luna is priced for high-volume, cost-sensitive pipelines"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "3단계 라인업은 성능뿐 아니라 비용 기준으로 모델을 나누겠다는 신호입니다. 무작정 최상위 모델을 쓰기보다 제품의 AI 호출을 워크로드별로 나눠 적합한 티어에 매핑해볼 만합니다.",
+    "en": "A three-tier lineup signals OpenAI is segmenting by workload cost, not just capability, worth mapping your product's AI calls to the right tier before defaulting to the priciest model."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "OpenAI API 기반 제품팀 필독 · 요금제 재점검 추천",
+    "en": "Must-read for teams building on OpenAI's API"
+  },
+  "comment": {
+    "kr": "GPT-5.6의 3단계 출시(Sol·Terra·Luna)는 하나의 대표 모델보다, OpenAI가 라인업 전반에 가격 대비 성능 세분화를 공식화했다는 점에서 의미가 있습니다.\n시점도 눈여겨볼 만합니다. 이번 출시는 미국 정부의 안보 우려에 따른 지연 이후 이뤄진 것으로, 같은 주에 공개된 그록 4.5의 정식 출시와 맞물려 두 회사의 가격·성능 비교가 자연스럽게 이뤄지는 구도입니다.",
+    "en": "GPT-5.6's three-tier launch (Sol, Terra, Luna) is less about a single headline model and more about OpenAI formalizing price-performance segmentation across its lineup.\nThe timing matters too: this release followed a government-requested delay over security concerns, so its arrival alongside Grok 4.5's public rollout on the same week sets up a direct pricing and capability comparison between the two labs."
+  },
+  "thumbLabel": "신모델",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

@@ -1,0 +1,54 @@
+{
+  "contentId": "20260714-ai-004",
+  "date": "2026-07-14",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-13"
+  },
+  "url": "https://techcrunch.com/2026/07/13/sam-altmans-space-data-center-trash-talk-is-what-most-experts-already-believe/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 인프라 · 우주",
+    "en": "AI · Infrastructure · Space"
+  },
+  "title": {
+    "kr": "올트먼 '우주 데이터센터는 아직 허상'…전문가 대다수도 동의",
+    "en": "Sam Altman's space data center trash talk is what most experts already believe"
+  },
+  "summary": {
+    "kr": "샘 올트먼이 일론 머스크의 우주 데이터센터 계획을 '지금은 터무니없다'고 일축했습니다. 전문가 다수도 재사용 로켓 비용과 대량 위성 생산이 아직 갖춰지지 않아 궤도 AI 연산은 시기상조라는 데 동의합니다.",
+    "en": "Sam Altman called Elon Musk's space-based data center plans 'ridiculous' for now, and independent experts largely agree: reusable rocket costs and mass satellite manufacturing remain years away from making orbital AI compute viable."
+  },
+  "points": {
+    "kr": [
+      "궤도 데이터센터가 아직 이른 이유",
+      "스페이스X 2조달러 밸류에이션과의 연결",
+      "애플 소송 이후 격화된 올트먼-머스크 설전"
+    ],
+    "en": [
+      "Why orbital data centers aren't imminent",
+      "SpaceX's $2T valuation tied to the bet",
+      "Altman vs Musk feud escalates post Apple lawsuit"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "우주 컴퓨팅 과열에 대한 현실 점검입니다. 발사 비용과 대량 생산 체계가 갖춰지기까지는 수년이 더 필요하다는 점을 짚어줍니다.",
+    "en": "A useful gut-check against space-compute hype cycles: the underlying economics (launch cost, mass manufacturing) still don't pencil out for years."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "배경 참고용 · 선택",
+    "en": "Background reading · Optional"
+  },
+  "comment": {
+    "kr": "과열된 기대에 대한 건강한 회의다. 발사 비용·열 관리·궤도상 대량 생산 같은 물리·경제 논리가 아직 안 맞고, 전문가들도 '우주 컴퓨팅'은 시기상조라는 데 대체로 동의한다.\n로드맵 쇼와 당장 지을 수 있는 인프라를 구분하는 훈련용으로 좋다. 미래 기술 주장을 볼 때 결국 현실을 정하는 건 화려한 비전이 아니라 kg당 비용·냉각·공급망 같은 지루한 제약이다.",
+    "en": "A healthy dose of skepticism against the hype. The physics and economics (launch cost, thermal management, orbital manufacturing) still don't add up, and experts agree the 'space compute' pitch is premature.\nUseful for separating roadmap theater from buildable near-term infrastructure. When judging futuristic tech claims, the boring constraints (cost per kg, cooling, supply chain) usually decide what's real."
+  },
+  "thumbLabel": "우주데이터센터",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

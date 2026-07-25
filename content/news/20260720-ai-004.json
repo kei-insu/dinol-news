@@ -1,0 +1,54 @@
+{
+  "contentId": "20260720-ai-004",
+  "date": "2026-07-20",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-19"
+  },
+  "url": "https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 반도체 · 정책",
+    "en": "AI · Semiconductor · Policy"
+  },
+  "title": {
+    "kr": "젠슨 황 방일 이후, 일본의 '피지컬 AI' 62억 달러 베팅",
+    "en": "What to watch for after Jensen Huang's Japan visit"
+  },
+  "summary": {
+    "kr": "엔비디아 CEO 젠슨 황의 방일 이후, 일본 정부가 자국산 '피지컬 AI' 육성에 5년간 최대 1조 엔(약 62억 달러)을 투입하기로 했습니다.",
+    "en": "Following Nvidia CEO Jensen Huang's visit, Tokyo committed up to 1 trillion yen ($6.2B) over five years, betting on homegrown 'physical AI.'"
+  },
+  "points": {
+    "kr": [
+      "일본의 5년간 62억 달러 규모 피지컬 AI 투자",
+      "젠슨 황 방일이라는 배경",
+      "피지컬 AI 투자 경쟁의 지역적 함의"
+    ],
+    "en": [
+      "Japan's $6.2B five-year physical-AI investment",
+      "Context of Jensen Huang's Japan visit",
+      "Regional stakes in the physical-AI investment race"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "아시아 전역에서 피지컬 AI 투자 경쟁이 격화되고 있습니다. 로봇·임바디드 AI 제품을 다루는 팀이라면 배경 지식으로 알아둘 만합니다.",
+    "en": "Physical AI investment races are intensifying across Asia, relevant backdrop for teams working on robotics or embodied-AI products."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "인프라·피지컬 AI 동향 추적용 저장 추천",
+    "en": "Save for infrastructure/physical-AI trend tracking"
+  },
+  "comment": {
+    "kr": "1조 엔이라는 숫자 자체보다 주목할 점은, 이제 각국 정부가 '피지컬 AI'를 반도체·인프라 수준의 국가 전략 과제로 다루기 시작했다는 흐름입니다. 한국의 피지컬 AI 얼라이언스 논의와 맞물려 지역 간 경쟁 구도로 읽을 수 있습니다.\n\n다만 투자 발표의 세부 집행 계획이나 구체적 수혜 기업 명단은 스니펫에 드러나지 않으므로, 실제 정책 문서를 통한 추가 확인이 필요합니다.",
+    "en": "1조 엔이라는 숫자 자체보다 주목할 점은, 이제 각국 정부가 '피지컬 AI'를 반도체·인프라 수준의 국가 전략 과제로 다루기 시작했다는 흐름입니다. 한국의 피지컬 AI 얼라이언스 논의와 맞물려 지역 간 경쟁 구도로 읽을 수 있습니다.\n\n다만 투자 발표의 세부 집행 계획이나 구체적 수혜 기업 명단은 스니펫에 드러나지 않으므로, 실제 정책 문서를 통한 추가 확인이 필요합니다."
+  },
+  "thumbLabel": "피지컬AI",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

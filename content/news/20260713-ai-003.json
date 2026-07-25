@@ -1,0 +1,54 @@
+{
+  "contentId": "20260713-ai-003",
+  "date": "2026-07-13",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "Anthropic",
+    "publishedAt": "2026-07-07"
+  },
+  "url": "https://www.anthropic.com/news/redeploying-fable-5",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 제품 · 정책",
+    "en": "AI · Product · Policy"
+  },
+  "title": {
+    "kr": "앤트로픽, '클로드 페이블 5' 무료 제공 기간 7월 19일까지 연장",
+    "en": "Redeploying Claude Fable 5"
+  },
+  "summary": {
+    "kr": "앤트로픽이 유료 플랜 전반에서 '클로드 페이블 5' 이용 기간을 7월 19일까지 연장했습니다. 조기 종료에 대한 반발 이후 나온 조치로, 주간 사용 한도의 절반까지 페이블 5를 쓸 수 있습니다.",
+    "en": "Anthropic extended access to Claude Fable 5 across all paid plans through July 19, after backlash over an earlier cutoff, allowing usage up to half of weekly limits before switching to another model."
+  },
+  "points": {
+    "kr": [
+      "이용 기간 7월 12일에서 7월 19일로 연장",
+      "주간 한도 절반까지 페이블 5 사용 가능",
+      "컴퓨팅 제약 우려와 사용자 반발에 대한 대응"
+    ],
+    "en": [
+      "Access extended from July 12 to July 19",
+      "Usable up to half of weekly limit before switching models",
+      "Response to compute-constraint concerns and user backlash"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "프런티어 모델 접근성이 주 단위로 바뀔 수 있다는 점을 보여줍니다. 특정 모델 버전에 종속되지 않는 워크플로를 설계해 두는 게 안전합니다.",
+    "en": "A reminder that access to frontier models can shift week to week, worth building workflows that aren't locked to one specific model version."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "클로드를 AI 보조 디자인 작업에 쓴다면 참고 · 선택",
+    "en": "Useful if you rely on Claude for AI-assisted design work · Optional"
+  },
+  "comment": {
+    "kr": "AI 랩들이 컴퓨팅 부족과 사용자 기대치를 실시간으로 조율하는 모습을 보여주는 작은 사례입니다.\n팀 차원에서 프런티어 모델 사용량을 예산으로 관리한다면 참고할 만합니다.",
+    "en": "A small but telling episode in how AI labs are managing compute scarcity and user expectations in real time.\nGood context for anyone budgeting team usage of frontier models."
+  },
+  "thumbLabel": "모델정책",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

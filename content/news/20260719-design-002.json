@@ -1,0 +1,56 @@
+{
+  "contentId": "20260719-design-002",
+  "date": "2026-07-19",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-17"
+  },
+  "url": "https://www.archdaily.com/1148825/house-in-san-isidro",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 주거",
+    "en": "Design · Architecture · Residential"
+  },
+  "title": {
+    "kr": "산 이시드로의 협소주택, 층마다 녹지를 쌓다",
+    "en": "House in San Isidro / Ábode arq"
+  },
+  "summary": {
+    "kr": "부에노스아이레스 산 이시드로의 좁은 대지(약 158㎡)에, Ábode arq가 지하 포함 4개 층 규모의 가족 주택을 지었습니다. 층마다 녹지를 확보했고, 두 단의 옥상 정원도 갖췄습니다.",
+    "en": "On a narrow 1,700-square-foot lot in San Isidro, Buenos Aires, Ábode arq built a three-story-plus-basement family home that finds room for greenery at every level, including two tiered green roofs."
+  },
+  "points": {
+    "kr": [
+      "약 158㎡의 협소 대지에 수직으로 증축",
+      "앞마당 풀, 밀도 높은 뒷마당 파티오, 2단 옥상 정원",
+      "사진 펠릭스 니이카도"
+    ],
+    "en": [
+      "Built vertically on a compact 1,700 sq ft lot",
+      "Front pool, dense rear patio, two tiered green roofs",
+      "Photography by Félix Niikado"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "협소 대지에서 녹지를 포기하지 않고 수직으로 쌓아올린 사례입니다. 고밀도 도심 주거 프로젝트에 참고할 만합니다.",
+    "en": "A compact-lot case study in stacking green space vertically rather than sacrificing it — a useful reference for dense urban residential projects."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "협소주택 레퍼런스로 저장 추천 · 무드보드용으로도 좋음",
+    "en": "Save for compact-lot residential reference · Good for mood boards"
+  },
+  "comment": {
+    "kr": "협소주택은 도시 대지가 점점 좁고 비싸지는 지금 가장 보편적으로 참고할 만한 유형 중 하나입니다. 이 프로젝트가 택한 '수직으로 쌓기'는 익숙한 해법이지만, 2단 옥상 정원과 밀도 높은 뒷마당 파티오는 협소주택이 답답해지기 쉬운 경향에 진지하게 맞선 흔적을 보여줍니다.\n특히 눈에 띄는 것은 이렇게 좁은 대지에 앞마당 풀을 배치한 결정입니다. 희소한 공간을 하나의 어메니티에 과감히 할애한 선택으로, 건축가와 건축주의 우선순위를 잘 보여줍니다.\n좁고 긴 도심 자투리 부지 작업을 하는 사람이라면 저장해둘 만합니다.",
+    "en": "Small-lot housing is one of the more universally relevant typologies right now, as urban land gets scarcer and more expensive across most major cities. This project's response — stacking rather than spreading — is a familiar move, but the tiered green roofs and dense rear patio show real care in fighting the tendency for compact homes to feel airless.\nWhat stands out is the front-yard pool on such a tight footprint. It is a bold allocation of scarce space toward a single amenity, and signals a clear prioritization decision by the architects and clients.\nWorth bookmarking for anyone working on narrow urban infill sites."
+  },
+  "thumbLabel": "협소주택",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

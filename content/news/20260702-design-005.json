@@ -1,0 +1,56 @@
+{
+  "contentId": "20260702-design-005",
+  "date": "2026-07-02",
+  "section": "design",
+  "order": 5,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-01"
+  },
+  "url": "https://www.archdaily.com/1042771/the-building-in-motion-how-vertical-mobility-is-redefining-contemporary-architecture",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 역사",
+    "en": "Design · Architecture · History"
+  },
+  "title": {
+    "kr": "움직이는 건축, 수직 이동이 현대 건축을 재정의하는 방식",
+    "en": "The Building in Motion: How Vertical Mobility Is Redefining Contemporary Architecture"
+  },
+  "summary": {
+    "kr": "1743년 베르사유 궁전에 설치된 '나는 의자'부터 현대 건축까지 수직 이동 장치의 역사를 조명하는 에디토리얼입니다. 수직 모빌리티가 현대 건축의 공간 경험을 어떻게 재정의하는지 다룹니다.",
+    "en": "An editorial tracing vertical mobility from Versailles' 1743 flying chair to today, exploring how it redefines spatial experience in modern architecture."
+  },
+  "points": {
+    "kr": [
+      "1743년 베르사유 '나는 의자'부터 현대까지의 수직 이동사",
+      "공간 경험을 재정의하는 힘으로서의 '이동'",
+      "'보이지 않는 인프라'가 경험 전체를 좌우함"
+    ],
+    "en": [
+      "Vertical mobility from Versailles' 1743 flying chair to today",
+      "Movement as a force that redefines spatial experience",
+      "'Invisible infrastructure' quietly shapes the whole experience"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "긴 호흡의 좋은 글입니다. 엘리베이터를 배관 같은 설비가 아니라, 우리가 건물을 경험하는 방식을 바꾼 '디자인의 힘'으로 봅니다.\n\n모든 디자이너에게 주는 교훈은 이겁니다. '보이지 않는 인프라'(사람이 공간·인터페이스를 어떻게 이동하는가)가 경험 전체를 조용히 좌우한다는 것. 우연이 아니라 의도적으로 설계할 가치가 있습니다.",
+    "en": "A lovely long-view piece: it treats the elevator not as plumbing but as a design force that reshaped how we experience buildings. The lesson for any designer is that 'invisible infrastructure' (how people move through a space or interface) quietly dictates the whole experience, worth designing on purpose, not by accident."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "사려 깊은 디자인 역사 에세이로 읽고, '이동'이 경험을 어떻게 만드는지 새겨두세요",
+    "en": "Read as a thoughtful design-history essay; note how movement shapes experience"
+  },
+  "comment": {
+    "kr": "엘리베이터를 '경험을 바꾼 디자인'으로 보는 관점이 신선합니다. 우리는 보통 이동 수단을 배경 설비로 여기지만, 사실 사람이 공간을 '어떻게 지나가는가'가 그 공간의 경험 전체를 결정합니다.\n\n이건 화면 디자인에도 그대로 옵니다. 사용자가 화면 사이를 어떻게 이동하는지(내비게이션, 전환, 흐름)가 겉으로 잘 안 보이지만 경험의 질을 좌우하죠. '보이지 않는 것을 의도적으로 설계한다'는 감각, 이게 초보와 고수를 가르는 지점입니다.",
+    "en": "Seeing the elevator as 'a design that changed experience' is refreshing. We usually treat transport as background infrastructure, but in fact 'how a person moves through' a space determines the whole experience of it.\n\nThis carries straight into screen design. How users move between screens (navigation, transitions, flow) is hard to see on the surface yet decides the quality of the experience. That sense of deliberately designing the invisible is what separates beginners from pros."
+  },
+  "thumbLabel": "건축",
+  "thumbGradient": "g-olive",
+  "_todo": []
+}

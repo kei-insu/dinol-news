@@ -1,0 +1,57 @@
+{
+  "contentId": "20260718-design-003",
+  "date": "2026-07-18",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-15"
+  },
+  "url": "https://www.itsnicethat.com/articles/matter-of-new-new-typography-graphic-design-publication-project-150726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 그래픽 · 타이포그래피",
+    "en": "Design · Graphic · Typography"
+  },
+  "title": {
+    "kr": "우리는 아직 20세기 타이포그래피에 갇혀 있을까, 매터 오브의 '반(反)디자인' 매뉴얼",
+    "en": "Are we stuck in the typographic principles of the 20th century? Matter Of's new anti-design manual investigates"
+  },
+  "summary": {
+    "kr": "디자인 스튜디오 매터 오브가 협업자들의 에세이·이미지·타이포그래피를 모은 책 'New New Typography'를 펴냈습니다. 타이포그래피 디자인이 여전히 20세기 원칙에 갇혀 있는지를 묻는 내용입니다.",
+    "en": "Design studio Matter Of has published New New Typography, a book of essays, images and typography from collaborators that questions whether type design is still bound by 20th-century principles."
+  },
+  "points": {
+    "kr": [
+      "에세이집이자 타이포그래피 디자인 매뉴얼로 기능",
+      "여러 협업자가 이미지와 타이포그래피 실험을 기고",
+      "기존 규칙에 도전하는 '반디자인' 탐구를 표방"
+    ],
+    "en": [
+      "Functions as both an essay collection and a type-design manual",
+      "Multiple collaborators contribute images and typographic experiments",
+      "Frames itself explicitly as an 'anti-design' investigation of inherited rules"
+    ]
+  },
+  "positions": [
+    "typographer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "습관적으로 지켜온 타이포그래피 '규칙'과, 실제 가독성·브랜드 필요에 의한 규칙을 구분해보게 만드는 좋은 계기입니다.",
+    "en": "A good prompt to revisit which typographic 'rules' you follow out of habit versus actual legibility or brand need."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "타이포그래피·그래픽 디자이너에게 훑어볼 만함 · 스튜디오 서가에 들여놓기 좋은 책",
+    "en": "Worth a browse for type and graphic designers · Good studio-library pickup"
+  },
+  "comment": {
+    "kr": "타이포그래피의 정설에 의문을 제기하는 책은 흔하지만, 이를 명시적으로 '매뉴얼'이라 표방한 점은 눈에 띕니다. 독자가 아이디어를 감상하는 데 그치지 않고 실제로 적용해보길 바란다는 의도로 읽힙니다.\n\n'반디자인'이 하나의 일관된 태도로 성립할지, 아니면 흥미로운 실험들의 느슨한 모음에 그칠지는 에세이와 타입 스펙시먼이 서로 얼마나 대화하는지에 달려 있습니다. 요약만으로 판단하기보다 직접 살펴볼 가치가 있습니다.",
+    "en": "Books that question typographic orthodoxy are common, what's less common is framing it explicitly as a manual, implying the studio wants readers to actually apply the ideas rather than just admire them.\n\nWhether 'anti-design' holds up as a coherent stance or ends up as a loose collection of interesting experiments will depend on how the essays and the type specimens talk to each other, worth judging in person rather than from a summary."
+  },
+  "thumbLabel": "타이포",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

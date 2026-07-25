@@ -1,0 +1,56 @@
+{
+  "contentId": "20260703-ai-001",
+  "date": "2026-07-03",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-02"
+  },
+  "url": "https://www.reuters.com/business/zuckerberg-says-ai-agent-development-going-slower-than-expected-2026-07-02/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 빅테크 · 전략",
+    "en": "AI · Big Tech · Strategy"
+  },
+  "title": {
+    "kr": "저커버그 'AI 에이전트, 기대만큼 빠르게 발전 못 했다' 직원들에 인정",
+    "en": "Zuckerberg tells staff AI agents haven't progressed as fast as hoped"
+  },
+  "summary": {
+    "kr": "메타 CEO 마크 저커버그가 내부 타운홀에서 최근 4개월간 AI 에이전트 개발이 기대만큼 빨라지지 않았다고 인정했습니다. 최대 1,450억 달러 투자에도 조직 개편 성과가 아직 나오지 않았다는 것입니다.",
+    "en": "At an internal town hall, Meta CEO Mark Zuckerberg admitted AI agent development over the past four months hasn't accelerated as expected, despite up to $145B in AI spending."
+  },
+  "points": {
+    "kr": [
+      "막대한 투자에도 에이전트 진척이 더딘 이유",
+      "human-in-the-loop가 제품 설계에 주는 의미",
+      "메타가 제시한 향후 3~6개월 기대치"
+    ],
+    "en": [
+      "Why agent progress stalled despite huge spend",
+      "What human-in-the-loop means for product design",
+      "Meta's new 3–6 month expectation"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "에이전트 과열에 대한 현실 점검입니다. 'AI가 이 업무를 자동화한다'는 주장을 건강한 회의로 보고, 사람이 개입하는(human-in-the-loop) 흐름으로 설계하는 게 좋습니다.",
+    "en": "A reality check on agent hype: treat 'AI will automate this workflow' claims with healthy skepticism and design for human-in-the-loop."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "AI 기능 기획자 필독 · 프로덕트팀 공유 추천",
+    "en": "Worth a read for AI-feature planners · Share with product teams"
+  },
+  "comment": {
+    "kr": "1,450억 달러를 쓴 저커버그가 '생각만큼 안 됐다'고 인정한 게 이 소식의 핵심입니다. AI 에이전트를 향한 열기가 뜨겁지만, 실제 진척은 광고만큼 빠르지 않다는 현실 점검이죠.\n\n디자이너·기획자에게 주는 교훈은 분명합니다. 'AI가 이 업무를 통째로 자동화한다'는 말을 곧이곧대로 믿고 설계하면 위험합니다. 아직은 사람이 중간에 개입하고 확인하는(human-in-the-loop) 흐름이 현실적이고, 그렇게 설계해 둬야 나중에 덜 무너집니다. 기술 과열기일수록 냉정한 설계가 값어치를 합니다.",
+    "en": "The core here is that Zuckerberg, after spending $145B, admitted it 'hasn't gone as well as expected.' The heat around AI agents is intense, but here's a reality check: actual progress isn't as fast as the marketing.\n\nThe lesson for designers and planners is clear. Designing on the naive belief that 'AI fully automates this task' is risky. For now a human-in-the-loop flow, where people intervene and verify, is realistic, and designing that way means less collapses later. The hotter the hype, the more level-headed design pays off."
+  },
+  "thumbLabel": "에이전트",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

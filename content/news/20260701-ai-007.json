@@ -1,0 +1,54 @@
+{
+  "contentId": "20260701-ai-007",
+  "date": "2026-07-01",
+  "section": "ai",
+  "order": 7,
+  "source": {
+    "name": "AI News",
+    "publishedAt": "2026-07-01"
+  },
+  "url": "https://www.artificialintelligence-news.com/news/japan-ai-robots-2040-national-ai-model/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 로보틱스",
+    "en": "AI · Policy · Robotics"
+  },
+  "title": {
+    "kr": "일본, 자국 AI 모델 + 2040년까지 로봇 1,000만 대 국가 전략",
+    "en": "Japan plans a sovereign AI model and 10 million robots by 2040"
+  },
+  "summary": {
+    "kr": "일본이 소프트뱅크·소니·혼다 등이 참여한 컨소시엄 '노에트라'에 최대 61억 달러를 투입해 자국 '피지컬 AI' 모델을 공식 위탁하고, 2040년까지 18개 분야에 로봇 1,000만 대 보급을 목표로 삼았습니다.",
+    "en": "Japan formally commissioned a domestic 'physical AI' model (consortium Noetra with SoftBank, Sony, Honda) backed by up to $6.1B, targeting 10M robots across 18 sectors by 2040."
+  },
+  "points": {
+    "kr": [
+      "'주권/피지컬 AI'의 의미",
+      "노동력 부족과 로봇 전략",
+      "거의 동시에 나온 한국의 대응"
+    ],
+    "en": [
+      "What 'sovereign/physical AI' means",
+      "Why robots for a labor shortage",
+      "Korea's near-simultaneous response"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "국가 차원의 '피지컬 AI'(공간을 인식하고 행동하는 로봇) 추진입니다.\n\n화면 너머를 생각하기 시작하세요. 체화된 AI가 커지면 공간·센서·로봇 인터랙션 설계 수요가 열립니다. 지금 기초만 잡아둬도 앞서갑니다.",
+    "en": "National-scale 'physical AI' push (robots that read a room and act). Start thinking beyond the screen: spatial, sensor, and robot-interaction design will open up as embodied AI scales. Even a basic grasp of these now is a head start."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "'피지컬 AI' 지형 파악용으로 저장하고, 로보틱스·공간 디자인이 내 일과 연결될 때 다시 보세요",
+    "en": "Save for physical-AI landscape watching; revisit when robotics/spatial design becomes relevant to your work"
+  },
+  "comment": {
+    "kr": "숫자(61억 달러, 로봇 1,000만 대)보다 '피지컬 AI'라는 방향이 핵심입니다. 우리 7/1·7/2 브리핑에서 한국 정부의 '피지컬AI 수출국' 전략을 봤는데, 일본도 같은 곳을 향하고 있습니다. 즉 이건 한 나라의 일이 아니라 '화면 속 AI에서 몸을 가진 AI로'라는 세계적 전환입니다.\n\n디자이너에게 이건 먼 뉴스가 아니라 커리어의 방향타입니다. 로봇·공간·센서가 늘어나면, 그것들과 사람이 만나는 접점을 설계할 사람이 필요해집니다. 지금 앱만 다루더라도, '체화된 AI'라는 옆 동네가 국가 단위로 커지고 있다는 건 알아두면 좋습니다.",
+    "en": "More than the numbers ($6.1B, 10 million robots), the real point is the direction: 'physical AI.' In our 7/1 and 7/2 briefings we saw Korea's 'physical-AI export nation' strategy, and Japan is heading to the same place. So this isn't one country's story, it's a global shift from 'AI on screens' to 'AI with a body.'\n\nFor designers this isn't distant news, it's a career compass. As robots, spaces and sensors multiply, someone has to design where they meet people. Even if you only touch apps today, it's worth knowing that the 'embodied AI' next door is growing at a national scale."
+  },
+  "thumbLabel": "로봇",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

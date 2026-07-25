@@ -1,0 +1,56 @@
+{
+  "contentId": "20260715-design-003",
+  "date": "2026-07-15",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-14"
+  },
+  "url": "https://www.dezeen.com/2026/07/14/9631-mountain-ridge-place-studio-b-studio-brother-john-boulder-colorado/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 주거",
+    "en": "Design · Architecture · Residential"
+  },
+  "title": {
+    "kr": "산불로 소실된 자리에…볼더의 산악 주택 새로 서다",
+    "en": "Studio B and Studio Brother John create mountain home in Boulder"
+  },
+  "summary": {
+    "kr": "스튜디오 브라더 존이 스튜디오 B 아키텍처+인테리어와 협업해 콜로라도 볼더의 '9631 마운틴 리지 플레이스'를 완성했습니다. 산악 지형을 최대한 활용했고, 산불로 소실된 기존 건물 자리에 새로 지었습니다.",
+    "en": "Studio Brother John worked with Studio B Architecture + Interiors on 9631 Mountain Ridge Place, a home in Boulder, Colorado that makes the most of its mountainous site and replaces a structure destroyed in a wildfire."
+  },
+  "points": {
+    "kr": [
+      "산불로 소실된 기존 주택 자리에 새로 건립",
+      "가파른 산악 지형에 맞춘 설계",
+      "스튜디오 브라더 존과 스튜디오 B의 협업"
+    ],
+    "en": [
+      "Replaces a home lost to wildfire on the same site",
+      "Design responds directly to a steep mountainous site",
+      "Collaboration between Studio Brother John and Studio B"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "산불 위험 지역을 위한 설계 사례로 참고할 만합니다. 비슷한 지형에서 회복탄력적인 주거 건축을 다루는 이들에게 유용합니다.",
+    "en": "A useful case study in designing for wildfire-prone sites, worth studying for anyone doing resilient residential architecture in similar terrain."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "산불 지역 대응 주거 건축 레퍼런스로 저장 추천",
+    "en": "Reference for wildfire-resilient residential design"
+  },
+  "comment": {
+    "kr": "얼마 전 불에 탄 자리에 다시 짓는다는 것은 특수하면서도 점점 흔해지는 과제입니다. 다른 무엇보다 재난에 대한 답을 먼저 내놓아야 하는 프로젝트입니다.\n향후 산불 위험을 줄이기 위해 소재와 배치를 어떻게 다뤘는지 눈여겨볼 만합니다. 산악·산림 인접 주거 프로젝트에서 점점 표준 질문이 되고 있는 부분이기 때문입니다.",
+    "en": "Rebuilding on a site that just burned is a specific and increasingly common brief: the project has to answer for the disaster before it answers for anything else.\nWorth watching for how the studios handled materials and siting to reduce future wildfire risk, since that's becoming a standard question in mountain and wildland-adjacent residential work."
+  },
+  "thumbLabel": "산악주택",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

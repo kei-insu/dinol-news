@@ -1,0 +1,54 @@
+{
+  "contentId": "20260702-ai-004",
+  "date": "2026-07-02",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-01"
+  },
+  "url": "https://techcrunch.com/2026/07/01/gemini-spark-googles-agentic-assistant-is-now-available-on-mac/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 도구 · 생산성",
+    "en": "AI · Tool · Productivity"
+  },
+  "title": {
+    "kr": "구글의 AI 에이전트 '제미니 스파크', 맥 데스크톱 앱에 정식 출시",
+    "en": "Gemini Spark, Google's agentic assistant, is now available on Mac"
+  },
+  "summary": {
+    "kr": "구글의 AI 에이전트 '제미니 스파크'가 맥(Mac) 데스크톱 앱에 정식 탑재됐습니다. 실시간 주제 업데이트와 구글 태스크·킵 등 앱 연동 기능이 새롭게 추가됐습니다.",
+    "en": "Google's agentic assistant Gemini Spark is now available as a Mac desktop app, adding real-time topic updates and integrations with Google Tasks and Keep."
+  },
+  "points": {
+    "kr": [
+      "제미니 스파크, 맥 데스크톱 앱으로",
+      "구글 태스크·킵과 연동",
+      "어시스턴트가 브라우저 탭에서 '상시 데스크톱 존재'로 이동"
+    ],
+    "en": [
+      "Gemini Spark comes to Mac desktop",
+      "Integrates with Google Tasks and Keep",
+      "Assistants moving from browser tab to ambient desktop presence"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "흐름은 이렇습니다. AI 어시스턴트가 브라우저 탭을 벗어나 데스크톱으로, 그리고 내 할 일·메모와 연결됩니다.\n\n제품 디자이너에겐 '어시스턴트가 기존 도구들 곁에서 어떻게 존재해야 하는가'라는 질문이 생깁니다. 또 하나의 창이 관심을 뺏는 게 아니라, 배경에서 자연스럽게 돕는 형태로요.",
+    "en": "The trend here: AI assistants are moving out of the browser tab and onto the desktop, wired into your tasks and notes. For product designers, this raises the question of how an assistant should live alongside your existing tools: ambient and helpful, not another window fighting for attention."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "어시스턴트 UX의 방향으로 참고하고, 에이전트가 기존 도구와 어떻게 공존할지 생각해 보세요",
+    "en": "Note the direction of assistant UX; think about how an agent should coexist with existing tools"
+  },
+  "comment": {
+    "kr": "기능 자체보다 '어디에 사는가'가 흥미롭습니다. AI 어시스턴트가 브라우저 탭에서 나와 데스크톱에 자리 잡고, 내 할 일·메모와 연결되기 시작했습니다.\n\n디자이너에게 이건 새 숙제입니다. 어시스턴트가 또 하나의 시끄러운 창이 되면 방해가 되고, 너무 조용하면 잊힙니다. '배경에 있다가 필요할 때 딱 나타나는' 균형을 설계하는 게 관건입니다. 앞으로 이런 '상시 존재하는 조수'의 UX가 중요한 디자인 주제가 될 겁니다.",
+    "en": "More than the feature itself, 'where it lives' is what's interesting. The AI assistant has stepped out of the browser tab, settled onto the desktop, and started connecting to my tasks and notes.\n\nFor designers this is a new problem. If the assistant becomes yet another noisy window it's a nuisance; too quiet and it's forgotten. The challenge is designing the balance of 'sitting in the background, appearing exactly when needed.' The UX of these ever-present assistants will be a major design theme ahead."
+  },
+  "thumbLabel": "데스크톱",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

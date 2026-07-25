@@ -1,0 +1,57 @@
+{
+  "contentId": "20260717-design-003",
+  "date": "2026-07-17",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-16"
+  },
+  "url": "https://www.itsnicethat.com/articles/ana-miminoshvili-illustration-discover-160726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 일러스트 · 편집",
+    "en": "Design · Illustration · Editorial"
+  },
+  "title": {
+    "kr": "편집 일러스트, 과도해지지 않는 법은? 아나 미미노슈빌리의 답",
+    "en": "How do you avoid overcomplicating an editorial illustration? Ana Miminoshvili has mastered the art"
+  },
+  "summary": {
+    "kr": "일러스트레이터 아나 미미노슈빌리가 로우 판타지와 재해석된 현실을 통해 이야기의 핵심만을 간결하게 담아내는 작업 방식을 소개한다. 편집 일러스트에서 과도한 설명을 덜어내는 방법을 보여준다.",
+    "en": "Illustrator Ana Miminoshvili cuts straight to the core of stories through low fantasy and reimagined realities, avoiding overcomplication in editorial illustration."
+  },
+  "points": {
+    "kr": [
+      "'로우 판타지'와 재해석된 일상 현실에 집중",
+      "시각적 복잡함보다 서사적 명료함 우선",
+      "절제를 보여주는 편집 일러스트 사례 연구"
+    ],
+    "en": [
+      "Focuses on 'low fantasy' and reimagined everyday realities",
+      "Prioritizes narrative clarity over visual complexity",
+      "Editorial illustration case study on restraint"
+    ]
+  },
+  "positions": [
+    "illustrator",
+    "editorial-designer"
+  ],
+  "designer": {
+    "kr": "편집 일러스트는 디테일을 쌓기보다 선택적으로 덜어낼 때 힘이 생긴다는 점을 다시 확인시켜줍니다. 일러스트레이터에게 브리핑하거나 에디토리얼 비주얼을 기획할 때 참고할 만합니다.",
+    "en": "A good reminder that editorial illustration succeeds through selective simplification, not maximal detail — useful for anyone briefing illustrators or designing editorial visuals."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "에디토리얼 아트디렉션 레퍼런스로 좋음 · 무드보드 저장 추천",
+    "en": "Good reference for editorial art direction · Save for mood boards"
+  },
+  "comment": {
+    "kr": "'과도하게 설명하지 않는 것'이 오히려 더 어려운 기술이라는 걸 보여주는 인터뷰입니다. 많은 주니어 일러스트레이터·디자이너가 빠지기 쉬운 함정을 정확히 짚습니다.\n로우 판타지라는 다소 생소한 키워드도 흥미롭습니다. 완전한 판타지도, 완전한 사실주의도 아닌 중간 지점에서 이야기를 압축하는 방식은 브랜드 일러스트레이션 기획에도 참고할 만한 태도입니다.",
+    "en": "This interview shows that 'not over-explaining' is actually the harder skill — it pinpoints exactly the trap many junior illustrators and designers fall into.\nThe 'low fantasy' framing is also an interesting keyword worth borrowing: sitting between full fantasy and full realism, it's an attitude toward compressing a story that's worth referencing in brand illustration planning too."
+  },
+  "thumbLabel": "일러스트",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

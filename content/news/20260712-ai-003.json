@@ -1,0 +1,54 @@
+{
+  "contentId": "20260712-ai-003",
+  "date": "2026-07-12",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-09"
+  },
+  "url": "https://techcrunch.com/2026/07/09/can-ai-answer-the-3-trillion-question/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 인프라 · 투자",
+    "en": "AI · Infrastructure · Investment"
+  },
+  "title": {
+    "kr": "AI는 3조 달러짜리 질문에 답할 수 있을까",
+    "en": "Can AI answer the $3 trillion question?"
+  },
+  "summary": {
+    "kr": "2026년 AI 인프라 투자가 1조 5천억 달러에 달할 것으로 추정되는 가운데, 이 투자를 정당화하려면 AI 산업이 약 3조 달러 규모의 가치를 창출해야 한다고 테크크런치가 짚었다.",
+    "en": "With 2026 AI infrastructure spending estimated at $1.5 trillion, the AI industry needs to generate roughly $3 trillion in value to justify the data-center buildout, TechCrunch reports."
+  },
+  "points": {
+    "kr": [
+      "2026년 AI 인프라 투자 약 1조 5천억 달러 추정",
+      "투자 정당화하려면 약 3조 달러 수익 필요",
+      "AI 매출이 설비투자(capex)를 따라잡을 수 있을지 논쟁"
+    ],
+    "en": [
+      "2026 AI infra spend estimated at $1.5T",
+      "Industry needs ~$3T in returns to justify it",
+      "Debate over whether AI revenue can catch up to capex"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "'AI가 그만한 값을 하냐'는 질문을 받을 때 참고할 거시적 배경입니다. 명확한 ROI를 보여주지 못하는 AI 기능은 예산 심사가 깐깐해질 수 있습니다.",
+    "en": "Whenever a client asks 'will AI pay for itself,' this is the macro backdrop: expect budget scrutiny on AI features that don't show clear ROI."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "경영진에 AI 기능을 제안할 때 참고할 배경 자료로 추천",
+    "en": "Useful context for anyone pitching AI features to leadership"
+  },
+  "comment": {
+    "kr": "핵심은 단순합니다. 올해 약 1조 5천억 달러에 달하는 AI 인프라 투자를 정당화하려면 약 3조 달러 규모의 수익이 나와야 한다는 것입니다. 이 격차가 지금 이사회마다 오가는 'AI가 그만한 값을 하는가'라는 질문의 배경입니다.\n\nAI 기능을 만드는 팀 입장에서는 이 수치가 무기이자 경고입니다. 업계 전체의 판돈이 결코 과장이 아니라는 근거가 되는 동시에, 개별 AI 기능의 ROI에 대한 심사가 앞으로 더 깐깐해질 거라는 신호이기도 합니다.",
+    "en": "The headline number here is simple: about $1.5 trillion in AI infrastructure spending this year needs roughly $3 trillion in returns to make sense. That gap is the quiet subtext behind every 'is AI worth it' conversation happening in boardrooms right now.\n\nFor teams building AI features, this is useful ammunition and a warning at once. It's ammunition because it shows the industry-wide stakes are real, not hype. It's a warning because it means scrutiny on individual AI features and their ROI is only going to get sharper as the macro math gets harder to ignore."
+  },
+  "thumbLabel": "3조달러",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

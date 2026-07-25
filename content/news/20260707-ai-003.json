@@ -1,0 +1,54 @@
+{
+  "contentId": "20260707-ai-003",
+  "date": "2026-07-07",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "UN News",
+    "publishedAt": "2026-07-06"
+  },
+  "url": "https://news.un.org/en/story/2026/07/1167862",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 거버넌스 · 정책",
+    "en": "AI · Governance · Policy"
+  },
+  "title": {
+    "kr": "\"재앙적 피해\" 경고 속…UN, 제네바서 첫 글로벌 AI 거버넌스 대화 개막",
+    "en": "Global push for AI governance amid warnings of 'catastrophic harm'"
+  },
+  "summary": {
+    "kr": "169개국이 참여하는 첫 UN 글로벌 AI 거버넌스 대화가 7월 6일 제네바에서 개막했다. 규칙보다 빠르게 진화하는 AI를 어떻게 규제할지가 핵심 의제다.",
+    "en": "The inaugural UN Global Dialogue on AI Governance opened in Geneva on July 6, bringing 169 countries together to debate how to regulate AI that is evolving faster than the rules meant to contain it."
+  },
+  "points": {
+    "kr": [
+      "169개국 참여, 역대 최대 다자 AI 거버넌스 논의",
+      "벤지오 '재앙적 피해 배제 못 한다'",
+      "마리아 레사 '정보 아마겟돈' 경고"
+    ],
+    "en": [
+      "169 countries, largest multilateral AI governance talks yet",
+      "Bengio: science can't yet rule out catastrophic harm",
+      "Maria Ressa warns of an 'information Armageddon'"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "'진짜와 가짜를 구분할 수 있는가'가 거버넌스 문제가 되면, 신뢰와 출처 표시도 디자인 문제가 됩니다. 콘텐츠 라벨부터 AI 답변의 출처 표기까지요.",
+    "en": "When 'can you tell fact from fiction' becomes a governance question, trust and provenance turn into design problems too, from content labels to how AI answers are sourced."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 제품 만드는 사람 일독 · 정책 관심 팀 공유",
+    "en": "Worth a read for anyone shaping AI products · Share with policy-minded teams"
+  },
+  "comment": {
+    "kr": "헤드라인은 공포지만, 쓸모 있는 대목은 '정보의 진실성'을 핵심 전장으로 본다는 프레이밍입니다. AI로 뭔가 만드는 사람에겐 먼 정치가 아니라 구체적인 디자인 책임으로 다가와요.\n\n무엇이 AI가 만든 것이고, 출처가 어디이며, 무엇이 불확실한지를 인터페이스가 어떻게 알려줄지가 조용히 우리 일의 일부가 되고 있습니다.",
+    "en": "The headline is fear, but the useful part is the framing: information integrity is treated as the core battle. For anyone building with AI, that lands as a concrete design responsibility, not distant politics.\n\nHow an interface signals what is AI-made, what is sourced, and what is uncertain is quietly becoming part of the job."
+  },
+  "thumbLabel": "AI 거버넌스",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

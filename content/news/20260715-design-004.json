@@ -1,0 +1,57 @@
+{
+  "contentId": "20260715-design-004",
+  "date": "2026-07-15",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-14"
+  },
+  "url": "https://www.dezeen.com/2026/07/14/nokia-unveils-nostalgic-dumbphones-with-dedicated-ai-button/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 테크",
+    "en": "Design · Product · Tech"
+  },
+  "title": {
+    "kr": "노키아, AI 버튼 하나 남긴 복고풍 '벽돌폰' 새 라인업",
+    "en": "Nokia launches nostalgic dumbphones with dedicated AI button"
+  },
+  "summary": {
+    "kr": "HMD가 인터넷 기능을 제한한 복고풍 노키아 '벽돌폰' 라인업을 새로 선보였습니다. 키패드 정중앙에는 AI 어시스턴트 전용 버튼을 넣었습니다.",
+    "en": "HMD launched a range of retro Nokia brick phones with limited internet capabilities and a dedicated AI-assistant button built into the centre of the keypad."
+  },
+  "points": {
+    "kr": [
+      "인터넷 기능을 의도적으로 제한한 복고풍 벽돌폰 폼팩터",
+      "키패드 중앙에 AI 어시스턴트 전용 버튼 배치",
+      "스마트폰 대비 저자극·향수 콘셉트로 포지셔닝"
+    ],
+    "en": [
+      "Retro Nokia brick-phone form factor with deliberately limited internet",
+      "Dedicated AI-assistant button placed at the centre of the keypad",
+      "Positioned as a nostalgic, low-distraction alternative to smartphones"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "ux-designer"
+  ],
+  "designer": {
+    "kr": "포지셔닝이 영리합니다. 일부러 '멍청한' 폼팩터에 AI 버튼 하나만 붙인 것은, 브랜드가 어떤 기능 하나만큼은 전용 하드웨어 자리를 내줄 가치가 있다고 보는지를 잘 보여줍니다.",
+    "en": "A sharp bit of positioning: pairing a deliberately 'dumb' form factor with a single AI button says a lot about which single feature a brand thinks still deserves a dedicated hardware slot."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "미니멀 하드웨어·단일 기능 제품 설계에 흥미로운 참고 사례",
+    "en": "Interesting reference for minimal-hardware, single-purpose product design"
+  },
+  "comment": {
+    "kr": "덜 하도록 설계된 폰에 딱 하나, AI를 위한 예외를 둔다는 모순이 흥미롭습니다.\n하드웨어든 앱이든 '스마트' 기능을 딱 하나만 남기고 나머지를 다 걷어낸다면 무엇에 전용 버튼을 내줄 것인가, 어떤 브리프에도 곱씹어볼 만한 질문입니다.",
+    "en": "This is a nice contradiction to sit with: a phone designed to do less, with one deliberate exception carved out for AI.\nIt's a useful prompt for any hardware or app design brief: if you could only keep one 'smart' feature and strip everything else, which one would earn the dedicated button?"
+  },
+  "thumbLabel": "AI버튼",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

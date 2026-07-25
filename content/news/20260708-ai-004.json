@@ -1,0 +1,57 @@
+{
+  "contentId": "20260708-ai-004",
+  "date": "2026-07-08",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-06"
+  },
+  "url": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 비즈니스",
+    "en": "AI · Business"
+  },
+  "title": {
+    "kr": "버셀 CEO '이제는 모델과 에이전트를 분리할 때'",
+    "en": "Vercel CEO Guillermo Rauch on the fight to split off models from agents"
+  },
+  "summary": {
+    "kr": "버셀(Vercel) CEO 기예르모 라우흐가 AI 스택은 특정 모델 기업에 종속되지 않고 모듈화되어야 한다고 주장합니다. 버셀은 하루 600만 건의 배포와 1조 토큰 이상이 오가는 AI 게이트웨이를 운영 중입니다.",
+    "en": "Vercel CEO Guillermo Rauch argues the AI stack should be modular, not locked to a single lab, as the company sees 6 million deployments a day and over 1 trillion tokens flowing through its AI gateway daily."
+  },
+  "points": {
+    "kr": [
+      "단일 모델사에 올인하던 흐름에서 조합형 AI 스택으로 전환",
+      "에이전트 안전 제어를 위한 버셀의 'Eve' 프레임워크와 샌드박스",
+      "'이 시대의 AWS가 되겠다'는 라우흐의 포부"
+    ],
+    "en": [
+      "Shift from single-lab bets to plug-and-play AI stacks",
+      "Vercel's Eve framework and Sandbox for agent safety controls",
+      "Rauch's ambition to be 'the AWS of this generation'"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "ux-designer"
+  ],
+  "designer": {
+    "kr": "AI 기능을 설계하는 실무자에게 유용한 맥락입니다. 하나의 모델 기업에만 의존하는 전략이 점점 리스크로 여겨지고 있습니다.",
+    "en": "Useful context for anyone architecting AI features — betting on one model provider is increasingly seen as a liability, not a strategy."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "AI 인프라 기획자 필독 · 참고 저장 추천",
+    "en": "Worth a read for AI infrastructure planners · Save for reference"
+  },
+  "comment": {
+    "kr": "라우흐의 주장은 업계 전반의 흐름 변화를 보여줍니다. \"하나의 모델사에 올인\"하던 2025년식 접근이, 모델·하네스·데이터·샌드박스·게이트웨이를 각각 교체 가능한 레이어로 분리하는 방식으로 바뀌고 있습니다.\n에이전트가 접근·반출할 수 있는 데이터를 통제하는 '샌드박스' 개념은 버셀 생태계 밖에서도 참고할 만한 실용적인 패턴입니다.\n스니펫 기반 요약이므로 구체적인 인용은 원문 인터뷰에서 다시 확인하시길 권장합니다.",
+    "en": "Rauch's framing echoes a broader industry shift: 2025's \"pick one lab and build everything on it\" mentality is giving way to composable stacks where model, harness, data, sandbox and gateway are separate, swappable layers.\nThe Sandbox concept - controlling exactly what data an agent can access or export - is a practical pattern worth borrowing even outside Vercel's ecosystem.\nSnippet-based summary - check the full interview for direct quotes before referencing specifics."
+  },
+  "thumbLabel": "AI스택",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

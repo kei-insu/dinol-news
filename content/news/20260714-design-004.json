@@ -1,0 +1,56 @@
+{
+  "contentId": "20260714-design-004",
+  "date": "2026-07-14",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-13"
+  },
+  "url": "https://www.yankodesign.com/2026/07/13/inkleafs-foldable-dual-screen-e-ink-notebook-lets-you-read-and-write-at-the-same-time/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 테크",
+    "en": "Design · Product · Tech"
+  },
+  "title": {
+    "kr": "읽기와 쓰기를 동시에, 폴더블 듀얼 E잉크 노트 '잉크리프'",
+    "en": "Inkleaf's foldable dual-screen E Ink notebook lets you read and write at the same time"
+  },
+  "summary": {
+    "kr": "'잉크리프'는 시장에 나온 최초의 폴더블 E잉크 태블릿입니다. 각각 두께 4.2mm에 불과한 10.3인치 카르타 E잉크 패널 두 장을 나란히 배치해, 한쪽엔 원본 자료를 두고 다른 쪽엔 필기를 할 수 있습니다. AI 기반 필기 검색 기능도 탑재했습니다.",
+    "en": "Inkleaf is the first foldable E Ink tablet on the market, pairing two 10.3-inch Carta E Ink panels (each just 4.2mm thick) so users can keep source material on one screen while taking notes on the other, with AI-powered handwriting search across all notebooks."
+  },
+  "points": {
+    "kr": [
+      "시장 최초의 폴더블 E잉크 태블릿",
+      "리마커블2·킨들 스크라이브보다 얇은 패널",
+      "약 450달러, 2026년 8월부터 배송 예정"
+    ],
+    "en": [
+      "First foldable E Ink tablet on the market",
+      "Each panel thinner than reMarkable 2 or Kindle Scribe",
+      "About $450, shipping to backers from August 2026"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "분할 화면 필기 문제에 대한 깔끔한 하드웨어적 해답입니다. 듀얼 패널·폴더블 기기 폼팩터를 구상할 때 참고할 만합니다.",
+    "en": "A clean hardware answer to the split-screen note-taking problem, worth watching as a form-factor reference for dual-panel or foldable device concepts."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "하드웨어 컨셉 무드보드 저장 추천",
+    "en": "Save for hardware-concept moodboards"
+  },
+  "comment": {
+    "kr": "분할 화면 필기 문제에 대한 깔끔한 하드웨어 해법이다. 얇은 Carta 패널 두 장을 접이식으로 붙여 읽기와 쓰기를 나란히 둔다. 가치는 신기함 자체가 아니라 실제 듀얼 페인 워크플로우에 들어맞는 폼팩터라는 점이다.\n듀얼 스크린 콘셉트의 레퍼런스로 지켜볼 만하다. 힌지 내구성·패널 간 리프레시 지연 같은 미해결 지점이 바로 이 디자인이 신뢰를 얻느냐 잃느냐가 갈리는 곳이다.",
+    "en": "A tidy hardware answer to the split-screen note-taking problem: two thin Carta panels, foldable, read-and-write side by side. The value isn't novelty for its own sake but a form factor that maps to a real dual-pane workflow.\nWorth watching as a reference for dual-screen concepts. The open questions (hinge durability, refresh lag across panels) are exactly where the design earns trust or loses it."
+  },
+  "thumbLabel": "듀얼잉크",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

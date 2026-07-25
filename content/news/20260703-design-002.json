@@ -1,0 +1,52 @@
+{
+  "contentId": "20260703-design-002",
+  "date": "2026-07-03",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "뉴스스페이스",
+    "publishedAt": "2026-07-03"
+  },
+  "url": "https://www.newsspace.kr/news/article.html?no=14622",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · XR",
+    "en": null
+  },
+  "title": {
+    "kr": "삼성 첫 스마트 글래스 '갤럭시 글래스' 디자인 유출",
+    "en": null
+  },
+  "summary": {
+    "kr": "삼성전자의 첫 스마트 글래스 '갤럭시 글래스'가 27초 유출 영상과 렌더링으로 디자인과 핵심 사양을 드러냈습니다. 사각 렌즈, 오른쪽 안경다리의 터치 영역, LED 녹화 표시등, 카메라 모듈 등이 포착됐고, 7월 22일 런던 언팩 공개가 유력합니다. 메타·레이밴 동맹에 삼성·구글·젠틀몬스터 연합이 맞서는 구도입니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "갤럭시 글래스의 유출된 디자인 요소(렌즈·터치·LED·카메라)",
+      "7/22 런던 언팩 공개 유력",
+      "메타·레이밴 vs 삼성·구글·젠틀몬스터 경쟁 구도"
+    ],
+    "en": []
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "화면 밖으로 나가는 '공간·웨어러블' 디자인이 빠르게 현실이 되고 있습니다. 스마트 글래스는 화면이 아주 작거나 아예 없어서, 기존 앱 UI 감각으로는 설계가 안 됩니다. 지금부터 '정보를 최소한으로, 맥락에 맞게, 손 안 대고' 전달하는 설계를 눈여겨보세요. 다음 인터페이스 전장이 여기입니다.",
+    "en": null
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "제품·XR 디자인 관심자라면 저장하고, 7/22 언팩에서 실제 디자인·인터랙션을 확인하세요",
+    "en": null
+  },
+  "comment": {
+    "kr": "For those of us used to smartphone UI, smart glasses pose an unfamiliar problem: with almost no screen, what do you show, and how?\n\nWhat's interesting about Galaxy Glass is the combination of 'Samsung, Google and Gentle Monster (an eyewear brand).' Tech and fashion have to meet for something to become an object people wear all day. For designers this signals a move from 'screen design' to 'wearing-experience design.' It seems distant, but the next interface plays out not in your hand but before your eyes.",
+    "en": null
+  },
+  "thumbLabel": "글래스",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

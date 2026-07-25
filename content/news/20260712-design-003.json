@@ -1,0 +1,57 @@
+{
+  "contentId": "20260712-design-003",
+  "date": "2026-07-12",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-09"
+  },
+  "url": "https://www.dezeen.com/2026/07/09/liz-galvez-shade-pavilion-los-angeles-earthen-comforts/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 설치 · 공예",
+    "en": "Design · Installation · Craft"
+  },
+  "title": {
+    "kr": "리즈 갈베즈, 끈과 흙벽돌로 LA에 그늘 파빌리온 세우다",
+    "en": "Liz Gálvez creates shade pavilion in LA with cord and stone"
+  },
+  "summary": {
+    "kr": "건축가 리즈 갈베즈가 로스앤젤레스의 머티리얼즈&어플리케이션스·크래프트 컨템포러리를 위해 'Earthen Comforts: Airing Earth' 파빌리온을 세웠다. 목조 기둥보 구조에 엮은 끈과 흙벽돌을 두른 형태로 도심 그늘의 가능성을 탐구한다.",
+    "en": "Architect Liz Gálvez built a courtyard pavilion titled Earthen Comforts: Airing Earth for Materials & Applications and Craft Contemporary in Los Angeles, using a post-and-beam structure wrapped in woven cord and earthen blocks to explore urban shade."
+  },
+  "points": {
+    "kr": [
+      "2021년부터 이어온 여름 파빌리온 커미션 시리즈",
+      "목조 기둥보 구조에 엮은 끈으로 마감",
+      "흙벽돌로 폭염 대응 가능성 실험"
+    ],
+    "en": [
+      "Annual summer pavilion commission since 2021",
+      "Wood post-and-beam frame wrapped in woven cord",
+      "Uses earthen blocks to explore heat resiliency"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "저기술(low-tech) 방식의 기후 대응 그늘 구조물을 고민하는 이들에게 참고할 만한, 소재 중심의 소규모 실험입니다.",
+    "en": "A small-scale, material-driven experiment worth watching for anyone working on low-tech climate-responsive shade structures."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "관심 있는 이들에게 영감 · 소재 리서치용 저장 추천",
+    "en": "Niche but inspiring · Save for material research"
+  },
+  "comment": {
+    "kr": "미술관급 대형 건축 뉴스에 비하면 작고 눈에 잘 띄지 않는 프로젝트지만, 그래서 오히려 의미가 있습니다. 이름 있는 건축가가 끈과 흙벽돌 같은 저기술 소재로 파빌리온 규모의 실험을 하는 모습을 보기 드물기 때문입니다.\n\n화려한 렌더링에 지친 분들, 기계 설비 없이 그늘과 열쾌적성을 어떻게 구현할 수 있는지 궁금한 분들에게 살펴볼 만합니다.",
+    "en": "This is a small, almost invisible project compared to museum-scale architecture news, but that's exactly the point: it's a rare chance to see a named architect work at pavilion scale with genuinely low-tech materials like cord and earthen block.\n\nWorth a look for anyone tired of glossy renders and interested in what shade and thermal comfort can look like without mechanical systems."
+  },
+  "thumbLabel": "파빌리온",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

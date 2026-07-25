@@ -1,0 +1,56 @@
+{
+  "contentId": "20260718-design-004",
+  "date": "2026-07-18",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-17"
+  },
+  "url": "https://www.yankodesign.com/2026/07/17/pulsar-feinmann-f01-noctua-edition-mouse-has-active-cooling-fan-inside-for-sweaty-gamers/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 게임",
+    "en": "Design · Product · Gaming"
+  },
+  "title": {
+    "kr": "손에 땀 차는 게이머를 위해, 내장 쿨링팬 단 펄사 파인만 F01 노크투아 에디션 마우스",
+    "en": "Pulsar Feinmann F01 Noctua Edition mouse has active cooling fan inside for sweaty gamers"
+  },
+  "summary": {
+    "kr": "펄사의 게이밍 마우스 '파인만 F01 노크투아 에디션'은 통풍이 되는 카본 컴포지트 셸 안에 40mm 노크투아 NF-A4x10 5V PWM 팬을 내장해 손의 땀을 능동적으로 식혀줍니다. 7월 21일 출시 예정입니다.",
+    "en": "Pulsar's Feinmann F01 Noctua Edition gaming mouse packs a 40mm Noctua NF-A4x10 5V PWM fan inside a ventilated carbon-composite shell to actively cool sweaty hands, going on sale July 21."
+  },
+  "points": {
+    "kr": [
+      "통풍 셸 안에 40mm 노크투아 PWM 팬 내장",
+      "장시간 플레이 중 손바닥 땀에 시달리는 경쟁 게이머 겨냥",
+      "마우스 제조사와 쿨링팬 전문 브랜드의 협업 제품"
+    ],
+    "en": [
+      "40mm Noctua PWM fan built into a ventilated carbon-composite shell",
+      "Targets competitive gamers dealing with palm sweat during long sessions",
+      "Collaboration pairs a mouse maker with a cooling-fan specialist brand"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "손에 땀이 차는 실사용 불편을 소재 변경이 아니라 기계적 해법(팬)으로 푼 사례입니다. 표면 코팅이나 질감 변경만으로는 물리적 불편이 해결되지 않을 때 참고할 만합니다.",
+    "en": "A neat example of solving a real ergonomic complaint (sweaty grip) with a mechanical rather than purely material solution, worth noting when a coating or texture change alone won't fix a physical-comfort problem."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "인체공학을 다루는 하드웨어·제품 디자이너에게 재미있는 레퍼런스 · 그 외에는 관심사에 따라 선택",
+    "en": "Fun reference for hardware/product designers working on ergonomics · Niche interest otherwise"
+  },
+  "comment": {
+    "kr": "마우스 안에 팬을 넣는다는 아이디어는 다소 기발하게 들리지만, 손이 미끄러워지는 상황이 실제 경쟁 게이밍 퍼포먼스를 얼마나 떨어뜨리는지 생각하면 억지로 만든 문제가 아니라 실질적인 불편을 해결한 사례입니다.\n\nPC 쿨링팬으로 잘 알려진 노크투아와의 협업은 일종의 '재료 브랜딩(ingredient branding)' 전략이기도 합니다. 조용하고 안정적인 쿨링으로 유명한 노크투아의 평판을 빌려, 팬 소음이 거슬리지 않을 거라는 신뢰를 소비자에게 주는 방식입니다.",
+    "en": "An internal fan in a mouse sounds like a novelty until you consider how much competitive gaming performance actually degrades with a slick, sweaty grip, this is solving a real friction point, not manufacturing one.\n\nThe brand pairing with Noctua, known almost exclusively for PC cooling fans, is also a smart bit of ingredient-branding: it borrows Noctua's reputation for quiet, reliable cooling to reassure buyers the fan won't be an annoying whine next to their ear."
+  },
+  "thumbLabel": "쿨링마우스",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

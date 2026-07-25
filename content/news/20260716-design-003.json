@@ -1,0 +1,56 @@
+{
+  "contentId": "20260716-design-003",
+  "date": "2026-07-16",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-15"
+  },
+  "url": "https://www.archdaily.com/1148657/omas-the-martin-completes-as-part-of-the-transformation-of-amsterdams-former-bijlmerbajes-prison",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축",
+    "en": "Design · Architecture"
+  },
+  "title": {
+    "kr": "OMA의 '더 마틴', 암스테르담 옛 바이럼바예스 감옥 재개발 프로젝트로 완공",
+    "en": "OMA's The Martin Completes as Part of the Transformation of Amsterdam's Former Bijlmerbajes Prison"
+  },
+  "summary": {
+    "kr": "OMA의 데이비드 지아노텐과 마리아노 사가스타가 설계한 주거타워 '더 마틴'이 완공됐습니다. 연속된 발코니와 이끼로 덮인 아트리움을 갖춘 네 개의 매스가 맞물린 형태로, 암스테르담 옛 바이럼바예스 감옥을 에너지 자립형 주거지로 재개발하는 7.5헥타르 프로젝트의 일부입니다.",
+    "en": "OMA's David Gianotten and Mariano Sagasta completed 'The Martin,' a residential tower of four interlocking volumes with continuous balconies and moss-covered atria, part of the 7.5-hectare redevelopment of Amsterdam's former Bijlmerbajes prison into an energy-neutral neighborhood."
+  },
+  "points": {
+    "kr": [
+      "발코니로 감싼 네 개의 맞물린 매스 구조",
+      "철거된 감옥 자재의 98%를 재사용·재활용",
+      "약 50㎡~140㎡ 유닛, 이끼로 덮인 공용 아트리움"
+    ],
+    "en": [
+      "Four interlocking volumes with wraparound balconies",
+      "98% of demolished-prison materials reused or recycled",
+      "Units from ~50sqm to 140sqm, moss-covered communal atria"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "대규모 적응형 재개발의 좋은 사례입니다. 98%라는 자재 재사용 수치는 지속가능성을 다루는 어떤 제안서에서도 인용할 만한 기준점입니다.",
+    "en": "A strong case study in adaptive large-scale redevelopment, the 98% material-reuse figure is a benchmark worth citing in any sustainability-focused pitch."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "적응형 재사용·지속가능 재개발 레퍼런스로 강력 추천 · 저장",
+    "en": "Strong reference for adaptive reuse and sustainable redevelopment · Save"
+  },
+  "comment": {
+    "kr": "감옥을 주거지로 바꾼다는 것 자체가 이미 상징적으로 무거운 작업인데, OMA는 화려한 제스처 대신 절제된 접근을 택했습니다. 이끼 아트리움과 자재 재사용 수치가 어떤 파사드 연출보다 더 많은 이야기를 전합니다.\n\n98%라는 자재 재사용 수치는 이 정도 규모에서 실제로 보기 드문 성과입니다. 대부분의 '지속가능한 재개발' 주장은 실제 철거 예산 앞에서 무너지곤 합니다.",
+    "en": "Turning a prison into housing is already a loaded symbolic move, but OMA leans into it with restraint rather than spectacle, the moss atria and material-reuse numbers do more storytelling than any facade gesture could.\n\nThe 98% material-reuse figure stands out as genuinely rare at this scale; most 'sustainable redevelopment' claims don't survive contact with an actual demolition budget."
+  },
+  "thumbLabel": "감옥재생",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

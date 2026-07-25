@@ -1,0 +1,57 @@
+{
+  "contentId": "20260714-ai-003",
+  "date": "2026-07-14",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-13"
+  },
+  "url": "https://techcrunch.com/2026/07/13/satya-nadella-has-issued-a-shocking-warning-to-companies-using-ai/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 빅테크 · 전략",
+    "en": "AI · Big Tech · Strategy"
+  },
+  "title": {
+    "kr": "사티아 나델라 '기업들, AI에 돈을 두 번 낸다' 경고",
+    "en": "Satya Nadella has issued a shocking warning to companies using AI"
+  },
+  "summary": {
+    "kr": "마이크로소프트 CEO 사티아 나델라가 소셜 포스트에서 '역정보 역설'을 경고했습니다. 기업은 AI 토큰 비용을 낼 뿐 아니라, 프롬프트와 수정 과정에서 고유 노하우까지 모델에 내주며 사실상 AI 비용을 두 번 지불하고 있다는 것입니다.",
+    "en": "In a widely shared social post, Microsoft CEO Satya Nadella warned enterprises of a 'reverse information paradox': they pay for AI twice, once in tokens and again by handing over proprietary know-how distilled into the model through prompts and corrections."
+  },
+  "points": {
+    "kr": [
+      "나델라가 말한 '역정보 역설'의 개념",
+      "프롬프트·수정이 벤더 자산이 되는 구조",
+      "원 게시물 조회수 1천만 육박"
+    ],
+    "en": [
+      "Nadella's 'reverse information paradox' explained",
+      "Why prompts and corrections become vendor IP",
+      "Nearly 10M views on the original post"
+    ]
+  },
+  "positions": [
+    "design-lead",
+    "design-manager"
+  ],
+  "designer": {
+    "kr": "AI 도구에 입력하는 모든 수정 사항이 벤더 쪽 모델 학습 자산이 될 수 있다는 경고입니다. 고유 디자인·제품 지식을 AI 워크플로에 넣기 전 한 번 더 고려할 부분입니다.",
+    "en": "A reminder that every correction fed into an AI tool becomes institutional know-how absorbed by the vendor, worth weighing before building workflows around proprietary design or product knowledge."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "AI 도구 전략 담당자 필독",
+    "en": "Worth a read for AI-tooling strategists"
+  },
+  "comment": {
+    "kr": "경고의 핵심은 전략적 긴장이다. 서드파티 AI에 넣는 모든 수정·피드백은 내가 소유하지 않은 시스템을 정교하게 만든다. 힘겹게 쌓은 도메인 전문성이 조용히 벤더의 제품 개선으로 흘러가는 셈이다.\n외부 AI 위에 자체 워크플로우를 얹는 팀이라면 무엇을 사내에 남길지 정해야 한다. 프롬프트·수정·도메인 데이터를 그냥 넘기는 입력이 아니라 지켜야 할 자산으로 다루라는 신호다.",
+    "en": "The warning names a real strategic tension: every correction you feed a third-party AI refines a system you don't own. Hard-won domain expertise quietly becomes the vendor's product improvement.\nFor teams building proprietary workflows on external AI, it's a prompt to decide what stays in-house. Treat your prompts, corrections, and domain data as assets worth protecting, not just inputs to hand over."
+  },
+  "thumbLabel": "역정보역설",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

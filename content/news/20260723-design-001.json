@@ -1,0 +1,56 @@
+{
+  "contentId": "20260723-design-001",
+  "date": "2026-07-23",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-22"
+  },
+  "url": "https://www.archdaily.com/1181246/lifeline-community-centre-assemble",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축 · 커뮤니티",
+    "en": "Design · Architecture · Community"
+  },
+  "title": {
+    "kr": "라이프라인 커뮤니티 센터 / 어셈블",
+    "en": "LifeLine Community Centre / Assemble"
+  },
+  "summary": {
+    "kr": "런던 스튜디오 어셈블이 베컨트리 단지의 100년 된 유제품 창고 두 동을 라이프라인 커뮤니티 센터로 개조했습니다. 교회 홀과 다목적 커뮤니티 공간을 결합했고, 바닥 아래 숨겨진 세례조가 특징입니다.",
+    "en": "London studio Assemble converted a pair of century-old dairy warehouses on the Becontree Estate into the LifeLine Community Centre, combining a church hall with flexible community space, including a baptistery hidden beneath a removable floor."
+  },
+  "points": {
+    "kr": [
+      "유제품 창고 두 동을 하나의 커뮤니티 캠퍼스로 통합",
+      "가변 바닥 패널 아래 세례조를 숨겨 유연하게 활용",
+      "두 번째 홀은 어린이 그룹·운동 수업·소모임에 사용"
+    ],
+    "en": [
+      "Two former dairy warehouses combined into one community campus",
+      "Baptistery concealed beneath removable floor panels for flexible use",
+      "Second hall serves children's groups, exercise classes and meetings"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "평범한 산업 건물을 시민·종교 시설로 되살린 좋은 사례입니다. 바닥 아래 숨은 세례조는 가변 가구 설계의 좋은 참고 사례입니다.",
+    "en": "A strong case study in adaptive reuse of humble industrial buildings for civic and faith use — the hidden baptistery is a clever bit of flexible-furniture thinking worth studying."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "리노베이션·가변 공간 레퍼런스로 저장 추천",
+    "en": "Save for adaptive-reuse and flexible-space references"
+  },
+  "comment": {
+    "kr": "화려한 신축이 아니라, 있던 건물을 지역이 실제로 필요로 하는 형태로 세심하게 재구성한 저비용 개조의 모범 사례입니다.\n특히 숨겨진 세례조가 인상적입니다. '완전 침수 세례'라는 종교적 기능과 '유연한 커뮤니티 홀'이라는 상충하는 요구를, 면적을 늘리지 않고 가구적 발상으로 해결했습니다.",
+    "en": "Assemble's work here is a quiet masterclass in low-cost adaptive reuse, no dramatic new form, just careful reorganization of what was already there into something a community actually needed.\nThe concealed baptistery is the detail worth remembering: it solves a real programmatic conflict (a full-immersion church function vs. a flexible community hall) with furniture logic instead of square footage."
+  },
+  "thumbLabel": "재생건축",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

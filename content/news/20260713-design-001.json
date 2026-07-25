@@ -1,0 +1,56 @@
+{
+  "contentId": "20260713-design-001",
+  "date": "2026-07-13",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-08"
+  },
+  "url": "https://www.dezeen.com/2026/07/08/kpmb-david-geffen-school-of-drama-building-yale-university-renders/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축 · 교육",
+    "en": "Design · Architecture · Education"
+  },
+  "title": {
+    "kr": "KPMB, 예일대 드라마틱 아츠 빌딩 디자인 공개",
+    "en": "KPMB reveals designs for David Geffen School of Drama at Yale University"
+  },
+  "summary": {
+    "kr": "캐나다 건축사무소 KPMB가 예일대학교 새 드라마틱 아츠 빌딩 렌더링을 공개했습니다. 1924년 설립 이후 처음으로 데이비드 게펀 드라마스쿨을 위한 통합 공간이 마련되며, 붉은 강철 동선축 '시어터 스트리트'가 특징입니다.",
+    "en": "Canadian studio KPMB unveiled renderings for Yale's new Dramatic Arts Building, the first consolidated home for the David Geffen School of Drama since 1924, featuring a red steel circulation spine called Theater Street."
+  },
+  "points": {
+    "kr": [
+      "1924년 설립 이후 첫 통합 공간",
+      "붉은 강철 동선축 '시어터 스트리트'",
+      "불투명·투명 석회암이 교차하는 파사드 패턴"
+    ],
+    "en": [
+      "First consolidated space for the drama school since 1924",
+      "Red steel 'Theater Street' connects the building",
+      "Facade pattern plays with opaque and glazed limestone"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "동선 설계 자체가 건물의 서사 장치가 될 수 있음을 보여주는 좋은 사례입니다. 기관 건축의 공간 스토리텔링 레퍼런스로 참고할 만합니다.",
+    "en": "A strong case study in how circulation design can become the building's narrative device, useful reference for spatial storytelling in institutional projects."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "기관·문화공간 설계 레퍼런스로 훌륭 · 포트폴리오 리서치용 저장 추천",
+    "en": "Great reference for institutional and cultural space design · Save for portfolio research"
+  },
+  "comment": {
+    "kr": "파사드에 담긴 '보이는 작업과 보이지 않는 작업'이라는 개념은 건물의 내부 논리를 외피 표현으로 옮기는 영리한 방식입니다.\n동선이 곧 공공적 볼거리가 되는 방식이라는 점에서, 최근 대학 공연예술 건물들과 비교해 볼 가치가 있습니다.",
+    "en": "The 'visible vs invisible work' concept behind the facade is a smart way to encode a building's internal logic into its exterior expression.\nWorth studying alongside other recent university performing-arts buildings for how circulation doubles as public spectacle."
+  },
+  "thumbLabel": "공연예술",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

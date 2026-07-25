@@ -1,0 +1,56 @@
+{
+  "contentId": "20260709-design-001",
+  "date": "2026-07-09",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-01"
+  },
+  "url": "https://www.archdaily.com/1042807/architectures-of-movement-archdailys-july-editorial-focus",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축 · 편집",
+    "en": "Design · Architecture · Editorial"
+  },
+  "title": {
+    "kr": "아키데일리 7월 편집 주제 '움직임의 건축', 이주·경계·유목적 삶을 다루다",
+    "en": "Architectures of Movement: ArchDaily's July Editorial Focus"
+  },
+  "summary": {
+    "kr": "아키데일리가 2026년 7월 편집 주제로 '움직임의 건축'을 발표했다. 이주와 이동성, 국경 건축, 임시 공간이 영토·소유·정체성에 대한 건축의 관계를 어떻게 재구성하는지 다룬다.",
+    "en": "ArchDaily announces 'Architectures of Movement' as its July 2026 editorial focus, exploring how migration, mobility, border architecture and temporary spaces reshape the field's relationship to territory, ownership and identity."
+  },
+  "points": {
+    "kr": [
+      "이주·이동성·국경 건축을 아우르는 주제",
+      "임시적·적응형 공간 유형 탐구",
+      "움직임이 영토와 정체성을 재구성하는 방식 조명"
+    ],
+    "en": [
+      "Focus spans migration, mobility and border architecture",
+      "Explores temporary and adaptive spatial typologies",
+      "Frames movement as reshaping territory and identity"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "고정되고 영구적인 해법을 넘어서는 공간·제품 디자인을 고민할 때 참고할 만한 시선입니다. 한 달 동안 이어질 임시·적응형 디자인 사례들을 팔로우해볼 만합니다.",
+    "en": "A useful lens for spatial and product designers thinking beyond fixed, permanent solutions, worth following for case studies on temporary and adaptive design over the month."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "아키데일리 7월 연재 팔로우 추천 · 북마크",
+    "en": "Follow ArchDaily's July series · Bookmark"
+  },
+  "comment": {
+    "kr": "이런 편집 주제 발표 글은 그 자체보다, 한 달간 이어질 사례 연재의 예고편으로 보는 게 더 유용합니다. '움직임'이라는 렌즈는 난민 쉼터부터 유목적 가구까지 폭넓게 아우를 수 있는 주제입니다.\n7월 중 실제 사례 기사들이 올라온 뒤 다시 확인해볼 가치가 있습니다. 이 글 자체는 목차에 가깝습니다.",
+    "en": "Editorial-focus pieces like this are worth tracking less for the announcement itself and more as a preview of a month's worth of case studies to come. 'Movement' as a lens is broad enough to cover everything from refugee shelters to nomadic furniture.\nWorth revisiting later in July once the actual case studies publish, this piece is really just the table of contents."
+  },
+  "thumbLabel": "움직임",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

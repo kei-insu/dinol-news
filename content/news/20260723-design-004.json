@@ -1,0 +1,56 @@
+{
+  "contentId": "20260723-design-004",
+  "date": "2026-07-23",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-22"
+  },
+  "url": "https://www.itsnicethat.com/articles/kurt-bauer-photography-discover-220726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 사진 · 비주얼",
+    "en": "Design · Photography · Visual"
+  },
+  "title": {
+    "kr": "커트 바우어의 스틸라이프 사진, '엽서 속 풍경'보다 더 많은 것을 보여주다",
+    "en": "Kurt Bauer's still life photographs reveal more about a place than a \"postcard view\" ever could"
+  },
+  "summary": {
+    "kr": "오스트리아 사진가 커트 바우어가 6년간의 작업을 모은 자가출판 사진집 '투리스타 페르 셈프레(영원한 관광객)'를 냈습니다. 방치된 음료, 흘린 저녁 식사 같은 평범한 순간을 관광객의 시선으로 포착합니다.",
+    "en": "Austrian photographer Kurt Bauer self-published 'Turista per Sempre (Forever a Tourist),' a six-year collection of still life images that treat the ordinary, an abandoned drink, a spilled dinner, with a tourist's attentive eye."
+  },
+  "points": {
+    "kr": [
+      "6년간의 스틸라이프 작업을 모은 자가출판 포트폴리오",
+      "낡은 사물·우연한 빛 같은 놓치기 쉬운 디테일 포착",
+      "익숙한 곳도 낯선 여행자의 시선으로 접근"
+    ],
+    "en": [
+      "Self-published portfolio spans six years of Bauer's still life work",
+      "Frames overlooked details — worn objects, accidental light",
+      "Approaches both home and abroad with a tourist's attentiveness"
+    ]
+  },
+  "positions": [
+    "art-director"
+  ],
+  "designer": {
+    "kr": "평범한 소재도 진짜 관심을 담아 찍으면, 연출된 히어로샷보다 더 많은 이야기를 전할 수 있다는 걸 보여줍니다. 에디토리얼·브랜드 사진 작업에 참고할 만합니다.",
+    "en": "A useful reminder for editorial and brand photography work that 'ordinary' subjects, shot with real attention, often carry more narrative than staged hero shots."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "에디토리얼 스틸라이프 무드보드 레퍼런스로 추천",
+    "en": "Good mood-board reference for editorial still life work"
+  },
+  "comment": {
+    "kr": "'투리스타 페르 셈프레'가 흥미로운 이유는, 바우어가 여행 사진과 일상 사진을 다른 장르로 취급하지 않는다는 점입니다. 집에서든 여행지에서든 똑같이 참을성 있는 시선으로 사물을 바라봅니다.\n제품·라이프스타일 스틸 촬영을 하는 이들에게 주는 교훈은 기술이 아니라 태도에 가깝습니다. 평범한 것도 누군가 제대로 들여다보는 순간 흥미로워진다는 것입니다.",
+    "en": "'Turista per Sempre' works because Bauer refuses to treat travel photography and everyday photography as different disciplines, the same patient eye for an abandoned drink applies whether he's at home or abroad.\nFor anyone shooting product or lifestyle stills, the lesson is less about technique and more about attention: the ordinary becomes interesting the moment someone actually looks at it closely."
+  },
+  "thumbLabel": "스틸라이프",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

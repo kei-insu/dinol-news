@@ -1,0 +1,56 @@
+{
+  "contentId": "20260703-design-003",
+  "date": "2026-07-03",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-02"
+  },
+  "url": "https://www.itsnicethat.com/features/the-poster-festival-warsaw-round-up-graphic-design-spotlight-020726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 그래픽 · 문화",
+    "en": "Design · Graphic · Culture"
+  },
+  "title": {
+    "kr": "바르샤바 포스터 페스티벌, 새로운 물결과 잊혀진 역사가 함께 떠오르다",
+    "en": "At Warsaw's Poster Festival, a new school emerges alongside a forgotten history"
+  },
+  "summary": {
+    "kr": "잇츠나이스댓이 바르샤바 '더 포스터 페스티벌'을 취재했습니다. 새로운 세대의 포스터 작가들이 등장하는 동시에, 오랫동안 조명받지 못한 폴란드 그래픽 디자인의 풍부한 역사가 재발견되고 있습니다. AI 시대의 '오리지널리티와 저작권'을 고민하는 현장이기도 합니다.",
+    "en": "It's Nice That reports from Warsaw's The Poster Festival, where a new generation of poster artists is emerging alongside a rediscovery of Poland's rich, long-overlooked graphic-design history, a scene wrestling with originality and authorship in the AI era."
+  },
+  "points": {
+    "kr": [
+      "바르샤바의 새로운 포스터 작가 물결",
+      "조명받지 못한 폴란드 그래픽 디자인 유산",
+      "AI 이미지 도구 시대의 저작권·오리지널리티"
+    ],
+    "en": [
+      "Warsaw's new wave of poster artists",
+      "Poland's overlooked graphic-design heritage",
+      "Authorship & originality in the age of AI image tools"
+    ]
+  },
+  "positions": [
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "AI가 이미지 제작을 뒤덮는 시대에도 '손의 감각'과 공예 전통이 여전히 힘을 갖는다는 걸 상기시킵니다. 이 기사 속 포스터 하나를 골라 '왜 이건 생성된 게 아니라 만들어진 것처럼 느껴지는가'를 물어보세요. 그 구분이 디자이너의 진짜 경쟁력이 되어갑니다.",
+    "en": "A reminder that craft traditions and 'the hand' still carry weight, even as AI floods image-making. Study one poster from this piece and ask what makes it feel authored, not generated; that distinction is becoming a real competitive edge for designers."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "영감용으로 읽고, 마음에 드는 포스터 몇 개를 '생성이 아닌 창작' 레퍼런스로 모아 두세요",
+    "en": "Read for inspiration, and save a few posters to a swipe file as 'authored, not generated' references"
+  },
+  "comment": {
+    "kr": "AI가 그럴듯한 이미지를 무한히 뽑아내는 지금, 이 기사가 던지는 질문은 오히려 선명합니다. 무엇이 '만들어진 것'과 '생성된 것'을 가르는가. 바르샤바 포스터들이 힘을 갖는 건 기술적 완성도가 아니라 '누군가 이걸 왜, 어떤 손으로 만들었는가'라는 맥락입니다.\n\n역설적으로 AI 시대에 디자이너의 가치는 '더 잘 그리는 것'이 아니라 '왜 이렇게 만들었는지 말할 수 있는 것'으로 옮겨갑니다. 오리지널리티는 결과물이 아니라 의도에서 나온다고 생각합니다.",
+    "en": "Now that AI churns out plausible images endlessly, the question this piece raises is, if anything, sharper: what separates the 'made' from the 'generated'? The Warsaw posters have power not from technical polish but from context, namely 'who made this, why, and with whose hands.'\n\nParadoxically, in the AI era a designer's value shifts from 'drawing better' to 'being able to say why you made it this way.' Originality, I think, comes from intent, not from the output."
+  },
+  "thumbLabel": "포스터",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

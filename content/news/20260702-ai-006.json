@@ -1,0 +1,54 @@
+{
+  "contentId": "20260702-ai-006",
+  "date": "2026-07-02",
+  "section": "ai",
+  "order": 6,
+  "source": {
+    "name": "BuildFastWithAI",
+    "publishedAt": "2026-07-01"
+  },
+  "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 라운드업 · 뉴스",
+    "en": "AI · Roundup · News"
+  },
+  "title": {
+    "kr": "AI 뉴스 투데이: 2026년 7월 1일 15대 주요 소식",
+    "en": "AI News Today July 1, 2026: 15 Biggest Stories"
+  },
+  "summary": {
+    "kr": "2026년 7월 1일 기준 AI 업계의 15대 주요 뉴스를 정리한 영문 브리핑입니다. 앤트로픽 클로드 소넷5 출시, 스페이스X의 리플렉션AI 컴퓨트 임대 계약 등 최신 동향을 다룹니다.",
+    "en": "A daily roundup of the 15 biggest AI stories, including Anthropic's Claude Sonnet 5 launch and SpaceX's compute lease with Reflection AI."
+  },
+  "points": {
+    "kr": [
+      "하루 15대 AI 뉴스를 한 번에 정리",
+      "클로드 소넷5, 스페이스X–리플렉션AI 컴퓨트 계약 등",
+      "깊이 파기보다 '흐름 읽기'에 적합"
+    ],
+    "en": [
+      "15 biggest AI stories in one daily roundup",
+      "Includes Claude Sonnet 5, SpaceX–Reflection AI compute deal",
+      "Good for pattern-spotting, not deep dives"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "하루치 AI 지형을 한자리에서 빠르게 훑는 용도입니다. 개별 뉴스보다 '어떤 주제가 반복되는가'(에이전트, 컴퓨트 계약, 모델 출시)를 보는 데 쓸모가 있습니다.\n\n그게 이 분야의 momentum이 어디로 향하는지 알려주니까요. AI를 큐레이션하거나 남에게 설명할 때 좋은 배경 자료입니다.",
+    "en": "A fast way to scan the day's AI landscape in one place. Useful less for any single item and more for pattern-spotting: which themes keep recurring (agents, compute deals, model launches) tells you where the field's momentum is; handy context when you curate or explain AI to others."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "매일 AI 레이더로 저장하고, 개별 뉴스보다 반복되는 주제를 훑어보세요",
+    "en": "Bookmark as a daily AI radar; skim for recurring themes rather than every item"
+  },
+  "comment": {
+    "kr": "이런 '데일리 정리' 소식은 개별 항목 하나하나보다 '무엇이 자꾸 반복되는가'를 보는 도구로 쓰는 게 좋습니다. 에이전트, 컴퓨트(연산자원) 확보 경쟁, 모델 출시. 매일 이런 주제가 반복된다면, 그게 지금 AI의 무게중심이 어디 있는지 알려주는 신호입니다.\n\n사실 우리가 만드는 '디자인 놀이터'도 같은 일을 합니다. 매일의 소식 속에서 디자이너에게 의미 있는 흐름을 골라내는 것. 정보가 넘칠수록 '고르고 해석하는' 큐레이션의 값어치가 올라갑니다.",
+    "en": "News like these 'daily roundups' is best used as a tool to see 'what keeps repeating' rather than any single item. Agents, the race to secure compute, model launches. If these themes recur daily, that's a signal of where AI's center of gravity sits right now.\n\nHonestly, our own 'Design Playground' does the same thing: picking out the flows that matter to designers from the day's news. The more information overflows, the more the 'selecting and interpreting' of curation is worth."
+  },
+  "thumbLabel": "데일리",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

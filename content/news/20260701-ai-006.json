@@ -1,0 +1,57 @@
+{
+  "contentId": "20260701-ai-006",
+  "date": "2026-07-01",
+  "section": "ai",
+  "order": 6,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-06-30"
+  },
+  "url": "https://techcrunch.com/2026/06/30/google-introduces-a-faster-cheaper-image-generator-with-nano-banana-2-lite/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · AI 도구 · 이미지",
+    "en": "Design · AI Tool · Image"
+  },
+  "title": {
+    "kr": "Google, 빠르고 저렴한 이미지 생성 AI 'Nano Banana 2 Lite' 공개",
+    "en": "Google introduces a faster, cheaper image generator with Nano Banana 2 Lite"
+  },
+  "summary": {
+    "kr": "Google이 이미지 생성에 단 4초가 걸리는 AI 이미지 생성기 Nano Banana 2 Lite를 출시했습니다. 개발자와 기업을 대상으로 기존 대비 훨씬 저렴한 비용에 고품질 생성 이미지를 제공하는 것이 목표입니다.",
+    "en": "Google released Nano Banana 2 Lite, a significantly faster and more affordable AI image generator producing images in just four seconds. The model targets developers and businesses seeking high-quality generative imagery at a fraction of the previous cost."
+  },
+  "points": {
+    "kr": [
+      "약 4초·기존 대비 저렴한 비용의 이미지 생성",
+      "개발자·기업 대상",
+      "병목이 '만들기'에서 '고르기'로 이동"
+    ],
+    "en": [
+      "Images in ~4 seconds at a fraction of prior cost",
+      "Aimed at developers and businesses",
+      "Bottleneck shifts from making to choosing"
+    ]
+  },
+  "positions": [
+    "graphic-designer",
+    "illustrator"
+  ],
+  "designer": {
+    "kr": "오늘 디자이너가 진짜 신경 써야 할 도구 소식입니다. 이미지 한 장이 몇 초, 몇십 원이 되면 병목이 '만들기'에서 '고르기'로 옮겨갑니다.\n\n무드보드나 러프 시안에 바로 넣어 쓰고, 아낀 시간을 방향 설정과 큐레이션에 쓰세요. AI가 아직 잘 못하는 바로 그 부분에요.",
+    "en": "This is the tool story designers should actually care about today. When an image costs seconds and pennies, the bottleneck moves from 'making' to 'choosing.' Put this in your workflow for moodboards and rough comps, and spend the saved time on direction and curation, the parts AI still can't do well."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "무드보드·시안 작업에 실제로 써보고, 어디를 AI에 맡기고 어디를 직접 이끌지 정하세요",
+    "en": "Try it on real moodboard/comp tasks and decide where to let it draft vs. where you direct"
+  },
+  "comment": {
+    "kr": "같은 소식이 오늘 브리핑의 한국어 카드(인공지능신문)에도 있지만, 여기 TechCrunch 버전은 '개발자·기업용 도구'라는 각도가 조금 더 뚜렷합니다.\n\n핵심은 반복해서 말할 만합니다. 이미지가 4초·몇십 원이 되면, 시안을 아끼던 시대가 끝납니다. 예전엔 3개 뽑던 걸 이제 30개 뽑고 고르는 게 일이 되죠.\n\n그래서 디자이너의 값어치는 '잘 그리기'에서 '무엇이 좋은지 알기'로 이동합니다. 도구가 싸질수록, 안목이 비싸집니다.",
+    "en": "The same news is in today's Korean card (AI Times), but this TechCrunch version leans a bit harder into the 'developer and enterprise tooling' angle.\n\nThe core point bears repeating: once an image costs 4 seconds and a few cents, the era of rationing mockups is over. What used to be 'make three' becomes 'make thirty and pick.'\n\nSo a designer's value shifts from 'drawing well' to 'knowing what's good.' The cheaper the tools get, the more expensive taste becomes."
+  },
+  "thumbLabel": "이미지 생성",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260720-ai-001",
+  "date": "2026-07-20",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-19"
+  },
+  "url": "https://techcrunch.com/2026/07/19/netflix-paid-587m-for-ben-afflecks-ai-filmmaking-startup/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 미디어 · 비즈니스",
+    "en": "AI · Media · Business"
+  },
+  "title": {
+    "kr": "넷플릭스, 벤 애플렉의 AI 영화 제작 스타트업 5억 8,700만 달러에 인수",
+    "en": "Netflix paid $587M for Ben Affleck's AI filmmaking startup"
+  },
+  "summary": {
+    "kr": "넷플릭스가 배우 겸 감독 벤 애플렉이 공동 창업한 AI 영화 제작 스타트업 '인터포지티브(InterPositive)'를 5억 8,700만 달러 현금에 인수했습니다.",
+    "en": "Netflix paid $587 million in cash for InterPositive, an AI filmmaking startup co-founded by actor-director Ben Affleck."
+  },
+  "points": {
+    "kr": [
+      "넷플릭스 역대 최대 규모 AI 콘텐츠 인수",
+      "인터포지티브의 AI 영화 제작 도구",
+      "할리우드 제작에서 AI 역할 확대 신호"
+    ],
+    "en": [
+      "Netflix's largest AI-content acquisition to date",
+      "InterPositive's AI filmmaking tools",
+      "What it signals for AI's role in Hollywood production"
+    ]
+  },
+  "positions": [
+    "video-designer",
+    "motion-designer"
+  ],
+  "designer": {
+    "kr": "AI 도구가 고예산 콘텐츠 제작 파이프라인 깊숙이 들어오고 있다는 신호입니다. 어떤 제작 워크플로가 자동화되고 어떤 부분이 사람 중심으로 남는지 지켜볼 만합니다.",
+    "en": "Signals AI tooling moving deeper into high-budget content pipelines, worth watching which production workflows get automated versus kept human-led."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "미디어·AI 도구 트렌드 관심자 필독",
+    "en": "Worth a read for media/AI-tooling watchers"
+  },
+  "comment": {
+    "kr": "넷플릭스가 벤 애플렉의 AI 영화 스타트업을 6천만 달러대가 아닌 5억 달러대에 인수했다는 점에서, 이는 실험적 투자가 아니라 본격적인 제작 인프라 베팅으로 읽힙니다. 콘텐츠 대기업이 AI 제작 도구를 사내로 흡수하는 흐름은 앞으로 더 빨라질 가능성이 큽니다.\n\n디자이너·기획자 입장에서는 '어디까지 AI가 대체하고 어디부터 사람이 남는가'라는 질문이 이제 영화 제작 같은 고관여 크리에이티브 영역까지 번지고 있다는 점을 주목할 필요가 있습니다. 인수 금액과 스타트업의 구체적 기술 스택은 아직 스니펫 수준 정보이므로, 정식 발표 자료로 추가 확인을 권합니다.",
+    "en": "넷플릭스가 벤 애플렉의 AI 영화 스타트업을 6천만 달러대가 아닌 5억 달러대에 인수했다는 점에서, 이는 실험적 투자가 아니라 본격적인 제작 인프라 베팅으로 읽힙니다. 콘텐츠 대기업이 AI 제작 도구를 사내로 흡수하는 흐름은 앞으로 더 빨라질 가능성이 큽니다.\n\n디자이너·기획자 입장에서는 '어디까지 AI가 대체하고 어디부터 사람이 남는가'라는 질문이 이제 영화 제작 같은 고관여 크리에이티브 영역까지 번지고 있다는 점을 주목할 필요가 있습니다. 인수 금액과 스타트업의 구체적 기술 스택은 아직 스니펫 수준 정보이므로, 정식 발표 자료로 추가 확인을 권합니다."
+  },
+  "thumbLabel": "AI 인수",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

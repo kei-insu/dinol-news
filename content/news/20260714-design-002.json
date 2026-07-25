@@ -1,0 +1,56 @@
+{
+  "contentId": "20260714-design-002",
+  "date": "2026-07-14",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-13"
+  },
+  "url": "https://www.archdaily.com/1092491/antara-residence-ark-architecture-studio",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 주거",
+    "en": "Design · Architecture · Residential"
+  },
+  "title": {
+    "kr": "안타라 레지던스 - 케랄라 전통을 재해석한 주택",
+    "en": "Antara Residence / Ark Architecture Studio"
+  },
+  "summary": {
+    "kr": "Ark Architecture Studio가 인도 케랄라에 1,640평방피트 규모의 '안타라 레지던스'를 완공했습니다. 지역 전통 중정형 건축을 현대적으로 재해석한 주택입니다.",
+    "en": "Ark Architecture Studio completed the 1,640-sq-ft Antara Residence in Kerala, India, reinterpreting the region's traditional courtyard architecture for a contemporary family home."
+  },
+  "points": {
+    "kr": [
+      "1,640평방피트 규모, 2025년 완공",
+      "케랄라 중정 전통의 현대적 재해석",
+      "트리반드룸 기반 통합 디자인 스튜디오 작업"
+    ],
+    "en": [
+      "1,640 sq ft footprint completed in 2025",
+      "Contemporary take on Kerala courtyard tradition",
+      "By Trivandrum-based interdisciplinary studio"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "지역 전통 양식을 현대적으로 잘 계승한 사례입니다. 기후와 문화적 맥락을 잃지 않으면서 중정형 주거 유형을 현대 가족 생활에 맞게 조정한 참고 사례입니다.",
+    "en": "Vernacular reinterpretation done well: a useful reference for how regional courtyard typologies can be adapted to modern family living without losing climatic and cultural logic."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "전통 건축 리서치 자료로 저장 추천",
+    "en": "Save for vernacular-architecture research"
+  },
+  "comment": {
+    "kr": "지역 건축의 재해석을 잘 보여준다. 전통을 장식으로 인용하는 대신, 케랄라의 중정 유형을 현대적 규모에 맞춰 옮기면서 그늘·맞통풍 같은 기후 논리를 그대로 살렸다.\n지역성에 뿌리 둔 디자인의 레퍼런스로 저장할 만하다. 교훈은 건축을 넘어선다. 표면의 모티프가 아니라 그 밑의 원리를 가져오라는 것이다.",
+    "en": "A clean case of vernacular reinterpretation. Rather than quoting tradition as decoration, the studio adapts Kerala's courtyard typology to a modern footprint while keeping the climate logic (shade, cross-ventilation) that made it work.\nWorth saving as a reference for regionally grounded design. The lesson travels beyond architecture: adapt the underlying principle, not the surface motif."
+  },
+  "thumbLabel": "케랄라전통",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

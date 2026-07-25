@@ -1,0 +1,52 @@
+{
+  "contentId": "20260709-ai-002",
+  "date": "2026-07-09",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "인벤",
+    "publishedAt": "2026-07-06"
+  },
+  "url": "https://www.inven.co.kr/webzine/news/?news=318233",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "AI · 게임 산업",
+    "en": null
+  },
+  "title": {
+    "kr": "NC AI 김민재 CTO \"AI만으로 게임 재미 못 만든다\"",
+    "en": null
+  },
+  "summary": {
+    "kr": "NC AI 김민재 CTO가 ICML 부대행사 'AI for Games'에서 게임 제작·운영에서 AI의 현실을 점검했다. 텍스트·이미지 생성 AI가 기획·콘셉트 단계를 넘어 실제 에셋 제작 단계로 빠르게 확장 중이라고 밝혔다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "생성형 AI가 기획·콘셉트 디자인 단계에서 핵심 제작 단계로 확장",
+      "과대광고와 실제 현업 적용 사이 간극을 짚음",
+      "AI만으로는 '게임의 재미' 자체를 만들 수 없다는 진단"
+    ],
+    "en": []
+  },
+  "positions": [
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "게임 기획·아트 파이프라인에 AI를 들이는 실무자라면, 에셋 생성 자동화와 '재미'를 만드는 창작 판단을 분리해서 설계하는 게 중요하다는 인사이트입니다.",
+    "en": null
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "게임업계 AI 파이프라인 담당자 참고 · 기획팀 공유 추천",
+    "en": null
+  },
+  "comment": {
+    "kr": "게임 업계 안에서 나온 발언이라 더 신뢰가 갑니다. AI를 활용한 에셋 생성 자동화가 어디까지 왔는지, 그리고 어디서부터는 여전히 사람의 판단이 필요한지를 현업 CTO가 직접 구분해준 사례입니다.\n다른 콘텐츠 산업에도 그대로 적용되는 이야기입니다. 생성 도구가 반복 작업을 줄여주는 것과, 결과물의 '재미'나 '완성도'를 결정하는 것은 다른 층위의 일이라는 점을 다시 확인시켜 줍니다.",
+    "en": null
+  },
+  "thumbLabel": "게임AI",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

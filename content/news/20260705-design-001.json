@@ -1,0 +1,56 @@
+{
+  "contentId": "20260705-design-001",
+  "date": "2026-07-05",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-03"
+  },
+  "url": "https://www.yankodesign.com/2026/07/03/moon-inspired-japanese-knife-blends-damascus-steel-with-gallery-worthy-material-design/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 제품 · 공예",
+    "en": "Design · Product · Craft"
+  },
+  "title": {
+    "kr": "달을 담은 일본 셰프칼, 다마스커스 강과 '갤러리급' 소재 디자인의 결합",
+    "en": "Moon-inspired Japanese knife blends Damascus steel with gallery-worthy design"
+  },
+  "summary": {
+    "kr": "달(TSUKI)에서 영감을 받은 일본 셰프칼입니다. 칼등의 어두운 해머드(두들긴) 마감이 칼날 쪽 밝은 다마스커스 물결무늬로 이어지고, 손잡이는 사쿠라 자작나무에서 반투명 레진으로 전환됩니다. 후쿠이산 VG-10 강을 67겹 다마스커스로 감싼 210mm 교토(만능 셰프칼)이며, 해머드 질감이 달 표면 크레이터를 연상시키는 동시에 재료가 칼에 붙지 않게 돕습니다. 일본 5개 지역의 전통 공예(사카이 연마·야마구치 오동나무 상자·나가노 미즈히키 매듭·에치젠 와시 종이)를 하나의 칼에 담았습니다.",
+    "en": "TSUKI is a moon-inspired Japanese chef's knife: a dark hammered spine flows into a bright Damascus wave near the edge, and a Sakura-birch handle shifts into translucent resin. Built on 67-layer Damascus over Fukui VG-10 steel (a 210mm gyuto), it assembles five regional Japanese crafts into one object."
+  },
+  "points": {
+    "kr": [
+      "'달' 콘셉트가 모든 표면(해머드 칼등·다마스커스 칼날·레진 손잡이)을 관통",
+      "후쿠이 VG-10을 67겹 다마스커스로; 210mm 교토",
+      "일본 5개 지역 공예를 한 도구에 집약"
+    ],
+    "en": [
+      "Moon concept unifies every surface (hammered spine, Damascus edge, resin handle)",
+      "67-layer Damascus over Fukui VG-10; 210mm gyuto",
+      "Five regional Japanese crafts assembled into one tool"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "소재로 이야기를 짜는 법의 정수입니다. 해머드 강철, 다마스커스 물결, 레진 손잡이. 모든 표면이 '달'이라는 하나의 개념에 복무하고, 다섯 지역의 공예 전통을 브랜딩이 아니라 진짜 실체로 끌어들였습니다.\n\n훌륭한 제품 디자인은 소재와 서사를 떼어낼 수 없게 만든다는 걸 보여줍니다. 그래서 사물이 '조립된' 게 아니라 '의도된' 것처럼 느껴지죠.",
+    "en": "A masterclass in material storytelling. Every surface (hammered steel, Damascus ripples, resin handle) serves one coherent idea (the moon), and the knife pulls in five regional craft traditions as genuine substance, not branding. It's a reminder that great product design makes material and narrative inseparable, so the object feels meant rather than assembled."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "소재로 이야기를 만드는 사례로 뜯어보세요; 콘셉트가 모든 디테일을 하나로 묶는 좋은 예입니다",
+    "en": "Study it as material-driven storytelling; a great example of concept unifying every detail"
+  },
+  "comment": {
+    "kr": "AI가 이미지를 초 단위로 쏟아내는 시대에, 이 칼은 정반대 방향에서 힘을 얻습니다. '왜, 어떤 손으로 만들었는가'라는 이야기죠.\n\n흥미로운 건 '달'이라는 콘셉트 하나가 칼의 모든 부분을 지배한다는 점입니다. 칼등의 두들긴 질감은 달 크레이터, 칼날의 물결무늬는 수면에 비친 달빛, 손잡이의 반투명 레진은 달의 은은한 반사. 게다가 그 질감이 '재료가 안 붙게 한다'는 실용까지 겸합니다.\n\n좋은 디자인의 교과서적 장면입니다. 하나의 개념이 미감과 기능을 동시에 끌고 가고, 지역 공예라는 진짜 실체가 그걸 뒷받침합니다. 우리가 화면에서 하는 일도 결국 같습니다. 콘셉트 하나로 모든 디테일을 설득하는 것.",
+    "en": "In an age when AI spits out images by the second, this knife draws its power from the opposite direction: the story of 'why, and by whose hands, it was made.'\n\nWhat's fascinating is how a single concept, the moon, governs every part of the knife. The hammered texture of the spine is lunar craters, the wavy pattern of the blade is moonlight on water, the translucent resin handle is the moon's soft reflection. And that texture even does the practical job of keeping food from sticking.\n\nA textbook scene of good design: one concept carrying aesthetics and function together, backed by the real substance of regional craft. What we do on screens is ultimately the same, persuading every detail with a single concept."
+  },
+  "thumbLabel": "셰프칼",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

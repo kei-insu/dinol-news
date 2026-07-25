@@ -1,0 +1,57 @@
+{
+  "contentId": "20260721-design-004",
+  "date": "2026-07-21",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-20"
+  },
+  "url": "https://www.itsnicethat.com/features/robert-beatty-illustration-spotlight-200726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 일러스트 · 편집",
+    "en": "Design · Illustration · Editorial"
+  },
+  "title": {
+    "kr": "로버트 비티, 레트로 포토샵과 창작의 마찰 그리고 원시적인 앨범 커버 디자인을 말하다",
+    "en": "Robert Beatty on retro Photoshop, creative friction and designing album covers that feel almost primeval"
+  },
+  "summary": {
+    "kr": "잇츠나이스댓 스포트라이트 인터뷰에서 일러스트레이터 로버트 비티가 레트로 포토샵 기법, 창작 과정의 마찰, 그리고 원시적인 느낌을 주는 앨범 커버 디자인에 대한 접근법을 이야기한다.",
+    "en": "In an It's Nice That spotlight, illustrator Robert Beatty discusses his use of retro Photoshop techniques, creative friction and his approach to designing album covers with an almost primeval visual feel."
+  },
+  "points": {
+    "kr": [
+      "로버트 비티의 레트로 포토샵 기반 일러스트 작업 과정",
+      "'창작 마찰'이 디자인 결정에 미치는 영향",
+      "원시적 느낌을 지닌 앨범 커버 디자인 접근법"
+    ],
+    "en": [
+      "Robert Beatty's retro Photoshop-driven illustration process",
+      "How \"creative friction\" shapes his design decisions",
+      "Designing album covers with a primeval, almost ancient visual quality"
+    ]
+  },
+  "positions": [
+    "illustrator",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "오늘날 AI 보조로 마찰 없이 진행되는 일러스트 작업 방식과 대비되는 사례다. 의도적인 '마찰'이 독자적인 비주얼 보이스의 일부라고 생각하는 이들에게 읽어볼 만하다.",
+    "en": "A useful counter-example to today's AI-assisted, frictionless illustration workflows, worth reading for anyone who thinks deliberate 'friction' is part of a distinctive visual voice."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "일러스트레이터·음반 아트디렉터에게 추천하는 읽을거리",
+    "en": "Good read for illustrators and album/editorial art directors"
+  },
+  "comment": {
+    "kr": "앨범 커버 디자인은 독자적이고 따라 하기 어려운 비주얼 시그니처가 보상받는 니치 영역이며, 비티의 레트로 포토샵·마찰을 끌어안는 작업 방식은 기술적 제약이 한계가 아니라 스타일이 될 수 있음을 보여주는 좋은 예다.\n'창작 마찰'이라는 프레이밍은 곱씹어볼 만하다. 대부분의 일러스트 도구가 마찰을 없애는 방향으로 최적화되는 시점에, 의도적으로 마찰을 남겨두는 것 자체가 하나의 디자인 선택이기 때문이다.\n속보성 기사라기보다 작업 방식/공정에 관한 글이므로, 즉각적인 실행 항목보다는 영감을 얻는 용도로 읽기 좋다.",
+    "en": "Album cover design is a niche that rewards a distinct, hard-to-copy visual signature, and Beatty's retro-Photoshop, friction-embracing process is a good example of how technical constraint can become a style rather than a limitation.\nThe framing around 'creative friction' is worth sitting with: in a moment when most illustration tools are optimized to remove friction, deliberately keeping some in the process is itself a design choice.\nThis is more of a craft/process piece than breaking news, so it's best read for inspiration rather than for any immediate actionable takeaway."
+  },
+  "thumbLabel": "앨범커버",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

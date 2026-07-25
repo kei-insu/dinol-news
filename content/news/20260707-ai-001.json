@@ -1,0 +1,50 @@
+{
+  "contentId": "20260707-ai-001",
+  "date": "2026-07-07",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "인공지능신문",
+    "publishedAt": "2026-07-06"
+  },
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=40833",
+  "isEn": false,
+  "featured": true,
+  "category": {
+    "kr": "AI · 학회 · 연구",
+    "en": null
+  },
+  "title": {
+    "kr": "세계 3대 머신러닝 학회 'ICML 2026', 서울 코엑스 개막…AI 석학 1만 5천 명 집결",
+    "en": null
+  },
+  "summary": {
+    "kr": "세계 최고 권위의 머신러닝 학회 ICML 2026이 7월 6일부터 11일까지 서울 코엑스에서 열린다. 전 세계 AI 연구자·기업 관계자 약 1만 5천 명이 참가하는 국내 최대 규모 국제 학술행사다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "NeurIPS·ICLR과 함께 세계 3대 ML 학회",
+      "생성형 AI·LLM·강화학습·컴퓨터비전·로보틱스 최신 연구 발표",
+      "7/6 튜토리얼·AI 엑스포, 7/7~9 메인 컨퍼런스"
+    ],
+    "en": []
+  },
+  "positions": [],
+  "designer": {
+    "kr": "지금 AI 제품·서비스를 움직이는 기술 대부분이 이런 정상급 학회에서 먼저 공개됩니다. 디자이너에게도 '반년~1년 뒤 도구가 어디로 갈지' 방향을 미리 읽는 자리예요.",
+    "en": null
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 흐름 읽는 기획·디자인 담당자 참고 · 팀 공유",
+    "en": null
+  },
+  "comment": {
+    "kr": "논문 학회가 서울 한복판에서 열린다는 건, 한국이 'AI를 쓰는 나라'에서 'AI 방향을 논의하는 나라'로 옮겨가고 있다는 신호로 봅니다. 화려한 제품 발표는 아니지만, 여기서 나온 이야기가 1~2년 뒤 우리가 매일 쓰는 도구로 내려옵니다.\n\n당장 코엑스에 못 가더라도, 어떤 주제가 기조강연으로 다뤄지는지만 훑어도 '다음 판'이 보입니다.",
+    "en": null
+  },
+  "thumbLabel": "AI 학회",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

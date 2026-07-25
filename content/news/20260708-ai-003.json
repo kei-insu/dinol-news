@@ -1,0 +1,54 @@
+{
+  "contentId": "20260708-ai-003",
+  "date": "2026-07-08",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "UN News",
+    "publishedAt": "2026-07-06"
+  },
+  "url": "https://news.un.org/en/story/2026/07/1167873",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책",
+    "en": "AI · Policy"
+  },
+  "title": {
+    "kr": "구테흐스 UN 사무총장 '킬러로봇, 국제법으로 금지해야'",
+    "en": "From AI to 'killer robots': UN chief issues urgent governance call"
+  },
+  "summary": {
+    "kr": "안토니우 구테흐스 UN 사무총장이 제네바에서 열린 첫 UN AI 거버넌스 글로벌 대화에서 광범위한 국제 AI 통제를 촉구했습니다. 인간의 통제 없이 표적을 선택하는 '킬러로봇'을 국제법으로 금지해야 한다고 강조했습니다.",
+    "en": "UN Secretary-General António Guterres called for far-reaching global AI controls at the inaugural UN Global Dialogue on AI Governance in Geneva, demanding an international ban on lethal autonomous weapons systems ('killer robots') and an AI Child Safety Pledge."
+  },
+  "points": {
+    "kr": [
+      "인간 통제 없는 살상무기시스템(킬러로봇) 국제법 금지 촉구",
+      "아동 보호를 위한 AI 아동안전서약 제안",
+      "아직 인터넷에 접근하지 못하는 수십억 인구를 위한 공평한 AI 접근 요구"
+    ],
+    "en": [
+      "Call to ban lethal autonomous weapon systems under international law",
+      "Push for an AI Child Safety Pledge to protect children online",
+      "Demand for equitable AI access for billions still offline"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "AI 거버넌스 논의가 생산성 도구를 넘어 무기·아동안전 문제로 확장되고 있다는 신호입니다. 정책이나 신뢰·안전(Trust & Safety) 기능을 다루는 실무자라면 주시할 필요가 있습니다.",
+    "en": "A reminder that AI governance debates now directly touch weapons and child safety, not just productivity tools — worth tracking if you work on AI policy or trust & safety features."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 정책 동향 참고용 · 선택",
+    "en": "Background reading for AI policy watchers · Optional"
+  },
+  "comment": {
+    "kr": "구테흐스 총장의 발언은 UN 연설치고 이례적으로 직설적이었습니다. 자율살상무기를 \"도덕적으로 혐오스럽다\"고 규정하며 구속력 있는 금지를 요구한 점이 눈에 띕니다.\nAI 제품을 만드는 팀 입장에서는, 대중의 AI 신뢰가 일상 도구뿐 아니라 고위험 상황에서의 활용 방식에도 크게 좌우된다는 점을 시사합니다.\n이 카드는 검색 스니펫 기반으로 작성되었으니, 정확한 인용문과 날짜는 원문에서 다시 확인하시길 권장합니다.",
+    "en": "Guterres's language was unusually blunt for a UN address, calling autonomous weapons \"morally repugnant\" and demanding a binding ban. It signals momentum is building beyond voluntary pledges toward treaty-level action.\nFor teams building AI products, this is a reminder that public trust in AI is increasingly tied to how the technology is used in high-stakes, high-harm contexts, not just everyday tools.\nThis card is based on search snippets - please verify exact quotes and dates against the original UN News article before citing it."
+  },
+  "thumbLabel": "킬러로봇",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

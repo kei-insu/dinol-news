@@ -1,0 +1,52 @@
+{
+  "contentId": "20260706-ai-003",
+  "date": "2026-07-06",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "미디어오늘",
+    "publishedAt": "2026-06-30"
+  },
+  "url": "https://www.mediatoday.co.kr/news/articleView.html?idxno=335476",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "AI · 검색 · 브랜드 리스크",
+    "en": null
+  },
+  "title": {
+    "kr": "독일 법원 \"AI 오버뷰 허위 정보는 구글 책임\" 첫 판단",
+    "en": null
+  },
+  "summary": {
+    "kr": "독일 뮌헨 법원이 구글 AI 오버뷰가 만든 허위 요약에 대해 '구글의 자체 발언'으로 보고 책임을 인정했습니다. AI 검색 요약에 대한 유럽의 첫 판단입니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "AI 요약도 '플랫폼의 발언'으로 책임",
+      "출처 링크 클릭률은 1%뿐",
+      "AI 검색 시대의 브랜드 노출 관리"
+    ],
+    "en": []
+  },
+  "positions": [
+    "brand-designer"
+  ],
+  "designer": {
+    "kr": "AI 검색 요약이 브랜드를 잘못 설명할 수 있고, 그 책임이 플랫폼에 있다는 신호입니다. '검색에 어떻게 비치는가'가 새로운 평판 관리 영역이 됩니다.",
+    "en": null
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "브랜드·마케팅 담당자 참고 · 홍보팀 공유",
+    "en": null
+  },
+  "comment": {
+    "kr": "AI가 요약한 답도 '플랫폼 자신의 발언'으로 책임을 물은 첫 판결입니다. 브랜드 입장에서 보면, 검색 상단의 AI 요약이 잘못된 이미지를 씌울 수 있다는 뜻이라 '검색에 어떻게 비치는가'가 새로운 평판 관리 영역이 됩니다.\n\n출처 링크를 클릭하는 사람이 1%뿐이라는 수치가 특히 뼈아픕니다. 디자이너·마케터도 이제 'AI 검색이 우리 브랜드를 어떻게 설명하는가'를 신경 써야 할 시점이에요.",
+    "en": null
+  },
+  "thumbLabel": "AI 검색",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

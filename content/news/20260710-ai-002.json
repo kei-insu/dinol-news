@@ -1,0 +1,56 @@
+{
+  "contentId": "20260710-ai-002",
+  "date": "2026-07-10",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "U.S. News",
+    "publishedAt": "2026-07-08"
+  },
+  "url": "https://money.usnews.com/investing/news/articles/2026-07-08/spacexai-launches-grok-4-5-model-for-coding-agentic-tasks",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 모델 출시",
+    "en": "AI · Model Launch"
+  },
+  "title": {
+    "kr": "xAI, 코딩·에이전트용 신모델 '그록 4.5' 공개",
+    "en": "SpaceXAI Launches Grok 4.5 Model for Coding, Agentic Tasks"
+  },
+  "summary": {
+    "kr": "SpaceXAI가 코딩·에이전트 작업·지식노동에 특화된 최신 모델 '그록 4.5'를 공개했습니다. 실제 Cursor 세션 데이터로 학습했으며, 엔비디아 GB300 GPU 수만 개로 훈련됐습니다.",
+    "en": "SpaceXAI released Grok 4.5, its strongest model yet, built for coding, agentic tasks and knowledge work, trained on real Cursor session data across tens of thousands of Nvidia GB300 GPUs."
+  },
+  "points": {
+    "kr": [
+      "입력 100만 토큰당 2달러, 출력 100만 토큰당 6달러로 책정",
+      "비슷한 급 모델 대비 약 2배 토큰 효율",
+      "Grok Build·Cursor·SpaceXAI 콘솔에서 즉시 이용 가능"
+    ],
+    "en": [
+      "Priced at $2 per million input tokens and $6 per million output tokens",
+      "Roughly 2x the token efficiency of comparable leading models",
+      "Available now in Grok Build, Cursor and the SpaceXAI console"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "대규모로 에이전틱 워크플로를 돌리는 팀이라면 벤치마크 점수보다 토큰 효율 주장이 더 중요합니다. 전환 전에 현재 쓰는 모델과 실제 비용을 비교해볼 필요가 있습니다.",
+    "en": "Token efficiency claims matter more than raw benchmark scores for teams running agentic workflows at scale, worth a real cost comparison against your current model before switching."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "Cursor·에이전틱 코딩 도구 사용팀은 테스트해볼 만함",
+    "en": "Worth testing if you rely on Cursor or agentic coding tools"
+  },
+  "comment": {
+    "kr": "그록 4.5가 GPT-5.6과 같은 주에 출시된 것은 우연이 아닙니다. 두 회사 모두 그동안 Claude가 강세를 보여온 에이전틱 코딩 영역에서 가격 대비 성능 우위를 노리는 모습입니다.\n실제 Cursor 세션 데이터로 학습했다는 점도 눈에 띕니다. 일반 벤치마크가 아니라 개발자가 IDE 안에서 실제로 일하는 방식에 맞춰 최적화하려는 시도로 보입니다.",
+    "en": "Grok 4.5 launching the same week as GPT-5.6 is not a coincidence, both labs are racing to claim the best price-to-performance ratio for agentic coding work, an area where Claude has held a strong lead.\nThe fact that it was trained on real Cursor session data is a notable detail, it suggests xAI is optimizing specifically for how developers actually work inside an IDE rather than for general benchmarks."
+  },
+  "thumbLabel": "코딩AI",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

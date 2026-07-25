@@ -1,0 +1,56 @@
+{
+  "contentId": "20260701-design-005",
+  "date": "2026-07-01",
+  "section": "design",
+  "order": 5,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-06-30"
+  },
+  "url": "https://www.dezeen.com/2026/06/30/world-monuments-fund-irreplaceable-american-usa-250/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 헤리티지",
+    "en": "Design · Architecture · Heritage"
+  },
+  "title": {
+    "kr": "세계기념물기금, 미국 건국 250주년 기념 '대체 불가' 장소 10곳 선정",
+    "en": "World Monuments Fund names 10 \"irreplaceable\" American places for USA 250"
+  },
+  "summary": {
+    "kr": "유산보존단체 세계기념물기금(WMF)이 미국 건국 250주년을 기념해 스페인 식민지 시대 교회부터 현대 주거 건물까지 시대를 아우르는 '대체 불가' 미국 문화유산 10곳을 지정했습니다. LA 와츠 타워스, 댈러스 시청, 뉴올리언스 등이 포함됐습니다.",
+    "en": "Heritage organization World Monuments Fund designated 10 American cultural sites as 'irreplaceable' for the country's 250th anniversary, spanning centuries of the built environment from Spanish-colonial missions to modern housing. Watts Towers in LA, Dallas City Hall, and New Orleans are among the featured places."
+  },
+  "points": {
+    "kr": [
+      "WMF, 건국 250주년 기념 '대체 불가' 미국 문화유산 10곳 선정",
+      "식민지 교회부터 현대 주거까지 시대를 아우름",
+      "LA 와츠 타워스·댈러스 시청·뉴올리언스 포함"
+    ],
+    "en": [
+      "WMF names 10 'irreplaceable' U.S. sites for the 250th anniversary",
+      "Spans colonial missions to modern housing",
+      "Watts Towers, Dallas City Hall, New Orleans included"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "'디자인'에는 '무엇을 남길 것인가'도 포함된다는 걸 일깨우는 소식입니다.\n\n식민지 시대 교회부터 브루탈리즘 시청까지 시대와 양식을 아우르며, 건물을 단순 구조물이 아니라 문화적 기억으로 봅니다. 지어진 환경이 시간을 넘어 어떻게 의미를 품는지 생각하는 사람에게 좋은 맥락입니다.",
+    "en": "A reminder that 'design' includes what we choose to preserve. The list spans centuries and styles, from colonial missions to a brutalist city hall, framing buildings as cultural memory, not just structures. Good context for anyone who thinks about how the built environment carries meaning over time."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "'보존'에 대한 사려 깊은 관점으로 읽고, 한두 곳은 디자인 역사 맥락으로 찾아보세요",
+    "en": "Read as a thoughtful take on preservation; look up one or two sites for design-history context"
+  },
+  "comment": {
+    "kr": "디자인을 '새로 만드는 것'으로만 생각하기 쉽지만, '무엇을 남길 것인가'도 똑같이 디자인의 문제입니다. 이 목록이 흥미로운 건 화려한 기념물만이 아니라 평범한 현대 주거까지 '대체 불가'로 꼽았다는 점입니다. 무엇을 유산으로 볼 것인가에 대한 관점 자체가 하나의 선언이니까요.\n\n건물은 결국 그 시대의 가치와 미감을 굳혀놓은 기록입니다. 앞서 본 '백악관 타이포 26년사'와도 통하는데, 디자인은 언제나 그 시대를 증언합니다.",
+    "en": "It's easy to think of design only as 'making something new,' but 'what to keep' is just as much a design question. What's interesting about this list is that it names not only grand monuments but ordinary contemporary housing as 'irreplaceable.' The very view of what counts as heritage is itself a statement.\n\nBuildings are, in the end, records that harden an era's values and aesthetics. It echoes the 'White House typography over 26 years' piece we saw: design always testifies to its time."
+  },
+  "thumbLabel": "건축유산",
+  "thumbGradient": "g-olive",
+  "_todo": []
+}

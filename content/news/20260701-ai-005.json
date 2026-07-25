@@ -1,0 +1,54 @@
+{
+  "contentId": "20260701-ai-005",
+  "date": "2026-07-01",
+  "section": "ai",
+  "order": 5,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-06-30"
+  },
+  "url": "https://techcrunch.com/2026/06/30/trump-drops-restrictions-on-anthropics-mythos-and-fable-models/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 접근성",
+    "en": "AI · Policy · Access"
+  },
+  "title": {
+    "kr": "트럼프, Anthropic Mythos·Fable 모델 수출 규제 전격 해제",
+    "en": "Trump drops restrictions on Anthropic's Mythos and Fable models"
+  },
+  "summary": {
+    "kr": "미국 정부가 Anthropic의 Mythos·Fable 모델에 대한 수출 허가 요건을 철회해, 현존 최고 수준으로 평가받는 AI 모델의 글로벌 접근이 재개됐습니다. 앞서 6월 중순 도입됐던 통제가 약 2주 만에 풀린 것으로, 국제 AI 접근성에 즉각적인 영향을 미칩니다.",
+    "en": "The U.S. lifted export license requirements on Anthropic's Mythos and Fable models, restoring public global access to what are widely considered the most advanced AI models available today. The reversal follows intense industry lobbying and has immediate implications for international AI availability."
+  },
+  "points": {
+    "kr": [
+      "미국, Anthropic Mythos·Fable 수출 제한 해제",
+      "통제가 약 2주 만에 도입·철회됨",
+      "모델 접근성은 기술뿐 아니라 정책으로도 바뀜"
+    ],
+    "en": [
+      "U.S. lifted export limits on Anthropic's Mythos·Fable",
+      "Restrictions came and went within roughly two weeks",
+      "Model access can shift with policy, not just tech"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "어떤 AI 모델을 합법적으로 쓸 수 있는지는 수출 정책에 달려 있고, 그 정책은 몇 주 만에 뒤집히기도 합니다.\n\n프론티어 모델 위에 제품을 만든다면, 특정 모델의 이용 가능성에 제품을 못박지 말라는 신호입니다. 교체 가능성을 염두에 두세요. 밑단 모델이 갑자기 바뀌거나 사라지면 우리 UX는 어떻게 되는가?",
+    "en": "Which AI models you can legally use depends on export policy, and that policy can flip in weeks. For anyone building on top of frontier models, this is a reminder to not hard-wire a product to a single model's availability. Design for swappability: what happens to your UX if the underlying model suddenly changes or disappears?"
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "정책이 모델 접근성에 어떻게 영향을 주는지 맥락으로만 알아두고, 제품을 한 모델에 종속시키지 않도록 설계하세요",
+    "en": "Note it as context on how policy affects model access; design your product so it isn't locked to one model"
+  },
+  "comment": {
+    "kr": "이 소식의 실무적 교훈은 정치가 아니라 '의존의 위험'입니다. 최고 성능 모델이라도 정책 한 번에 며칠 사이 막히거나 풀릴 수 있다는 걸 이번 일이 보여줬습니다(6월 중순 통제 → 약 2주 뒤 해제).\n\n제품을 특정 모델 하나에 완전히 묶어두면, 그 모델이 사라질 때 서비스도 흔들립니다. 그래서 요즘은 '모델은 갈아끼울 수 있는 부품'이라는 전제로 설계하는 게 안전합니다.\n\n수출통제 자체의 옳고 그름은 별개로, 만드는 사람 입장에선 '한 곳에 다 걸지 말라'는 교훈이 남습니다.",
+    "en": "The practical lesson here isn't politics, it's the danger of dependence. This episode showed that even a top-performing model can be blocked or unblocked within days by a single policy call (controls in mid-June, lifted about two weeks later).\n\nTie a product entirely to one model, and when that model disappears your service wobbles with it. That's why designing on the premise that 'the model is a swappable part' is the safer approach today.\n\nWhatever you think of export controls themselves, the takeaway for builders is simple: don't bet everything on one place."
+  },
+  "thumbLabel": "정책",
+  "thumbGradient": "g-rust",
+  "_todo": []
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260720-design-001",
+  "date": "2026-07-20",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-19"
+  },
+  "url": "https://www.yankodesign.com/2026/07/19/a-35m%C2%B2-summerhouse-designed-like-a-space-habitat/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축 · 지속가능성",
+    "en": "Design · Architecture · Sustainability"
+  },
+  "title": {
+    "kr": "우주 거주지처럼 설계한 35㎡ 서머하우스 'EcoNeo'",
+    "en": "A 35m² Summerhouse Designed Like a Space Habitat"
+  },
+  "summary": {
+    "kr": "우주 거주지 설계로 알려진 SAGA Space Architects(루나크, ISS 서캐디언 라이트 시스템)가 그 원칙을 지상 건축에 적용해, 덴마크 아스내스에 6인 가족이 묵을 수 있는 35㎡ 저탄소 서머하우스 'EcoNeo'를 선보였습니다. 평균적인 덴마크 서머하우스 대비 탄소 배출을 약 80% 줄였습니다.",
+    "en": "SAGA Space Architects, known for space-habitat design (LUNARK, the ISS's Circadian Light system), applied those principles to EcoNeo, a 35m² low-carbon summerhouse in Asnæs, Denmark that sleeps six and cuts emissions by roughly 80% versus an average Danish summerhouse."
+  },
+  "points": {
+    "kr": [
+      "우주 거주지 설계 원칙을 지상 건축에 적용",
+      "평균 대비 탄소 배출 약 80% 절감",
+      "콤팩트 리빙·생물 기반 소재·디지털 패브리케이션"
+    ],
+    "en": [
+      "Space-habitat design principles applied to Earth architecture",
+      "~80% lower carbon emissions than an average summerhouse",
+      "Compact living, biogenic materials, digital fabrication"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "우주 건축의 공간·자원 제약 사고방식을 지상의 지속가능한 주거에 그대로 옮겨온 깔끔한 크로스도메인 사례입니다.",
+    "en": "A clean case study in cross-domain transfer: the space-constrained, resource-efficient thinking behind space habitats applied directly to sustainable housing on Earth."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "지속가능·콤팩트 주거 리서치 자료로 저장 추천",
+    "en": "Save for sustainable/compact housing research"
+  },
+  "comment": {
+    "kr": "루나크 달 거주지 실험과 ISS 조명 시스템을 만든 스튜디오가 '지구에서 가장 제약이 많은 건축'이라 할 우주 거주지의 논리를 여름 별장에 그대로 적용했다는 점이 흥미롭습니다. 탄소 배출 80% 절감이라는 수치는 우주 건축 특유의 자원 효율 사고가 실제 성과로 이어진 사례로 볼 수 있습니다.\n\n콤팩트 리빙과 생물 기반 소재, 디지털 패브리케이션을 결합한 접근은 국내 소형 주택·세컨드하우스 설계에도 참고할 지점이 많습니다. 다만 시공비나 실제 거주 후기 등 디테일은 스니펫 정보만으로는 확인되지 않아, 관심 있다면 원문과 아크데일리 등 추가 자료를 함께 살펴보길 권합니다.",
+    "en": "루나크 달 거주지 실험과 ISS 조명 시스템을 만든 스튜디오가 '지구에서 가장 제약이 많은 건축'이라 할 우주 거주지의 논리를 여름 별장에 그대로 적용했다는 점이 흥미롭습니다. 탄소 배출 80% 절감이라는 수치는 우주 건축 특유의 자원 효율 사고가 실제 성과로 이어진 사례로 볼 수 있습니다.\n\n콤팩트 리빙과 생물 기반 소재, 디지털 패브리케이션을 결합한 접근은 국내 소형 주택·세컨드하우스 설계에도 참고할 지점이 많습니다. 다만 시공비나 실제 거주 후기 등 디테일은 스니펫 정보만으로는 확인되지 않아, 관심 있다면 원문과 아크데일리 등 추가 자료를 함께 살펴보길 권합니다."
+  },
+  "thumbLabel": "친환경 건축",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

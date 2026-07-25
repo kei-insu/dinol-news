@@ -1,0 +1,56 @@
+{
+  "contentId": "20260713-design-002",
+  "date": "2026-07-13",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-08"
+  },
+  "url": "https://www.archdaily.com/1092216/studio-campo-baeza-and-maoda-win-competition-to-design-ecuadors-new-national-museum-in-quito",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 공모",
+    "en": "Design · Architecture · Competition"
+  },
+  "title": {
+    "kr": "캄포 바에자·마오다, 에콰도르 국립박물관 국제공모 당선",
+    "en": "Studio Campo Baeza and Maoda win competition to design Ecuador's new National Museum in Quito"
+  },
+  "summary": {
+    "kr": "마드리드의 캄포 바에자와 키토의 마오다가 에콰도르 새 국립박물관 국제공모전에서 '태양의 메아리(Echoes of the Sun)'로 당선됐습니다. 148개 참가작 중 17개 최종 후보를 제치고, 콜럼버스 이전 안데스 건축에서 영감을 받은 콤팩트한 수직 매스를 제안했습니다.",
+    "en": "Madrid-based Studio Campo Baeza and Quito-based Maoda won the international competition for Ecuador's new National Museum with 'Echoes of the Sun,' a compact vertical volume inspired by pre-Columbian Andean architecture, beating 17 finalists from 148 entries."
+  },
+  "points": {
+    "kr": [
+      "148개 참가작, 17개 최종 후보 경쟁",
+      "계단식 피라미드와 안데스 태양신전에서 영감",
+      "건물을 안쪽에 배치해 넉넉한 공공 광장 확보"
+    ],
+    "en": [
+      "148 entries, 17 finalists in the international competition",
+      "Design references stepped pyramids and Andean solar temples",
+      "Building set back to create a generous public plaza"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "지역 건축사가 답습이 아닌 동시대적 형태로 이어지는 좋은 사례입니다. 맥락 기반 박물관 디자인을 리서치하는 데 참고할 만합니다.",
+    "en": "A good example of how regional architectural history can generate contemporary form without becoming pastiche, useful for anyone researching context-driven museum design."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "문화시설 공모전 레퍼런스로 훌륭 · 리서치용 저장 추천",
+    "en": "Strong reference for cultural building competitions · Save for research"
+  },
+  "comment": {
+    "kr": "국제적으로 이름난 스페인 스튜디오와 현지 에콰도르 사무소의 협업 구조는 국제 박물관 공모전의 주목할 만한 모델입니다.\n공모 과정 자체에 논란이 있었다는 보도도 있는 만큼, 1억 달러 규모 프로젝트가 어떻게 진행될지 지켜볼 만합니다.",
+    "en": "The pairing of a Pritzker-adjacent Spanish studio with a local Ecuadorian practice is a notable model for international museum competitions.\nWorth watching how the $100M project evolves given reported controversy around the competition process itself."
+  },
+  "thumbLabel": "공모전",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

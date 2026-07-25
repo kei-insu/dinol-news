@@ -1,0 +1,56 @@
+{
+  "contentId": "20260717-design-002",
+  "date": "2026-07-17",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-16"
+  },
+  "url": "https://www.dezeen.com/2026/07/16/riba-stirling-prize-2026-shortlist/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 수상",
+    "en": "Design · Architecture · Awards"
+  },
+  "title": {
+    "kr": "영국왕립건축가협회, 2026 스털링상 최종 후보 6곳 공개",
+    "en": "RIBA unveils Stirling Prize 2026 shortlist"
+  },
+  "summary": {
+    "kr": "영국왕립건축가협회(RIBA)가 30주년을 맞은 스털링상 최종 후보 6곳을 발표했다. 모두 잉글랜드 소재로 런던 2곳, 케임브리지 2곳, 에식스·하트퍼드셔 각 1곳이 이름을 올렸다.",
+    "en": "RIBA revealed the six-strong shortlist for its 30th annual Stirling Prize, the UK's top architecture award, with all buildings located in England — two in London, two in Cambridge, one in Essex and one in Hertfordshire."
+  },
+  "points": {
+    "kr": [
+      "영국 최고 건축상 '스털링상' 30주년",
+      "렌초 피아노+아담슨 어소시에이츠의 패딩턴 스퀘어 등이 최종 후보",
+      "최종 후보 6곳 모두 잉글랜드 소재"
+    ],
+    "en": [
+      "30th anniversary of the Stirling Prize, UK's top architecture award",
+      "Paddington Square by Renzo Piano Building Workshop + Adamson Associates among finalists",
+      "All six shortlisted projects located in England"
+    ]
+  },
+  "positions": [
+    "architect"
+  ],
+  "designer": {
+    "kr": "영국 건축계가 어떤 기준으로 '우수함'을 정의하는지 매년 확인할 수 있는 지표입니다. 지난 수상작들과 비교하며 트렌드 변화를 읽어볼 만합니다.",
+    "en": "A useful yearly benchmark of what UK institutions consider architectural excellence — worth comparing against past shortlists to spot shifting priorities."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "영국 건축 트렌드 추적용 · 선택",
+    "en": "Good for tracking UK architecture trends · Optional"
+  },
+  "comment": {
+    "kr": "최종 후보 6곳이 전부 잉글랜드에 몰려있다는 점은 다소 아쉽지만, 30주년이라는 상징성 때문에 올해 수상작에 관심이 더 쏠릴 것으로 보입니다.\n패딩턴 스퀘어처럼 55x55m 정육면체 형태에 노출 철골 구조와 커튼월을 결합한 프로젝트가 눈에 띕니다. 대형 상업 건축에서도 조형적 실험이 계속되고 있다는 신호로 읽힙니다.",
+    "en": "It's a bit disappointing that all six finalists are located in England, but the 30th-anniversary milestone will likely draw extra attention to this year's eventual winner.\nPaddington Square's 55x55m cube form combining exposed steel structure and curtain walls stands out — a sign that formal experimentation is still very much alive in large-scale commercial architecture."
+  },
+  "thumbLabel": "건축상",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}
