@@ -1,40 +1,37 @@
 ---
 import { getCollection } from 'astro:content';
-import Briefing from '../../layouts/Briefing.astro';
-import Section from '../../components/Section.astro';
-import Card from '../../components/Card.astro';
+import BriefingPage from '../../components/pages/BriefingPage.astro';
+import DetailPage from '../../components/pages/DetailPage.astro';
 
 export async function getStaticPaths() {
   const all = await getCollection('news');
   const dates = [...new Set(all.map(c => c.data.date))].sort();
-  return dates.map(date => {
+
+  const briefings = dates.map(date => {
     const [y, m, d] = date.split('-');
     const day = all.filter(c => c.data.date === date);
     return {
       params: { path: `${y}/${m}/Dinol_news_${y}${m}${d}` },
       props: {
-        date,
-        ai: day.filter(c => c.data.section === 'ai')
-               .sort((a, b) => a.data.order - b.data.order),
-        design: day.filter(c => c.data.section === 'design')
-                   .sort((a, b) => a.data.order - b.data.order),
+        kind: 'briefing', date,
+        ai: day.filter(c => c.data.section === 'ai').sort((a,b)=>a.data.order-b.data.order),
+        design: day.filter(c => c.data.section === 'design').sort((a,b)=>a.data.order-b.data.order),
       },
     };
   });
-}
 
-const { date, ai, design } = Astro.props;
-const [y, m, d] = date.split('-');
-const titleDate = `${y}. ${m}. ${d}`;
-const MON = ['January','February','March','April','May','June',
-             'July','August','September','October','November','December'];
-const siteDate = `${MON[Number(m) - 1]} ${Number(d)}, ${y}`;
+  const details = all.map(entry => {
+    const [y, m] = entry.data.date.split('-');
+    return {
+      params: { path: `${y}/${m}/${entry.data.contentId}` },
+      props: { kind: 'detail', card: entry.data },
+    };
+  });
+
+  return [...briefings, ...details];
+}
+const props = Astro.props;
 ---
-<Briefing titleDate={titleDate} siteDate={siteDate}>
-  <Section name="AI">
-    {ai.map(c => <Card card={c.data} />)}
-  </Section>
-  <Section name="Design">
-    {design.map(c => <Card card={c.data} />)}
-  </Section>
-</Briefing>
+{props.kind === 'briefing'
+  ? <BriefingPage date={props.date} ai={props.ai} design={props.design} />
+  : <DetailPage card={props.card} />}

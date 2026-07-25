@@ -1,10 +1,19 @@
 ---
-const { titleDate } = Astro.props;
+const {
+  pageTitle,
+  description = null,
+  canonical = null,
+  ogType = null,          // 기본값을 'website' 로 두지 않는다. null 이어야 한다.
+  ogImage = null,
+  jsonLd = null,
+} = Astro.props;
+
+const hasSeo = Boolean(description || canonical || ogType || ogImage || jsonLd);
 ---
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>디자인 놀이터 — {titleDate}</title>
+<title>{pageTitle}</title>
 <!-- Google tag (gtag.js) -->
 <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
 <script is:inline>
@@ -18,3 +27,18 @@ const { titleDate } = Astro.props;
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../assets/dinol.css">
+{hasSeo && (
+  <>
+    {description && <meta name="description" content={description} />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    {canonical && <meta property="og:url" content={canonical} />}
+    {ogType && <meta property="og:type" content={ogType} />}
+    {pageTitle && <meta property="og:title" content={pageTitle} />}
+    {description && <meta property="og:description" content={description} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:site_name" content="디자인 놀이터" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </>
+)}
+{jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}

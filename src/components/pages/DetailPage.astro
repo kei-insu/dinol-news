@@ -1,0 +1,165 @@
+---
+import Detail from '../../layouts/Detail.astro';
+import { POSITIONS, FALLBACK_POSITION_LABEL, FALLBACK_POSITION_TITLE } from '../../lib/positions';
+
+const { card } = Astro.props;
+const [y, m, d] = card.date.split('-');
+const ymd = `${y}${m}${d}`;
+
+// 6-1. URL — new URL() 로 조립.
+// BASE_URL 이 트레일링 슬래시를 포함/미포함(현재 '/dinol-news')해도 정확히 1개가 되도록 정규화.
+// → dinol-newsnews (슬래시 누락) 도, //dinol-news (이중) 도 방지.
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
+const canonical = new URL(`${base}news/${y}/${m}/${card.contentId}.html`, Astro.site).href;
+const ogImage   = new URL(`${base}assets/ai-design-news.png`, Astro.site).href;
+
+// 6-2. 출처 표기는 source.publishedAt (date 아님)
+const pub = card.source.publishedAt;
+const displayDate = pub ? pub.split('-').join('. ') : '';
+const src = card.source.name ? `${card.source.name} · ${displayDate}` : displayDate;
+
+// 헤더 site-date (브리핑과 동일 포맷, card.date 기준)
+const MON = ['January','February','March','April','May','June',
+             'July','August','September','October','November','December'];
+const siteDate = `${MON[Number(m) - 1]} ${Number(d)}, ${y}`;
+
+// 6-3. description (말줄임표 없음)
+function makeDescription(text, max = 150) {
+  if (!text) return null;
+  if (text.length <= max) return text;
+  const s = text.slice(0, max);
+  const i = s.lastIndexOf(' ');
+  return i >= Math.floor(max * 0.7) ? s.slice(0, i) : s;
+}
+
+// 6-4. 문단 분리
+const toParagraphs = (v) => (v || '')
+  .replace(/\r\n?/g, '\n').split(/\n\s*\n|\n/).filter(p => p !== '');
+
+// 6-5. 빈 값 방어용
+const hasSummary   = Boolean(card.summary?.kr && card.summary.kr.trim());
+const hasPoints    = Array.isArray(card.points?.kr) && card.points.kr.length > 0;
+const designerPars = toParagraphs(card.designer?.kr);
+const commentPars  = toParagraphs(card.comment?.kr);
+const hasDesigner  = designerPars.length > 0;
+const hasComment   = commentPars.length > 0;
+const hasRecommend = Boolean(card.recommend?.kr && card.recommend.kr.trim());
+
+// 관련 직무: 유효 칩만 계산(맵에 있는 ID 만 라벨로 변환). 미등록 ID 는 console.warn.
+const validPositions = (card.positions ?? [])
+  .filter((id) => {
+    if (POSITIONS[id]) return true;
+    console.warn(`[DetailPage] Unknown position: ${id} (${card.contentId})`);
+    return false;
+  })
+  .map((id) => POSITIONS[id]);
+
+// 유효 칩이 없으면 "디자인 공통" 기본 칩. positions:[] 의 의미는 JSON 에 그대로 보존.
+const isFallback = validPositions.length === 0;
+const displayPositions = isFallback ? [FALLBACK_POSITION_LABEL] : validPositions;
+
+const pageTitle = `${card.title.kr} — 디자인 놀이터`;
+const description = makeDescription(card.summary.kr);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": card.title.kr,
+  "description": card.summary.kr,
+  "datePublished": card.date,        // 큐레이션 발행일. 원문 날짜 아님
+  "inLanguage": "ko",
+  "author":    { "@type": "Organization", "name": "디자인 놀이터" },
+  "publisher": { "@type": "Organization", "name": "디자인 놀이터" },
+  "mainEntityOfPage": canonical,
+  "citation": {
+    "@type": "CreativeWork",
+    "name": card.title.en || card.title.kr,
+    "url": card.url,
+    ...(card.source.publishedAt ? { "datePublished": card.source.publishedAt } : {}),
+    "publisher": { "@type": "Organization", "name": card.source.name }
+  }
+};
+---
+<Detail
+  pageTitle={pageTitle}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  ogImage={ogImage}
+  jsonLd={jsonLd}
+  siteDate={siteDate}
+>
+  <article class="detail">
+    <div class="detail-head">
+      <div class="detail-source">{src}</div>
+      <div class="detail-category">{card.category.kr}</div>
+      <h1 class="detail-title">{card.title.kr}</h1>
+      {card.title.en && <p class="detail-title-en">{card.title.en}</p>}
+    </div>
+
+    {hasSummary && (
+      <section class="detail-block detail-summary-block">
+        <h2>한 줄 요약</h2>
+        <p class="detail-summary">{card.summary.kr}</p>
+      </section>
+    )}
+
+    <div class="detail-positions">
+      {displayPositions.map((label) => (
+        <span
+          class={isFallback ? 'detail-chip detail-chip-fallback' : 'detail-chip'}
+          aria-label={isFallback ? FALLBACK_POSITION_TITLE : undefined}
+        >
+          {label}
+        </span>
+      ))}
+    </div>
+
+    {hasPoints && (
+      <section class="detail-block detail-points-block">
+        <h2>핵심 인사이트</h2>
+        <ul>
+          {card.points.kr.map((p) => <li>{p}</li>)}
+        </ul>
+      </section>
+    )}
+
+    <section class="detail-block detail-impact-block">
+      <h2>실무 영향도</h2>
+      <div class="detail-stars" aria-label={`실무 영향도 ${card.impactScore}점, 5점 만점`}>
+        <span aria-hidden="true">
+          {Array.from({ length: 5 }, (_, i) => (
+            <span class={i < card.impactScore ? 'on' : 'off'}>★</span>
+          ))}
+        </span>
+      </div>
+    </section>
+
+    {hasDesigner && (
+      <section class="detail-block detail-designer-block">
+        <h2>디자인 관점</h2>
+        {designerPars.map((p) => <p>{p}</p>)}
+      </section>
+    )}
+
+    {hasRecommend && (
+      <section class="detail-block detail-recommend-block">
+        <h2>활용 추천</h2>
+        <p>{card.recommend.kr}</p>
+      </section>
+    )}
+
+    {hasComment && (
+      <section class="detail-block detail-note">
+        <h2>큐레이션 노트</h2>
+        {commentPars.map((p) => <p>{p}</p>)}
+      </section>
+    )}
+
+    <div class="detail-actions">
+      <a class="detail-cta" href={card.url} target="_blank" rel="noopener noreferrer">원문 보기 →</a>
+      <a class="detail-back" href={`Dinol_news_${ymd}.html`}>이 날짜 브리핑 보기</a>
+    </div>
+  </article>
+</Detail>

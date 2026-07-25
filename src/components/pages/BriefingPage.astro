@@ -1,0 +1,19 @@
+---
+import Briefing from '../../layouts/Briefing.astro';
+import Section from '../Section.astro';
+import Card from '../Card.astro';
+const { date, ai, design } = Astro.props;
+const [y, m, d] = date.split('-');
+const titleDate = `${y}. ${m}. ${d}`;
+const MON = ['January','February','March','April','May','June',
+             'July','August','September','October','November','December'];
+const siteDate = `${MON[Number(m) - 1]} ${Number(d)}, ${y}`;
+---
+<Briefing titleDate={titleDate} siteDate={siteDate}>
+  <Section name="AI">
+    {ai.map(c => <Card card={c.data} />)}
+  </Section>
+  <Section name="Design">
+    {design.map(c => <Card card={c.data} />)}
+  </Section>
+</Briefing>

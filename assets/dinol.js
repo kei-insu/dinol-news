@@ -140,8 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
     btnEn.classList.toggle('active', k === 'en');
   }
 
-  btnKr.addEventListener('click', () => setLang('kr'));
-  btnEn.addEventListener('click', () => setLang('en'));
+  if (btnKr) btnKr.addEventListener('click', () => setLang('kr'));
+  if (btnEn) btnEn.addEventListener('click', () => setLang('en'));
 
   function openDrawer(card) {
     const thumb = card.querySelector('.thumb');
@@ -222,8 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
       markAsRead(card);
     });
   });
-  drawerClose.addEventListener('click', closeDrawer);
-  overlay.addEventListener('click', closeDrawer);
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+  if (overlay) overlay.addEventListener('click', closeDrawer);
 
   /* 섹션 아코디언 (AI·Design 접기/펼치기) */
   document.querySelectorAll('.section-header').forEach(header => {

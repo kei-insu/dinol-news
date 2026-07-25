@@ -1,22 +1,25 @@
 ---
 import Head from '../components/Head.astro';
-import Drawer from '../components/Drawer.astro';
 import Header from '../components/Header.astro';
 import ArchiveCta from '../components/ArchiveCta.astro';
-import Guestbook from '../components/Guestbook.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import Scripts from '../components/Scripts.astro';
-const { titleDate, siteDate } = Astro.props;
+const { pageTitle, description, canonical, ogType, ogImage, jsonLd, siteDate } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="ko">
-<head><Head pageTitle={`디자인 놀이터 — ${titleDate}`} /></head>
+<head><Head
+  pageTitle={pageTitle}
+  description={description}
+  canonical={canonical}
+  ogType={ogType}
+  ogImage={ogImage}
+  jsonLd={jsonLd}
+/></head>
 <body>
-<Drawer />
 <Header siteDate={siteDate} />
 <slot />
 <ArchiveCta />
-<Guestbook />
 <SiteFooter />
 <Scripts />
 </body>
