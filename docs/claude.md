@@ -81,8 +81,32 @@
 |---|---|
 | 1 | 상단 방명록 폼은 template + 모든 브리핑에 복제 → 변경 시 전체 파일 수정 |
 | 2 | 배포 시 `git status`로 스테이징 확인 필수 |
-| 3 | `firestore.rules`는 Firebase 콘솔에 붙여넣기(git 아님) |
+| 3 | `firestore.rules`는 git 아님 → **변경 시 Claude가 사용자에게 "Firebase 콘솔에 붙여넣으세요"라고 안내**(콘솔 수동 반영 필요) |
 | 4 | 작업 후 관련 문서 갱신 + 날짜 스탬프 |
 
+
+---
+
+## 핸드오프 — 파일 전달 시 저장 경로 표기 (2026-07-25)
+
+업데이트한 파일을 사용자에게 전달(다운로드)할 때는, **다운로드 링크 위에 레포 저장 경로를 함께 표기**한다. 형식: `dinol-news > <폴더> 폴더`.
+
+| 파일 종류 | 저장 경로 |
+|---|---|
+| 일일 브리핑 `Dinol_news_YYYYMMDD.html` | `dinol-news > news > 2026 > MM 폴더` |
+| 문서 `*.md` | `dinol-news > docs 폴더` |
+| 에셋 `dinol.css`·`dinol.js`·`dinol-firebase.js` | `dinol-news > assets 폴더` |
+| 루트 파일 `index.html`·`archive.html`·`privacy.html`·`template.html`·`index.json` | `dinol-news 루트` |
+| 스크립트 `*.py` | `dinol-news > scripts 폴더` |
+
+---
+
+## 수정 예정 백로그
+
+세션 시작 시 확인. 처리하면 행 삭제하고 `dev-history.md`/해당 문서에 반영.
+
+| 등록일 | 항목 | 비고 |
+|---|---|---|
+| 2026-07-25 | 실무영향도 전체 재채점 | 배포된 브리핑 포함, `policy.md` §1-2 루브릭으로 재채점(★1~5 실제 분포) |
 
 _git 이력이 상세 버전 관리를 대신함._
