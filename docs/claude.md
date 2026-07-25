@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 최근 변경 |
 |---|---|
+| 2026-07-25 | 작업 일지(Notion) 기록 규칙 명문화 + 문서 목차 2건 추가 + 백로그 갱신 |
 | 2026-07-13 | 배포 절차 순서 고정 + deploy.ps1 하드닝(guardrails·issues 반영) |
 | 2026-07-12 | 루틴 발행 중복 대조 필수 관문화(routine_instruction·issues 반영) |
 | 2026-07-10 | 날짜 확인 프로세스 유지, 갱신정보 상단 이동 |
@@ -21,6 +22,7 @@
 | 3 | 목차에서 **오늘 작업에 관련된 문서만** 추가로 읽기(전부 X → 토큰 절약) |
 | 4 | 작업 수행 |
 | 5 | 코드·구조 변경 시 **관련 문서에 행 추가/갱신 + 오늘 날짜 스탬프** |
+| 6 | **작업 일지(Notion) 기록** — 아래 "작업 일지" 규칙 참조. 사용자가 묻기 전에 Claude가 먼저 한다 |
 
 ### 날짜 확인 규칙 (중요)
 - Claude는 현재 날짜를 스스로 정확히 알기 어려움 → **세션 시작 시 사용자에게 오늘 날짜를 확인**하거나, 사용자가 명시한 날짜를 사용한다.
@@ -42,6 +44,8 @@
 | `testing.md` | 배포 전 검증 | 검증 절차·체크리스트 | — |
 | `news_sources.md` | 브리핑 소스 선정 | 크롤링/큐레이션 소스 목록(12분류·RSS) | 07-06 |
 | `routine_instruction.md` | 루틴 이해·수정 | 브리핑 자동생성 절차(⚠️일부 구버전, 라이브는 WebSearch 전용). 발행 중복 대조 필수 관문화 | 07-12 |
+| `detail-page-schema.md` | 상세 페이지·Astro 전환 | contentId·URL 규칙·데이터 스키마·Firebase 키 정책·품질 게이트 | 07-25 |
+| `fortune-schema.md` | 운세 코너 | `fortune.json` 스키마(별자리 12·확률 6·궁합 6·폰트 10) | 07-13 |
 
 ---
 
@@ -66,9 +70,14 @@
 ├─ firestore.rules        보안 규칙(콘솔에 수동 반영)
 ├─ assets/ dinol.css · dinol.js · dinol-firebase.js · ai-design-news.png
 ├─ news/2026/MM/Dinol_news_YYYYMMDD.html
-├─ scripts/ build_briefing.py
+├─ content/news/{contentId}.json   카드 데이터 정본(Astro 전환 후 원본)
+├─ scripts/ build_briefing.py · build_published_urls.py · validate.py 외
+├─ handoff/ HANDOFF_v3.0.md · fortune-handoff.md   ※ 정리 대상(백로그)
 └─ docs/                  ← 이 문서들
 ```
+
+> **Astro 전환 진행 중**(`astro` 브랜치). GitHub Pages는 `main`만 배포하므로
+> `astro` 브랜치 작업은 라이브에 영향이 없다. 상세는 `detail-page-schema.md`.
 
 ### 배포 (매일 브리핑)
 - 브리핑 파일을 `news/YYYY/MM/`에 넣은 뒤, 터미널에서 **`./deploy.ps1`** 한 줄이면 끝(pull→add→commit→push 자동, 커밋 메시지에 오늘 날짜).
@@ -83,7 +92,39 @@
 | 2 | 배포 시 `git status`로 스테이징 확인 필수 |
 | 3 | `firestore.rules`는 git 아님 → **변경 시 Claude가 사용자에게 "Firebase 콘솔에 붙여넣으세요"라고 안내**(콘솔 수동 반영 필요) |
 | 4 | 작업 후 관련 문서 갱신 + 날짜 스탬프 |
+| 5 | 작업 후 **Notion 작업 일지 기록** (위 "작업 일지" 규칙) |
+| 6 | `main`에 변경이 생기면 `astro` 브랜치에서 `git merge main` — 매일 브리핑 발행 시 특히 |
 
+
+---
+
+## 작업 일지 (Notion) — 2026-07-25
+
+**Claude가 사용자에게 묻기 전에 먼저 기록한다.** 이 규칙이 문서가 아닌 메모리에만 있어서
+긴 세션에서 반복적으로 누락된 이력이 있다(2026-07-25, 6건 소급 기록).
+
+| 항목 | 값 |
+|---|---|
+| DB | `dinol-news 작업 일지` |
+| DB ID | `33a617d6-8ebc-4ee8-816a-d4323dff0311` |
+| 속성 | 작업명 · 구분 · 날짜 · 진행도 · 내용 |
+| 구분 | 기획 · IA · 사이트맵 · 와이어프레임 · 디자인 · 개발 · 문서 · 기타 |
+
+> ※ 별자리 카드(zodiac) 작업은 기존 `별자리 카드 작업 일지` DB를 계속 쓴다.
+
+### 기록 시점
+
+| 시점 | 진행도 |
+|---|---|
+| 작업 착수 | `진행중` |
+| 파일 전달 완료 | `완료` |
+| 결정만 하고 미착수 | `대기` |
+| 논의 후 보류 | `보류` |
+
+### 작성 원칙
+- **무엇을 왜 했는지**를 남긴다. 파일명 나열이 아니라 판단 근거와 수치를 적는다.
+- 발견한 결함·수치(예: "EN 카드 8장 결함", "전수 검증 209장 0건")를 함께 적는다.
+- 세션 종료 전 미기록 항목이 없는지 확인한다.
 
 ---
 
@@ -97,7 +138,11 @@
 | 문서 `*.md` | `dinol-news > docs 폴더` |
 | 에셋 `dinol.css`·`dinol.js`·`dinol-firebase.js` | `dinol-news > assets 폴더` |
 | 루트 파일 `index.html`·`archive.html`·`privacy.html`·`template.html`·`index.json` | `dinol-news 루트` |
-| 스크립트 `*.py` | `dinol-news > scripts 폴더` |
+| 스크립트 `*.py`·`*.mjs` | `dinol-news > scripts 폴더` |
+| 카드 데이터 `{contentId}.json` | `dinol-news > content 폴더 > news 폴더` |
+
+> ⚠️ 경로는 **폴더를 하나씩 끊어서** 표기한다. `content/news 폴더` 처럼 쓰면
+> 슬래시가 폴더 이름의 일부로 오해된다. `content 폴더 > news 폴더` 로 쓸 것.
 
 ---
 
@@ -107,6 +152,14 @@
 
 | 등록일 | 항목 | 비고 |
 |---|---|---|
-| 2026-07-25 | 실무영향도 전체 재채점 | 배포된 브리핑 포함, `policy.md` §1-2 루브릭으로 재채점(★1~5 실제 분포) |
+| 2026-07-25 | `routine_instruction.md` 개정 | 46행 "50:50 강제 아님" 잔존. §3-1 강화분(후보 50+·매체 상한 2·5:5) 미반영 |
+| 2026-07-25 | `policy.md` 절 구조 개편 | §1(파일명) 아래 §1-2(별점 기준)가 매달려 있음. 콘텐츠 편집 정책을 별도 절로 분리 |
+| 2026-07-25 | 섹션별 별점·필드 작성 기준 문서화 | AI판(실무 접점 거리)·Design판(추출 가능성) 2표 + 8필드 섹션 차등 |
+| 2026-07-25 | `guardrails.md`·`issues.md` 7/19 결정 반영 | Auth 롤백을 원칙 변경이 아닌 **승인된 예외**로 기록. `481516`은 배지용이 아니라 전체 수정·삭제 마스터 키 |
+| 2026-07-25 | 마스터 비밀번호 값 교체 검토 | `config/site` 공개 읽기 + 6자리 숫자 → 복원 가능. App Check로 차단 안 됨. 현행 유지 결정, 위험 인지 상태 |
+| 2026-07-25 | `handoff/` 폴더 정리 | `HANDOFF_v3.0.md`가 7/19 철회된 Auth 지시를 담고 있어 다음 세션을 오도할 수 있음. 살릴 내용은 각 문서로 이관 후 폴더 삭제 |
+| 2026-07-25 | OG 이미지 규격 | `ai-design-news.png` 1200×395. 권장 1200×630 미달로 SNS에서 잘릴 수 있음 |
+| 2026-07-25 | EN 카드 언어 슬롯 정책 승격 | `validate.py`·`validate_json.py`의 `EN_LANGUAGE_POLICY_FROM`이 `None`. HTML 원본을 안 고치므로 Astro 전환 완료 후 날짜 기입 |
+| 2026-07-25 | 필드 라벨 EN 모드 처리 | 드로어 필드 라벨이 EN 모드에서도 한국어. 상세 페이지 전환 후 재검토 |
 
 _git 이력이 상세 버전 관리를 대신함._
