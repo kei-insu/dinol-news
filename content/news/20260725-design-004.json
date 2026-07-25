@@ -1,0 +1,56 @@
+{
+  "contentId": "20260725-design-004",
+  "date": "2026-07-25",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-22"
+  },
+  "url": "https://www.yankodesign.com/2026/07/22/a-299-flip-phone-that-does-what-screen-time-apps-never-actually-did/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 테크",
+    "en": "Design · Product · Tech"
+  },
+  "title": {
+    "kr": "스크린타임 앱이 못 한 일을 해내는 40만원대 플립폰",
+    "en": "A $299 Flip Phone That Does What Screen Time Apps Never Actually Did"
+  },
+  "summary": {
+    "kr": "'Light Flip'은 40만원대 5G 클램셸 폰으로, 스마트폰의 주의 분산 기능 없이 필요한 연결성만 제공하도록 설계됐습니다. 의도적으로 기능을 덜어낸 기기 카테고리의 흐름을 보여주는 제품입니다.",
+    "en": "Light Flip is a $299 5G clamshell phone built around giving people the connectivity they need without the attention-competing features of a smartphone, part of a growing category of deliberately simpler devices."
+  },
+  "points": {
+    "kr": [
+      "40만원대 5G 클램셸폰 'Light Flip' 출시",
+      "스크린타임 앱 대신 폼팩터로 사용 습관 개입 시도",
+      "디지털 디톡스를 겨냥한 단순 기기 카테고리 확산"
+    ],
+    "en": [
+      "Light Flip, a $299 5G clamshell phone, has launched",
+      "Attempts to shape usage habits through form factor rather than screen-time apps",
+      "Part of a growing category of simplified devices aimed at digital detox"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "폼팩터 자체가 행동 개입 장치가 된 사례입니다. 스크린타임 앱이 소프트웨어만으로 만들어내지 못한 '마찰'을 클램셸이라는 형태 자체가 만들어냅니다.",
+    "en": "Form factor as a behavioral intervention, where the clamshell shape itself becomes the friction that screen-time apps have failed to create through software alone."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "디지털 웰빙·미니멀 기기 기획 참고 자료로 저장",
+    "en": "Save as reference for digital wellbeing and minimal device planning"
+  },
+  "comment": {
+    "kr": "스크린타임 관리 앱들이 소프트웨어로 계속 실패해온 문제를, 이 제품은 '접었다 펴야 하는' 물리적 형태 자체로 해결하려 합니다. 기능을 얼마나 잘 만드느냐보다 애초에 얼마나 덜 만드느냐가 해법이 될 수 있다는 걸 보여주는 사례입니다.\n\n디지털 웰빙을 주제로 한 제품·서비스 기획에서 소프트웨어적 제약(알림 끄기, 사용 시간 제한)만으로는 한계가 있다는 걸 시사합니다. 폼팩터·인터랙션 설계 자체를 행동 변화의 장치로 쓰는 접근은 UX 디자이너에게도 참고할 지점이 많습니다.",
+    "en": "Screen-time apps have repeatedly failed to solve this problem through software, and this product instead tries to solve it through the physical form of a clamshell you have to fold open. It's a case for how much less you build, rather than how well you build a feature, can be the actual solution.\n\nFor digital-wellbeing product or service planning, it suggests software-only constraints like turning off notifications or capping usage time have real limits. Using form factor and interaction design itself as a behavior-change device is worth studying for UX designers too."
+  },
+  "thumbLabel": "플립폰",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

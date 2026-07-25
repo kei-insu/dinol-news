@@ -1,0 +1,57 @@
+{
+  "contentId": "20260725-design-002",
+  "date": "2026-07-25",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-21"
+  },
+  "url": "https://www.itsnicethat.com/articles/supersyteme-graphic-design-discover-210726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 그래픽 · 타이포그래피",
+    "en": "Design · Graphic · Typography"
+  },
+  "title": {
+    "kr": "타이포그래피를 이미지처럼 다루는 스튜디오, 수퍼시스템",
+    "en": "Design studio Supersystème builds visual worlds by treating typography as image"
+  },
+  "summary": {
+    "kr": "It's Nice That가 그래픽 디자인 스튜디오 Supersystème를 소개합니다. 이 스튜디오는 일러스트나 사진이 아니라 타이포그래피 자체를 이미지처럼 다루어 독자적인 비주얼 세계를 구축합니다.",
+    "en": "It's Nice That introduces graphic design studio Supersystème, whose practice treats typography itself as image, building distinctive visual worlds out of lettering rather than illustration or photography."
+  },
+  "points": {
+    "kr": [
+      "타이포그래피를 이미지처럼 다루는 작업 방식 소개",
+      "일러스트·사진 없이 레터링만으로 세계관 구축",
+      "It's Nice That의 Discover 코너에서 신진 스튜디오로 조명"
+    ],
+    "en": [
+      "Introduces a way of working that treats typography as image",
+      "Builds a visual world through lettering alone, without illustration or photography",
+      "Spotlighted as an emerging studio in It's Nice That's Discover column"
+    ]
+  },
+  "positions": [
+    "typographer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "타이포그래피를 '글자를 담는 그릇'으로만 여기고 있다면 참고할 만한 사례입니다. 글자 형태만으로 비주얼 아이덴티티를 얼마나 끌고 갈 수 있는지 보여줍니다.",
+    "en": "A good reference for anyone stuck treating type purely as a container for words, worth studying how far letterforms alone can carry a visual identity."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "타이포그래피·브랜딩 무드보드 소스로 저장 추천",
+    "en": "Worth saving as a source for typography and branding moodboards"
+  },
+  "comment": {
+    "kr": "그래픽 디자인에서 타이포그래피는 보통 메시지를 전달하는 '수단'으로 다뤄지지만, Supersystème의 작업은 글자 형태 자체를 주인공으로 세운다는 점에서 눈에 띕니다. 레터링만으로 세계관·톤을 완성한다는 것은 그만큼 폰트 선택과 조형에 대한 확신이 있다는 뜻이기도 합니다.\n\n브랜딩이나 에디토리얼 작업에서 이미지 소스 없이도 강한 인상을 남기고 싶을 때 참고할 만한 방향입니다. 특히 예산이 제한적인 프로젝트에서 사진·일러스트 없이 타이포그래피만으로 톤을 세우는 전략은 실무적으로도 유용합니다.",
+    "en": "Typography in graphic design is usually treated as a vehicle for a message, but Supersystème's work stands out for putting letterforms themselves in the lead role. Building a whole tone and world out of lettering alone signals real confidence in type choice and form.\n\nThis is a useful direction to study for branding or editorial work when you want a strong impression without an image source. On tighter-budget projects especially, setting the tone through typography alone, without photography or illustration, is a practically useful strategy."
+  },
+  "thumbLabel": "타이포",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

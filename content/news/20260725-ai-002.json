@@ -1,0 +1,56 @@
+{
+  "contentId": "20260725-ai-002",
+  "date": "2026-07-25",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-24"
+  },
+  "url": "https://techcrunch.com/2026/07/24/as-us-weighs-response-to-chinese-ai-industry-urges-against-broad-open-weight-restrictions/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 오픈소스",
+    "en": "AI · Policy · Open Source"
+  },
+  "title": {
+    "kr": "美, 중국 AI 대응 검토하자 업계는 \"오픈웨이트 규제 반대\" 촉구",
+    "en": "As US weighs response to Chinese AI, industry urges against broad open-weight restrictions"
+  },
+  "summary": {
+    "kr": "Hugging Face·Meta·Microsoft·Mistral·Nvidia 등이 서명한 공개서한이, 미국이 중국 AI에 대응하는 과정에서 오픈웨이트 모델 전반에 광범위한 규제를 씌우지 말라고 정책 입안자들에게 촉구했습니다.",
+    "en": "An open letter signed by Hugging Face, Meta, Microsoft, Mistral and Nvidia urges policymakers not to impose broad restrictions across open-weight models as the US shapes its response to Chinese AI."
+  },
+  "points": {
+    "kr": [
+      "Meta·Microsoft·Mistral·Nvidia 등 빅테크 연합 서명",
+      "중국 AI 대응 논의 속 오픈웨이트 규제 반대 촉구",
+      "6월 사전 테스트 행정명령과 이어지는 정책 흐름"
+    ],
+    "en": [
+      "Open letter signed by a big tech coalition including Meta, Microsoft, Mistral and Nvidia",
+      "Urges against open-weight restrictions amid debate over responding to Chinese AI",
+      "Follows the policy thread running from June's pre-deployment testing executive order"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "오픈웨이트 모델 기반의 디자인 툴(로컬 이미지·영상 생성기, 온디바이스 어시스턴트)이 광범위한 규제 시 접근성·컴플라이언스 마찰을 겪을 수 있습니다. 워크플로를 특정 모델에 고정하기 전에 주시할 만합니다.",
+    "en": "Design tools built on open-weight models (local image/video generators, on-device assistants) could face access or compliance friction if broad restrictions land, so it's worth tracking before betting a workflow on one."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "오픈웨이트 모델 의존 시 주시 · 배경 참고용",
+    "en": "Track if your stack depends on open-weight models · Background reading"
+  },
+  "comment": {
+    "kr": "빅테크들이 한목소리로 규제 반대에 나섰다는 것 자체가, 정부가 실제로 강한 조치를 검토 중이라는 신호로 읽힙니다. 오픈웨이트 모델은 스테이블 디퓨전 계열처럼 로컬에서 돌리는 디자인 생성 툴의 근간이라, 여기 제동이 걸리면 무료·저비용 AI 워크플로 전반이 흔들릴 수 있습니다.\n\n당장 실무에 영향은 없더라도, 특정 오픈소스 모델 하나에 파이프라인을 통째로 걸어두는 것은 이런 정책 리스크 때문에 위험할 수 있습니다. 대체 가능한 옵션을 한두 개 항상 열어두는 습관이 필요합니다.\n\nMeta·Mistral·Nvidia처럼 이해관계가 다른 기업들이 함께 서명했다는 점도 주목할 대목입니다. 업계 전체가 오픈웨이트 생태계 자체를 방어선으로 여기고 있다는 뜻입니다.",
+    "en": "The fact that big tech is speaking with one voice against restrictions suggests the government is genuinely weighing strong measures. Open-weight models are the backbone of locally-run design generation tools in the Stable Diffusion mold, so a crackdown here could shake up cheap and free AI workflows broadly.\n\nEven without immediate impact, pinning an entire pipeline to a single open-source model is risky given this kind of policy exposure. It's worth always keeping one or two fallback options open.\n\nIt's also notable that companies with different interests, like Meta, Mistral and Nvidia, signed together. It signals the industry sees the open-weight ecosystem itself as a line worth defending."
+  },
+  "thumbLabel": "오픈웨이트",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

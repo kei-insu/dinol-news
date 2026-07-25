@@ -1,0 +1,34 @@
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+

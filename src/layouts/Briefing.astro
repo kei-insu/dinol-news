@@ -1,0 +1,23 @@
+---
+import Head from '../components/Head.astro';
+import Drawer from '../components/Drawer.astro';
+import Header from '../components/Header.astro';
+import ArchiveCta from '../components/ArchiveCta.astro';
+import Guestbook from '../components/Guestbook.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Scripts from '../components/Scripts.astro';
+const { titleDate, siteDate } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head><Head titleDate={titleDate} /></head>
+<body>
+<Drawer />
+<Header siteDate={siteDate} />
+<slot />
+<ArchiveCta />
+<Guestbook />
+<SiteFooter />
+<Scripts />
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "contentId": "20260725-ai-004",
+  "date": "2026-07-25",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-24"
+  },
+  "url": "https://techcrunch.com/2026/07/24/midjourney-acquired-the-astrology-app-co-star/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 비즈니스 · M&A",
+    "en": "AI · Business · M&A"
+  },
+  "title": {
+    "kr": "미드저니, 점성술 앱 '코스타' 인수",
+    "en": "Midjourney acquired the astrology app Co-Star"
+  },
+  "summary": {
+    "kr": "이미지·영상 생성 모델로 잘 알려진 AI 랩 Midjourney가 소셜 점성술 앱 'Co-Star'를 인수했습니다.",
+    "en": "Midjourney, the AI lab best known for its image and video generation models, has acquired the social astrology app Co-Star."
+  },
+  "points": {
+    "kr": [
+      "Midjourney, 점성술 소셜 앱 Co-Star 인수",
+      "이미지·영상 생성 중심에서 라이프스타일 앱으로 영역 확장",
+      "AI 랩의 소비자向 브랜드 다각화 사례"
+    ],
+    "en": [
+      "Midjourney acquires the social astrology app Co-Star",
+      "Expands from image and video generation into lifestyle apps",
+      "A case of an AI lab diversifying into consumer-facing brands"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "이미지 생성 랩이 라이프스타일·소셜 앱을 인수했다는 것은, Midjourney가 프롬프트 창을 넘어 일상적 개인 콘텐츠 습관 쪽으로 브랜드를 확장하려 한다는 신호로 읽힙니다.",
+    "en": "An image-gen lab buying a lifestyle/social app hints at where Midjourney wants its brand to live next, beyond the prompt box, into daily personal-content habits designers may soon be asked to support."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "가벼운 업계 동향 참고 · 선택 저장",
+    "en": "Useful as a light industry-trend reference · Save if relevant"
+  },
+  "comment": {
+    "kr": "모델 회사가 점성술 앱을 인수했다는 조합이 뜬금없어 보일 수 있지만, Co-Star는 개인화된 데일리 콘텐츠와 강한 비주얼 아이덴티티로 유명한 앱입니다. Midjourney 입장에서는 '생성 모델'이라는 B2B적 이미지에서 벗어나, 일상적으로 열어보는 소비자 앱으로 브랜드를 확장하려는 시도로 보입니다.\n\n이미지 생성 AI가 점점 특정 툴이 아니라 라이프스타일 서비스의 배경 기술로 스며드는 흐름을 보여주는 사례이기도 합니다. 인수 자체보다, 앞으로 두 서비스가 어떻게 통합될지가 더 흥미로운 지점입니다.",
+    "en": "A model company acquiring an astrology app might sound random, but Co-Star is known for personalized daily content and a strong visual identity. For Midjourney, this looks like an attempt to move past its B2B 'generative model' image and expand into a consumer app people open daily.\n\nIt's also a sign that image-generation AI is increasingly seeping in as background technology for lifestyle services rather than staying a standalone tool. How the two products actually get integrated is more interesting than the deal itself."
+  },
+  "thumbLabel": "인수",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

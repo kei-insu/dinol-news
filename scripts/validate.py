@@ -21,30 +21,37 @@ import glob
 import os
 from collections import Counter
 
-# ────────────────────────────────────────────────────────────
-# 정책 적용일 상수
-#   검사 항목마다 언제부터 적용할지 다르다. None 이면 검사 비활성.
-# ────────────────────────────────────────────────────────────
-CARD_COUNT_POLICY_FROM     = "2026-07-06"   # 8카드(AI 4 + Design 4) 구조 확립일
-POSITION_SCHEMA_FROM       = "2026-07-25"   # data-position 도입일
-CATEGORY_EN_SCHEMA_FROM    = "2026-07-25"   # data-category-en 도입일
-CONTENT_ID_SCHEMA_FROM     = None           # 상세 페이지 전환 확정 시 날짜 기입
-SECTION_RUBRIC_POLICY_FROM = None           # 섹션별 별점 기준 적용일(201개 재채점 후 기입)
-
-ALLOWED_SECTIONS = ("ai", "design")
-
-POSITIONS = (
-    "ux-designer", "ui-designer", "product-designer", "service-designer",
-    "brand-designer", "bx-designer", "graphic-designer", "editorial-designer",
-    "motion-designer", "video-designer", "illustrator", "art-director",
-    "industrial-designer", "space-designer", "architect", "package-designer",
-    "typographer", "fashion-designer", "design-lead", "design-manager",
+# 정책 상수·공용 함수는 validation_common 이 단일 출처. HTML·JSON 검증이 공유한다.
+from validation_common import (
+    CARD_COUNT_POLICY_FROM,
+    POSITION_SCHEMA_FROM,
+    CATEGORY_EN_SCHEMA_FROM,
+    CONTENT_ID_SCHEMA_FROM,
+    SECTION_RUBRIC_POLICY_FROM,
+    EN_LANGUAGE_POLICY_FROM,
+    VALID_POSITIONS,
+    ALLOWED_SECTIONS,
+    CONTENT_ID_RE,
+    applies,
+    normalize_slot,
+    is_korean_slot,
+    is_missing_slot,
+    has_slot_value,
 )
+
+POSITIONS = VALID_POSITIONS
 
 REQUIRED_FIELDS = ("summary", "points", "designer", "impact-score", "recommend", "comment")
 REQUIRED_KR_PAIRS = ("summary-kr", "points-kr", "designer-kr", "recommend-kr", "comment-kr")
 
-CONTENT_ID_RE = re.compile(r"^\d{8}-(?:" + "|".join(ALLOWED_SECTIONS) + r")-\d{3}$")
+# EN 카드 언어 슬롯 검사 대상 쌍: 필드 → (영문 attr, 국문 attr)
+EN_SLOT_PAIRS = (
+    ("summary", "summary", "summary-kr"),
+    ("points", "points", "points-kr"),
+    ("designer", "designer", "designer-kr"),
+    ("recommend", "recommend", "recommend-kr"),
+    ("comment", "comment", "comment-kr"),
+)
 
 
 # ────────────────────────────────────────────────────────────
@@ -73,13 +80,6 @@ class Report:
         print()
         print(f"ERROR {len(self.errors)}건 · WARN {len(self.warns)}건")
         return 1 if self.errors else 0
-
-
-def applies(policy_from, file_date):
-    """정책 적용 대상인지. policy_from 이 None 이면 검사 비활성."""
-    if policy_from is None:
-        return False
-    return file_date >= policy_from
 
 
 # ────────────────────────────────────────────────────────────
@@ -201,6 +201,26 @@ def validate_file(path, rep):
             for f_ in REQUIRED_KR_PAIRS:
                 if attr(block, f_) is None or attr(block, f_).strip() == "":
                     rep.error(path, f"EN 카드 한국어 짝 누락: data-{f_}", tag)
+
+            # EN 카드 언어 슬롯 결함 검사 (HTML 층)
+            en_policy = applies(EN_LANGUAGE_POLICY_FROM, file_date)
+            for field, en_attr, kr_attr in EN_SLOT_PAIRS:
+                en_raw = attr(block, en_attr)
+                kr_raw = attr(block, kr_attr)
+                # ★선행 조건★ 영문·국문 둘 다 존재하고 둘 다 비어있지 않을 때만
+                if not (has_slot_value(en_raw) and has_slot_value(kr_raw)):
+                    continue
+                en_v = normalize_slot(en_raw)
+                kr_v = normalize_slot(kr_raw)
+                # 등급: 정책 적용 전이면 전부 WARN / 적용 후엔 summary·points 만 ERROR
+                hard = en_policy and field in ("summary", "points")
+                emit = rep.error if hard else rep.warn
+                # 검사1: 영문 == 국문 (번역 누락으로 같은 값 중복)
+                if en_v == kr_v:
+                    emit(path, f"EN 슬롯 중복: {field} (영문==국문)", tag)
+                # 검사2: 영문 슬롯이 한국어
+                if is_korean_slot(en_v):
+                    emit(path, f"EN 영문 슬롯이 한국어: {field}", tag)
 
         # impact score (모든 파일)
         raw = attr(block, "impact-score")
