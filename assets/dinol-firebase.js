@@ -65,8 +65,10 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
 
 // ═════════════════════════════════════════════════════════════
 // 1) 좋아요 (기사 URL 기준 카운트)
+//    ★4-2: initLikes() 호출 제거 — 함수 본체는 남기고 실행만 하지 않는다.
+//      5단계에서 contentId 기반으로 재도입한다. (아래는 정의만, 호출 없음)
 // ═════════════════════════════════════════════════════════════
-(function initLikes() {
+function initLikes() {
   const cards = [...document.querySelectorAll("a.card")];
   if (!cards.length) return;
 
@@ -148,7 +150,8 @@ function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
 
   if (dLike) dLike.addEventListener("click", (e) => { e.stopPropagation(); if (currentCard) toggleLike(currentCard); });
   if (dShare) dShare.addEventListener("click", (e) => { e.stopPropagation(); if (currentCard) doShare(currentCard.href, (currentCard.querySelector(".card-title") || {}).textContent || "디자인 놀이터"); });
-})();
+}
+// initLikes();  // 5단계에서 contentId 기반으로 재도입
 
 // ═════════════════════════════════════════════════════════════
 // 2) 디놀 톡톡 (방명록 + 댓글) — Firestore 저장 + PC 페이지네이션 / MO 무한스크롤

@@ -1,16 +1,20 @@
 /* ============================================================
-   dinol.js — 디자인 놀이터 공용 로직 (팝업 열기/닫기 · KR/EN 토글 ·
-   읽음상태 · 별점/포인트 렌더 · 콘텐츠 자동검토)
+   dinol.js — 디자인 놀이터 공용 로직 (읽음상태 · 섹션 접기 ·
+   to-top · 콘텐츠 자동검토)
    ★ 전역 로직은 이 파일 하나만 수정하면 전 브리핑에 소급 반영됨.
    좋아요/방명록/App Check 는 dinol-firebase.js 에 별도(상호 독립).
    READ_KEY 날짜는 파일명(Dinol_news_YYYYMMDD)에서 자동 추출.
-   추출 기준: Dinol_news_20260705.html (5개 브리핑 JS 로직 동일)
+   ── 4-2 구조전환: 카드 클릭 → 상세 페이지 이동(앵커 기본 탐색).
+      드로어/KR·EN 토글/별점·포인트 렌더는 상세 페이지로 이관되어 제거됨.
    ============================================================ */
 /* ── 콘텐츠 검토 로직 ──────────────────────────────────────────
    페이지 로드 시 자동으로 아래 항목을 검사합니다.
    1. 중복 URL — 같은 링크가 2개 이상이면 해당 카드에 경고 표시
    2. 빈 링크 — href가 없거나 '#'인 카드 감지
    개발/검토용 표시이며 콘텐츠 영역 위에 요약 배너가 표시됩니다.
+   ※ 4-2 이후 카드 href 는 원문이 아니라 상세 페이지({contentId}.html)다.
+     contentId 는 카드마다 유일하므로 이 검사는 사실상 항상 통과한다.
+     "같은 원문을 두 번 실은 중복"을 잡던 원래 목적은 더는 수행하지 못한다.
 ──────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   const cards = [...document.querySelectorAll('a.card')];
@@ -34,196 +38,54 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ── 읽음 상태 (localStorage) ──────────────────────────────
-     카드를 한 번 열람(드로어 오픈)하면 해당 URL을 기록하고,
+     카드를 한 번 클릭(상세 페이지로 이동)하면 해당 contentId를 기록하고,
      card-title에 .read 클래스(font-weight 450, color #a3a3a3)를 부여합니다.
+     ── 4-2: 기존 키는 card.href(원문 URL)였으나 href가 상세 URL로 바뀌었으므로
+        contentId로 전환한다. 기존 href 기반 기록은 버려진다(localStorage라 영향 작음).
   ──────────────────────────────────────────────────────────── */
   const READ_KEY = (function () {
     const m = location.pathname.match(/Dinol_news_(\d{8})/);
     return 'dinol_read_' + (m ? m[1] : 'default');
   })();
 
-  function getReadUrls() {
+  // 이제 URL 이 아니라 contentId 집합을 반환한다(개명).
+  function getReadIds() {
     try { return new Set(JSON.parse(localStorage.getItem(READ_KEY) || '[]')); }
     catch (e) { return new Set(); }
   }
 
   function markAsRead(card) {
-    const read = getReadUrls();
-    read.add(card.href);
+    const cid = card.dataset.contentId;
+    if (!cid) return;
+    const read = getReadIds();
+    read.add(cid);
     localStorage.setItem(READ_KEY, JSON.stringify([...read]));
     card.querySelector('.card-title')?.classList.add('read');
   }
 
   (function applyReadState() {
-    const read = getReadUrls();
+    const read = getReadIds();
     cards.forEach(card => {
-      if (read.has(card.href)) {
+      if (read.has(card.dataset.contentId)) {
         card.querySelector('.card-title')?.classList.add('read');
       }
     });
   })();
 
-  /* ── 드로어 (슬라이드업 요약 패널) ── */
-  const drawer           = document.getElementById('drawer');
-  const overlay          = document.getElementById('drawerOverlay');
-  const drawerClose      = document.getElementById('drawerClose');
-  const drawerThumb      = document.getElementById('drawerThumb');
-  const drawerLabel      = document.getElementById('drawerLabel');
-  const drawerEn         = document.getElementById('drawerEn');
-  const drawerSource     = document.getElementById('drawerSource');
-  const drawerTitle      = document.getElementById('drawerTitle');
-  const drawerCategory   = document.getElementById('drawerCategory');
-  const drawerOneline    = document.getElementById('drawerOneline');
-  const drawerDesigner   = document.getElementById('drawerDesigner');
-  const drawerImpact     = document.getElementById('drawerImpact');
-  const drawerPoints     = document.getElementById('drawerPoints');
-  const drawerRecommend  = document.getElementById('drawerRecommend');
-  const drawerComment    = document.getElementById('drawerComment');
-  const drawerCommentWrap= document.getElementById('drawerCommentWrap');
-  const drawerCta        = document.getElementById('drawerCta');
-  const drawerLangToggle = document.getElementById('drawerLangToggle');
-  const btnKr            = document.getElementById('btnKr');
-  const btnEn            = document.getElementById('btnEn');
-
-  /* 6필드: 각 필드의 EN(기본)/KR 값 보관 */
-  const F = {
-    title:{}, oneline:{}, designer:{}, points:{}, recommend:{}, comment:{}
-  };
-
-  function renderPoints(str) {
-    drawerPoints.innerHTML = '';
-    (str || '').split('|').map(s => s.trim()).filter(Boolean).forEach(p => {
-      const li = document.createElement('li'); li.textContent = p; drawerPoints.appendChild(li);
-    });
-  }
-
-  function renderStars(score) {
-    const n = Math.max(0, Math.min(5, parseInt(score, 10) || 0));
-    const wrap = drawerImpact.closest(".drawer-field");
-    if (!n) { if (wrap) wrap.style.display = "none"; return; }
-    if (wrap) wrap.style.display = "flex";
-    let html = "";
-    for (let i = 1; i <= 5; i++) { html += "<span class='" + (i <= n ? "star-on" : "star-off") + "'>★</span>"; }
-    drawerImpact.innerHTML = html;
-  }
-
-  /* 단락 렌더링: 줄바꿈을 <p>로 분리해 단락 간 여백 확보 (2026-07-23) */
-  function renderParagraphs(el, val) {
-    el.textContent = '';
-    const parts = String(val || '').split(/\n+/).map(s => s.trim()).filter(Boolean);
-    parts.forEach(t => {
-      const p = document.createElement('p');
-      p.textContent = t;
-      el.appendChild(p);
-    });
-  }
-
-  function setField(el, val) {
-    renderParagraphs(el, val);
-    const wrap = el.closest('.drawer-field');
-    if (wrap) wrap.style.display = (val && val.trim()) ? 'flex' : 'none';
-  }
-
-  function setLang(lang) {
-    const k = (lang === 'kr') ? 'kr' : 'en';
-    drawerTitle.textContent = F.title[k];
-    setField(drawerOneline, F.oneline[k]);
-    setField(drawerDesigner, F.designer[k]);
-    renderPoints(F.points[k]);
-    const pWrap = drawerPoints.closest('.drawer-field');
-    if (pWrap) pWrap.style.display = drawerPoints.children.length ? 'flex' : 'none';
-    setField(drawerRecommend, F.recommend[k]);
-    const cmt = F.comment[k] || '';
-    renderParagraphs(drawerComment, cmt);
-    drawerCommentWrap.style.display = cmt.trim() ? 'flex' : 'none';
-    btnKr.classList.toggle('active', k === 'kr');
-    btnEn.classList.toggle('active', k === 'en');
-  }
-
-  if (btnKr) btnKr.addEventListener('click', () => setLang('kr'));
-  if (btnEn) btnEn.addEventListener('click', () => setLang('en'));
-
-  function openDrawer(card) {
-    const thumb = card.querySelector('.thumb');
-    const gradClass = [...thumb.classList].find(c => c.startsWith('g-')) || '';
-    drawerThumb.className = `drawer-thumb ${gradClass}`;
-
-    /* 기존 이미지 제거 후 카드 썸네일 이미지 복사 */
-    const prevImg = drawerThumb.querySelector('.thumb-img');
-    if (prevImg) prevImg.remove();
-    const cardImg = thumb.querySelector('img.thumb-img');
-    if (cardImg) {
-      const img = document.createElement('img');
-      img.className = 'thumb-img';
-      img.src = cardImg.src;
-      img.alt = '';
-      drawerThumb.prepend(img);
-    }
-
-    drawerLabel.textContent = card.querySelector('.thumb-label')?.textContent || '';
-    const hasEn = !!card.querySelector('.thumb-en');
-    drawerEn.style.display = hasEn ? 'block' : 'none';
-    drawerSource.textContent = card.querySelector('.card-source')?.textContent || '';
-
-    const d = card.dataset;
-    /* 카테고리(언어중립, 공유) */
-    drawerCategory.textContent = d.category || '';
-    drawerCategory.style.display = d.category ? 'block' : 'none';
-
-    /* 기본값(EN 슬롯) = 카드 언어, -kr 슬롯 = 한국어(없으면 기본값 복제) */
-    const baseTitle = card.querySelector('.card-title')?.textContent || '';
-    F.title.en     = d.titleEn || baseTitle;
-    F.oneline.en   = d.summary   || '';
-    F.designer.en  = d.designer  || '';
-    F.points.en    = d.points    || '';
-    F.recommend.en = d.recommend || '';
-
-    F.title.kr     = d.titleKr     || baseTitle;
-    F.oneline.kr   = d.summaryKr   || F.oneline.en;
-    F.designer.kr  = d.designerKr  || F.designer.en;
-    F.points.kr    = d.pointsKr    || F.points.en;
-    F.recommend.kr = d.recommendKr || F.recommend.en;
-
-    /* 큐레이션 코멘트: EN 카드는 data-comment(영문)+data-comment-kr(한국어), 한글 카드는 data-comment 단일 */
-    F.comment.en   = d.comment    || '';
-    F.comment.kr   = d.commentKr  || F.comment.en;
-
-    /* 영문 기사(-kr 번역 있음) → KR/EN 토글 / 한국어 기사 → KR만 활성 표시(EN 버튼 숨김, 토글 기능 없음) */
-    if (hasEn && d.titleEn) {
-      drawerLangToggle.style.display = 'flex';
-      btnEn.style.display = '';
-      setLang('kr');
-    } else {
-      drawerLangToggle.style.display = 'flex';
-      btnEn.style.display = 'none';
-      setLang('kr');
-    }
-
-    drawerCta.href = card.href;
-
-    /* 실무 영향도 별점 (언어 무관) */
-    renderStars(card.dataset.impactScore);
-
-    drawer.classList.add('open');
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeDrawer() {
-    drawer.classList.remove('open');
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
+  /* ── 카드 클릭 → 상세 페이지 이동 + 읽음 기록 ──────────────
+     preventDefault 가 없으므로 앵커 기본 탐색은 전부 유지된다.
+       좌클릭 → 이동 / Ctrl+클릭 → 새 탭 / 중클릭 → 새 탭 / Tab+Enter → 이동
+     다만 읽음 기록은 click 이벤트 기준이라
+       ★중클릭·우클릭 후 새 탭 열기는 읽음으로 기록되지 않는다★ (의도된 동작)
+     중클릭 순간 읽음을 찍으면 실제로 보지 않아도 읽음이 되기 때문이다.
+     중클릭까지 잡으려면 상세 페이지 진입 시 기록하는 방식이 정확하고,
+     그건 5단계에서 통합한다. (auxclick 을 지금 추가하지 않는다)
+  ──────────────────────────────────────────────────────────── */
   cards.forEach(card => {
-    card.addEventListener('click', e => {
-      e.preventDefault();
-      openDrawer(card);
+    card.addEventListener('click', () => {
       markAsRead(card);
     });
   });
-  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
-  if (overlay) overlay.addEventListener('click', closeDrawer);
 
   /* 섹션 아코디언 (AI·Design 접기/펼치기) */
   document.querySelectorAll('.section-header').forEach(header => {
@@ -232,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* 1. 중복 URL 검사 */
+  /* 1. 중복 URL 검사 (4-2: href가 상세 페이지라 contentId 유일 → 실질 무해) */
   const urlCount = {};
   cards.forEach(c => {
     const url = c.href;

@@ -1,6 +1,5 @@
 ---
 import Head from '../components/Head.astro';
-import Drawer from '../components/Drawer.astro';
 import Header from '../components/Header.astro';
 import ArchiveCta from '../components/ArchiveCta.astro';
 import Guestbook from '../components/Guestbook.astro';
@@ -12,7 +11,6 @@ const { titleDate, siteDate } = Astro.props;
 <html lang="ko">
 <head><Head pageTitle={`디자인 놀이터 — ${titleDate}`} /></head>
 <body>
-<Drawer />
 <Header siteDate={siteDate} />
 <slot />
 <ArchiveCta />
