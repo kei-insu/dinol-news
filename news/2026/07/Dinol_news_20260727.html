@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 27</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 27, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://zdnet.co.kr/view/?no=20260720160607" target="_blank"
+       data-category="AI · 영상 · 광고"
+       data-summary="SK텔레콤이 KAIST 주재걸 교수 연구팀과 공동 개발한 AI 영상 합성 기술 '인서트애니웨어'로 광고 제작 시장을 겨냥합니다. 사람이 120시간 매달리던 프레임 단위 합성 작업을 15분으로 줄였고, 논문은 ECCV 2026에 채택됐습니다."
+       data-designer="'자동화 90% + 수동 조율 10%'라는 비율 설계가 핵심입니다. 완성도가 너무 높아 광고 티가 안 난다는 요구에 게이지 바를 붙인 대목은, AI 도구를 실무에 붙일 때 어디까지 사람 손에 남겨야 하는지를 보여주는 사례입니다."
+       data-impact-score="4"
+       data-points="프레임 단위 수작업 120시간을 15분으로 단축|자동화 90% + 광고주 맞춤 미세 조정 10% 구조|4D 장면 이해로 가림·그림자·흔들림 오류 해결|채널S '독박투어'에 실제 PPL로 적용 완료"
+       data-recommend="영상·광고 워크플로 실무자 참고 · 저장 추천"
+       data-comment="이 기술에서 눈여겨볼 지점은 합성 품질보다 '조절 가능성'입니다. 결과물이 너무 자연스러워 광고 효과가 떨어진다는 광고주 우려가 나오자, 개발팀은 품질을 낮춘 게 아니라 합성 수준을 조절하는 게이지 바를 붙였습니다.
+자동화 90%에 사람 손 10%를 남긴 구조는 AI 도구를 실무에 붙일 때 참고할 만한 배분입니다. 전부 자동화하면 조율할 여지가 사라지고, 반대로 손댈 곳이 많으면 시간 단축의 의미가 없어집니다. 120시간이 15분이 됐다는 수치도 그 10%를 남긴 상태에서 나온 값입니다.
+다만 아직은 촬영이 끝난 영상에 사물을 넣는 후반 작업 단계이고, 실시간 처리는 1~2년 내 어렵다는 것이 개발팀 설명입니다. 일반 크리에이터 대상 서비스는 워터마크·출처 증명 같은 가이드라인이 마련된 뒤로 미뤄둔 상태입니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">영상합성</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 20</div>
+        <div class="card-title">SKT "감쪽같은 AI 영상 합성, 광고 시장 사로잡겠다"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260726013356" target="_blank"
+       data-category="AI · 오픈소스 · 개발문화"
+       data-summary="생성형 AI가 소프트웨어 개발에 본격 도입되면서, 오픈소스 진영에서 'AI는 생산성 도구일 뿐'이라는 입장과 '프로젝트 품질·유지보수 부담을 이유로 제한해야 한다'는 입장이 충돌하고 있습니다."
+       data-designer="AI 코딩 도구를 프로덕트에 붙이려는 팀이라면, 오픈소스 커뮤니티의 반응이 곧 채택 정책·리뷰 프로세스 설계에 참고가 됩니다."
+       data-impact-score="3"
+       data-points="일부 메인테이너는 AI 커밋을 전면 수용|반대 진영은 품질 저하·리뷰 부담을 우려|오픈소스 기여 정책 재정비 논의 확산"
+       data-recommend="AI 코딩 도구 도입 정책 수립 시 참고 · 팀 공유 추천"
+       data-comment="AI 코딩 도구가 실제 개발 현장에 들어오면서, 오픈소스 커뮤니티 안에서 온도차가 뚜렷해지고 있다는 기사입니다. 한쪽은 결국 생산성 도구일 뿐이라는 입장이고, 다른 쪽은 리뷰 부담과 프로젝트 품질 저하를 이유로 선을 긋자는 입장입니다.
+이 논쟁은 우리 팀에도 그대로 적용됩니다. AI가 작성한 코드나 디자인 산출물을 어디까지 그대로 받아들일지, 리뷰 프로세스를 어떻게 바꿀지에 대한 내부 정책이 아직 없다면 이 기사를 계기로 한 번 정리해볼 만합니다.
+특정 프로젝트의 실명이 나오는 사례는 아니고 업계 전반의 온도차를 다룬 기사라, 우리 조직에 맞는 기준은 따로 세워야 합니다.">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">오픈소스</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 26</div>
+        <div class="card-title">"AI는 도구" vs "프로젝트 품질 위협"...오픈소스 진영, AI 코딩 둘러싼 대립</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/25/one-fallen-power-line-exposed-a-growing-ai-data-center-problem-heres-how-to-fix-it/" target="_blank"
+       data-category="AI · 인프라 · 에너지" data-category-en="AI · Infrastructure · Energy"
+       data-summary="A single fallen power line outside Washington, DC took more than 10 minutes to fully recover because over 3 gigawatts of data centers stopped drawing power almost simultaneously, exposing a systemic fragility in the AI buildout's home base of Northern Virginia." data-summary-kr="워싱턴DC 인근 송전선 한 가닥이 끊기자 3기가와트가 넘는 데이터센터가 거의 동시에 전력 소비를 멈췄고, 완전 복구까지 10분 넘게 걸렸습니다. AI 데이터센터가 가장 밀집한 노던버지니아의 구조적 취약성이 드러났다는 지적입니다."
+       data-designer="A reminder that AI-driven product roadmaps rest on physical infrastructure that can fail in surprisingly ordinary ways, worth factoring into any 'always-on AI feature' pitch." data-designer-kr="AI 기반 제품 로드맵이 의외로 평범한 이유로 멈출 수 있는 물리 인프라 위에 놓여 있다는 사실을 보여줍니다. '상시 작동 AI 기능'을 제안할 때 참고할 만합니다."
+       data-impact-score="4"
+       data-points="How one line outage cascaded across 3GW of data centers|Why Northern Virginia's grid concentration is a risk|What fixes utilities and operators are considering" data-points-kr="송전선 하나의 장애가 3GW 데이터센터로 번진 과정|노던버지니아 전력망 집중이 만드는 리스크|전력회사·운영사가 검토 중인 해결책"
+       data-recommend="Worth a read if your product depends on always-on AI infra" data-recommend-kr="AI 인프라 의존도가 높은 제품 담당자에게 일독 추천"
+       data-comment="A single fallen power line near Washington, DC took down grid draw from more than 3 gigawatts of data centers almost simultaneously, and full recovery took over ten minutes. It is a blunt reminder that the physical infrastructure behind the AI boom can be more fragile than the software layer suggests.
+If your product roadmap assumes an AI feature is always on, this is worth filing away, especially for services that lean on data center clusters concentrated in places like Northern Virginia.
+The piece focuses more on diagnosing the problem than proposing fixes, so treat it as background reading on how AI infrastructure and the power grid are now tightly coupled." data-comment-kr="워싱턴DC 인근에서 송전선 하나가 끊긴 사건이 3기가와트 규모의 데이터센터를 거의 동시에 멈춰 세웠다는 내용입니다. AI 붐을 뒷받침하는 물리 인프라가 생각보다 취약하다는 걸 보여주는 사례입니다.
+'AI 기능은 언제나 켜져 있다'는 전제로 제품을 설계하는 팀이라면, 이런 인프라 리스크를 한 번쯤 고려해볼 필요가 있습니다. 특히 노던버지니아처럼 데이터센터가 몰려 있는 지역에 의존하는 서비스라면 더욱 그렇습니다.
+기사는 해결책보다는 문제 진단에 무게를 둔 편입니다. 전력망과 AI 인프라의 관계를 다룬 배경 지식으로 읽기 좋습니다."
+       data-title-en="One fallen power line exposed a growing AI data center problem" data-title-kr="전선 하나 끊기자 AI 데이터센터 3GW 동시 이탈, 고질적 취약점 드러나">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">데이터센터</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 25</div>
+        <div class="card-title">전선 하나 끊기자 AI 데이터센터 3GW 동시 이탈, 고질적 취약점 드러나</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/23/runway-bets-on-ai-model-routing-as-generative-media-gets-crowded/" target="_blank"
+       data-category="AI · 툴 · 생성미디어" data-category-en="AI · Tools · Generative Media"
+       data-summary="Runway launched Media Router through its Runway Dev platform, a tool that automatically picks the best image, video or audio generation model for each request based on whether the user prioritizes quality, speed or cost. Runway says it is the first router built specifically for generative media." data-summary-kr="런웨이가 개발자 플랫폼 '런웨이 데브'를 통해 미디어 라우터를 공개했습니다. 요청마다 품질·속도·비용 중 무엇을 우선할지에 따라 이미지·영상·오디오 생성 모델을 자동으로 골라주는 도구로, 생성 미디어 전용 라우터로는 처음이라는 설명입니다."
+       data-designer="The interesting part is the criteria: routing by how video models handle motion, how image models handle composition, how voice models handle lip syncing. That is a usable checklist even if you never touch the API." data-designer-kr="주목할 부분은 라우팅 기준입니다. 영상 모델의 움직임 처리, 이미지 모델의 구도 처리, 음성 모델의 립싱크 정확도로 나눠 판단합니다. API를 직접 쓰지 않더라도 모델을 고를 때 그대로 써먹을 수 있는 체크리스트입니다."
+       data-impact-score="3"
+       data-points="Routes by quality, speed or cost preference per request|Built on Runway's in-house creative team's evaluation criteria|Adobe, Cloudflare, ElevenLabs, Shutterstock already on Runway Dev|Developers can set preferences such as excluding Chinese models" data-points-kr="요청별로 품질·속도·비용 우선순위에 따라 모델 자동 선택|런웨이 사내 크리에이티브팀의 모델 평가 기준을 그대로 반영|어도비·클라우드플레어·일레븐랩스·셔터스톡 등이 이미 사용 중|중국산 모델 제외 같은 선호 조건도 설정 가능"
+       data-recommend="Useful framing for anyone choosing between generative media models" data-recommend-kr="생성 미디어 모델 선택 기준이 필요할 때 참고"
+       data-comment="Runway is repositioning from model maker to orchestration layer, and the reason is visible in its own numbers: its text-to-video models no longer top the rankings, with Google, ByteDance and Alibaba filling the top spots.
+The bet is that the best model will keep changing, so the durable value sits in knowing which model wins for which task. That intelligence came from Runway's own creative team evaluating output type by type, which is a more grounded basis than a generic leaderboard.
+Worth noting that this arrives weeks after Runway swapped unlimited subscriptions for token pricing, a change users pushed back on. Cost routing is partly a response to that pressure, not just a neutral convenience feature." data-comment-kr="런웨이가 모델 제작사에서 오케스트레이션 계층으로 방향을 트는 중이고, 그 이유는 자사 수치에 드러나 있습니다. 텍스트-투-비디오 모델은 더 이상 상위권이 아니고 구글·바이트댄스·알리바바가 그 자리를 채우고 있습니다.
+그래서 최고의 모델은 계속 바뀐다는 전제를 깔고, 어떤 작업에 어떤 모델이 강한지를 아는 쪽에 가치를 걸었습니다. 이 판단 기준이 런웨이 사내 크리에이티브팀이 매체별로 결과물을 평가하며 쌓은 것이라는 점은, 범용 리더보드보다 실무에 가깝습니다.
+다만 이번 발표가 무제한 구독제를 토큰 과금으로 바꾼 지 몇 주 만에 나왔다는 점은 감안할 필요가 있습니다. 비용 기준 라우팅은 순수한 편의 기능이라기보다 그 반발에 대한 대응 성격도 있습니다."
+       data-title-en="Runway launches AI model router as generative media gets crowded" data-title-kr="런웨이, 이미지·영상·오디오 모델을 자동으로 골라주는 '미디어 라우터' 공개">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">모델라우터</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 23</div>
+        <div class="card-title">런웨이, 이미지·영상·오디오 모델을 자동으로 골라주는 '미디어 라우터' 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://design.co.kr/article/168521/" target="_blank"
+       data-category="Design · Branding · Typography"
+       data-summary="모노타입 코리아가 주최한 브랜드톡 코리아 2026이 7월 13일 서울 가빈아트홀에서 열렸습니다. 주제는 '지속되는 브랜드 경험의 구조'로, 브랜드 접점이 늘어날수록 목소리를 유지하기 어려운 상황에서 타이포그래피를 브랜드 경험 운영의 핵심 기제로 다뤘습니다."
+       data-designer="서체를 고르는 결정보다 그 서체가 조직과 외부 파트너를 거쳐 복제·적용되는 흐름을 관리하는 일이 더 어렵다는 지적이 핵심입니다. 브랜드 가이드를 만들고 끝내는 대신 라이선스·사용 현황·플랫폼 대응까지 설계 범위에 넣어야 한다는 뜻입니다."
+       data-impact-score="4"
+       data-points="헬베티카 나우 리드 디자이너 찰스 닉스가 메인 연사|서체가 조직·파트너를 거쳐 복제되는 구조를 '타이포그래픽 생태계'로 정의|라이선스 추적·가이드라인 준수·플랫폼 대응이 실제 난제|AI 생성 콘텐츠가 늘며 서체 사용 경로 추적이 더 어려워짐"
+       data-recommend="브랜드 시스템·타입 운영 담당자 필독 · 저장 추천"
+       data-comment="세미나에서 찰스 닉스가 꺼낸 '타이포그래픽 생태계'라는 표현이 이 기사의 핵심입니다. 디자이너가 그린 글자가 폰트 소프트웨어가 되고, 라이선스를 갖춘 상품으로 유통되고, 브랜드에 도입돼 가이드라인 관리 대상이 되고, 사내팀과 외부 에이전시로 퍼지며 파일이 여러 사본으로 복제되는 과정 전체를 하나의 계로 본 것입니다.
+실무에 옮기면 이렇습니다. 서체 선정은 시작이지 결론이 아닙니다. 어디에 몇 개의 사본이 있고, 제작물이 가이드대로 구현됐는지, 새 플랫폼에서도 같은 인상을 주는지를 계속 점검해야 브랜드 목소리가 유지됩니다.
+여기에 AI로 생성되는 콘텐츠까지 더해지면서, 하나의 서체가 어떤 경로로 소비자에게 도달했는지 추적하는 일 자체가 어려워졌습니다. 서체 선택이라는 단발적 결정으로 브랜드를 지킬 수 있던 시대가 끝났다는 진단은 과장이 아닙니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">타이포시스템</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인플러스 · 2026. 07. 24</div>
+        <div class="card-title">의미의 인프라를 짓는 타이포그래피, 브랜드톡 코리아 2026</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/25/the-170-clock-that-wants-you-off-your-phone-at-night/" target="_blank"
+       data-category="Design · Product · UX" data-category-en="Design · Product · UX"
+       data-summary="Hatch's Restore 3 is a $170 bedside sleep clock built around five physical controls, including a Big Button and Unwind Swap, arguing that sleep tech works better without a screen." data-summary-kr="해치의 '리스토어 3'는 170달러짜리 침대맡 수면 시계로, 화면 대신 5개의 물리 버튼(빅 버튼·언와인드 스왑 포함)으로 조작합니다. 수면을 돕는 기기일수록 화면이 없는 편이 낫다는 주장을 제품으로 구현했습니다."
+       data-designer="A useful counter-example in an era of screen-first product design, worth studying for anyone designing bedside or wellness hardware." data-designer-kr="화면 중심 제품 설계가 당연시되는 시대에 나온 반례입니다. 침대맡·웰니스 하드웨어를 설계한다면 참고할 가치가 있습니다."
+       data-impact-score="2"
+       data-points="$170 bedside sleep clock with five physical controls|Includes a Big Button and an Unwind Swap control|Argues sleep tech works better without a screen" data-points-kr="물리 버튼 5개로 조작하는 170달러 침대맡 수면 시계|빅 버튼·언와인드 스왑 등 전용 조작부 탑재|화면 없는 수면 기기가 더 낫다는 주장을 제품화"
+       data-recommend="Save for bedside/wellness hardware research" data-recommend-kr="침대맡·웰니스 하드웨어 리서치용 저장 추천"
+       data-comment="Hatch's Restore 3 is a $170 bedside sleep clock operated through five physical controls, including a Big Button and an Unwind Swap, rather than a screen or app.
+It runs against the current wellness-hardware default of screen-first interaction, resolving the odd contradiction of a sleep aid that asks you to look at a display right before bed.
+Worth studying if you design bedside or wellness hardware and want a reference for why a team chose to remove the screen rather than add one." data-comment-kr="해치의 '리스토어 3'는 침대맡에 두는 170달러짜리 수면 시계입니다. 화면 대신 5개의 물리 버튼, 그중에서도 빅 버튼과 언와인드 스왑이라는 이름이 붙은 조작부로 작동합니다.
+요즘 웰니스 기기들이 대부분 앱과 화면 중심으로 가는 흐름과는 반대 방향입니다. 잠들기 전 화면을 보지 않게 하려는 기기인데 정작 화면으로 조작해야 한다는 모순을 물리 버튼으로 정면 돌파한 셈입니다.
+침대맡이나 수면 관련 하드웨어를 설계한다면, 이 제품이 왜 화면을 뺐는지 그 논리를 참고해볼 만합니다."
+       data-title-en="The $170 Clock That Wants You Off Your Phone at Night" data-title-kr="밤엔 폰 대신 이걸, 170달러 수면 시계 '해치 리스토어 3'">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">수면시계</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 25</div>
+        <div class="card-title">밤엔 폰 대신 이걸, 170달러 수면 시계 '해치 리스토어 3'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.archdaily.com/1181404/martha-beatriz-house-atempo-arquitectura" target="_blank"
+       data-category="Design · Architecture · Renovation" data-category-en="Design · Architecture · Renovation"
+       data-summary="In Cuenca's Historic Center, Atempo Arquitectura renovated and expanded a 402sqm residence, arguing that a heritage building's value lies not only in its protected status but in the spatial, material and emotional qualities it preserves." data-summary-kr="에콰도르 쿠엔카 역사지구에서 아템포 아르키텍투라가 402㎡ 규모 주택을 리노베이션·증축했습니다. 건축주 마르타 베아트리스 카르도소 파이칸의 이름을 딴 이 프로젝트는, 유산 건축물의 가치가 지정 여부만이 아니라 공간·물성·정서적 특질에 있다는 관점을 담았습니다."
+       data-designer="A useful case study in renovation ethics, how to expand a heritage home without treating protected status as the only value worth preserving." data-designer-kr="유산 건축물을 증축할 때 지정 여부만이 아니라 무엇을 지켜야 하는지 다시 묻게 하는 리노베이션 사례입니다."
+       data-impact-score="3"
+       data-points="402sqm renovation and expansion in Cuenca's Historic Center|Named after client Martha Beatriz Cardoso Faicán|Preserves spatial, material and emotional qualities beyond heritage status" data-points-kr="쿠엔카 역사지구 402㎡ 규모 리노베이션·증축|건축주 마르타 베아트리스 카르도소 파이칸의 이름을 딴 프로젝트|지정 여부를 넘어 공간·물성·정서적 가치 보존"
+       data-recommend="Good case study for heritage renovation briefs" data-recommend-kr="유산 건축 리노베이션 브리프 작성 시 참고 추천"
+       data-comment="In Cuenca's Historic Center, Atempo Arquitectura renovated and expanded a 402sqm residence named after its client, Martha Beatriz Cardoso Faicán, who held that a heritage building's value isn't only its protected status.
+The throughline is a renovation ethic that goes beyond legal preservation, keeping the spatial, material and emotional qualities of the original house alongside its heritage listing.
+A useful reference for any renovation brief on a protected or historic structure, especially when deciding what exactly is worth preserving beyond compliance." data-comment-kr="에콰도르 쿠엔카의 역사지구에서 진행된 리노베이션 프로젝트입니다. 아템포 아르키텍투라는 402제곱미터 규모의 기존 주택을 증축하면서, 건축주인 마르타 베아트리스 카르도소 파이칸의 관점을 그대로 프로젝트 이름에 담았습니다.
+핵심은 유산 건축물의 가치는 지정 여부만으로 정해지지 않는다는 태도입니다. 법적 보호 대상이라는 이유만으로 원형을 그대로 두는 대신, 공간과 소재, 그리고 그 집이 가진 정서적 결을 함께 지키려 했다는 설명입니다.
+역사적 건축물을 다루는 리노베이션 프로젝트를 기획할 때, 무엇을 지킬 것인가를 다시 묻게 만드는 참고 사례입니다."
+       data-title-en="Martha Beatriz House / Atempo Arquitectura" data-title-kr="마르타 베아트리스 하우스 / 아템포 아르키텍투라">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">리노베이션</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 07. 21</div>
+        <div class="card-title">마르타 베아트리스 하우스 / 아템포 아르키텍투라</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://design.co.kr/article/168654/" target="_blank"
+       data-category="Design · Branding · Graphic"
+       data-summary="선물 포장 브랜드 '가위(kawi)'의 5년을 이진현·이혜리 디자이너, 송서영 브랜드 매니저 인터뷰로 정리했습니다. 패턴지에서 시작해 스테이셔너리·협업·성수 쇼룸까지 넓혀오며 단종분 포함 약 40종의 패턴을 만들었습니다."
+       data-designer="패턴 개발과 지류 선정 기준이 구체적으로 드러납니다. 특히 '취향을 타면 안 된다'는 원칙 아래 성별이 드러나는 디자인을 배제한 판단, 인쇄 품질보다 실제 포장했을 때의 느낌을 우선한 종이 선택 기준은 그대로 가져다 쓸 수 있습니다."
+       data-impact-score="4"
+       data-points="단종분 포함 약 40종 패턴 개발, 5년 차 브랜드|받는 사람을 특정할 수 없으므로 성별이 드러나는 디자인은 배제|종이는 인쇄 품질보다 포장했을 때의 빳빳함·구김·비침으로 선택|패턴 이름은 에밀리 킹 곡명에서 가져와 해석의 여지를 남김"
+       data-recommend="브랜드·패턴·지류 실무자 참고 · 저장 추천"
+       data-comment="이 인터뷰가 유용한 이유는 결과물이 아니라 기준이 드러나기 때문입니다. 패턴을 만들 때 '취향을 타면 안 된다'는 원칙을 세운 근거가 명확합니다. 선물은 받는 사람을 특정할 수 없으니 성별이 드러나는 표현을 걷어냈다는 것입니다.
+종이 선택 기준도 그렇습니다. 인쇄가 잘 나오는 종이가 아니라 실제로 쌌을 때 너무 빳빳하지 않고, 쉽게 구겨지지 않고, 안쪽이 비치지 않는 종이를 고릅니다. 그 조건을 다 통과하는 종이가 많지 않아 일본에서 직접 수입해 인쇄하기도 했다는 대목은, 소재 검증을 어디까지 해야 하는지 보여줍니다.
+패턴 이름을 에밀리 킹의 곡 제목에서 가져온 선택도 눈에 띕니다. '빈티지 드로잉' 같은 설명적 이름을 붙였다면 떠올릴 수 있는 이미지가 하나로 좁혀졌을 것이라는 설명은, 네이밍이 해석의 폭을 어떻게 좌우하는지에 대한 좋은 예시입니다.">
+      <div class="thumb g-rust">
+        <div class="noise"></div>
+        <span class="thumb-label">선물포장</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인플러스 · 2026. 07. 23</div>
+        <div class="card-title">선물을 건네는 가장 다정한 방식, 가위</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
