@@ -1,0 +1,56 @@
+{
+  "contentId": "20260726-design-001",
+  "date": "2026-07-26",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Designboom",
+    "publishedAt": "2026-07-22"
+  },
+  "url": "https://www.designboom.com/art/land-art-greek-beach-scene-ancient-hunters-modern-extraction-the-krank-the-hunt/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 미술 · 랜드아트",
+    "en": "Design · Art · Land Art"
+  },
+  "title": {
+    "kr": "그리스 오소노이 해변, 고대 사냥꾼과 현대 채굴을 그린 대형 랜드아트로 변신",
+    "en": "Land art turns a Greek beach into a scene of ancient hunters and modern extraction"
+  },
+  "summary": {
+    "kr": "이오니안 랩 아티스트 레지던시의 일환으로, 비주얼 아티스트 더 크랭크가 그리스 오소노이 섬 아스프리 아모스 해변에 약 500제곱미터 규모의 임시 랜드아트 '더 헌트'를 만들었습니다. 선사시대 사냥꾼들과 해상 시추 플랫폼의 실루엣이 마주하는 장면을 그렸습니다.",
+    "en": "As part of the Ionian Lab artist residency, visual artist The Krank created The Hunt, a roughly 500-square-meter temporary land art work on Aspri Ammos beach on the Greek island of Othonoi, depicting prehistoric hunters facing an offshore drilling platform's silhouette."
+  },
+  "points": {
+    "kr": [
+      "오소노이섬 아스프리 아모스 해변의 500제곱미터 임시 작업",
+      "선사시대 사냥꾼과 해상 시추 플랫폼 실루엣의 대비",
+      "2026년 7월 첫 이오니안 랩 레지던시 중 제작"
+    ],
+    "en": [
+      "500-sqm temporary work on Othonoi's Aspri Ammos beach",
+      "Contrasts prehistoric hunters with an offshore drilling silhouette",
+      "Made during the inaugural Ionian Lab residency, July 2026"
+    ]
+  },
+  "positions": [
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "장소 자체가 매체가 될 때 랜드아트가 얼마나 명확한 정치적 메시지를 담을 수 있는지 보여주는 사례입니다. 환경·설치 스케일 작업을 하는 이들이라면 참고할 만합니다.",
+    "en": "A striking reminder that land art can carry an explicit political message when the site itself becomes the medium, worth studying for anyone doing environmental or installation-scale work."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "사이트 스페시픽·환경 예술 레퍼런스로 좋음 · 무드보드 저장 추천",
+    "en": "Good reference for site-specific and environmental art · Save for mood-boarding"
+  },
+  "comment": {
+    "kr": "'더 헌트'가 효과적인 이유는 규모 때문만이 아니라 이미지 선택 때문입니다. 해변 크기로 그려진 선사시대 사냥꾼들이 시추 플랫폼의 실루엣과 마주하는 구도만으로, 텍스트 한 줄 없이 정치적 메시지를 전달합니다.\n임시 랜드아트는 영구 설치물이 갖지 못한 이점이 있습니다. 작품이 사라지기 때문에, 결국 사진과 입소문을 통해 이미지가 남는다는 점입니다. 이는 관람이 아니라 사진이 주된 접점이 될 때 작업을 어떻게 설계해야 하는지에 대한 시사점을 줍니다.\n설치·환경 디자인을 하는 이들에게는, 별도의 설명 문구 없이 장소 자체의 지리와 역사를 논거로 삼는 방식에 대한 좋은 사례 연구가 됩니다.",
+    "en": "What makes The Hunt effective isn't scale alone but the choice of imagery: prehistoric hunters rendered at beach scale, facing down the silhouette of a drilling rig. That contrast does the political work without a single word of text.\nTemporary land art has an advantage permanent installations don't: it disappears, so the image lives on mostly through documentation and word of mouth. That changes how you'd design the piece if the photograph, not the physical visit, is the main audience touchpoint.\nFor anyone working in installation or environmental design, this is a useful case study in using a site's own geography and history as the argument, rather than adding explanatory signage on top of it."
+  },
+  "thumbLabel": "랜드아트",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

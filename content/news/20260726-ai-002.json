@@ -1,0 +1,56 @@
+{
+  "contentId": "20260726-ai-002",
+  "date": "2026-07-26",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "Fortune",
+    "publishedAt": "2026-07-24"
+  },
+  "url": "https://fortune.com/2026/07/24/jensen-huang-open-source-letter-nvidia-kimi/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 오픈소스",
+    "en": "AI · Policy · Open Source"
+  },
+  "title": {
+    "kr": "젠슨 황, 첫 X 게시물로 오픈 AI 모델 옹호…빅테크 25곳 서한 서명",
+    "en": "Jensen Huang uses first X post to defend open AI models"
+  },
+  "summary": {
+    "kr": "엔비디아 CEO 젠슨 황이 첫 X 게시물로, 마이크로소프트·메타·허깅페이스 등 약 25개 기업이 서명한 서한을 공유했습니다. 다운로드 가능한 AI 모델에 대한 성급한 규제를 자제해달라고 워싱턴에 요청하는 내용입니다.",
+    "en": "Nvidia CEO Jensen Huang used his first-ever X post to share a letter, signed by roughly 25 companies including Microsoft, Meta and Hugging Face, urging Washington to avoid premature restrictions on downloadable AI models."
+  },
+  "points": {
+    "kr": [
+      "오픈 웨이트 서한에 약 25개 기업 서명",
+      "중국산 모델 규제 강화 보도 며칠 뒤 발표",
+      "OpenAI·Anthropic·구글은 서명 명단에서 빠짐"
+    ],
+    "en": [
+      "~25 companies signed the open-weights letter",
+      "Comes days after reports of a Chinese-model ban push",
+      "OpenAI, Anthropic and Google notably absent from signers"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "오픈 웨이트 모델 접근성은 독립 디자이너·소규모 스튜디오가 벤더 종속 없이 로컬로 돌릴 수 있는 AI 도구의 폭을 좌우합니다. 이 정책 논쟁은 지켜볼 가치가 있습니다.",
+    "en": "Open-weight model access directly shapes which AI tools indie designers and small studios can run locally without vendor lock-in, so this policy fight is worth watching."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "오픈 웨이트 모델 의존 시 주시 · 그 외에는 배경 참고용",
+    "en": "Track if you rely on open-weight models · Background reading otherwise"
+  },
+  "comment": {
+    "kr": "OpenAI·Anthropic·구글이 이 오픈 모델 옹호 서한에 빠져 있다는 점이 눈에 띕니다. 이 구도는 공교롭게도 프런티어 폐쇄형 모델을 주력 상품으로 파는 기업과 그렇지 않은 기업의 경계와 거의 일치합니다.\n시점도 의미심장합니다. 트럼프 행정부가 중국산 오픈 모델 규제를 재추진한다는 보도가 나온 지 며칠 만에 나온 서한이라, 통상적인 입장 표명이라기보다 업계의 선제적 반발로 읽힙니다.\n라마 같은 오픈 웨이트 모델로 도구를 만드는 입장이라면, 이번 규제 논의의 결과가 내년에 무엇을 다운로드하고 자체 호스팅할 수 있는지에 직접 영향을 줄 수 있습니다.",
+    "en": "It's notable that OpenAI, Anthropic and Google are absent from a letter about keeping AI models open, a split that lines up almost exactly with who does and doesn't sell frontier closed models as their main product.\nThe timing matters too. This lands just days after reports that the Trump administration was reviving a push to restrict Chinese open models, so the letter reads as pre-emptive industry pushback rather than a routine statement.\nFor anyone building tools on open-weight models like Llama or similar, the regulatory outcome here could directly affect what you're allowed to download and self-host next year."
+  },
+  "thumbLabel": "오픈모델",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

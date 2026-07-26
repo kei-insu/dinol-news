@@ -1,0 +1,50 @@
+{
+  "contentId": "20260726-ai-004",
+  "date": "2026-07-26",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "인공지능신문",
+    "publishedAt": "2026-07-21"
+  },
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=41072",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "AI · 반도체 · 인프라",
+    "en": "AI · Semiconductor · Infrastructure"
+  },
+  "title": {
+    "kr": "\"AI 성능의 숨은 핵심은 메모리 대역폭\"…인텔, 차세대 제온 6로 8000MT/s RDIMM 시대 연다",
+    "en": null
+  },
+  "summary": {
+    "kr": "인텔이 AI 시스템 성능의 숨은 핵심으로 '메모리 대역폭'을 지목하며, 차세대 제온 6 플랫폼에서 8000MT/s RDIMM을 지원해 기존 6400MT/s 대비 최대 20~25% 향상된 대역폭을 제공한다고 밝혔습니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "제온 6 플랫폼, 8000MT/s RDIMM 지원 발표",
+      "기존 6400MT/s 대비 대역폭 최대 20~25% 향상",
+      "상용 공급은 2026년 8~9월경 시작 예정"
+    ],
+    "en": []
+  },
+  "positions": [],
+  "designer": {
+    "kr": "AI 서비스의 체감 속도는 GPU 성능뿐 아니라 메모리 대역폭 같은 인프라 디테일에서도 갈립니다. 실무에 AI 기능을 얹는 기획자라면 이런 하드웨어 흐름도 가볍게 알아둘 필요가 있습니다.",
+    "en": null
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 인프라 관심 실무자 참고 · 일반 독자는 선택",
+    "en": null
+  },
+  "comment": {
+    "kr": "AI 모델 이야기에 비해 메모리 대역폭 같은 하드웨어 디테일은 상대적으로 조용히 지나가지만, 실제 서비스 응답 속도에는 이런 요소가 크게 작용합니다.\n인텔이 메인스트림 서버 플랫폼 중 처음으로 8000MT/s RDIMM을 지원한다고 강조한 점은, AI 워크로드를 겨냥한 인프라 경쟁이 GPU를 넘어 메모리 쪽으로도 번지고 있다는 신호입니다.\n상용 공급이 8~9월로 예정된 만큼 당장 체감할 변화는 아니지만, AI 인프라를 다루는 실무자라면 눈여겨볼 만한 흐름입니다.",
+    "en": null
+  },
+  "thumbLabel": "메모리대역폭",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

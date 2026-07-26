@@ -1,0 +1,56 @@
+{
+  "contentId": "20260726-ai-001",
+  "date": "2026-07-26",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-24"
+  },
+  "url": "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 모델 · 출시",
+    "en": "AI · Model · Launch"
+  },
+  "title": {
+    "kr": "앤트로픽, 클로드 오퍼스 5 출시…2개월 만에 네 번째 모델",
+    "en": "Anthropic launches Opus 5"
+  },
+  "summary": {
+    "kr": "앤트로픽이 7월 24일 클로드 오퍼스 5를 출시했습니다. 미토스 5·페이블 5·소네트 5에 이어 두 달도 안 되는 기간에 내놓은 네 번째 모델로, 가격은 오퍼스 4.8과 동일하게 유지하면서 여러 벤치마크에서 상위권에 올랐습니다.",
+    "en": "Anthropic released Claude Opus 5 on July 24, 2026, its fourth model in under two months after Mythos 5, Fable 5 and Sonnet 5, pricing it the same as Opus 4.8 while topping Artificial Analysis's leaderboard on several benchmarks."
+  },
+  "points": {
+    "kr": [
+      "두 달 내 앤트로픽 네 번째 모델 출시",
+      "오퍼스 4.8과 동일한 $5/$25 가격 유지",
+      "아티피셜 애널리시스 벤치마크 다수 1위"
+    ],
+    "en": [
+      "Fourth Anthropic model release in under two months",
+      "Same $5/$25 pricing as Opus 4.8",
+      "Tops several Artificial Analysis benchmarks"
+    ]
+  },
+  "positions": [
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "클로드 기반 워크플로우를 쓰는 실무자라면, 가격 변동 없는 업그레이드인 만큼 지금 바로 AI 보조 작업 흐름을 다시 벤치마크해볼 좋은 기회입니다.",
+    "en": "For teams building on Claude, a same-price upgrade is a low-friction reason to re-benchmark your AI-assisted workflows now rather than later."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "클로드 사용자라면 테스트 추천 · 그 외에는 선택",
+    "en": "Worth testing if you already use Claude · Optional for others"
+  },
+  "comment": {
+    "kr": "앤트로픽의 신모델 출시 주기가 올해 들어 눈에 띄게 빨라졌습니다. 오퍼스 5는 오퍼스 4.8 이후 불과 두 달 만에 나온 모델로, 프런티어 모델 경쟁이 업계 전반에서 얼마나 치열해졌는지를 보여줍니다.\n주목할 점은 가격 인상이 아니라 가격 동결입니다. 벤치마크 점수는 끌어올리면서 가격은 그대로 유지했다는 것은, API 비용을 제품 로드맵에 반영해야 하는 실무자 입장에서 반가운 흐름입니다.\n디자인·프로덕트 팀 입장에서는 AI 보조 작업 흐름을 다시 점검해볼 조용하지만 실질적인 신호입니다. 이미 오퍼스를 기본으로 쓰고 있다면 계약이나 가격 변경 없이 바로 테스트해볼 수 있습니다.",
+    "en": "Anthropic's release cadence has accelerated sharply this year, and Opus 5 lands just two months after Opus 4.8. That pace says something about how competitive the frontier-model market has become industry-wide.\nWhat stands out here isn't a price hike but a price freeze. Anthropic held pricing steady while pushing benchmark scores up, which is a friendlier trajectory for anyone budgeting API costs into a product roadmap.\nFor design and product teams, this is a quiet but real signal to revisit AI-assisted parts of the workflow. If your tools already default to Opus, the model swap should require zero contract or pricing changes to test."
+  },
+  "thumbLabel": "신모델",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

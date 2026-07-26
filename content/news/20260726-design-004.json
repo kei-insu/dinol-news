@@ -1,0 +1,53 @@
+{
+  "contentId": "20260726-design-004",
+  "date": "2026-07-26",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "디자인 나침반",
+    "publishedAt": "2026-07-21"
+  },
+  "url": "https://designcompass.org/2026/07/21/zak-fc-studio-football-club-identity/",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 그래픽",
+    "en": "Design · Branding · Graphic"
+  },
+  "title": {
+    "kr": "피그마 위브로 만든 디자인 스튜디오 자체 축구 클럽 'ZAK F.C.'",
+    "en": null
+  },
+  "summary": {
+    "kr": "디자인 스튜디오 ZAK이 월드컵 분위기에 맞춰 자체 축구 클럽 아이덴티티 'ZAK F.C.'를 공개했습니다. 2018년 설립이라는 가상의 설정 아래 클럽 크레스트·유니폼·페넌트 등 다양한 시각 요소를 장난스럽게 구성했습니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "월드컵 분위기에 맞춘 자체 축구 클럽 브랜딩 프로젝트",
+      "Figma Weave·Motion 실험을 겸한 사내 작업",
+      "크레스트·유니폼·페넌트·왁스 실링 등 시스템 구성"
+    ],
+    "en": []
+  },
+  "positions": [
+    "brand-designer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "실제 클라이언트 프로젝트가 아닌 스튜디오 내부 실험이라는 점이 오히려 장점입니다. Figma Weave·Motion 같은 신규 툴을 부담 없이 시험해볼 수 있는 좋은 놀이터 프로젝트입니다.",
+    "en": null
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "브랜딩 시스템·툴 실험 참고용 · 가볍게 훑어보기 추천",
+    "en": null
+  },
+  "comment": {
+    "kr": "클라이언트 프로젝트가 아닌 스튜디오 자체 놀이 프로젝트라는 점에서 오히려 더 눈여겨볼 만합니다. 매출과 무관하게 마음껏 실험할 수 있는 자리이기 때문입니다.\n가상의 축구 클럽이라는 설정 아래 크레스트부터 왁스 실링까지 하나의 브랜드 시스템을 완결성 있게 구성한 점이 인상적입니다. 소재가 가벼워도 시스템 사고는 진지하게 적용한 사례입니다.\nFigma Weave·Motion 같은 신규 툴 실험을 겸했다는 점도 눈에 띕니다. 새 툴을 실전 클라이언트 작업 전에 가볍게 테스트해보고 싶은 스튜디오라면 참고할 만한 접근법입니다.",
+    "en": null
+  },
+  "thumbLabel": "브랜딩놀이",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

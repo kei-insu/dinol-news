@@ -1,0 +1,59 @@
+{
+  "contentId": "20260726-design-002",
+  "date": "2026-07-26",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-23"
+  },
+  "url": "https://www.itsnicethat.com/articles/anatomy-horniman-museum-graphic-design-project-230726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 타이포그래피",
+    "en": "Design · Branding · Typography"
+  },
+  "title": {
+    "kr": "호니먼 박물관 125주년 캠페인, 소장품과 정원에서 채집한 전용 서체로 완성",
+    "en": "Anatomy's new campaign for the Horniman museum is built on a bespoke typeface foraged from the museum's collections and gardens"
+  },
+  "summary": {
+    "kr": "런던 에이전시 애너토미가 호니먼 박물관 125주년 캠페인 'It's in our Nature'를 위해 기성 서체를 쓰는 대신, 박물관 소장품과 건물, 정원에서 발견한 형태만으로 전용 알파벳을 직접 만들었습니다.",
+    "en": "For the Horniman Museum's 125th year, London agency Anatomy built the 'It's in our Nature' campaign around a bespoke letterset drawn entirely from shapes found in the museum's own collections, architecture and gardens, rather than licensing an existing typeface."
+  },
+  "points": {
+    "kr": [
+      "소장품·패턴·건축 디테일에서 글자꼴을 직접 추출",
+      "글자마다 원본 사물의 성격에 맞춰 개별 모션 적용",
+      "의도적으로 낮춘 프레임 레이트로 스톱모션 같은 수작업 질감 구현",
+      "학교·지역 단체가 이후 글자를 덧붙일 수 있는 확장형 시스템"
+    ],
+    "en": [
+      "Letterforms sourced from specimens, patterns and architecture on site",
+      "Each character animated separately, taking cues from its source object",
+      "Deliberately low frame rate gives the motion a stop-motion, handmade feel",
+      "System designed to be extended later by schools and community groups"
+    ]
+  },
+  "positions": [
+    "typographer",
+    "brand-designer"
+  ],
+  "designer": {
+    "kr": "일회성 결과물이 아니라 그대로 따라 할 수 있는 방법론입니다. 현장을 촬영하고, 팀원들이 각자 주목한 것을 비교한 뒤, 그 필터를 통과한 형태에서 글자꼴을 뽑아냅니다. '이 장소에서만 나올 수 있는 브랜드'가 필요할 때 쓸 만합니다.",
+    "en": "A repeatable method rather than a one-off: photograph the site, compare what each team member noticed, then derive letterforms from the shapes that survive that filter. Useful whenever a brand needs to look like it could only have come from one place."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "전용 서체·장소 기반 아이덴티티 레퍼런스로 추천 · 프로세스 저장",
+    "en": "Strong reference for custom type and place-based identity · Save the process"
+  },
+  "comment": {
+    "kr": "흥미로운 지점은 전용 서체를 만들었다는 사실이 아니라, 그 형태를 어디서 가져왔는가입니다. 애너토미는 팀원들을 각자 박물관으로 보내 사진을 찍게 한 뒤 서로 무엇에 주목했는지를 비교했고, 반복해서 걸린 디테일에서 알파벳을 만들었습니다.\n덕분에 '호니먼답게 만들어달라'는 주관적인 요구가, 근거를 남길 수 있는 리서치 과정에 가까워집니다. 클라이언트가 이 글자가 왜 이런 모양이냐고 물으면 가리킬 수 있는 실물이 있습니다.\n모션 처리 방식도 가져올 만합니다. 하나의 애니메이션 스타일을 전부에 적용하는 대신 글자마다 원본 사물처럼 움직이게 했고, 프레임 레이트를 일부러 낮춰 기계로 뽑은 결과가 아니라 손으로 만든 것처럼 읽히게 했습니다.",
+    "en": "The interesting part isn't that the typeface is custom, it's where the shapes came from. Anatomy sent the team to photograph the museum individually, then compared notes on what each person had noticed, and built the alphabet from the details that kept coming up.\nThat turns a subjective 'make it feel like the Horniman' brief into something closer to a research process with an audit trail. When a client asks why a letter looks the way it does, there is an object to point at.\nThe motion decision is worth stealing too. Instead of one animation style applied to everything, each letter moves like the thing it came from, and the frame rate is dropped on purpose so the result reads as handmade rather than machine finished."
+  },
+  "thumbLabel": "채집서체",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}
