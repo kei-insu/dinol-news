@@ -1,0 +1,59 @@
+{
+  "contentId": "20260727-ai-004",
+  "date": "2026-07-27",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-23"
+  },
+  "url": "https://techcrunch.com/2026/07/23/runway-bets-on-ai-model-routing-as-generative-media-gets-crowded/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 생성미디어",
+    "en": "AI · Tools · Generative Media"
+  },
+  "title": {
+    "kr": "런웨이, 이미지·영상·오디오 모델을 자동으로 골라주는 '미디어 라우터' 공개",
+    "en": "Runway launches AI model router as generative media gets crowded"
+  },
+  "summary": {
+    "kr": "런웨이가 개발자 플랫폼 '런웨이 데브'를 통해 미디어 라우터를 공개했습니다. 요청마다 품질·속도·비용 중 무엇을 우선할지에 따라 이미지·영상·오디오 생성 모델을 자동으로 골라주는 도구로, 생성 미디어 전용 라우터로는 처음이라는 설명입니다.",
+    "en": "Runway launched Media Router through its Runway Dev platform, a tool that automatically picks the best image, video or audio generation model for each request based on whether the user prioritizes quality, speed or cost. Runway says it is the first router built specifically for generative media."
+  },
+  "points": {
+    "kr": [
+      "요청별로 품질·속도·비용 우선순위에 따라 모델 자동 선택",
+      "런웨이 사내 크리에이티브팀의 모델 평가 기준을 그대로 반영",
+      "어도비·클라우드플레어·일레븐랩스·셔터스톡 등이 이미 사용 중",
+      "중국산 모델 제외 같은 선호 조건도 설정 가능"
+    ],
+    "en": [
+      "Routes by quality, speed or cost preference per request",
+      "Built on Runway's in-house creative team's evaluation criteria",
+      "Adobe, Cloudflare, ElevenLabs, Shutterstock already on Runway Dev",
+      "Developers can set preferences such as excluding Chinese models"
+    ]
+  },
+  "positions": [
+    "motion-designer",
+    "video-designer"
+  ],
+  "designer": {
+    "kr": "주목할 부분은 라우팅 기준입니다. 영상 모델의 움직임 처리, 이미지 모델의 구도 처리, 음성 모델의 립싱크 정확도로 나눠 판단합니다. API를 직접 쓰지 않더라도 모델을 고를 때 그대로 써먹을 수 있는 체크리스트입니다.",
+    "en": "The interesting part is the criteria: routing by how video models handle motion, how image models handle composition, how voice models handle lip syncing. That is a usable checklist even if you never touch the API."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "생성 미디어 모델 선택 기준이 필요할 때 참고",
+    "en": "Useful framing for anyone choosing between generative media models"
+  },
+  "comment": {
+    "kr": "런웨이가 모델 제작사에서 오케스트레이션 계층으로 방향을 트는 중이고, 그 이유는 자사 수치에 드러나 있습니다. 텍스트-투-비디오 모델은 더 이상 상위권이 아니고 구글·바이트댄스·알리바바가 그 자리를 채우고 있습니다.\n그래서 최고의 모델은 계속 바뀐다는 전제를 깔고, 어떤 작업에 어떤 모델이 강한지를 아는 쪽에 가치를 걸었습니다. 이 판단 기준이 런웨이 사내 크리에이티브팀이 매체별로 결과물을 평가하며 쌓은 것이라는 점은, 범용 리더보드보다 실무에 가깝습니다.\n다만 이번 발표가 무제한 구독제를 토큰 과금으로 바꾼 지 몇 주 만에 나왔다는 점은 감안할 필요가 있습니다. 비용 기준 라우팅은 순수한 편의 기능이라기보다 그 반발에 대한 대응 성격도 있습니다.",
+    "en": "Runway is repositioning from model maker to orchestration layer, and the reason is visible in its own numbers: its text-to-video models no longer top the rankings, with Google, ByteDance and Alibaba filling the top spots.\nThe bet is that the best model will keep changing, so the durable value sits in knowing which model wins for which task. That intelligence came from Runway's own creative team evaluating output type by type, which is a more grounded basis than a generic leaderboard.\nWorth noting that this arrives weeks after Runway swapped unlimited subscriptions for token pricing, a change users pushed back on. Cost routing is partly a response to that pressure, not just a neutral convenience feature."
+  },
+  "thumbLabel": "모델라우터",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}

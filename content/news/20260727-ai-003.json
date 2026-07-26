@@ -1,0 +1,54 @@
+{
+  "contentId": "20260727-ai-003",
+  "date": "2026-07-27",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-25"
+  },
+  "url": "https://techcrunch.com/2026/07/25/one-fallen-power-line-exposed-a-growing-ai-data-center-problem-heres-how-to-fix-it/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 인프라 · 에너지",
+    "en": "AI · Infrastructure · Energy"
+  },
+  "title": {
+    "kr": "전선 하나 끊기자 AI 데이터센터 3GW 동시 이탈, 고질적 취약점 드러나",
+    "en": "One fallen power line exposed a growing AI data center problem"
+  },
+  "summary": {
+    "kr": "워싱턴DC 인근 송전선 한 가닥이 끊기자 3기가와트가 넘는 데이터센터가 거의 동시에 전력 소비를 멈췄고, 완전 복구까지 10분 넘게 걸렸습니다. AI 데이터센터가 가장 밀집한 노던버지니아의 구조적 취약성이 드러났다는 지적입니다.",
+    "en": "A single fallen power line outside Washington, DC took more than 10 minutes to fully recover because over 3 gigawatts of data centers stopped drawing power almost simultaneously, exposing a systemic fragility in the AI buildout's home base of Northern Virginia."
+  },
+  "points": {
+    "kr": [
+      "송전선 하나의 장애가 3GW 데이터센터로 번진 과정",
+      "노던버지니아 전력망 집중이 만드는 리스크",
+      "전력회사·운영사가 검토 중인 해결책"
+    ],
+    "en": [
+      "How one line outage cascaded across 3GW of data centers",
+      "Why Northern Virginia's grid concentration is a risk",
+      "What fixes utilities and operators are considering"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "AI 기반 제품 로드맵이 의외로 평범한 이유로 멈출 수 있는 물리 인프라 위에 놓여 있다는 사실을 보여줍니다. '상시 작동 AI 기능'을 제안할 때 참고할 만합니다.",
+    "en": "A reminder that AI-driven product roadmaps rest on physical infrastructure that can fail in surprisingly ordinary ways, worth factoring into any 'always-on AI feature' pitch."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 인프라 의존도가 높은 제품 담당자에게 일독 추천",
+    "en": "Worth a read if your product depends on always-on AI infra"
+  },
+  "comment": {
+    "kr": "워싱턴DC 인근에서 송전선 하나가 끊긴 사건이 3기가와트 규모의 데이터센터를 거의 동시에 멈춰 세웠다는 내용입니다. AI 붐을 뒷받침하는 물리 인프라가 생각보다 취약하다는 걸 보여주는 사례입니다.\n'AI 기능은 언제나 켜져 있다'는 전제로 제품을 설계하는 팀이라면, 이런 인프라 리스크를 한 번쯤 고려해볼 필요가 있습니다. 특히 노던버지니아처럼 데이터센터가 몰려 있는 지역에 의존하는 서비스라면 더욱 그렇습니다.\n기사는 해결책보다는 문제 진단에 무게를 둔 편입니다. 전력망과 AI 인프라의 관계를 다룬 배경 지식으로 읽기 좋습니다.",
+    "en": "A single fallen power line near Washington, DC took down grid draw from more than 3 gigawatts of data centers almost simultaneously, and full recovery took over ten minutes. It is a blunt reminder that the physical infrastructure behind the AI boom can be more fragile than the software layer suggests.\nIf your product roadmap assumes an AI feature is always on, this is worth filing away, especially for services that lean on data center clusters concentrated in places like Northern Virginia.\nThe piece focuses more on diagnosing the problem than proposing fixes, so treat it as background reading on how AI infrastructure and the power grid are now tightly coupled."
+  },
+  "thumbLabel": "데이터센터",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

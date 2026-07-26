@@ -1,0 +1,56 @@
+{
+  "contentId": "20260727-design-002",
+  "date": "2026-07-27",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-25"
+  },
+  "url": "https://www.yankodesign.com/2026/07/25/the-170-clock-that-wants-you-off-your-phone-at-night/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · UX",
+    "en": "Design · Product · UX"
+  },
+  "title": {
+    "kr": "밤엔 폰 대신 이걸, 170달러 수면 시계 '해치 리스토어 3'",
+    "en": "The $170 Clock That Wants You Off Your Phone at Night"
+  },
+  "summary": {
+    "kr": "해치의 '리스토어 3'는 170달러짜리 침대맡 수면 시계로, 화면 대신 5개의 물리 버튼(빅 버튼·언와인드 스왑 포함)으로 조작합니다. 수면을 돕는 기기일수록 화면이 없는 편이 낫다는 주장을 제품으로 구현했습니다.",
+    "en": "Hatch's Restore 3 is a $170 bedside sleep clock built around five physical controls, including a Big Button and Unwind Swap, arguing that sleep tech works better without a screen."
+  },
+  "points": {
+    "kr": [
+      "물리 버튼 5개로 조작하는 170달러 침대맡 수면 시계",
+      "빅 버튼·언와인드 스왑 등 전용 조작부 탑재",
+      "화면 없는 수면 기기가 더 낫다는 주장을 제품화"
+    ],
+    "en": [
+      "$170 bedside sleep clock with five physical controls",
+      "Includes a Big Button and an Unwind Swap control",
+      "Argues sleep tech works better without a screen"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "화면 중심 제품 설계가 당연시되는 시대에 나온 반례입니다. 침대맡·웰니스 하드웨어를 설계한다면 참고할 가치가 있습니다.",
+    "en": "A useful counter-example in an era of screen-first product design, worth studying for anyone designing bedside or wellness hardware."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "침대맡·웰니스 하드웨어 리서치용 저장 추천",
+    "en": "Save for bedside/wellness hardware research"
+  },
+  "comment": {
+    "kr": "해치의 '리스토어 3'는 침대맡에 두는 170달러짜리 수면 시계입니다. 화면 대신 5개의 물리 버튼, 그중에서도 빅 버튼과 언와인드 스왑이라는 이름이 붙은 조작부로 작동합니다.\n요즘 웰니스 기기들이 대부분 앱과 화면 중심으로 가는 흐름과는 반대 방향입니다. 잠들기 전 화면을 보지 않게 하려는 기기인데 정작 화면으로 조작해야 한다는 모순을 물리 버튼으로 정면 돌파한 셈입니다.\n침대맡이나 수면 관련 하드웨어를 설계한다면, 이 제품이 왜 화면을 뺐는지 그 논리를 참고해볼 만합니다.",
+    "en": "Hatch's Restore 3 is a $170 bedside sleep clock operated through five physical controls, including a Big Button and an Unwind Swap, rather than a screen or app.\nIt runs against the current wellness-hardware default of screen-first interaction, resolving the odd contradiction of a sleep aid that asks you to look at a display right before bed.\nWorth studying if you design bedside or wellness hardware and want a reference for why a team chose to remove the screen rather than add one."
+  },
+  "thumbLabel": "수면시계",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

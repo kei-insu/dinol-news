@@ -1,0 +1,57 @@
+{
+  "contentId": "20260727-design-003",
+  "date": "2026-07-27",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-07-21"
+  },
+  "url": "https://www.archdaily.com/1181404/martha-beatriz-house-atempo-arquitectura",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 리노베이션",
+    "en": "Design · Architecture · Renovation"
+  },
+  "title": {
+    "kr": "마르타 베아트리스 하우스 / 아템포 아르키텍투라",
+    "en": "Martha Beatriz House / Atempo Arquitectura"
+  },
+  "summary": {
+    "kr": "에콰도르 쿠엔카 역사지구에서 아템포 아르키텍투라가 402㎡ 규모 주택을 리노베이션·증축했습니다. 건축주 마르타 베아트리스 카르도소 파이칸의 이름을 딴 이 프로젝트는, 유산 건축물의 가치가 지정 여부만이 아니라 공간·물성·정서적 특질에 있다는 관점을 담았습니다.",
+    "en": "In Cuenca's Historic Center, Atempo Arquitectura renovated and expanded a 402sqm residence, arguing that a heritage building's value lies not only in its protected status but in the spatial, material and emotional qualities it preserves."
+  },
+  "points": {
+    "kr": [
+      "쿠엔카 역사지구 402㎡ 규모 리노베이션·증축",
+      "건축주 마르타 베아트리스 카르도소 파이칸의 이름을 딴 프로젝트",
+      "지정 여부를 넘어 공간·물성·정서적 가치 보존"
+    ],
+    "en": [
+      "402sqm renovation and expansion in Cuenca's Historic Center",
+      "Named after client Martha Beatriz Cardoso Faicán",
+      "Preserves spatial, material and emotional qualities beyond heritage status"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "유산 건축물을 증축할 때 지정 여부만이 아니라 무엇을 지켜야 하는지 다시 묻게 하는 리노베이션 사례입니다.",
+    "en": "A useful case study in renovation ethics, how to expand a heritage home without treating protected status as the only value worth preserving."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "유산 건축 리노베이션 브리프 작성 시 참고 추천",
+    "en": "Good case study for heritage renovation briefs"
+  },
+  "comment": {
+    "kr": "에콰도르 쿠엔카의 역사지구에서 진행된 리노베이션 프로젝트입니다. 아템포 아르키텍투라는 402제곱미터 규모의 기존 주택을 증축하면서, 건축주인 마르타 베아트리스 카르도소 파이칸의 관점을 그대로 프로젝트 이름에 담았습니다.\n핵심은 유산 건축물의 가치는 지정 여부만으로 정해지지 않는다는 태도입니다. 법적 보호 대상이라는 이유만으로 원형을 그대로 두는 대신, 공간과 소재, 그리고 그 집이 가진 정서적 결을 함께 지키려 했다는 설명입니다.\n역사적 건축물을 다루는 리노베이션 프로젝트를 기획할 때, 무엇을 지킬 것인가를 다시 묻게 만드는 참고 사례입니다.",
+    "en": "In Cuenca's Historic Center, Atempo Arquitectura renovated and expanded a 402sqm residence named after its client, Martha Beatriz Cardoso Faicán, who held that a heritage building's value isn't only its protected status.\nThe throughline is a renovation ethic that goes beyond legal preservation, keeping the spatial, material and emotional qualities of the original house alongside its heritage listing.\nA useful reference for any renovation brief on a protected or historic structure, especially when deciding what exactly is worth preserving beyond compliance."
+  },
+  "thumbLabel": "리노베이션",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}
