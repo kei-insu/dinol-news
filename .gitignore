@@ -6,3 +6,6 @@ dist/
 preview.log
 preview-page.html
 __pycache__/
+
+__pycache__/
+*.py[cod]
