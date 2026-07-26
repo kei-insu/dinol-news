@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 26</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 26, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/" target="_blank"
+       data-category="AI · 모델 · 출시" data-category-en="AI · Model · Launch"
+       data-summary="Anthropic released Claude Opus 5 on July 24, 2026, its fourth model in under two months after Mythos 5, Fable 5 and Sonnet 5, pricing it the same as Opus 4.8 while topping Artificial Analysis's leaderboard on several benchmarks." data-summary-kr="앤트로픽이 7월 24일 클로드 오퍼스 5를 출시했습니다. 미토스 5·페이블 5·소네트 5에 이어 두 달도 안 되는 기간에 내놓은 네 번째 모델로, 가격은 오퍼스 4.8과 동일하게 유지하면서 여러 벤치마크에서 상위권에 올랐습니다."
+       data-points="Fourth Anthropic model release in under two months|Same $5/$25 pricing as Opus 4.8|Tops several Artificial Analysis benchmarks" data-points-kr="두 달 내 앤트로픽 네 번째 모델 출시|오퍼스 4.8과 동일한 $5/$25 가격 유지|아티피셜 애널리시스 벤치마크 다수 1위"
+       data-designer="For teams building on Claude, a same-price upgrade is a low-friction reason to re-benchmark your AI-assisted workflows now rather than later." data-designer-kr="클로드 기반 워크플로우를 쓰는 실무자라면, 가격 변동 없는 업그레이드인 만큼 지금 바로 AI 보조 작업 흐름을 다시 벤치마크해볼 좋은 기회입니다."
+       data-impact-score="3"
+       data-recommend="Worth testing if you already use Claude · Optional for others" data-recommend-kr="클로드 사용자라면 테스트 추천 · 그 외에는 선택"
+       data-comment="Anthropic's release cadence has accelerated sharply this year, and Opus 5 lands just two months after Opus 4.8. That pace says something about how competitive the frontier-model market has become industry-wide.
+What stands out here isn't a price hike but a price freeze. Anthropic held pricing steady while pushing benchmark scores up, which is a friendlier trajectory for anyone budgeting API costs into a product roadmap.
+For design and product teams, this is a quiet but real signal to revisit AI-assisted parts of the workflow. If your tools already default to Opus, the model swap should require zero contract or pricing changes to test." data-comment-kr="앤트로픽의 신모델 출시 주기가 올해 들어 눈에 띄게 빨라졌습니다. 오퍼스 5는 오퍼스 4.8 이후 불과 두 달 만에 나온 모델로, 프런티어 모델 경쟁이 업계 전반에서 얼마나 치열해졌는지를 보여줍니다.
+주목할 점은 가격 인상이 아니라 가격 동결입니다. 벤치마크 점수는 끌어올리면서 가격은 그대로 유지했다는 것은, API 비용을 제품 로드맵에 반영해야 하는 실무자 입장에서 반가운 흐름입니다.
+디자인·프로덕트 팀 입장에서는 AI 보조 작업 흐름을 다시 점검해볼 조용하지만 실질적인 신호입니다. 이미 오퍼스를 기본으로 쓰고 있다면 계약이나 가격 변경 없이 바로 테스트해볼 수 있습니다."
+       data-title-en="Anthropic launches Opus 5" data-title-kr="앤트로픽, 클로드 오퍼스 5 출시…2개월 만에 네 번째 모델">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">신모델</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 24</div>
+        <div class="card-title">앤트로픽, 클로드 오퍼스 5 출시…2개월 만에 네 번째 모델</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://fortune.com/2026/07/24/jensen-huang-open-source-letter-nvidia-kimi/" target="_blank"
+       data-category="AI · 정책 · 오픈소스" data-category-en="AI · Policy · Open Source"
+       data-summary="Nvidia CEO Jensen Huang used his first-ever X post to share a letter, signed by roughly 25 companies including Microsoft, Meta and Hugging Face, urging Washington to avoid premature restrictions on downloadable AI models." data-summary-kr="엔비디아 CEO 젠슨 황이 첫 X 게시물로, 마이크로소프트·메타·허깅페이스 등 약 25개 기업이 서명한 서한을 공유했습니다. 다운로드 가능한 AI 모델에 대한 성급한 규제를 자제해달라고 워싱턴에 요청하는 내용입니다."
+       data-points="~25 companies signed the open-weights letter|Comes days after reports of a Chinese-model ban push|OpenAI, Anthropic and Google notably absent from signers" data-points-kr="오픈 웨이트 서한에 약 25개 기업 서명|중국산 모델 규제 강화 보도 며칠 뒤 발표|OpenAI·Anthropic·구글은 서명 명단에서 빠짐"
+       data-designer="Open-weight model access directly shapes which AI tools indie designers and small studios can run locally without vendor lock-in, so this policy fight is worth watching." data-designer-kr="오픈 웨이트 모델 접근성은 독립 디자이너·소규모 스튜디오가 벤더 종속 없이 로컬로 돌릴 수 있는 AI 도구의 폭을 좌우합니다. 이 정책 논쟁은 지켜볼 가치가 있습니다."
+       data-impact-score="3"
+       data-recommend="Track if you rely on open-weight models · Background reading otherwise" data-recommend-kr="오픈 웨이트 모델 의존 시 주시 · 그 외에는 배경 참고용"
+       data-comment="It's notable that OpenAI, Anthropic and Google are absent from a letter about keeping AI models open, a split that lines up almost exactly with who does and doesn't sell frontier closed models as their main product.
+The timing matters too. This lands just days after reports that the Trump administration was reviving a push to restrict Chinese open models, so the letter reads as pre-emptive industry pushback rather than a routine statement.
+For anyone building tools on open-weight models like Llama or similar, the regulatory outcome here could directly affect what you're allowed to download and self-host next year." data-comment-kr="OpenAI·Anthropic·구글이 이 오픈 모델 옹호 서한에 빠져 있다는 점이 눈에 띕니다. 이 구도는 공교롭게도 프런티어 폐쇄형 모델을 주력 상품으로 파는 기업과 그렇지 않은 기업의 경계와 거의 일치합니다.
+시점도 의미심장합니다. 트럼프 행정부가 중국산 오픈 모델 규제를 재추진한다는 보도가 나온 지 며칠 만에 나온 서한이라, 통상적인 입장 표명이라기보다 업계의 선제적 반발로 읽힙니다.
+라마 같은 오픈 웨이트 모델로 도구를 만드는 입장이라면, 이번 규제 논의의 결과가 내년에 무엇을 다운로드하고 자체 호스팅할 수 있는지에 직접 영향을 줄 수 있습니다."
+       data-title-en="Jensen Huang uses first X post to defend open AI models" data-title-kr="젠슨 황, 첫 X 게시물로 오픈 AI 모델 옹호…빅테크 25곳 서한 서명">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">오픈모델</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Fortune · 2026. 07. 24</div>
+        <div class="card-title">젠슨 황, 첫 X 게시물로 오픈 AI 모델 옹호…빅테크 25곳 서한 서명</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260725160202" target="_blank"
+       data-category="AI · 산업 · 로보틱스"
+       data-summary="정의선 현대차그룹 회장이 7월 24일(현지시간) 샌프란시스코 AI 서밋에서 현대차그룹이 자동차 제조를 넘어 자율주행·로보틱스·AI 팩토리를 아우르는 '피지컬 AI' 솔루션 기업으로 전환하겠다고 밝혔습니다."
+       data-points="현대차그룹, 자동차 제조를 넘어 피지컬 AI 기업 선언|자율주행·로보틱스·AI 팩토리로 사업 확장|샌프란시스코 AI 서밋에서 글로벌 협력 강조"
+       data-designer="완성차 기업이 스스로를 AI 솔루션 기업으로 재정의하는 흐름은, 산업 현장·공간 경험을 다루는 디자이너에게 로보틱스·자율주행 UX가 다음 작업 영역이 될 수 있음을 시사합니다."
+       data-impact-score="3"
+       data-recommend="모빌리티·로보틱스 관심 실무자 참고 · 저장 추천"
+       data-comment="완성차 회사가 '자동차 제조사'라는 정체성에서 벗어나 '피지컬 AI 기업'을 자처하는 것은 단순한 슬로건 이상의 의미가 있습니다. 로보틱스·자율주행·AI 팩토리를 하나의 사업 축으로 묶겠다는 선언이기 때문입니다.
+이런 전환이 실제로 이뤄지면, 자동차 인테리어·UX를 다루던 디자이너들의 작업 범위가 로봇·자율주행 인터페이스로 자연스럽게 넓어질 가능성이 있습니다.
+다만 이번 발언은 샌프란시스코 AI 서밋이라는 특정 자리에서 나온 비전 선언이라, 구체적인 제품·서비스로 이어지는 시점과 형태는 앞으로 더 지켜봐야 합니다.">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">피지컬AI</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 25</div>
+        <div class="card-title">정의선 회장 "현대차그룹, 자동차 넘어 피지컬 AI 기업으로"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.aitimes.kr/news/articleView.html?idxno=41072" target="_blank"
+       data-category="AI · 반도체 · 인프라"
+       data-summary="인텔이 AI 시스템 성능의 숨은 핵심으로 '메모리 대역폭'을 지목하며, 차세대 제온 6 플랫폼에서 8000MT/s RDIMM을 지원해 기존 6400MT/s 대비 최대 20~25% 향상된 대역폭을 제공한다고 밝혔습니다."
+       data-points="제온 6 플랫폼, 8000MT/s RDIMM 지원 발표|기존 6400MT/s 대비 대역폭 최대 20~25% 향상|상용 공급은 2026년 8~9월경 시작 예정"
+       data-designer="AI 서비스의 체감 속도는 GPU 성능뿐 아니라 메모리 대역폭 같은 인프라 디테일에서도 갈립니다. 실무에 AI 기능을 얹는 기획자라면 이런 하드웨어 흐름도 가볍게 알아둘 필요가 있습니다."
+       data-impact-score="2"
+       data-recommend="AI 인프라 관심 실무자 참고 · 일반 독자는 선택"
+       data-comment="AI 모델 이야기에 비해 메모리 대역폭 같은 하드웨어 디테일은 상대적으로 조용히 지나가지만, 실제 서비스 응답 속도에는 이런 요소가 크게 작용합니다.
+인텔이 메인스트림 서버 플랫폼 중 처음으로 8000MT/s RDIMM을 지원한다고 강조한 점은, AI 워크로드를 겨냥한 인프라 경쟁이 GPU를 넘어 메모리 쪽으로도 번지고 있다는 신호입니다.
+상용 공급이 8~9월로 예정된 만큼 당장 체감할 변화는 아니지만, AI 인프라를 다루는 실무자라면 눈여겨볼 만한 흐름입니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">메모리대역폭</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">인공지능신문 · 2026. 07. 21</div>
+        <div class="card-title">"AI 성능의 숨은 핵심은 메모리 대역폭"…인텔, 차세대 제온 6로 8000MT/s RDIMM 시대 연다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.designboom.com/art/land-art-greek-beach-scene-ancient-hunters-modern-extraction-the-krank-the-hunt/" target="_blank"
+       data-category="Design · Art · Land Art" data-category-en="Design · Art · Land Art"
+       data-summary="As part of the Ionian Lab artist residency, visual artist The Krank created The Hunt, a roughly 500-square-meter temporary land art work on Aspri Ammos beach on the Greek island of Othonoi, depicting prehistoric hunters facing an offshore drilling platform's silhouette." data-summary-kr="이오니안 랩 아티스트 레지던시의 일환으로, 비주얼 아티스트 더 크랭크가 그리스 오소노이 섬 아스프리 아모스 해변에 약 500제곱미터 규모의 임시 랜드아트 '더 헌트'를 만들었습니다. 선사시대 사냥꾼들과 해상 시추 플랫폼의 실루엣이 마주하는 장면을 그렸습니다."
+       data-points="500-sqm temporary work on Othonoi's Aspri Ammos beach|Contrasts prehistoric hunters with an offshore drilling silhouette|Made during the inaugural Ionian Lab residency, July 2026" data-points-kr="오소노이섬 아스프리 아모스 해변의 500제곱미터 임시 작업|선사시대 사냥꾼과 해상 시추 플랫폼 실루엣의 대비|2026년 7월 첫 이오니안 랩 레지던시 중 제작"
+       data-designer="A striking reminder that land art can carry an explicit political message when the site itself becomes the medium, worth studying for anyone doing environmental or installation-scale work." data-designer-kr="장소 자체가 매체가 될 때 랜드아트가 얼마나 명확한 정치적 메시지를 담을 수 있는지 보여주는 사례입니다. 환경·설치 스케일 작업을 하는 이들이라면 참고할 만합니다."
+       data-impact-score="2"
+       data-recommend="Good reference for site-specific and environmental art · Save for mood-boarding" data-recommend-kr="사이트 스페시픽·환경 예술 레퍼런스로 좋음 · 무드보드 저장 추천"
+       data-comment="What makes The Hunt effective isn't scale alone but the choice of imagery: prehistoric hunters rendered at beach scale, facing down the silhouette of a drilling rig. That contrast does the political work without a single word of text.
+Temporary land art has an advantage permanent installations don't: it disappears, so the image lives on mostly through documentation and word of mouth. That changes how you'd design the piece if the photograph, not the physical visit, is the main audience touchpoint.
+For anyone working in installation or environmental design, this is a useful case study in using a site's own geography and history as the argument, rather than adding explanatory signage on top of it." data-comment-kr="'더 헌트'가 효과적인 이유는 규모 때문만이 아니라 이미지 선택 때문입니다. 해변 크기로 그려진 선사시대 사냥꾼들이 시추 플랫폼의 실루엣과 마주하는 구도만으로, 텍스트 한 줄 없이 정치적 메시지를 전달합니다.
+임시 랜드아트는 영구 설치물이 갖지 못한 이점이 있습니다. 작품이 사라지기 때문에, 결국 사진과 입소문을 통해 이미지가 남는다는 점입니다. 이는 관람이 아니라 사진이 주된 접점이 될 때 작업을 어떻게 설계해야 하는지에 대한 시사점을 줍니다.
+설치·환경 디자인을 하는 이들에게는, 별도의 설명 문구 없이 장소 자체의 지리와 역사를 논거로 삼는 방식에 대한 좋은 사례 연구가 됩니다."
+       data-title-en="Land art turns a Greek beach into a scene of ancient hunters and modern extraction" data-title-kr="그리스 오소노이 해변, 고대 사냥꾼과 현대 채굴을 그린 대형 랜드아트로 변신">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">랜드아트</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Designboom · 2026. 07. 22</div>
+        <div class="card-title">그리스 오소노이 해변, 고대 사냥꾼과 현대 채굴을 그린 대형 랜드아트로 변신</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/anatomy-horniman-museum-graphic-design-project-230726" target="_blank"
+       data-category="Design · Branding · Typography" data-category-en="Design · Branding · Typography"
+       data-summary="For the Horniman Museum's 125th year, London agency Anatomy built the 'It's in our Nature' campaign around a bespoke letterset drawn entirely from shapes found in the museum's own collections, architecture and gardens, rather than licensing an existing typeface." data-summary-kr="런던 에이전시 애너토미가 호니먼 박물관 125주년 캠페인 'It's in our Nature'를 위해 기성 서체를 쓰는 대신, 박물관 소장품과 건물, 정원에서 발견한 형태만으로 전용 알파벳을 직접 만들었습니다."
+       data-points="Letterforms sourced from specimens, patterns and architecture on site|Each character animated separately, taking cues from its source object|Deliberately low frame rate gives the motion a stop-motion, handmade feel|System designed to be extended later by schools and community groups" data-points-kr="소장품·패턴·건축 디테일에서 글자꼴을 직접 추출|글자마다 원본 사물의 성격에 맞춰 개별 모션 적용|의도적으로 낮춘 프레임 레이트로 스톱모션 같은 수작업 질감 구현|학교·지역 단체가 이후 글자를 덧붙일 수 있는 확장형 시스템"
+       data-designer="A repeatable method rather than a one-off: photograph the site, compare what each team member noticed, then derive letterforms from the shapes that survive that filter. Useful whenever a brand needs to look like it could only have come from one place." data-designer-kr="일회성 결과물이 아니라 그대로 따라 할 수 있는 방법론입니다. 현장을 촬영하고, 팀원들이 각자 주목한 것을 비교한 뒤, 그 필터를 통과한 형태에서 글자꼴을 뽑아냅니다. '이 장소에서만 나올 수 있는 브랜드'가 필요할 때 쓸 만합니다."
+       data-impact-score="4"
+       data-recommend="Strong reference for custom type and place-based identity · Save the process" data-recommend-kr="전용 서체·장소 기반 아이덴티티 레퍼런스로 추천 · 프로세스 저장"
+       data-comment="The interesting part isn't that the typeface is custom, it's where the shapes came from. Anatomy sent the team to photograph the museum individually, then compared notes on what each person had noticed, and built the alphabet from the details that kept coming up.
+That turns a subjective 'make it feel like the Horniman' brief into something closer to a research process with an audit trail. When a client asks why a letter looks the way it does, there is an object to point at.
+The motion decision is worth stealing too. Instead of one animation style applied to everything, each letter moves like the thing it came from, and the frame rate is dropped on purpose so the result reads as handmade rather than machine finished." data-comment-kr="흥미로운 지점은 전용 서체를 만들었다는 사실이 아니라, 그 형태를 어디서 가져왔는가입니다. 애너토미는 팀원들을 각자 박물관으로 보내 사진을 찍게 한 뒤 서로 무엇에 주목했는지를 비교했고, 반복해서 걸린 디테일에서 알파벳을 만들었습니다.
+덕분에 '호니먼답게 만들어달라'는 주관적인 요구가, 근거를 남길 수 있는 리서치 과정에 가까워집니다. 클라이언트가 이 글자가 왜 이런 모양이냐고 물으면 가리킬 수 있는 실물이 있습니다.
+모션 처리 방식도 가져올 만합니다. 하나의 애니메이션 스타일을 전부에 적용하는 대신 글자마다 원본 사물처럼 움직이게 했고, 프레임 레이트를 일부러 낮춰 기계로 뽑은 결과가 아니라 손으로 만든 것처럼 읽히게 했습니다."
+       data-title-en="Anatomy's new campaign for the Horniman museum is built on a bespoke typeface foraged from the museum's collections and gardens" data-title-kr="호니먼 박물관 125주년 캠페인, 소장품과 정원에서 채집한 전용 서체로 완성">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">채집서체</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 07. 23</div>
+        <div class="card-title">호니먼 박물관 125주년 캠페인, 소장품과 정원에서 채집한 전용 서체로 완성</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://design.co.kr/article/168624/" target="_blank"
+       data-category="Design · Product · Object"
+       data-summary="롤드컵 '소환사의 컵', 발로란트 챔피언스 트로피, 배틀그라운드 PNC·PGC 우승컵을 통해 e스포츠 트로피 디자인이 어떻게 진화해왔는지 짚은 기사입니다. 3세대 소환사의 컵은 볼핀 프롭스가 맡아 카본 파이버 등 경량 소재로 32kg에 육박하던 무게 문제를 해결했습니다."
+       data-points="3세대 소환사의 컵, 경량 신소재로 무게 문제 해결|발로란트 트로피는 게임 세계관을 60cm 오브제로 압축|PGC 트로피, 32팀에서 16팀으로 좁혀지는 토너먼트 구조를 형상화|스케치 50여 종과 3D 시뮬레이션으로 구조 안정성 검증"
+       data-designer="IP의 서사를 실물 오브제로 옮기는 과정이 구체적으로 드러납니다. 특히 '들어 올려야 하는 물건'이라는 사용 조건이 형태와 소재를 어떻게 되돌려 바꾸는지가, 굿즈·트로피·기념품을 다루는 실무자에게 바로 참고가 됩니다."
+       data-impact-score="3"
+       data-recommend="굿즈·오브제 디자인 실무자 참고 · 저장 추천"
+       data-comment="e스포츠 트로피는 감상용 조형물이 아니라 무대 위에서 사람이 직접 들어 올리는 물건입니다. 1세대 소환사의 컵이 32kg에 달해 선수 여럿이 겨우 들어 올렸다는 대목이, 이 조건을 놓쳤을 때 무슨 일이 생기는지 보여줍니다.
+3세대에서 카본 파이버로 무게만 덜어내고 볼륨은 유지한 선택, PGC 트로피의 날카로운 모서리를 마감 단계에서 뭉툭하게 다듬은 선택은 모두 같은 문제의식에서 나옵니다. 형태를 정한 뒤 사용을 맞추는 것이 아니라, 사용 조건이 형태를 되돌려 수정하게 한 사례입니다.
+IP를 다루는 방식도 참고할 만합니다. 발로란트 트로피는 평행 우주라는 설정을 마주 보는 두 원뿔과 중앙의 큐브로 압축했고, PGC 트로피는 32팀에서 16팀으로 좁혀지는 대회 구조 자체를 기둥의 결합으로 번역했습니다. 장식을 얹는 대신 서사를 구조로 바꾼 접근입니다.">
+      <div class="thumb g-rust">
+        <div class="noise"></div>
+        <span class="thumb-label">트로피</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인플러스 · 2026. 07. 23</div>
+        <div class="card-title">승리의 순간을 새긴 오브제, e스포츠 트로피 디자인</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://designcompass.org/2026/07/21/zak-fc-studio-football-club-identity/" target="_blank"
+       data-category="Design · Branding · Graphic"
+       data-summary="디자인 스튜디오 ZAK이 월드컵 분위기에 맞춰 자체 축구 클럽 아이덴티티 'ZAK F.C.'를 공개했습니다. 2018년 설립이라는 가상의 설정 아래 클럽 크레스트·유니폼·페넌트 등 다양한 시각 요소를 장난스럽게 구성했습니다."
+       data-points="월드컵 분위기에 맞춘 자체 축구 클럽 브랜딩 프로젝트|Figma Weave·Motion 실험을 겸한 사내 작업|크레스트·유니폼·페넌트·왁스 실링 등 시스템 구성"
+       data-designer="실제 클라이언트 프로젝트가 아닌 스튜디오 내부 실험이라는 점이 오히려 장점입니다. Figma Weave·Motion 같은 신규 툴을 부담 없이 시험해볼 수 있는 좋은 놀이터 프로젝트입니다."
+       data-impact-score="1"
+       data-recommend="브랜딩 시스템·툴 실험 참고용 · 가볍게 훑어보기 추천"
+       data-comment="클라이언트 프로젝트가 아닌 스튜디오 자체 놀이 프로젝트라는 점에서 오히려 더 눈여겨볼 만합니다. 매출과 무관하게 마음껏 실험할 수 있는 자리이기 때문입니다.
+가상의 축구 클럽이라는 설정 아래 크레스트부터 왁스 실링까지 하나의 브랜드 시스템을 완결성 있게 구성한 점이 인상적입니다. 소재가 가벼워도 시스템 사고는 진지하게 적용한 사례입니다.
+Figma Weave·Motion 같은 신규 툴 실험을 겸했다는 점도 눈에 띕니다. 새 툴을 실전 클라이언트 작업 전에 가볍게 테스트해보고 싶은 스튜디오라면 참고할 만한 접근법입니다.">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">브랜딩놀이</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인 나침반 · 2026. 07. 21</div>
+        <div class="card-title">피그마 위브로 만든 디자인 스튜디오 자체 축구 클럽 'ZAK F.C.'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
