@@ -30,9 +30,17 @@ DAILY_DIR = ROOT / "scripts" / "daily"
 LEDGER = ROOT / "published_urls.json"
 
 
+class DailyImportError(Exception):
+    """포착 가능한 전용 실패 예외. 내부 _readerthread 인코딩 오류와 달리 잡을 수 있다."""
+
+
+def fail(stage, reason, detail=""):
+    raise DailyImportError(f"{stage} {reason}\n{detail}".rstrip())
+
+
 def die(msg, code=1):
-    print(msg)
-    sys.exit(code)
+    # 파이프라인 단계 실패 — 전용 예외로 던져 main()에서 traceback 없이 종료코드 1로 변환.
+    raise DailyImportError(msg)
 
 
 def parse_ymd(value):
@@ -55,9 +63,69 @@ def snapshot():
             for p in sorted(NEWS_DIR.glob("*.json"))}
 
 
-def run(cmd):
-    r = subprocess.run(cmd, cwd=str(ROOT), capture_output=True, text=True, encoding="utf-8")
-    return r.returncode, r.stdout or "", r.stderr or ""
+# ────────────────────────────────────────────────────────────
+# 서브프로세스 — ★text=False 로 바이트 수신, 메인 스레드에서 디코딩★
+#   내부 _readerthread 에서 디코딩하면 try/except 로 못 잡는다.
+# ────────────────────────────────────────────────────────────
+def decode_python_output(data, stage, stream, command):
+    """A. Python 자식은 UTF-8 강제했으므로 strict. cp949 fallback 없음(설정 안 먹은 것이므로 실패가 맞다)."""
+    try:
+        return data.decode("utf-8", errors="strict")
+    except UnicodeDecodeError as exc:
+        fail(stage, "Python 자식 프로세스 UTF-8 디코딩 실패",
+             f"command={command}, stream={stream}, "
+             f"start={exc.start}, end={exc.end}, reason={exc.reason}")
+
+
+def run_python(args, stage):
+    """A. Python 자식 프로세스 — PYTHONIOENCODING=utf-8 강제 + strict."""
+    env = os.environ.copy()
+    env["PYTHONIOENCODING"] = "utf-8"
+    env["PYTHONUTF8"] = "1"
+    command = [sys.executable, *args]
+    try:
+        result = subprocess.run(command, cwd=str(ROOT), capture_output=True,
+                                text=False, env=env)          # ★바이트 수신★
+    except OSError as exc:                                     # ★실행 자체 실패★
+        fail(stage, "서브프로세스 실행 실패",
+             f"command={command}, type={type(exc).__name__}, reason={exc}")
+    stdout = decode_python_output(result.stdout, stage, "stdout", command)
+    stderr = decode_python_output(result.stderr, stage, "stderr", command)
+    return result.returncode, stdout, stderr
+
+
+def decode_console(data, stage, stream, command):
+    """B. Git·npm 은 UTF-8 → CP949 fallback."""
+    for encoding in ("utf-8", "cp949"):
+        try:
+            return data.decode(encoding, errors="strict")
+        except UnicodeDecodeError:
+            continue
+    fail(stage, "콘솔 출력 디코딩 실패",
+         f"command={command}, stream={stream}, encodings=utf-8,cp949")
+
+
+def run_command(args, stage):
+    """B. Git·npm 등 비파이썬 — 두 스트림 모두 디코딩해 반환(호출부가 누락 못 함)."""
+    try:
+        result = subprocess.run(args, cwd=str(ROOT), capture_output=True, text=False)
+    except OSError as exc:                                     # ★실행 자체 실패★
+        fail(stage, "서브프로세스 실행 실패",
+             f"command={args}, type={type(exc).__name__}, reason={exc}")
+    stdout = decode_console(result.stdout, stage, "stdout", args)
+    stderr = decode_console(result.stderr, stage, "stderr", args)
+    return result.returncode, stdout, stderr
+
+
+def git_show_bytes(ref, stage):
+    """blob 바이트 원본 (CRLF/LF 비교용). OSError 전용 예외 변환."""
+    try:
+        result = subprocess.run(["git", "show", ref], cwd=str(ROOT),
+                                capture_output=True, text=False)
+    except OSError as exc:
+        fail(stage, "서브프로세스 실행 실패",
+             f"command=git show {ref}, type={type(exc).__name__}, reason={exc}")
+    return result.returncode, result.stdout
 
 
 # ────────────────────────────────────────────────────────────
@@ -249,16 +317,16 @@ def apply_atomic(data, targets):
 # git 상태
 # ────────────────────────────────────────────────────────────
 def git_branch():
-    _, out, _ = run(["git", "rev-parse", "--abbrev-ref", "HEAD"])
+    _, out, _ = run_command(["git", "rev-parse", "--abbrev-ref", "HEAD"], "[0]")
     return out.strip()
 
 
 def git_porcelain():
-    _, out, _ = run(["git", "status", "--porcelain"])
+    _, out, _ = run_command(["git", "status", "--porcelain"], "[0]")
     return [ln for ln in out.split("\n") if ln.strip()]
 
 
-def main():
+def run_pipeline():
     t0 = time.monotonic()
     argv = sys.argv[1:]
 
@@ -304,7 +372,7 @@ def main():
     # source_rules 변경 시 추가만 허용
     changed_sr = any(ln[3:].strip().strip('"') == "scripts/source_rules.json" for ln in git_porcelain())
     if changed_sr:
-        rc, head_txt, _ = run(["git", "show", "HEAD:scripts/source_rules.json"])
+        rc, head_txt, _ = run_command(["git", "show", "HEAD:scripts/source_rules.json"], "[0]")
         if rc == 0:
             try:
                 head_rules = json.loads(head_txt)
@@ -319,10 +387,9 @@ def main():
     if not html_path.is_file():
         die(f"[0] 브리핑 HTML 없음: {html_path}")
     # main blob 대조 (RAW 또는 LF 정규화 후 일치)
-    rc, _, _ = run(["git", "cat-file", "-e", f"main:news/2026/{mm}/Dinol_news_{ymd}.html"])
+    rc, _, _ = run_command(["git", "cat-file", "-e", f"main:news/2026/{mm}/Dinol_news_{ymd}.html"], "[0]")
     if rc == 0:
-        main_bytes = subprocess.run(["git", "show", f"main:news/2026/{mm}/Dinol_news_{ymd}.html"],
-                                    cwd=str(ROOT), capture_output=True).stdout
+        _, main_bytes = git_show_bytes(f"main:news/2026/{mm}/Dinol_news_{ymd}.html", "[0]")
         w = html_path.read_bytes()
         if not (w == main_bytes or w.replace(b"\r\n", b"\n") == main_bytes.replace(b"\r\n", b"\n")):
             die("[0] 워킹트리 HTML 이 main 배포본과 다름 (LF 정규화 후에도 불일치) → 중단")
@@ -375,7 +442,7 @@ def main():
     print("[1] UNKNOWN=0")
 
     # ── [2] 추출 ──
-    rc, out, err = run(["python", "scripts/extract_cards.py", str(html_path.relative_to(ROOT)).replace("\\", "/"), "--out", "content/news"])
+    rc, out, err = run_python(["scripts/extract_cards.py", str(html_path.relative_to(ROOT)).replace("\\", "/"), "--out", "content/news"], "[2]")
     if rc != 0:
         die(f"[2] extract_cards 실패 (rc={rc})\n{out}\n{err}")
     s1 = snapshot()
@@ -435,7 +502,7 @@ def main():
     print(f"[5] AI scores {ai_scores} · high45 {high}" + ("" if high else "  (0장 — §9-1 기록 대상, 실패 아님)"))
 
     # ── [6] JSON 검증 (ERROR 집계로 판정) ──
-    rc, out, err = run(["python", "scripts/validate_json.py"])
+    rc, out, err = run_python(["scripts/validate_json.py"], "[6]")
     m = re.search(r"ERROR (\d+)건 · WARN (\d+)건", out)
     if not m:
         die(f"[6] validate_json 출력 파싱 실패\n{out}\n{err}")
@@ -448,13 +515,13 @@ def main():
         die(f"[6] returncode {rc} 인데 정상 WARN 으로 설명 안 됨\n{out}\n{err}")
 
     # ── [7] 발행 대장 ──
-    rc, out, err = run(["python", "scripts/build_published_urls.py"])
+    rc, out, err = run_python(["scripts/build_published_urls.py"], "[7]")
     if rc != 0:
         die(f"[7] build_published_urls 실패 (rc={rc})\n{out}\n{err}")
     current_data = json.loads(LEDGER.read_text(encoding="utf-8-sig")) if LEDGER.exists() else {}
     if current_data == ledger_original_data:
         if LEDGER.exists() and LEDGER.read_bytes() != (ledger_original_bytes or b""):
-            run(["git", "restore", "--", "published_urls.json"])
+            run_command(["git", "restore", "--", "published_urls.json"], "[7]")
             print("[7] 대장 의미상 동일 · 바이트 차이 → git restore")
         else:
             print("[7] 대장 변화 없음")
@@ -470,7 +537,9 @@ def main():
         die(f"[7] 대장 판정 실패: 최종 {len(current_data)} · 고유 {uniq} · before {ledger_before}")
 
     # ── [8] 빌드 ──
-    rc, out, err = run(["npm", "run", "build"])
+    # Windows 는 npm 이 npm.cmd 라 subprocess 가 직접 실행 못 함 → cmd /c 로 감싼다.
+    npm_cmd = ["cmd", "/c", "npm", "run", "build"] if os.name == "nt" else ["npm", "run", "build"]
+    rc, out, err = run_command(npm_cmd, "[8]")
     if rc != 0:
         die(f"[8] 빌드 실패\n{out[-2000:]}\n{err[-1000:]}")
     dist = ROOT / "dist" / "news" / "2026" / "07"
@@ -483,7 +552,7 @@ def main():
         die("[8] 빌드 산출물 개수 불일치")
 
     # ── [9] 페이지 검증 ──
-    rc, out, err = run(["python", "scripts/validate_details.py"])
+    rc, out, err = run_python(["scripts/validate_details.py"], "[9]")
     if "불일치 합계: 0" not in out or "PASS" not in out:
         die(f"[9] validate_details 실패\n{out[-2000:]}")
     # V37 동적 대조
@@ -494,13 +563,13 @@ def main():
     if not (len(empty_pos) + len(valid_pos) == len(cards) and unknown_id == 0):
         die(f"[9] V37 동적 대조 실패: 빈{len(empty_pos)}+유효{len(valid_pos)}≠{len(cards)} · 미등록{unknown_id}")
     print(f"[9] validate_details PASS · V37 빈{len(empty_pos)}/유효{len(valid_pos)}/미등록0")
-    rc, out, err = run(["python", "scripts/validate_briefing.py"])
+    rc, out, err = run_python(["scripts/validate_briefing.py"], "[9]")
     if "불일치 합계: 0" not in out or "PASS" not in out:
         die(f"[9] validate_briefing 실패\n{out[-2000:]}")
     print("[9] validate_briefing PASS")
 
     # ── [10] 링크 ──
-    rc, out, err = run(["python", "scripts/check_links.py"])
+    rc, out, err = run_python(["scripts/check_links.py"], "[10]")
     hm = re.search(r"검사한 HTML 파일 수\s*:\s*(\d+)", out)
     if "깨진 링크: 0건" not in out:
         die(f"[10] 깨진 링크 존재\n{out[-1500:]}")
@@ -518,5 +587,14 @@ def main():
     return 0
 
 
+def main():
+    try:
+        run_pipeline()
+        return 0
+    except DailyImportError as exc:
+        print(exc, file=sys.stderr)
+        return 1
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())
