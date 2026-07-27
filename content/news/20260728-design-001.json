@@ -1,0 +1,56 @@
+{
+  "contentId": "20260728-design-001",
+  "date": "2026-07-28",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-27"
+  },
+  "url": "https://www.yankodesign.com/2026/07/27/nanoleafs-smart-led-monitor-stand-brings-ambient-lighting-and-desk-organization-together/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 제품 · 테크",
+    "en": "Design · Product · Tech"
+  },
+  "title": {
+    "kr": "나노리프, 앰비언트 조명과 데스크 정리를 결합한 스마트 LED 모니터 스탠드 공개",
+    "en": "Nanoleaf's Smart LED Monitor Stand Brings Ambient Lighting and Desk Organization Together"
+  },
+  "summary": {
+    "kr": "나노리프가 판타키(FANTAQI)와 함께 모니터 받침, 데스크 정리, 커스터마이즈 가능한 앰비언트 조명을 하나로 합친 '스마트 LED 모니터 스탠드'를 선보였다. 원목 월넛 베니어 마감이 특징이다.",
+    "en": "Nanoleaf has expanded its smart lighting ecosystem with a Smart LED Monitor Stand, developed with FANTAQI, combining ergonomic monitor elevation, desk organization and customizable ambient lighting in a walnut-veneer wood construction."
+  },
+  "points": {
+    "kr": [
+      "월넛 베니어의 다층 원목 구조",
+      "인체공학적 모니터 거치대에 통합된 앰비언트 조명",
+      "나노리프 스마트홈 조명 생태계로의 확장"
+    ],
+    "en": [
+      "Multilayered solid wood construction with walnut veneer",
+      "Ambient lighting integrated into ergonomic monitor elevation",
+      "Part of Nanoleaf's broader smart home lighting ecosystem"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "스마트홈 기술을 소재 중심의 인더스트리얼 디자인 언어 뒤에 자연스럽게 숨긴 사례입니다. 책상 위에서 튀지 않아야 하는 하드웨어를 디자인할 때 참고할 만합니다.",
+    "en": "A clean example of hiding smart-home tech behind a materials-first industrial design language, useful reference for hardware that needs to feel calm on a desk."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "데스크 하드웨어 제품 디자인 레퍼런스로 추천",
+    "en": "Good reference for desk-hardware product design"
+  },
+  "comment": {
+    "kr": "스마트 조명 브랜드는 종종 '플라스틱 가전' 느낌을 벗어나기 어려운데, 원목과 월넛 베니어를 앞세운 모니터 스탠드는 소재 선택 자체가 눈에 띕니다.\n책상 위에서 가장 무존재감이어야 할 모니터 스탠드에 기능(높이 조절, 케이블 정리)과 무드(앰비언트 조명)를 동시에 얹으면서도 시각적 소음을 더하지 않았다는 점이 흥미롭습니다.\n작업 공간에 녹아드는 하드웨어를 디자인할 때 참고할 만한 사례입니다.",
+    "en": "Smart lighting brands often struggle with the 'plastic gadget' look, so a monitor stand that leads with solid wood and a walnut veneer is a notable material choice.\nWhat's interesting is treating a monitor stand, normally the most boring object on a desk, as a chance to add both function (elevation, cable/organization) and mood (ambient light) without adding visual noise.\nA solid case study for anyone designing hardware meant to disappear into a workspace rather than dominate it."
+  },
+  "thumbLabel": "모니터암",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

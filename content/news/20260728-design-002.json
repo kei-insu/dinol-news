@@ -1,0 +1,56 @@
+{
+  "contentId": "20260728-design-002",
+  "date": "2026-07-28",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-27"
+  },
+  "url": "https://www.yankodesign.com/2026/07/27/the-e169-portable-mechanical-keyboard-that-makes-the-mouse-unnecessary/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 입력장치",
+    "en": "Design · Product · Input Device"
+  },
+  "title": {
+    "kr": "169유로짜리 휴대용 기계식 키보드, 마우스를 불필요하게 만들다",
+    "en": "The €169 Portable Mechanical Keyboard That Makes the Mouse Unnecessary"
+  },
+  "summary": {
+    "kr": "MNT 포켓 리폼 스탠드얼론 키보드는 원래 오픈하드웨어 미니 노트북 '포켓 리폼'의 내장 키보드였으나, 독립된 앤스러사이트 색상 케이스에 담겨 어떤 기기와도 쓸 수 있는 169유로짜리 단품으로 출시됐다.",
+    "en": "The MNT Pocket Reform Standalone Keyboard began as the built-in keyboard of an open-hardware mini laptop and has been repackaged into its own anthracite enclosure for use with any device, priced at €169."
+  },
+  "points": {
+    "kr": [
+      "포켓 리폼 미니 노트북의 내장 키보드에서 출발",
+      "독립된 앤스러사이트 케이스로 재구성",
+      "마우스 의존도를 줄이는 컴팩트 대안으로 포지셔닝"
+    ],
+    "en": [
+      "Origins as the built-in keyboard of the Pocket Reform mini laptop",
+      "Now packaged standalone in a dedicated anthracite enclosure",
+      "Positioned as a compact alternative that reduces mouse dependency"
+    ]
+  },
+  "positions": [
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "부품이었던 것이 독립 제품으로 재탄생한 흥미로운 사례로, 모듈형·오픈하드웨어 제품 라인을 고민하는 팀이라면 참고할 만합니다.",
+    "en": "An interesting case of a component being reborn as a standalone product, worth studying for teams thinking about modular or open-hardware product lines."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "모듈형 하드웨어 제품 전략 레퍼런스로 참고",
+    "en": "Interesting reference for modular hardware product strategy"
+  },
+  "comment": {
+    "kr": "노트북 내장 키보드를 독립 제품으로 떼어내는 접근은, 처음부터 새로 설계하지 않고도 니치한 오픈하드웨어 플랫폼의 저변을 넓히는 영리한 방법입니다.\n오픈하드웨어 진영은 대체로 형태보다 기능을 우선하는 경향이 있어서, 이 키보드가 책상 위 심미성만으로 더 넓은 사용자층을 설득할 수 있을지 지켜볼 만합니다.\n처음부터 새로 만들기보다 기존 부품 설계를 재활용해 제품·시장 적합성을 넓히는 좋은 사례입니다.",
+    "en": "Turning a laptop's built-in keyboard into a standalone product is a smart way to extend a niche open-hardware platform's reach without designing something from scratch.\nThe open-hardware world tends to prioritize function over form, so it'll be worth watching whether this keyboard can win over a broader audience on desk-appeal alone.\nA useful example of squeezing more product-market fit out of existing component design rather than starting over."
+  },
+  "thumbLabel": "키보드",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

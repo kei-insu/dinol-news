@@ -1,0 +1,50 @@
+{
+  "20260728-ai-001": {
+    "category_kr": "AI · 광고 · 비평",
+    "category_en": "AI · Advertising · Critique",
+    "impactScore": 2,
+    "positions": ["art-director", "graphic-designer"]
+  },
+  "20260728-ai-002": {
+    "category_kr": "AI · 공공 · 정책",
+    "category_en": "AI · Public · Policy",
+    "impactScore": 1,
+    "positions": []
+  },
+  "20260728-ai-003": {
+    "category_kr": "AI · 인프라 · 투자",
+    "category_en": "AI · Infrastructure · Investment",
+    "impactScore": 1,
+    "positions": []
+  },
+  "20260728-ai-004": {
+    "category_kr": "AI · 모델 · 기술",
+    "category_en": "AI · Model · Technology",
+    "impactScore": 5,
+    "positions": ["product-designer", "design-lead"]
+  },
+  "20260728-design-001": {
+    "category_kr": "디자인 · 제품 · 테크",
+    "category_en": "Design · Product · Tech",
+    "impactScore": 2,
+    "positions": ["industrial-designer"]
+  },
+  "20260728-design-002": {
+    "category_kr": "디자인 · 제품 · 입력장치",
+    "category_en": "Design · Product · Input Device",
+    "impactScore": 2,
+    "positions": ["industrial-designer"]
+  },
+  "20260728-design-003": {
+    "category_kr": "디자인 · 브랜딩 · 광고",
+    "category_en": "Design · Branding · Advertising",
+    "impactScore": 4,
+    "positions": ["art-director", "brand-designer"]
+  },
+  "20260728-design-004": {
+    "category_kr": "디자인 · 전시 · 리빙",
+    "category_en": "Design · Exhibition · Living",
+    "impactScore": 3,
+    "positions": ["industrial-designer", "architect"]
+  }
+}

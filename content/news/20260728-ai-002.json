@@ -1,0 +1,50 @@
+{
+  "contentId": "20260728-ai-002",
+  "date": "2026-07-28",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "ZDNet Korea",
+    "publishedAt": "2026-07-27"
+  },
+  "url": "https://zdnet.co.kr/view/?no=20260727155357",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "AI · 공공 · 정책",
+    "en": "AI · Public · Policy"
+  },
+  "title": {
+    "kr": "과기정통부, 국가연구시설·장비 AI검색 시범 도입",
+    "en": null
+  },
+  "summary": {
+    "kr": "과학기술정보통신부가 국가연구시설·장비 종합정보시스템(ZEUS)에 AI 기반 검색 서비스를 7월 27일부터 시범 도입했다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "ZEUS 시스템에 AI검색이 결합되는 방식",
+      "연구자들의 장비·시설 탐색 효율화 기대효과",
+      "향후 정식 도입 일정과 확산 계획"
+    ],
+    "en": []
+  },
+  "positions": [],
+  "designer": {
+    "kr": "공공 정보 시스템에 AI 검색이 결합되는 사례로, 정보 탐색 UX를 어떻게 설계하느냐가 서비스 체감 품질을 좌우할 좋은 참고 사례입니다.",
+    "en": null
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "공공서비스 AI 적용 사례 참고 · UX 기획자 저장 추천",
+    "en": null
+  },
+  "comment": {
+    "kr": "공공기관의 AI 도입은 보통 느리고 보수적이지만, 이번 ZEUS AI검색 시범 도입은 실제 연구 현장의 불편(장비 탐색의 어려움)을 겨냥한 실용적인 시도로 보입니다.\n검색 UX의 성패는 결국 '얼마나 정확하게 의도를 이해하는가'에 달려 있는데, 공공데이터 특유의 비정형성과 전문 용어를 AI가 얼마나 잘 소화하는지가 관건이 될 것입니다.\n비슷한 공공 정보시스템 프로젝트를 맡고 있다면, 이번 사례가 어떻게 확산되는지 지켜볼 만합니다.",
+    "en": null
+  },
+  "thumbLabel": "AI검색",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}
