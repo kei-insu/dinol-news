@@ -1,0 +1,194 @@
+{
+  "TechCrunch": {
+    "region": "해외",
+    "group": "TechCrunch"
+  },
+  "Dezeen": {
+    "region": "해외",
+    "group": "Dezeen"
+  },
+  "Yanko Design": {
+    "region": "해외",
+    "group": "Yanko Design"
+  },
+  "ArchDaily": {
+    "region": "해외",
+    "group": "ArchDaily"
+  },
+  "It's Nice That": {
+    "region": "해외",
+    "group": "It's Nice That"
+  },
+  "Design Week": {
+    "region": "해외",
+    "group": "Design Week"
+  },
+  "UN News": {
+    "region": "해외",
+    "group": "UN News"
+  },
+  "Axios": {
+    "region": "해외",
+    "group": "Axios"
+  },
+  "Tech Times": {
+    "region": "해외",
+    "group": "Tech Times"
+  },
+  "Times of India": {
+    "region": "해외",
+    "group": "Times of India"
+  },
+  "The Verge": {
+    "region": "해외",
+    "group": "The Verge"
+  },
+  "BuildFastWithAI": {
+    "region": "해외",
+    "group": "BuildFastWithAI"
+  },
+  "Reuters": {
+    "region": "해외",
+    "group": "Reuters"
+  },
+  "Core77": {
+    "region": "해외",
+    "group": "Core77"
+  },
+  "Figma Blog": {
+    "region": "해외",
+    "group": "Figma Blog"
+  },
+  "LogoLounge Report": {
+    "region": "해외",
+    "group": "LogoLounge Report"
+  },
+  "Business Insider": {
+    "region": "해외",
+    "group": "Business Insider"
+  },
+  "U.S. News": {
+    "region": "해외",
+    "group": "U.S. News"
+  },
+  "NPR": {
+    "region": "해외",
+    "group": "NPR"
+  },
+  "Music Business Worldwide": {
+    "region": "해외",
+    "group": "Music Business Worldwide"
+  },
+  "Elle Decor": {
+    "region": "해외",
+    "group": "Elle Decor"
+  },
+  "Variety": {
+    "region": "해외",
+    "group": "Variety"
+  },
+  "CNBC": {
+    "region": "해외",
+    "group": "CNBC"
+  },
+  "Anthropic": {
+    "region": "해외",
+    "group": "Anthropic"
+  },
+  "AI News": {
+    "region": "해외",
+    "group": "AI News"
+  },
+  "Creative Bloq": {
+    "region": "해외",
+    "group": "Creative Bloq"
+  },
+  "iTechPost": {
+    "region": "해외",
+    "group": "iTechPost"
+  },
+  "ZDNet Korea": {
+    "region": "국내",
+    "group": "ZDNet Korea"
+  },
+  "디자인플러스": {
+    "region": "국내",
+    "group": "디자인하우스"
+  },
+  "헤이팝": {
+    "region": "국내",
+    "group": "디자인하우스"
+  },
+  "AI타임스": {
+    "region": "국내",
+    "group": "AI타임스"
+  },
+  "전자신문": {
+    "region": "국내",
+    "group": "전자신문"
+  },
+  "디자인 나침반": {
+    "region": "국내",
+    "group": "디자인 나침반"
+  },
+  "인공지능신문": {
+    "region": "국내",
+    "group": "인공지능신문"
+  },
+  "뉴시스": {
+    "region": "국내",
+    "group": "뉴시스"
+  },
+  "머니투데이": {
+    "region": "국내",
+    "group": "머니투데이"
+  },
+  "연합뉴스": {
+    "region": "국내",
+    "group": "연합뉴스"
+  },
+  "미디어오늘": {
+    "region": "국내",
+    "group": "미디어오늘"
+  },
+  "한국경제": {
+    "region": "국내",
+    "group": "한국경제"
+  },
+  "Korea Herald": {
+    "region": "국내",
+    "group": "Korea Herald"
+  },
+  "뉴스스페이스": {
+    "region": "국내",
+    "group": "뉴스스페이스"
+  },
+  "MBC뉴스": {
+    "region": "국내",
+    "group": "MBC뉴스"
+  },
+  "코리아타임스(미주 한국일보)": {
+    "region": "국내",
+    "group": "코리아타임스(미주 한국일보)"
+  },
+  "파이낸셜뉴스": {
+    "region": "국내",
+    "group": "파이낸셜뉴스"
+  },
+  "이뉴스투데이": {
+    "region": "국내",
+    "group": "이뉴스투데이"
+  },
+  "서울특별시": {
+    "region": "국내",
+    "group": "서울특별시"
+  },
+  "인벤": {
+    "region": "국내",
+    "group": "인벤"
+  },
+  "뉴스1": {
+    "region": "국내",
+    "group": "뉴스1"
+  }
+}

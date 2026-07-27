@@ -1,0 +1,67 @@
+{
+  "20260727-ai-001": {
+    "category_kr": "AI · 영상 · 광고",
+    "category_en": "AI · Video · Advertising",
+    "impactScore": 4,
+    "positions": [
+      "video-designer",
+      "art-director"
+    ]
+  },
+  "20260727-ai-002": {
+    "category_kr": "AI · 오픈소스 · 개발문화",
+    "category_en": "AI · Open Source · Dev Culture",
+    "impactScore": 2,
+    "positions": []
+  },
+  "20260727-ai-003": {
+    "category_kr": "AI · 인프라 · 에너지",
+    "category_en": "AI · Infrastructure · Energy",
+    "impactScore": 1,
+    "positions": []
+  },
+  "20260727-ai-004": {
+    "category_kr": "AI · 툴 · 생성미디어",
+    "category_en": "AI · Tools · Generative Media",
+    "impactScore": 5,
+    "positions": [
+      "motion-designer",
+      "video-designer"
+    ]
+  },
+  "20260727-design-001": {
+    "category_kr": "디자인 · 브랜딩 · 타이포그래피",
+    "category_en": "Design · Branding · Typography",
+    "impactScore": 4,
+    "positions": [
+      "typographer",
+      "brand-designer"
+    ]
+  },
+  "20260727-design-002": {
+    "category_kr": "디자인 · 제품 · UX",
+    "category_en": "Design · Product · UX",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer"
+    ]
+  },
+  "20260727-design-003": {
+    "category_kr": "디자인 · 건축 · 리노베이션",
+    "category_en": "Design · Architecture · Renovation",
+    "impactScore": 3,
+    "positions": [
+      "architect",
+      "space-designer"
+    ]
+  },
+  "20260727-design-004": {
+    "category_kr": "디자인 · 브랜딩 · 그래픽",
+    "category_en": "Design · Branding · Graphic",
+    "impactScore": 4,
+    "positions": [
+      "brand-designer",
+      "package-designer"
+    ]
+  }
+}
