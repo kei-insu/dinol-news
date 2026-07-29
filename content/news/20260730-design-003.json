@@ -1,0 +1,59 @@
+{
+  "contentId": "20260730-design-003",
+  "date": "2026-07-30",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-28"
+  },
+  "url": "https://www.itsnicethat.com/articles/international-magic-martine-rose-graphic-design-digital-280726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 패션 · 디지털",
+    "en": "Design · Fashion · Digital"
+  },
+  "title": {
+    "kr": "마틴 로즈와 6년, 매끄러움을 거부하며 만든 패션 디지털 협업",
+    "en": "How International Magic established its technology-bending design collaboration with Martine Rose"
+  },
+  "summary": {
+    "kr": "스튜디오 인터내셔널 매직은 6년 가까이 패션 디자이너 마틴 로즈와 가상 공간, 3D 스캔 애니메이션, CCTV를 차용한 쇼, 캠페인 그래픽, 웹 플랫폼을 함께 만들어 왔습니다. 매체는 디지털이지만 매끄러움 대신 질감과 균열을 남기는 물성 있는 결과물을 지향합니다.",
+    "en": "For nearly six years, studio International Magic has worked with fashion designer Martine Rose across virtual environments, 3D scanned animations, CCTV-inspired shows, campaign graphics and web platforms. The work is digital but deliberately physical in feel, favouring texture and disruption over seamlessness."
+  },
+  "points": {
+    "kr": [
+      "포맷이 아니라 디자이너가 전하려는 감정에서 프로젝트를 시작",
+      "2021년 가상 쇼 〈What We Do All Day〉를 2026년 물리적 설치로 재구성",
+      "웹 플랫폼 Our Channel은 여섯 개 라이브 채널을 되감기·건너뛰기 없이 송출",
+      "8비트 타이포에 연보라·따뜻한 주황·민트를 얹어 의도적 긴장감 조성"
+    ],
+    "en": [
+      "Projects start from a feeling the designer wants to convey, not a format",
+      "2021 virtual show What We Do All Day was rebuilt as a physical installation in 2026",
+      "Our Channel web platform broadcasts six live stations with no rewind or skip",
+      "8-bit type set against pale lilac, warm orange and mint creates deliberate tension"
+    ]
+  },
+  "positions": [
+    "art-director",
+    "motion-designer"
+  ],
+  "designer": {
+    "kr": "눈에 띄는 선택은 마찰을 일부러 설계한 것입니다. 되감기도 건너뛰기도 없고 인터페이스는 조금 불편한데, 방문자가 생각하고 나서 반응하게 만들려는 의도입니다. 최적화가 기본값이 아니라 선택이며 때로는 틀린 선택이라는 점을 짚어줍니다.",
+    "en": "The interesting move is designing friction on purpose. No rewind, no skip, a slightly clunky interface, all so the visitor has to think before engaging. It is a reminder that optimisation is a choice, not a default, and sometimes the wrong one."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "의도적 마찰 설계·패션 디지털 협업 참고 · 저장 추천",
+    "en": "Strong reference for intentional friction in UX"
+  },
+  "comment": {
+    "kr": "디지털 작업치고 출발점이 특이합니다. 프로젝트마다 디자이너가 관객에게 남기고 싶은 감정에서 시작하고, 모든 제작 결정이 채널 규격이 아니라 그 감정에 복무합니다. 결과물끼리 전혀 닮지 않았는데도 하나의 작업으로 읽히는 이유입니다.\nOur Channel이 가장 분명한 사례입니다. 여섯 개 고정 채널, 되감기 없음, 건너뛰기 없음, 그리고 팀 스스로 조금 불편하다고 말하는 인터페이스. 이 마찰이 곧 설계입니다. 미디어를 소비하는 일반적인 방식에 정면으로 반대해 만들었고, 그래서 방문자는 반응하기 전에 생각하게 됩니다.\n불완전함을 다루는 방식도 참고할 만합니다. 글리치와 어색함, 모순을 지우지 않고 남겨두는데, 휘발되기 쉬운 디지털 작업이 오래 남을 만한 질감을 얻는 지점이 거기입니다. 일단 다듬고 보는 습관이 있다면 좋은 반례입니다.",
+    "en": "The starting point is unusual for digital work. Each project begins from a feeling the designer wants the audience to have, and every craft decision serves that feeling rather than a channel spec. That is why the outputs look nothing like each other yet read as one body of work.\nOur Channel is the clearest case. Six fixed live stations, no rewind, no skip, and an interface the team openly calls a bit clunky. The friction is the design: it was made in direct opposition to how media is normally consumed, so the visitor has to think before engaging.\nWorth noting how the studio treats imperfection. Glitches, awkwardness and contradiction are left visible rather than smoothed away, and that is what gives ephemeral digital projects enough texture to last. For anyone whose default instinct is to polish, this is a useful counterexample."
+  },
+  "thumbLabel": "패션디지털",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}

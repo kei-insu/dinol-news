@@ -1,0 +1,54 @@
+{
+  "contentId": "20260730-ai-001",
+  "date": "2026-07-30",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-28"
+  },
+  "url": "https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 정책 · 전략",
+    "en": "AI · Policy · Strategy"
+  },
+  "title": {
+    "kr": "샘 알트먼 \"이제는 AI 발전 속도를 늦출 때\"",
+    "en": "Sam Altman is ready to decelerate"
+  },
+  "summary": {
+    "kr": "오픈AI CEO 샘 알트먼이 이제는 AI 발전 속도를 '조절'할 때라고 언급했습니다. 사회가 새로운 AI 역량에 적응할 시간을 주는 동시에, 프런티어 랩들 간의 규제 포획을 피해야 한다는 취지입니다.",
+    "en": "OpenAI CEO Sam Altman says it may be time to \"pace\" AI development, arguing the industry should give society time to adapt to new capability levels while avoiding regulatory capture among frontier labs."
+  },
+  "points": {
+    "kr": [
+      "알트먼이 속도 조절을 이야기하는 이유",
+      "프런티어 랩 간 규제 포획 우려",
+      "'사회가 적응할 시간'이 의미하는 실무적 함의"
+    ],
+    "en": [
+      "Why Altman now favors pacing AI progress",
+      "Concerns about regulatory capture among frontier labs",
+      "What \"giving society time to adapt\" means in practice"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "AI 최대 옹호자조차 속도 조절을 이야기한다는 신호입니다. 디자이너가 쓰는 AI 도구의 출시 일정에도 영향을 줄 수 있어 주시할 만합니다.",
+    "en": "A signal that even AI's biggest boosters are rethinking pace, worth watching for how it shapes rollout timelines for the tools designers rely on."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 정책 흐름을 추적하는 실무자에게 참고 추천",
+    "en": "Worth a read for anyone tracking AI policy direction"
+  },
+  "comment": {
+    "kr": "AI 경쟁을 가속화하는 데 누구보다 앞장섰던 인물이 이제 감속을 이야기한다는 점이 눈에 띕니다. 알트먼의 발언은 이념적 전환이라기보다 리스크 관리에 가깝습니다. 역량 도약을 규제 당국과 대중에게 설명하기 어려워질수록, 감속은 더 강한 규제를 피하기 위한 헤지 수단이 됩니다.\n프런티어 모델 위에서 제품을 만드는 팀 입장에서 더 중요한 신호는 철학이 아니라 실제 출시 속도입니다. 오픈AI와 경쟁사들이 릴리스 주기를 늘린다면, 예상치 못한 역량 도약은 줄고 로드맵은 더 예측 가능해질 것입니다.\n실행 아이템보다는 배경 지식으로 읽으면 좋습니다. 다음 대형 모델 업데이트가 왜 이전보다 늦어질 수 있는지 이해관계자에게 설명할 때 참고하기 좋은 맥락입니다.",
+    "en": "It's notable when the person who arguably did more than anyone to accelerate the current AI race starts talking about slowing down. Altman's comments read less like an ideological shift and more like risk management, as capability jumps get harder to explain to regulators and the public, deceleration becomes a hedge against a harsher crackdown.\nFor product teams building on frontier models, the more concrete signal here isn't the philosophy, it's the pacing itself. If OpenAI and its peers stretch out release cycles, expect fewer surprise capability jumps and more predictable roadmaps, which is generally good news for anyone planning AI features months in advance.\nRead this as background context rather than an action item. It's useful for framing conversations with stakeholders about why the next big model jump might take longer than the last one did."
+  },
+  "thumbLabel": "감속",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

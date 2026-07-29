@@ -1,0 +1,57 @@
+{
+  "contentId": "20260730-ai-002",
+  "date": "2026-07-30",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "BigGo Finance",
+    "publishedAt": "2026-07-08"
+  },
+  "url": "https://finance.biggo.com/news/9afcf6f0-fad1-403a-ad2f-174d86f863d2",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 디자인툴 · 이미지생성",
+    "en": "AI · Design Tool · Image Generation"
+  },
+  "title": {
+    "kr": "바이트댄스 '시드림 5.0 프로' 공개…10개국어 지원, 고밀도 인포그래픽 정조준",
+    "en": "ByteDance Unveils Seedream 5.0 Pro: Supports Over 10 Languages, Targets High-Density Infographics and Professional Editing"
+  },
+  "summary": {
+    "kr": "바이트댄스 AI팀 시드(Seed)가 멀티모달 이미지 모델 '시드림 5.0 프로'를 출시했습니다. 레이어 분리, 영역 지정 편집, 14개 언어 고밀도 인포그래픽 렌더링을 지원하며 전문 디자인 영역에서 AI의 역할을 재정의하려 합니다.",
+    "en": "ByteDance's Seed team launched Seedream 5.0 Pro, a multimodal image model with layer separation, spatial-positioning editing, and dense infographic rendering in 14 languages, aiming to redefine AI's role in professional design."
+  },
+  "points": {
+    "kr": [
+      "편집 가능한 레이어드 PNG 출력",
+      "클릭·올가미·속성 교체 등 기존 디자인 툴과 유사한 편집",
+      "14개 언어 고밀도 인포그래픽 렌더링"
+    ],
+    "en": [
+      "Layered PNG output for editable design layers",
+      "Click, lasso and replace-attribute editing like traditional design software",
+      "Dense infographic rendering in 14 languages"
+    ]
+  },
+  "positions": [
+    "graphic-designer",
+    "editorial-designer"
+  ],
+  "designer": {
+    "kr": "이미지 생성 도구가 '디자인 툴' 영역으로 더 깊이 들어온 사례입니다. 레이어 분리와 클릭 편집 워크플로 덕분에 AI 결과물을 손으로 재작업하는 시간이 줄어듭니다.",
+    "en": "This pushes image-gen tools further into \"design tool\" territory, since layer separation and click-to-edit workflows mean less time rebuilding AI output by hand."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "인포그래픽·정보 밀도 높은 레이아웃 작업에 AI를 쓴다면 테스트 추천",
+    "en": "Worth testing if you produce infographics or dense layouts with AI"
+  },
+  "comment": {
+    "kr": "시드림 5.0 프로가 일반 이미지 생성기와 다른 점은 레이어 분리 기능입니다. 결과물을 하나의 평면 이미지로 넘기는 대신 편집 가능한 레이어로 분해해주는데, 이는 AI 이미지 도구가 전문 디자인 소프트웨어를 대체하지 못했던 바로 그 빈틈을 메우는 지점입니다.\n14개 언어 고밀도 인포그래픽 렌더링은 조용하지만 더 중요한 기능입니다. 대부분의 이미지 생성기는 영어 외 언어에서 텍스트가 깨지기 쉬운데, 이 기능이 실제로 여러 언어에서 안정적으로 작동한다면 글로벌 마케팅·에디토리얼 팀에게는 실질적인 공백을 메워주는 셈입니다.\nBytePlus API를 통한 엔터프라이즈 우선 출시라 개인 디자이너가 당장 직접 써보긴 어렵지만, 미드저니나 어도비 파이어플라이 같은 주류 도구가 다음에 어디로 향할지 미리 보여주는 사례로 눈여겨볼 만합니다.",
+    "en": "What separates Seedream 5.0 Pro from a typical image generator is the layer separation feature. Instead of handing back a flattened image, it decomposes a generation into editable layers, which is exactly the missing piece that's kept AI image tools from replacing real design software for professional work.\nThe 14-language dense infographic rendering is the more quietly important feature here. Most image generators still mangle text at scale, especially outside English, so if this genuinely holds up across languages it closes a real gap for global marketing and editorial teams.\nEnterprise-first rollout via BytePlus API means most individual designers won't touch this directly yet, but it's worth tracking as a preview of where mainstream tools like Midjourney or Adobe Firefly are likely headed next."
+  },
+  "thumbLabel": "이미지AI",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

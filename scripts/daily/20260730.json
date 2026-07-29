@@ -1,0 +1,69 @@
+{
+  "20260730-ai-001": {
+    "category_kr": "AI · 정책 · 전략",
+    "category_en": "AI · Policy · Strategy",
+    "impactScore": 1,
+    "positions": []
+  },
+  "20260730-ai-002": {
+    "category_kr": "AI · 디자인툴 · 이미지생성",
+    "category_en": "AI · Design Tool · Image Generation",
+    "impactScore": 4,
+    "positions": [
+      "graphic-designer",
+      "editorial-designer"
+    ]
+  },
+  "20260730-ai-003": {
+    "category_kr": "AI · 툴 · 사용한도",
+    "category_en": "AI · Tool · Usage Limits",
+    "impactScore": 3,
+    "positions": [
+      "design-lead"
+    ]
+  },
+  "20260730-ai-004": {
+    "category_kr": "AI · 디자인툴 · 노코드",
+    "category_en": "AI · Design Tool · No-Code",
+    "impactScore": 4,
+    "positions": [
+      "ux-designer",
+      "product-designer"
+    ]
+  },
+  "20260730-design-001": {
+    "category_kr": "디자인 · 브랜딩 · 컨퍼런스",
+    "category_en": "Design · Branding · Conference",
+    "impactScore": 3,
+    "positions": [
+      "brand-designer",
+      "design-lead"
+    ]
+  },
+  "20260730-design-002": {
+    "category_kr": "디자인 · 브랜딩 · 패션",
+    "category_en": "Design · Branding · Fashion",
+    "impactScore": 5,
+    "positions": [
+      "bx-designer",
+      "brand-designer"
+    ]
+  },
+  "20260730-design-003": {
+    "category_kr": "디자인 · 패션 · 디지털",
+    "category_en": "Design · Fashion · Digital",
+    "impactScore": 3,
+    "positions": [
+      "art-director",
+      "motion-designer"
+    ]
+  },
+  "20260730-design-004": {
+    "category_kr": "디자인 · 전시 · 공예",
+    "category_en": "Design · Exhibition · Craft",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer"
+    ]
+  }
+}

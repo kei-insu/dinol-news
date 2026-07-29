@@ -1,0 +1,59 @@
+{
+  "contentId": "20260730-design-002",
+  "date": "2026-07-30",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-29"
+  },
+  "url": "https://www.itsnicethat.com/articles/accept-and-proceed-vans-graphic-design-290726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 패션",
+    "en": "Design · Branding · Fashion"
+  },
+  "title": {
+    "kr": "흩어진 반스를 다시 묶은 브랜드 시스템, 고정할 것과 열어둘 것을 나누다",
+    "en": "Accept & Proceed's new system for Vans is a lesson in how to inject clarity into an iconic brand"
+  },
+  "summary": {
+    "kr": "런던 스튜디오 액셉트 앤 프로시드가 반스의 시각적·개념적 토대를 다시 세워 브랜드 시스템과 기준, 제품 브랜딩 가이드라인을 내놨습니다. 여러 차례 주인이 바뀌며 흩어진 브랜드를 'Our Canvas. Your Way.'라는 한 문장 아래로 다시 묶었습니다.",
+    "en": "London studio Accept & Proceed rebuilt the visual and conceptual foundation of Vans, delivering a new brand system, standards and product branding guidelines. After decades of different owners and eras, the brand had fragmented, and the reset is guided by a single north star: 'Our Canvas. Your Way.'"
+  },
+  "points": {
+    "kr": [
+      "기존 자산을 교체하지 않고 2계층 프레임워크 안에서 역할만 명확히 재배치",
+      "무엇을 고정하고 무엇을 팀이 변형할 수 있는지를 프레임워크로 규정",
+      "전체 제품 포트폴리오 감사를 거쳐 제품 브랜딩 기준을 도출",
+      "기존 Fann Doren에 Pitch Mono를 보조 목소리로 추가, 컨덴스드 스타일 비중 강화"
+    ],
+    "en": [
+      "Existing assets kept, but given clearer roles inside a two-layer framework",
+      "The framework defines what stays fixed and what teams can flex",
+      "A full audit of the product portfolio produced the product branding standards",
+      "Pitch Mono added as a supporting voice alongside the existing Fann Doren family"
+    ]
+  },
+  "positions": [
+    "bx-designer",
+    "brand-designer"
+  ],
+  "designer": {
+    "kr": "가져갈 것은 2계층 프레임워크입니다. 규칙을 늘리는 대신 무엇이 반스를 반스로 보이게 하는지를 먼저 묻고, 그것만 고정한 뒤 나머지는 열어뒀습니다. 일관성과 현장 자율성이 늘 부딪치는 문제에 대한 실행 가능한 답입니다.",
+    "en": "The two-layer framework is the takeaway. Instead of adding rules, the studio asked what genuinely made Vans recognisable, fixed only that, and left the rest flexible. That is a workable answer to the usual tension between consistency and local freedom."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "브랜드 시스템 실무자 필독 · 즉시 참고 추천",
+    "en": "Essential reference for brand system work"
+  },
+  "comment": {
+    "kr": "따라 할 만한 것은 순서입니다. 브랜드를 기본까지 걷어내고 무엇이 이 브랜드를 알아보게 만드는지 묻는 것, 실제로 제품 전반에 어떻게 적용돼 있는지 전수 점검하는 것, 그다음에야 기준을 쓰되 규칙을 늘리는 대신 상수를 정의하는 것입니다.\n타이포그래피 결정에도 같은 절제가 보입니다. 서체 체계를 갈아엎는 대신 Pitch Mono를 보조 목소리로 더하고, 기존 패밀리의 컨덴스드 스타일 비중을 높여 적용 일관성을 끌어올렸습니다. 이미 있는 것을 정리하는 편이 새로 들이는 것보다 대개 싸고 안전합니다.\n가장 어려웠던 부분은 시각이 아니라 문화였습니다. 스케이트보드 같은 서브컬처는 만들어진 티가 나는 것을 불신하기 때문에, 통제를 강제하는 시스템이었다면 실패했을 것입니다. 반스를 스케이트 브랜드가 아니라 창작 가능성을 다루는 브랜드로 다시 규정한 순간, 시스템이 단속이 아니라 참여를 부르는 쪽으로 방향을 잡았습니다.",
+    "en": "The method is worth copying in order. Strip the brand to basics and ask what genuinely makes it recognisable. Audit how it is actually applied across the whole product portfolio. Only then write standards, and write them to define constants rather than to add rules.\nThe typography decision shows the same restraint. Rather than replacing the type system, they added Pitch Mono as a supporting voice and leaned on condensed styles of the existing family to improve consistency. Clarifying what already exists is usually cheaper and safer than a fresh set.\nThe hardest part was cultural rather than visual. Skate and subculture audiences distrust anything that feels manufactured, so a system that enforced control would have failed. The breakthrough was reframing Vans as a brand built around creative possibility, which let the system invite participation instead of policing it."
+  },
+  "thumbLabel": "브랜드시스템",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}
