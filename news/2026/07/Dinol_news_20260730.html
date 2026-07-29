@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 30</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 30, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/" target="_blank"
+       data-category="AI · 정책 · 전략" data-category-en="AI · Policy · Strategy"
+       data-summary="OpenAI CEO Sam Altman says it may be time to &quot;pace&quot; AI development, arguing the industry should give society time to adapt to new capability levels while avoiding regulatory capture among frontier labs." data-summary-kr="오픈AI CEO 샘 알트먼이 이제는 AI 발전 속도를 '조절'할 때라고 언급했습니다. 사회가 새로운 AI 역량에 적응할 시간을 주는 동시에, 프런티어 랩들 간의 규제 포획을 피해야 한다는 취지입니다."
+       data-designer="A signal that even AI's biggest boosters are rethinking pace, worth watching for how it shapes rollout timelines for the tools designers rely on." data-designer-kr="AI 최대 옹호자조차 속도 조절을 이야기한다는 신호입니다. 디자이너가 쓰는 AI 도구의 출시 일정에도 영향을 줄 수 있어 주시할 만합니다."
+       data-impact-score="3"
+       data-points="Why Altman now favors pacing AI progress|Concerns about regulatory capture among frontier labs|What &quot;giving society time to adapt&quot; means in practice" data-points-kr="알트먼이 속도 조절을 이야기하는 이유|프런티어 랩 간 규제 포획 우려|'사회가 적응할 시간'이 의미하는 실무적 함의"
+       data-recommend="Worth a read for anyone tracking AI policy direction" data-recommend-kr="AI 정책 흐름을 추적하는 실무자에게 참고 추천"
+       data-comment="It's notable when the person who arguably did more than anyone to accelerate the current AI race starts talking about slowing down. Altman's comments read less like an ideological shift and more like risk management, as capability jumps get harder to explain to regulators and the public, deceleration becomes a hedge against a harsher crackdown.
+For product teams building on frontier models, the more concrete signal here isn't the philosophy, it's the pacing itself. If OpenAI and its peers stretch out release cycles, expect fewer surprise capability jumps and more predictable roadmaps, which is generally good news for anyone planning AI features months in advance.
+Read this as background context rather than an action item. It's useful for framing conversations with stakeholders about why the next big model jump might take longer than the last one did." data-comment-kr="AI 경쟁을 가속화하는 데 누구보다 앞장섰던 인물이 이제 감속을 이야기한다는 점이 눈에 띕니다. 알트먼의 발언은 이념적 전환이라기보다 리스크 관리에 가깝습니다. 역량 도약을 규제 당국과 대중에게 설명하기 어려워질수록, 감속은 더 강한 규제를 피하기 위한 헤지 수단이 됩니다.
+프런티어 모델 위에서 제품을 만드는 팀 입장에서 더 중요한 신호는 철학이 아니라 실제 출시 속도입니다. 오픈AI와 경쟁사들이 릴리스 주기를 늘린다면, 예상치 못한 역량 도약은 줄고 로드맵은 더 예측 가능해질 것입니다.
+실행 아이템보다는 배경 지식으로 읽으면 좋습니다. 다음 대형 모델 업데이트가 왜 이전보다 늦어질 수 있는지 이해관계자에게 설명할 때 참고하기 좋은 맥락입니다."
+       data-title-en="Sam Altman is ready to decelerate" data-title-kr="샘 알트먼 &quot;이제는 AI 발전 속도를 늦출 때&quot;">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">감속</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 28</div>
+        <div class="card-title">샘 알트먼 "이제는 AI 발전 속도를 늦출 때"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://finance.biggo.com/news/9afcf6f0-fad1-403a-ad2f-174d86f863d2" target="_blank"
+       data-category="AI · 디자인툴 · 이미지생성" data-category-en="AI · Design Tool · Image Generation"
+       data-summary="ByteDance's Seed team launched Seedream 5.0 Pro, a multimodal image model with layer separation, spatial-positioning editing, and dense infographic rendering in 14 languages, aiming to redefine AI's role in professional design." data-summary-kr="바이트댄스 AI팀 시드(Seed)가 멀티모달 이미지 모델 '시드림 5.0 프로'를 출시했습니다. 레이어 분리, 영역 지정 편집, 14개 언어 고밀도 인포그래픽 렌더링을 지원하며 전문 디자인 영역에서 AI의 역할을 재정의하려 합니다."
+       data-designer="This pushes image-gen tools further into &quot;design tool&quot; territory, since layer separation and click-to-edit workflows mean less time rebuilding AI output by hand." data-designer-kr="이미지 생성 도구가 '디자인 툴' 영역으로 더 깊이 들어온 사례입니다. 레이어 분리와 클릭 편집 워크플로 덕분에 AI 결과물을 손으로 재작업하는 시간이 줄어듭니다."
+       data-impact-score="4"
+       data-points="Layered PNG output for editable design layers|Click, lasso and replace-attribute editing like traditional design software|Dense infographic rendering in 14 languages" data-points-kr="편집 가능한 레이어드 PNG 출력|클릭·올가미·속성 교체 등 기존 디자인 툴과 유사한 편집|14개 언어 고밀도 인포그래픽 렌더링"
+       data-recommend="Worth testing if you produce infographics or dense layouts with AI" data-recommend-kr="인포그래픽·정보 밀도 높은 레이아웃 작업에 AI를 쓴다면 테스트 추천"
+       data-comment="What separates Seedream 5.0 Pro from a typical image generator is the layer separation feature. Instead of handing back a flattened image, it decomposes a generation into editable layers, which is exactly the missing piece that's kept AI image tools from replacing real design software for professional work.
+The 14-language dense infographic rendering is the more quietly important feature here. Most image generators still mangle text at scale, especially outside English, so if this genuinely holds up across languages it closes a real gap for global marketing and editorial teams.
+Enterprise-first rollout via BytePlus API means most individual designers won't touch this directly yet, but it's worth tracking as a preview of where mainstream tools like Midjourney or Adobe Firefly are likely headed next." data-comment-kr="시드림 5.0 프로가 일반 이미지 생성기와 다른 점은 레이어 분리 기능입니다. 결과물을 하나의 평면 이미지로 넘기는 대신 편집 가능한 레이어로 분해해주는데, 이는 AI 이미지 도구가 전문 디자인 소프트웨어를 대체하지 못했던 바로 그 빈틈을 메우는 지점입니다.
+14개 언어 고밀도 인포그래픽 렌더링은 조용하지만 더 중요한 기능입니다. 대부분의 이미지 생성기는 영어 외 언어에서 텍스트가 깨지기 쉬운데, 이 기능이 실제로 여러 언어에서 안정적으로 작동한다면 글로벌 마케팅·에디토리얼 팀에게는 실질적인 공백을 메워주는 셈입니다.
+BytePlus API를 통한 엔터프라이즈 우선 출시라 개인 디자이너가 당장 직접 써보긴 어렵지만, 미드저니나 어도비 파이어플라이 같은 주류 도구가 다음에 어디로 향할지 미리 보여주는 사례로 눈여겨볼 만합니다."
+       data-title-en="ByteDance Unveils Seedream 5.0 Pro: Supports Over 10 Languages, Targets High-Density Infographics and Professional Editing" data-title-kr="바이트댄스 '시드림 5.0 프로' 공개…10개국어 지원, 고밀도 인포그래픽 정조준">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">이미지AI</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">BigGo Finance · 2026. 07. 08</div>
+        <div class="card-title">바이트댄스 '시드림 5.0 프로' 공개…10개국어 지원, 고밀도 인포그래픽 정조준</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260728164107" target="_blank"
+       data-category="AI · 툴 · 사용한도"
+       data-summary="오픈AI와 앤트로픽이 AI 코딩 도구의 이용 한도를 잇달아 확대하며 개발자 시장 선점 경쟁에 나섰습니다. 모델 성능이 상향 평준화되면서, 작업을 끊지 않고 얼마나 오래 도구를 쓸 수 있는지가 새로운 경쟁 요소로 떠올랐다는 진단입니다."
+       data-points="오픈AI, 코덱스·챗GPT 워크 유료 이용자의 소진된 한도를 초기화|앤트로픽, 클로드 코드의 5시간 단위 한도를 2배로 확대하고 혼잡 시간대 제한 폐지|클로드 오퍼스 모델의 API 호출 한도도 상향|성능이 올라도 토큰 사용량이 함께 늘면 실제 처리 업무량은 줄어드는 구조"
+       data-designer="도구 선택 기준이 성능에서 지속 사용 가능 시간으로 옮겨가고 있다는 신호입니다. 요금제를 고를 때 벤치마크 점수보다 5시간 단위 한도나 혼잡 시간대 제한 같은 조건을 먼저 확인하는 편이 실무에서는 더 유용합니다."
+       data-impact-score="4"
+       data-recommend="AI 도구 요금제·한도 점검용 · 저장 추천"
+       data-comment="경쟁 축이 바뀌었다는 점이 이 기사의 핵심입니다. 모델 성능 차이가 좁혀지자, 이제는 작업을 중단하지 않고 얼마나 오래 붙어 있을 수 있는가가 선택 기준이 됐습니다.
+숫자로 보면 명확합니다. 앤트로픽은 5시간 단위 이용 한도를 2배로 늘리고 혼잡 시간대 제한을 없앴으며, 오픈AI는 이미 소진된 한도를 다시 채워주는 조치를 반복하고 있습니다. 정식 요금제 개편이 아니라 임시 조치라는 점에서, 수요가 공급을 계속 앞지르고 있다는 뜻이기도 합니다.
+실무 관점에서 기억할 대목은 성능과 사용량의 상충입니다. 추론 강도를 높이면 결과는 좋아지지만 토큰 소비가 함께 늘어 한도가 빨리 닳습니다. 도구를 고를 때 최고 성능 설정을 기본값으로 둘지, 작업 종류에 따라 낮출지를 미리 정해두는 편이 낫습니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">사용한도</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 28</div>
+        <div class="card-title">"코딩 멈추지 마세요"…오픈AI·앤트로픽, AI 사용 한도 경쟁 나선 이유</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://byline.network/2026/07/15-623/" target="_blank"
+       data-category="AI · 디자인툴 · 노코드"
+       data-summary="캔바가 'Canva Code 2.0'을 전 세계에 출시했습니다. 프롬프트에만 의존하던 방식에서 벗어나 AI 기반 코드 생성 기능과 캔바의 드래그 앤 드롭 편집기를 함께 제공해, 전문 기술 지식 없이도 인터랙티브 웹사이트와 앱, 디지털 콘텐츠를 만들고 편집해 게시할 수 있게 했습니다."
+       data-points="AI 코드 생성과 드래그 앤 드롭 편집기를 한 화면에서 병행|프롬프트 결과를 그대로 받는 대신 직접 손봐 완성하는 구조|인터랙티브 웹사이트·앱·디지털 콘텐츠 제작과 게시까지 지원|바이브 코딩 흐름에 캔바의 기존 디자인 기능을 결합"
+       data-designer="프롬프트로 생성한 뒤 손으로 고치는 두 단계를 한 도구 안에 넣었다는 점이 핵심입니다. 생성형 도구의 결과물을 매번 다른 편집기로 옮겨야 했던 번거로움을 줄이려는 접근으로, 비전문가 협업자가 있는 팀에서 특히 쓸모가 있습니다."
+       data-impact-score="3"
+       data-recommend="노코드·프로토타입 도구 비교 시 참고"
+       data-comment="주목할 지점은 프롬프트 의존에서 벗어났다는 설명입니다. 생성형 디자인 도구의 약점은 결과가 마음에 들지 않을 때 다시 프롬프트를 쓰는 것 말고는 방법이 없다는 데 있었는데, 드래그 앤 드롭 편집기를 붙여 직접 고칠 수 있게 했습니다.
+실무에서는 이 구조가 협업 방식을 바꿉니다. 디자이너가 아닌 팀원이 초안을 만들고 디자이너가 다듬는 흐름이 하나의 도구 안에서 가능해지기 때문입니다. 다만 브랜드 일관성을 어디까지 강제할 수 있는지는 별도로 확인이 필요합니다.
+경쟁 지형도 함께 볼 필요가 있습니다. 캔바는 쉬운 접근성으로, 피그마는 코드와 캔버스 통합으로, 앤트로픽은 대화형 생성으로 같은 자리를 노리고 있습니다. 도구를 고를 때는 기능 목록보다 우리 팀의 비전문가 비중을 먼저 따지는 편이 빠릅니다.">
+      <div class="thumb g-rust">
+        <div class="noise"></div>
+        <span class="thumb-label">노코드툴</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">바이라인네트워크 · 2026. 07. 15</div>
+        <div class="card-title">캔바, 코드부터 디자인까지 AI로 'Canva Code 2.0' 출시</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.venturesquare.net/1101859" target="_blank"
+       data-category="Design · 브랜딩 · 컨퍼런스"
+       data-summary="아임웹이 개최한 첫 브랜드 컨퍼런스 '브랜드콘 26'에 4천여 명이 신청, 4대1의 경쟁률을 기록했다. 참석자의 62%가 대표·임원 등 의사결정권자였다."
+       data-designer="브랜딩 콘퍼런스에 대한 높은 수요는 '오래가는 브랜드'에 대한 실무자들의 갈증을 보여줍니다. 트렌드·전략·브랜딩 세션 구성 방식은 사내 브랜드 워크숍 기획에도 참고할 만합니다."
+       data-impact-score="3"
+       data-points="사전 신청 4천 명, 경쟁률 4대1 기록|참석자 62%가 대표·임원급 의사결정권자|'DEEP: 깊은 브랜드만 남는다'를 주제로 진행"
+       data-recommend="브랜드 전략 담당자 · 마케팅 리더 참고 추천"
+       data-comment="4천 명 신청에 4대1 경쟁률이라는 숫자는 국내 브랜딩 업계의 갈증을 잘 보여줍니다. 특히 참석자의 62%가 의사결정권자였다는 점은 이 행사가 단순 실무자 대상 세미나가 아니라 브랜드 전략을 실제로 결정하는 사람들의 자리였다는 뜻입니다.
+'깊은 브랜드만 남는다'는 주제 자체도 시사적입니다. 빠르게 뜨고 지는 브랜드가 넘쳐나는 시대에, 오래가는 브랜드의 조건을 데이터와 현장 사례로 짚었다는 점에서 트렌드·전략·브랜딩 세 세션 구성이 특히 눈에 띕니다.
+브랜드 전략을 다루는 실무자라면 이번 행사에서 논의된 세션별 내용을 후속 자료나 발표 영상으로 찾아보는 것을 추천합니다. 특히 '오래가는 브랜드'를 어떻게 정의했는지 짚어보면 실무에 바로 적용할 인사이트를 얻을 수 있습니다.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">브랜드콘</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">벤처스퀘어 · 2026. 07. 28</div>
+        <div class="card-title">4천 명 몰린 첫 '브랜드콘'…아임웹이 묻고 현장의 리더들이 답한 '브랜드의 깊이'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/accept-and-proceed-vans-graphic-design-290726" target="_blank"
+       data-category="Design · Branding · Fashion" data-category-en="Design · Branding · Fashion"
+       data-summary="London studio Accept & Proceed rebuilt the visual and conceptual foundation of Vans, delivering a new brand system, standards and product branding guidelines. After decades of different owners and eras, the brand had fragmented, and the reset is guided by a single north star: 'Our Canvas. Your Way.'" data-summary-kr="런던 스튜디오 액셉트 앤 프로시드가 반스의 시각적·개념적 토대를 다시 세워 브랜드 시스템과 기준, 제품 브랜딩 가이드라인을 내놨습니다. 여러 차례 주인이 바뀌며 흩어진 브랜드를 'Our Canvas. Your Way.'라는 한 문장 아래로 다시 묶었습니다."
+       data-points="Existing assets kept, but given clearer roles inside a two-layer framework|The framework defines what stays fixed and what teams can flex|A full audit of the product portfolio produced the product branding standards|Pitch Mono added as a supporting voice alongside the existing Fann Doren family" data-points-kr="기존 자산을 교체하지 않고 2계층 프레임워크 안에서 역할만 명확히 재배치|무엇을 고정하고 무엇을 팀이 변형할 수 있는지를 프레임워크로 규정|전체 제품 포트폴리오 감사를 거쳐 제품 브랜딩 기준을 도출|기존 Fann Doren에 Pitch Mono를 보조 목소리로 추가, 컨덴스드 스타일 비중 강화"
+       data-designer="The two-layer framework is the takeaway. Instead of adding rules, the studio asked what genuinely made Vans recognisable, fixed only that, and left the rest flexible. That is a workable answer to the usual tension between consistency and local freedom." data-designer-kr="가져갈 것은 2계층 프레임워크입니다. 규칙을 늘리는 대신 무엇이 반스를 반스로 보이게 하는지를 먼저 묻고, 그것만 고정한 뒤 나머지는 열어뒀습니다. 일관성과 현장 자율성이 늘 부딪치는 문제에 대한 실행 가능한 답입니다."
+       data-impact-score="5"
+       data-recommend="Essential reference for brand system work" data-recommend-kr="브랜드 시스템 실무자 필독 · 즉시 참고 추천"
+       data-comment="The method is worth copying in order. Strip the brand to basics and ask what genuinely makes it recognisable. Audit how it is actually applied across the whole product portfolio. Only then write standards, and write them to define constants rather than to add rules.
+The typography decision shows the same restraint. Rather than replacing the type system, they added Pitch Mono as a supporting voice and leaned on condensed styles of the existing family to improve consistency. Clarifying what already exists is usually cheaper and safer than a fresh set.
+The hardest part was cultural rather than visual. Skate and subculture audiences distrust anything that feels manufactured, so a system that enforced control would have failed. The breakthrough was reframing Vans as a brand built around creative possibility, which let the system invite participation instead of policing it." data-comment-kr="따라 할 만한 것은 순서입니다. 브랜드를 기본까지 걷어내고 무엇이 이 브랜드를 알아보게 만드는지 묻는 것, 실제로 제품 전반에 어떻게 적용돼 있는지 전수 점검하는 것, 그다음에야 기준을 쓰되 규칙을 늘리는 대신 상수를 정의하는 것입니다.
+타이포그래피 결정에도 같은 절제가 보입니다. 서체 체계를 갈아엎는 대신 Pitch Mono를 보조 목소리로 더하고, 기존 패밀리의 컨덴스드 스타일 비중을 높여 적용 일관성을 끌어올렸습니다. 이미 있는 것을 정리하는 편이 새로 들이는 것보다 대개 싸고 안전합니다.
+가장 어려웠던 부분은 시각이 아니라 문화였습니다. 스케이트보드 같은 서브컬처는 만들어진 티가 나는 것을 불신하기 때문에, 통제를 강제하는 시스템이었다면 실패했을 것입니다. 반스를 스케이트 브랜드가 아니라 창작 가능성을 다루는 브랜드로 다시 규정한 순간, 시스템이 단속이 아니라 참여를 부르는 쪽으로 방향을 잡았습니다."
+       data-title-en="Accept & Proceed's new system for Vans is a lesson in how to inject clarity into an iconic brand" data-title-kr="흩어진 반스를 다시 묶은 브랜드 시스템, 고정할 것과 열어둘 것을 나누다">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">브랜드시스템</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 07. 29</div>
+        <div class="card-title">흩어진 반스를 다시 묶은 브랜드 시스템, 고정할 것과 열어둘 것을 나누다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/international-magic-martine-rose-graphic-design-digital-280726" target="_blank"
+       data-category="Design · Fashion · Digital" data-category-en="Design · Fashion · Digital"
+       data-summary="For nearly six years, studio International Magic has worked with fashion designer Martine Rose across virtual environments, 3D scanned animations, CCTV-inspired shows, campaign graphics and web platforms. The work is digital but deliberately physical in feel, favouring texture and disruption over seamlessness." data-summary-kr="스튜디오 인터내셔널 매직은 6년 가까이 패션 디자이너 마틴 로즈와 가상 공간, 3D 스캔 애니메이션, CCTV를 차용한 쇼, 캠페인 그래픽, 웹 플랫폼을 함께 만들어 왔습니다. 매체는 디지털이지만 매끄러움 대신 질감과 균열을 남기는 물성 있는 결과물을 지향합니다."
+       data-points="Projects start from a feeling the designer wants to convey, not a format|2021 virtual show What We Do All Day was rebuilt as a physical installation in 2026|Our Channel web platform broadcasts six live stations with no rewind or skip|8-bit type set against pale lilac, warm orange and mint creates deliberate tension" data-points-kr="포맷이 아니라 디자이너가 전하려는 감정에서 프로젝트를 시작|2021년 가상 쇼 〈What We Do All Day〉를 2026년 물리적 설치로 재구성|웹 플랫폼 Our Channel은 여섯 개 라이브 채널을 되감기·건너뛰기 없이 송출|8비트 타이포에 연보라·따뜻한 주황·민트를 얹어 의도적 긴장감 조성"
+       data-designer="The interesting move is designing friction on purpose. No rewind, no skip, a slightly clunky interface, all so the visitor has to think before engaging. It is a reminder that optimisation is a choice, not a default, and sometimes the wrong one." data-designer-kr="눈에 띄는 선택은 마찰을 일부러 설계한 것입니다. 되감기도 건너뛰기도 없고 인터페이스는 조금 불편한데, 방문자가 생각하고 나서 반응하게 만들려는 의도입니다. 최적화가 기본값이 아니라 선택이며 때로는 틀린 선택이라는 점을 짚어줍니다."
+       data-impact-score="4"
+       data-recommend="Strong reference for intentional friction in UX" data-recommend-kr="의도적 마찰 설계·패션 디지털 협업 참고 · 저장 추천"
+       data-comment="The starting point is unusual for digital work. Each project begins from a feeling the designer wants the audience to have, and every craft decision serves that feeling rather than a channel spec. That is why the outputs look nothing like each other yet read as one body of work.
+Our Channel is the clearest case. Six fixed live stations, no rewind, no skip, and an interface the team openly calls a bit clunky. The friction is the design: it was made in direct opposition to how media is normally consumed, so the visitor has to think before engaging.
+Worth noting how the studio treats imperfection. Glitches, awkwardness and contradiction are left visible rather than smoothed away, and that is what gives ephemeral digital projects enough texture to last. For anyone whose default instinct is to polish, this is a useful counterexample." data-comment-kr="디지털 작업치고 출발점이 특이합니다. 프로젝트마다 디자이너가 관객에게 남기고 싶은 감정에서 시작하고, 모든 제작 결정이 채널 규격이 아니라 그 감정에 복무합니다. 결과물끼리 전혀 닮지 않았는데도 하나의 작업으로 읽히는 이유입니다.
+Our Channel이 가장 분명한 사례입니다. 여섯 개 고정 채널, 되감기 없음, 건너뛰기 없음, 그리고 팀 스스로 조금 불편하다고 말하는 인터페이스. 이 마찰이 곧 설계입니다. 미디어를 소비하는 일반적인 방식에 정면으로 반대해 만들었고, 그래서 방문자는 반응하기 전에 생각하게 됩니다.
+불완전함을 다루는 방식도 참고할 만합니다. 글리치와 어색함, 모순을 지우지 않고 남겨두는데, 휘발되기 쉬운 디지털 작업이 오래 남을 만한 질감을 얻는 지점이 거기입니다. 일단 다듬고 보는 습관이 있다면 좋은 반례입니다."
+       data-title-en="How International Magic established its technology-bending design collaboration with Martine Rose" data-title-kr="마틴 로즈와 6년, 매끄러움을 거부하며 만든 패션 디지털 협업">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">패션디지털</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 07. 28</div>
+        <div class="card-title">마틴 로즈와 6년, 매끄러움을 거부하며 만든 패션 디지털 협업</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.koreatimenews.com/news/article.html?no=1210505" target="_blank"
+       data-category="Design · 전시 · 공예"
+       data-summary="가죽작가협회가 주최하는 제4회 정기 전시회 '가죽으로 뭉치다'가 7월 29일부터 8월 3일까지 인사동 갤러리은에서 열린다. 50인의 작가가 참여해 가죽 공예 작품을 선보인다."
+       data-designer="소재 하나에 집중한 협회 전시는 소재별 디테일과 마감 기법을 밀도 있게 비교하기 좋은 자리입니다. 패션·잡화·가구 등 가죽을 다루는 실무자에게 실물 레퍼런스로 유용합니다."
+       data-impact-score="2"
+       data-points="가죽작가협회 소속 50인 작가 참여|인사동 쌈지길 맞은편 갤러리은에서 8월 3일까지 진행|무료 관람, 작가와의 소통 자리 마련"
+       data-recommend="가죽 소재·공예 관심 있는 디자이너 관람 추천"
+       data-comment="50인이라는 참여 작가 규모는 국내 가죽 공예 분야의 저변이 생각보다 넓다는 것을 보여줍니다. 온라인 레퍼런스만으로는 파악하기 어려운 마감 질감이나 스티치 디테일을 실물로 직접 확인할 수 있다는 점이 이런 전시의 가장 큰 가치입니다.
+무료 관람에 접근성 좋은 위치라는 점도 실무자 입장에서는 부담 없이 들를 수 있는 요소입니다. 특정 브랜드의 대형 전시와 달리, 협회 단위 전시는 다양한 개인 작가의 스타일을 한 자리에서 비교할 수 있다는 장점이 있습니다.
+가죽을 소재로 다루는 패션·잡화·가구 디자이너라면 짧게라도 방문해 마감 기법과 하드웨어 디테일을 직접 만져보는 것을 추천합니다. 사진으로는 전달되지 않는 정보가 많은 소재이기 때문입니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">공예전시</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">코리아타임뉴스 · 2026. 07. 29</div>
+        <div class="card-title">제4회 '가죽으로 뭉치다' 정기 전시회, 인사동 갤러리은에서 개최</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
