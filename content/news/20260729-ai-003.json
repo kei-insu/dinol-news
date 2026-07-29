@@ -1,0 +1,59 @@
+{
+  "contentId": "20260729-ai-003",
+  "date": "2026-07-29",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "Creative Bloq",
+    "publishedAt": "2026-07-24"
+  },
+  "url": "https://www.creativebloq.com/design/poster-design/the-la-la-land-movie-poster-should-never-have-been-changed",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 디자인 · 논평",
+    "en": "AI · Design · Opinion"
+  },
+  "title": {
+    "kr": "10년 만에 손목이 펴진 라라랜드 포스터, 이제 '완성본'은 없다",
+    "en": "The La La Land movie poster should never have been changed"
+  },
+  "summary": {
+    "kr": "개봉 10년 만에 라라랜드 포스터에서 라이언 고슬링의 굽은 손목이 곧게 펴진 채로 스트리밍 서비스에 배포됐습니다. 크리에이티브 블로크는 이 사소한 수정이 스트리밍과 AI 시대에는 어떤 그래픽도 '완성' 상태로 남지 않는다는 더 큰 변화를 가리킨다고 봅니다.",
+    "en": "Ten years after release, the La La Land poster has been quietly re-edited on streaming services to straighten Ryan Gosling's much-mocked bent wrist. Creative Bloq argues the tiny fix points at a bigger problem: with streaming and AI, no piece of artwork stays finished."
+  },
+  "points": {
+    "kr": [
+      "스트리밍은 배포 후에도 아트워크를 수정할 수 있게 만듦, 선반의 DVD는 고칠 수 없음",
+      "아마존이 007 시리즈 포스터 21종에서 총을 지운 사례",
+      "플랫폼이 경고 문구를 붙이고 장면을 삭제하며 홍보물을 순화하는 흐름",
+      "어떤 이미지든 즉시 '개선'하겠다는 AI 때문에 정본 개념 자체가 흐려짐"
+    ],
+    "en": [
+      "Streaming lets studios edit artwork after release, a DVD on a shelf cannot be changed",
+      "Amazon removed James Bond's gun from all 21 franchise posters last year",
+      "Platforms also add warnings, cut scenes and sanitise promo art",
+      "AI's promise to 'improve' any image makes a single canonical version look quaint"
+    ]
+  },
+  "positions": [
+    "graphic-designer",
+    "art-director"
+  ],
+  "designer": {
+    "kr": "작업물이 플랫폼 위에 놓이는 순간 납품 파일은 최종본이 아니라 하나의 버전이 됩니다. 원본 마스터를 따로 보관하고 각 결정의 이유를 기록해두는 것이, 몇 년 뒤 누군가 디테일을 '정리'하려 할 때 쓸 수 있는 유일한 근거입니다.",
+    "en": "If your work lives on a platform, treat the delivered file as a version, not a final. Keeping an archived master and a record of why each decision was made is the only defence when someone decides to tidy up a detail years later."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "버전 관리·아카이브 관점의 배경 읽기",
+    "en": "Context piece on versioning and archives"
+  },
+  "comment": {
+    "kr": "수정 자체는 사소합니다. 손목이 몇 도 돌아간 정도라 온라인에 오래 머무는 사람이나 알아챌 변화입니다. 문제는 개봉 10년 뒤에, 새 에디션이나 감독판 없이도 그 수정이 가능했다는 사실입니다.\n기사가 나열한 선례가 유용합니다. 조지 루카스가 스타워즈를 손보던 시절엔 한 사람의 별난 취향으로 보였지만, 아마존이 007 포스터 전부에서 총을 지운 것은 플랫폼의 정책입니다. 그래픽이 배송되지 않고 스트리밍되는 순간, 수정은 사건이 아니라 운영 업무가 됩니다.\nAI 이야기는 제목이 암시하는 것보다 가볍게 다뤄지지만, 최종 파일을 넘기는 입장에서는 시사점이 분명합니다. 어떤 납품도 최종이 아니라고 전제하고, 아카이브와 결정의 근거를 결과물만큼 챙겨두는 편이 안전합니다.",
+    "en": "The edit itself is trivial. A wrist rotated a few degrees, noticeable only to people who spend too much time online. What matters is that it was possible at all, ten years after the fact, without a new edition or a director's cut.\nThe precedent list in the piece is the useful part. George Lucas retouching Star Wars once looked like one man's eccentricity; Amazon stripping the gun from every James Bond poster is a platform policy. When artwork is streamed rather than shipped, revision stops being an event and becomes maintenance.\nThe AI angle is lighter here than the headline suggests, but the implication is real for anyone handing off final files. The safe assumption is that no delivery is final, so the archive and the rationale behind each decision are worth keeping as carefully as the artwork itself."
+  },
+  "thumbLabel": "포스터수정",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

@@ -1,0 +1,54 @@
+{
+  "contentId": "20260729-ai-004",
+  "date": "2026-07-29",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "CNN Business",
+    "publishedAt": "2026-07-29"
+  },
+  "url": "https://www.cnn.com/2026/07/29/tech/us-china-robot-ban-intl-hnk",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 로보틱스",
+    "en": "AI · Policy · Robotics"
+  },
+  "title": {
+    "kr": "美 FCC, 中 휴머노이드·사족보행 로봇 수입 전면 금지",
+    "en": "US bans foreign-made humanoid robots, targeting China over national security"
+  },
+  "summary": {
+    "kr": "미국 FCC가 신규 중국산 휴머노이드·사족보행 로봇과 일부 해외산 전력 인버터의 수입을 금지한다고 발표했습니다. 중국이 전 세계 휴머노이드 로봇 시장의 약 85%를 차지하는 데 따른 공급망·안보 리스크를 이유로 들었습니다.",
+    "en": "The US FCC announced a ban on imports of new Chinese-made humanoid and quadruped robots, plus certain foreign power inverters, citing national-security and supply-chain risks tied to China's roughly 85% share of the global humanoid robot market."
+  },
+  "points": {
+    "kr": [
+      "신규 휴머노이드·사족보행 로봇 및 일부 해외 전력 인버터가 대상",
+      "중국발 AI·로보틱스 공급망 리스크 차단이 명분",
+      "과거 드론·라우터 규제처럼 비중국계 업체는 예외 적용 전망"
+    ],
+    "en": [
+      "Ban covers new humanoid, quadruped robots and some foreign power inverters",
+      "Framed as protecting the US AI/robotics supply chain from China",
+      "Non-Chinese suppliers expected to get exemptions, as with past drone/router bans"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "피지컬 AI나 로봇 하드웨어 소싱과 관련된 제품을 다룬다면, 미국 시장에서 쓸 수 있는 공급사·부품 목록이 바뀌는 신호로 봐야 합니다.",
+    "en": "If your product roadmap touches physical AI or robotics hardware sourcing, this reshapes which vendors and components are viable in the US market."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "로보틱스·하드웨어 공급망 종사자는 주시 · 그 외엔 배경 참고",
+    "en": "Track if you work in robotics/hardware supply chains, background otherwise"
+  },
+  "comment": {
+    "kr": "이번 조치는 특정 로봇 하나가 아니라, 미국이 휴머노이드 로보틱스를 반도체·드론처럼 관리해야 할 핵심 AI 인프라로 다루기 시작했다는 신호로 읽어야 합니다. 중국이 전 세계 시장의 85%를 차지한 상황에서 안보 프레임이 씌워지면 이런 규제는 사실상 예정된 수순이었습니다.\n\n과거 드론·라우터 규제처럼, 큰 폭의 금지 발표 이후 비중국계 업체 대상 예외 조치가 뒤따를 가능성이 큽니다. 실질적으로는 현재 중국산 하드웨어를 조달하는 피지컬 AI 제품 개발자들의 비용과 리드타임에 가장 먼저 영향이 갈 것입니다.",
+    "en": "This is less about any single robot and more about the US treating humanoid robotics as critical AI infrastructure worth gatekeeping, the same way it already treats chips and drones. An 85% Chinese market share made this almost inevitable once the security framing took hold.\n\nExpect the usual pattern: a broad-sounding ban followed by a wave of exemptions for non-Chinese suppliers. The practical effect will land hardest on cost and lead times for anyone building physical-AI products that currently source from Chinese hardware makers."
+  },
+  "thumbLabel": "로봇규제",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}
