@@ -157,7 +157,7 @@
   },
   "Korea Herald": {
     "region": "국내",
-    "group": "Korea Herald"
+    "group": "헤럴드"
   },
   "뉴스스페이스": {
     "region": "국내",
@@ -190,5 +190,13 @@
   "뉴스1": {
     "region": "국내",
     "group": "뉴스1"
+  },
+  "CNN Business": {
+    "region": "해외",
+    "group": "CNN"
+  },
+  "헤럴드경제": {
+    "region": "국내",
+    "group": "헤럴드"
   }
 }
