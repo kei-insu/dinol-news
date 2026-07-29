@@ -1,6 +1,7 @@
 {
  "http://www.enewstoday.co.kr/news/articleView.html?idxno=2451500": "20260723",
  "http://www.koreatimes.com/article/20260715/1621548": "20260717",
+ "https://biz.heraldcorp.com/article/10820758": "20260729",
  "https://design.co.kr/article/166406/": "20260701",
  "https://design.co.kr/article/167983/": "20260719",
  "https://design.co.kr/article/168181/": "20260719",
@@ -19,7 +20,9 @@
  "https://designcompass.org/2026/07/20/sonata-health-brand-identity/": "20260722",
  "https://designcompass.org/2026/07/21/coca-cola-global-visual-identity/": "20260723",
  "https://designcompass.org/2026/07/21/zak-fc-studio-football-club-identity/": "20260726",
+ "https://designcompass.org/2026/07/24/anthropic-claude-voice-opus-sonnet/": "20260729",
  "https://designcompass.org/2026/07/24/veritas-park-brand-identity/": "20260725",
+ "https://designcompass.org/2026/07/27/daangn-seed-design-system-rebranding/": "20260729",
  "https://fortune.com/2026/07/24/jensen-huang-open-source-letter-nvidia-kimi/": "20260726",
  "https://imnews.imbc.com/news/2026/politics/article/6834985_36912.html": "20260703",
  "https://money.usnews.com/investing/news/articles/2026-07-08/spacexai-launches-grok-4-5-model-for-coding-agentic-tasks": "20260710",
@@ -106,8 +109,10 @@
  "https://www.businessinsider.com/sam-altman-ai-reshape-material-conditions-human-life-2026-7": "20260703",
  "https://www.cnbc.com/2026/07/07/meta-ai-muse-image.html": "20260711",
  "https://www.cnet.co.kr/view/?no=20260723144349": "20260725",
+ "https://www.cnn.com/2026/07/29/tech/us-china-robot-ban-intl-hnk": "20260729",
  "https://www.core77.com/posts/144609/Core77-Weekly-Roundup-6-29-26-to-7-2-26": "20260708",
  "https://www.creativebloq.com/design/advertising/the-kylie-jenner-optical-illusion-advert-says-what-everyones-really-thinking-about-metas-ai-glasses": "20260728",
+ "https://www.creativebloq.com/design/poster-design/the-la-la-land-movie-poster-should-never-have-been-changed": "20260729",
  "https://www.designboom.com/art/land-art-greek-beach-scene-ancient-hunters-modern-extraction-the-krank-the-hunt/": "20260726",
  "https://www.designweek.co.uk/design-leader-form-brands-studios-alex-andlaw/": "20260703",
  "https://www.designweek.co.uk/the-outline-design-guidance-soho-and-a-bag-robot-03-07-2026/": "20260704",
@@ -156,8 +161,10 @@
  "https://www.itsnicethat.com/articles/chris-panicker-pitchfork-selects-graphic-design-project-070726": "20260713",
  "https://www.itsnicethat.com/articles/koto-cctype-typography-project-080726": "20260713",
  "https://www.itsnicethat.com/articles/kurt-bauer-photography-discover-220726": "20260723",
+ "https://www.itsnicethat.com/articles/los-cabbalos-public-records-graphic-design-illustration-project-270726": "20260729",
  "https://www.itsnicethat.com/articles/matter-of-new-new-typography-graphic-design-publication-project-150726": "20260718",
  "https://www.itsnicethat.com/articles/supersyteme-graphic-design-discover-210726": "20260725",
+ "https://www.itsnicethat.com/articles/valeria-homayden-field-notes-for-wonder-graphic-design-project-270726": "20260729",
  "https://www.itsnicethat.com/features/robert-beatty-illustration-spotlight-200726": "20260721",
  "https://www.itsnicethat.com/features/the-poster-festival-warsaw-round-up-graphic-design-spotlight-020726": "20260703",
  "https://www.koreaherald.com/article/10812835": "20260721",
@@ -227,5 +234,6 @@
  "https://zdnet.co.kr/view/?no=20260724101257": "20260725",
  "https://zdnet.co.kr/view/?no=20260725160202": "20260726",
  "https://zdnet.co.kr/view/?no=20260726013356": "20260727",
- "https://zdnet.co.kr/view/?no=20260727155357": "20260728"
+ "https://zdnet.co.kr/view/?no=20260727155357": "20260728",
+ "https://zdnet.co.kr/view/?no=20260729145135": "20260729"
 }

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 29</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 29, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://zdnet.co.kr/view/?no=20260729145135" target="_blank"
+       data-category="AI · 정책 · 인프라"
+       data-summary="과학기술정보통신부가 7월 29일 'AIDC 얼라이언스' 출범식을 열고 정부·산업·학계·연구기관 약 400개 기관이 참여하는 민관 협력체를 구성했습니다. 대규모 AI데이터센터 구축과 관련 산업 육성, 글로벌 진출을 위한 국가 차원의 협력 틀입니다."
+       data-points="400여 개 기관이 참여하는 민관 협력체 출범|대규모 AI데이터센터(AIDC) 구축이 핵심 과제|관련 산업 육성과 글로벌 진출 지원 병행"
+       data-designer="국가 단위 AI 인프라 투자가 본격화되면 이를 활용하는 AI 서비스·툴의 가격과 성능이 달라질 수 있습니다. 디자이너 입장에서도 국산 AI 인프라 위에서 도는 도구들이 늘어날 가능성을 눈여겨볼 만합니다."
+       data-impact-score="3"
+       data-recommend="국내 AI 인프라 동향에 관심 있는 실무자 저장 추천"
+       data-comment="이번 얼라이언스는 단순 선언이 아니라 400여 개 기관이 모인 실질적 협의체라는 점이 눈에 띕니다. 미국이 엔비디아-오픈AI 조합으로 대규모 데이터센터를 짓는 것과 비교하면 스케일은 다르지만, '국가 단위 AI 인프라'라는 문제의식 자체는 같은 흐름 위에 있습니다.
+
+디자이너·기획자 입장에서 흥미로운 지점은 이런 인프라 투자가 결국 우리가 쓰는 AI 도구의 응답 속도·비용·가용성으로 되돌아온다는 것입니다. 지금 당장 체감되진 않아도, 1~2년 뒤 국산 AI 기반 툴이 늘어나는 배경으로 오늘 뉴스를 기억해두면 좋겠습니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">인프라</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 29</div>
+        <div class="card-title">[AI 고속도로] 민관 AIDC 얼라이언스 출범…국가 AI 인프라 핵심 퍼즐 채웠다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://designcompass.org/2026/07/24/anthropic-claude-voice-opus-sonnet/" target="_blank"
+       data-category="AI · 툴 · 워크플로"
+       data-summary="앤트로픽이 클로드 음성 모드를 업데이트해 빠른 응답용 하이쿠 외에 복잡한 추론에 강한 오퍼스와 소넷도 음성 대화에서 고를 수 있게 했습니다. 음성 모드를 켜면 직전 텍스트 대화의 모델을 그대로 불러오고, 대화 도중에도 모델을 바꿀 수 있습니다."
+       data-points="음성 대화에서 하이쿠·소넷·오퍼스 모델 선택 가능|음성과 텍스트를 오가도 이전 대화 맥락 유지|Gmail·구글 캘린더·구글 독스·슬랙 연동 작업을 음성으로 처리|한국어 포함 다국어 지원, 전 요금제 베타(무료는 하이쿠와 도구 1개)"
+       data-designer="말하기 어려운 URL이나 코드만 텍스트로 넣고 나머지는 음성으로 이어갈 수 있다는 점이 실용적입니다. 클라이언트 발표 연습이나 커뮤니케이션 피드백처럼, 화면을 보지 않고 생각을 정리하는 용도로 붙여볼 만합니다."
+       data-impact-score="3"
+       data-recommend="AI 도구 워크플로 점검용 · 저장 추천"
+       data-comment="음성 모드의 핵심 변화는 모델 선택권입니다. 그동안 음성은 빠른 응답용 경량 모델에 묶여 있어 간단한 질문 이상을 다루기 어려웠는데, 추론에 강한 모델을 음성에서도 쓸 수 있게 되면서 용도가 업무 대화 쪽으로 넓어졌습니다.
+실무에서 유용한 부분은 음성과 텍스트 사이에 맥락이 끊기지 않는다는 점입니다. 말로 설명하기 번거로운 URL이나 코드 조각만 텍스트로 넣고 논의는 음성으로 이어가는 식의 혼합 사용이 가능합니다.
+연동 도구를 음성으로 다룰 수 있다는 점도 눈여겨볼 만합니다. 다만 무료 요금제는 하이쿠와 연결 도구 하나로 제한되므로, 실제로 업무에 붙이려면 요금제 조건부터 확인하는 편이 좋겠습니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">음성모드</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인 나침반 · 2026. 07. 24</div>
+        <div class="card-title">앤트로픽, 클로드 음성 모드에 오퍼스·소넷 모델 추가</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.creativebloq.com/design/poster-design/the-la-la-land-movie-poster-should-never-have-been-changed" target="_blank"
+       data-category="AI · 디자인 · 논평" data-category-en="AI · Design · Opinion"
+       data-summary="Ten years after release, the La La Land poster has been quietly re-edited on streaming services to straighten Ryan Gosling's much-mocked bent wrist. Creative Bloq argues the tiny fix points at a bigger problem: with streaming and AI, no piece of artwork stays finished." data-summary-kr="개봉 10년 만에 라라랜드 포스터에서 라이언 고슬링의 굽은 손목이 곧게 펴진 채로 스트리밍 서비스에 배포됐습니다. 크리에이티브 블로크는 이 사소한 수정이 스트리밍과 AI 시대에는 어떤 그래픽도 '완성' 상태로 남지 않는다는 더 큰 변화를 가리킨다고 봅니다."
+       data-points="Streaming lets studios edit artwork after release, a DVD on a shelf cannot be changed|Amazon removed James Bond's gun from all 21 franchise posters last year|Platforms also add warnings, cut scenes and sanitise promo art|AI's promise to 'improve' any image makes a single canonical version look quaint" data-points-kr="스트리밍은 배포 후에도 아트워크를 수정할 수 있게 만듦, 선반의 DVD는 고칠 수 없음|아마존이 007 시리즈 포스터 21종에서 총을 지운 사례|플랫폼이 경고 문구를 붙이고 장면을 삭제하며 홍보물을 순화하는 흐름|어떤 이미지든 즉시 '개선'하겠다는 AI 때문에 정본 개념 자체가 흐려짐"
+       data-designer="If your work lives on a platform, treat the delivered file as a version, not a final. Keeping an archived master and a record of why each decision was made is the only defence when someone decides to tidy up a detail years later." data-designer-kr="작업물이 플랫폼 위에 놓이는 순간 납품 파일은 최종본이 아니라 하나의 버전이 됩니다. 원본 마스터를 따로 보관하고 각 결정의 이유를 기록해두는 것이, 몇 년 뒤 누군가 디테일을 '정리'하려 할 때 쓸 수 있는 유일한 근거입니다."
+       data-impact-score="2"
+       data-recommend="Context piece on versioning and archives" data-recommend-kr="버전 관리·아카이브 관점의 배경 읽기"
+       data-comment="The edit itself is trivial. A wrist rotated a few degrees, noticeable only to people who spend too much time online. What matters is that it was possible at all, ten years after the fact, without a new edition or a director's cut.
+The precedent list in the piece is the useful part. George Lucas retouching Star Wars once looked like one man's eccentricity; Amazon stripping the gun from every James Bond poster is a platform policy. When artwork is streamed rather than shipped, revision stops being an event and becomes maintenance.
+The AI angle is lighter here than the headline suggests, but the implication is real for anyone handing off final files. The safe assumption is that no delivery is final, so the archive and the rationale behind each decision are worth keeping as carefully as the artwork itself." data-comment-kr="수정 자체는 사소합니다. 손목이 몇 도 돌아간 정도라 온라인에 오래 머무는 사람이나 알아챌 변화입니다. 문제는 개봉 10년 뒤에, 새 에디션이나 감독판 없이도 그 수정이 가능했다는 사실입니다.
+기사가 나열한 선례가 유용합니다. 조지 루카스가 스타워즈를 손보던 시절엔 한 사람의 별난 취향으로 보였지만, 아마존이 007 포스터 전부에서 총을 지운 것은 플랫폼의 정책입니다. 그래픽이 배송되지 않고 스트리밍되는 순간, 수정은 사건이 아니라 운영 업무가 됩니다.
+AI 이야기는 제목이 암시하는 것보다 가볍게 다뤄지지만, 최종 파일을 넘기는 입장에서는 시사점이 분명합니다. 어떤 납품도 최종이 아니라고 전제하고, 아카이브와 결정의 근거를 결과물만큼 챙겨두는 편이 안전합니다."
+       data-title-en="The La La Land movie poster should never have been changed" data-title-kr="10년 만에 손목이 펴진 라라랜드 포스터, 이제 '완성본'은 없다">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">포스터수정</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Creative Bloq · 2026. 07. 24</div>
+        <div class="card-title">10년 만에 손목이 펴진 라라랜드 포스터, 이제 '완성본'은 없다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.cnn.com/2026/07/29/tech/us-china-robot-ban-intl-hnk" target="_blank"
+       data-category="AI · 정책 · 로보틱스" data-category-en="AI · Policy · Robotics"
+       data-summary="The US FCC announced a ban on imports of new Chinese-made humanoid and quadruped robots, plus certain foreign power inverters, citing national-security and supply-chain risks tied to China's roughly 85% share of the global humanoid robot market." data-summary-kr="미국 FCC가 신규 중국산 휴머노이드·사족보행 로봇과 일부 해외산 전력 인버터의 수입을 금지한다고 발표했습니다. 중국이 전 세계 휴머노이드 로봇 시장의 약 85%를 차지하는 데 따른 공급망·안보 리스크를 이유로 들었습니다."
+       data-points="Ban covers new humanoid, quadruped robots and some foreign power inverters|Framed as protecting the US AI/robotics supply chain from China|Non-Chinese suppliers expected to get exemptions, as with past drone/router bans" data-points-kr="신규 휴머노이드·사족보행 로봇 및 일부 해외 전력 인버터가 대상|중국발 AI·로보틱스 공급망 리스크 차단이 명분|과거 드론·라우터 규제처럼 비중국계 업체는 예외 적용 전망"
+       data-designer="If your product roadmap touches physical AI or robotics hardware sourcing, this reshapes which vendors and components are viable in the US market." data-designer-kr="피지컬 AI나 로봇 하드웨어 소싱과 관련된 제품을 다룬다면, 미국 시장에서 쓸 수 있는 공급사·부품 목록이 바뀌는 신호로 봐야 합니다."
+       data-impact-score="3"
+       data-recommend="Track if you work in robotics/hardware supply chains, background otherwise" data-recommend-kr="로보틱스·하드웨어 공급망 종사자는 주시 · 그 외엔 배경 참고"
+       data-comment="This is less about any single robot and more about the US treating humanoid robotics as critical AI infrastructure worth gatekeeping, the same way it already treats chips and drones. An 85% Chinese market share made this almost inevitable once the security framing took hold.
+
+Expect the usual pattern: a broad-sounding ban followed by a wave of exemptions for non-Chinese suppliers. The practical effect will land hardest on cost and lead times for anyone building physical-AI products that currently source from Chinese hardware makers." data-comment-kr="이번 조치는 특정 로봇 하나가 아니라, 미국이 휴머노이드 로보틱스를 반도체·드론처럼 관리해야 할 핵심 AI 인프라로 다루기 시작했다는 신호로 읽어야 합니다. 중국이 전 세계 시장의 85%를 차지한 상황에서 안보 프레임이 씌워지면 이런 규제는 사실상 예정된 수순이었습니다.
+
+과거 드론·라우터 규제처럼, 큰 폭의 금지 발표 이후 비중국계 업체 대상 예외 조치가 뒤따를 가능성이 큽니다. 실질적으로는 현재 중국산 하드웨어를 조달하는 피지컬 AI 제품 개발자들의 비용과 리드타임에 가장 먼저 영향이 갈 것입니다."
+       data-title-en="US bans foreign-made humanoid robots, targeting China over national security" data-title-kr="美 FCC, 中 휴머노이드·사족보행 로봇 수입 전면 금지">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">로봇규제</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">CNN Business · 2026. 07. 29</div>
+        <div class="card-title">美 FCC, 中 휴머노이드·사족보행 로봇 수입 전면 금지</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://biz.heraldcorp.com/article/10820758" target="_blank"
+       data-category="Design · 브랜딩 · 리테일"
+       data-summary="신세계백화점이 '레드닷 디자인 어워드 2026' 브랜드&커뮤니케이션 디자인 부문에서 명절 캠페인, 본점 리브랜딩, 하우스오브신세계 청담 웰니스 마켓 '트웰브' 등으로 본상 3개를 수상하며 2년 연속 수상 기록을 이어갔습니다."
+       data-points="명절 캠페인·본점 리브랜딩·웰니스 마켓 '트웰브' 3개 부문 본상|독일 레드닷 디자인 어워드 브랜드&커뮤니케이션 부문|2년 연속 수상으로 디자인 경쟁력 입증"
+       data-designer="백화점이라는 전통적 리테일 공간이 캠페인·리브랜딩·신규 매장 콘셉트까지 한 번에 인정받았다는 점에서, 브랜드 경험을 통합적으로 설계하는 접근을 참고할 만합니다."
+       data-impact-score="3"
+       data-recommend="리테일·브랜드 경험 디자이너 저장 추천"
+       data-comment="눈에 띄는 건 수상작 구성입니다. 명절 캠페인 같은 커뮤니케이션, 본점 리브랜딩 같은 공간 아이덴티티, '트웰브' 같은 신규 매장 콘셉트까지 서로 다른 층위의 작업이 한 번에 인정받았습니다. 브랜드 하나를 여러 접점에서 일관되게 설계했다는 뜻으로 읽힙니다.
+
+리테일 브랜드 경험을 다루는 디자이너라면, 개별 캠페인이 아니라 공간-커뮤니케이션-신규 콘셉트를 하나의 시스템으로 묶어내는 방식에 주목해볼 만합니다. 2년 연속 수상이라는 점도, 일회성 리뉴얼이 아니라 꾸준한 디자인 투자가 쌓인 결과라는 걸 시사합니다.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">리브랜딩</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">헤럴드경제 · 2026. 07. 27</div>
+        <div class="card-title">신세계百 디자인 통했다…레드닷 어워드 3관왕 '쾌거'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://designcompass.org/2026/07/27/daangn-seed-design-system-rebranding/" target="_blank"
+       data-category="Design · UXUI · 디자인시스템"
+       data-summary="당근이 디자인 시스템 'SEED'의 브랜드 아이덴티티와 웹사이트를 공개했습니다. 색상과 타이포그래피 같은 기초 요소부터 컴포넌트, 인터랙션, 패턴까지 제품을 이루는 디자인 결정을 하나의 기준으로 묶은 통합 디자인 언어입니다."
+       data-points="슬로건 'Seed to Root, Root to Daangn', 최소 단위가 프로덕트로 확장되는 구조를 은유|로고에 뿌리·하이퍼로컬 지도·구성원 네트워크·컴포넌트 확장 구조를 함께 담음|기존 주황색은 유지하고 코드 에디터 하이라이트에서 가져온 라임색을 포인트로 추가|브랜드 디자인은 브랜딩팀, 시스템은 디자인 코어팀이 나눠 담당"
+       data-designer="사용자를 향하던 브랜드 경험을 제품을 만드는 사람의 도구까지 확장한 사례입니다. 디자인 시스템에 독립된 아이덴티티를 준다는 발상 자체가, 시스템을 문서가 아니라 팀이 신뢰하고 쓰는 제품으로 다루겠다는 선언입니다."
+       data-impact-score="5"
+       data-recommend="디자인 시스템 운영자 필독 · 즉시 참고 추천"
+       data-comment="디자인 시스템에 별도 브랜드를 붙인다는 결정이 이 프로젝트의 핵심입니다. 보통 시스템은 내부 문서로 취급되는데, 당근은 이름과 슬로건, 로고, 웹사이트를 갖춘 하나의 제품처럼 만들었습니다. 구성원이 기준을 이해하고 신뢰하게 만드는 일이 곧 시스템 채택률이라는 판단입니다.
+컬러 결정도 근거가 분명합니다. 당근을 상징하는 주황은 그대로 두어 모기업과의 연결을 유지하고, 포인트 컬러는 코드 에디터의 하이라이트에서 가져왔습니다. 이 시스템의 사용자가 디자이너와 엔지니어라는 사실을 색으로 말한 셈입니다.
+조직 구조도 참고할 만합니다. 브랜드 디자인은 브랜딩팀이, 시스템 자체는 디자인 코어팀이 맡았습니다. 시스템의 얼굴과 내용을 다른 팀이 나눠 맡되 하나의 결과물로 묶는 방식은, 사내 시스템을 정비하려는 팀이 그대로 따라 해볼 수 있는 분업입니다.">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">디자인시스템</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인 나침반 · 2026. 07. 27</div>
+        <div class="card-title">당근, 디자인 시스템 'SEED' 브랜드 아이덴티티 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/los-cabbalos-public-records-graphic-design-illustration-project-270726" target="_blank"
+       data-category="Design · Branding · Identity" data-category-en="Design · Branding · Identity"
+       data-summary="Buenos Aires studio Los Cabbalos built a social media visual system for Brooklyn music venue Public Records, covering templates, layouts, motion and typographic assets for club posters, line-ups, schedules and editorial content." data-summary-kr="부에노스아이레스 스튜디오 로스 카발로스가 브루클린 음악 공간 퍼블릭 레코즈의 소셜 미디어 비주얼 시스템을 만들었습니다. 클럽 포스터와 라인업, 스케줄, 에디토리얼까지 아우르는 템플릿과 레이아웃, 모션, 타이포그래피 자산 전반을 설계했습니다."
+       data-points="Studio deliberately avoided standard nightlife communication patterns|Concepts drawn from movement, ritual, balance and cause and effect|Uses WiseType's Garamono for its ceremonial rather than functional feel|A surplus of block-print style illustrations was built into a kit the venue plays with" data-points-kr="클럽 커뮤니케이션의 관습적 패턴을 의도적으로 피함|움직임·의식·균형·인과라는 개념에서 출발|기능적이기보다 의례적인 인상을 위해 와이즈타입의 Garamono 서체 선택|블록프린트 느낌의 일러스트를 대량으로 만들어 운영진이 조합해 쓰는 키트로 구성"
+       data-designer="The transferable part is the asset kit. Instead of handing over fixed templates, the studio produced a surplus of illustrations and let the venue team combine them like objects. That is how a social system survives daily posting without collapsing into sameness." data-designer-kr="가져다 쓸 부분은 자산 키트 방식입니다. 고정된 템플릿을 넘기는 대신 일러스트를 넘치도록 만들어두고, 운영진이 사물처럼 조합해 쓰게 했습니다. 매일 발행하는 소셜 시스템이 획일화되지 않고 버티는 방법입니다."
+       data-impact-score="4"
+       data-recommend="Useful model for social identity systems" data-recommend-kr="소셜 아이덴티티 시스템 설계 참고 · 저장 추천"
+       data-comment="The starting point was refusing the category's defaults. Rather than looking at how other clubs communicate, the studio worked from what the venue team actually cares about, which is movement, ritual and balance. The director's claim is that going outside the usual nightlife references is exactly why the result reads as authentic.
+The typeface choice follows the same logic. Garamono was picked because its serif forms feel deliberate and ceremonial rather than purely functional, which matches the ritual theme instead of merely decorating it.
+Most useful is how the illustration work was scoped. The studio made far more assets than any single post needs, then packaged them so the in-house team can recombine them. Designing the kit rather than the posts is what makes a social identity survive contact with a daily schedule." data-comment-kr="출발점은 카테고리의 기본값을 거부한 것입니다. 다른 클럽이 어떻게 소통하는지를 보는 대신, 운영진이 실제로 관심을 두는 움직임과 의식, 균형에서 시작했습니다. 흔한 나이트라이프 레퍼런스 바깥으로 나갔기 때문에 결과가 진짜처럼 읽힌다는 것이 디렉터의 설명입니다.
+서체 선택도 같은 논리입니다. Garamono를 고른 이유는 세리프 형태가 기능적이기보다 의도적이고 의례적으로 느껴지기 때문인데, 의식이라는 주제를 장식하는 대신 형태로 받아낸 선택입니다.
+가장 참고할 만한 부분은 일러스트 작업의 범위 설정입니다. 한 게시물에 필요한 양보다 훨씬 많은 자산을 만들어두고, 내부 팀이 다시 조합할 수 있게 묶었습니다. 게시물이 아니라 키트를 설계한 것이, 소셜 아이덴티티가 매일의 발행 일정을 견디게 만드는 지점입니다."
+       data-title-en="Can you visually capture how dancing feels? Inside Los Cabbalos' expressive social identity for Public Records" data-title-kr="춤추는 감각을 화면에 담을 수 있을까, 퍼블릭 레코즈의 소셜 비주얼 시스템">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">비주얼시스템</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 07. 27</div>
+        <div class="card-title">춤추는 감각을 화면에 담을 수 있을까, 퍼블릭 레코즈의 소셜 비주얼 시스템</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/valeria-homayden-field-notes-for-wonder-graphic-design-project-270726" target="_blank"
+       data-category="Design · Print · Publication" data-category-en="Design · Print · Publication"
+       data-summary="Field Notes for Wonder is graphic designer Valeria Homayden's two-part print project: a series of frame-by-frame Risograph animations built from patterns found in rocks, shells and leaves, plus a pocket-sized field guide of prompts for looking more closely at everyday surroundings." data-summary-kr="그래픽 디자이너 발레리아 호마이덴의 〈Field Notes for Wonder〉는 두 갈래로 이뤄진 인쇄 프로젝트입니다. 돌과 조개, 잎에서 찾은 패턴을 리소그래프로 한 프레임씩 찍어 만든 애니메이션과, 주변을 더 자세히 보게 만드는 프롬프트를 담은 손바닥 크기 필드 가이드입니다."
+       data-points="Close-up nature studies evolved into frame-by-frame Risograph motion|Mis-registration and visible halftones are kept as part of the charm|Bright colours abstract the image so pattern reads before subject|The guide holds one idea per spread to slow the reader down" data-points-kr="자연물 클로즈업 연구가 프레임 단위 리소그래프 모션으로 발전|핀 어긋남과 드러나는 망점을 결함이 아니라 매력으로 남김|강한 색이 이미지를 추상화해 대상보다 패턴이 먼저 읽히게 함|가이드는 펼침면당 하나의 아이디어만 실어 읽는 속도를 늦춤"
+       data-designer="Two decisions are worth borrowing. Letting the printer's registration errors stay visible turns a production limit into a signature, and giving each spread a single idea is a concrete layout rule for anyone designing something meant to be read slowly." data-designer-kr="가져올 결정은 두 가지입니다. 인쇄기의 핀 어긋남을 지우지 않고 남겨 제작상의 한계를 서명처럼 쓴 점, 그리고 펼침면마다 아이디어를 하나만 두어 읽는 속도를 설계한 점입니다. 천천히 읽히길 바라는 인쇄물을 만들 때 그대로 적용할 수 있는 레이아웃 규칙입니다."
+       data-impact-score="3"
+       data-recommend="Reference for Risograph and slow editorial pacing" data-recommend-kr="리소그래프·편집 호흡 설계 참고"
+       data-comment="Animating on a Risograph is a deliberately awkward choice. Each frame has to be printed by hand on a stencil-based machine, which is slow and imprecise, and the designer treats that imprecision as the point rather than a cost.
+Her observation about colour is the practical takeaway. Because the bright inks abstract the source image, viewers register shape and pattern before they identify the object, which is a controllable effect rather than a happy accident.
+The publication half applies the same restraint to pacing. One idea per spread, with prompts such as looking at what is by your feet and then what is above your head, sets the reading rhythm through layout rather than instruction. It is a small, copyable lesson in using structure to slow someone down." data-comment-kr="리소그래프로 애니메이션을 만든다는 것은 일부러 불편한 선택입니다. 스텐실 방식 인쇄기로 한 프레임씩 손으로 찍어야 해서 느리고 정밀하지 않은데, 디자이너는 그 부정확함을 비용이 아니라 핵심으로 다뤘습니다.
+색에 대한 관찰이 실무적으로 가장 쓸모 있습니다. 강한 잉크가 원본 이미지를 추상화하기 때문에, 보는 사람이 대상을 알아보기 전에 형태와 패턴을 먼저 인식하게 됩니다. 우연이 아니라 조절 가능한 효과라는 점이 중요합니다.
+출판물 쪽도 같은 절제를 호흡에 적용했습니다. 펼침면당 아이디어 하나, 그리고 발밑을 본 뒤 머리 위를 보라는 식의 프롬프트로 읽는 리듬을 지시문이 아니라 레이아웃으로 만들었습니다. 구조로 속도를 늦추는 방법에 대한 작지만 따라 하기 쉬운 사례입니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">리소그래프</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 07. 27</div>
+        <div class="card-title">현미경으로 본 자연을 리소그래프 애니메이션으로, 발레리아 호마이덴</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
