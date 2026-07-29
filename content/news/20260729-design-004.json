@@ -1,0 +1,59 @@
+{
+  "contentId": "20260729-design-004",
+  "date": "2026-07-29",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-27"
+  },
+  "url": "https://www.itsnicethat.com/articles/valeria-homayden-field-notes-for-wonder-graphic-design-project-270726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 인쇄 · 출판",
+    "en": "Design · Print · Publication"
+  },
+  "title": {
+    "kr": "현미경으로 본 자연을 리소그래프 애니메이션으로, 발레리아 호마이덴",
+    "en": "Field Notes for Wonder: Valeria Homayden's Risograph animations of the microscopic world"
+  },
+  "summary": {
+    "kr": "그래픽 디자이너 발레리아 호마이덴의 〈Field Notes for Wonder〉는 두 갈래로 이뤄진 인쇄 프로젝트입니다. 돌과 조개, 잎에서 찾은 패턴을 리소그래프로 한 프레임씩 찍어 만든 애니메이션과, 주변을 더 자세히 보게 만드는 프롬프트를 담은 손바닥 크기 필드 가이드입니다.",
+    "en": "Field Notes for Wonder is graphic designer Valeria Homayden's two-part print project: a series of frame-by-frame Risograph animations built from patterns found in rocks, shells and leaves, plus a pocket-sized field guide of prompts for looking more closely at everyday surroundings."
+  },
+  "points": {
+    "kr": [
+      "자연물 클로즈업 연구가 프레임 단위 리소그래프 모션으로 발전",
+      "핀 어긋남과 드러나는 망점을 결함이 아니라 매력으로 남김",
+      "강한 색이 이미지를 추상화해 대상보다 패턴이 먼저 읽히게 함",
+      "가이드는 펼침면당 하나의 아이디어만 실어 읽는 속도를 늦춤"
+    ],
+    "en": [
+      "Close-up nature studies evolved into frame-by-frame Risograph motion",
+      "Mis-registration and visible halftones are kept as part of the charm",
+      "Bright colours abstract the image so pattern reads before subject",
+      "The guide holds one idea per spread to slow the reader down"
+    ]
+  },
+  "positions": [
+    "graphic-designer",
+    "illustrator"
+  ],
+  "designer": {
+    "kr": "가져올 결정은 두 가지입니다. 인쇄기의 핀 어긋남을 지우지 않고 남겨 제작상의 한계를 서명처럼 쓴 점, 그리고 펼침면마다 아이디어를 하나만 두어 읽는 속도를 설계한 점입니다. 천천히 읽히길 바라는 인쇄물을 만들 때 그대로 적용할 수 있는 레이아웃 규칙입니다.",
+    "en": "Two decisions are worth borrowing. Letting the printer's registration errors stay visible turns a production limit into a signature, and giving each spread a single idea is a concrete layout rule for anyone designing something meant to be read slowly."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "리소그래프·편집 호흡 설계 참고",
+    "en": "Reference for Risograph and slow editorial pacing"
+  },
+  "comment": {
+    "kr": "리소그래프로 애니메이션을 만든다는 것은 일부러 불편한 선택입니다. 스텐실 방식 인쇄기로 한 프레임씩 손으로 찍어야 해서 느리고 정밀하지 않은데, 디자이너는 그 부정확함을 비용이 아니라 핵심으로 다뤘습니다.\n색에 대한 관찰이 실무적으로 가장 쓸모 있습니다. 강한 잉크가 원본 이미지를 추상화하기 때문에, 보는 사람이 대상을 알아보기 전에 형태와 패턴을 먼저 인식하게 됩니다. 우연이 아니라 조절 가능한 효과라는 점이 중요합니다.\n출판물 쪽도 같은 절제를 호흡에 적용했습니다. 펼침면당 아이디어 하나, 그리고 발밑을 본 뒤 머리 위를 보라는 식의 프롬프트로 읽는 리듬을 지시문이 아니라 레이아웃으로 만들었습니다. 구조로 속도를 늦추는 방법에 대한 작지만 따라 하기 쉬운 사례입니다.",
+    "en": "Animating on a Risograph is a deliberately awkward choice. Each frame has to be printed by hand on a stencil-based machine, which is slow and imprecise, and the designer treats that imprecision as the point rather than a cost.\nHer observation about colour is the practical takeaway. Because the bright inks abstract the source image, viewers register shape and pattern before they identify the object, which is a controllable effect rather than a happy accident.\nThe publication half applies the same restraint to pacing. One idea per spread, with prompts such as looking at what is by your feet and then what is above your head, sets the reading rhythm through layout rather than instruction. It is a small, copyable lesson in using structure to slow someone down."
+  },
+  "thumbLabel": "리소그래프",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}
