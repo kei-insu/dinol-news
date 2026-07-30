@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 최근 변경 |
 |---|---|
+| 2026-07-31 | 작업 PC kgblu 단독 확정 + 개발(astro)/상용(main) 브랜치 분리 명문화 |
 | 2026-07-26 | 명령 작성 전 자체 검토 체크리스트 신설 |
 | 2026-07-25 | 작업 일지(Notion) 기록 규칙 명문화 + 문서 목차 2건 추가 + 백로그 갱신 |
 | 2026-07-13 | 배포 절차 순서 고정 + deploy.ps1 하드닝(guardrails·issues 반영) |
@@ -59,8 +60,9 @@
 | URL | `https://kei-insu.github.io/dinol-news/` |
 | 호스팅 | GitHub Pages |
 | 백엔드 | Firebase Firestore(asia-northeast3, Spark) |
-| 로컬 | Windows PowerShell(경로 PC마다 다름, 현재 OneDrive 폴더) |
+| 로컬 | Windows PowerShell · **kgblu 단독**(`C:\Users\kgblu\OneDrive\바탕 화면\dinol-news\dinol-news`) |
 | 배포 | 사용자 로컬 수동(git). Claude 컨테이너는 push 불가 |
+| 브랜치 | **개발 = `astro` / 상용 = `main`.** GitHub Pages는 `main`만 빌드. main에 올리는 것은 일간 브리핑 발행뿐이고, 코드·정본 JSON·문서 변경은 `astro`에 쌓는다 |
 
 ### 파일 구조
 ```
