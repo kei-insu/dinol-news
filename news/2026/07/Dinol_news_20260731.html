@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 07. 31</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">July 31, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://zdnet.co.kr/view/?no=20260729093709" target="_blank"
+       data-category="AI · 트렌드 · 파운데이션모델"
+       data-summary="SK텔레콤이 6880억 파라미터 규모의 자체 파운데이션 모델 '독파모(A.X)' 2세대를 공개했습니다. 수학·과학 추론, 한국어 지식, 장문 이해와 에이전트 관련 평가에서 1세대 대비 큰 폭의 성능 향상을 보였습니다."
+       data-points="국내외 14개 벤치마크에서 1세대 대비 평균 32.2%p 성능 향상|장문 이해·에이전트 평가에서 83.9%p 개선|산업 현장 적용 확대를 위한 파운데이션 모델 전략"
+       data-designer="국산 파운데이션 모델의 성능 도약은 국내 서비스에 탑재되는 AI 기능(요약, 추천, 에이전트형 UX)의 품질 상한을 끌어올릴 수 있는 신호입니다."
+       data-impact-score="4"
+       data-recommend="AI 서비스 기획자·PM 필독 · 국산 모델 동향 추적용 저장 추천"
+       data-comment="통신사가 자체 파운데이션 모델을 고도화하는 흐름은 이제 '해외 빅테크 API 의존'에서 '국산 모델 활용'으로 무게추가 옮겨가고 있음을 보여줍니다. 특히 장문 이해와 에이전트 관련 평가에서의 큰 폭 개선은, 실제 제품에 에이전틱 기능을 얹을 때 체감 품질이 달라질 수 있다는 뜻이라 실무자라면 눈여겨볼 대목입니다.
+한국어 지식과 추론 능력이 동시에 오르면 국내 사용자 대상 서비스에서 번역투 없는 자연스러운 응답, 맥락을 오래 기억하는 대화형 UX 설계가 한결 수월해집니다. 이번 발표를 계기로 국내 AI 서비스의 기본 응답 품질 자체가 한 단계 올라갈 가능성이 있습니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">파운데이션모델</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 07. 29</div>
+        <div class="card-title">SK텔레콤, 6880억 파라미터 '독파모 2차 모델' 공개…산업 적용 확산</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.hankookilbo.com/news/article/A2026071513390003387" target="_blank"
+       data-category="AI · 트렌드 · 서비스"
+       data-summary="네이버의 대화형 AI 검색 서비스 'AI탭' 이용자가 출시 한 달여 만에 1000만 명을 넘었습니다. 카카오도 카카오톡 대화방 안에서 이미지를 생성·수정하고 대화를 요약하는 기능을 확대 적용했습니다."
+       data-points="AI탭, 키워드 검색 대신 LLM과 대화하며 정보 탐색|출시 한 달 만에 이용자 1000만 명 돌파|카카오톡 대화방 내 이미지 생성·수정, 대화 요약 기능 확대"
+       data-designer="검색·메신저처럼 매일 쓰는 서비스 안에 AI가 자연스럽게 녹아드는 흐름입니다. 별도 AI 앱을 열지 않아도 되는 '내장형 AI' UX 설계가 표준이 되고 있습니다."
+       data-impact-score="3"
+       data-recommend="국내 서비스 UX 벤치마킹용 저장 추천"
+       data-comment="네이버와 카카오의 행보는 'AI 도구를 따로 쓴다'가 아니라 '원래 쓰던 서비스가 AI를 품는다'는 방향으로 국내 AI 경험이 수렴하고 있음을 보여줍니다. 검색창에 말을 걸고, 대화방에서 바로 이미지를 고치는 식의 흐름은 사용자가 별도 학습 없이 AI 기능을 받아들이게 만드는 좋은 사례입니다.
+기획자 입장에서는 '새 AI 기능을 어디에 넣을 것인가'보다 '이미 있는 동선 중 어디에 자연스럽게 얹을 것인가'를 고민하는 게 더 중요해졌다는 걸 시사하는 소식입니다.">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">AI탭</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">한국일보 · 2026. 07. 15</div>
+        <div class="card-title">네이버 'AI탭' 이용자 1000만 돌파…카카오는 톡방서 이미지 수정</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/29/mark-zuckerberg-predicts-that-billions-of-people-will-have-personal-ai-agents-in-five-years/" target="_blank"
+       data-category="AI · 트렌드 · 빅테크" data-category-en="AI · Trend · Big Tech"
+       data-summary="Meta CEO Mark Zuckerberg predicted that within five years, billions of people around the world will have their own personal AI agents handling everyday tasks." data-summary-kr="메타 CEO 마크 저커버그가 5년 안에 전 세계 수십억 명이 일상 업무를 처리해주는 개인용 AI 에이전트를 갖게 될 것이라고 전망했습니다."
+       data-points="Zuckerberg's five-year timeline for mass personal-agent adoption|Personal agents framed as a daily-life utility, not a niche tool|Follows Meta's continued heavy investment in agent development" data-points-kr="저커버그가 제시한 '5년 내 대중화' 시간표|개인 에이전트를 일상 필수품으로 규정|메타의 지속적인 에이전트 개발 투자와 맞닿은 전망"
+       data-designer="If personal agents become as common as smartphones, product and UX design will need to account for an always-on AI layer sitting between users and every app." data-designer-kr="개인 에이전트가 스마트폰만큼 보편화된다면, 사용자와 모든 앱 사이에 상시 작동하는 AI 레이어를 전제로 한 제품·UX 설계가 필요해집니다."
+       data-impact-score="3"
+       data-recommend="Worth tracking for long-term product strategy · Optional" data-recommend-kr="장기 제품 전략 참고용 · 선택"
+       data-comment="Big predictions from Big Tech CEOs deserve healthy skepticism, but the direction is worth noting: agent-first interaction models are becoming a default assumption in product roadmaps, not a moonshot feature.
+For designers, this means starting to sketch what &quot;handoff to an agent&quot; looks like inside your own interfaces, even if the five-year timeline turns out to be optimistic." data-comment-kr="빅테크 CEO의 대담한 예측은 건강한 의심과 함께 받아들여야 하지만, 방향성만큼은 주목할 만합니다. '에이전트 우선' 상호작용 모델이 더 이상 먼 미래의 기능이 아니라 제품 로드맵의 기본 전제로 자리잡고 있다는 뜻이기 때문입니다.
+디자이너 입장에서는 5년이라는 시간표가 다소 낙관적이더라도, 내 인터페이스 안에서 '에이전트에게 작업을 넘기는 순간'이 어떤 모습일지 미리 스케치해볼 필요가 있습니다."
+       data-title-en="Mark Zuckerberg predicts that billions of people will have personal AI agents in five years" data-title-kr="저커버그 &quot;5년 안에 수십억 명이 개인 AI 에이전트를 갖게 될 것&quot;">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">개인 에이전트</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 29</div>
+        <div class="card-title">저커버그 "5년 안에 수십억 명이 개인 AI 에이전트를 갖게 될 것"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/29/this-one-wheel-robot-could-patrol-your-property-while-you-stay-away/" target="_blank"
+       data-category="AI · 로보틱스 · 제품디자인" data-category-en="AI · Robotics · Product Design"
+       data-summary="Estonian startup Rollo Robotics built 1ROLLO, an autonomous security robot that balances on a single large wheel instead of the usual four-wheeled chassis. A vertically oriented flywheel inside the wheel keeps it upright and lets it lean to steer, producing a body narrow enough to reach places bulkier patrol robots cannot." data-summary-kr="에스토니아 스타트업 롤로 로보틱스가 바퀴 하나로 균형을 잡는 자율 보안 로봇 1ROLLO를 공개했습니다. 바퀴 안에 세로로 놓인 플라이휠이 자세를 유지하고 기울임으로 방향을 바꿉니다. 그 결과 몸체가 좁아져 덩치 큰 사륜 순찰 로봇이 들어가지 못하는 공간까지 다닐 수 있습니다."
+       data-points="Gyroscopic flywheel inside the wheel replaces a four-wheel chassis|Narrow body is the point, it reaches spaces larger platforms cannot|360-degree computer vision with RTK GNSS follows mapped patrol routes|Sold as Robotics-as-a-Service, commercial availability expected in 2027" data-points-kr="바퀴 안의 자이로 플라이휠이 사륜 섀시를 대체|좁은 몸체가 목적, 큰 플랫폼이 못 가는 공간까지 접근|360도 컴퓨터 비전과 RTK GNSS로 지정 순찰 경로 주행|서비스형 로보틱스로 판매, 상용화는 2027년 예정"
+       data-designer="A clean case of a constraint driving form. The team wanted access to narrow spaces, so the chassis had to shrink, and the single wheel is what that requirement produced. Worth remembering when a category's default shape starts to look like a given rather than a choice." data-designer-kr="제약이 형태를 만든 분명한 사례입니다. 좁은 공간 접근이라는 요구가 먼저 있었고, 섀시를 줄이려다 보니 바퀴 하나라는 답이 나왔습니다. 한 카테고리의 기본 형태가 선택이 아니라 당연한 전제처럼 보이기 시작할 때 떠올릴 만합니다."
+       data-impact-score="3"
+       data-recommend="Reference for form-follows-constraint product design" data-recommend-kr="제약에서 형태를 끌어내는 제품 디자인 참고"
+       data-comment="The interesting decision is refusing the category default. Security robots almost always look like small autonomous cars because a wide body is the easy way to carry sensors and batteries. Rollo started from the opposite end, asking how narrow the machine could be, and let the answer reshape everything else.
+That choice is not free. Balancing on one wheel needs a flywheel and constant gyroscopic correction, which is more mechanism than four wheels would ever require. The team accepted that complexity because the payoff, reaching spaces bulkier platforms cannot, was the actual brief.
+The business model is part of the design too. Selling access rather than hardware, with maintenance and upgrades bundled in, suits a product still being tuned for bad weather and crowded sites. It buys the team room to keep changing the machine after it ships, which is a sensible pairing with an unconventional form." data-comment-kr="흥미로운 결정은 카테고리의 기본형을 거부한 것입니다. 보안 로봇이 대개 작은 자율주행차처럼 생긴 이유는 넓은 몸체가 센서와 배터리를 싣기 쉬워서입니다. 롤로는 반대편에서 출발해 얼마나 좁아질 수 있는지를 물었고, 그 답이 나머지 전부를 다시 정했습니다.
+공짜로 얻은 선택은 아닙니다. 바퀴 하나로 서 있으려면 플라이휠과 끊임없는 자이로 보정이 필요한데, 바퀴 네 개라면 아예 없어도 될 기구입니다. 그 복잡함을 감수한 이유는 큰 플랫폼이 못 가는 공간에 들어간다는 목적이 곧 과제였기 때문입니다.
+사업 모델도 설계의 일부입니다. 하드웨어 판매 대신 유지보수와 업그레이드를 묶은 구독형으로 가는 방식은, 악천후와 혼잡한 환경을 아직 다듬는 중인 제품에 맞습니다. 출시 이후에도 기계를 계속 바꿀 여지를 확보한다는 점에서 낯선 형태와 잘 맞물립니다."
+       data-title-en="This One-Wheel robot could patrol your property while you stay away" data-title-kr="바퀴 하나로 균형을 잡는 순찰 로봇, 좁아지려고 형태를 다시 짰다">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">원휠로봇</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 29</div>
+        <div class="card-title">바퀴 하나로 균형을 잡는 순찰 로봇, 좁아지려고 형태를 다시 짰다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://designcompass.org/2026/07/28/x-money-us-launch/" target="_blank"
+       data-category="Design · 브랜딩 · 핀테크"
+       data-summary="일론 머스크의 X(옛 트위터)가 미국에서 금융 서비스 'X 머니'를 출시하며 새 브랜드 아이덴티티를 공개했습니다. X의 기존 브랜드 언어를 결제·금융 영역으로 확장한 첫 사례입니다."
+       data-points="X 플랫폼 브랜드 언어를 금융 서비스로 확장|블랙·화이트 대비를 활용한 절제된 비주얼 시스템|결제 서비스에 요구되는 신뢰감과 X 특유의 아이덴티티의 균형"
+       data-designer="플랫폼 브랜드를 완전히 다른 업종(금융)으로 확장할 때 얼마나 원래 아이덴티티를 유지하고 얼마나 새로 만들어야 하는지 보여주는 좋은 레퍼런스입니다."
+       data-impact-score="3"
+       data-recommend="브랜드 확장 프로젝트 레퍼런스로 저장 추천"
+       data-comment="소셜 플랫폼이 금융 서비스로 영역을 넓힐 때 브랜딩이 가장 먼저 시험대에 오릅니다. X 머니는 기존 X의 강렬한 흑백 대비와 미니멀한 타이포그래피를 유지하면서도, 결제 서비스 특유의 신뢰감을 어떻게 얹었는지가 관전 포인트입니다.
+플랫폼 확장형 브랜딩을 고민하는 실무자라면 '원 브랜드, 멀티 서비스' 전략의 최신 사례로 참고할 만합니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">브랜드 아이덴티티</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인 나침반 · 2026. 07. 28</div>
+        <div class="card-title">X 머니, 일론 머스크가 만든 금융 브랜드의 첫 얼굴</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://design.co.kr/article/169060/" target="_blank"
+       data-category="Design · 패션 · 브랜딩"
+       data-summary="프라다와 젠틀몬스터가 아이웨어 협업 컬렉션을 내놨습니다. 프라다의 절제된 클래식과 젠틀몬스터의 실험적 조형을 하나의 아이웨어로 풀어 세 가지 디자인을 선보였고, 아시아 일부 지역 한정 출시로 한국에서는 7월 31일부터 만날 수 있습니다."
+       data-points="프론트와 템플이 만나는 힌지에 프라다의 삼각 로고를 적용|티타늄 템플의 유려한 선으로 두 브랜드 미학을 연결|협업 전용 컬러웨이를 별도 제작해 완성도 확보|아오야마 팝업은 거대한 책 오브제와 사운드, 사색하는 로봇으로 구성"
+       data-designer="성격이 다른 두 브랜드를 섞을 때 어디서 만나게 할지를 보여주는 사례입니다. 로고는 힌지라는 최소 지점에만 남기고, 형태와 소재로 나머지를 조율했습니다. 캠페인 영상과 팝업까지 같은 개념으로 묶어 컬렉션을 하나의 경험으로 만든 구성도 참고할 만합니다."
+       data-impact-score="3"
+       data-recommend="패션·브랜드 협업 기획 참고"
+       data-comment="협업에서 어려운 부분은 두 브랜드의 개성을 어디까지 남길지 정하는 일입니다. 이번 컬렉션은 프라다의 상징인 삼각 로고를 힌지라는 작은 지점에만 두고, 나머지는 티타늄 템플의 선과 렌즈 마감으로 풀었습니다. 로고를 크게 쓰지 않고도 어느 브랜드의 것인지 읽히게 만든 선택입니다.
+전용 컬러웨이를 따로 제작한 점도 눈에 띕니다. 기존 팔레트를 나눠 쓰는 대신 이번 협업만을 위한 색을 만들면, 두 브랜드 어느 쪽에도 완전히 속하지 않는 제3의 영역이 생깁니다. 협업이 한쪽으로 기울지 않게 하는 실용적인 장치입니다.
+확장 방식도 일관됩니다. 책을 중심으로 흙·물·불·공기·사랑을 엮은 캠페인 영상, 거대한 책 오브제와 사색하는 로봇을 배치한 아오야마 팝업까지 같은 개념을 공유합니다. 제품만 내놓고 마케팅을 따로 붙이는 대신, 컬렉션의 개념을 영상과 공간으로 반복해 하나의 경험으로 만들었습니다.">
+      <div class="thumb g-rust">
+        <div class="noise"></div>
+        <span class="thumb-label">아이웨어</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인플러스 · 2026. 07. 28</div>
+        <div class="card-title">프라다와 젠틀몬스터가 만들어낸 지적이고도 입체적인 절제미</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/features/porto-rocha-tinder-rebrand-graphic-design-spotlight-140726" target="_blank"
+       data-category="Design · 브랜딩 · 아이덴티티" data-category-en="Design · Branding · Identity"
+       data-summary="Design studio Porto Rocha led Tinder's first full rebrand in almost ten years, giving the dating app a new wordmark and a voice modelled on a witty, knowing dating columnist." data-summary-kr="디자인 스튜디오 포르투 로차가 틴더의 거의 10년 만의 전면 리브랜딩을 이끌었습니다. 새 워드마크와 함께, 재치 있고 통찰력 있는 데이팅 칼럼니스트 같은 브랜드 목소리를 입혔습니다."
+       data-points="First full Tinder rebrand in nearly a decade|New wordmark paired with a distinct editorial voice|Brand personality modelled on a dating columnist, not a generic app tone" data-points-kr="거의 10년 만의 틴더 전면 리브랜딩|새 워드마크와 뚜렷한 에디토리얼 보이스의 결합|일반적인 앱 톤이 아닌 '데이팅 칼럼니스트' 캐릭터로 설계한 브랜드 인격"
+       data-designer="A strong example of tone-of-voice as a design deliverable: the visual identity only works because the copywriting and personality were designed together, not bolted on after." data-designer-kr="톤앤보이스가 디자인 산출물이 될 수 있음을 보여주는 좋은 예시입니다. 비주얼 아이덴티티와 카피·인격을 따로 만들지 않고 함께 설계했기에 성립하는 리브랜딩입니다."
+       data-impact-score="3"
+       data-recommend="Great case study for brand voice work · Save for reference" data-recommend-kr="브랜드 보이스 작업 레퍼런스로 저장 추천"
+       data-comment="App rebrands often stop at the logo, but Porto Rocha's work on Tinder treats voice and visual system as one deliverable. The dating-columnist persona gives the brand a consistent register across every touchpoint, from push notifications to out-of-home ads.
+Worth studying if you're working on any brand that needs to sound like a person, not a corporation." data-comment-kr="앱 리브랜딩은 흔히 로고 교체에서 멈추곤 하지만, 포르투 로차는 틴더의 보이스와 비주얼 시스템을 하나의 산출물로 다뤘습니다. '데이팅 칼럼니스트'라는 캐릭터 덕분에 푸시 알림부터 옥외광고까지 일관된 톤을 유지할 수 있게 됐습니다.
+기업이 아니라 '한 사람'처럼 말해야 하는 브랜드를 작업 중이라면 참고할 가치가 있습니다."
+       data-title-en="Tinder's first rebrand in nearly a decade channels the voice of a dating columnist" data-title-kr="틴더, 10년 만의 리브랜딩…데이팅 칼럼니스트의 목소리를 입다">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">리브랜딩</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 07. 14</div>
+        <div class="card-title">틴더, 10년 만의 리브랜딩…데이팅 칼럼니스트의 목소리를 입다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/stanley-plowman-garble-graphic-design-publication-project-060726" target="_blank"
+       data-category="Design · 타이포그래피 · 출판" data-category-en="Design · Typography · Publication"
+       data-summary="Designer Stanley Plowman's publication Garble explores pen-plotter-driven, machine-executed typography that deliberately embraces human imperfection and mess." data-summary-kr="디자이너 스탠리 플로우먼의 출판물 'Garble'은 펜 플로터로 구현한 기계적 타이포그래피에 의도적으로 인간적인 불완전함과 어수선함을 더한 작업을 다룹니다."
+       data-points="Pen-plotter and analogue tools used for typographic mark-making|Machine precision deliberately disrupted with human &quot;mess&quot;|Publication format lets the typography breathe as image, not just text" data-points-kr="펜 플로터·아날로그 도구를 활용한 타이포그래피 제작|기계적 정밀함에 의도적으로 더한 인간적 '어수선함'|텍스트가 아닌 이미지로서 숨 쉬는 타이포그래피 편집 방식"
+       data-designer="A useful counterpoint to overly clean, template-driven typography, and a reminder that visible process and imperfection can be a deliberate design choice, not a flaw." data-designer-kr="지나치게 깔끔하고 템플릿화된 타이포그래피에 대한 유용한 반례입니다. 눈에 보이는 제작 과정과 불완전함이 결함이 아니라 의도된 디자인 선택일 수 있다는 걸 보여줍니다."
+       data-impact-score="2"
+       data-recommend="Good mood-board and process inspiration · Save for typography research" data-recommend-kr="무드보드·작업 과정 영감으로 좋음 · 타이포그래피 리서치용 저장 추천"
+       data-comment="In a moment when most typography is generated cleanly on a screen, Garble's pen-plotter approach reintroduces friction and chance back into the process. The machine draws, but the ink still smears and skips.
+A nice prompt for anyone whose typographic work has started to feel too polished." data-comment-kr="대부분의 타이포그래피가 화면 위에서 깔끔하게 생성되는 시대에, 'Garble'의 펜 플로터 접근은 제작 과정에 다시 마찰과 우연을 불어넣습니다. 기계가 그려도 잉크는 여전히 번지고 튑니다.
+내 타이포그래피 작업이 너무 매끈해졌다고 느껴진다면 좋은 자극이 될 자료입니다."
+       data-title-en="Stanley Plowman's Garble is machine-executed typography filled with human mess" data-title-kr="스탠리 플로우먼의 'Garble', 기계가 그리고 인간이 어지럽힌 타이포그래피">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">타이포그래피</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 07. 06</div>
+        <div class="card-title">스탠리 플로우먼의 'Garble', 기계가 그리고 인간이 어지럽힌 타이포그래피</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
