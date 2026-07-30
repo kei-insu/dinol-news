@@ -1,0 +1,53 @@
+{
+  "contentId": "20260731-design-001",
+  "date": "2026-07-31",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "디자인 나침반",
+    "publishedAt": "2026-07-28"
+  },
+  "url": "https://designcompass.org/2026/07/28/x-money-us-launch/",
+  "isEn": false,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 핀테크",
+    "en": "Design · Branding · Fintech"
+  },
+  "title": {
+    "kr": "X 머니, 일론 머스크가 만든 금융 브랜드의 첫 얼굴",
+    "en": null
+  },
+  "summary": {
+    "kr": "일론 머스크의 X(옛 트위터)가 미국에서 금융 서비스 'X 머니'를 출시하며 새 브랜드 아이덴티티를 공개했습니다. X의 기존 브랜드 언어를 결제·금융 영역으로 확장한 첫 사례입니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "X 플랫폼 브랜드 언어를 금융 서비스로 확장",
+      "블랙·화이트 대비를 활용한 절제된 비주얼 시스템",
+      "결제 서비스에 요구되는 신뢰감과 X 특유의 아이덴티티의 균형"
+    ],
+    "en": []
+  },
+  "positions": [
+    "bx-designer",
+    "brand-designer"
+  ],
+  "designer": {
+    "kr": "플랫폼 브랜드를 완전히 다른 업종(금융)으로 확장할 때 얼마나 원래 아이덴티티를 유지하고 얼마나 새로 만들어야 하는지 보여주는 좋은 레퍼런스입니다.",
+    "en": null
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "브랜드 확장 프로젝트 레퍼런스로 저장 추천",
+    "en": null
+  },
+  "comment": {
+    "kr": "소셜 플랫폼이 금융 서비스로 영역을 넓힐 때 브랜딩이 가장 먼저 시험대에 오릅니다. X 머니는 기존 X의 강렬한 흑백 대비와 미니멀한 타이포그래피를 유지하면서도, 결제 서비스 특유의 신뢰감을 어떻게 얹었는지가 관전 포인트입니다.\n플랫폼 확장형 브랜딩을 고민하는 실무자라면 '원 브랜드, 멀티 서비스' 전략의 최신 사례로 참고할 만합니다.",
+    "en": null
+  },
+  "thumbLabel": "브랜드 아이덴티티",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

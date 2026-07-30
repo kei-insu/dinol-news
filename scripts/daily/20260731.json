@@ -1,0 +1,70 @@
+{
+  "20260731-ai-001": {
+    "category_kr": "AI · 트렌드 · 파운데이션모델",
+    "category_en": "AI · Trend · Foundation Model",
+    "impactScore": 3,
+    "positions": [
+      "product-designer"
+    ]
+  },
+  "20260731-ai-002": {
+    "category_kr": "AI · 트렌드 · 서비스",
+    "category_en": "AI · Trend · Service",
+    "impactScore": 3,
+    "positions": [
+      "ux-designer",
+      "product-designer"
+    ]
+  },
+  "20260731-ai-003": {
+    "category_kr": "AI · 트렌드 · 빅테크",
+    "category_en": "AI · Trend · Big Tech",
+    "impactScore": 2,
+    "positions": []
+  },
+  "20260731-ai-004": {
+    "category_kr": "AI · 로보틱스 · 제품디자인",
+    "category_en": "AI · Robotics · Product Design",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260731-design-001": {
+    "category_kr": "디자인 · 브랜딩 · 핀테크",
+    "category_en": "Design · Branding · Fintech",
+    "impactScore": 4,
+    "positions": [
+      "bx-designer",
+      "brand-designer"
+    ]
+  },
+  "20260731-design-002": {
+    "category_kr": "디자인 · 패션 · 브랜딩",
+    "category_en": "Design · Fashion · Branding",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer",
+      "brand-designer"
+    ]
+  },
+  "20260731-design-003": {
+    "category_kr": "디자인 · 브랜딩 · 아이덴티티",
+    "category_en": "Design · Branding · Identity",
+    "impactScore": 4,
+    "positions": [
+      "brand-designer",
+      "bx-designer"
+    ]
+  },
+  "20260731-design-004": {
+    "category_kr": "디자인 · 타이포그래피 · 출판",
+    "category_en": "Design · Typography · Publication",
+    "impactScore": 2,
+    "positions": [
+      "graphic-designer",
+      "editorial-designer"
+    ]
+  }
+}

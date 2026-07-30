@@ -1,0 +1,57 @@
+{
+  "contentId": "20260731-design-004",
+  "date": "2026-07-31",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-06"
+  },
+  "url": "https://www.itsnicethat.com/articles/stanley-plowman-garble-graphic-design-publication-project-060726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 타이포그래피 · 출판",
+    "en": "Design · Typography · Publication"
+  },
+  "title": {
+    "kr": "스탠리 플로우먼의 'Garble', 기계가 그리고 인간이 어지럽힌 타이포그래피",
+    "en": "Stanley Plowman's Garble is machine-executed typography filled with human mess"
+  },
+  "summary": {
+    "kr": "디자이너 스탠리 플로우먼의 출판물 'Garble'은 펜 플로터로 구현한 기계적 타이포그래피에 의도적으로 인간적인 불완전함과 어수선함을 더한 작업을 다룹니다.",
+    "en": "Designer Stanley Plowman's publication Garble explores pen-plotter-driven, machine-executed typography that deliberately embraces human imperfection and mess."
+  },
+  "points": {
+    "kr": [
+      "펜 플로터·아날로그 도구를 활용한 타이포그래피 제작",
+      "기계적 정밀함에 의도적으로 더한 인간적 '어수선함'",
+      "텍스트가 아닌 이미지로서 숨 쉬는 타이포그래피 편집 방식"
+    ],
+    "en": [
+      "Pen-plotter and analogue tools used for typographic mark-making",
+      "Machine precision deliberately disrupted with human \"mess\"",
+      "Publication format lets the typography breathe as image, not just text"
+    ]
+  },
+  "positions": [
+    "graphic-designer",
+    "editorial-designer"
+  ],
+  "designer": {
+    "kr": "지나치게 깔끔하고 템플릿화된 타이포그래피에 대한 유용한 반례입니다. 눈에 보이는 제작 과정과 불완전함이 결함이 아니라 의도된 디자인 선택일 수 있다는 걸 보여줍니다.",
+    "en": "A useful counterpoint to overly clean, template-driven typography, and a reminder that visible process and imperfection can be a deliberate design choice, not a flaw."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "무드보드·작업 과정 영감으로 좋음 · 타이포그래피 리서치용 저장 추천",
+    "en": "Good mood-board and process inspiration · Save for typography research"
+  },
+  "comment": {
+    "kr": "대부분의 타이포그래피가 화면 위에서 깔끔하게 생성되는 시대에, 'Garble'의 펜 플로터 접근은 제작 과정에 다시 마찰과 우연을 불어넣습니다. 기계가 그려도 잉크는 여전히 번지고 튑니다.\n내 타이포그래피 작업이 너무 매끈해졌다고 느껴진다면 좋은 자극이 될 자료입니다.",
+    "en": "In a moment when most typography is generated cleanly on a screen, Garble's pen-plotter approach reintroduces friction and chance back into the process. The machine draws, but the ink still smears and skips.\nA nice prompt for anyone whose typographic work has started to feel too polished."
+  },
+  "thumbLabel": "타이포그래피",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

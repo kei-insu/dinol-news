@@ -1,0 +1,54 @@
+{
+  "contentId": "20260731-ai-003",
+  "date": "2026-07-31",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-29"
+  },
+  "url": "https://techcrunch.com/2026/07/29/mark-zuckerberg-predicts-that-billions-of-people-will-have-personal-ai-agents-in-five-years/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 트렌드 · 빅테크",
+    "en": "AI · Trend · Big Tech"
+  },
+  "title": {
+    "kr": "저커버그 \"5년 안에 수십억 명이 개인 AI 에이전트를 갖게 될 것\"",
+    "en": "Mark Zuckerberg predicts that billions of people will have personal AI agents in five years"
+  },
+  "summary": {
+    "kr": "메타 CEO 마크 저커버그가 5년 안에 전 세계 수십억 명이 일상 업무를 처리해주는 개인용 AI 에이전트를 갖게 될 것이라고 전망했습니다.",
+    "en": "Meta CEO Mark Zuckerberg predicted that within five years, billions of people around the world will have their own personal AI agents handling everyday tasks."
+  },
+  "points": {
+    "kr": [
+      "저커버그가 제시한 '5년 내 대중화' 시간표",
+      "개인 에이전트를 일상 필수품으로 규정",
+      "메타의 지속적인 에이전트 개발 투자와 맞닿은 전망"
+    ],
+    "en": [
+      "Zuckerberg's five-year timeline for mass personal-agent adoption",
+      "Personal agents framed as a daily-life utility, not a niche tool",
+      "Follows Meta's continued heavy investment in agent development"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "개인 에이전트가 스마트폰만큼 보편화된다면, 사용자와 모든 앱 사이에 상시 작동하는 AI 레이어를 전제로 한 제품·UX 설계가 필요해집니다.",
+    "en": "If personal agents become as common as smartphones, product and UX design will need to account for an always-on AI layer sitting between users and every app."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "장기 제품 전략 참고용 · 선택",
+    "en": "Worth tracking for long-term product strategy · Optional"
+  },
+  "comment": {
+    "kr": "빅테크 CEO의 대담한 예측은 건강한 의심과 함께 받아들여야 하지만, 방향성만큼은 주목할 만합니다. '에이전트 우선' 상호작용 모델이 더 이상 먼 미래의 기능이 아니라 제품 로드맵의 기본 전제로 자리잡고 있다는 뜻이기 때문입니다.\n디자이너 입장에서는 5년이라는 시간표가 다소 낙관적이더라도, 내 인터페이스 안에서 '에이전트에게 작업을 넘기는 순간'이 어떤 모습일지 미리 스케치해볼 필요가 있습니다.",
+    "en": "Big predictions from Big Tech CEOs deserve healthy skepticism, but the direction is worth noting: agent-first interaction models are becoming a default assumption in product roadmaps, not a moonshot feature.\nFor designers, this means starting to sketch what \"handoff to an agent\" looks like inside your own interfaces, even if the five-year timeline turns out to be optimistic."
+  },
+  "thumbLabel": "개인 에이전트",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

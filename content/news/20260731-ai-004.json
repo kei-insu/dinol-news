@@ -1,0 +1,59 @@
+{
+  "contentId": "20260731-ai-004",
+  "date": "2026-07-31",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-29"
+  },
+  "url": "https://www.yankodesign.com/2026/07/29/this-one-wheel-robot-could-patrol-your-property-while-you-stay-away/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 로보틱스 · 제품디자인",
+    "en": "AI · Robotics · Product Design"
+  },
+  "title": {
+    "kr": "바퀴 하나로 균형을 잡는 순찰 로봇, 좁아지려고 형태를 다시 짰다",
+    "en": "This One-Wheel robot could patrol your property while you stay away"
+  },
+  "summary": {
+    "kr": "에스토니아 스타트업 롤로 로보틱스가 바퀴 하나로 균형을 잡는 자율 보안 로봇 1ROLLO를 공개했습니다. 바퀴 안에 세로로 놓인 플라이휠이 자세를 유지하고 기울임으로 방향을 바꿉니다. 그 결과 몸체가 좁아져 덩치 큰 사륜 순찰 로봇이 들어가지 못하는 공간까지 다닐 수 있습니다.",
+    "en": "Estonian startup Rollo Robotics built 1ROLLO, an autonomous security robot that balances on a single large wheel instead of the usual four-wheeled chassis. A vertically oriented flywheel inside the wheel keeps it upright and lets it lean to steer, producing a body narrow enough to reach places bulkier patrol robots cannot."
+  },
+  "points": {
+    "kr": [
+      "바퀴 안의 자이로 플라이휠이 사륜 섀시를 대체",
+      "좁은 몸체가 목적, 큰 플랫폼이 못 가는 공간까지 접근",
+      "360도 컴퓨터 비전과 RTK GNSS로 지정 순찰 경로 주행",
+      "서비스형 로보틱스로 판매, 상용화는 2027년 예정"
+    ],
+    "en": [
+      "Gyroscopic flywheel inside the wheel replaces a four-wheel chassis",
+      "Narrow body is the point, it reaches spaces larger platforms cannot",
+      "360-degree computer vision with RTK GNSS follows mapped patrol routes",
+      "Sold as Robotics-as-a-Service, commercial availability expected in 2027"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "제약이 형태를 만든 분명한 사례입니다. 좁은 공간 접근이라는 요구가 먼저 있었고, 섀시를 줄이려다 보니 바퀴 하나라는 답이 나왔습니다. 한 카테고리의 기본 형태가 선택이 아니라 당연한 전제처럼 보이기 시작할 때 떠올릴 만합니다.",
+    "en": "A clean case of a constraint driving form. The team wanted access to narrow spaces, so the chassis had to shrink, and the single wheel is what that requirement produced. Worth remembering when a category's default shape starts to look like a given rather than a choice."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "제약에서 형태를 끌어내는 제품 디자인 참고",
+    "en": "Reference for form-follows-constraint product design"
+  },
+  "comment": {
+    "kr": "흥미로운 결정은 카테고리의 기본형을 거부한 것입니다. 보안 로봇이 대개 작은 자율주행차처럼 생긴 이유는 넓은 몸체가 센서와 배터리를 싣기 쉬워서입니다. 롤로는 반대편에서 출발해 얼마나 좁아질 수 있는지를 물었고, 그 답이 나머지 전부를 다시 정했습니다.\n공짜로 얻은 선택은 아닙니다. 바퀴 하나로 서 있으려면 플라이휠과 끊임없는 자이로 보정이 필요한데, 바퀴 네 개라면 아예 없어도 될 기구입니다. 그 복잡함을 감수한 이유는 큰 플랫폼이 못 가는 공간에 들어간다는 목적이 곧 과제였기 때문입니다.\n사업 모델도 설계의 일부입니다. 하드웨어 판매 대신 유지보수와 업그레이드를 묶은 구독형으로 가는 방식은, 악천후와 혼잡한 환경을 아직 다듬는 중인 제품에 맞습니다. 출시 이후에도 기계를 계속 바꿀 여지를 확보한다는 점에서 낯선 형태와 잘 맞물립니다.",
+    "en": "The interesting decision is refusing the category default. Security robots almost always look like small autonomous cars because a wide body is the easy way to carry sensors and batteries. Rollo started from the opposite end, asking how narrow the machine could be, and let the answer reshape everything else.\nThat choice is not free. Balancing on one wheel needs a flywheel and constant gyroscopic correction, which is more mechanism than four wheels would ever require. The team accepted that complexity because the payoff, reaching spaces bulkier platforms cannot, was the actual brief.\nThe business model is part of the design too. Selling access rather than hardware, with maintenance and upgrades bundled in, suits a product still being tuned for bad weather and crowded sites. It buys the team room to keep changing the machine after it ships, which is a sensible pairing with an unconventional form."
+  },
+  "thumbLabel": "원휠로봇",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}
