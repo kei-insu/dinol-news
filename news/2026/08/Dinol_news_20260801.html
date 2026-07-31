@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 01</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 1, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.aitimes.kr/news/articleView.html?idxno=41263" target="_blank"
+       data-category="AI · 로보틱스 · 산업"
+       data-summary="SK텔레콤이 피지컬 AI 스타트업 8개사(가우스랩스, 리얼월드, 마키나락스 등)와 협업을 확대하며 로보틱스 생태계 강화에 나선다고 31일 밝혔다. 지난 30일 서린사옥에서 간담회를 열고 로봇 하드웨어·데이터·모델 전반의 개방형 생태계 구축을 논의했다."
+       data-points="참여 8개사 면면(가우스랩스·리얼월드·마키나락스 등)|디지털 트윈부터 로봇 실증까지 사업 확대|개방형 피지컬 AI 생태계 구축 계획"
+       data-designer="피지컬 AI가 하드웨어·데이터·모델 전반의 파트너십으로 확장되는 흐름은, AI 기능을 물리적 제품·공간 경험으로 설계하는 실무자에게 협업 구조의 참고가 됩니다."
+       data-impact-score="3"
+       data-recommend="로보틱스·피지컬 AI 관심 실무자 저장 추천"
+       data-comment="대기업이 '모델 하나'가 아니라 '스타트업 8곳과의 협업'을 택했다는 점이 눈에 띕니다. 피지컬 AI는 아직 어느 한 회사가 전부 잘하기 어려운 영역이라, 하드웨어·데이터·모델을 나눠 맡는 생태계 전략이 당분간 표준이 될 가능성이 큽니다.
+
+디자이너 입장에서는 '이 AI 기능은 어느 파트너사의 어떤 모듈에서 오는가'를 아는 것이 점점 중요해집니다. 특히 공간·제품 경험을 설계할 때, 로봇이나 센서가 실제로 무엇을 할 수 있는지에 대한 기대치를 현실적으로 맞추는 데 이런 간담회성 뉴스가 도움이 됩니다.
+
+당장 실무에 적용할 내용은 적지만, 국내 피지컬 AI 생태계의 플레이어 지도를 그려두면 이후 관련 프로젝트가 들어왔을 때 훨씬 빠르게 대응할 수 있습니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">로보틱스</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">인공지능신문 · 2026. 07. 31</div>
+        <div class="card-title">SKT, 피지컬 AI 스타트업 8곳과 로보틱스 생태계 확장</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.etnews.com/20260731000008" target="_blank"
+       data-category="AI · 툴 · 요금"
+       data-summary="오픈AI가 공개 3주 만에 GPT-5.6의 중·저가 모델 기업용 이용 요금을 최대 80% 인하했습니다. 중위 모델 테라는 20% 내려 100만 토큰당 2~12달러, 보급형 루나는 80% 내려 100만 토큰당 0.2~1.2달러로 재책정됐습니다. 성능 경쟁을 이어오던 주요 AI 기업들이 가격 인하 경쟁에 뛰어든 흐름입니다."
+       data-points="테라 20% 인하, 100만 토큰당 2~12달러로 조정|루나 80% 인하, 100만 토큰당 0.2~1.2달러로 조정|API 요금 인하가 코덱스·챗GPT 워크의 유료 구독료 계산 방식에 반영|개인 챗GPT 구독료는 그대로, 다만 해당 모델 사용 한도가 인하 비율만큼 증가"
+       data-designer="도구를 쓰는 쪽에서 챙길 것은 두 가지입니다. 하나는 개인 구독료가 아니라 사용 한도가 늘어난다는 점, 다른 하나는 작업 종류별로 어떤 등급 모델을 쓸지 다시 정할 여지가 생겼다는 점입니다. 가벼운 정리나 초안은 보급형으로 내리고 아낀 한도를 어려운 작업에 몰아주는 식의 배분이 이제 현실적입니다."
+       data-impact-score="4"
+       data-recommend="AI 도구 요금제·모델 배분 점검용 · 저장 추천"
+       data-comment="눈여겨볼 지점은 인하 폭이 등급마다 다르다는 것입니다. 최상위 모델 가격은 그대로 두고 중·저가 모델만 내렸습니다. 최고 성능은 제값을 받되 반복 업무 구간에서는 가격으로 경쟁하겠다는 구분입니다.
+실무에서는 모델을 하나로 고정해두던 습관을 다시 볼 때가 됐습니다. 요약이나 분류, 초안 작성처럼 난도가 낮은 작업을 보급형으로 내리면 같은 비용으로 처리량이 크게 늘어납니다. 반대로 어려운 판단이 필요한 작업까지 싼 모델로 내리면 결과를 다시 손보는 시간이 절감분을 까먹습니다.
+개인 요금제 사용자도 무관하지 않습니다. 구독료는 그대로지만 해당 모델의 사용 한도가 인하 비율만큼 늘어나므로, 실질적으로는 같은 돈으로 더 오래 붙어 있을 수 있게 됩니다.">
+      <div class="thumb g-olive">
+        <div class="noise"></div>
+        <span class="thumb-label">모델요금</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">전자신문 · 2026. 07. 31</div>
+        <div class="card-title">오픈AI, 기업용 요금 최대 80% 인하…가격 경쟁 합류</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://siliconangle.com/2026/07/30/google-deepmind-debuts-gemini-robotics-2-model-series-humanoid-robots/" target="_blank"
+       data-category="AI · 로보틱스 · 피지컬AI" data-category-en="AI · Robotics · Physical AI"
+       data-summary="Google DeepMind unveiled Gemini Robotics 2, a three-model suite enabling whole-body humanoid control, advanced dexterity, and multi-robot collaboration, achieving a 92% success rate on precision tasks like unscrewing a light bulb." data-summary-kr="구글 딥마인드가 전신 제어·정밀 조작·다중 로봇 협업이 가능한 3종 모델 '제미나이 로보틱스 2'를 공개했습니다. 전구를 돌려 빼는 등 정밀 동작에서 92%의 성공률을 기록했습니다."
+       data-points="Whole-body control from torso to legs, not just upper body|92% success rate on precision tasks like unscrewing a bulb|Three models: VLA, embodied-reasoning VLM, on-device VLA" data-points-kr="상체뿐 아니라 하반신까지 아우르는 전신 제어|전구 분리 등 정밀 작업 92% 성공률|VLA·체화 추론 VLM·온디바이스 VLA 3종 모델 구성"
+       data-designer="A reminder that 'AI trend' now includes physical embodiment. Interaction and product designers should start thinking about how whole-body robot behavior gets designed, not just screens." data-designer-kr="이제 'AI 트렌드'는 화면 너머 물리적 신체로 확장되고 있습니다. 인터랙션·제품 디자이너도 로봇의 전신 행동 자체를 설계 대상으로 고민할 시점입니다."
+       data-impact-score="3"
+       data-recommend="Worth reading for anyone tracking physical AI" data-recommend-kr="피지컬 AI 흐름을 좇는 실무자 필독"
+       data-comment="Gemini Robotics 2 matters less for the headline number and more for what changed structurally: last year's model only handled the upper body, and now the reasoning extends down through the legs. That is the difference between a robot that gestures and one that actually moves through space.
+
+For anyone tracking AI trends beyond chat interfaces, this is a clear signal that the next wave of 'AI product design' work will include physical behavior design, not just prompts and UI screens. Google shipping three coordinated models (planning, reasoning, on-device) also hints at how complex real-world AI products are becoming under the hood.
+
+Save this one if you're mapping where AI investment is heading next. It is a good counterpoint to agent-focused headlines." data-comment-kr="이 소식에서 중요한 건 숫자 자체보다 구조적 변화입니다. 작년 모델은 상체만 제어했는데, 이제는 다리까지 이어지는 추론으로 확장됐습니다. 제스처를 취하는 로봇과 실제로 공간을 이동하는 로봇의 차이입니다.
+
+챗봇 인터페이스를 넘어 AI 트렌드를 좇는 사람이라면, 다음 AI 제품 디자인 작업이 프롬프트나 화면 UI를 넘어 '물리적 행동 설계'까지 포함하게 될 것이라는 신호로 읽을 만합니다. 계획·추론·온디바이스용 3개 모델을 함께 내놓은 것도 실제 AI 제품 뒷단이 얼마나 복잡해지고 있는지 보여줍니다.
+
+AI 투자가 다음에 어디로 향할지 지도를 그리는 중이라면 저장해둘 가치가 있습니다. 에이전트 중심 헤드라인들과 좋은 대조가 됩니다."
+       data-title-en="Google DeepMind debuts Gemini Robotics 2 model series for humanoid robots" data-title-kr="구글 딥마인드, 휴머노이드용 '제미나이 로보틱스 2' 모델 공개">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">제미나이</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">SiliconANGLE · 2026. 07. 30</div>
+        <div class="card-title">구글 딥마인드, 휴머노이드용 '제미나이 로보틱스 2' 모델 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/30/forward-deployed-engineers-are-the-ai-industrys-latest-talent-obsession/" target="_blank"
+       data-category="AI · 트렌드 · 인재" data-category-en="AI · Trend · Talent"
+       data-summary="By the end of Q2, 70% of companies were planning to hire forward-deployed engineers (FDEs) who embed with clients to make AI actually work in production, with major consulting firms saying they need 10x more FDE headcount." data-summary-kr="2분기 말 기준 기업의 70%가 고객사에 직접 상주하며 AI를 실제 운영에 안착시키는 '포워드 디플로이드 엔지니어(FDE)' 채용을 계획 중이며, 대형 컨설팅사들은 관련 인력을 10배 늘려야 한다고 밝혔습니다."
+       data-points="70% of companies plan to hire FDEs|Consulting firms want 10x more FDE headcount|Role bridges AI model capability and real deployment" data-points-kr="기업 70%가 FDE 채용 계획|컨설팅사들 &quot;인력 10배 필요&quot;|AI 모델 역량과 실제 배포 사이를 잇는 역할"
+       data-designer="This is the human layer AI-tool rollouts actually need. It's a cue that 'AI adoption' in your org may require dedicated implementation roles, not just a subscription." data-designer-kr="AI 도구 도입이 실제로 필요로 하는 '사람 계층'을 보여줍니다. 조직의 AI 도입이 구독만으로 끝나지 않고 전담 구현 인력을 필요로 할 수 있다는 신호입니다."
+       data-impact-score="3"
+       data-recommend="Useful context for AI-tool rollout planning" data-recommend-kr="사내 AI 도구 도입 기획 시 참고"
+       data-comment="The interesting part of this trend isn't the job title, it's what it admits: powerful AI models alone don't make AI 'work' inside a real company. Someone still has to sit with the client, understand the messy actual workflow, and wire the model into it.
+
+For teams evaluating AI tools, this is a useful correction to the idea that adoption is just a licensing decision. If a 10x consulting headcount increase is needed just to make deployments stick, plan your own rollout timelines accordingly, and budget for the implementation layer, not just the tool itself.
+
+Worth sharing with anyone currently pitching 'AI will just work' inside your organization." data-comment-kr="이 트렌드에서 흥미로운 지점은 직함이 아니라, 그 직함이 인정하는 사실입니다. 강력한 AI 모델만으로는 실제 기업 내부에서 AI가 '작동'하지 않는다는 것입니다. 누군가는 여전히 고객사 옆에 앉아 지저분한 실제 업무 흐름을 이해하고 모델을 그 안에 연결해야 합니다.
+
+AI 도구를 검토 중인 팀이라면, 도입이 단순한 라이선스 결정이라는 생각을 바로잡는 데 유용한 사례입니다. 배포를 안착시키는 데만 컨설팅 인력을 10배 늘려야 한다면, 도구 자체뿐 아니라 구현 계층에도 일정과 예산을 배정해야 합니다.
+
+조직 내에서 'AI만 도입하면 알아서 될 것'이라고 말하는 사람이 있다면 공유할 만한 기사입니다.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">AI인재</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 30</div>
+        <div class="card-title">AI 업계 최신 화두 '포워드 디플로이드 엔지니어'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.sisunnews.co.kr/news/articleView.html?idxno=243369" target="_blank"
+       data-category="Design · 전시 · 공간"
+       data-summary="제로연구소가 8월 5일부터 8일까지 서울 코엑스에서 열리는 '2026 공간디자인페어'에 참가해 공간 오브제형 방향제 '다담 달항아리 방향제'를 비롯한 향기 솔루션을 선보인다."
+       data-points="달항아리 형태를 오브제로 재해석한 방향제|공간 산업 전문 전시 '공간디자인페어' 8월 5~8일 코엑스 개최|향과 오브제를 결합한 공간 연출 제안"
+       data-designer="향과 형태를 결합해 '기능하는 오브제'로 만든 접근은, 제품이 곧 공간의 무드보드가 되는 트렌드를 보여줍니다. 전시 프리뷰 단계에서 미리 살펴볼 만합니다."
+       data-impact-score="2"
+       data-recommend="공간·제품 디자이너의 8월 전시 관람 계획에 참고"
+       data-comment="달항아리라는 익숙한 형태를 방향제라는 기능으로 옮긴 지점이 눈에 띕니다. 오브제와 기능이 분리되지 않고 하나로 붙는 방식은, 요즘 공간 디자인에서 자주 보이는 접근이기도 합니다.
+
+8월 5일부터 코엑스에서 열리는 공간디자인페어는 인테리어·호스피탈리티·리테일 업계가 한자리에 모이는 전문 전시라, 공간을 다루는 디자이너라면 사전 등록 일정을 챙겨둘 만합니다.
+
+전시 자체가 아직 열리기 전이므로, 이 기사는 '무엇을 미리 보고 갈지' 계획을 세우는 용도로 저장해두면 좋습니다.">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">전시프리뷰</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">시선뉴스 · 2026. 07. 30</div>
+        <div class="card-title">제로연구소, '2026 공간디자인페어'서 오브제형 방향제 '다담 달항아리' 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://designcompass.org/2026/07/30/ecb-euro-banknote-design-shortlist/" target="_blank"
+       data-category="Design · 시각 · 그래픽"
+       data-summary="유럽중앙은행이 차세대 유로화 지폐 디자인 후보 10종을 공개했습니다. '유럽 문화'와 '강과 새' 두 주제로 각각 5종이 뽑혔고, 2002년 첫 발행 이후 진행되는 첫 전면 리디자인입니다."
+       data-points="유럽연합 전역에서 1,241건 접수, 25명이 본선 진출|독립 심사위원단이 39개 제안 중 최종 10종을 선별|'유럽 문화'는 인물의 눈과 입을 확대하거나 초상과 콜라주를 결합|'강과 새'는 새소리와 비행 속도를 그래픽 정보로 시각화한 후보를 포함"
+       data-designer="제약이 가장 심한 매체에서 나온 해법이라 볼 값어치가 있습니다. 위조 방지와 접근성, 초소형 인쇄 조건을 모두 통과해야 하는 지면에서 초상을 콜라주로 분해하거나 새소리를 데이터로 옮긴 시도가 어디까지 허용되는지 확인할 수 있습니다."
+       data-impact-score="3"
+       data-recommend="시각 디자인·공모 프로세스 참고"
+       data-comment="지폐는 디자이너가 다루는 매체 중 제약이 가장 빡빡한 축에 듭니다. 위조 방지 요소와 시각장애인 접근성, 수십 년을 버텨야 하는 내구성까지 얹히기 때문에 표현의 여지가 좁습니다. 그 조건에서 인물의 눈과 입만 크게 잘라내거나 초상을 콜라주로 흩는 제안이 최종 후보에 올랐다는 사실 자체가 참고할 만합니다.
+'강과 새' 쪽에서는 새소리와 비행 속도를 그래픽 정보로 옮긴 후보가 눈에 띕니다. 소리와 속도처럼 눈에 보이지 않는 값을 지면 위 형태로 번역하는 문제는 인포그래픽 작업과 그대로 겹칩니다.
+프로세스도 볼 만합니다. 1,241건에서 25명, 다시 39개 제안에서 10종으로 좁힌 뒤 9월 21일까지 시민 의견을 받아 연말에 정합니다. 심사와 공개 의견 수렴을 분리한 구조라, 공공 프로젝트의 선정 절차를 설계할 때 참고가 됩니다.">
+      <div class="thumb g-rust">
+        <div class="noise"></div>
+        <span class="thumb-label">지폐디자인</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인 나침반 · 2026. 07. 30</div>
+        <div class="card-title">ECB, 차세대 유로화 지폐 디자인 후보 10종 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/features/present-and-correct-graphic-design-spotlight-300726" target="_blank"
+       data-category="Design · 브랜딩 · 문화" data-category-en="Design · Branding · Culture"
+       data-summary="An interview with Neal Whittington and Mark Smith, co-founders of curated stationery shop Present & Correct, on the release of their first book of pre-war Japanese tourist maps under new imprint P&amp;C Additions." data-summary-kr="큐레이션 문구점 '프레즌트 앤 코렉트'의 공동 창립자 닐 위팅턴과 마크 스미스가 새 임프린트 'P&amp;C 애디션스'로 전쟁 전 일본 관광 지도를 엮은 첫 책을 낸 계기를 이야기합니다."
+       data-points="How a stationery shop became a design-world institution|Their new imprint P&amp;C Additions|Collecting as a creative practice" data-points-kr="문구점이 디자인 업계의 아이콘이 된 과정|새 임프린트 'P&amp;C 애디션스' 소개|수집이라는 창작 행위"
+       data-designer="A case study in how a strong point of view, obsessive curation, becomes a brand rather than just a shop. Relevant to anyone building a portfolio or identity around personal taste." data-designer-kr="'집요한 큐레이션'이라는 태도 하나가 어떻게 브랜드가 되는지 보여주는 사례입니다. 개인의 취향을 축으로 포트폴리오나 정체성을 쌓으려는 디자이너에게 참고가 됩니다."
+       data-impact-score="2"
+       data-recommend="A nice read for brand and identity-minded designers" data-recommend-kr="브랜드·아이덴티티에 관심 있는 디자이너에게 추천"
+       data-comment="What stands out here is that Present & Correct never set out to be a brand case study. It started as two people collecting stationery they liked, and the shop's identity grew directly out of that obsession rather than a branding brief.
+
+That is a useful contrast to most branding coverage, which tends to start from a strategy deck. Here the strategy came after the taste, not before it. Their new imprint, P&C Additions, is basically that same collecting instinct turned into a publishing arm.
+
+Good reading for anyone assembling a portfolio or personal brand who worries their taste isn't 'strategic' enough yet. Sometimes the taste is the strategy." data-comment-kr="이 기사에서 흥미로운 점은, 프레즌트 앤 코렉트가 처음부터 브랜드 사례가 되려고 시작하지 않았다는 것입니다. 좋아하는 문구를 모으던 두 사람에게서 시작됐고, 브랜드 정체성은 그 집착에서 자연스럽게 자라났습니다.
+
+대부분의 브랜딩 기사가 전략 문서에서 출발하는 것과 대조적입니다. 여기서는 취향이 먼저였고 전략은 그 다음이었습니다. 새 임프린트 'P&amp;C 애디션스'도 결국 같은 수집 본능이 출판이라는 형태로 확장된 것입니다.
+
+포트폴리오나 개인 브랜드를 준비하며 '내 취향이 아직 전략적이지 않다'고 느끼는 디자이너에게 좋은 참고가 됩니다. 때로는 취향 자체가 전략입니다."
+       data-title-en="The story behind Present &amp; Correct, the perfectly curated stationery shop that's every graphic designer's dream" data-title-kr="그래픽 디자이너들의 로망, 문구점 '프레즌트 앤 코렉트'의 이야기">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">문구브랜드</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 07. 30</div>
+        <div class="card-title">그래픽 디자이너들의 로망, 문구점 '프레즌트 앤 코렉트'의 이야기</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/yuna-akabane-art-discover-290726" target="_blank"
+       data-category="Design · 일러스트 · 시각" data-category-en="Design · Illustration · Visual"
+       data-summary="Illustrator Yuna Akabane's gouache paintings carry a quiet, hazy depth that evokes half-remembered domestic scenes from childhood." data-summary-kr="일러스트레이터 유나 아카바네의 구아슈 회화는 어린 시절 집의 장면을 어렴풋이 떠올리게 하는 조용하고 몽롱한 깊이를 담고 있습니다."
+       data-points="Gouache as a medium for soft, nostalgic mood|Domestic, half-remembered scenes as subject matter|Quiet color and composition choices" data-points-kr="부드럽고 향수 어린 무드를 위한 구아슈 활용|반쯤 기억나는 가정적 장면을 주제로|차분한 색채와 구도 선택"
+       data-designer="A useful reference for anyone exploring muted, nostalgic palettes and soft mediums in illustration or mood-board work." data-designer-kr="차분하고 향수 어린 팔레트, 부드러운 재료 표현을 탐구하는 일러스트레이터·무드보드 작업자에게 참고가 될 레퍼런스입니다."
+       data-impact-score="2"
+       data-recommend="Good visual reference, save for mood boards" data-recommend-kr="무드보드·색채 리서치용 저장 추천"
+       data-comment="Most illustration coverage leans toward bold, high-contrast work that reads well as a thumbnail. Akabane's paintings do the opposite: they hold back, and the quietness is the point.
+
+Gouache is a forgiving but tricky medium for this kind of muted mood, since it can easily tip into flat or chalky if the palette isn't controlled carefully. What she gets right is treating memory itself as the subject rather than a specific object or room.
+
+Worth bookmarking as a counterpoint the next time a brief calls for 'nostalgic but not sentimental' visual direction." data-comment-kr="대부분의 일러스트레이션 기사는 썸네일에서도 눈에 띄는 대담하고 대비가 강한 작업 쪽으로 기웁니다. 아카바네의 회화는 그 반대입니다. 절제하는 것 자체가 핵심입니다.
+
+구아슈는 이런 몽롱한 무드를 표현하기에 관대하면서도 까다로운 재료입니다. 팔레트를 세심하게 조절하지 않으면 쉽게 평면적이거나 탁해 보일 수 있기 때문입니다. 그가 잘 짚어낸 지점은 특정 사물이나 방이 아니라 '기억 그 자체'를 주제로 삼았다는 것입니다.
+
+'향수 어리지만 감상적이지 않은' 비주얼 방향이 필요한 다음 브리프를 위해 저장해둘 만한 레퍼런스입니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">일러스트</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 07. 29</div>
+        <div class="card-title">유나 아카바네의 구아슈 회화, 어린 시절 집의 흐릿한 기억처럼</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
