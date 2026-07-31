@@ -218,5 +218,13 @@
   "한국일보": {
     "region": "국내",
     "group": "한국일보"
+  },
+  "SiliconANGLE": {
+    "region": "해외",
+    "group": "SiliconANGLE"
+  },
+  "시선뉴스": {
+    "region": "국내",
+    "group": "시선뉴스"
   }
 }
