@@ -1,4 +1,4 @@
-# ============================================
+﻿# ============================================
 #  Dinol Briefing Deploy Script (deploy.ps1) — HARDENED
 #  Usage:  ./deploy.ps1  ["commit message"]
 #  (No arg = commit message "briefing YYYY-MM-DD")
@@ -22,6 +22,14 @@ Set-Location $PSScriptRoot
 git rev-parse --is-inside-work-tree *> $null
 if ($LASTEXITCODE -ne 0) {
     Write-Host "`n[중단] 여기는 git 레포가 아닙니다: $PSScriptRoot" -ForegroundColor Red
+    exit 1
+}
+
+# 0-1) 브랜치 확인 — deploy.ps1 은 main 전용
+$branch = (git branch --show-current).Trim()
+$branchLabel = if ([string]::IsNullOrWhiteSpace($branch)) { "(detached HEAD)" } else { $branch }
+if ($branch -ne "main") {
+    Write-Host "`n[중단] deploy.ps1 은 main 에서만 실행합니다. 현재 브랜치 = $branchLabel" -ForegroundColor Red
     exit 1
 }
 
