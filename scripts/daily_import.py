@@ -326,33 +326,47 @@ def git_porcelain():
     return [ln for ln in out.split("\n") if ln.strip()]
 
 
-def run_pipeline():
-    t0 = time.monotonic()
-    argv = sys.argv[1:]
+def is_repo_subpath(path):
+    """경로가 레포 루트(ROOT) 하위이거나 ROOT 자신인지."""
+    path = Path(path).resolve()
+    return path == ROOT or ROOT in path.parents
 
-    # ── 인자 검증 (맨 처음) ──
-    if len(argv) != 1:
-        die("[인자] 사용법: python scripts/daily_import.py YYYYMMDD")
-    ymd = argv[0]
-    if parse_ymd(ymd) is None:
-        die(f"[인자] 유효하지 않은 날짜: {ymd!r} (YYYYMMDD 실제 날짜여야 함)")
-    mm = ymd[4:6]
 
-    # ── source_rules.json 스키마 검증 ──
-    rules, rule_errs = load_source_rules()
-    if rule_errs:
-        die("[source_rules] 스키마 오류:\n  " + "\n  ".join(rule_errs))
-    print(f"[source_rules] {len(rules)}종 로드 · 스키마 통과")
+def validate_temp_dir(tdir, ymd, exp_keys):
+    """(e) 임시 추출물 검증. 정확히 8·경로집합·JSON 파싱·contentId==파일명.
+       통과 시 {실제카드경로: bytes} 반환. 실패 시 die()."""
+    tdir = Path(tdir)
+    tmp_files = sorted(tdir.glob(f"{ymd}-*.json"))
+    tmp_names = {pp.name for pp in tmp_files}
+    exp_names = {f"{c}.json" for c in exp_keys}
+    if tmp_names != exp_names:
+        die(f"[2][--redo] 임시 추출 파일집합 불일치: {sorted(tmp_names ^ exp_names)}")
+    new_bytes = {}
+    for pp in tmp_files:
+        cid = pp.stem
+        try:
+            d = json.loads(pp.read_text(encoding="utf-8"))
+        except Exception as e:
+            die(f"[2][--redo] 임시 JSON 파싱 실패 {pp.name}: {e}")
+        if d.get("contentId") != cid:
+            die(f"[2][--redo] contentId 파일명 불일치: {pp.name} vs {d.get('contentId')!r}")
+        new_bytes[NEWS_DIR / f"{cid}.json"] = pp.read_bytes()
+    return new_bytes
 
-    html_path = ROOT / "news" / "2026" / mm / f"Dinol_news_{ymd}.html"
-    daily_path = DAILY_DIR / f"{ymd}.json"
 
-    # ── [0] 사전 확인 ──
-    if git_branch() != "astro":
-        die(f"[0] 브랜치가 astro 가 아님: {git_branch()}")
-    allowed = {f"scripts/daily/{ymd}.json", "scripts/source_rules.json"}
+def existing_verdict(existing, exp_card_paths, redo):
+    """(a) 기존 카드 판정. 반환 None(통과) 또는 사유 문자열."""
+    if not redo:
+        return None if not existing else f"이미 {len(existing)}개 존재 (--redo 필요)"
+    if set(existing) != set(exp_card_paths):
+        return f"8개·경로집합 불일치: {sorted(p.name for p in existing)}"
+    return None
+
+
+def git_blockers(porcelain_lines, allowed):
+    """(c) Git 허용목록 위반 목록. allowed 밖 변경/staged/untracked/충돌을 모은다."""
     blockers = []
-    for ln in git_porcelain():
+    for ln in porcelain_lines:
         xy, path = ln[:2], ln[3:].strip().strip('"')
         if " -> " in path:
             path = path.split(" -> ", 1)[1]
@@ -362,100 +376,111 @@ def run_pipeline():
             if path not in allowed:
                 blockers.append(f"untracked {path}")
             continue
-        if xy[0] != " ":                       # staged
+        if xy[0] != " ":
             blockers.append(f"staged {xy} {path}"); continue
         if path not in allowed:
             blockers.append(f"tracked 변경 {xy} {path}")
-    if blockers:
-        die("[0] Git 상태 위반 (허용: scripts/daily/{ymd}.json · scripts/source_rules.json):\n  "
-            + "\n  ".join(blockers))
-    # source_rules 변경 시 추가만 허용
-    changed_sr = any(ln[3:].strip().strip('"') == "scripts/source_rules.json" for ln in git_porcelain())
-    if changed_sr:
-        rc, head_txt, _ = run_command(["git", "show", "HEAD:scripts/source_rules.json"], "[0]")
-        if rc == 0:
+    return blockers
+
+
+def s0s1_redo(s0, s1, exp_new):
+    """(d) 교체 후 S0→S1 (redo). 반환 None(통과) 또는 위반 dict."""
+    new_ = sorted(set(s1) - set(s0))
+    del_ = sorted(set(s0) - set(s1))
+    changed_ = sorted(k for k in (set(s0) & set(s1)) if s0[k] != s1[k])
+    outside = [k for k in changed_ if k not in exp_new]
+    if new_ or del_ or outside:
+        return {"new": new_, "del": del_, "outside": outside}
+    return None
+
+
+def _redo_precheck_clean(ymd, exp_keys):
+    """--redo 대상 8개가 tracked + HEAD 와 동일(staged/unstaged/untracked 0)인지 확인."""
+    rels = sorted(f"content/news/{c}.json" for c in exp_keys)
+    _, out, _ = run_command(["git", "ls-files", "--"] + rels, "[0]")
+    tracked = {t.strip() for t in out.split("\n") if t.strip()}
+    missing = [r for r in rels if r not in tracked]
+    if missing:
+        die(f"[0][--redo] tracked 아님: {missing}")
+    _, out, _ = run_command(["git", "status", "--porcelain", "--"] + rels, "[0]")
+    dirty = [ln.rstrip() for ln in out.split("\n") if ln.strip()]
+    if dirty:
+        die("[0][--redo] --redo 대상 카드에 미커밋 변경이 있습니다.\n"
+            "사용자 변경을 덮어쓸 수 있으므로 재추출하지 않습니다.\n"
+            "변경 파일:\n  " + "\n  ".join(dirty) + "\n"
+            "변경을 커밋하거나 되돌린 뒤 다시 실행하세요.")
+
+
+def redo_transaction(new_bytes, card_orig, ledger_orig_bytes, body):
+    """
+    카드8 원자 교체 → body(s1_after_replace) 실행 → 실패 시 ★카드8+대장 롤백+SHA 검증★.
+    복구 범위는 카드 8개 + published_urls.json 뿐 (dist/·.astro/ 는 gitignored, 건드리지 않음).
+    반환 ('ok'|'error'|'fatal', msg).
+    """
+    paths = list(new_bytes)
+    temps = {p: p.parent / (p.name + ".redo-next") for p in paths}
+    card_sha = {p: sha(b) for p, b in card_orig.items()}
+    ledger_sha = sha(ledger_orig_bytes) if ledger_orig_bytes is not None else None
+
+    def cleanup():
+        for tp in temps.values():
             try:
-                head_rules = json.loads(head_txt)
-                removed = sorted(set(head_rules) - set(rules))
-                changed = sorted(k for k in (set(head_rules) & set(rules)) if head_rules[k] != rules[k])
-                if removed or changed:
-                    die(f"[0] source_rules.json 에 삭제·변경 감지 (추가만 허용):\n"
-                        f"  삭제={removed}\n  변경={changed}\n  → 사용자 판단 필요")
-                print(f"[0] source_rules.json 변경: 추가만 {sorted(set(rules)-set(head_rules))}")
-            except ValueError:
-                die("[0] HEAD source_rules.json 파싱 실패")
-    if not html_path.is_file():
-        die(f"[0] 브리핑 HTML 없음: {html_path}")
-    # main blob 대조 (RAW 또는 LF 정규화 후 일치)
-    rc, _, _ = run_command(["git", "cat-file", "-e", f"main:news/2026/{mm}/Dinol_news_{ymd}.html"], "[0]")
-    if rc == 0:
-        _, main_bytes = git_show_bytes(f"main:news/2026/{mm}/Dinol_news_{ymd}.html", "[0]")
-        w = html_path.read_bytes()
-        if not (w == main_bytes or w.replace(b"\r\n", b"\n") == main_bytes.replace(b"\r\n", b"\n")):
-            die("[0] 워킹트리 HTML 이 main 배포본과 다름 (LF 정규화 후에도 불일치) → 중단")
-        print("[0] main blob 대조 통과 (RAW 또는 LF 일치)")
-    else:
-        print("[0] main 에 해당 HTML 없음 — blob 대조 건너뜀")
-    # 판정값 파일
-    if not daily_path.is_file():
-        die(f"[0] 판정값 없음: {daily_path}")
+                tp.unlink(missing_ok=True)
+            except OSError:
+                pass
+
+    def rollback():
+        ok = True
+        for p in paths:
+            try:
+                p.write_bytes(card_orig[p])
+                if sha(p.read_bytes()) != card_sha[p]:
+                    ok = False
+            except OSError:
+                ok = False
+        try:
+            if ledger_orig_bytes is not None:
+                LEDGER.write_bytes(ledger_orig_bytes)
+                if sha(LEDGER.read_bytes()) != ledger_sha:
+                    ok = False
+            else:
+                LEDGER.unlink(missing_ok=True)
+                if LEDGER.exists():
+                    ok = False
+        except OSError:
+            ok = False
+        return ok
+
     try:
-        judg = json.loads(daily_path.read_text(encoding="utf-8-sig"))
-    except ValueError as e:
-        die(f"[0] 판정값 JSON 오류: {e}")
-    exp_keys = set([f"{ymd}-ai-{i:03d}" for i in range(1, 5)]
-                   + [f"{ymd}-design-{i:03d}" for i in range(1, 5)])
-    if set(judg) != exp_keys:
-        die(f"[0] 판정값 키가 8개 형식과 불일치: {sorted(set(judg) ^ exp_keys)}")
-    for k, v in judg.items():
-        if set(v.keys()) < {"category_kr", "category_en", "impactScore", "positions"}:
-            die(f"[0] 판정값 {k} 필수 필드 누락")
-    # 기존 카드 0개
-    existing = sorted(NEWS_DIR.glob(f"{ymd}-*.json"))
-    if existing:
-        die(f"[0] 기존 {ymd} 카드 {len(existing)}개 존재 → 중단:\n  "
-            + "\n  ".join(p.name for p in existing))
-    # 대장 원본 보관
-    ledger_original_bytes = LEDGER.read_bytes() if LEDGER.exists() else None
-    ledger_original_data = json.loads(ledger_original_bytes.decode("utf-8-sig")) if ledger_original_bytes else {}
-    ledger_before = len(ledger_original_data)
-    s0 = snapshot()
-    print(f"[0] 사전 확인 통과 · S0 {len(s0)}개 · ledger_before {ledger_before}")
+        for p in paths:
+            temps[p].write_bytes(new_bytes[p])
+        try:
+            for p in paths:
+                temps[p].replace(p)
+        except OSError as e:
+            if rollback():
+                return "error", f"교체 실패 후 카드8+대장 롤백 성공(해시 일치): {e}"
+            return "fatal", f"교체 실패 + 롤백 실패: {e}"
+        s1_after = snapshot()
+        try:
+            body(s1_after)
+        except DailyImportError as e:
+            if rollback():
+                return "error", f"스테이지 실패 → 카드8+대장 복원 성공·해시 일치\n  {e}"
+            return "fatal", f"스테이지 실패 + 복원/해시 실패\n  {e}"
+        except Exception as e:  # 교체 이후 예외
+            if rollback():
+                return "error", f"스테이지 예외 → 카드8+대장 복원 성공\n  {type(e).__name__}: {e}"
+            return "fatal", f"스테이지 예외 + 복원 실패\n  {type(e).__name__}: {e}"
+        return "ok", "재추출 트랜잭션 성공"
+    finally:
+        cleanup()
 
-    # ── [1] HTML 사전 매체 검사 (추출 전) ──
-    html_text = html_path.read_text(encoding="utf-8")
-    pc = precheck_html(html_text, ymd, rules)
-    print(f"[1] HTML cards={pc['cards']}, expected_ids_match={pc['ids_match']}")
-    if pc["cards"] != 8:
-        die(f"[1] 카드 수가 8이 아님: {pc['cards']}")
-    if not pc["ids_match"]:
-        die(f"[1] 카드 ID 집합 불일치: {sorted(set(pc['ids']) ^ set(pc['expected_ids']))}")
-    print(f"[1] sources={len([1 for _, n in pc['sources'] if n])}, empty={pc['empty']}, duplicate_card_ids={pc['dup_ids']}")
-    if pc["empty"] or pc["dup_ids"]:
-        die(f"[1] source 누락 {pc['empty']} / 중복 ID {pc['dup_ids']} → 중단")
-    if pc["unknown"]:
-        print(f"[1] UNKNOWN={len(pc['unknown'])}: {pc['unknown']}")
-        print("    scripts/source_rules.json 에 아래 형식으로 추가 후 같은 명령을 재실행하세요:")
-        for nm in pc["unknown"]:
-            print(f'      "{nm}": {{ "region": "국내|해외", "group": "{nm}" }}')
-        die("[1] UNKNOWN 매체 → JSON 추출하지 않고 중단")
-    print("[1] UNKNOWN=0")
 
-    # ── [2] 추출 ──
-    rc, out, err = run_python(["scripts/extract_cards.py", str(html_path.relative_to(ROOT)).replace("\\", "/"), "--out", "content/news"], "[2]")
-    if rc != 0:
-        die(f"[2] extract_cards 실패 (rc={rc})\n{out}\n{err}")
-    s1 = snapshot()
-    new = sorted(set(s1) - set(s0))
-    deleted = sorted(set(s0) - set(s1))
-    changed = sorted(k for k in (set(s0) & set(s1)) if s0[k] != s1[k])
-    exp_new = {f"content/news/{ymd}-{s}-{i:03d}.json" for s in ("ai", "design") for i in range(1, 5)}
-    if set(new) != exp_new or deleted or changed:
-        die(f"[2] S0→S1 위반: 신규{len(new)} 삭제{len(deleted)} 기존변경{len(changed)}")
-    print(f"[2] 추출 8개 · 기존 무변경 · 삭제 0")
-
+def stages_3_to_10(ymd, rules, judg, targets, exp_keys, exp_new, s1,
+                   ledger_original_data, ledger_original_bytes, ledger_before, changed_sr, t0):
+    """[3]~[10] 공통 본체. 일반 모드·--redo 모드가 함께 쓴다. 실패 시 die()→DailyImportError."""
     # ── [3] 구성 균형 (JSON 기준 교차검증) ──
-    targets = {c: NEWS_DIR / f"{c}.json" for c in exp_keys}
     named = []
     for c in sorted(exp_keys):
         d = json.loads(targets[c].read_text(encoding="utf-8"))
@@ -537,7 +562,6 @@ def run_pipeline():
         die(f"[7] 대장 판정 실패: 최종 {len(current_data)} · 고유 {uniq} · before {ledger_before}")
 
     # ── [8] 빌드 ──
-    # Windows 는 npm 이 npm.cmd 라 subprocess 가 직접 실행 못 함 → cmd /c 로 감싼다.
     npm_cmd = ["cmd", "/c", "npm", "run", "build"] if os.name == "nt" else ["npm", "run", "build"]
     rc, out, err = run_command(npm_cmd, "[8]")
     if rc != 0:
@@ -555,7 +579,6 @@ def run_pipeline():
     rc, out, err = run_python(["scripts/validate_details.py"], "[9]")
     if "불일치 합계: 0" not in out or "PASS" not in out:
         die(f"[9] validate_details 실패\n{out[-2000:]}")
-    # V37 동적 대조
     cards = [json.loads(p.read_text(encoding="utf-8")) for p in NEWS_DIR.glob("*.json")]
     empty_pos = {c["contentId"] for c in cards if not c["positions"]}
     valid_pos = {c["contentId"] for c in cards if c["positions"]}
@@ -584,6 +607,174 @@ def run_pipeline():
     if changed_sr:
         print(f"  scripts/source_rules.json  (매체 추가)")
     print(f"예시: git add -- content/news/{ymd}-*.json scripts/daily/{ymd}.json")
+
+
+def run_pipeline():
+    t0 = time.monotonic()
+    argv = sys.argv[1:]
+
+    # ── 인자 검증 (맨 처음) — 순서 무관 --redo 지원 ──
+    redo = "--redo" in argv
+    positional = [a for a in argv if not a.startswith("--")]
+    unknown = [a for a in argv if a.startswith("--") and a != "--redo"]
+    if unknown:
+        die(f"[인자] 알 수 없는 플래그: {unknown}\n사용법: python scripts/daily_import.py YYYYMMDD [--redo]")
+    if len(positional) != 1:
+        die("[인자] 사용법: python scripts/daily_import.py YYYYMMDD [--redo]")
+    ymd = positional[0]
+    if parse_ymd(ymd) is None:
+        die(f"[인자] 유효하지 않은 날짜: {ymd!r} (YYYYMMDD 실제 날짜여야 함)")
+    mm = ymd[4:6]
+
+    # ── source_rules.json 스키마 검증 ──
+    rules, rule_errs = load_source_rules()
+    if rule_errs:
+        die("[source_rules] 스키마 오류:\n  " + "\n  ".join(rule_errs))
+    print(f"[source_rules] {len(rules)}종 로드 · 스키마 통과")
+
+    html_path = ROOT / "news" / "2026" / mm / f"Dinol_news_{ymd}.html"
+    daily_path = DAILY_DIR / f"{ymd}.json"
+
+    # ── [0] 사전 확인 ──
+    if git_branch() != "astro":
+        die(f"[0] 브랜치가 astro 가 아님: {git_branch()}")
+    # Git 허용목록은 --redo 여부와 무관하게 동일: daily/{ymd}.json · source_rules.json 뿐
+    allowed = {f"scripts/daily/{ymd}.json", "scripts/source_rules.json"}
+    blockers = git_blockers(git_porcelain(), allowed)
+    if blockers:
+        die("[0] Git 상태 위반 (허용: scripts/daily/{ymd}.json · scripts/source_rules.json):\n  "
+            + "\n  ".join(blockers))
+    # source_rules 변경 시 추가만 허용
+    changed_sr = any(ln[3:].strip().strip('"') == "scripts/source_rules.json" for ln in git_porcelain())
+    if changed_sr:
+        rc, head_txt, _ = run_command(["git", "show", "HEAD:scripts/source_rules.json"], "[0]")
+        if rc == 0:
+            try:
+                head_rules = json.loads(head_txt)
+                removed = sorted(set(head_rules) - set(rules))
+                changed = sorted(k for k in (set(head_rules) & set(rules)) if head_rules[k] != rules[k])
+                if removed or changed:
+                    die(f"[0] source_rules.json 에 삭제·변경 감지 (추가만 허용):\n"
+                        f"  삭제={removed}\n  변경={changed}\n  → 사용자 판단 필요")
+                print(f"[0] source_rules.json 변경: 추가만 {sorted(set(rules)-set(head_rules))}")
+            except ValueError:
+                die("[0] HEAD source_rules.json 파싱 실패")
+    if not html_path.is_file():
+        die(f"[0] 브리핑 HTML 없음: {html_path}")
+    # main blob 대조 (RAW 또는 LF 정규화 후 일치)
+    rc, _, _ = run_command(["git", "cat-file", "-e", f"main:news/2026/{mm}/Dinol_news_{ymd}.html"], "[0]")
+    if rc == 0:
+        _, main_bytes = git_show_bytes(f"main:news/2026/{mm}/Dinol_news_{ymd}.html", "[0]")
+        w = html_path.read_bytes()
+        if not (w == main_bytes or w.replace(b"\r\n", b"\n") == main_bytes.replace(b"\r\n", b"\n")):
+            die("[0] 워킹트리 HTML 이 main 배포본과 다름 (LF 정규화 후에도 불일치) → 중단")
+        print("[0] main blob 대조 통과 (RAW 또는 LF 일치)")
+    else:
+        print("[0] main 에 해당 HTML 없음 — blob 대조 건너뜀")
+    # 판정값 파일
+    if not daily_path.is_file():
+        die(f"[0] 판정값 없음: {daily_path}")
+    try:
+        judg = json.loads(daily_path.read_text(encoding="utf-8-sig"))
+    except ValueError as e:
+        die(f"[0] 판정값 JSON 오류: {e}")
+    exp_keys = set([f"{ymd}-ai-{i:03d}" for i in range(1, 5)]
+                   + [f"{ymd}-design-{i:03d}" for i in range(1, 5)])
+    if set(judg) != exp_keys:
+        die(f"[0] 판정값 키가 8개 형식과 불일치: {sorted(set(judg) ^ exp_keys)}")
+    for k, v in judg.items():
+        if set(v.keys()) < {"category_kr", "category_en", "impactScore", "positions"}:
+            die(f"[0] 판정값 {k} 필수 필드 누락")
+    # 기존 카드 검사 — 모드별 (tracked 와 clean 은 다르다)
+    existing = sorted(NEWS_DIR.glob(f"{ymd}-*.json"))
+    exp_card_paths = {NEWS_DIR / f"{c}.json" for c in exp_keys}
+    verdict = existing_verdict(existing, exp_card_paths, redo)
+    if not redo:
+        if verdict:
+            die(f"[0] 이미 추출된 날짜입니다 ({len(existing)}개). 같은 입력으로 다시 생성하려면:\n"
+                f"    python scripts/daily_import.py {ymd} --redo\n  "
+                + "\n  ".join(p.name for p in existing))
+    else:
+        if verdict:
+            die(f"[0][--redo] {verdict}")
+        _redo_precheck_clean(ymd, exp_keys)
+        print(f"[0][--redo] 당일 카드 8개 tracked + clean(HEAD 동일) 확인")
+    # 대장 원본 보관
+    ledger_original_bytes = LEDGER.read_bytes() if LEDGER.exists() else None
+    ledger_original_data = json.loads(ledger_original_bytes.decode("utf-8-sig")) if ledger_original_bytes else {}
+    ledger_before = len(ledger_original_data)
+    s0 = snapshot()
+    print(f"[0] 사전 확인 통과 · S0 {len(s0)}개 · ledger_before {ledger_before}")
+
+    # ── [1] HTML 사전 매체 검사 (추출 전) ──
+    html_text = html_path.read_text(encoding="utf-8")
+    pc = precheck_html(html_text, ymd, rules)
+    print(f"[1] HTML cards={pc['cards']}, expected_ids_match={pc['ids_match']}")
+    if pc["cards"] != 8:
+        die(f"[1] 카드 수가 8이 아님: {pc['cards']}")
+    if not pc["ids_match"]:
+        die(f"[1] 카드 ID 집합 불일치: {sorted(set(pc['ids']) ^ set(pc['expected_ids']))}")
+    print(f"[1] sources={len([1 for _, n in pc['sources'] if n])}, empty={pc['empty']}, duplicate_card_ids={pc['dup_ids']}")
+    if pc["empty"] or pc["dup_ids"]:
+        die(f"[1] source 누락 {pc['empty']} / 중복 ID {pc['dup_ids']} → 중단")
+    if pc["unknown"]:
+        print(f"[1] UNKNOWN={len(pc['unknown'])}: {pc['unknown']}")
+        print("    scripts/source_rules.json 에 아래 형식으로 추가 후 같은 명령을 재실행하세요:")
+        for nm in pc["unknown"]:
+            print(f'      "{nm}": {{ "region": "국내|해외", "group": "{nm}" }}')
+        die("[1] UNKNOWN 매체 → JSON 추출하지 않고 중단")
+    print("[1] UNKNOWN=0")
+
+    # ── [2] 추출 ── (모드 분기)
+    targets = {c: NEWS_DIR / f"{c}.json" for c in exp_keys}
+    exp_new = {f"content/news/{ymd}-{s}-{i:03d}.json" for s in ("ai", "design") for i in range(1, 5)}
+
+    if not redo:
+        rc, out, err = run_python(["scripts/extract_cards.py", str(html_path.relative_to(ROOT)).replace("\\", "/"), "--out", "content/news"], "[2]")
+        if rc != 0:
+            die(f"[2] extract_cards 실패 (rc={rc})\n{out}\n{err}")
+        s1 = snapshot()
+        new = sorted(set(s1) - set(s0))
+        deleted = sorted(set(s0) - set(s1))
+        changed = sorted(k for k in (set(s0) & set(s1)) if s0[k] != s1[k])
+        if set(new) != exp_new or deleted or changed:
+            die(f"[2] S0→S1 위반: 신규{len(new)} 삭제{len(deleted)} 기존변경{len(changed)}")
+        print("[2] 추출 8개 · 기존 무변경 · 삭제 0")
+        stages_3_to_10(ymd, rules, judg, targets, exp_keys, exp_new, s1,
+                       ledger_original_data, ledger_original_bytes, ledger_before, changed_sr, t0)
+        return 0
+
+    # ── [2] --redo: 임시 추출 → 검증(레포 무변경) → 원자 교체 + 트랜잭션 ──
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        tdir = Path(td).resolve()
+        if is_repo_subpath(tdir):
+            die(f"[2][--redo] 임시 디렉터리가 레포 하위 → 중단: {tdir}")
+        rc, out, err = run_python(["scripts/extract_cards.py",
+                                   str(html_path.relative_to(ROOT)).replace("\\", "/"),
+                                   "--out", str(tdir)], "[2]")
+        if rc != 0:
+            die(f"[2][--redo] extract_cards 실패 (rc={rc})\n{out}\n{err}")
+        new_bytes = validate_temp_dir(tdir, ymd, exp_keys)
+        print("[2] ★재추출 모드★ — 임시 추출 8개 검증 완료 (레포 무변경)")
+
+        card_orig = {NEWS_DIR / f"{c}.json": (NEWS_DIR / f"{c}.json").read_bytes() for c in exp_keys}
+
+        def redo_body(s1_after):
+            v = s0s1_redo(s0, s1_after, exp_new)
+            if v:
+                die(f"[2][--redo] 교체 후 S0→S1 위반: 신규{v['new']} 삭제{v['del']} 대상밖{v['outside']}")
+            changed_ = [k for k in (set(s0) & set(s1_after)) if s0[k] != s1_after[k]]
+            print(f"[2][--redo] 교체 후 S0→S1 통과 · 변경 {len(changed_)}개 (⊆ 8)")
+            stages_3_to_10(ymd, rules, judg, targets, exp_keys, exp_new, s1_after,
+                           ledger_original_data, ledger_original_bytes, ledger_before, changed_sr, t0)
+
+        status, msg = redo_transaction(new_bytes, card_orig, ledger_original_bytes, redo_body)
+    print(f"[--redo] 트랜잭션 결과: {status} — {msg}")
+    if status == "fatal":
+        die("[--redo] FATAL — 복구 실패/해시 불일치. 후속 전부 중단, 즉시 보고", 2)
+    if status != "ok":
+        die("[--redo] ERROR — 카드8+대장 복원됨(해시 일치), 재시도 가능")
     return 0
 
 
