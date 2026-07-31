@@ -1,0 +1,57 @@
+{
+  "contentId": "20260801-design-003",
+  "date": "2026-08-01",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-30"
+  },
+  "url": "https://www.itsnicethat.com/features/present-and-correct-graphic-design-spotlight-300726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 문화",
+    "en": "Design · Branding · Culture"
+  },
+  "title": {
+    "kr": "그래픽 디자이너들의 로망, 문구점 '프레즌트 앤 코렉트'의 이야기",
+    "en": "The story behind Present & Correct, the perfectly curated stationery shop that's every graphic designer's dream"
+  },
+  "summary": {
+    "kr": "큐레이션 문구점 '프레즌트 앤 코렉트'의 공동 창립자 닐 위팅턴과 마크 스미스가 새 임프린트 'P&C 애디션스'로 전쟁 전 일본 관광 지도를 엮은 첫 책을 낸 계기를 이야기합니다.",
+    "en": "An interview with Neal Whittington and Mark Smith, co-founders of curated stationery shop Present & Correct, on the release of their first book of pre-war Japanese tourist maps under new imprint P&C Additions."
+  },
+  "points": {
+    "kr": [
+      "문구점이 디자인 업계의 아이콘이 된 과정",
+      "새 임프린트 'P&C 애디션스' 소개",
+      "수집이라는 창작 행위"
+    ],
+    "en": [
+      "How a stationery shop became a design-world institution",
+      "Their new imprint P&C Additions",
+      "Collecting as a creative practice"
+    ]
+  },
+  "positions": [
+    "brand-designer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "'집요한 큐레이션'이라는 태도 하나가 어떻게 브랜드가 되는지 보여주는 사례입니다. 개인의 취향을 축으로 포트폴리오나 정체성을 쌓으려는 디자이너에게 참고가 됩니다.",
+    "en": "A case study in how a strong point of view, obsessive curation, becomes a brand rather than just a shop. Relevant to anyone building a portfolio or identity around personal taste."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "브랜드·아이덴티티에 관심 있는 디자이너에게 추천",
+    "en": "A nice read for brand and identity-minded designers"
+  },
+  "comment": {
+    "kr": "이 기사에서 흥미로운 점은, 프레즌트 앤 코렉트가 처음부터 브랜드 사례가 되려고 시작하지 않았다는 것입니다. 좋아하는 문구를 모으던 두 사람에게서 시작됐고, 브랜드 정체성은 그 집착에서 자연스럽게 자라났습니다.\n\n대부분의 브랜딩 기사가 전략 문서에서 출발하는 것과 대조적입니다. 여기서는 취향이 먼저였고 전략은 그 다음이었습니다. 새 임프린트 'P&C 애디션스'도 결국 같은 수집 본능이 출판이라는 형태로 확장된 것입니다.\n\n포트폴리오나 개인 브랜드를 준비하며 '내 취향이 아직 전략적이지 않다'고 느끼는 디자이너에게 좋은 참고가 됩니다. 때로는 취향 자체가 전략입니다.",
+    "en": "What stands out here is that Present & Correct never set out to be a brand case study. It started as two people collecting stationery they liked, and the shop's identity grew directly out of that obsession rather than a branding brief.\n\nThat is a useful contrast to most branding coverage, which tends to start from a strategy deck. Here the strategy came after the taste, not before it. Their new imprint, P&C Additions, is basically that same collecting instinct turned into a publishing arm.\n\nGood reading for anyone assembling a portfolio or personal brand who worries their taste isn't 'strategic' enough yet. Sometimes the taste is the strategy."
+  },
+  "thumbLabel": "문구브랜드",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

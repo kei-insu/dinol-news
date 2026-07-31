@@ -1,0 +1,57 @@
+{
+  "contentId": "20260801-ai-004",
+  "date": "2026-08-01",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-30"
+  },
+  "url": "https://techcrunch.com/2026/07/30/forward-deployed-engineers-are-the-ai-industrys-latest-talent-obsession/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 트렌드 · 인재",
+    "en": "AI · Trend · Talent"
+  },
+  "title": {
+    "kr": "AI 업계 최신 화두 '포워드 디플로이드 엔지니어'",
+    "en": null
+  },
+  "summary": {
+    "kr": "2분기 말 기준 기업의 70%가 고객사에 직접 상주하며 AI를 실제 운영에 안착시키는 '포워드 디플로이드 엔지니어(FDE)' 채용을 계획 중이며, 대형 컨설팅사들은 관련 인력을 10배 늘려야 한다고 밝혔습니다.",
+    "en": "By the end of Q2, 70% of companies were planning to hire forward-deployed engineers (FDEs) who embed with clients to make AI actually work in production, with major consulting firms saying they need 10x more FDE headcount."
+  },
+  "points": {
+    "kr": [
+      "기업 70%가 FDE 채용 계획",
+      "컨설팅사들 \"인력 10배 필요\"",
+      "AI 모델 역량과 실제 배포 사이를 잇는 역할"
+    ],
+    "en": [
+      "70% of companies plan to hire FDEs",
+      "Consulting firms want 10x more FDE headcount",
+      "Role bridges AI model capability and real deployment"
+    ]
+  },
+  "positions": [
+    "design-lead",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "AI 도구 도입이 실제로 필요로 하는 '사람 계층'을 보여줍니다. 조직의 AI 도입이 구독만으로 끝나지 않고 전담 구현 인력을 필요로 할 수 있다는 신호입니다.",
+    "en": "This is the human layer AI-tool rollouts actually need. It's a cue that 'AI adoption' in your org may require dedicated implementation roles, not just a subscription."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "사내 AI 도구 도입 기획 시 참고",
+    "en": "Useful context for AI-tool rollout planning"
+  },
+  "comment": {
+    "kr": "이 트렌드에서 흥미로운 지점은 직함이 아니라, 그 직함이 인정하는 사실입니다. 강력한 AI 모델만으로는 실제 기업 내부에서 AI가 '작동'하지 않는다는 것입니다. 누군가는 여전히 고객사 옆에 앉아 지저분한 실제 업무 흐름을 이해하고 모델을 그 안에 연결해야 합니다.\n\nAI 도구를 검토 중인 팀이라면, 도입이 단순한 라이선스 결정이라는 생각을 바로잡는 데 유용한 사례입니다. 배포를 안착시키는 데만 컨설팅 인력을 10배 늘려야 한다면, 도구 자체뿐 아니라 구현 계층에도 일정과 예산을 배정해야 합니다.\n\n조직 내에서 'AI만 도입하면 알아서 될 것'이라고 말하는 사람이 있다면 공유할 만한 기사입니다.",
+    "en": "The interesting part of this trend isn't the job title, it's what it admits: powerful AI models alone don't make AI 'work' inside a real company. Someone still has to sit with the client, understand the messy actual workflow, and wire the model into it.\n\nFor teams evaluating AI tools, this is a useful correction to the idea that adoption is just a licensing decision. If a 10x consulting headcount increase is needed just to make deployments stick, plan your own rollout timelines accordingly, and budget for the implementation layer, not just the tool itself.\n\nWorth sharing with anyone currently pitching 'AI will just work' inside your organization."
+  },
+  "thumbLabel": "AI인재",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

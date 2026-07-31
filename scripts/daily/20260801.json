@@ -1,0 +1,71 @@
+{
+  "20260801-ai-001": {
+    "category_kr": "AI · 로보틱스 · 산업",
+    "category_en": "AI · Robotics · Industry",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer"
+    ]
+  },
+  "20260801-ai-002": {
+    "category_kr": "AI · 툴 · 요금",
+    "category_en": "AI · Tool · Pricing",
+    "impactScore": 4,
+    "positions": [
+      "design-lead"
+    ]
+  },
+  "20260801-ai-003": {
+    "category_kr": "AI · 로보틱스 · 피지컬AI",
+    "category_en": "AI · Robotics · Physical AI",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer"
+    ]
+  },
+  "20260801-ai-004": {
+    "category_kr": "AI · 트렌드 · 인재",
+    "category_en": "AI · Trend · Talent",
+    "impactScore": 3,
+    "positions": [
+      "design-lead",
+      "product-designer"
+    ]
+  },
+  "20260801-design-001": {
+    "category_kr": "디자인 · 전시 · 공간",
+    "category_en": "Design · Exhibition · Space",
+    "impactScore": 2,
+    "positions": [
+      "space-designer",
+      "industrial-designer"
+    ]
+  },
+  "20260801-design-002": {
+    "category_kr": "디자인 · 시각 · 그래픽",
+    "category_en": "Design · Visual · Graphic",
+    "impactScore": 3,
+    "positions": [
+      "graphic-designer",
+      "illustrator"
+    ]
+  },
+  "20260801-design-003": {
+    "category_kr": "디자인 · 브랜딩 · 문화",
+    "category_en": "Design · Branding · Culture",
+    "impactScore": 2,
+    "positions": [
+      "brand-designer",
+      "graphic-designer"
+    ]
+  },
+  "20260801-design-004": {
+    "category_kr": "디자인 · 일러스트 · 시각",
+    "category_en": "Design · Illustration · Visual",
+    "impactScore": 2,
+    "positions": [
+      "illustrator",
+      "graphic-designer"
+    ]
+  }
+}
