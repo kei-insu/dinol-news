@@ -29,6 +29,7 @@ from validation_common import (
     CONTENT_ID_SCHEMA_FROM,
     SECTION_RUBRIC_POLICY_FROM,
     EN_LANGUAGE_POLICY_FROM,
+    CATEGORY_CANONICAL_FROM,
     VALID_POSITIONS,
     ALLOWED_SECTIONS,
     CONTENT_ID_RE,
@@ -45,6 +46,7 @@ REQUIRED_FIELDS = ("summary", "points", "designer", "impact-score", "recommend",
 REQUIRED_KR_PAIRS = ("summary-kr", "points-kr", "designer-kr", "recommend-kr", "comment-kr")
 
 # EN 카드 언어 슬롯 검사 대상 쌍: 필드 → (영문 attr, 국문 attr)
+# ※ title 은 제외: data-title-kr 은 폐기 예정 속성이라 필수/슬롯 검사 대상이 아니다.
 EN_SLOT_PAIRS = (
     ("summary", "summary", "summary-kr"),
     ("points", "points", "points-kr"),
@@ -202,6 +204,10 @@ def validate_file(path, rep):
                 if attr(block, f_) is None or attr(block, f_).strip() == "":
                     rep.error(path, f"EN 카드 한국어 짝 누락: data-{f_}", tag)
 
+            # [P1-1] EN 카드 영문 원제 필수
+            if not (attr(block, "title-en") or "").strip():
+                rep.error(path, "EN 카드 영문 원제 누락: data-title-en", tag)
+
             # EN 카드 언어 슬롯 결함 검사 (HTML 층)
             en_policy = applies(EN_LANGUAGE_POLICY_FROM, file_date)
             for field, en_attr, kr_attr in EN_SLOT_PAIRS:
@@ -221,6 +227,18 @@ def validate_file(path, rep):
                 # 검사2: 영문 슬롯이 한국어
                 if is_korean_slot(en_v):
                     emit(path, f"EN 영문 슬롯이 한국어: {field}", tag)
+
+        # [P1-2] 카테고리 접두어 가드 (구분자 " · " 포함해 검사)
+        #   0-3 실측: 전 카드 구분자가 " · " 통일, "정확히 디자인/AI 하나만"은 0건.
+        #   canonical 형태(== 또는 "접두어 · ...")만 통과. 정책일 상수는 새로 만들지 않는다.
+        cat = (attr(block, "category") or "").strip()
+        if cat and applies(CATEGORY_CANONICAL_FROM, file_date):
+            design_ok = cat == "디자인" or cat.startswith("디자인 · ")
+            ai_ok = cat == "AI" or cat.startswith("AI · ")
+            if section == "design" and not design_ok:
+                rep.error(path, f"Design 카드 category 가 한국어 canonical 이 아님: {cat}", tag)
+            if section == "ai" and not ai_ok:
+                rep.error(path, f"AI 카드 category 접두어 이상: {cat}", tag)
 
         # impact score (모든 파일)
         raw = attr(block, "impact-score")

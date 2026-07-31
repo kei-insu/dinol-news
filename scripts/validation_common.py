@@ -21,6 +21,7 @@ CATEGORY_EN_SCHEMA_FROM    = None           # data-category-en 도입일 (코드
 CONTENT_ID_SCHEMA_FROM     = None           # 상세 페이지 전환 확정 시 날짜 기입
 SECTION_RUBRIC_POLICY_FROM = None           # 섹션별 별점 기준 적용일(재채점 후 기입)
 EN_LANGUAGE_POLICY_FROM    = None           # EN 카드 언어 슬롯 정책 적용일
+CATEGORY_CANONICAL_FROM    = "2026-08-02"   # 카테고리 한국어 canonical 강제일
 
 # ────────────────────────────────────────────────────────────
 # 상수
