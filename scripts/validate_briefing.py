@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent.parent
 JSON_DIR = ROOT / "content" / "news"
-GEN_DIR = ROOT / "dist" / "news" / "2026" / "07"
+GEN_ROOT = ROOT / "dist" / "news" / "2026"
 SEC_NAME = {"ai": "AI", "design": "Design"}
 
 # 이전(before-4-2)과 동일해야 하는 값 — 외곽 조각은 안 바꿨으므로 고정.
@@ -86,7 +86,7 @@ def main():
 
     for date in sorted(by_date):
         y, m, d = date.split("-")
-        gen_p = GEN_DIR / f"Dinol_news_{y}{m}{d}.html"
+        gen_p = GEN_ROOT / m / f"Dinol_news_{y}{m}{d}.html"
         if not gen_p.is_file():
             bad("B0", f"{date}: 브리핑 HTML 없음")
             continue
@@ -148,7 +148,7 @@ def main():
                 if txt(g, "card-title") != norm(j["title"]["kr"]):
                     bad("B10", f"{cid}: card-title != title.kr")
                 # B16 href 대상 상세 HTML 실제 존재
-                target = GEN_DIR / f"{cid}.html"
+                target = GEN_ROOT / cid[4:6] / f"{cid}.html"
                 if not target.is_file():
                     bad("B16", f"{cid}: 상세 {cid}.html 없음")
                     href_targets_missing.append(cid)

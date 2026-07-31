@@ -542,9 +542,9 @@ def run_pipeline():
     rc, out, err = run_command(npm_cmd, "[8]")
     if rc != 0:
         die(f"[8] 빌드 실패\n{out[-2000:]}\n{err[-1000:]}")
-    dist = ROOT / "dist" / "news" / "2026" / "07"
-    brief = len(list(dist.glob("Dinol_news_*.html")))
-    detail = len([p for p in dist.glob("*.html") if re.match(r"^\d{8}-(ai|design)-\d{3}$", p.stem)])
+    dist = ROOT / "dist" / "news" / "2026"
+    brief = len(list(dist.glob("*/Dinol_news_*.html")))
+    detail = len([p for p in dist.glob("*/*.html") if re.match(r"^\d{8}-(ai|design)-\d{3}$", p.stem)])
     exp_detail = len(list(NEWS_DIR.glob("*.json")))
     exp_brief = len({json.loads(p.read_text(encoding='utf-8'))['date'] for p in NEWS_DIR.glob('*.json')})
     print(f"[8] 빌드 · 브리핑 {brief}/{exp_brief} · 상세 {detail}/{exp_detail}")
