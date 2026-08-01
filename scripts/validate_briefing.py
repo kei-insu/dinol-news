@@ -28,6 +28,7 @@ EXPECT_SCRIPTS = [
     "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX",
     "../../../assets/dinol.js",
     "../../../assets/dinol-firebase.js",
+    "../../../assets/likes.js",
 ]
 
 
@@ -132,9 +133,35 @@ def main():
                 # B5 target 속성 없음  (이동 링크=card-link 에 target 없어야)
                 if link is not None and link.has_attr("target"):
                     bad("B5", f"{cid}: target={link.get('target')!r} 존재")
-                # B6 카드 내부 .card-footer/.act-like/.act-share 0개
-                if g.select(".card-footer") or g.select(".act-like") or g.select(".act-share"):
-                    bad("B6", f"{cid}: footer/act 마크업 존재")
+                # B6 (5-A-2 갱신) like-box 정형성: article.card 안 · a.card-link 밖에 like-box 1개,
+                #   dataset 3종(content-id/source-url/share-url) · 버튼 2종(type=button·aria-label) ·
+                #   act-count · 앵커(card-link) 안에는 button 없음(중첩 interactive 방지).
+                boxes = g.find_all("div", class_="like-box")
+                if len(boxes) != 1:
+                    bad("B6", f"{cid}: like-box {len(boxes)}개 (1개여야 함)")
+                else:
+                    box = boxes[0]
+                    if box.find_parent("a", class_="card-link") is not None:
+                        bad("B6", f"{cid}: like-box 가 card-link 앵커 안에 있음")
+                    if box.get("data-content-id") != cid:
+                        bad("B6", f"{cid}: like-box data-content-id={box.get('data-content-id')}")
+                    if not (box.get("data-source-url") or "").strip():
+                        bad("B6", f"{cid}: like-box data-source-url 비어있음")
+                    if not (box.get("data-share-url") or "").strip():
+                        bad("B6", f"{cid}: like-box data-share-url 비어있음")
+                    for nm in ("act-like", "act-share"):
+                        b = box.find("button", class_=nm)
+                        if b is None:
+                            bad("B6", f"{cid}: {nm} 버튼 없음")
+                        else:
+                            if b.get("type") != "button":
+                                bad("B6", f"{cid}: {nm} type != button")
+                            if not (b.get("aria-label") or "").strip():
+                                bad("B6", f"{cid}: {nm} aria-label 없음")
+                    if box.find("span", class_="act-count") is None:
+                        bad("B6", f"{cid}: act-count 없음")
+                if link is not None and link.find_all("button"):
+                    bad("B6", f"{cid}: card-link 앵커 안에 button 존재")
                 # B7 thumb-en == isEn
                 has_en = g.find("span", class_="thumb-en") is not None
                 if has_en != j["isEn"]:
@@ -159,9 +186,11 @@ def main():
                     bad("B16", f"{cid}: 상세 {cid}.html 없음")
                     href_targets_missing.append(cid)
 
-        # B6 (문서 전역에도 없어야)
-        if soup.select(".card-footer") or soup.select(".act-like") or soup.select(".act-share"):
-            bad("B6", f"{date}: 문서에 footer/act 잔존")
+        # B6 (문서 전역) like-box 개수 == 카드 개수 · 드로어 시절 .card-footer 잔존 없음
+        if len(soup.find_all("div", class_="like-box")) != len(all_cards):
+            bad("B6", f"{date}: like-box 수 {len(soup.find_all('div', class_='like-box'))} != 카드 {len(all_cards)}")
+        if soup.select(".card-footer"):
+            bad("B6", f"{date}: 문서에 .card-footer 잔존")
 
         # B11 drawer 요소 0개
         drawer_ids = [el for el in soup.find_all(id=True)
@@ -210,7 +239,7 @@ def main():
     labels = {
         "B0": "브리핑 HTML 존재", "B1": "카드 개수(JSON)", "B2": "href={cid}.html",
         "B3": "data-content-id==cid", "B4": "data-* 집합=={data-content-id}",
-        "B5": "target 없음", "B6": "footer/act 0개", "B7": "thumb-en==isEn",
+        "B5": "target 없음", "B6": "like-box 정형(dataset3·버튼2)", "B7": "thumb-en==isEn",
         "B8": "thumb-label/gradient", "B9": "card-source", "B10": "card-title",
         "B11": "drawer 요소 0", "B12": "언어토글 0", "B13": "방명록 존재",
         "B14": "script src 동일", "B15": "title/site-date", "B16": "href 대상 존재",

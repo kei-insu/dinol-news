@@ -44,6 +44,10 @@ try {
 
 const db = getFirestore(app);
 
+// 5-A-2: 좋아요 로직은 assets/likes.js 로 분리(2계층). 이 파일은 Firebase 소유만 하고,
+// 초기화된 app·db 를 Promise 로 공개한다. likes.js 가 __dinolFirebaseReady 를 소비한다.
+window.__dinolFirebaseReady = Promise.resolve({ app, db });
+
 
 // ── 공통 유틸 ──────────────────────────────────────────────
 async function sha256(str) {
@@ -53,105 +57,10 @@ async function sha256(str) {
 function esc(s) {
   return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 }
-function likeKey(url) {
-  // 기사 URL → Firestore 문서 ID로 안전한 키
-  // 브리핑 날짜(파일명 Dinol_news_YYYYMMDD)를 접두어로 붙여, 같은 URL이 다른 날 재등장해도 좋아요가 분리되게 함
-  const m = location.pathname.match(/Dinol_news_(\d{8})/);
-  const d = m ? m[1] + "_" : "";
-  const u = url.replace(/[^a-zA-Z0-9]/g, "_").slice(0, 280) || "x";
-  return d + u;
-}
 function isMobile() { return window.matchMedia("(max-width: 580px)").matches; }
 
-// ═════════════════════════════════════════════════════════════
-// 1) 좋아요 (기사 URL 기준 카운트)
-//    ★4-2: initLikes() 호출 제거 — 함수 본체는 남기고 실행만 하지 않는다.
-//      5단계에서 contentId 기반으로 재도입한다. (아래는 정의만, 호출 없음)
-// ═════════════════════════════════════════════════════════════
-function initLikes() {
-  const cards = [...document.querySelectorAll("a.card")];
-  if (!cards.length) return;
-
-  // 토스트
-  const toast = document.createElement("div");
-  toast.className = "gb-toast";
-  document.body.appendChild(toast);
-  let tTimer;
-  function showToast(msg) {
-    toast.textContent = msg; toast.classList.add("show");
-    clearTimeout(tTimer); tTimer = setTimeout(() => toast.classList.remove("show"), 1800);
-  }
-
-  const state = {}; // href -> {count, liked}
-  function likedLocally(href) { return localStorage.getItem("dinol_liked_" + likeKey(href)) === "1"; }
-
-  function paint(likeEl, countEl, st) {
-    if (!likeEl) return;
-    likeEl.classList.toggle("liked", st.liked);
-    countEl.textContent = st.count > 0 ? st.count : "";
-  }
-  function renderCard(card) {
-    paint(card.querySelector(".act-like"), card.querySelector(".act-count"), state[card.href]);
-  }
-  function doShare(href, title) {
-    if (navigator.share) navigator.share({ title, url: href }).catch(() => {});
-    else if (navigator.clipboard) navigator.clipboard.writeText(href).then(() => showToast("링크가 복사되었어요")).catch(() => showToast("링크: " + href));
-    else showToast("링크: " + href);
-  }
-
-  // 드로어(팝업) 액션
-  let currentCard = null;
-  const dLike = document.getElementById("drawerLike"),
-        dShare = document.getElementById("drawerShare"),
-        dCount = document.getElementById("drawerLikeCount");
-  function renderDrawer() { if (currentCard && dLike) paint(dLike, dCount, state[currentCard.href]); }
-
-  async function toggleLike(card) {
-    const st = state[card.href];
-    const key = likeKey(card.href);
-    const ref = doc(db, "likes", key);
-    const willLike = !st.liked;
-    // 낙관적 UI
-    st.liked = willLike; st.count = Math.max(0, st.count + (willLike ? 1 : -1));
-    renderCard(card); if (currentCard && currentCard.href === card.href) renderDrawer();
-    try {
-      await runTransaction(db, async (tx) => {
-        const snap = await tx.get(ref);
-        const cur = snap.exists() ? (snap.data().count || 0) : 0;
-        const next = Math.max(0, cur + (willLike ? 1 : -1));
-        tx.set(ref, { count: next, url: card.href }, { merge: true });
-      });
-      if (willLike) localStorage.setItem("dinol_liked_" + key, "1");
-      else localStorage.removeItem("dinol_liked_" + key);
-    } catch (e) {
-      // 실패 시 롤백
-      st.liked = !willLike; st.count = Math.max(0, st.count + (willLike ? -1 : 1));
-      renderCard(card); renderDrawer();
-      showToast("잠시 후 다시 시도해주세요");
-    }
-  }
-
-  // 초기 카운트 로드 + 이벤트 바인딩
-  cards.forEach(async (card) => {
-    state[card.href] = { count: 0, liked: likedLocally(card.href) };
-    const like = card.querySelector(".act-like"), share = card.querySelector(".act-share");
-    if (like && share) {
-      renderCard(card);
-      like.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); toggleLike(card); });
-      share.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); doShare(card.href, (card.querySelector(".card-title") || {}).textContent || "디자인 놀이터"); });
-    }
-    card.addEventListener("click", () => { currentCard = card; renderDrawer(); });
-    // Firestore에서 카운트 읽기
-    try {
-      const snap = await getDoc(doc(db, "likes", likeKey(card.href)));
-      if (snap.exists()) { state[card.href].count = snap.data().count || 0; renderCard(card); if (currentCard === card) renderDrawer(); }
-    } catch (e) { /* 무시 */ }
-  });
-
-  if (dLike) dLike.addEventListener("click", (e) => { e.stopPropagation(); if (currentCard) toggleLike(currentCard); });
-  if (dShare) dShare.addEventListener("click", (e) => { e.stopPropagation(); if (currentCard) doShare(currentCard.href, (currentCard.querySelector(".card-title") || {}).textContent || "디자인 놀이터"); });
-}
-// initLikes();  // 5단계에서 contentId 기반으로 재도입
+// 1) 좋아요 — 5-A-2에서 assets/likes-core.js + assets/likes.js 로 분리(2계층).
+//    이 파일에는 좋아요 로직을 두지 않는다(초기화 계약 __dinolFirebaseReady 만 제공).
 
 // ═════════════════════════════════════════════════════════════
 // 2) 디놀 톡톡 (방명록 + 댓글) — Firestore 저장 + PC 페이지네이션 / MO 무한스크롤

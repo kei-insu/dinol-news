@@ -398,6 +398,7 @@ def main():
             if has_value(data["comment"]["kr"]):
                 expected.append("comment")
             expected.append("actions")  # 항상 존재
+            expected.append("like-box")  # 5-A-2 좋아요·공유 (항상 존재)
 
             article = s.select_one("article.detail")
             actual_tokens = []
@@ -424,6 +425,8 @@ def main():
                         token = "comment"
                     elif "detail-actions" in classes:
                         token = "actions"
+                    elif "like-box" in classes:
+                        token = "like-box"
                     else:
                         token = f"unknown:{','.join(sorted(classes)) or child.name}"
                     actual_tokens.append(token)

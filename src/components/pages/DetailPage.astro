@@ -161,5 +161,18 @@ const jsonLd = {
       <a class="detail-cta" href={card.url} target="_blank" rel="noopener noreferrer">원문 보기 →</a>
       <a class="detail-back" href={`Dinol_news_${ymd}.html`}>이 날짜 브리핑 보기</a>
     </div>
+
+    <div class="like-box"
+         data-content-id={card.contentId}
+         data-source-url={card.url}
+         data-share-url={canonical}>
+      <button type="button" class="act-like" aria-label="좋아요" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+      <span class="act-count">0</span>
+      <button type="button" class="act-share" aria-label="공유">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
   </article>
 </Detail>

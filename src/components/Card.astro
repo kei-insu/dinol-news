@@ -3,6 +3,12 @@ const { card } = Astro.props;
 const d = card.source.publishedAt;
 const dateStr = d ? d.split('-').join('. ') : '';
 const src = card.source.name ? `${card.source.name} · ${dateStr}` : dateStr;
+
+// 5-A-2 좋아요: share-url 은 상세 페이지와 동일한 canonical(절대 URL)로 만든다.
+const [y, m] = card.date.split('-');
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
+const shareUrl = new URL(`${base}news/${y}/${m}/${card.contentId}.html`, Astro.site).href;
 ---
 <article class={card.featured ? 'card featured' : 'card'}
          data-content-id={card.contentId}>
@@ -17,5 +23,16 @@ const src = card.source.name ? `${card.source.name} · ${dateStr}` : dateStr;
       <div class="card-title">{card.title.kr}</div>
     </div>
   </a>
-  {/* 5-A-2 에서 여기에 like-box 가 들어온다. 이번엔 만들지 않는다 */}
+  <div class="like-box"
+       data-content-id={card.contentId}
+       data-source-url={card.url}
+       data-share-url={shareUrl}>
+    <button type="button" class="act-like" aria-label="좋아요" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+    </button>
+    <span class="act-count">0</span>
+    <button type="button" class="act-share" aria-label="공유">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
 </article>
