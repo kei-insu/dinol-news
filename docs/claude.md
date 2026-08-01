@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 최근 변경 |
 |---|---|
+| 2026-08-02 | main 예외 3종 명시(발행본 결함 수정·main 전용 도구) + 커밋 전제조건 |
 | 2026-07-31 | 작업 PC kgblu 단독 확정 + 개발(astro)/상용(main) 브랜치 분리 명문화 |
 | 2026-07-26 | 명령 작성 전 자체 검토 체크리스트 신설 |
 | 2026-07-25 | 작업 일지(Notion) 기록 규칙 명문화 + 문서 목차 2건 추가 + 백로그 갱신 |
@@ -62,7 +63,7 @@
 | 백엔드 | Firebase Firestore(asia-northeast3, Spark) |
 | 로컬 | Windows PowerShell · **kgblu 단독**(`C:\Users\kgblu\OneDrive\바탕 화면\dinol-news\dinol-news`) |
 | 배포 | 사용자 로컬 수동(git). Claude 컨테이너는 push 불가 |
-| 브랜치 | **개발 = `astro` / 상용 = `main`.** GitHub Pages는 `main`만 빌드. main에 올리는 것은 일간 브리핑 발행뿐이고, 코드·정본 JSON·문서 변경은 `astro`에 쌓는다 |
+| 브랜치 | **개발 = `astro` / 상용 = `main`.** GitHub Pages는 `main`만 빌드. **main 허용은 아래 3종뿐**이고, 그 외 코드·정본 JSON·문서는 `astro`에 쌓는다<br>① 일간 브리핑 발행<br>② **발행본 결함 수정** — 누락 속성·잘못된 링크 등 이미 나간 콘텐츠 교정 (7/29 `4074d82`, 8/1 `8b227e1`)<br>③ **main에서 실행하는 도구** — `deploy.ps1`. astro에 두면 병합 전까지 main에 구버전이 남아 가드가 무용지물 (8/2 `96cba39`) |
 
 ### 파일 구조
 ```
@@ -97,6 +98,15 @@
 | 4 | 작업 후 관련 문서 갱신 + 날짜 스탬프 |
 | 5 | 작업 후 **Notion 작업 일지 기록** (위 "작업 일지" 규칙) |
 | 6 | `main`에 변경이 생기면 `astro` 브랜치에서 `git merge main` — 매일 브리핑 발행 시 특히 |
+
+**발행본 결함 수정 순서 (②)** — 이 순서를 지켜야 한다.
+```
+main 수정·배포 → git checkout astro → git merge main → daily_import.py {ymd} --redo
+```
+astro에서 먼저 고치면 `daily_import.py` 게이트 `[0]`의 **main blob 대조에 막힌다.**
+
+**커밋 전제조건** — `daily_import.py`는 `[PASS] 전체 통과`가 떠야 커밋 대상이다.
+7/31·8/1 두 번 중간 게이트에서 끊긴 채 커밋이 진행됐다. 중단되면 원인부터 해결한다.
 
 
 ---
