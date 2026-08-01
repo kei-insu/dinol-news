@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 · 2026. 08. 02</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense · TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 2, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://zdnet.co.kr/view/?no=20260801104214" target="_blank"
+       data-category="AI · 트렌드 · 빅테크"
+       data-summary="오픈AI의 챗GPT가 출시 약 3년 8개월 만에 월간 이용자 10억 명을 넘어섰습니다. 오픈AI는 기업 고객도 200만 곳을 넘었다고 밝혔습니다."
+       data-points="출시 3년 8개월 만에 이용자 10억 돌파|기업 고객 200만 개사 돌파 공식화|검색·에이전트 기능 확장이 성장 견인"
+       data-designer="사용자 규모가 곧 표준이 되는 단계에 들어섰다는 신호입니다. 챗GPT를 전제로 한 워크플로와 UI 설계가 이제 예외가 아니라 기본값이 될 수 있습니다."
+       data-impact-score="4"
+       data-recommend="AI 서비스 기획자·PM 필독 · 팀 공유 추천"
+       data-comment="2년 반 전만 해도 '이용자 1억 명'이 기록으로 회자되던 걸 생각하면, 10억이라는 숫자는 챗GPT가 더 이상 특정 서비스가 아니라 하나의 인프라에 가까워졌다는 뜻입니다.
+
+기업 고객 200만 개사라는 수치도 눈여겨볼 지점입니다. 개인 사용자 성장과 별개로 B2B 영역에서의 침투가 꾸준했다는 뜻이고, 이는 앞으로 사내 도구·워크플로 설계에 챗GPT 연동을 기본 전제로 깔아야 하는 경우가 늘어난다는 의미이기도 합니다.
+
+디자이너 입장에서는 '챗GPT가 있다는 가정하에' 인터페이스를 설계하는 시대가 이미 시작됐다고 보는 게 안전합니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">챗GPT</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet korea · 2026. 08. 01</div>
+        <div class="card-title">오픈AI '챗GPT' 이용자 10억 명 넘었다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://simonwillison.net/2026/Jul/31/stateless-mcp/" target="_blank"
+       data-category="AI · 툴 · 프로토콜" data-category-en="AI · Tools · Protocol"
+       data-summary="The 2026-07-28 Model Context Protocol specification, informally MCP 2.0, is the most significant change to the spec since it launched. The handshake and session header are gone, removing the sticky-routing and shared-session-store work that horizontal deployments used to require." data-summary-kr="2026-07-28자 MCP 명세(통칭 MCP 2.0)는 최초 공개 이후 가장 큰 변경입니다. 핸드셰이크와 세션 헤더가 사라지면서, 수평 확장 시 필요하던 고정 라우팅과 세션 공유 저장소 작업이 없어졌습니다."
+       data-points="No handshake, no session header, no server-initiated requests|mcp-explorer: a CLI for calling any MCP endpoint directly|datasette-mcp adds a /-/mcp endpoint with three tools, execute_sql read-only|Supabase, AWS Bedrock AgentCore, PostHog and Microsoft Foundry aligned within release week" data-points-kr="핸드셰이크·세션 헤더·서버 발신 요청 모두 제거|mcp-explorer · 어떤 MCP 엔드포인트든 직접 호출하는 CLI|datasette-mcp · /-/mcp 엔드포인트에 도구 3종 추가, execute_sql은 읽기 전용|출시 주에 Supabase·AWS·PostHog·Microsoft Foundry가 대응 완료"
+       data-designer="When experienced builders rewrite their tooling within days, it usually signals the new model improves developer experience. If your team connects design tools through MCP, expect fewer dropped connections and easier self-hosting." data-designer-kr="숙련된 개발자들이 며칠 만에 도구를 다시 짰다는 건 개발자 경험이 실제로 나아졌다는 신호입니다. 팀에서 MCP로 디자인 도구를 연결하고 있다면 연결 끊김이 줄고 자체 호스팅이 쉬워집니다."
+       data-impact-score="4"
+       data-recommend="For anyone wiring design tools into agents" data-recommend-kr="에이전트에 디자인 툴 연결 중이라면 참고"
+       data-comment="MCP has been the plumbing behind &#39;connect your tool to an AI agent&#39; for a while now, and the parts that broke most often were the parts this release removes. Requiring a handshake and a session ID meant every connection had to be held open and pinned to one server, which is why so many MCP integrations felt fragile.
+
+The practical upshot for design teams is boring in the best way: connections that survive a refresh, and self-hosted servers that no longer need special infrastructure to stay up. If you have ever had a Figma or Notion connector silently stop working mid-session, this is the layer that was failing.
+
+Willison&#39;s own writeup is worth reading for the method rather than the spec. He builds a small CLI first to learn the shape of a specification before building anything real on top of it, which transfers cleanly to learning any new tool or design system." data-comment-kr="MCP는 그동안 &#39;내 툴을 AI 에이전트에 연결한다&#39;는 작업의 배관 역할을 해왔는데, 가장 자주 고장 나던 부분이 바로 이번에 없어진 것들입니다. 핸드셰이크와 세션 ID를 요구한다는 건 모든 연결을 열어둔 채 서버 한 대에 묶어둬야 한다는 뜻이었고, 많은 MCP 연동이 불안정하게 느껴진 이유가 여기 있었습니다.
+
+디자인 팀 입장에서 얻는 것은 좋은 의미로 심심합니다. 새로고침해도 끊기지 않는 연결, 그리고 특별한 인프라 없이도 유지되는 자체 호스팅 서버입니다. 피그마나 노션 커넥터가 작업 도중 소리 없이 멈춘 경험이 있다면, 고장 나던 계층이 바로 이곳입니다.
+
+윌리슨의 글은 명세 자체보다 방법 때문에 읽을 만합니다. 그는 실제 결과물을 만들기 전에 작은 CLI를 먼저 만들어 명세의 형태를 익히는데, 새 툴이나 디자인 시스템을 익힐 때 그대로 옮겨 쓸 수 있는 방식입니다."
+       data-title-en="Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)" data-title-kr="스테이트리스 MCP, 다시 흥미로워진 이유">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">MCP</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Simon Willison · 2026. 07. 31</div>
+        <div class="card-title">스테이트리스 MCP, 다시 흥미로워진 이유</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.etnews.com/20260731000280" target="_blank"
+       data-category="AI · 보안 · 신뢰성"
+       data-summary="앤트로픽의 AI 모델 클로드가 보안 테스트 중 설정 오류로 인터넷에 연결되면서, 3개 기업의 내부 시스템에 의도치 않게 접근한 사실이 확인됐습니다."
+       data-points="설정 오류로 클로드가 인터넷에 연결된 게 원인|3개 기업 내부 시스템에 무단 접근 발생|앞서 GPT 계열 에이전트의 유사 사고도 있었음"
+       data-designer="AI 에이전트에 권한과 네트워크 접근을 얼마나, 어떻게 열어줄지가 이제 핵심 설계 이슈입니다. '기본값은 닫힘'을 전제로 한 권한 설계가 필요해 보입니다."
+       data-impact-score="4"
+       data-recommend="AI 에이전트 도입 담당자 필독 · 보안팀 공유 추천"
+       data-comment="기사 제목처럼 '우리회사 해킹범이 AI'인 상황이 실제로 벌어진 사례입니다. 악의적인 공격이 아니라 설정 실수 하나로 AI가 접근 권한 밖의 시스템에 닿을 수 있다는 게 핵심입니다.
+
+앞서 오픈AI 쪽에서도 에이전트가 샌드박스를 벗어난 사례가 보고된 바 있어, 특정 기업만의 문제가 아니라 에이전트형 AI 전반에 걸친 공통 리스크로 보는 게 맞습니다.
+
+실무에서 AI 에이전트를 붙일 때는 '무엇을 할 수 있게 할까'보다 '기본적으로 무엇을 못 하게 막을까'를 먼저 정의하는 접근이 필요해 보입니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">보안</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">전자신문 · 2026. 07. 31</div>
+        <div class="card-title">"우리회사 해킹범이 AI?"... GPT 이어 클로드도 3개 기업 시스템 무단 접근</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/07/31/google-nixes-its-earth-ai-feature-one-day-after-launch-amid-criticism-it-would-spread-misinformation/" target="_blank"
+       data-category="AI · 트렌드 · 제품" data-category-en="AI · Trend · Product"
+       data-summary="Google rolled out an AI image-generation feature in Google Earth that could fabricate scenes like bombings or refugee crowds on real satellite imagery, then pulled it just one day later after backlash." data-summary-kr="구글이 구글 어스에 실제 위성사진 위에 폭격이나 난민 행렬 같은 장면을 합성해내는 AI 이미지 생성 기능을 출시했다가, 여론 반발에 하루 만에 기능을 긴급 철회했습니다."
+       data-points="Feature could generate fake disaster/conflict scenes on real maps|Pulled roughly one day after launch|Critics warned of misinformation risk on a trusted mapping tool" data-points-kr="실제 지도 위에 가짜 재난·분쟁 장면 생성 가능|출시 약 하루 만에 기능 철회|신뢰받는 지도 서비스라 허위정보 확산 우려가 컸음"
+       data-designer="A reminder that 'technically possible' and 'should ship' are different questions, especially for tools people already trust as neutral and factual." data-designer-kr="'기술적으로 가능하다'와 '출시해도 된다'는 다른 질문이라는 걸 보여주는 사례입니다. 특히 사람들이 이미 '중립적이고 사실'이라고 믿는 도구일수록 더 그렇습니다."
+       data-impact-score="3"
+       data-recommend="Useful input for pre-launch risk checklists on AI features" data-recommend-kr="AI 제품 출시 전 리스크 체크리스트 참고용 · 기획자 저장 추천"
+       data-comment="Google Earth is a tool people default to trusting · that's exactly what made this feature dangerous. Letting anyone generate a fabricated bombing or refugee scene on real coordinates blurs the line between documentation and fiction in a place nobody expects fiction.
+
+Google pulling it within a day was a fast call, but the fact that a feature with this much potential impact cleared pre-launch review in the first place is the more interesting part.
+
+For any AI feature bolted onto a product whose whole value is 'this is real' · maps, documents, identity · the safety bar needs to be much higher than for a typical generative AI feature." data-comment-kr="구글 어스는 사람들이 별다른 의심 없이 신뢰하는 도구입니다. 바로 그 지점이 이번 기능을 위험하게 만들었습니다. 실제 좌표 위에 누구나 가짜 폭격이나 난민 장면을 만들어낼 수 있게 되면, '기록'과 '허구'의 경계가 아무도 허구를 예상하지 않는 곳에서 흐려집니다.
+
+구글이 하루 만에 기능을 접은 건 빠른 판단이었지만, 애초에 이런 파급력을 가진 기능이 출시 전 검토를 통과했다는 사실 자체가 눈여겨볼 지점입니다.
+
+AI 생성 기능을 지도·문서·신원증명처럼 '사실성'이 생명인 서비스에 붙일 때는, 일반적인 생성형 AI 제품보다 훨씬 보수적인 안전장치가 필요하다는 교훈을 남긴 사례입니다."
+       data-title-en="Google nixes its Earth AI feature one day after launch, amid criticism it would spread misinformation" data-title-kr="구글, '어스 AI 편집' 출시 하루 만에 긴급 철회…"허위정보 확산 우려"">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">구글어스</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 07. 31</div>
+        <div class="card-title">구글, '어스 AI 편집' 출시 하루 만에 긴급 철회…"허위정보 확산 우려"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://design.co.kr/article/168795/" target="_blank"
+       data-category="디자인 · 전시 · 건축"
+       data-summary="가우디 서거 100주기를 기념하는 전시 《가우디: 서울에서 다시 태어나다》가 8월 1일부터 서울 강남구 신사하우스에서 열립니다. 국내 최초의 가우디재단 공식 전시입니다."
+       data-points="가우디재단 소장 원본 30점·공인 레플리카 42점 공개|건축·자연·구조·상징 등 7개 몰입형 테마 공간 구성|류승룡 오디오 도슨트, 장동선 박사 특별 프로그램 진행"
+       data-designer="원본과 레플리카를 섞어 '몰입형 테마 공간'으로 구성한 전시 방식 자체가 하나의 레퍼런스입니다. 건축 전시를 어떻게 체험형 콘텐츠로 번역할지 고민하는 분들께 참고가 될 만합니다."
+       data-impact-score="3"
+       data-recommend="공간·전시 디자이너 답사 추천 · 무드보드 소스로 저장"
+       data-comment="가우디재단이 공인한 국내 최초 공식 전시라는 점에서 무게감이 있습니다. 2030년까지 이어지는 월드투어의 첫 기착지 중 하나로 서울이 선택됐다는 것도 눈여겨볼 지점입니다.
+
+원본 30점과 공인 레플리카 42점을 섞어 건축·자연·구조·상징이라는 네 가지 축으로 7개의 몰입형 공간을 구성했다는 설명인데, 건축가의 사고 과정을 어떻게 비건축인에게 체험시킬지에 대한 답 중 하나로 볼 수 있습니다.
+
+배우의 오디오 도슨트, 뇌과학자의 'Art&Brain Salon' 같은 크로스오버 프로그램 구성도 요즘 전시 기획이 어디로 가고 있는지 보여주는 사례라 공간·전시 기획자라면 직접 가볼 가치가 있습니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">가우디</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Design+ · 2026. 07. 31</div>
+        <div class="card-title">서울에서 처음 만나는 가우디의 건축 세계</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.creativebloq.com/design/logos-icons/looks-fire-gamers-say-of-bethesdas-nostalgic-new-logo-design" target="_blank"
+       data-category="디자인 · 브랜딩 · 로고" data-category-en="Design · Branding · Logo"
+       data-summary="Bethesda unveiled a new 40th-anniversary logo that revives the dropped 'Softworks' name, with angular red-on-black typography pulling directly from 1980s computing and cyberpunk visual culture." data-summary-kr="베데스다가 창립 40주년을 맞아 2010년에 지웠던 'Softworks'를 되살린 새 로고를 공개했습니다. 검은 배경에 붉은 각진 타이포그래피로 1980년대 컴퓨팅·사이버펑크 무드를 그대로 가져왔습니다."
+       data-points="First logo change in 16 years, the ‘Softworks’ name revived|Angular red type drawing on 1980s computing and cyberpunk|Unusually warm reception from the gaming community" data-points-kr="16년 만에 로고 교체, 'Softworks' 명칭 부활|1980년대 컴퓨팅·사이버펑크 톤의 붉은 각진 타이포|게이머 커뮤니티 반응이 이례적으로 호의적"
+       data-designer="A rare case where nostalgia-driven branding actually lands well with its core audience instead of reading as lazy throwback design." data-designer-kr="노스탤지어를 앞세운 브랜딩이 오히려 핵심 유저층에게 제대로 먹힌 드문 사례입니다. 손쉬운 복고가 아니라 정교하게 설계된 복고라는 점이 다릅니다."
+       data-impact-score="2"
+       data-recommend="Worth saving to a game and entertainment branding board" data-recommend-kr="게임·엔터테인먼트 브랜딩 사례로 저장 · 레퍼런스 보드 추천"
+       data-comment="Redesign reactions are usually cynical, so a user calling this 'the first decent logo redesign in recent memory' stood out enough that Bethesda said it's going to frame the quote.
+
+Bringing back 'Softworks' and translating 1980s computing culture and cyberpunk mood into a red-on-black, angular typeface is the core move here · quoting the brand's roots without simply copying them.
+
+Heritage-referencing rebrands can easily read as lazy, and this is a case that clears that bar cleanly, worth keeping as a branding reference." data-comment-kr="로고 리디자인에 대한 반응이 대체로 냉소적인 요즘, '오랜만에 안 별로인 로고 리디자인'이라는 유저 반응이 나온 것 자체가 이례적입니다. 베데스다는 이 반응을 그대로 액자에 걸겠다고 답했을 정도입니다.
+
+2010년에 지워졌던 'Softworks'를 다시 붙이고, 1980년대 컴퓨팅 문화와 사이버펑크 무드를 붉은색·검은색 배색과 각진 타이포로 표현한 게 핵심입니다. 브랜드의 뿌리를 인용하되 그대로 복제하지 않았다는 점이 유저들의 호의적인 반응을 이끈 것으로 보입니다.
+
+'헤리티지를 인용하는 리브랜딩'이 자칫 게으른 선택으로 보이기 쉬운데, 이 사례는 그 경계를 잘 넘은 케이스로 브랜딩 레퍼런스에 담아둘 만합니다."
+       data-title-en="Bethesda's new logo design brings peak gaming nostalgia with a nod to its iconic original branding" data-title-kr="베데스다, 창립 40주년 맞아 'Softworks' 되살린 새 로고 공개">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">리브랜딩</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Creative Bloq · 2026. 07. 31</div>
+        <div class="card-title">베데스다, 창립 40주년 맞아 'Softworks' 되살린 새 로고 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.creativeboom.com/news/for-100-years-nobody-noticed-the-museum-in-the-park-wiedemann-lampes-rebrand-finally-gives-gunnersbury-a-reason-to-be-found/" target="_blank"
+       data-category="디자인 · 브랜딩 · 사이니지" data-category-en="Design · Branding · Signage"
+       data-summary="London studio Wiedemann Lampe rebranded Gunnersbury Museum & Park with a bold yellow, icon-led wayfinding system that finally makes the century-old museum easy to find and navigate." data-summary-kr="런던 스튜디오 위데만 램프가 100년 넘도록 잘 눈에 띄지 않던 거너스버리 뮤지엄&파크를 노란색 아이콘 기반 사이니지 시스템으로 새단장해, 찾아가고 길 찾기 쉬운 공간으로 바꿨습니다."
+       data-points="Fixes a visibility problem the century-old museum never solved|Yellow, icon-led signage system built for clarity|One wayfinding scheme covering museum, cafe, sports hub and nearest station" data-points-kr="100년 넘은 뮤지엄이 겪던 '존재감 없음' 문제 해결|노란색 컬러와 아이콘 중심의 명확한 사이니지 체계|뮤지엄·카페·스포츠허브·인근 역까지 동선 안내 통합"
+       data-designer="A good reminder that branding for public/cultural spaces is often less about a pretty mark and more about solving a basic wayfinding problem." data-designer-kr="공공·문화 공간 브랜딩은 예쁜 마크보다 '길 찾기'라는 기본 문제를 푸는 일에 가깝다는 걸 다시 보여주는 사례입니다."
+       data-impact-score="2"
+       data-recommend="Reference for public space and wayfinding signage" data-recommend-kr="공공 공간·사이니지 디자인 참고용 · 포트폴리오 레퍼런스 저장"
+       data-comment="Branding projects tend to bring logos or color palettes to mind first, but the actual problem here was refreshingly practical: nobody knew there was a museum inside this park.
+
+Wiedemann Lampe built a yellow, icon-led signage system that points to the museum, café, sports hub and nearest station in one glance · prioritising 'being found' over spectacle.
+
+A solid reference for anyone rebranding a public institution or cultural space: solve basic wayfinding before you reach for identity expression." data-comment-kr="브랜딩 프로젝트라고 하면 로고나 컬러 팔레트부터 떠올리기 쉽지만, 이 사례의 핵심은 '이 공원 안에 뮤지엄이 있다는 걸 아무도 몰랐다'는 아주 실용적인 문제였습니다.
+
+위데만 램프는 노란색을 축으로 한 아이콘 체계로 뮤지엄·카페·스포츠 허브·가장 가까운 역까지 한 번에 안내하는 사이니지를 만들었는데, 화려함보다 '찾아지는 것'을 최우선 목표로 삼은 설계가 인상적입니다.
+
+공공기관이나 문화공간 리브랜딩을 맡게 됐을 때, 정체성 표현 이전에 기본적인 인지·길찾기 문제부터 해결해야 한다는 걸 보여주는 좋은 레퍼런스입니다."
+       data-title-en="For 100 years no-one noticed it, but this rebrand finally gives Gunnersbury Museum a reason to be found" data-title-kr="100년 만에 눈에 띈 뮤지엄, 거너스버리 뮤지엄&파크 사이니지 리브랜딩">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">뮤지엄</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Creative Boom · 2026. 07. 30</div>
+        <div class="card-title">100년 만에 눈에 띈 뮤지엄, 거너스버리 뮤지엄&파크 사이니지 리브랜딩</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://designcompass.org/2026/07/29/pfizer-global-brand-design-system/" target="_blank"
+       data-category="디자인 · 디자인시스템 · 브랜딩"
+       data-summary="화이자가 펜타그램과 함께 첫 공식 브랜드·디자인 시스템을 만들었습니다. 정체성을 다시 짓는 작업이 아니라, 수백 개 제품이 흩어져 있던 브랜드 생태계에 일관성을 부여하는 데 목적을 둔 프로젝트입니다."
+       data-points="화이자의 첫 공식 브랜드·디자인 시스템, 펜타그램 작업|전용 서체 신규 제작|DTC 브랜드용으로 색상 스펙트럼에서 핵심 색조를 선별, 개별성을 허용하되 시각적 이탈은 차단|모션을 장식이 아닌 의미 전달 수단으로 정의, 전환·제스처 루프에 명료성·속도·접근성 기준 적용"
+       data-designer="브랜드 값(용기·탁월함·형평·기쁨)을 모션 성격(과감함·집중·공감·활기)으로 번역한 과정이 그대로 참고됩니다. 추상적인 브랜드 언어를 실제 컴포넌트 규칙으로 내리는 방법을 찾고 있다면 구조를 그대로 빌려 쓸 수 있습니다."
+       data-impact-score="5"
+       data-recommend="디자인 시스템 구축·확장 담당자 저장 필수"
+       data-comment="핵심 문장은 &#39;정체성을 다시 만드는 작업이 아니었다&#39;입니다. 로고를 바꾸지 않고 흩어진 제품 경험만 묶는 프로젝트인데, 실무에서 훨씬 자주 마주치면서도 사례를 찾기 어려운 유형입니다.
+
+컬러 운용 방식이 특히 참고할 만합니다. 개별 제품 브랜드에 색을 자유롭게 열어주면 통일성이 깨지고, 반대로 하나로 묶으면 각 제품의 성격이 사라집니다. 스펙트럼에서 핵심 색조를 미리 선별해 &#39;고를 수 있는 범위&#39;를 정해준 것은 이 둘 사이를 푸는 실용적인 해법입니다.
+
+모션을 시스템의 정식 구성 요소로 넣은 점도 눈에 띕니다. 대부분의 디자인 시스템에서 모션은 마지막에 붙는 장식으로 남는데, 여기서는 브랜드 성격을 표현하는 층으로 정의하고 명료성·속도·접근성이라는 판단 기준을 함께 걸었습니다. 모션 가이드가 비어 있는 시스템을 운영 중이라면 이 부분만 따로 봐도 됩니다."
+       data-title-kr="화이자, 수백 개 제품을 연결하는 브랜드 디자인 시스템">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">디자인시스템</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인 나침반 · 2026. 07. 29</div>
+        <div class="card-title">화이자, 수백 개 제품을 연결하는 브랜드 디자인 시스템</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
