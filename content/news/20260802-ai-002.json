@@ -1,0 +1,59 @@
+{
+  "contentId": "20260802-ai-002",
+  "date": "2026-08-02",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "Simon Willison",
+    "publishedAt": "2026-07-31"
+  },
+  "url": "https://simonwillison.net/2026/Jul/31/stateless-mcp/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 프로토콜",
+    "en": "AI · Tool · Protocol"
+  },
+  "title": {
+    "kr": "스테이트리스 MCP, 다시 흥미로워진 이유",
+    "en": "Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)"
+  },
+  "summary": {
+    "kr": "2026-07-28자 MCP 명세(통칭 MCP 2.0)는 최초 공개 이후 가장 큰 변경입니다. 핸드셰이크와 세션 헤더가 사라지면서, 수평 확장 시 필요하던 고정 라우팅과 세션 공유 저장소 작업이 없어졌습니다.",
+    "en": "The 2026-07-28 Model Context Protocol specification, informally MCP 2.0, is the most significant change to the spec since it launched. The handshake and session header are gone, removing the sticky-routing and shared-session-store work that horizontal deployments used to require."
+  },
+  "points": {
+    "kr": [
+      "핸드셰이크·세션 헤더·서버 발신 요청 모두 제거",
+      "mcp-explorer · 어떤 MCP 엔드포인트든 직접 호출하는 CLI",
+      "datasette-mcp · /-/mcp 엔드포인트에 도구 3종 추가, execute_sql은 읽기 전용",
+      "출시 주에 Supabase·AWS·PostHog·Microsoft Foundry가 대응 완료"
+    ],
+    "en": [
+      "No handshake, no session header, no server-initiated requests",
+      "mcp-explorer: a CLI for calling any MCP endpoint directly",
+      "datasette-mcp adds a /-/mcp endpoint with three tools, execute_sql read-only",
+      "Supabase, AWS Bedrock AgentCore, PostHog and Microsoft Foundry aligned within release week"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "숙련된 개발자들이 며칠 만에 도구를 다시 짰다는 건 개발자 경험이 실제로 나아졌다는 신호입니다. 팀에서 MCP로 디자인 도구를 연결하고 있다면 연결 끊김이 줄고 자체 호스팅이 쉬워집니다.",
+    "en": "When experienced builders rewrite their tooling within days, it usually signals the new model improves developer experience. If your team connects design tools through MCP, expect fewer dropped connections and easier self-hosting."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "에이전트에 디자인 툴 연결 중이라면 참고",
+    "en": "For anyone wiring design tools into agents"
+  },
+  "comment": {
+    "kr": "MCP는 그동안 '내 툴을 AI 에이전트에 연결한다'는 작업의 배관 역할을 해왔는데, 가장 자주 고장 나던 부분이 바로 이번에 없어진 것들입니다. 핸드셰이크와 세션 ID를 요구한다는 건 모든 연결을 열어둔 채 서버 한 대에 묶어둬야 한다는 뜻이었고, 많은 MCP 연동이 불안정하게 느껴진 이유가 여기 있었습니다.\n\n디자인 팀 입장에서 얻는 것은 좋은 의미로 심심합니다. 새로고침해도 끊기지 않는 연결, 그리고 특별한 인프라 없이도 유지되는 자체 호스팅 서버입니다. 피그마나 노션 커넥터가 작업 도중 소리 없이 멈춘 경험이 있다면, 고장 나던 계층이 바로 이곳입니다.\n\n윌리슨의 글은 명세 자체보다 방법 때문에 읽을 만합니다. 그는 실제 결과물을 만들기 전에 작은 CLI를 먼저 만들어 명세의 형태를 익히는데, 새 툴이나 디자인 시스템을 익힐 때 그대로 옮겨 쓸 수 있는 방식입니다.",
+    "en": "MCP has been the plumbing behind 'connect your tool to an AI agent' for a while now, and the parts that broke most often were the parts this release removes. Requiring a handshake and a session ID meant every connection had to be held open and pinned to one server, which is why so many MCP integrations felt fragile.\n\nThe practical upshot for design teams is boring in the best way: connections that survive a refresh, and self-hosted servers that no longer need special infrastructure to stay up. If you have ever had a Figma or Notion connector silently stop working mid-session, this is the layer that was failing.\n\nWillison's own writeup is worth reading for the method rather than the spec. He builds a small CLI first to learn the shape of a specification before building anything real on top of it, which transfers cleanly to learning any new tool or design system."
+  },
+  "thumbLabel": "MCP",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260802-design-003",
+  "date": "2026-08-02",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Creative Boom",
+    "publishedAt": "2026-07-30"
+  },
+  "url": "https://www.creativeboom.com/news/for-100-years-nobody-noticed-the-museum-in-the-park-wiedemann-lampes-rebrand-finally-gives-gunnersbury-a-reason-to-be-found/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 사이니지",
+    "en": "Design · Branding · Signage"
+  },
+  "title": {
+    "kr": "100년 만에 눈에 띈 뮤지엄, 거너스버리 뮤지엄&파크 사이니지 리브랜딩",
+    "en": "For 100 years no-one noticed it, but this rebrand finally gives Gunnersbury Museum a reason to be found"
+  },
+  "summary": {
+    "kr": "런던 스튜디오 위데만 램프가 100년 넘도록 잘 눈에 띄지 않던 거너스버리 뮤지엄&파크를 노란색 아이콘 기반 사이니지 시스템으로 새단장해, 찾아가고 길 찾기 쉬운 공간으로 바꿨습니다.",
+    "en": "London studio Wiedemann Lampe rebranded Gunnersbury Museum & Park with a bold yellow, icon-led wayfinding system that finally makes the century-old museum easy to find and navigate."
+  },
+  "points": {
+    "kr": [
+      "100년 넘은 뮤지엄이 겪던 '존재감 없음' 문제 해결",
+      "노란색 컬러와 아이콘 중심의 명확한 사이니지 체계",
+      "뮤지엄·카페·스포츠허브·인근 역까지 동선 안내 통합"
+    ],
+    "en": [
+      "Fixes a visibility problem the century-old museum never solved",
+      "Yellow, icon-led signage system built for clarity",
+      "One wayfinding scheme covering museum, cafe, sports hub and nearest station"
+    ]
+  },
+  "positions": [
+    "space-designer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "공공·문화 공간 브랜딩은 예쁜 마크보다 '길 찾기'라는 기본 문제를 푸는 일에 가깝다는 걸 다시 보여주는 사례입니다.",
+    "en": "A good reminder that branding for public/cultural spaces is often less about a pretty mark and more about solving a basic wayfinding problem."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "공공 공간·사이니지 디자인 참고용 · 포트폴리오 레퍼런스 저장",
+    "en": "Reference for public space and wayfinding signage"
+  },
+  "comment": {
+    "kr": "브랜딩 프로젝트라고 하면 로고나 컬러 팔레트부터 떠올리기 쉽지만, 이 사례의 핵심은 '이 공원 안에 뮤지엄이 있다는 걸 아무도 몰랐다'는 아주 실용적인 문제였습니다.\n\n위데만 램프는 노란색을 축으로 한 아이콘 체계로 뮤지엄·카페·스포츠 허브·가장 가까운 역까지 한 번에 안내하는 사이니지를 만들었는데, 화려함보다 '찾아지는 것'을 최우선 목표로 삼은 설계가 인상적입니다.\n\n공공기관이나 문화공간 리브랜딩을 맡게 됐을 때, 정체성 표현 이전에 기본적인 인지·길찾기 문제부터 해결해야 한다는 걸 보여주는 좋은 레퍼런스입니다.",
+    "en": "Branding projects tend to bring logos or color palettes to mind first, but the actual problem here was refreshingly practical: nobody knew there was a museum inside this park.\n\nWiedemann Lampe built a yellow, icon-led signage system that points to the museum, café, sports hub and nearest station in one glance · prioritising 'being found' over spectacle.\n\nA solid reference for anyone rebranding a public institution or cultural space: solve basic wayfinding before you reach for identity expression."
+  },
+  "thumbLabel": "뮤지엄",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

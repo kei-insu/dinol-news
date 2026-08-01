@@ -1,0 +1,57 @@
+{
+  "contentId": "20260802-ai-004",
+  "date": "2026-08-02",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-31"
+  },
+  "url": "https://techcrunch.com/2026/07/31/google-nixes-its-earth-ai-feature-one-day-after-launch-amid-criticism-it-would-spread-misinformation/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 트렌드 · 제품",
+    "en": "AI · Trend · Product"
+  },
+  "title": {
+    "kr": "구글, '어스 AI 편집' 출시 하루 만에 긴급 철회…\"허위정보 확산 우려\"",
+    "en": "Google nixes its Earth AI feature one day after launch, amid criticism it would spread misinformation"
+  },
+  "summary": {
+    "kr": "구글이 구글 어스에 실제 위성사진 위에 폭격이나 난민 행렬 같은 장면을 합성해내는 AI 이미지 생성 기능을 출시했다가, 여론 반발에 하루 만에 기능을 긴급 철회했습니다.",
+    "en": "Google rolled out an AI image-generation feature in Google Earth that could fabricate scenes like bombings or refugee crowds on real satellite imagery, then pulled it just one day later after backlash."
+  },
+  "points": {
+    "kr": [
+      "실제 지도 위에 가짜 재난·분쟁 장면 생성 가능",
+      "출시 약 하루 만에 기능 철회",
+      "신뢰받는 지도 서비스라 허위정보 확산 우려가 컸음"
+    ],
+    "en": [
+      "Feature could generate fake disaster/conflict scenes on real maps",
+      "Pulled roughly one day after launch",
+      "Critics warned of misinformation risk on a trusted mapping tool"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "ux-designer"
+  ],
+  "designer": {
+    "kr": "'기술적으로 가능하다'와 '출시해도 된다'는 다른 질문이라는 걸 보여주는 사례입니다. 특히 사람들이 이미 '중립적이고 사실'이라고 믿는 도구일수록 더 그렇습니다.",
+    "en": "A reminder that 'technically possible' and 'should ship' are different questions, especially for tools people already trust as neutral and factual."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "AI 제품 출시 전 리스크 체크리스트 참고용 · 기획자 저장 추천",
+    "en": "Useful input for pre-launch risk checklists on AI features"
+  },
+  "comment": {
+    "kr": "구글 어스는 사람들이 별다른 의심 없이 신뢰하는 도구입니다. 바로 그 지점이 이번 기능을 위험하게 만들었습니다. 실제 좌표 위에 누구나 가짜 폭격이나 난민 장면을 만들어낼 수 있게 되면, '기록'과 '허구'의 경계가 아무도 허구를 예상하지 않는 곳에서 흐려집니다.\n\n구글이 하루 만에 기능을 접은 건 빠른 판단이었지만, 애초에 이런 파급력을 가진 기능이 출시 전 검토를 통과했다는 사실 자체가 눈여겨볼 지점입니다.\n\nAI 생성 기능을 지도·문서·신원증명처럼 '사실성'이 생명인 서비스에 붙일 때는, 일반적인 생성형 AI 제품보다 훨씬 보수적인 안전장치가 필요하다는 교훈을 남긴 사례입니다.",
+    "en": "Google Earth is a tool people default to trusting · that's exactly what made this feature dangerous. Letting anyone generate a fabricated bombing or refugee scene on real coordinates blurs the line between documentation and fiction in a place nobody expects fiction.\n\nGoogle pulling it within a day was a fast call, but the fact that a feature with this much potential impact cleared pre-launch review in the first place is the more interesting part.\n\nFor any AI feature bolted onto a product whose whole value is 'this is real' · maps, documents, identity · the safety bar needs to be much higher than for a typical generative AI feature."
+  },
+  "thumbLabel": "구글어스",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}
