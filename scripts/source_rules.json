@@ -226,5 +226,13 @@
   "시선뉴스": {
     "region": "국내",
     "group": "시선뉴스"
+  },
+  "Simon Willison": {
+    "region": "해외",
+    "group": "Simon Willison"
+  },
+  "Creative Boom": {
+    "region": "해외",
+    "group": "Creative Boom"
   }
 }

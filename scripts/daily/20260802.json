@@ -1,0 +1,73 @@
+{
+  "20260802-ai-001": {
+    "category_kr": "AI · 트렌드 · 빅테크",
+    "category_en": "AI · Trend · Big Tech",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260802-ai-002": {
+    "category_kr": "AI · 툴 · 프로토콜",
+    "category_en": "AI · Tool · Protocol",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260802-ai-003": {
+    "category_kr": "AI · 보안 · 신뢰성",
+    "category_en": "AI · Security · Reliability",
+    "impactScore": 3,
+    "positions": [
+      "design-lead"
+    ]
+  },
+  "20260802-ai-004": {
+    "category_kr": "AI · 트렌드 · 제품",
+    "category_en": "AI · Trend · Product",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "ux-designer"
+    ]
+  },
+  "20260802-design-001": {
+    "category_kr": "디자인 · 전시 · 건축",
+    "category_en": "Design · Exhibition · Architecture",
+    "impactScore": 2,
+    "positions": [
+      "space-designer",
+      "architect"
+    ]
+  },
+  "20260802-design-002": {
+    "category_kr": "디자인 · 브랜딩 · 로고",
+    "category_en": "Design · Branding · Logo",
+    "impactScore": 3,
+    "positions": [
+      "brand-designer",
+      "graphic-designer"
+    ]
+  },
+  "20260802-design-003": {
+    "category_kr": "디자인 · 브랜딩 · 사이니지",
+    "category_en": "Design · Branding · Signage",
+    "impactScore": 4,
+    "positions": [
+      "space-designer",
+      "graphic-designer"
+    ]
+  },
+  "20260802-design-004": {
+    "category_kr": "디자인 · 디자인시스템 · 브랜딩",
+    "category_en": "Design · Design System · Branding",
+    "impactScore": 5,
+    "positions": [
+      "bx-designer",
+      "brand-designer"
+    ]
+  }
+}
