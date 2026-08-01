@@ -17,7 +17,11 @@
      "같은 원문을 두 번 실은 중복"을 잡던 원래 목적은 더는 수행하지 못한다.
 ──────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  const cards = [...document.querySelectorAll('a.card')];
+  // 5-A-1 구조전환: 카드 최상위는 <article class="card">(data-content-id 소유),
+  // 이동 링크는 내부 <a class="card-link">(href 소유). 읽음상태는 article 기준,
+  // href 기반 검사는 linkOf() 로 내부 링크에서 읽는다.
+  const cards = [...document.querySelectorAll('.card')];
+  const linkOf = card => card.querySelector('.card-link');
 
   /* ── 맨 위로 플로팅 버튼 ──────────────────────────────────
      600px 이상 스크롤되면 .show로 페이드인, 클릭 시 상단으로 부드럽게 이동.
@@ -97,13 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
   /* 1. 중복 URL 검사 (4-2: href가 상세 페이지라 contentId 유일 → 실질 무해) */
   const urlCount = {};
   cards.forEach(c => {
-    const url = c.href;
+    const url = linkOf(c)?.href;
     urlCount[url] = (urlCount[url] || 0) + 1;
   });
   const dupeUrls = Object.keys(urlCount).filter(u => urlCount[u] > 1);
 
   dupeUrls.forEach(url => {
-    cards.filter(c => c.href === url).forEach(card => {
+    cards.filter(c => linkOf(c)?.href === url).forEach(card => {
       card.style.outline = '2px solid #ff4444';
       const badge = document.createElement('div');
       badge.textContent = '⚠ 중복 링크';
@@ -120,7 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* 2. 빈 링크 검사 */
-  const emptyLinks = cards.filter(c => !c.getAttribute('href') || c.getAttribute('href') === '#');
+  const emptyLinks = cards.filter(c => {
+    const h = linkOf(c)?.getAttribute('href');
+    return !h || h === '#';
+  });
   emptyLinks.forEach(card => {
     card.style.outline = '2px solid #ffaa00';
     const badge = document.createElement('div');

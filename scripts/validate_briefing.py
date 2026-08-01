@@ -66,10 +66,11 @@ def txt(card, cls):
 
 
 def sec_cards(soup):
+    # 5-A-1 구조전환: 카드 최상위는 <article class="card">(내부에 <a class="card-link">).
     out = {}
     for sec in soup.find_all("div", class_="section"):
         h2 = sec.find("h2")
-        out[h2.get_text() if h2 else "?"] = sec.find_all("a", class_="card")
+        out[h2.get_text() if h2 else "?"] = sec.find_all("article", class_="card")
     return out
 
 
@@ -93,7 +94,7 @@ def main():
         raw = norm(gen_p.read_text(encoding="utf-8"))
         soup = BeautifulSoup(raw, "html.parser")
         gsecs = sec_cards(soup)
-        all_cards = soup.find_all("a", class_="card")
+        all_cards = soup.find_all("article", class_="card")
 
         # B1 카드 개수 (JSON 기준)
         exp_n = len(by_date[date]["ai"]) + len(by_date[date]["design"])
@@ -113,19 +114,24 @@ def main():
                 cid = j["contentId"]
                 checked_cards += 1
 
-                # B2 href == {contentId}.html
-                if g.get("href") != f"{cid}.html":
-                    bad("B2", f"{cid}: href={g.get('href')}")
-                # B3 data-content-id == contentId
+                # 5-A-1: 이동 링크는 article 내부의 <a class="card-link"> 가 소유(정확히 1개).
+                links = g.find_all("a", class_="card-link")
+                link = links[0] if links else None
+                if len(links) != 1:
+                    bad("B2", f"{cid}: card-link {len(links)}개 (1개여야 함)")
+                # B2 href == {contentId}.html  (card-link 의 href)
+                if link is None or link.get("href") != f"{cid}.html":
+                    bad("B2", f"{cid}: href={link.get('href') if link else None}")
+                # B3 data-content-id == contentId  (article 소유)
                 if g.get("data-content-id") != cid:
                     bad("B3", f"{cid}: data-content-id={g.get('data-content-id')}")
-                # B4 data-* 이름 집합 == {data-content-id} (집합+값)
+                # B4 data-* 이름 집합 == {data-content-id} (집합+값, article 기준)
                 names = data_names(g)
                 if names != {"data-content-id"}:
                     bad("B4", f"{cid}: data-* 이름집합={sorted(names)}")
-                # B5 target 속성 없음
-                if g.has_attr("target"):
-                    bad("B5", f"{cid}: target={g.get('target')!r} 존재")
+                # B5 target 속성 없음  (이동 링크=card-link 에 target 없어야)
+                if link is not None and link.has_attr("target"):
+                    bad("B5", f"{cid}: target={link.get('target')!r} 존재")
                 # B6 카드 내부 .card-footer/.act-like/.act-share 0개
                 if g.select(".card-footer") or g.select(".act-like") or g.select(".act-share"):
                     bad("B6", f"{cid}: footer/act 마크업 존재")

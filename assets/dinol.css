@@ -119,12 +119,14 @@
   }
 
   /* ── CARD ── */
+  /* .card 는 이제 <article> 이 소유한다(외형·테두리·그림자·radius·hover).
+     display:flex/column 은 자식(.card-link, 이후 like-box)을 세로로 쌓고
+     그리드 셀 높이에 맞춰 .card-link 를 늘리기 위해 카드에 남긴다. */
   .card {
     background: #13131b;
     border: 1px solid #1c1c28;
     border-radius: 14px;
     overflow: hidden;
-    text-decoration: none;
     display: flex;
     flex-direction: column;
     transition: transform 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease;
@@ -134,6 +136,16 @@
     transform: translateY(-3px);
     border-color: #2c2c40;
     box-shadow: 0 10px 36px rgba(0,0,0,0.5);
+  }
+
+  /* .card-link — 카드 내부 이동 링크(썸네일+본문을 감쌈).
+     display/flex-direction/텍스트장식/색은 링크가 소유. flex:1 로 카드 높이를 채운다. */
+  .card-link {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
   }
 
   /* ── THUMB ── */

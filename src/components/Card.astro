@@ -4,16 +4,18 @@ const d = card.source.publishedAt;
 const dateStr = d ? d.split('-').join('. ') : '';
 const src = card.source.name ? `${card.source.name} · ${dateStr}` : dateStr;
 ---
-<a class={card.featured ? 'card featured' : 'card'}
-   href={`${card.contentId}.html`}
-   data-content-id={card.contentId}>
-  <div class={`thumb ${card.thumbGradient}`}>
-    <div class="noise"></div>
-    <span class="thumb-label">{card.thumbLabel}</span>
-    {card.isEn && <span class="thumb-en">EN</span>}
-  </div>
-  <div class="card-body">
-    <div class="card-source">{src}</div>
-    <div class="card-title">{card.title.kr}</div>
-  </div>
-</a>
+<article class={card.featured ? 'card featured' : 'card'}
+         data-content-id={card.contentId}>
+  <a class="card-link" href={`${card.contentId}.html`}>
+    <div class={`thumb ${card.thumbGradient}`}>
+      <div class="noise"></div>
+      <span class="thumb-label">{card.thumbLabel}</span>
+      {card.isEn && <span class="thumb-en">EN</span>}
+    </div>
+    <div class="card-body">
+      <div class="card-source">{src}</div>
+      <div class="card-title">{card.title.kr}</div>
+    </div>
+  </a>
+  {/* 5-A-2 에서 여기에 like-box 가 들어온다. 이번엔 만들지 않는다 */}
+</article>
