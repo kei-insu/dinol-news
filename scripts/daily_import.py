@@ -17,7 +17,7 @@ import time
 import hashlib
 import subprocess
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # 같은 폴더의 공용 모듈 재사용 (중복 구현 금지)
 from extract_cards import parse_cards, inner, parse_source
@@ -354,6 +354,77 @@ def validate_temp_dir(tdir, ymd, exp_keys):
     return new_bytes
 
 
+def _streak_zero5(ymd_date):
+    """
+    대상 date(YYYY-MM-DD)부터 과거 방향으로, ★5 0장인 '완전한 발행일' 연속 일수.
+    완전한 발행일 = 파싱 성공 8장 · AI 4 · Design 4 · section 누락/불명 0.
+    불완전 날짜·달력 공백·★5 존재 → 연속 종료. 미래 date 는 제외.
+    반환 (streak, start_date). 파싱 예외는 호출부(gate5)에서 격리한다.
+    """
+    from collections import defaultdict
+    by = defaultdict(list)
+    for f in NEWS_DIR.glob("*.json"):
+        d = json.loads(f.read_text(encoding="utf-8"))   # 손상 시 예외 → gate5 에서 격리
+        dt = d.get("date")
+        if isinstance(dt, str) and dt <= ymd_date:       # 미래 제외
+            by[dt].append(d)
+    streak = 0
+    start = ymd_date
+    cur = datetime.strptime(ymd_date, "%Y-%m-%d")
+    while True:
+        ds = cur.strftime("%Y-%m-%d")
+        cards = by.get(ds)
+        if not cards:                                    # 달력 날짜 공백 → 종료
+            break
+        ai = sum(1 for c in cards if c.get("section") == "ai")
+        des = sum(1 for c in cards if c.get("section") == "design")
+        bad = sum(1 for c in cards if c.get("section") not in ("ai", "design"))
+        if not (len(cards) == 8 and ai == 4 and des == 4 and bad == 0):
+            break                                        # 불완전 날짜 → 종료
+        if any(c.get("impactScore") == 5 for c in cards):
+            break                                        # ★5 있으면 → 종료
+        streak += 1
+        start = ds
+        cur -= timedelta(days=1)
+    return streak, start
+
+
+def gate5(ymd):
+    """
+    [5] 게이트: AI/Design high45 + 당일 ★5 0장 경고(과거 무관·독립) + 연속 강조(예외 격리).
+    ★기록만 남긴다 — 종료코드에 영향을 주지 않고, 절대 예외를 전파하지 않는다.★
+    """
+    ymd_date = f"{ymd[:4]}-{ymd[4:6]}-{ymd[6:]}"
+    day_files = sorted(NEWS_DIR.glob(f"{ymd}-*.json"))
+    day_cards = []
+    for f in day_files:
+        try:
+            day_cards.append(json.loads(f.read_text(encoding="utf-8")))
+        except Exception:
+            pass
+
+    if day_cards:
+        ai_scores = [c.get("impactScore") for c in day_cards if c.get("section") == "ai"]
+        des_scores = [c.get("impactScore") for c in day_cards if c.get("section") == "design"]
+        print(f"[5] AI scores {ai_scores} · high45 {sum(1 for x in ai_scores if isinstance(x, int) and x >= 4)}")
+        print(f"[5] Design scores {des_scores} · high45 {sum(1 for x in des_scores if isinstance(x, int) and x >= 4)}")
+
+    # 당일 ★5 0장 — ★현재 8장만★ 판정 (과거 조회 성공 여부와 무관)
+    day_has5 = any(c.get("impactScore") == 5 for c in day_cards)
+    if day_cards and not day_has5:
+        print('[5] ⚠ 전체 ★5 0장 — policy.md §7-1 "방법론·툴 사용법 0순위" 미충족. §9-1 기록 대상입니다.')
+
+    # 연속 강조 — ★당일 경고와 분리, 예외 격리★
+    if day_cards and not day_has5:
+        try:
+            streak, start = _streak_zero5(ymd_date)
+            if streak >= 3:
+                print(f"[5] ⚠⚠ ★5 0장이 {streak}일 연속입니다 ({start}~{ymd_date}). "
+                      f"선별 단계에서 방법론·툴 사용법 후보를 우선 확인하세요.")
+        except Exception as e:
+            print(f"[5] 연속 집계 생략: {type(e).__name__}: {e}")
+
+
 def existing_verdict(existing, exp_card_paths, redo):
     """(a) 기존 카드 판정. 반환 None(통과) 또는 사유 문자열."""
     if not redo:
@@ -521,10 +592,8 @@ def stages_3_to_10(ymd, rules, judg, targets, exp_keys, exp_new, s1,
         die("[4] 최종 상태 불일치")
     print(f"[4] S1→S2 통과 · 실제 변경 {len(changed2)}개 · 최종 상태 일치")
 
-    # ── [5] AI ★4~5 ──
-    ai_scores = [json.loads((NEWS_DIR / f"{ymd}-ai-{i:03d}.json").read_text(encoding="utf-8"))["impactScore"] for i in range(1, 5)]
-    high = sum(1 for x in ai_scores if x >= 4)
-    print(f"[5] AI scores {ai_scores} · high45 {high}" + ("" if high else "  (0장 — §9-1 기록 대상, 실패 아님)"))
+    # ── [5] AI/Design ★4~5 + ★5 0장 경고 (기록만, 종료코드 무영향) ──
+    gate5(ymd)
 
     # ── [6] JSON 검증 (ERROR 집계로 판정) ──
     rc, out, err = run_python(["scripts/validate_json.py"], "[6]")
