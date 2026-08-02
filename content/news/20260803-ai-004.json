@@ -1,0 +1,59 @@
+{
+  "contentId": "20260803-ai-004",
+  "date": "2026-08-03",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-31"
+  },
+  "url": "https://techcrunch.com/2026/07/31/snapchat-no-longer-rewards-fully-ai-generated-spotlight-content/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 영상 · 플랫폼정책",
+    "en": "AI · Video · Platform Policy"
+  },
+  "title": {
+    "kr": "스냅챗, 전면 AI 생성 영상은 추천도 보상도 제외",
+    "en": "Snapchat no longer rewards fully AI-generated Spotlight content"
+  },
+  "summary": {
+    "kr": "스냅챗이 금요일, 전면 AI로 생성한 영상은 스포트라이트 추천과 보상 대상에서 제외한다고 발표했습니다. 실제 사람이 만든 영상만 자격을 갖되, 창작자가 자기 영상을 다듬는 용도로 AI 도구를 쓰는 것은 계속 허용합니다.",
+    "en": "Snapchat announced on Friday that fully AI-generated videos will no longer be eligible for Spotlight recommendations or rewards. The company says only videos created by real people will qualify, while creators may still use AI tools to edit and enhance their own footage."
+  },
+  "points": {
+    "kr": [
+      "'AI 보조 인간 창작'과 '전면 기계 생성'을 기준선으로 구분",
+      "AI 생성 사실을 창작자가 공개해도 추천 대상에서 제외",
+      "스냅챗 자체 AI 도구는 계속 사용 가능하며 결과물에 워터마크 부착",
+      "4월에 이미 피드 내 AI 콘텐츠를 줄이겠다고 예고했던 방향의 연장"
+    ],
+    "en": [
+      "The line is drawn between AI-assisted human creation and wholly machine-generated output",
+      "Exclusion applies even when the creator discloses that the video is AI-generated",
+      "Snapchat's own AI tools remain usable and add visible watermarks to their output",
+      "Snap first signalled the direction in April, saying users would see less AI content in feeds"
+    ]
+  },
+  "positions": [
+    "motion-designer",
+    "art-director"
+  ],
+  "designer": {
+    "kr": "판정 기준이 'AI를 썼는가'가 아니라 '원본을 누가 만들었는가'입니다. 숏폼 영상을 만든다면 AI를 파이프라인의 어느 구간에 둘지가 여기서 갈립니다. 보정과 편집은 안전하고, 처음부터 끝까지 생성하면 노출을 잃습니다.",
+    "en": "The operative distinction is not whether AI was used but who originated the footage. If you produce short-form video, that determines where AI can sit in the pipeline: enhancement and editing are safe, end-to-end generation costs you distribution."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "숏폼 영상 제작자 필독 · 저장 추천",
+    "en": "Required reading if you produce short-form video"
+  },
+  "comment": {
+    "kr": "규정은 제목보다 구체적입니다. 공개한다고 해서 면제되지 않습니다. 스냅챗 스포트라이트 가이드라인은 투명성 표시가 붙어 있더라도, 외부에서 전면 AI로 만든 영상보다 사람이 만든 콘텐츠를 순위에서 우대한다고 명시합니다. 그동안 합성 미디어에 대한 업계의 표준 답안이 '표기'였는데, 표기만으로는 부족하다고 플랫폼이 판단한 것입니다.\n살아남는 것은 보조 방식입니다. 소재는 직접 촬영하거나 만들고, 효과와 정리, 편집에 AI를 쓰는 흐름입니다. 스냅챗 자체 도구도 여기 포함되며 결과물에는 워터마크가 붙습니다. 영상 파이프라인을 짜는 입장에서 실무 결론은 하나입니다. 맨 앞에 사람이 만든 원본 소재를 둘 것.\n스냅챗만의 움직임도 아닙니다. 링크드인과 서브스택, 메타, 유튜브가 모두 합성 콘텐츠 규정을 조였고, 서브스택은 AI 작성 텍스트 감지 도구까지 내놨습니다. 생성이 아니라 유통이, AI를 창작 작업에 어떻게 쓸지를 규정하는 제약으로 자리 잡고 있습니다.",
+    "en": "The rule is more specific than the headline suggests. Disclosure does not save you: Snap's Spotlight guidelines say the ranking algorithm favours authentic human-made content over wholly AI-generated content made outside Snapchat even when transparency labels are attached. Labelling has been the standard industry answer to synthetic media, and this is a platform deciding that labelling is not enough.\nWhat survives is the assisted workflow. Shoot or animate the material yourself, then use AI for effects, cleanup and editing, including Snapchat's own tools, which stamp their output with a visible watermark. The practical takeaway for anyone building a video pipeline is to keep a human-originated source asset at the front of it.\nSnapchat is not alone here. LinkedIn, Substack, Meta and YouTube have all tightened rules on synthetic content, and Substack has gone as far as shipping a detector for AI-written text. Distribution, not generation, is becoming the constraint that shapes how AI gets used in creative work."
+  },
+  "thumbLabel": "AI영상규정",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

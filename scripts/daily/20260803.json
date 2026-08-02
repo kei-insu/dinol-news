@@ -1,0 +1,73 @@
+{
+  "20260803-ai-001": {
+    "category_kr": "AI · 정책 · 툴 활용",
+    "category_en": "AI · Policy · Tool Adoption",
+    "impactScore": 3,
+    "positions": [
+      "design-lead"
+    ]
+  },
+  "20260803-ai-002": {
+    "category_kr": "AI · 트렌드 · 창작",
+    "category_en": "AI · Trend · Creativity",
+    "impactScore": 3,
+    "positions": [
+      "graphic-designer",
+      "art-director"
+    ]
+  },
+  "20260803-ai-003": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tool · Productivity",
+    "impactScore": 4,
+    "positions": [
+      "design-lead",
+      "product-designer"
+    ]
+  },
+  "20260803-ai-004": {
+    "category_kr": "AI · 영상 · 플랫폼정책",
+    "category_en": "AI · Video · Platform Policy",
+    "impactScore": 3,
+    "positions": [
+      "motion-designer",
+      "art-director"
+    ]
+  },
+  "20260803-design-001": {
+    "category_kr": "디자인 · 전시 · 공간",
+    "category_en": "Design · Exhibition · Space",
+    "impactScore": 3,
+    "positions": [
+      "space-designer",
+      "architect"
+    ]
+  },
+  "20260803-design-002": {
+    "category_kr": "디자인 · 산업디자인 · 소재",
+    "category_en": "Design · Industrial Design · Material",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260803-design-003": {
+    "category_kr": "디자인 · 광고 · 캠페인",
+    "category_en": "Design · Advertising · Campaign",
+    "impactScore": 4,
+    "positions": [
+      "art-director",
+      "bx-designer"
+    ]
+  },
+  "20260803-design-004": {
+    "category_kr": "디자인 · 타이포그래피 · 아이덴티티",
+    "category_en": "Design · Typography · Identity",
+    "impactScore": 5,
+    "positions": [
+      "graphic-designer",
+      "brand-designer"
+    ]
+  }
+}

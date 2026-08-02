@@ -1,0 +1,59 @@
+{
+  "contentId": "20260803-design-003",
+  "date": "2026-08-03",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-30"
+  },
+  "url": "https://www.itsnicethat.com/articles/chachaanteng-heinz-mayo-graphic-design-project-300726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 광고 · 캠페인",
+    "en": "Design · Advertising · Campaign"
+  },
+  "title": {
+    "kr": "하인즈 마요 자판기를 감싼 물성의 세계, AI 슬롭에 맞선 차찬텡의 광고 액티베이션",
+    "en": "ChaChaanTeng's saucy auto-mayo-mat activation for Heinz is a fantastically physical opponent to AI slop"
+  },
+  "summary": {
+    "kr": "런던 스튜디오 차찬텡이 영국 최초의 마요네즈 샌드위치 자동판매기 '오토 마요 맷'을 위한 물리적 세계를 만들었습니다. 일본 자판기와 세븐일레븐 문화, 미드센추리 미국 디자인을 섞어 아이덴티티를 짰습니다.",
+    "en": "London studio ChaChaanTeng designed a physical world for Heinz Mayo, the UK's first automated sandwich vending machine serving mayonnaise-based sandwiches. The 'auto-mayo-mat' identity drew on Japanese vending machines, 7-Eleven culture and mid-century American design."
+  },
+  "points": {
+    "kr": [
+      "마요네즈는 특색이 옅은 조미료라, 제품이 아니라 '먹는 경험'을 설계 대상으로 삼음",
+      "자판기의 향수를 살리기 위해 빈티지·만화적 질감을 의도적으로 선택",
+      "굿즈·포스터·패키지부터 기계 본체까지 아이덴티티를 물리적으로 전개",
+      "AI 슬롭에 맞서 25초 분량 프레임 단위 애니메이션을 손으로 제작"
+    ],
+    "en": [
+      "Mayonnaise is plainer than novelty sauces, so the team designed the eating experience rather than the product",
+      "Vintage, cartoon-like feel chosen to match the nostalgia of automats",
+      "Identity rolled out across merchandise, posters, packaging and the machine itself",
+      "A 25-second frame-by-frame animation was made in deliberate opposition to AI slop"
+    ]
+  },
+  "positions": [
+    "art-director",
+    "bx-designer"
+  ],
+  "designer": {
+    "kr": "AI 생성 콘텐츠에 대한 대응이 선언문이 아니라 제작 방식으로 나옵니다. 온라인 자산까지 포함해 전부를 촉각적으로 만든다는 것입니다. 프레임 단위 애니메이션은 느리고 비싼데, 그 비용이 곧 캠페인의 무기입니다.",
+    "en": "The counter-move to AI-generated content here is not a manifesto but a production choice: make everything tactile, including the online assets. Frame-by-frame animation is slow and expensive, and that cost is exactly what the campaign trades on."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "물리적 브랜드 액티베이션 기획 참고 · 저장 추천",
+    "en": "Strong reference for physical brand activations"
+  },
+  "comment": {
+    "kr": "참고할 결정은 무엇을 과제로 잡았는가입니다. 마요네즈는 별난 소스 협업과 달리 널리 쓰이고 특색이 옅어서, 스튜디오는 조미료를 디자인하는 대신 갓 만든 샌드위치를 베어무는 감각을 디자인 대상으로 바꿨습니다. 이 재정의가 비주얼 언어에 갈 곳을 만들어줬습니다.\n레퍼런스도 카테고리가 아니라 질감 기준으로 골랐습니다. 일본 자판기와 세븐일레븐 문화, 암스테르담 체인 FIBO에서 낭만화된 음식 이미지를 가져오고, 미드센추리 미국 디자인에서 만화적 어휘를 가져왔습니다. 어느 것도 식품 브랜드의 기본값이 아니라서 결과가 흔한 조미료 캠페인처럼 보이지 않습니다.\nAI에 대한 대응은 구호가 아니라 제작 방식입니다. 소모성 콘텐츠의 시대에 25초짜리 프레임 단위 애니메이션을 손으로 만들었고, 완성도가 좋아 공간 안 포스터로도 쓰였습니다. 클라이언트 쪽도 짚어둘 만합니다. 디렉터는 '과감한 걸 해달라'고 해놓고 결국 희석시키는 클라이언트가 많다며, 하인즈가 끝까지 밀어붙인 점을 차이로 꼽았습니다.",
+    "en": "The useful decision is what they treated as the brief. Mayonnaise is widespread and plain compared to a novelty sauce collaboration, so the studio stopped designing the condiment and started designing the sensation of biting into a fresh sandwich. That reframing is what gave the visual language somewhere to go.\nReferences were chosen for texture rather than category. Japanese vending machines, 7-Eleven culture and the Amsterdam chain FIBO supplied the romanticised food imagery, while mid-century American design supplied the cartoon vocabulary. None of these are food-brand defaults, which is why the result does not look like every other condiment campaign.\nThe AI angle is a production decision, not a slogan. In an age of disposable content the studio made a 25-second frame-by-frame animation by hand, and it turned out well enough to be printed as a poster inside the physical space. Worth noting the client side too: the director points out that many clients ask for something bold and then water it down, and the difference here was Heinz following through."
+  },
+  "thumbLabel": "자판기광고",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

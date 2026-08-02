@@ -1,0 +1,59 @@
+{
+  "contentId": "20260803-design-004",
+  "date": "2026-08-03",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-07-30"
+  },
+  "url": "https://www.itsnicethat.com/articles/overview-zandland-human-graphic-design-project-300726",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 타이포그래피 · 아이덴티티",
+    "en": "Design · Typography · Identity"
+  },
+  "title": {
+    "kr": "가독성 대신 표현을 택하다, 대화 분석 표기법에서 나온 다큐멘터리 아이덴티티",
+    "en": "What can punctuation and glyphs say that words can't? Overview opts for expression over legibility in documentary identity"
+  },
+  "summary": {
+    "kr": "브랜드 오피스 오버뷰가 영국 다큐멘터리 스튜디오 잔드랜드의 새 저널리즘 브랜드 'Human'의 아이덴티티를 만들었습니다. 대화 분석에서 멈춤과 겹침, 망설임, 강조를 기록하는 표기법인 제퍼슨식 전사에 시스템의 뿌리를 뒀습니다.",
+    "en": "Brand office Overview built the identity for Human, a new journalism outlet from UK documentary studio Zandland. The system is rooted in Jeffersonian transcription, the notation used in conversation analysis to capture pauses, overlaps, hesitations and emphasis."
+  },
+  "points": {
+    "kr": [
+      "문장부호와 글리프가 텍스트를 끊어 '무엇을'이 아니라 '어떻게' 말했는지를 기록",
+      "필요한 글리프를 이미 갖춘 Display의 Saans를 기반 서체로 선택",
+      "가독성을 의도적으로 표현과 맞바꿔 일부 구간은 읽기 어렵게 남김",
+      "이 어수선함이야말로 AI나 고정된 아이덴티티가 만들 수 없는 것이라는 주장"
+    ],
+    "en": [
+      "Punctuation and glyphs interrupt the text to record how something was said, not just what",
+      "Typeface built from Saans by Display, chosen because it already carried the needed glyphs",
+      "Legibility is deliberately traded for expression, so some passages read as slightly difficult",
+      "The studio frames the messiness as something AI or a static identity could not produce"
+    ]
+  },
+  "positions": [
+    "graphic-designer",
+    "brand-designer"
+  ],
+  "designer": {
+    "kr": "타입 시스템의 출처가 무드가 아니라 연구 표기법인 드문 사례입니다. 제퍼슨식 전사에는 멈춤과 강조를 적는 규칙이 이미 있으므로, 언제 텍스트를 끊을지가 취향이 아니라 내장된 논리로 정해집니다.",
+    "en": "A rare case where the source of a type system is a research notation rather than a mood. Because Jeffersonian transcription already has rules for pause and emphasis, the identity gets a built-in logic for when to break the text instead of relying on taste."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "리서치 기반 타입 시스템 참고 · 저장 추천",
+    "en": "Useful model for research-based type systems"
+  },
+  "comment": {
+    "kr": "출발점은 신뢰도 문제입니다. 오버뷰의 진단은 권위가 더 이상 기관에서 상속되지 않는다는 것이고, 그래서 아이덴티티는 부과된 것이 아니라 관찰된 것처럼 보여야 했습니다. 모든 이야기를 하나의 매끈한 기관 목소리로 다듬는 대신, 사람들이 실제로 말하는 결을 담도록 시스템을 짰습니다.\n장치는 제퍼슨식 전사입니다. 대화 분석에서 멈춤과 겹침, 망설임, 강조를 문장부호와 글리프로 표시하는 표기법이라, 이 브랜드는 취향이 아니라 '끊는 규칙'을 갖게 됩니다. 서체 선택도 그 필요를 따랐습니다. Saans에 필요한 글리프가 이미 있어서, 작업은 새 글자를 그리는 일이 아니라 색과 적용 방식을 정하는 일이 됐습니다.\n맞바꾼 것도 분명히 밝힙니다. 일부는 일부러 읽기 어렵게 두었고, 낯선 사람과 장소를 이해할 때 겪는 마찰을 그대로 옮긴 것입니다. 어려운 이야기를 다루는 다큐멘터리 브랜드라면 방어 가능한 선택이지만, 클라이언트에게 슬쩍 넘길 것이 아니라 명시적으로 설득해야 하는 결정입니다.",
+    "en": "The starting problem is credibility. Overview's read is that authority is no longer inherited from institutions, so the identity had to look observed rather than imposed. Instead of polishing every story into one clean institutional voice, the system was built to carry the texture of how people actually speak.\nJeffersonian transcription is the mechanism. It is a notation from conversation analysis that marks pauses, overlaps, hesitation and emphasis with punctuation and glyphs, which means the brand has a rule set for interruption rather than a stylistic preference. The typeface choice followed that need: Saans already contained the glyphs, so the work became about colour and application rather than drawing new forms.\nThe trade-off is stated openly. Some of it is meant to be slightly unreadable, mirroring the friction of understanding unfamiliar people and places. That is a defensible position for a documentary brand covering difficult stories, but it is a decision to argue for explicitly, not to slip past a client."
+  },
+  "thumbLabel": "전사표기",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}
