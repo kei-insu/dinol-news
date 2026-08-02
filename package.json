@@ -6,9 +6,16 @@
     "dev": "astro dev",
     "build": "astro build && node scripts/copy-assets.mjs",
     "preview": "astro preview",
-    "test:likes": "node scripts/likes.test.mjs"
+    "test:likes": "node scripts/likes.test.mjs",
+    "emulators:rules": "firebase emulators:exec --only firestore \"node scripts/rules.test.mjs\"",
+    "deploy:rules": "firebase deploy --only firestore:rules --project dinol-news"
   },
   "dependencies": {
     "astro": "^7.1.3"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "5.0.1",
+    "firebase": "12.17.0",
+    "firebase-tools": "15.25.1"
   }
 }
