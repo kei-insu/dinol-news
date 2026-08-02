@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 상태 |
 |---|---|
+| 2026-08-03 | 카드 스키마 동기화(`data-category` 한국어 canonical · `data-category-en` · `data-position`) + 별점 루브릭 명문화 + §10 발행 게이트(브랜치·validate.py·localhost) |
 | 2026-07-26 | §3-1 구성 균형 확정(섹션당 국내2·해외2 예외없음 · 동일매체 전체합산 2건) + AI 실무접점 목표 |
 | 2026-07-14 | 라이브 루틴과 동기화 + 팝업 6필드 필수 검증(§5-2) 추가 |
 
@@ -16,7 +17,7 @@
 
 > **원칙:** HTML/CSS는 직접 정의하지 않는다. 디자인·구조의 단일 기준은 GitHub 최신 `template.html`이며, 매 실행 시 불러와 그대로 복제하고 **카드만 채운다.**
 
-> **갱신 이력:** 2026-07-26 — §3-1 구성 균형 규칙 확정. 46행의 "50:50 강제 아님"이 §3-1과 모순되어 삭제하고, 섹션당 국내 2·해외 2를 예외 없이 고정. 동일 매체 상한을 "섹션당 1건 권장"에서 "AI·Design 전체 합산 2건"으로 변경(섹션당 2건씩 넣어 4건이 되는 우회 차단). 실측 근거: 7/06~7/18은 5:5 충족 1일(8%)·Design 국내 0건이 11일이었으나, 7/19 이후 8일 연속 2:2 달성. / 2026-07-14 — 팝업 6필드 필수 검증(§5-2) 추가. 7/14 브리핑에서 `data-impact-score`·`data-comment` 누락(옛 `data-impact` 텍스트 사용)으로 실무영향도·큐레이션노트가 안 뜬 사고 재발 방지. / 2026-07-12 — 발행 중복 차단 관문 추가(§0 대장 불러오기 · §5 대장 대조 필수화 + 확인 한 줄 강제 · §10 배포 시 대장 재생성). 2026-07 다수 중복(RIBA·zdnet·design.co.kr·archdaily·yanko)의 원인이 이 대조 누락이었음.
+> **갱신 이력:** 2026-08-03 — 07-25 이후 확정된 카드 스키마가 루틴에 반영돼 있지 않아 매일 같은 결함이 반복됐다. ① `data-category-en`(EN 카드 필수, 07-25 도입)이 §7 패턴에 없어 EN 카드마다 누락 → 7/26~8/1 브리핑에서 매일 수동 보정. ② `data-category` 예시가 `Design · Architecture`로 적혀 있어 8/3 브리핑에서 Design 4장 전부 canonical 위반(ERROR 4건). Design 카드는 `디자인 · `, AI 카드는 `AI · ` 접두어여야 한다. ③ `data-position`(07-25 도입) 누락. ④ 별점 루브릭(policy.md §1-2)이 없어 `data-impact-score`가 ★2~3에 몰림. ⑤ §10에 `validate.py` 실행과 브랜치 규칙이 없어 결함이 발행 후 브라우저에서야 발견됨. / 2026-07-26 — §3-1 구성 균형 규칙 확정. 46행의 "50:50 강제 아님"이 §3-1과 모순되어 삭제하고, 섹션당 국내 2·해외 2를 예외 없이 고정. 동일 매체 상한을 "섹션당 1건 권장"에서 "AI·Design 전체 합산 2건"으로 변경(섹션당 2건씩 넣어 4건이 되는 우회 차단). 실측 근거: 7/06~7/18은 5:5 충족 1일(8%)·Design 국내 0건이 11일이었으나, 7/19 이후 8일 연속 2:2 달성. / 2026-07-14 — 팝업 6필드 필수 검증(§5-2) 추가. 7/14 브리핑에서 `data-impact-score`·`data-comment` 누락(옛 `data-impact` 텍스트 사용)으로 실무영향도·큐레이션노트가 안 뜬 사고 재발 방지. / 2026-07-12 — 발행 중복 차단 관문 추가(§0 대장 불러오기 · §5 대장 대조 필수화 + 확인 한 줄 강제 · §10 배포 시 대장 재생성). 2026-07 다수 중복(RIBA·zdnet·design.co.kr·archdaily·yanko)의 원인이 이 대조 누락이었음.
 
 ---
 
@@ -76,6 +77,20 @@ index.json에 오늘 날짜가 이미 있으면 → 생성 생략, "오늘 브�
 - **★1 카드에는 별도 수량 상한을 두지 않는다.**
   (정책·반도체·M&A 는 업계에서 중요할 수 있고, 별점이 이미 실무와의 거리를 표시한다)
 
+**[별점 루브릭 — policy.md §1-2]**
+- `data-impact-score` 는 아래 기준으로 매긴다. **★2~3 에 몰리지 않게 실제로 분산시킨다.**
+
+| 점수 | 기준 |
+|---|---|
+| ★5 | 즉시 적용 가능한 방법론·툴 사용법 |
+| ★4 | 실무에 적용 가능한 인사이트 |
+| ★3 | 중간 |
+| ★2 | 낮음 |
+| ★1 | M&A · 정책 · 증시 |
+
+- **디자인 방법론·툴 사용법 콘텐츠는 원칙적으로 ★4~5** 로 매긴다.
+- 지역 균형이나 별점 분산을 맞추려고 점수를 부풀리거나 낮추지 않는다.
+
 **[후보 선별]**
 - **후보 풀 먼저.** 검색으로 N건 나왔다고 그 N건을 바로 채택하지 않는다. 여러 매체를 넓게 돌려 후보를 넉넉히 모은 뒤 그 안에서 고른다.
 - **디자인 관련도 가중.** 후보를 "디자인 놀이터 독자 관점"의 관련도로 평가해 상위만 채택. AI 카드도 디자인 툴·생성형/크리에이티브 AI·브랜드/제품/UX 영향 등 관련도로 판단(단순 증시·실적·투자 뉴스는 제외).
@@ -131,8 +146,10 @@ index.json에 오늘 날짜가 이미 있으면 → 생성 생략, "오늘 브�
 1. **하나라도 빠졌거나 형식이 틀리면 그 카드를 재작성**한다(빈 채로 넘기지 않는다).
 2. ⚠️ `data-impact-score`는 **정수 1~5**여야 한다. `data-impact`(텍스트)는 드로어가 렌더하지 못하므로 **절대 쓰지 않는다**.
 3. ⚠️ `data-comment`(큐레이션 노트, 2~3문단)는 **필수**다. 절대 생략하지 않는다. (이 사이트의 핵심 부가가치)
-4. 영문 카드는 위 6필드 + `-kr` 짝(`data-summary-kr`·`data-points-kr`·`data-designer-kr`·`data-recommend-kr`·`data-comment-kr`) + `data-title-en`도 확인.
-5. 점검 결과를 §9 알림·§9-1 파일 제시에 한 줄 남긴다: 「6필드 검증: 8/8 통과」 (통과 못 하면 배포 보류)
+4. 영문 카드는 위 6필드 + `-kr` 짝(`data-summary-kr`·`data-points-kr`·`data-designer-kr`·`data-recommend-kr`·`data-comment-kr`) + `data-title-en` + **`data-category-en`** 도 확인.
+5. ⚠️ **`data-category` 접두어 검사(8장 전부).** Design 카드는 `디자인` 또는 `디자인 · ` 로, AI 카드는 `AI` 또는 `AI · ` 로 시작해야 한다. `Design · ` 은 **위반**이다.
+6. ⚠️ **영문 슬롯이 한국어면 안 된다.** EN 카드의 `data-summary`·`data-points`·`data-designer`·`data-recommend`·`data-comment` 는 영문, `-kr` 짝은 한국어다. 두 값이 같으면(번역 누락) 재작성한다.
+7. 점검 결과를 §9 알림·§9-1 파일 제시에 한 줄 남긴다: 「6필드 검증: 8/8 통과」 (통과 못 하면 배포 보류)
 
 ---
 
@@ -154,15 +171,23 @@ template.html을 복제하고 **아래 세 곳만** 채운다. 그 외(스타일
 - **라벨·카드 제목은 영문 기사도 한글.** 영어 원제목은 `data-title-en`에 보존.
 - 팝업 6필드를 **모두** 채운다: `data-summary`·`data-points`·`data-designer`·`data-impact-score`·`data-recommend`·`data-comment`. 영문 기사는 각 `-kr` 짝도. **하나라도 빠지면 카드 재작성(§5-2 검증). `data-impact`(텍스트)·빈 `data-comment` 금지.**
 - `data-points`는 3개를 `|`로. `data-impact-score`는 **1~5 정수**. `data-comment`(큐레이션 노트)는 **2~3문단(실제 \n)**.
-- 본문에 **em대시(—) 금지**. `data-category` 예: `AI · 정책`, `Design · Architecture`.
-- gradient 8종 다양하게: `g-teal g-navy g-slate g-plum g-violet g-amber g-crimson g-forest`.
+- 본문에 **em대시(—) 금지**.
+- **`data-category` 는 한국어 canonical.** 구분자는 ` · ` 한 가지만 쓴다.
+  - AI 카드: `AI · ` 로 시작 (예: `AI · 툴 · 생산성`, `AI · 정책 · 전략`)
+  - Design 카드: **`디자인 · ` 로 시작** (예: `디자인 · 브랜딩 · 타이포그래피`, `디자인 · UXUI · 프로덕트`)
+  - ⚠️ `Design · ` 은 위반이다. 발행 전 검증에서 ERROR 로 걸린다.
+- **EN 카드는 `data-category-en` 을 함께 넣는다**(영문 표기, 예: `Design · Branding · Typography`). 국문 카드에는 넣지 않는다.
+- **`data-position`**: 이 카드가 도움이 되는 직무를 `|` 로 **최대 2개**. 아래 20종 ID 외의 값은 쓰지 않는다.
+  `ux-designer` `ui-designer` `product-designer` `service-designer` `brand-designer` `bx-designer` `graphic-designer` `editorial-designer` `motion-designer` `video-designer` `illustrator` `art-director` `industrial-designer` `space-designer` `architect` `package-designer` `typographer` `fashion-designer` `design-lead` `design-manager`
+- gradient 는 아래 중에서 고르되 **8장 전부 서로 다른 색을 쓴다(중복 금지)**: `g-teal g-navy g-slate g-plum g-violet g-amber g-crimson g-forest g-indigo g-olive g-rust`
 - **card-footer(좋아요·공유)는 template 예시 카드의 것을 그대로 복사**(직접 작성 금지).
-- 첫 카드 `class="card featured"` 허용.
+- 첫 카드 `class="card featured"` 허용. ※ 실제 운영은 AI·Design 각 첫 카드 1장씩(총 2장)이다. **정책 미확정 — 확정 시 이 줄을 갱신할 것.**
 
 ### 한국어 기사 카드
 ```html
 <a class="card" href="[URL]" target="_blank"
-   data-category="[예: AI · 정책]"
+   data-category="[한국어 canonical · 예: AI · 정책 · 전략 / 디자인 · 브랜딩 · 아이덴티티]"
+   data-position="[직무 ID 최대 2개, | 로 구분]"
    data-summary="[한 줄 요약]"
    data-points="[포인트1|포인트2|포인트3]"
    data-designer="[디자이너 관점 1~2문장]"
@@ -184,7 +209,8 @@ template.html을 복제하고 **아래 세 곳만** 채운다. 그 외(스타일
 ### 영문 기사 카드 (한글 표시 + 영어 원문 보존)
 ```html
 <a class="card" href="[URL]" target="_blank"
-   data-category="[예: Design · Architecture]"
+   data-category="[한국어 canonical · 예: 디자인 · 브랜딩 · 타이포그래피]" data-category-en="[영문 · 예: Design · Branding · Typography]"
+   data-position="[직무 ID 최대 2개, | 로 구분]"
    data-summary="[English summary]" data-summary-kr="[한국어 요약]"
    data-points="[EN p1|p2|p3]" data-points-kr="[한국어 포인트]"
    data-designer="[English angle]" data-designer-kr="[한국어 관점]"
@@ -225,9 +251,35 @@ PushNotification: `디자인놀이터 브리핑 초안 생성 — AI [N] / Desig
 - "AI N / Design N, 게재일·사실관계 검수 후 news/2026/MM/ 에 배포하세요" 안내
 
 ## 10. 검수·배포 (사람)
-세션에서 `Dinol_news_YYYYMMDD.html` 검수(제목·요약·출처·**날짜 정확성**·팝업 필드 + **§5-0 대장 대조 한 줄 존재 여부**) → 이상 없으면 `index.json`과 함께 다운로드 → repo `news/2026/MM/`·루트에 넣는다.
-**배포 직전, 레포 루트에서 대장을 재생성한다:**
+
+### 10-0. 브랜치 — 먼저 확인
+**브리핑 확인·발행은 `main` 브랜치에서만 한다.** `astro` 브랜치는 카드 구조가 `article.card + a.card-link` 로 리팩터돼 있어(커밋 `0ed94e3`), 구 구조로 생성된 브리핑을 astro 에서 열면 `assets/dinol.js` 가 링크를 못 찾아 **8장 전부 「⚠ 링크 없음」 배지 + 「중복 링크 1건」 배너**가 뜬다. 파일 결함이 아니라 환경 오탐이다.
+
+```
+git status -sb        # 브랜치 확인
+git checkout main     # astro 면 전환 (수정 파일이 있으면 git stash 먼저)
+```
+
+### 10-1. 사전 검증 (필수 게이트)
+파일을 `news/2026/MM/` 에 넣은 뒤, 레포 루트에서:
+```
+python scripts/validate.py news/2026/MM/Dinol_news_YYYYMMDD.html
+```
+→ **ERROR 0건이어야 발행한다.** WARN 은 사유를 §9-1 에 남기고 진행 가능.
+validate.py 는 HTML 원문을 직접 읽으므로 브라우저 캐시·에셋 버전의 영향을 받지 않는다. **브라우저 화면보다 이 결과가 먼저다.**
+
+### 10-2. 화면 확인
+```
+python -m http.server 8000
+```
+→ `http://localhost:8000/news/2026/MM/Dinol_news_YYYYMMDD.html`
+- `file://` 로 열지 않는다. `dinol-firebase.js` 가 ESM 모듈이라 CORS 로 차단되어 좋아요·디놀 톡톡이 뜨지 않는다.
+- 확인할 것: 「⚠ 링크 없음」 배지 없음 · 하단 빨간 배너 없음 · 콘솔에 `✅ 콘텐츠 검토 통과` · 디놀 톡톡 글 목록 표시
+
+### 10-3. 대장 재생성 → 배포
 ```
 python scripts/build_published_urls.py
 ```
 → "중복 등장 URL 없음" 확인 후 `git add … → commit → push`(또는 `./deploy.ps1 "메시지"`). 이렇게 하면 오늘 발행한 URL이 대장에 반영되어, 다음 실행의 §5-0 대조가 최신 상태로 작동한다.
+
+> **astro 머지 시 필수 후속 작업:** astro 의 카드 구조(`article.card + a.card-link`)가 main 으로 넘어오면 **§7 카드 패턴을 신 구조로 교체**해야 한다. 교체 전까지 루틴은 구 구조(`a.card`)를 유지한다.
