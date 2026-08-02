@@ -16,8 +16,8 @@ from datetime import datetime
 # 정책 적용일 상수 (None 이면 해당 검사 비활성)
 # ────────────────────────────────────────────────────────────
 CARD_COUNT_POLICY_FROM     = "2026-07-06"   # 8카드(AI 4 + Design 4) 구조 확립일
-POSITION_SCHEMA_FROM       = None           # data-position 도입일 (코드 반영 시 기입)
-CATEGORY_EN_SCHEMA_FROM    = None           # data-category-en 도입일 (코드 반영 시 기입)
+POSITION_SCHEMA_FROM       = "2026-07-25"   # data-position 도입일
+CATEGORY_EN_SCHEMA_FROM    = "2026-07-25"   # data-category-en 도입일
 CONTENT_ID_SCHEMA_FROM     = None           # 상세 페이지 전환 확정 시 날짜 기입
 SECTION_RUBRIC_POLICY_FROM = None           # 섹션별 별점 기준 적용일(재채점 후 기입)
 EN_LANGUAGE_POLICY_FROM    = None           # EN 카드 언어 슬롯 정책 적용일
