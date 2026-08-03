@@ -1,0 +1,74 @@
+{
+  "20260804-ai-001": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tool · Productivity",
+    "impactScore": 5,
+    "positions": [
+      "ux-designer",
+      "product-designer"
+    ]
+  },
+  "20260804-ai-002": {
+    "category_kr": "AI · 프라이버시 · 리스크",
+    "category_en": "AI · Privacy · Risk",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "ux-designer"
+    ]
+  },
+  "20260804-ai-003": {
+    "category_kr": "AI · 제품 · 소프트웨어",
+    "category_en": "AI · Product · Software",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "ui-designer"
+    ]
+  },
+  "20260804-ai-004": {
+    "category_kr": "AI · 규제 · 합성콘텐츠",
+    "category_en": "AI · Regulation · Synthetic Content",
+    "impactScore": 5,
+    "positions": [
+      "art-director",
+      "motion-designer"
+    ]
+  },
+  "20260804-design-001": {
+    "category_kr": "디자인 · 디자인시스템 · 오픈소스",
+    "category_en": "Design · Design System · Open Source",
+    "impactScore": 5,
+    "positions": [
+      "ui-designer",
+      "product-designer"
+    ]
+  },
+  "20260804-design-002": {
+    "category_kr": "디자인 · 브랜딩 · BX",
+    "category_en": "Design · Branding · BX",
+    "impactScore": 3,
+    "positions": [
+      "brand-designer",
+      "bx-designer"
+    ]
+  },
+  "20260804-design-003": {
+    "category_kr": "디자인 · 산업디자인 · 제품",
+    "category_en": "Design · Industrial Design · Product",
+    "impactScore": 4,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260804-design-004": {
+    "category_kr": "디자인 · 건축 · 공공공간",
+    "category_en": "Design · Architecture · Public Space",
+    "impactScore": 3,
+    "positions": [
+      "space-designer",
+      "architect"
+    ]
+  }
+}

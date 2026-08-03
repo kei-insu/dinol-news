@@ -1,0 +1,59 @@
+{
+  "contentId": "20260804-design-003",
+  "date": "2026-08-04",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-08-03"
+  },
+  "url": "https://www.yankodesign.com/2026/08/03/the-599-ai-guitar-that-finally-makes-playing-easy/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 산업디자인 · 제품",
+    "en": "Design · Industrial Design · Product"
+  },
+  "title": {
+    "kr": "599달러 생성형 AI 기타, 배우는 경험을 악기 안에 모두 넣다",
+    "en": "The $599 AI guitar that finally makes playing easy"
+  },
+  "summary": {
+    "kr": "인데어 디자인 스트래티지가 설계한 템폴러 멜로디는 세계 최초의 생성형 AI 기타를 표방합니다. 넥에 심긴 LED가 눌러야 할 음을 직접 밝혀주고 본체의 2.4인치 플립 스크린이 코드 안내를 맡아, 초보자가 옆에 휴대폰을 세워둘 필요가 없습니다.",
+    "en": "The TemPolor Melo-D, designed by inDare Design Strategy Limited, is billed as the world's first generative AI guitar. LEDs in the neck light up the notes to press and a 2.4-inch flip screen on the body handles chord guidance, so a beginner never has to prop a phone nearby."
+  },
+  "points": {
+    "kr": [
+      "배우는 데 필요한 것을 악기 안에 모두 넣어, 별도 앱·액세서리 생태계가 필요 없음",
+      "솔로·싱어롱·AI 창작 3개 모드, 허밍한 멜로디를 기타 솔로로 채보",
+      "텍스트 프롬프트로 곡을 생성하고, 올린 오디오를 연주 가능한 탭·코드 차트로 변환",
+      "6현 실리콘 시스템으로 음 하나하나를 실제로 연주 가능, 흉내내는 장난감이 아님"
+    ],
+    "en": [
+      "Everything needed to learn is built into the instrument, no companion app ecosystem required",
+      "Three modes: solo, sing-along and AI creation, where humming becomes a transcribed guitar solo",
+      "Text prompts generate songs and uploaded audio converts into playable tabs or chord charts",
+      "Six-string silicone system allows real note-by-note playing, so it is an instrument, not a toy"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "설계 입장이 분명합니다. 경험을 앱 생태계로 쪼개지 않고 사물 안에 전부 넣었습니다. 학습형 제품을 설계한다면 이 결정이 논점입니다. 하드웨어가 가치를 담느냐, 아니면 그저 얹어두는 자리가 되느냐가 여기서 갈립니다.",
+    "en": "The design position is clear: put the whole experience inside the object instead of splitting it across an app ecosystem. For anyone designing a learning product, that is the decision worth arguing over, because it determines whether the hardware carries the value or merely hosts it."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "AI 내장 하드웨어 설계 사례 · 저장 추천",
+    "en": "Useful case for AI-embedded hardware design"
+  },
+  "comment": {
+    "kr": "흥미로운 결정은 경험이 어디에 놓이는가입니다. 대부분의 학습형 악기는 가르치는 역할을 휴대폰 앱에 넘기고, 그러면 하드웨어는 컨트롤러에 그칩니다. 멜로디는 LED와 화면을 악기 자체에 넣어 사물이 경험 전체를 감당하게 했고, 초보자는 시작하기 전에 장비를 세팅할 필요가 없습니다.\n또 하나의 설계 이야기는 절제입니다. 이런 제품은 기능을 계속 얹다가 무너지기 쉬운데, 얀코디자인은 인간 중심 산업디자인으로 알려진 인데어가 이를 붙들었다고 평가합니다. 접히는 본체, 일체형 플립 스크린, 실리콘 현이 스펙 목록에 껍데기를 씌운 결과가 아니라 의도된 선택으로 읽히고, iF 디자인 어워드를 받은 이유이기도 합니다.\nAI라는 이름표도 다른 제품들보다 검증을 잘 통과합니다. 6현 실리콘 시스템이 음 단위 실연주를 지원하기 때문에, 보조 기능은 실력을 대체하는 것이 아니라 연주자가 떼어낼 수 있는 보조 바퀴로 작동합니다. 제품에 AI를 넣을 때 새겨둘 선입니다. 문턱을 넘게 돕되, 배우러 온 것을 대신하지 말 것. 599달러 예약 판매 중이며 출하는 2026년 9월 예정입니다.",
+    "en": "The interesting decision is where the experience lives. Most learning instruments hand the teaching job to a phone app, which means the hardware is just a controller. Melo-D puts the LEDs and the screen into the instrument itself, so the object carries the full experience and the beginner never has to assemble a setup before starting.\nRestraint is the other design story. A product like this could easily have piled on features until it collapsed, and Yanko credits inDare, a studio known for human-centred industrial design, with keeping it disciplined. The foldable body, the integrated flip screen and the silicone strings read as deliberate choices rather than a spec list looking for a shell, which is also why it picked up an iF Design Award.\nThe AI framing survives scrutiny better than most. Because the six-string silicone system supports real note-by-note playing, the assistance functions as training wheels a player can remove rather than a substitute for skill. That is a useful line for anyone embedding AI in a product: help people through the door, do not replace the thing they came to learn. Pre-orders are open at $599 with shipping expected in September 2026."
+  },
+  "thumbLabel": "AI기타",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

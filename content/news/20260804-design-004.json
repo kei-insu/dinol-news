@@ -1,0 +1,57 @@
+{
+  "contentId": "20260804-design-004",
+  "date": "2026-08-04",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "ArchDaily",
+    "publishedAt": "2026-08-03"
+  },
+  "url": "https://www.archdaily.com/1181947/machida-station-area-community-hub-hatmachida-nikken-sekkei",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 공공공간",
+    "en": "Design · Architecture · Public Space"
+  },
+  "title": {
+    "kr": "22제곱미터가 만든 광장, 도쿄 '하트마치다'",
+    "en": "Machida Station Area Community Hub 'hatmachida' / Nikken Sekkei"
+  },
+  "summary": {
+    "kr": "니켄세케이가 마치다역 인근의 22제곱미터짜리 옛 파출소 자리를 '하트마치다'라는 마이크로 랜드마크로 바꾸며, 지나가는 길이었던 공간을 사람이 머무는 장소로 재해석했다.",
+    "en": "Nikken Sekkei turned a 22-square-metre former police box near Machida Station into hatmachida, a micro-landmark that reframes a stretch of road as a place for people to gather rather than just pass through."
+  },
+  "points": {
+    "kr": [
+      "22제곱미터라는 작은 면적을 공공 거점으로 재해석",
+      "도로도 건축도 광장도 아닌 애매한 위치를 그대로 활용",
+      "수년간 지역 커뮤니티와 진행한 사회적 실험의 결과물"
+    ],
+    "en": [
+      "A tiny 22m² footprint reimagined as a public gathering point",
+      "Ambiguous status between road, architecture and plaza",
+      "Built on years of social experiments with the local community"
+    ]
+  },
+  "positions": [
+    "space-designer",
+    "architect"
+  ],
+  "designer": {
+    "kr": "공공 공간 개입이 꼭 큰 규모일 필요는 없다는 걸 보여주는 사례로, 작은 스케일의 도시·공간 프로젝트를 구상할 때 참고할 만하다.",
+    "en": "A compact proof that a public space intervention doesn't need scale to change how people use a street, useful reference for micro-scale urban or spatial projects."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "소규모 공공공간·스트리트퍼니처 프로젝트 참고용으로 저장 추천",
+    "en": "Worth saving for small-scale public space or urban furniture projects"
+  },
+  "comment": {
+    "kr": "마치다역 근처에서 오랫동안 지역 주민들에게 익숙했던 작은 파출소 부지를 니켄세케이가 정보·테이크아웃·상점·거점 기능을 담은 22제곱미터짜리 마이크로 랜드마크로 바꿨습니다.\n이 공간은 제도적으로는 도로, 공간적으로는 건축, 기능적으로는 광장이라는 애매한 위치에 놓여 있습니다. 그 애매함을 없애려 하지 않고 오히려 그대로 활용해, '지나가는 길'이었던 곳을 '머무르고 대화가 시작되는 곳'으로 바꿔낸 점이 눈에 띕니다.\n수년에 걸친 지역사회와의 사회적 실험을 거쳐 완성됐다는 점도 주목할 만합니다. 작은 스케일의 공공 개입이 어떻게 오랜 시간과 합의를 거쳐 완성도를 갖추는지 보여주는 사례입니다.",
+    "en": "Nikken Sekkei transformed a small, long-familiar former police box near Machida Station into a 22-square-metre micro-landmark combining information, takeout, retail and a meeting spot.\nThe space sits in a deliberately ambiguous position, institutionally a road, spatially architecture, functionally a plaza, and rather than resolving that ambiguity, the design leans into it to turn a stretch once seen only as a place to pass through into somewhere people actually gather and talk.\nIt's also worth noting the project followed years of social experimentation with the local community before reaching this form, a reminder that small-scale public interventions often need as much time and consensus-building as scale."
+  },
+  "thumbLabel": "공공공간",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

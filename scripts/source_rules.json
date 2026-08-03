@@ -234,5 +234,9 @@
   "Creative Boom": {
     "region": "해외",
     "group": "Creative Boom"
+  },
+  "European Commission": {
+    "region": "해외",
+    "group": "European Commission"
   }
 }
