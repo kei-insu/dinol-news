@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 04</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 4, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.aitimes.com/news/articleView.html?idxno=213465" target="_blank"
+       data-category="AI · 툴 · 생산성"
+       data-position="ux-designer|product-designer"
+       data-summary="오픈AI가 챗GPT 데스크톱 앱과 크롬 확장 프로그램에 내장 브라우저, 클라우드 브라우저, 사이드 채팅을 동시에 추가하며 웹페이지·유튜브 영상을 바로 분석할 수 있게 됐다."
+       data-points="데스크톱 앱 내장 브라우저·클라우드 브라우저·크롬 사이드 채팅 3중 체제|복사·붙여넣기 없이 웹페이지·유튜브 바로 질문 가능|여러 탭 동시 분석과 브라우저 기록 활용 지원"
+       data-designer="리서치·레퍼런스 수집 과정에서 탭을 오가며 복붙하던 작업을 챗GPT 안에서 바로 처리할 수 있어, 무드보드나 경쟁사 조사 워크플로에 즉시 적용해볼 만하다."
+       data-impact-score="5"
+       data-recommend="리서치·레퍼런스 수집 워크플로에 바로 적용 추천"
+       data-comment="오픈AI가 그동안 별도 프로젝트로 개발하던 '챗GPT 아틀라스' 브라우저를 사실상 접고, 기존 데스크톱 앱과 크롬 확장 프로그램에 브라우징 기능을 통합하는 방향으로 선회했습니다. 별도 브라우저를 새로 설치하게 하는 대신 이미 쓰고 있는 환경 안으로 기능을 가져온 선택입니다.
+디자이너 입장에서는 레퍼런스 리서치나 경쟁사 서비스 분석을 할 때 탭을 오가며 내용을 복사해 붙여넣던 과정을 줄일 수 있다는 점이 실질적입니다. 유튜브 튜토리얼이나 컨퍼런스 영상을 보면서 바로 요약을 요청하는 것도 가능해져, 인풋 수집 단계의 마찰이 줄어듭니다.
+다만 여러 탭과 브라우저 기록을 AI가 함께 활용한다는 점에서 업무용 계정으로 쓸 때는 어떤 정보가 맥락으로 넘어가는지 점검해볼 필요가 있습니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">브라우징</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">AI타임스 · 2026. 07. 31</div>
+        <div class="card-title">오픈AI, 챗GPT에 브라우저 3중 체제 추가...웹·유튜브 바로 분석</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260803093811" target="_blank"
+       data-category="AI · 프라이버시 · 리스크"
+       data-position="product-designer|design-lead"
+       data-summary="이름이나 연락처 같은 식별정보 없이도 행동 패턴만으로 개인의 건강 상태까지 추론할 수 있다는 우려가 제기되며, AI 서비스의 개인정보 침해 리스크가 새로운 국면을 맞고 있다."
+       data-points="비식별 데이터만으로도 건강 상태 추론이 가능하다는 지적|데이터 수집 범위 제한과 접근 권한 관리의 중요성 부각|민감한 행동 전 사람의 확인을 요구하는 안전장치 필요성 제기"
+       data-designer="AI 기능을 설계할 때 '개인정보를 안 모으면 안전하다'는 전제가 더 이상 통하지 않는다는 걸 보여주는 사례로, 온보딩·동의 흐름을 다시 점검해볼 신호다."
+       data-impact-score="3"
+       data-recommend="개인정보·데이터 정책 담당자, AI 기능 기획자 참고"
+       data-comment="이름, 전화번호처럼 직접적인 식별 정보를 지우더라도 앱 사용 패턴이나 검색 이력만으로 사용자의 건강 상태까지 유추할 수 있다는 지적이 나왔습니다. 비식별화 조치만으로는 개인정보 보호가 충분하지 않다는 뜻입니다.
+AI 기능을 붙인 서비스를 기획하는 입장에서는 데이터 수집 범위를 최소화하고 접근 권한과 보관 기간을 엄격히 관리하는 것은 물론, 민감한 행동을 실행하기 전 사람이 한 번 더 확인하는 절차를 넣는 것까지 함께 고려해야 한다는 메시지로 읽힙니다.
+동의 화면 문구 하나 바꾸는 것보다, 애초에 어떤 데이터를 왜 모으는지부터 다시 설계하라는 요구에 가깝습니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">프라이버시</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 08. 03</div>
+        <div class="card-title">이름·연락처 없어도 건강 상태 안다...AI 개인정보 침해 '비상'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/08/02/these-app-store-hidden-gems-prove-theres-still-room-for-great-software-in-the-ai-era/" target="_blank"
+       data-category="AI · 제품 · 소프트웨어" data-category-en="AI · Product · Software"
+       data-position="product-designer|ui-designer"
+       data-summary="As AI coding tools make it easier than ever to ship an app, TechCrunch highlights a handful of App Store hidden gems that show craft and taste still set great software apart from AI-generated noise." data-summary-kr="AI 코딩 도구 덕분에 앱 출시가 그 어느 때보다 쉬워진 지금, 테크크런치가 소개한 앱스토어 '숨은 명작'들은 여전히 만듦새와 취향이 좋은 소프트웨어를 가른다는 걸 보여준다."
+       data-points="App releases up sharply as AI coding lowers the barrier to shipping|A handful of small, well-crafted apps stand out from AI-generated clutter|Taste and polish remain a differentiator even as production gets cheaper" data-points-kr="AI 코딩으로 앱 출시 문턱이 낮아지며 신규 출시량 급증|AI로 찍어낸 앱들 사이에서 만듦새 좋은 소규모 앱들이 두각|제작 비용이 낮아져도 취향과 완성도는 여전히 차별화 요소"
+       data-designer="A reminder that in a market flooded with AI-generated apps, distinctive visual craft and thoughtful UX are becoming the actual moat." data-designer-kr="AI로 찍어낸 앱이 넘쳐나는 시장에서, 결국 눈에 띄는 비주얼 만듦새와 세심한 UX가 실질적인 차별점이 되고 있다는 걸 보여주는 사례다."
+       data-impact-score="3"
+       data-recommend="Good context for product teams thinking about differentiation in an AI-saturated market" data-recommend-kr="AI 포화 시장에서 차별화를 고민하는 프로덕트팀에 참고"
+       data-comment="AI coding tools have made it easier than ever for anyone with an idea to ship an app, and app store releases have surged as a result.
+Yet TechCrunch argues that in this flood of similar-looking AI-generated apps, small pieces of software with real craft stand out more, not less. Careful visual detail and thoughtful usability remain the difference users actually notice.
+For product teams, the takeaway is that shipping fast is no longer enough of a moat on its own. Polish and taste are becoming the differentiators again." data-comment-kr="AI 코딩 도구 덕분에 아이디어만 있으면 누구나 앱을 만들어 출시할 수 있는 시대가 됐습니다. 실제로 올해 앱스토어 신규 출시량은 전년 대비 크게 늘었습니다.
+하지만 테크크런치는 오히려 이런 상황에서 만듦새 좋은 소규모 앱들이 더 눈에 띈다고 짚습니다. 비슷비슷한 AI 생성 앱들 사이에서, 디테일을 챙긴 비주얼과 사용성은 여전히 사용자가 알아채는 차이라는 것입니다.
+프로덕트를 기획하는 입장에서는 '빨리 만든다'는 경쟁력만으로는 부족해지고 있다는 신호로 읽힙니다. 결국 완성도와 취향이 다시 중요한 변수로 떠오르고 있습니다."
+       data-title-en="These App Store hidden gems prove there's still room for great software in the AI era" data-title-kr="AI 시대에도 좋은 소프트웨어는 살아남는다, 앱스토어 '숨은 명작'들">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">숨은명작</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 08. 02</div>
+        <div class="card-title">AI 시대에도 좋은 소프트웨어는 살아남는다, 앱스토어 '숨은 명작'들</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-transparency-ai-generated-content" target="_blank"
+       data-category="AI · 규제 · 합성콘텐츠" data-category-en="AI · Regulation · Synthetic Content"
+       data-position="art-director|graphic-designer"
+       data-summary="Article 50 of the EU AI Act applies from 2 August 2026, and the European Commission has published guidelines to go with it. Providers of generative AI systems must add machine-readable marks that let AI-generated or manipulated content be detected, and deployers must disclose deepfakes to the people who see them." data-summary-kr="EU AI법 제50조가 2026년 8월 2일부터 적용되며, 유럽집행위원회가 이에 맞춘 가이드라인을 냈습니다. 생성형 AI 시스템 제공자는 AI로 만들거나 조작한 콘텐츠를 탐지할 수 있도록 기계 판독 가능한 표식을 넣어야 하고, 이를 사용해 콘텐츠를 내보내는 쪽은 딥페이크임을 보는 사람에게 알려야 합니다."
+       data-points="Providers: machine-readable marking so synthetic content can be detected downstream|Deployers: disclosure for deepfakes, emotion recognition and unreviewed public-interest text|Guidelines define synthetic content and deepfakes, and list exceptions such as standard editing|Adhering to the Code of Practice is one route to compliance, otherwise equivalent means must be shown" data-points-kr="제공자: 합성 콘텐츠를 이후 단계에서 탐지할 수 있도록 기계 판독 표식 삽입|사용자(배포자): 딥페이크·감정 인식·사람 검토 없는 공익 관련 텍스트는 고지 의무|가이드라인이 합성 콘텐츠·딥페이크를 정의하고 '일반적인 편집' 같은 예외를 예시로 제시|실무 강령 준수가 이행 경로 중 하나, 따르지 않으면 동등한 수단을 스스로 입증해야 함"
+       data-designer="The line that matters for image work is the exception for standard editing. Routine retouching is not the target, generated or manipulated content that could pass as authentic is. Anyone shipping AI visuals into the EU now needs to know which side of that line each asset falls on." data-designer-kr="이미지 작업에서 중요한 지점은 '일반적인 편집'이 예외로 명시됐다는 것입니다. 일상적인 보정이 대상이 아니라, 진짜처럼 통할 수 있는 생성·조작 콘텐츠가 대상입니다. EU로 나가는 AI 비주얼을 다룬다면 이제 에셋마다 어느 쪽에 속하는지 판단해야 합니다."
+       data-impact-score="4"
+       data-recommend="Check before shipping AI visuals into the EU" data-recommend-kr="EU 대상 AI 비주얼 납품 전 확인 · 저장 추천"
+       data-comment="The obligation splits along the production chain, which is the part worth reading carefully. Model providers carry the marking duty, meaning the watermark or provenance signal is supposed to be embedded upstream. The organisation that actually publishes the work carries the disclosure duty for deepfakes and for public-interest text released without human review. A studio can therefore be compliant on one side and exposed on the other.
+The guidelines exist because the definitions were the hard part. They set out what counts as a directly interactive AI system, what counts as synthetic content, what counts as a deepfake, and they give examples of what falls outside, including standard editing. For image and video work that boundary is the whole question, since almost every asset passes through some retouching.
+There are two routes to demonstrating compliance. Signing up to the Code of Practice on Transparency of AI-generated Content is one. Declining it means proving equivalently adequate means on your own, which is a heavier evidentiary burden. Enforcement sits with national market surveillance authorities, the AI Office for systems under its supervision, and the European Data Protection Supervisor where EU institutions are involved." data-comment-kr="의무가 제작 사슬을 따라 나뉜다는 점을 눈여겨봐야 합니다. 표식을 넣을 책임은 모델 제공자에게 있고, 워터마크나 출처 신호는 상류에서 심겨야 한다는 뜻입니다. 반면 실제로 결과물을 내보내는 조직은 딥페이크와 사람 검토 없이 공개되는 공익 관련 텍스트에 대해 고지 책임을 집니다. 스튜디오가 한쪽은 지키면서 다른 쪽은 노출될 수 있는 구조입니다.
+가이드라인이 나온 이유는 정의가 가장 어려운 부분이었기 때문입니다. 직접 상호작용하는 AI 시스템이 무엇인지, 합성 콘텐츠와 딥페이크가 무엇인지 규정하고, 일반적인 편집처럼 범위 밖인 사례도 예시로 들었습니다. 이미지·영상 작업에서는 이 경계가 사실상 전부입니다. 거의 모든 에셋이 어떤 형태로든 보정을 거치기 때문입니다.
+이행을 입증하는 경로는 둘입니다. AI 생성 콘텐츠 투명성 실무 강령에 서명하는 것이 하나이고, 따르지 않으면 동등한 수준의 수단을 스스로 증명해야 하는데 입증 부담이 훨씬 큽니다. 집행은 각국 시장감시당국, 감독 대상 시스템에 대해서는 AI 사무국, EU 기관이 관련될 때는 유럽데이터보호감독관이 맡습니다."
+       data-title-en="Guidelines on Transparency of AI-Generated Content" data-title-kr="EU, AI 생성 콘텐츠 표시 의무 8월 2일 시행…가이드라인 공개">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">합성표시</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">European Commission · 2026. 07. 20</div>
+        <div class="card-title">EU, AI 생성 콘텐츠 표시 의무 8월 2일 시행…가이드라인 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://designcompass.org/2026/07/06/meta-open-sources-astryx-design-system/" target="_blank"
+       data-category="디자인 · 디자인시스템 · 오픈소스"
+       data-position="ui-designer|design-lead"
+       data-summary="메타가 자체적으로 활용해온 AI 통합 디자인 시스템 '아스트릭스'를 오픈소스로 공개하며, 다른 조직도 이를 참고하거나 그대로 가져다 쓸 수 있게 됐다."
+       data-points="메타 내부에서 실사용해온 디자인 시스템을 오픈소스로 전환|컴포넌트·토큰뿐 아니라 AI 연동 구조까지 포함|다른 조직이 자체 디자인 시스템 구축 시 참고 가능"
+       data-designer="대기업이 실제 운영하던 디자인 시스템의 토큰 구조와 AI 연동 방식을 그대로 뜯어볼 수 있는 기회로, 사내 디자인 시스템을 새로 짜거나 다듬을 때 참고할 만하다."
+       data-impact-score="4"
+       data-recommend="디자인 시스템 구축·정비 담당자 필독"
+       data-comment="메타가 사내에서 실제로 사용해온 AI 통합 디자인 시스템 '아스트릭스'를 오픈소스로 공개했습니다. 단순히 컴포넌트 라이브러리를 공개하는 수준을 넘어, AI 기능이 디자인 시스템 안에 어떻게 엮여 들어가는지 구조까지 확인할 수 있다는 점이 눈에 띕니다.
+디자인 시스템을 처음부터 설계하거나 기존 시스템을 AI 시대에 맞게 개편하려는 팀이라면, 토큰 체계와 컴포넌트 문서화 방식을 실제 대규모 조직의 사례로 참고할 수 있는 드문 기회입니다.
+다만 메타의 조직 규모와 제품 범위에 맞춰진 구조이기 때문에, 그대로 가져다 쓰기보다는 원칙과 구조를 참고해 자신의 팀 규모에 맞게 축소·변형하는 접근이 현실적입니다.">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">디자인시스템</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인 나침반 · 2026. 07. 06</div>
+        <div class="card-title">메타, AI 디자인 시스템 '아스트릭스(Astryx)' 오픈소스로 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://designcompass.org/2026/06/23/hillstate-new-brand-identity-2026/" target="_blank"
+       data-category="디자인 · 브랜딩 · BX"
+       data-position="brand-designer|bx-designer"
+       data-summary="현대건설의 아파트 브랜드 힐스테이트가 출시 20주년을 맞아 로고와 브랜드 아이덴티티를 새롭게 정비했다."
+       data-points="출시 20주년을 계기로 한 브랜드 리프레시|기존 로고의 상징성을 유지하면서 현대적으로 재해석|장수 브랜드의 리브랜딩 타이밍과 명분 설계"
+       data-designer="오래된 브랜드일수록 '왜 지금 바꾸는가'에 대한 명분이 리브랜딩의 절반을 차지한다는 걸 보여주는 사례로, 주년 마케팅과 아이덴티티 개편을 묶어서 설계할 때 참고할 만하다."
+       data-impact-score="3"
+       data-recommend="장수 브랜드 리브랜딩 프로젝트 참고 사례"
+       data-comment="국내 대표 아파트 브랜드 중 하나인 힐스테이트가 출시 20주년을 맞아 브랜드 아이덴티티를 새롭게 정비했습니다. 오래된 브랜드를 다루는 리브랜딩 특유의 어려움, 즉 기존 고객에게 익숙한 상징성을 해치지 않으면서 신선함을 더해야 하는 과제가 담겨 있습니다.
+이번 개편은 완전히 새로운 로고를 만들기보다 기존 브랜드가 쌓아온 인지도를 살리는 쪽에 무게를 둔 것으로 보입니다. 주년이라는 명분을 리브랜딩 발표 시점으로 활용한 점도 눈여겨볼 만합니다.
+오래 운영된 브랜드의 리뉴얼을 맡게 된다면, 무엇을 바꿀지 못지않게 언제, 어떤 명분으로 바꿀지를 함께 설계하는 게 중요하다는 걸 보여주는 사례입니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">리브랜딩</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인 나침반 · 2026. 06. 23</div>
+        <div class="card-title">힐스테이트, 출시 20주년 맞아 새 브랜드 아이덴티티 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/08/03/the-599-ai-guitar-that-finally-makes-playing-easy/" target="_blank"
+       data-category="디자인 · 산업디자인 · 제품" data-category-en="Design · Industrial Design · Product"
+       data-position="industrial-designer|product-designer"
+       data-summary="The TemPolor Melo-D, designed by inDare Design Strategy Limited, is billed as the world's first generative AI guitar. LEDs in the neck light up the notes to press and a 2.4-inch flip screen on the body handles chord guidance, so a beginner never has to prop a phone nearby." data-summary-kr="인데어 디자인 스트래티지가 설계한 템폴러 멜로디는 세계 최초의 생성형 AI 기타를 표방합니다. 넥에 심긴 LED가 눌러야 할 음을 직접 밝혀주고 본체의 2.4인치 플립 스크린이 코드 안내를 맡아, 초보자가 옆에 휴대폰을 세워둘 필요가 없습니다."
+       data-points="Everything needed to learn is built into the instrument, no companion app ecosystem required|Three modes: solo, sing-along and AI creation, where humming becomes a transcribed guitar solo|Text prompts generate songs and uploaded audio converts into playable tabs or chord charts|Six-string silicone system allows real note-by-note playing, so it is an instrument, not a toy" data-points-kr="배우는 데 필요한 것을 악기 안에 모두 넣어, 별도 앱·액세서리 생태계가 필요 없음|솔로·싱어롱·AI 창작 3개 모드, 허밍한 멜로디를 기타 솔로로 채보|텍스트 프롬프트로 곡을 생성하고, 올린 오디오를 연주 가능한 탭·코드 차트로 변환|6현 실리콘 시스템으로 음 하나하나를 실제로 연주 가능, 흉내내는 장난감이 아님"
+       data-designer="The design position is clear: put the whole experience inside the object instead of splitting it across an app ecosystem. For anyone designing a learning product, that is the decision worth arguing over, because it determines whether the hardware carries the value or merely hosts it." data-designer-kr="설계 입장이 분명합니다. 경험을 앱 생태계로 쪼개지 않고 사물 안에 전부 넣었습니다. 학습형 제품을 설계한다면 이 결정이 논점입니다. 하드웨어가 가치를 담느냐, 아니면 그저 얹어두는 자리가 되느냐가 여기서 갈립니다."
+       data-impact-score="4"
+       data-recommend="Useful case for AI-embedded hardware design" data-recommend-kr="AI 내장 하드웨어 설계 사례 · 저장 추천"
+       data-comment="The interesting decision is where the experience lives. Most learning instruments hand the teaching job to a phone app, which means the hardware is just a controller. Melo-D puts the LEDs and the screen into the instrument itself, so the object carries the full experience and the beginner never has to assemble a setup before starting.
+Restraint is the other design story. A product like this could easily have piled on features until it collapsed, and Yanko credits inDare, a studio known for human-centred industrial design, with keeping it disciplined. The foldable body, the integrated flip screen and the silicone strings read as deliberate choices rather than a spec list looking for a shell, which is also why it picked up an iF Design Award.
+The AI framing survives scrutiny better than most. Because the six-string silicone system supports real note-by-note playing, the assistance functions as training wheels a player can remove rather than a substitute for skill. That is a useful line for anyone embedding AI in a product: help people through the door, do not replace the thing they came to learn. Pre-orders are open at $599 with shipping expected in September 2026." data-comment-kr="흥미로운 결정은 경험이 어디에 놓이는가입니다. 대부분의 학습형 악기는 가르치는 역할을 휴대폰 앱에 넘기고, 그러면 하드웨어는 컨트롤러에 그칩니다. 멜로디는 LED와 화면을 악기 자체에 넣어 사물이 경험 전체를 감당하게 했고, 초보자는 시작하기 전에 장비를 세팅할 필요가 없습니다.
+또 하나의 설계 이야기는 절제입니다. 이런 제품은 기능을 계속 얹다가 무너지기 쉬운데, 얀코디자인은 인간 중심 산업디자인으로 알려진 인데어가 이를 붙들었다고 평가합니다. 접히는 본체, 일체형 플립 스크린, 실리콘 현이 스펙 목록에 껍데기를 씌운 결과가 아니라 의도된 선택으로 읽히고, iF 디자인 어워드를 받은 이유이기도 합니다.
+AI라는 이름표도 다른 제품들보다 검증을 잘 통과합니다. 6현 실리콘 시스템이 음 단위 실연주를 지원하기 때문에, 보조 기능은 실력을 대체하는 것이 아니라 연주자가 떼어낼 수 있는 보조 바퀴로 작동합니다. 제품에 AI를 넣을 때 새겨둘 선입니다. 문턱을 넘게 돕되, 배우러 온 것을 대신하지 말 것. 599달러 예약 판매 중이며 출하는 2026년 9월 예정입니다."
+       data-title-en="The $599 AI guitar that finally makes playing easy" data-title-kr="599달러 생성형 AI 기타, 배우는 경험을 악기 안에 모두 넣다">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">AI기타</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 08. 03</div>
+        <div class="card-title">599달러 생성형 AI 기타, 배우는 경험을 악기 안에 모두 넣다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.archdaily.com/1181947/machida-station-area-community-hub-hatmachida-nikken-sekkei" target="_blank"
+       data-category="디자인 · 건축 · 공공공간" data-category-en="Design · Architecture · Public Space"
+       data-position="architect|space-designer"
+       data-summary="Nikken Sekkei turned a 22-square-metre former police box near Machida Station into hatmachida, a micro-landmark that reframes a stretch of road as a place for people to gather rather than just pass through." data-summary-kr="니켄세케이가 마치다역 인근의 22제곱미터짜리 옛 파출소 자리를 '하트마치다'라는 마이크로 랜드마크로 바꾸며, 지나가는 길이었던 공간을 사람이 머무는 장소로 재해석했다."
+       data-points="A tiny 22m² footprint reimagined as a public gathering point|Ambiguous status between road, architecture and plaza|Built on years of social experiments with the local community" data-points-kr="22제곱미터라는 작은 면적을 공공 거점으로 재해석|도로도 건축도 광장도 아닌 애매한 위치를 그대로 활용|수년간 지역 커뮤니티와 진행한 사회적 실험의 결과물"
+       data-designer="A compact proof that a public space intervention doesn't need scale to change how people use a street, useful reference for micro-scale urban or spatial projects." data-designer-kr="공공 공간 개입이 꼭 큰 규모일 필요는 없다는 걸 보여주는 사례로, 작은 스케일의 도시·공간 프로젝트를 구상할 때 참고할 만하다."
+       data-impact-score="3"
+       data-recommend="Worth saving for small-scale public space or urban furniture projects" data-recommend-kr="소규모 공공공간·스트리트퍼니처 프로젝트 참고용으로 저장 추천"
+       data-comment="Nikken Sekkei transformed a small, long-familiar former police box near Machida Station into a 22-square-metre micro-landmark combining information, takeout, retail and a meeting spot.
+The space sits in a deliberately ambiguous position, institutionally a road, spatially architecture, functionally a plaza, and rather than resolving that ambiguity, the design leans into it to turn a stretch once seen only as a place to pass through into somewhere people actually gather and talk.
+It's also worth noting the project followed years of social experimentation with the local community before reaching this form, a reminder that small-scale public interventions often need as much time and consensus-building as scale." data-comment-kr="마치다역 근처에서 오랫동안 지역 주민들에게 익숙했던 작은 파출소 부지를 니켄세케이가 정보·테이크아웃·상점·거점 기능을 담은 22제곱미터짜리 마이크로 랜드마크로 바꿨습니다.
+이 공간은 제도적으로는 도로, 공간적으로는 건축, 기능적으로는 광장이라는 애매한 위치에 놓여 있습니다. 그 애매함을 없애려 하지 않고 오히려 그대로 활용해, '지나가는 길'이었던 곳을 '머무르고 대화가 시작되는 곳'으로 바꿔낸 점이 눈에 띕니다.
+수년에 걸친 지역사회와의 사회적 실험을 거쳐 완성됐다는 점도 주목할 만합니다. 작은 스케일의 공공 개입이 어떻게 오랜 시간과 합의를 거쳐 완성도를 갖추는지 보여주는 사례입니다."
+       data-title-en="Machida Station Area Community Hub 'hatmachida' / Nikken Sekkei" data-title-kr="22제곱미터가 만든 광장, 도쿄 '하트마치다'">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">공공공간</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ArchDaily · 2026. 08. 03</div>
+        <div class="card-title">22제곱미터가 만든 광장, 도쿄 '하트마치다'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
