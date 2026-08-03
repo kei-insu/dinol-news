@@ -1,5 +1,5 @@
 // 직무 ID → 한글 라벨. 라벨 변경은 이 맵 1줄만 수정한다(카드 데이터 불변).
-// 맵에 없는 ID 는 화면에 렌더하지 않고 console.warn 한다(docs/detail-page-schema.md §4).
+// 맵에 없는 ID 는 화면에 렌더하지 않고 console.warn 한다(docs/reference/detail-page-schema.md §4).
 export const POSITIONS: Record<string, string> = {
   'ux-designer': 'UX디자이너',
   'ui-designer': 'UI디자이너',

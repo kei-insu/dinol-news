@@ -11,7 +11,7 @@ extract_cards.py — 브리핑 HTML → 카드별 JSON 추출
 출력:
     content/news/20260724-ai-003.json   (카드 1장 = 파일 1개)
 
-스키마 정본: docs/detail-page-schema.md
+스키마 정본: docs/reference/detail-page-schema.md
 """
 
 import re

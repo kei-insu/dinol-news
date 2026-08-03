@@ -8,7 +8,7 @@
 
 > **이 문서 하나만 세션 시작 시 로드한다.** 나머지는 목차를 보고 그 세션에 필요한 것만 읽는다.
 > 원본(단일 진실 원천): `github.com/kei-insu/dinol-news/docs/`
-> raw 읽기: `https://raw.githubusercontent.com/kei-insu/dinol-news/main/docs/<파일명>`
+> raw 읽기(개발 문서): `https://raw.githubusercontent.com/kei-insu/dinol-news/astro/docs/<계층>/<파일명>`
 
 ---
 
@@ -35,17 +35,17 @@
 
 | 문서 | 언제 읽나 | 내용 | 날짜 열 |
 |---|---|---|---|
-| `policy.md` | 정책·규칙·컨벤션 | 확정 정책(파일명·문서화·언어·톡톡·발행·확장) | 확정일 |
+| `rules/policy.md` | 정책·규칙·컨벤션 | 확정 정책(파일명·문서화·언어·톡톡·발행·확장) | 확정일 |
 | `dev-history.md` | 기존 기능 이해·확장 | 개발한 것(기능/파일/내용/상태) | 완료일 |
 | `issues.md` | 버그·장애 대응 | 크리티컬 이슈·해결·재발방지 | 발생일 |
-| `design-guide.md` | UI·스타일 | 컬러·폰트·컴포넌트·톡톡 UI 규칙 | — |
-| `guardrails.md` | 배포·보안·위험 작업 전 | 하면 안 되는 것 + 배포 절차(순서 고정)·충돌 마커 금지 | 07-13 |
-| `testing.md` | 배포 전 검증 | 검증 절차·체크리스트 | — |
-| `news_sources.md` | 브리핑 소스 선정 | 크롤링/큐레이션 소스 목록(12분류·RSS) | 07-06 |
-| `routine_instruction.md` | 루틴 이해·수정 | 브리핑 자동생성 절차(⚠️일부 구버전, 라이브는 WebSearch 전용). 발행 중복 대조 필수 관문화 | 07-12 |
-| `detail-page-schema.md` | 상세 페이지·Astro 전환 | contentId·URL 규칙·데이터 스키마·Firebase 키 정책·품질 게이트 | 07-25 |
-| `fortune-schema.md` | 운세 코너 | `fortune.json` 스키마(별자리 12·확률 6·궁합 6·폰트 10) | 07-13 |
-| `review-checklist.md` | **복잡한 코드 작업 전·후** | 실제 사고 10건 기반 선택형 검토 기준(65항목). ⛔기계적 전수 적용 금지 | 08-01 |
+| `reference/design-guide.md` | UI·스타일 | 컬러·폰트·컴포넌트·톡톡 UI 규칙 | — |
+| `rules/guardrails.md` | 배포·보안·위험 작업 전 | 하면 안 되는 것 + 배포 절차(순서 고정)·충돌 마커 금지 | 07-13 |
+| `howto/testing.md` | 배포 전 검증 | 검증 절차·체크리스트 | — |
+| `reference/news_sources.md` | 브리핑 소스 선정 | 크롤링/큐레이션 소스 목록(12분류·RSS) | 07-06 |
+| `howto/routine_instruction.md` | 루틴 이해·수정 | 브리핑 자동생성 절차(⚠️일부 구버전, 라이브는 WebSearch 전용). 발행 중복 대조 필수 관문화 | 07-12 |
+| `reference/detail-page-schema.md` | 상세 페이지·Astro 전환 | contentId·URL 규칙·데이터 스키마·Firebase 키 정책·품질 게이트 | 07-25 |
+| `reference/fortune-schema.md` | 운세 코너 | `fortune.json` 스키마(별자리 12·확률 6·궁합 6·폰트 10) | 07-13 |
+| `howto/review-checklist.md` | **복잡한 코드 작업 전·후** | 실제 사고 10건 기반 선택형 검토 기준(65항목). ⛔기계적 전수 적용 금지 | 08-01 |
 
 ---
 
@@ -75,6 +75,10 @@
 ├─ scripts/ build_briefing.py · build_published_urls.py · validate.py 외
 ├─ handoff/ HANDOFF_v3.0.md · fortune-handoff.md
 └─ docs/                  ← 이 문서들
+   ├─ claude.md · dev-history.md · issues.md
+   ├─ rules/      policy.md · guardrails.md
+   ├─ reference/  design-guide.md · detail-page-schema.md · news_sources.md · fortune-schema.md
+   └─ howto/      routine_instruction.md · review-checklist.md · testing.md
 ```
 
 > **Astro 전환 진행 중**(`astro` 브랜치). GitHub Pages는 `main`만 배포하므로
@@ -154,7 +158,7 @@ AI 코드 리뷰어의 목적은 결함 발견만이 아니라 **과잉 엔지�
 ### 3. 상세 기준은 `review-checklist.md` 에
 
 상시 지침에 모든 사례를 넣지 않는다. 복잡한 코드 작업에서는
-`docs/review-checklist.md` 에서 ★현재 작업과 관련된 항목만★ 골라 쓴다.
+`docs/howto/review-checklist.md` 에서 ★현재 작업과 관련된 항목만★ 골라 쓴다.
 ⛔ 전수 적용하거나 무관한 검증을 추가하지 않는다.
 구체적인 파일·명령어·수치는 각 작업 프롬프트에 쓴다.
 
