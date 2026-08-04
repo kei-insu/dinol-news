@@ -1,0 +1,53 @@
+{
+  "contentId": "20260805-design-004",
+  "date": "2026-08-05",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "디자인 나침반",
+    "publishedAt": "2026-07-02"
+  },
+  "url": "https://designcompass.org/2026/07/02/fifa-world-cup-2026-logo-controversy/",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 아이덴티티",
+    "en": "Design · Branding · Identity"
+  },
+  "title": {
+    "kr": "2026 월드컵 로고 논란, 정체성이냐 시스템이냐",
+    "en": null
+  },
+  "summary": {
+    "kr": "2026 FIFA 월드컵 공식 브랜드가 트로피 위에 숫자 '26'을 얹은 심볼로 공개된 이후, 정체성이냐 확장 가능한 시스템이냐를 둘러싼 논쟁이 이어지고 있습니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "트로피와 숫자 '26'을 결합한 심볼 구조",
+      "정체성 대 시스템 논쟁의 핵심 쟁점",
+      "과거 월드컵 브랜딩과의 비교"
+    ],
+    "en": []
+  },
+  "positions": [
+    "brand-designer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "단일 심볼의 완성도와 다양한 매체·굿즈로 확장되는 시스템의 유연성 사이의 긴장을 보여주는 사례입니다. 대형 스포츠 이벤트 브랜딩을 다루는 디자이너에게 좋은 케이스 스터디입니다.",
+    "en": null
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "대형 이벤트 브랜딩 케이스 스터디로 저장 추천",
+    "en": null
+  },
+  "comment": {
+    "kr": "월드컵처럼 초대형 이벤트의 브랜딩은 언제나 논쟁적입니다. 하나의 상징으로 각인되어야 하면서 동시에 수백 가지 매체와 굿즈로 확장 가능해야 하기 때문입니다.\n이번 로고를 둘러싼 논쟁은 결국 '기억에 남는 단일 심볼'과 '유연하게 확장되는 시스템' 중 어디에 무게를 둘 것인가의 문제로 정리됩니다. 브랜드 시스템을 설계하는 디자이너라면 익숙한 딜레마일 것입니다.\n논란 자체보다, 논란이 짚어내는 설계 기준을 눈여겨보는 것이 더 유용합니다.",
+    "en": null
+  },
+  "thumbLabel": "로고비평",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

@@ -1,0 +1,72 @@
+{
+  "20260805-ai-001": {
+    "category_kr": "AI · 툴 · 엔지니어링",
+    "category_en": "AI · Tool · Engineering",
+    "impactScore": 3,
+    "positions": [
+      "design-lead"
+    ]
+  },
+  "20260805-ai-002": {
+    "category_kr": "AI · 툴 · 음성인터페이스",
+    "category_en": "AI · Tool · Voice Interface",
+    "impactScore": 4,
+    "positions": [
+      "ux-designer",
+      "product-designer"
+    ]
+  },
+  "20260805-ai-003": {
+    "category_kr": "AI · 산업 · 에이전트",
+    "category_en": "AI · Industry · Agent",
+    "impactScore": 2,
+    "positions": [
+      "product-designer"
+    ]
+  },
+  "20260805-ai-004": {
+    "category_kr": "AI · 정책 · 모빌리티",
+    "category_en": "AI · Policy · Mobility",
+    "impactScore": 2,
+    "positions": [
+      "ux-designer",
+      "space-designer"
+    ]
+  },
+  "20260805-design-001": {
+    "category_kr": "디자인 · 타이포그래피 · AI",
+    "category_en": "Design · Typography · AI",
+    "impactScore": 5,
+    "positions": [
+      "graphic-designer",
+      "brand-designer"
+    ]
+  },
+  "20260805-design-002": {
+    "category_kr": "디자인 · 제품 · 산업디자인",
+    "category_en": "Design · Product · Industrial Design",
+    "impactScore": 4,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260805-design-003": {
+    "category_kr": "디자인 · 공간 · 인테리어",
+    "category_en": "Design · Space · Interior",
+    "impactScore": 3,
+    "positions": [
+      "space-designer",
+      "architect"
+    ]
+  },
+  "20260805-design-004": {
+    "category_kr": "디자인 · 브랜딩 · 아이덴티티",
+    "category_en": "Design · Branding · Identity",
+    "impactScore": 4,
+    "positions": [
+      "brand-designer",
+      "graphic-designer"
+    ]
+  }
+}

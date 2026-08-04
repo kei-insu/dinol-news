@@ -1,0 +1,56 @@
+{
+  "contentId": "20260805-ai-001",
+  "date": "2026-08-05",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-07-30"
+  },
+  "url": "https://techcrunch.com/2026/07/30/google-says-it-fixed-more-chrome-bugs-in-june-than-over-the-past-two-years-thanks-to-ai/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 툴 · 엔지니어링",
+    "en": "AI · Tool · Engineering"
+  },
+  "title": {
+    "kr": "구글, AI로 크롬 버그 6월 한 달에만 2년치 이상 수정",
+    "en": "Google says it fixed more Chrome bugs in June than over the past two years, thanks to AI"
+  },
+  "summary": {
+    "kr": "구글이 6월 출시된 크롬 두 버전에서 제미나이 기반 AI 파이프라인으로 1,072건의 보안 버그를 수정했다고 밝혔습니다. 이는 지난 2년간 23개 버전에서 고친 1,036건보다 많은 수치이며, 13년 묵은 샌드박스 탈출 버그까지 잡아냈습니다.",
+    "en": "Google says its Gemini-powered AI pipeline fixed 1,072 security bugs across two Chrome releases in June, more than the 1,036 bugs patched across the previous 23 releases over two years, including a 13-year-old sandbox escape bug."
+  },
+  "points": {
+    "kr": [
+      "두 버전에서 1,072건, 2년 누적치(1,036건)를 이미 추월",
+      "13년 묵은 샌드박스 탈출 버그까지 AI가 포착",
+      "마이크로소프트도 비슷한 AI 기반 패치 급증 보고"
+    ],
+    "en": [
+      "1,072 bugs fixed in two releases vs 1,036 over two years",
+      "AI caught a 13-year-old sandbox escape bug",
+      "Microsoft reports a similar AI-driven patching surge"
+    ]
+  },
+  "positions": [
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "AI를 도입한 엔지니어링 파이프라인이 실제로 어느 정도 규모의 성과를 내는지 보여주는 구체적 수치입니다. AI 기반 QA·리뷰 워크플로우를 논의할 때 엔지니어링 파트너와 공유할 만한 근거 자료입니다.",
+    "en": "A concrete before-and-after number on what an AI-assisted engineering pipeline can do at scale. Worth sharing with engineering partners as a talking point for AI-augmented QA and review workflows."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "엔지니어링·QA 팀과 벤치마크 자료로 공유 추천",
+    "en": "Share with engineering and QA teams as a benchmark"
+  },
+  "comment": {
+    "kr": "수치 자체도 놀랍지만 더 흥미로운 지점은 크롬 엔지니어링 리더가 설명한 '경제성의 변화'입니다. 취약점 발견이 느린 수작업 과정에서 자동화된 산업 규모 작업으로 바뀌고 있다는 것입니다.\n디자인 팀은 보안 툴링을 잘 신경 쓰지 않지만, 이런 AI 기반 QA 파이프라인은 결국 디자인·프로토타이핑 도구에도 같은 방식으로 번질 변화입니다. 더 빠른 리뷰 주기, 더 많은 자동 검증, 줄어드는 단순 반복 작업으로요.\n마이크로소프트도 비슷한 급증을 보고했다는 점에서 구글만의 일회성 결과가 아니라 업계 전반의 흐름으로 보입니다. 한 릴리스 주기를 넘어서도 이 추세가 이어지는지 지켜볼 만합니다.",
+    "en": "The headline number is striking, but the more interesting part is the shift in economics Chrome's engineering lead describes: vulnerability discovery is becoming an automated, industrial-scale operation rather than a slow manual process.\nDesign teams rarely think about security tooling, but this kind of AI-driven QA pipeline is the same category of change that eventually reaches design and prototyping tools too, faster review cycles, more automated checks, less manual grunt work.\nMicrosoft reporting a similar spike suggests this is an industry-wide shift, not a one-off Google result. Worth watching whether the trend holds beyond a single release cycle."
+  },
+  "thumbLabel": "AI버그픽스",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

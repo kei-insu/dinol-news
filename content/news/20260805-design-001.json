@@ -1,0 +1,57 @@
+{
+  "contentId": "20260805-design-001",
+  "date": "2026-08-05",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-07-31"
+  },
+  "url": "https://www.dezeen.com/2026/07/31/decoy-font-ai-mixfont/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 타이포그래피 · AI",
+    "en": "Design · Typography · AI"
+  },
+  "title": {
+    "kr": "AI가 못 읽는 폰트, '디코이 폰트' 공개",
+    "en": "Decoy Font protects messages from being read by AI"
+  },
+  "summary": {
+    "kr": "디자이너 루 거가 사람 눈에는 또렷이 읽히지만 AI 모델은 다르게 읽는 무료 서체 '디코이 폰트'를 공개했습니다. 전경과 배경에 겹쳐진 두 겹의 글자 형태를 활용한 착시 기법을 씁니다.",
+    "en": "Designer Ge Lu has released Decoy Font, a free typeface that uses an optical illusion of overlapping foreground and background letterforms so humans can read a message while AI models misread it."
+  },
+  "points": {
+    "kr": [
+      "전경·배경 이중 레이어 착시의 작동 원리",
+      "사람과 LLM이 서로 다른 글자를 읽는 이유",
+      "무료 TTF 파일로 바로 다운로드 가능"
+    ],
+    "en": [
+      "How the dual-layer optical illusion works",
+      "Why humans and LLMs read different letters",
+      "Free download as a TTF file"
+    ]
+  },
+  "positions": [
+    "graphic-designer",
+    "brand-designer"
+  ],
+  "designer": {
+    "kr": "LLM 학습이나 AI의 무단 열람으로부터 텍스트를 지키고 싶은 디자이너에게 바로 써볼 만한 실용적 안티스크래핑 도구입니다. 캡션이나 크레딧, 민감한 문구에 시험해볼 만합니다.",
+    "en": "A genuinely usable anti-scraping tool for designers protecting text from LLM training and casual AI reading, worth testing on captions, credits, or sensitive copy right away."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "오늘 바로 다운로드해서 내 프로젝트에 테스트해보길 추천",
+    "en": "Download and test on your own project today"
+  },
+  "comment": {
+    "kr": "AI 방어 디자인이 하나의 실무 영역으로 자리잡고 있는데, 디코이 폰트는 그중에서도 꽤 세련된 사례입니다. AI를 강제로 막는 대신 사람과 언어모델이 시각 정보를 처리하는 방식의 차이를 이용합니다.\n포트폴리오나 아티클, 클라이언트 작업물을 온라인에 공개하는 디자이너라면 비주얼 언어를 크게 바꾸지 않고도 손쉽게 보호막을 더할 수 있는 방법입니다. 무료로 배포되어 실험해보는 데 부담이 없습니다.\n브라우저나 AI 기업들이 어떻게 대응할지도 지켜볼 만합니다. 이런 도구는 대개 창과 방패의 반복을 부르기 때문에, 오늘의 트릭이 곧 다음 버전을 필요로 할 수도 있습니다.",
+    "en": "Anti-AI design is quickly becoming its own practice, and Decoy Font is one of the more elegant examples so far. Instead of blocking AI outright, it exploits how differently humans and language models process visual information.\nFor designers who publish portfolios, articles, or client work online, this is a low-effort way to add a layer of protection without changing your visual language much. It is free, which lowers the bar for experimentation.\nWorth keeping an eye on how browsers and AI vendors respond. Tools like this tend to trigger a cat-and-mouse cycle, so today's trick may need a follow-up version soon."
+  },
+  "thumbLabel": "타이포",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

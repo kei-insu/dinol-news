@@ -1,0 +1,57 @@
+{
+  "contentId": "20260805-ai-004",
+  "date": "2026-08-05",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-08-02"
+  },
+  "url": "https://techcrunch.com/2026/08/02/techcrunch-mobility-two-roads-diverged-for-robotaxis/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 모빌리티",
+    "en": "AI · Policy · Mobility"
+  },
+  "title": {
+    "kr": "로보택시, 연방정부는 가속페달 지방정부는 브레이크",
+    "en": "TechCrunch Mobility: Two roads diverged, for robotaxis"
+  },
+  "summary": {
+    "kr": "미국 연방 규제 당국이 로보택시 확산에 속도를 내며 죽스에 연방 안전기준 8개 항목의 한시적 면제를 내준 반면, 런던 등 지방 정부는 더 신중한 태도를 보이고 있습니다. 웨이모·바이두·우버가 동시에 런던 진출을 추진 중입니다.",
+    "en": "US federal regulators are accelerating robotaxi deployment, granting Zoox a temporary exemption from eight federal safety standards, while state and local officials in cities like London push back with more caution as Waymo, Baidu and Uber all expand there."
+  },
+  "points": {
+    "kr": [
+      "죽스, 연방 안전기준 8개 한시적 면제 획득",
+      "연방정부의 가속과 주·지방정부의 신중함이 엇갈림",
+      "웨이모·바이두·우버, 나란히 런던 진출 추진"
+    ],
+    "en": [
+      "Zoox gets temporary exemption from 8 federal safety standards",
+      "Federal push to accelerate vs. state and local caution",
+      "Waymo, Baidu and Uber all expanding into London"
+    ]
+  },
+  "positions": [
+    "ux-designer",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "자율주행 관련 규제가 지역별로 뚜렷하게 갈라지고 있다는 신호입니다. 자율주행차 관련 물리적·서비스 경험을 설계한다면 단일한 글로벌 기준이 아니라 도시마다 다른 규칙을 전제해야 합니다.",
+    "en": "A reminder that autonomous mobility regulation is fragmenting by region. Anyone designing physical or service experiences around AVs should expect very different rules city to city, not one global standard."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "자율주행 서비스 디자인을 추적한다면 배경 지식으로 참고",
+    "en": "Background reading for anyone tracking AV service design"
+  },
+  "comment": {
+    "kr": "자율주행차 관련 뉴스는 흔히 하나의 글로벌 흐름처럼 다뤄지지만, 이 기사는 그 인식을 바로잡아 줍니다. 연방정부의 가속과 지방정부의 신중함이 뚜렷하게 갈라지고 있다는 것입니다.\n로보택시의 차내 경험이나 승하차 서비스를 고민하는 사람이라면, 특정 기업의 로드맵보다 이런 지역별 규제 분화가 더 중요한 변수입니다. 피닉스 기준으로 설계한 서비스가 런던에서는 그대로 통하지 않을 수 있습니다.\nAV 정책이 프로젝트에 직접 관련되지 않는다면 정독보다는 가볍게 훑어보는 정도로 충분합니다.",
+    "en": "Autonomous vehicles keep getting covered as a single global story, but this piece is a useful correction: the regulatory picture is splitting hard between federal acceleration and local hesitation.\nFor anyone thinking about the in-vehicle or curbside experience of robotaxis, that fragmentation matters more than any single company's roadmap. A service designed for Phoenix rules will not necessarily work in London.\nWorth a skim rather than a deep read unless AV policy is directly part of your project."
+  },
+  "thumbLabel": "로보택시",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}
