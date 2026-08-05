@@ -1,0 +1,70 @@
+{
+  "20260806-ai-001": {
+    "category_kr": "AI · 개발 · 에이전트",
+    "category_en": "AI · Development · Agent",
+    "impactScore": 3,
+    "positions": [
+      "design-lead"
+    ]
+  },
+  "20260806-ai-002": {
+    "category_kr": "AI · 프로덕트 · 팬덤",
+    "category_en": "AI · Product · Fandom",
+    "impactScore": 3,
+    "positions": [
+      "ux-designer",
+      "product-designer"
+    ]
+  },
+  "20260806-ai-003": {
+    "category_kr": "AI · 정책 · 전략",
+    "category_en": "AI · Policy · Strategy",
+    "impactScore": 1,
+    "positions": []
+  },
+  "20260806-ai-004": {
+    "category_kr": "AI · 툴 · 생성형",
+    "category_en": "AI · Tool · Generative",
+    "impactScore": 4,
+    "positions": [
+      "motion-designer",
+      "art-director"
+    ]
+  },
+  "20260806-design-001": {
+    "category_kr": "디자인 · 패키지 · 브랜딩",
+    "category_en": "Design · Package · Branding",
+    "impactScore": 4,
+    "positions": [
+      "bx-designer",
+      "graphic-designer"
+    ]
+  },
+  "20260806-design-002": {
+    "category_kr": "디자인 · 제품 · 주얼리",
+    "category_en": "Design · Product · Jewelry",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260806-design-003": {
+    "category_kr": "디자인 · 제품 · 소재",
+    "category_en": "Design · Product · Material",
+    "impactScore": 4,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260806-design-004": {
+    "category_kr": "디자인 · 일러스트 · 타이포그래피",
+    "category_en": "Design · Illustration · Typography",
+    "impactScore": 5,
+    "positions": [
+      "graphic-designer",
+      "illustrator"
+    ]
+  }
+}

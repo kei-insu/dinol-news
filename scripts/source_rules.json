@@ -238,5 +238,13 @@
   "European Commission": {
     "region": "해외",
     "group": "European Commission"
+  },
+  "TechNode": {
+    "region": "해외",
+    "group": "TechNode"
+  },
+  "서울경제": {
+    "region": "국내",
+    "group": "서울경제"
   }
 }

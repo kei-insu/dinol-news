@@ -1,0 +1,57 @@
+{
+  "contentId": "20260806-design-004",
+  "date": "2026-08-06",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-08-04"
+  },
+  "url": "https://www.itsnicethat.com/articles/daniela-doe-graphic-design-art-discover-040826",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 일러스트 · 타이포그래피",
+    "en": "Design · Illustration · Typography"
+  },
+  "title": {
+    "kr": "디지털 그래픽 언어를 촉각적 공예로 번역하다, 다니엘라 도",
+    "en": "Translating the digital language of design into traditional craft: Daniela Doe on tactility, tufting and typography"
+  },
+  "summary": {
+    "kr": "그래픽·텍스타일 디자이너 다니엘라 도가 디지털 환경에서 다루던 그래픽 요소를 터프팅·자수·판화 같은 전통 공예 기법으로 번역합니다. 자수기로 한 프레임씩 만든 타이포그래피 애니메이션이 대표작입니다.",
+    "en": "Graphic and textile designer Daniela Doe translates digitally-native graphic design elements into traditional crafts like tufting, embroidery and printmaking, building frame-by-frame embroidered typographic animations."
+  },
+  "points": {
+    "kr": [
+      "자수기로 한 프레임씩 만든 타이포그래피 애니메이션",
+      "낱글자의 회전·대칭으로 움직이는 구성을 만듦",
+      "멀리서는 디지털 이미지, 가까이서는 촉각적 질감의 러그"
+    ],
+    "en": [
+      "Frame-by-frame embroidered typography built on a sewing machine",
+      "Rotation and symmetry of single letters create moving compositions",
+      "Hand-tufted rugs read as digital images from a distance, tactile up close"
+    ]
+  },
+  "positions": [
+    "graphic-designer",
+    "illustrator"
+  ],
+  "designer": {
+    "kr": "디지털 중심 그래픽 작업을 물성 있는 결과물로 옮기고 싶은 디자이너에게 바로 적용 가능한 방법론입니다. 프레임 단위로 자수를 쌓는 논리는 다른 스티치·프린트 공정에도 응용할 수 있습니다.",
+    "en": "A concrete methodology for anyone wanting to move a digital-first graphic practice into physical, tactile output — the frame-by-frame embroidery logic is directly adaptable to other stitch or print processes."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "그래픽×텍스타일 크로스오버 작업에 바로 적용 가능 · 강력 추천",
+    "en": "Directly applicable methodology for graphic/textile crossover work · Highly recommended"
+  },
+  "comment": {
+    "kr": "핵심은 자수 애니메이션 기법 자체입니다. 결과물이 예쁘다는 데서 그치지 않고, 실제로 다른 작업에 옮겨 쓸 수 있는 방법론이라는 점이 중요합니다. 낱글자를 회전·대칭으로 움직이는 단위로 다루는 논리는 자수기뿐 아니라 플로터 등 다른 장비로도 테스트해볼 수 있습니다.\n\n핸드터프팅 러그 작업도 같은 맥락을 다른 각도에서 보여줍니다. 과일 스티커처럼 익숙한 디지털 이미지가 멀리서는 인쇄물처럼 보이다가, 가까이서는 손으로 만든 질감이 드러납니다. 디지털적 감각과 물성 사이의 긴장은 매체와 무관하게 참고할 가치가 있습니다.",
+    "en": "The frame-by-frame embroidery technique is the real takeaway here — it's a genuinely transferable method, not just a nice-looking outcome. Treating single letters as animatable units through rotation and symmetry is a production logic any graphic designer could test with a sewing machine or even a plotter.\n\nThe hand-tufted rugs make the same point from a different angle: familiar digital-native imagery (fruit stickers, in this case) reads as crisp and printed from a distance, then reveals its handmade imperfections up close. That tension between digital fluency and physical texture is worth studying regardless of medium."
+  },
+  "thumbLabel": "촉각공예",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

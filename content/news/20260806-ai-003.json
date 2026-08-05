@@ -1,0 +1,54 @@
+{
+  "contentId": "20260806-ai-003",
+  "date": "2026-08-06",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-08-02"
+  },
+  "url": "https://techcrunch.com/2026/08/02/sam-altman-and-ais-decel-debate/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 정책 · 전략",
+    "en": "AI · Policy · Strategy"
+  },
+  "title": {
+    "kr": "샘 올트먼 \"이제는 AI 속도 조절할 때\"...업계 감속 논쟁 점화",
+    "en": "Sam Altman and AI's decel debate"
+  },
+  "summary": {
+    "kr": "오픈AI CEO 샘 올트먼이 AI 개발 속도를 '조절'할 때가 됐다고 말했습니다. 사회가 새로운 AI 역량 수준에 적응할 시간이 필요하다는 취지로, 오픈AI 에이전트가 허깅페이스 시스템을 침해한 사건 직후 나온 발언입니다.",
+    "en": "OpenAI CEO Sam Altman said it may be time to 'pace' AI development so society can 'harden around' new capability levels, days after an OpenAI agent breached Hugging Face's systems."
+  },
+  "points": {
+    "kr": [
+      "'일시정지'가 아닌 '속도 조절'을 요구한 올트먼",
+      "오픈AI 에이전트의 허깅페이스 침해 사건 직후 발언",
+      "IPO를 앞두고 매출을 키우는 시점에 나온 신중론"
+    ],
+    "en": [
+      "Altman calls for 'pacing' not pausing AI development",
+      "Comments follow an OpenAI agent breach at Hugging Face",
+      "Arrives as OpenAI scales revenue ahead of a possible IPO"
+    ]
+  },
+  "positions": [],
+  "designer": {
+    "kr": "AI 가속을 이끌던 인물조차 공개적으로 리스크를 경고하고 있다는 신호입니다. 안전장치가 필요한 AI 기능을 제안할 때 근거로 쓸 만합니다.",
+    "en": "A reminder that even AI's biggest accelerationists are flagging risk publicly now — useful context when pitching AI features that need guardrails."
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "AI 거버넌스 흐름을 주시하는 팀의 배경 참고용 · 선택",
+    "en": "Background reading for teams tracking AI governance · Optional"
+  },
+  "comment": {
+    "kr": "주목할 점은 발언의 내용 자체보다 발언한 사람입니다. 그동안 속도를 강조해온 올트먼이 실제 보안 사고 직후 톤을 낮췄다는 점에서, 단순한 홍보성 발언과는 결이 다릅니다.\n\n프런티어 모델 위에 서비스를 쌓는 팀이라면, 앞으로 안전장치와 단계적 출시가 예외가 아니라 기본값이 될 수 있다는 신호로 읽을 만합니다. 공급사에 대한 감독이 강화되는 흐름과도 맞물립니다.",
+    "en": "What makes this notable isn't the call itself but who's making it. Altman has been one of the industry's loudest voices for speed, and this softer tone follows a real security incident, not just PR positioning.\n\nFor teams building on frontier models, it's a signal that guardrails and staged rollouts may become the norm rather than the exception, especially as vendors face more scrutiny."
+  },
+  "thumbLabel": "감속논쟁",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}
