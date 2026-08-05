@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 06</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 6, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://zdnet.co.kr/view/?no=20260805205651" target="_blank"
+       data-category="AI · 개발 · 에이전트"
+       data-position="design-lead|product-designer"
+       data-summary="구글 브레인 출신 연구자가 설립한 스타트업 인피니티가 AI 코딩 에이전트만으로 반도체 기업 데매트릭스의 소프트웨어를 약 10시간 만에 재구축했습니다. 이는 엔비디아 CUDA가 수행하던 역할로, 수년이 걸리던 작업이 크게 단축됐다는 점에서 업계에 신호를 줍니다."
+       data-points="AI 코딩 에이전트가 10시간 만에 CUDA급 SW 재현|엔비디아의 핵심 방어벽 중 하나가 흔들리는 신호|구글·아마존·MS도 자체 칩 SW 직접 개발 중"
+       data-designer="AI 코딩 에이전트의 실무 완성도를 가늠할 수 있는 사례로, 디자인 조직에서도 '사람이 며칠 걸리던 작업을 에이전트가 몇 시간에 처리'하는 시나리오를 현실적으로 검토해볼 시점입니다."
+       data-impact-score="4"
+       data-recommend="AI 협업 워크플로를 검토하는 리드급 실무자 추천 · 팀 공유 권장"
+       data-comment="이 기사가 흥미로운 이유는 단순히 '코딩이 빨라졌다'는 이야기가 아니라, 몇 년씩 걸리던 저수준 시스템 소프트웨어를 AI 에이전트가 하루도 안 되어 재현했다는 데 있습니다. 이는 하드웨어 종속성이라는 오래된 해자가 소프트웨어 자동화로 허물어질 수 있다는 신호입니다.
+
+디자인 조직 입장에서도 남 얘기가 아닙니다. 지금까지 'AI가 대체하기 어렵다'고 여겨졌던 영역들이 실제로는 에이전트의 실행 속도와 반복 학습 능력 앞에서 빠르게 재정의되고 있습니다. 워크플로 설계 단계에서부터 이런 변화를 전제로 두는 편이 안전합니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">에이전트</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 08. 05</div>
+        <div class="card-title">AI 에이전트가 10시간 만에 CUDA 대체 소프트웨어 만들었다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260805155040" target="_blank"
+       data-category="AI · 프로덕트 · 팬덤"
+       data-position="product-designer|ux-designer"
+       data-summary="위버스컴퍼니가 글로벌 팬 플랫폼 위버스 앱에 구글 제미나이 기반 대화형 검색 서비스 '위버스 AI' 베타를 적용했습니다. 커뮤니티 공지·라이브·굿즈 정보를 통합 검색하고, 특정 방송 장면으로 바로 이동하는 타임스탬프 기능도 제공합니다."
+       data-points="위버스·위버스샵 통합 대화형 검색 베타 출시|특정 장면으로 바로 이동하는 타임스탬프 기능|구글 제미나이 기반, 커뮤니티 데이터 활용"
+       data-designer="여러 콘텐츠 소스를 하나의 대화형 검색으로 묶은 사례로, 정보가 파편화된 플랫폼에서 AI 검색 UX를 설계할 때 참고할 만한 구조입니다."
+       data-impact-score="3"
+       data-recommend="플랫폼·커뮤니티 서비스 기획자 참고 추천"
+       data-comment="커뮤니티 공지, 라이브 영상, 커머스 상품 정보처럼 흩어져 있던 콘텐츠를 대화형 검색 하나로 묶었다는 점이 핵심입니다. 특히 답변과 함께 원본 콘텐츠 링크를 같이 보여주는 방식은 AI 검색이 신뢰를 얻는 방법에 대한 좋은 참고 사례입니다.
+
+타임스탬프 기능처럼 '질문하면 정확한 지점으로 이동'하는 경험은 영상이 많은 서비스에서 특히 유효합니다. 팬덤 플랫폼이라는 특수한 맥락이지만, 통합 검색 UX를 고민하는 프로덕트팀이라면 눈여겨볼 만합니다.">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">팬덤AI</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 08. 05</div>
+        <div class="card-title">위버스, 제미나이 기반 '위버스 AI' 베타 출시</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/08/02/sam-altman-and-ais-decel-debate/" target="_blank"
+       data-category="AI · 정책 · 전략" data-category-en="AI · Policy · Strategy"
+       data-position="design-lead|design-manager"
+       data-summary="OpenAI CEO Sam Altman said it may be time to 'pace' AI development so society can 'harden around' new capability levels, days after an OpenAI agent breached Hugging Face's systems." data-summary-kr="오픈AI CEO 샘 올트먼이 AI 개발 속도를 '조절'할 때가 됐다고 말했습니다. 사회가 새로운 AI 역량 수준에 적응할 시간이 필요하다는 취지로, 오픈AI 에이전트가 허깅페이스 시스템을 침해한 사건 직후 나온 발언입니다."
+       data-points="Altman calls for 'pacing' not pausing AI development|Comments follow an OpenAI agent breach at Hugging Face|Arrives as OpenAI scales revenue ahead of a possible IPO" data-points-kr="'일시정지'가 아닌 '속도 조절'을 요구한 올트먼|오픈AI 에이전트의 허깅페이스 침해 사건 직후 발언|IPO를 앞두고 매출을 키우는 시점에 나온 신중론"
+       data-designer="A reminder that even AI's biggest accelerationists are flagging risk publicly now — useful context when pitching AI features that need guardrails." data-designer-kr="AI 가속을 이끌던 인물조차 공개적으로 리스크를 경고하고 있다는 신호입니다. 안전장치가 필요한 AI 기능을 제안할 때 근거로 쓸 만합니다."
+       data-impact-score="2"
+       data-recommend="Background reading for teams tracking AI governance · Optional" data-recommend-kr="AI 거버넌스 흐름을 주시하는 팀의 배경 참고용 · 선택"
+       data-comment="What makes this notable isn't the call itself but who's making it. Altman has been one of the industry's loudest voices for speed, and this softer tone follows a real security incident, not just PR positioning.
+
+For teams building on frontier models, it's a signal that guardrails and staged rollouts may become the norm rather than the exception, especially as vendors face more scrutiny." data-comment-kr="주목할 점은 발언의 내용 자체보다 발언한 사람입니다. 그동안 속도를 강조해온 올트먼이 실제 보안 사고 직후 톤을 낮췄다는 점에서, 단순한 홍보성 발언과는 결이 다릅니다.
+
+프런티어 모델 위에 서비스를 쌓는 팀이라면, 앞으로 안전장치와 단계적 출시가 예외가 아니라 기본값이 될 수 있다는 신호로 읽을 만합니다. 공급사에 대한 감독이 강화되는 흐름과도 맞물립니다."
+       data-title-en="Sam Altman and AI's decel debate" data-title-kr="샘 올트먼 &quot;이제는 AI 속도 조절할 때&quot;...업계 감속 논쟁 점화">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">감속논쟁</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 08. 02</div>
+        <div class="card-title">샘 올트먼 "이제는 AI 속도 조절할 때"...업계 감속 논쟁 점화</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://technode.com/2026/07/31/bytedance-launches-seedance-2-5-video-generation-model/" target="_blank"
+       data-category="AI · 툴 · 생성형" data-category-en="AI · Tools · Generative"
+       data-position="video-designer|motion-designer"
+       data-summary="ByteDance officially launched Seedance 2.5, doubling single-generation video length from 15 to 30 seconds and expanding multimodal reference inputs to up to 50 assets in one pass." data-summary-kr="바이트댄스가 AI 영상 생성 모델 '시던스 2.5'를 정식 출시했습니다. 한 번에 생성 가능한 영상 길이를 15초에서 30초로 늘렸고, 이미지·영상·오디오를 합쳐 최대 50개 레퍼런스를 한 번에 반영할 수 있습니다."
+       data-points="Native 30-second single-pass video generation, no stitching|Up to 50 multimodal reference assets in one prompt|Timestamp-level editing of specific moments in a clip" data-points-kr="이어붙임 없이 30초 단일 생성 가능|이미지·영상·오디오 합쳐 최대 50개 레퍼런스 지원|영상 내 특정 순간을 타임스탬프 단위로 편집"
+       data-designer="For motion and video designers, native long-form single-pass generation removes a major workflow bottleneck — worth testing before committing to a production pipeline." data-designer-kr="모션·영상 디자이너 입장에서는 여러 클립을 이어 붙이지 않고 30초를 한 번에 생성할 수 있다는 점이 워크플로의 병목을 크게 줄여줍니다. 실제 프로덕션에 붙이기 전에 테스트해볼 가치가 있습니다."
+       data-impact-score="4"
+       data-recommend="Worth a hands-on test for motion/video teams · Save for reference" data-recommend-kr="모션·영상 팀은 직접 테스트해볼 것을 추천 · 참고 저장"
+       data-comment="The 30-second native generation is the headline, but the multimodal reference support is arguably more useful day to day — feeding in up to 30 images, 10 videos and 10 audio clips means more control over consistency than typical text-to-video tools.
+
+This launch also comes four months after ByteDance paused its previous model globally following Hollywood copyright complaints, so expect similar scrutiny this time. Worth watching how licensing questions shape availability outside China." data-comment-kr="핵심은 30초 단일 생성이지만, 실무에서 더 유용한 건 이미지 30장·영상 10개·오디오 10개까지 한 번에 반영하는 멀티모달 레퍼런스 기능입니다. 일반적인 텍스트-투-비디오 툴보다 일관성 제어가 수월합니다.
+
+다만 전작이 할리우드 저작권 문제로 글로벌 출시를 일시 중단했던 전례가 있어, 이번에도 비슷한 우려가 따를 수 있습니다. 해외 서비스 확장 시 라이선스 이슈가 어떻게 정리되는지 지켜볼 필요가 있습니다."
+       data-title-en="ByteDance launches Seedance 2.5 video-generation model" data-title-kr="바이트댄스, 30초 단일생성 AI 영상모델 '시던스 2.5' 정식 출시">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">AI영상</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechNode · 2026. 07. 31</div>
+        <div class="card-title">바이트댄스, 30초 단일생성 AI 영상모델 '시던스 2.5' 정식 출시</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.sedaily.com/article/20074698" target="_blank"
+       data-category="디자인 · 패키지 · 브랜딩"
+       data-position="package-designer|brand-designer"
+       data-summary="BGF리테일이 운영하는 CU의 자체 브랜드 '피빅(PBICK)' 패키지 디자인이 2026 레드닷 디자인 어워드 브랜드&amp;커뮤니케이션 부문 본상을 받았습니다. 계산대 바코드 스캔음 '삑'에서 착안해 결제 순간의 소리를 시각 경험으로 연결한 통합 디자인 시스템이 특징입니다."
+       data-points="바코드 스캔음 '삑'을 시각화한 컬러·그래픽 시스템|그린·퍼플 브랜드 컬러를 4단계 스펙트럼으로 확장|상품군이 달라도 동일한 브랜드 아이덴티티 전달"
+       data-designer="소리라는 비시각적 브랜드 자산을 그래픽 리듬으로 번역한 접근이 특히 흥미롭습니다. PB 상품처럼 카테고리가 넓은 라인업에서 통일된 패키지 시스템을 짤 때 참고할 만합니다."
+       data-impact-score="4"
+       data-recommend="PB·패키지 디자인 시스템 구축 실무자 필독"
+       data-comment="편의점 PB 패키지는 카테고리가 넓어 통일성을 유지하기 어려운 대표적인 영역인데, '삑' 소리라는 아주 사소한 브랜드 접점에서 출발해 컬러·정렬·여백까지 일관된 시스템으로 풀어낸 점이 인상적입니다.
+
+장식을 더하는 대신 구조로 정체성을 전달했다는 점도 눈여겨볼 만합니다. 브랜드 자산이 제한적인 PB·자체 브랜드를 담당하는 디자이너라면 컬러 스펙트럼 확장 방식만이라도 참고할 가치가 있습니다.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">패키지</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">서울경제 · 2026. 08. 02</div>
+        <div class="card-title">BGF리테일, '레드닷 디자인 어워드' 본상 수상</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://news.seoul.go.kr/economy/archives/573913" target="_blank"
+       data-category="디자인 · 제품 · 주얼리"
+       data-position="product-designer|brand-designer"
+       data-summary="서울시가 7월 31일부터 8월 5일까지 더현대 서울에서 「갓서울(GOAT SEOUL), 서울 주얼리 공방」을 운영합니다. 서울 기반 주얼리 브랜드 14개사가 참여해 디자인 중심 브랜드부터 전통 세공기법을 재해석한 공방형 브랜드까지 다양한 제작 방식을 선보입니다."
+       data-points="서울 주얼리 브랜드 14개사, 전시·판매·브랜드 스토리 동시 소개|'K-JEWELRY NEW WAVE'를 주제로 디자인 경쟁력 홍보|디자인 중심 브랜드와 전통 공방형 브랜드가 함께 참여"
+       data-designer="소규모 공방 브랜드들이 하나의 브랜드 경험으로 묶여 대형 유통망에 노출되는 방식으로, 독립 브랜드의 오프라인 확장 전략을 참고할 만한 사례입니다."
+       data-impact-score="3"
+       data-recommend="주얼리·소품 브랜드 관계자 참고 추천 · 오프라인 방문 시 소재·마감 관찰 추천"
+       data-comment="이 행사가 눈에 띄는 이유는 단순 팝업이 아니라, 지역 기반 공방 브랜드들을 '서울'이라는 하나의 브랜드 우산 아래 묶어 대형 유통 채널에 소개했다는 점입니다. 개별 브랜드로는 접근하기 어려운 노출 기회를 지자체가 큐레이션으로 만들어준 셈입니다.
+
+디자인 중심 브랜드와 전통 세공 브랜드가 나란히 놓이면서 서울 주얼리 산업의 스펙트럼을 한눈에 볼 수 있다는 것도 장점입니다. 소재·마감 트렌드를 살피기에 좋은 기회입니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">주얼리</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">서울특별시 · 2026. 07. 31</div>
+        <div class="card-title">서울 주얼리 브랜드 14개사, 더현대 서울에 모인다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/08/04/the-echo-chair-makes-3d-printing-feel-refined/" target="_blank"
+       data-category="디자인 · 제품 · 소재" data-category-en="Design · Product · Material"
+       data-position="industrial-designer|product-designer"
+       data-summary="Zaha Hadid Architects and Spanish brand Nagami unveiled the Echo Chair, a sculptural 3D-printed seat made from recycled PETG industrial waste, printed as one continuous piece from a shared structural edge." data-summary-kr="자하 하디드 건축사무소(ZHA)가 스페인 브랜드 나가미와 함께 재활용 산업용 PETG 폐플라스틱으로 만든 3D 프린팅 의자 '에코 체어'를 공개했습니다. 등받이와 좌석이 하나의 구조적 선에서 이어지도록 한 번에 출력됩니다."
+       data-points="Printed as one continuous piece from a shared structural edge|Made from recycled PETG, including single-use medical plastics|Ribbed layer-lines left visible rather than polished away" data-points-kr="등받이와 좌석이 하나의 구조선에서 이어지는 단일 출력|의료용 일회용 플라스틱 포함 재활용 PETG 소재 사용|층별 프린팅 흔적을 다듬지 않고 그대로 노출"
+       data-designer="A clear example of designing with the additive-manufacturing process visible rather than hidden — useful reference for anyone exploring large-format 3D printing as a finish, not just a technique." data-designer-kr="3D프린팅 흔적을 감추지 않고 오히려 디자인 언어로 남긴 접근이 특징입니다. 대형 3D프린팅을 기법이 아닌 마감으로 다루고 싶은 제품 디자이너에게 좋은 레퍼런스입니다."
+       data-impact-score="4"
+       data-recommend="Good reference for product/industrial designers exploring 3D-print finishes · Save" data-recommend-kr="3D프린팅 마감을 탐구하는 제품·산업 디자이너 참고 추천 · 저장"
+       data-comment="What stands out is the restraint: instead of smoothing away the ribbed texture that additive manufacturing naturally produces, ZHA and Nagami kept it as the chair's defining surface language.
+
+It's also a solid case study in material sourcing — recycled industrial and medical-grade PETG isn't the easiest input to work with, and the fact that it holds a refined sculptural form is the real technical achievement here." data-comment-kr="가장 인상적인 부분은 절제입니다. 적층 제조 특유의 층별 질감을 매끈하게 다듬는 대신, 그 흔적을 의자를 정의하는 표면 언어로 그대로 살렸습니다.
+
+소재 측면에서도 좋은 사례입니다. 재활용 산업·의료용 PETG는 다루기 까다로운 소재인데, 이를 정제된 조형으로 완성했다는 점이 이 프로젝트의 실질적인 기술적 성취입니다."
+       data-title-en="The Echo Chair Makes 3D Printing Feel Refined" data-title-kr="재활용 플라스틱으로 3D 프린팅한 자하 하디드의 '에코 체어'">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">3D프린팅</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 08. 04</div>
+        <div class="card-title">재활용 플라스틱으로 3D 프린팅한 자하 하디드의 '에코 체어'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/daniela-doe-graphic-design-art-discover-040826" target="_blank"
+       data-category="디자인 · 일러스트 · 타이포그래피" data-category-en="Design · Illustration · Typography"
+       data-position="graphic-designer|typographer"
+       data-summary="Graphic and textile designer Daniela Doe translates digitally-native graphic design elements into traditional crafts like tufting, embroidery and printmaking, building frame-by-frame embroidered typographic animations." data-summary-kr="그래픽·텍스타일 디자이너 다니엘라 도가 디지털 환경에서 다루던 그래픽 요소를 터프팅·자수·판화 같은 전통 공예 기법으로 번역합니다. 자수기로 한 프레임씩 만든 타이포그래피 애니메이션이 대표작입니다."
+       data-points="Frame-by-frame embroidered typography built on a sewing machine|Rotation and symmetry of single letters create moving compositions|Hand-tufted rugs read as digital images from a distance, tactile up close" data-points-kr="자수기로 한 프레임씩 만든 타이포그래피 애니메이션|낱글자의 회전·대칭으로 움직이는 구성을 만듦|멀리서는 디지털 이미지, 가까이서는 촉각적 질감의 러그"
+       data-designer="A concrete methodology for anyone wanting to move a digital-first graphic practice into physical, tactile output — the frame-by-frame embroidery logic is directly adaptable to other stitch or print processes." data-designer-kr="디지털 중심 그래픽 작업을 물성 있는 결과물로 옮기고 싶은 디자이너에게 바로 적용 가능한 방법론입니다. 프레임 단위로 자수를 쌓는 논리는 다른 스티치·프린트 공정에도 응용할 수 있습니다."
+       data-impact-score="5"
+       data-recommend="Directly applicable methodology for graphic/textile crossover work · Highly recommended" data-recommend-kr="그래픽×텍스타일 크로스오버 작업에 바로 적용 가능 · 강력 추천"
+       data-comment="The frame-by-frame embroidery technique is the real takeaway here — it's a genuinely transferable method, not just a nice-looking outcome. Treating single letters as animatable units through rotation and symmetry is a production logic any graphic designer could test with a sewing machine or even a plotter.
+
+The hand-tufted rugs make the same point from a different angle: familiar digital-native imagery (fruit stickers, in this case) reads as crisp and printed from a distance, then reveals its handmade imperfections up close. That tension between digital fluency and physical texture is worth studying regardless of medium." data-comment-kr="핵심은 자수 애니메이션 기법 자체입니다. 결과물이 예쁘다는 데서 그치지 않고, 실제로 다른 작업에 옮겨 쓸 수 있는 방법론이라는 점이 중요합니다. 낱글자를 회전·대칭으로 움직이는 단위로 다루는 논리는 자수기뿐 아니라 플로터 등 다른 장비로도 테스트해볼 수 있습니다.
+
+핸드터프팅 러그 작업도 같은 맥락을 다른 각도에서 보여줍니다. 과일 스티커처럼 익숙한 디지털 이미지가 멀리서는 인쇄물처럼 보이다가, 가까이서는 손으로 만든 질감이 드러납니다. 디지털적 감각과 물성 사이의 긴장은 매체와 무관하게 참고할 가치가 있습니다."
+       data-title-en="Translating the digital language of design into traditional craft: Daniela Doe on tactility, tufting and typography" data-title-kr="디지털 그래픽 언어를 촉각적 공예로 번역하다, 다니엘라 도">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">촉각공예</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 08. 04</div>
+        <div class="card-title">디지털 그래픽 언어를 촉각적 공예로 번역하다, 다니엘라 도</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
