@@ -9,6 +9,7 @@
 > **이 문서 하나만 세션 시작 시 로드한다.** 나머지는 목차를 보고 그 세션에 필요한 것만 읽는다.
 > 원본(단일 진실 원천): `github.com/kei-insu/dinol-news/docs/`
 > raw 읽기(개발 문서): `https://raw.githubusercontent.com/kei-insu/dinol-news/astro/docs/<계층>/<파일명>`
+> 문서 계층 규칙(프로젝트 공통): https://app.notion.com/p/3b31784607928102be45d3f89ded502a
 
 ---
 
