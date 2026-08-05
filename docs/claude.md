@@ -73,7 +73,7 @@
 ├─ news/2026/MM/Dinol_news_YYYYMMDD.html
 ├─ content/news/{contentId}.json   카드 데이터 정본(Astro 전환 후 원본)
 ├─ scripts/ build_briefing.py · build_published_urls.py · validate.py 외
-├─ handoff/ HANDOFF_v3.0.md · fortune-handoff.md
+├─ HANDOFF.md             세션 재개용 단일 상태 문서
 └─ docs/                  ← 이 문서들
    ├─ claude.md · dev-history.md · issues.md
    ├─ rules/      policy.md · guardrails.md
@@ -250,7 +250,6 @@ AI 코드 리뷰어의 목적은 결함 발견만이 아니라 **과잉 엔지�
 | 2026-08-01 | 5-B 좋아요 마이그레이션 | 214건(count 387) legacy → contentId. 이관 제외 7건은 legacy 문서로 보존. Admin SDK 배치·dry-run·실행 직전 신규 문서 0건 재확인 |
 | 2026-07-25 | `guardrails.md`·`issues.md` 7/19 결정 반영 | Auth 롤백을 원칙 변경이 아닌 **승인된 예외**로 기록. `481516`은 배지용이 아니라 전체 수정·삭제 마스터 키 |
 | 2026-07-25 | 마스터 비밀번호 값 교체 검토 | `config/site` 공개 읽기 + 6자리 숫자 → 복원 가능. App Check로 차단 안 됨. 현행 유지 결정, 위험 인지 상태 |
-| 2026-07-25 | `handoff/` 폴더 정리 | `HANDOFF_v3.0.md`가 7/19 철회된 Auth 지시를 담고 있어 다음 세션을 오도할 수 있음. 살릴 내용은 각 문서로 이관 후 폴더 삭제 |
 | 2026-07-25 | OG 이미지 규격 | `ai-design-news.png` 1200×395. 권장 1200×630 미달로 SNS에서 잘릴 수 있음 |
 | 2026-07-25 | EN 카드 언어 슬롯 정책 승격 | `validate.py`·`validate_json.py`의 `EN_LANGUAGE_POLICY_FROM`이 `None`. HTML 원본을 안 고치므로 Astro 전환 완료 후 날짜 기입 |
 | 2026-07-25 | 필드 라벨 EN 모드 처리 | 드로어 필드 라벨이 EN 모드에서도 한국어. 상세 페이지 전환 후 재검토 |
