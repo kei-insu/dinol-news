@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 상태 |
 |---|---|
+| 2026-08-06 | 영문 카드 `data-title-kr` 필수화(§5-2·§7) + 속성값 따옴표 이스케이프 규칙 |
 | 2026-08-03 | 카드 스키마 동기화(`data-category` 한국어 canonical · `data-category-en` · `data-position`) + 별점 루브릭 명문화 + §10 발행 게이트(브랜치·validate.py·localhost) |
 | 2026-07-26 | §3-1 구성 균형 확정(섹션당 국내2·해외2 예외없음 · 동일매체 전체합산 2건) + AI 실무접점 목표 |
 | 2026-07-14 | 라이브 루틴과 동기화 + 팝업 6필드 필수 검증(§5-2) 추가 |
@@ -146,7 +147,7 @@ index.json에 오늘 날짜가 이미 있으면 → 생성 생략, "오늘 브�
 1. **하나라도 빠졌거나 형식이 틀리면 그 카드를 재작성**한다(빈 채로 넘기지 않는다).
 2. ⚠️ `data-impact-score`는 **정수 1~5**여야 한다. `data-impact`(텍스트)는 드로어가 렌더하지 못하므로 **절대 쓰지 않는다**.
 3. ⚠️ `data-comment`(큐레이션 노트, 2~3문단)는 **필수**다. 절대 생략하지 않는다. (이 사이트의 핵심 부가가치)
-4. 영문 카드는 위 6필드 + `-kr` 짝(`data-summary-kr`·`data-points-kr`·`data-designer-kr`·`data-recommend-kr`·`data-comment-kr`) + `data-title-en` + **`data-category-en`** 도 확인.
+4. 영문 카드는 위 6필드 + `-kr` 짝(`data-summary-kr`·`data-points-kr`·`data-designer-kr`·`data-recommend-kr`·`data-comment-kr`) + **제목 쌍 `data-title-en`·`data-title-kr` 둘 다** + **`data-category-en`** 도 확인. 제목 쌍은 한쪽만 있으면 카드 재작성.
 5. ⚠️ **`data-category` 접두어 검사(8장 전부).** Design 카드는 `디자인` 또는 `디자인 · ` 로, AI 카드는 `AI` 또는 `AI · ` 로 시작해야 한다. `Design · ` 은 **위반**이다.
 6. ⚠️ **영문 슬롯이 한국어면 안 된다.** EN 카드의 `data-summary`·`data-points`·`data-designer`·`data-recommend`·`data-comment` 는 영문, `-kr` 짝은 한국어다. 두 값이 같으면(번역 누락) 재작성한다.
 7. 점검 결과를 §9 알림·§9-1 파일 제시에 한 줄 남긴다: 「6필드 검증: 8/8 통과」 (통과 못 하면 배포 보류)
@@ -168,7 +169,8 @@ template.html을 복제하고 **아래 세 곳만** 채운다. 그 외(스타일
 ## 7. 카드 패턴 (★현재 구조 — 반드시 이대로)
 
 **공통**
-- **라벨·카드 제목은 영문 기사도 한글.** 영어 원제목은 `data-title-en`에 보존.
+- **라벨·카드 제목은 영문 기사도 한글.** 영문 카드는 제목을 **두 속성에 모두** 넣는다: 영어 원제목은 `data-title-en`, 한글 제목은 `data-title-kr`. `data-title-kr` 값은 `.card-title` 본문과 **같은 문자열**이어야 한다. 둘 중 하나라도 빠지면 정본 추출이 `F-1`로 중단된다.
+- 속성값에 큰따옴표가 들어가면 `&quot;`로 바꿔 넣는다(예: `data-title-kr="샘 올트먼 &quot;속도 조절할 때&quot;..."`). 그대로 넣으면 태그가 깨진다.
 - 팝업 6필드를 **모두** 채운다: `data-summary`·`data-points`·`data-designer`·`data-impact-score`·`data-recommend`·`data-comment`. 영문 기사는 각 `-kr` 짝도. **하나라도 빠지면 카드 재작성(§5-2 검증). `data-impact`(텍스트)·빈 `data-comment` 금지.**
 - `data-points`는 3개를 `|`로. `data-impact-score`는 **1~5 정수**. `data-comment`(큐레이션 노트)는 **2~3문단(실제 \n)**.
 - 본문에 **em대시(—) 금지**.
@@ -217,7 +219,7 @@ template.html을 복제하고 **아래 세 곳만** 채운다. 그 외(스타일
    data-impact-score="[1~5]"
    data-recommend="[English rec]" data-recommend-kr="[한국어 추천]"
    data-comment="[English comment]" data-comment-kr="[한국어 코멘트]"
-   data-title-en="[영어 원제목 원문]">
+   data-title-en="[영어 원제목 원문]" data-title-kr="[한글 제목 · .card-title 과 동일]">
   <div class="thumb [gradient]">
     <div class="noise"></div>
     <span class="thumb-label">[한글 라벨]</span>
