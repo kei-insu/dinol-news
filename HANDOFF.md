@@ -1,6 +1,6 @@
 # HANDOFF — dinol-news
 
-> 갱신: 2026-08-03 / 세션 1
+> 갱신: 2026-08-05 / 세션 2
 
 ## [작업 규칙] — 이 문서를 읽은 세션이 즉시 적용 (5개 고정, 증설 금지)
 
@@ -16,9 +16,8 @@
 
 ## 1. 현재 단계
 
-5단계(좋아요·공유 contentId 재도입) 진행 중. 5-B-1 dry-run 완료, 5-B-2 착수 전이다.
-5-A-2F가 Astro 상세 페이지 전제로 확인되어 전환 순서를 C-2로 재설계했다.
-문서 체계 7계층 확정, `docs/` 폴더 재구조화는 미착수.
+문서 구조 개편이 5단계 중 4단계까지 끝났다(ADR 신설만 남음). 5-B-2는 여전히 착수 전이고
+Q-A·Q-B 두 결정이 막고 있다. 이 둘이 정해져야 코드 작성 → 커밋 → 새 dry-run 으로 갈 수 있다.
 
 ## 2. 확정 사항 — 변경 금지
 
@@ -30,6 +29,10 @@
 - 문서 7계층: 인덱스 / 규칙 / 레퍼런스 / 하우투 / 결정(ADR) / 이력 / 핸드오프 — 규모에 따라 절이냐 파일이냐만 달라지고 계층 이름과 순서는 프로젝트 공통
 - 핸드오프 원본은 MD + git. 노션은 사람용 미러 — `세션 핸드오프 운영 가이드 v2.0` §3.8
 - `deploy.ps1` 검증 게이트는 staged 파일 대상(`--diff-filter=ACMR`) — 날짜 기준을 쓰면 과거 브리핑 수정·교체가 검증에서 빠짐
+- 문서 저장소 배치 — 규칙·레퍼런스·하우투·결정은 git, 이력은 Notion DB, 핸드오프는 루트 `HANDOFF.md` 단일 파일. 노션 원본화 금지(`세션 핸드오프 운영 가이드 v2.0` §3.8)
+- `docs/` 계층 폴더 확정 — `rules/`(2) · `reference/`(4) · `howto/`(3). `claude.md`·`dev-history.md`·`issues.md`는 `docs/` 직속 유지
+- `handoff/` 폴더 폐기 완료(e747b4e) — 살릴 내용 3건은 34f58ea 로 이관, 중복 3건은 이미 존재해 제외
+- 바탕화면 git 밖 잡문서 정리 완료 — 인수님이 직접 삭제. 임시 파일이었음이 확인됨
 
 ## 3. 폐기한 접근 — 재제안 금지
 
@@ -42,29 +45,28 @@
 
 - [ ] Q-A 결정 — 5-B-2를 `migrate-likes.mjs` 한 파일 확장(A-1 추천) vs `migrate-core.mjs` 분리(A-2)
 - [ ] Q-B 결정 — 에뮬레이터에서 `EXPECTED_PROJECT_ID` 검사 우회 방식. `FIRESTORE_EMULATOR_HOST` 확인(B-1 추천) vs 테스트 projectId 허용(B-2)
-- [ ] `docs/` 폴더 재구조화 — `rules/` `reference/` `howto/` `adr/` 신설, `claude.md`는 루트 유지
-- [ ] `docs/guardrails.md`를 astro에 배치 (수정본 보유, main 작업 트리에 오배치된 상태)
 - [ ] 5-B-2 코드 작성 → 커밋 → 그 HEAD에서 새 dry-run
+- [ ] `docs/rules/guardrails.md`에 게이트 원칙 반영 — 수정본이 `main` 작업 트리에 오배치된 상태. astro 파일에 별도 diff·별도 커밋
+- [ ] `claude.md` 백로그 2행 갱신 — 5-A-2R(19b21d2 완료) · 5-B(229문서/count 421/migrate 222)
+- [ ] ADR 신설 + `dev-history.md`·`issues.md` 판단 근거 이관 (문서 개편 5단계, 급하지 않음)
 
 ## 5. 산출물
 
 | 경로 | 버전 | 상태 |
 |---|---|---|
-| `scripts/migrate-likes.mjs` | 5-B-1 | dry-run 전용. 미커밋(worktree `dinol-5b`) |
+| `scripts/migrate-likes.mjs` | 5-B-1 | dry-run 전용(19,414B). 미커밋(worktree `dinol-5b`) |
 | `scripts/inspect-likes.mjs` · `inspect-0802.mjs` | — | 조사용. 미커밋(`dinol-5b`) |
-| `deploy.ps1` | 게이트 추가본 | main 작업 트리 배치. **검증 2/4에서 중단** |
-| `docs/guardrails.md` | 게이트 원칙 반영본 | **브랜치 오배치**. astro로 옮겨야 함 |
+| `deploy.ps1` | 게이트 추가본 | main 작업 트리 배치. **검증 2/4에서 중단**, 8/3·8/5 발행은 수동이라 미실행 |
+| `docs/rules/guardrails.md` 게이트 수정본 | — | **main 작업 트리에 오배치.** astro 반영 필요 |
 | `firestore.rules` | 5-A-2R | 커밋됨(19b21d2). 배포는 Astro 전환 시점 |
 | 5-B-2 확정 설계 25항목 | — | 본 문서에 복사하지 않음. 세션 시작 메모 참조 |
 
 ## 6. 미해결 · 판단 보류
 
 - `dinol-news-5a2f-check` worktree 제거 실패 — `.git`이 OneDrive 재분석 지점(`-a---l`, 105B). 하이드레이션 확인 미실행
-- `deploy.ps1` 게이트 검증 2건 미완 — staged 추출·중단 지점 도달. 8/3은 수동 발행이라 게이트 미실행
-- `5a2f-staged.patch`(42KB) 폐기 가능 여부 — astro 반영 여부 미확인
-- 바탕화면 git 밖 문서 5개 정리 — `CLAUDE.md` 등, 사본 여부 미확인
-- `handoff/` 폴더 삭제 — 본 문서가 자리 잡은 뒤
-- ADR 신설 — `dev-history.md`·`issues.md`의 판단 근거 이관 대상
+- `deploy.ps1` 게이트 검증 2건 미완 — staged 추출·중단 지점 도달. 다음 `./deploy.ps1` 실행 때 확인
+- `5a2f-staged.patch`(42KB, 바탕화면) — `git apply --check --reverse` 가 `package.json:5` 에서 실패. 미반영분이 남은 것인지 이후 변경 때문인지 미판정. **삭제 금지**
+- 날짜 스탬프 오류 — 이 세션 커밋·Notion 일부가 `2026-08-03` 으로 기록됐으나 실제는 `2026-08-05`. git 커밋 타임스탬프가 정본
 
 ---
 
