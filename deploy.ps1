@@ -110,20 +110,23 @@ else {
 
     $vOut | ForEach-Object { Write-Host "  $_" }
 
-    # 종료코드와 출력 두 가지로 판정한다(한쪽만 믿지 않는다).
-    $errLine  = $vOut | Select-String -Pattern 'ERROR\s+(\d+)건' | Select-Object -First 1
-    $errCount = if ($errLine) { [int]$errLine.Matches[0].Groups[1].Value } else { -1 }
+    # 판정은 종료 코드가 기준이다(2026-08-08 실증: 정상 exit 0 / ERROR exit 1).
+    # 출력 파싱은 보조 정보일 뿐이며, 파싱에 실패해도 배포를 막지 않는다.
+    # (한글이 포함된 패턴은 콘솔 인코딩에 따라 매칭이 깨져 정상 브리핑까지 차단한다)
+    $errCount = $null
+    $errLine  = $vOut | Select-String -Pattern 'ERROR\s+(\d+)' | Select-Object -First 1
+    if ($errLine) {
+        $errCount = [int]$errLine.Matches[0].Groups[1].Value
+    } else {
+        Write-Host "  (참고) ERROR 건수를 읽지 못했습니다 — 종료 코드로 판정합니다." -ForegroundColor DarkGray
+    }
 
-    if ($errCount -lt 0) {
-        Write-Host "[중단] 검증 결과를 해석하지 못했습니다(ERROR 건수 미검출)." -ForegroundColor Red
-        Write-Host "  → validate.py 출력 형식이 바뀌었는지 확인하세요." -ForegroundColor Yellow
+    if ($vCode -ne 0) {
+        $detail = if ($null -ne $errCount) { "ERROR $errCount 건" } else { "검증 실패" }
+        Write-Host "[중단] $detail (exit=$vCode). 브리핑을 고친 뒤 다시 배포하세요." -ForegroundColor Red
         exit 1
     }
-    if ($vCode -ne 0 -or $errCount -gt 0) {
-        Write-Host "[중단] 검증 ERROR $errCount 건 (exit=$vCode). 브리핑을 고친 뒤 다시 배포하세요." -ForegroundColor Red
-        exit 1
-    }
-    Write-Host "  ERROR 0건 — 통과. (WARN 은 위 출력 참고)" -ForegroundColor DarkGray
+    Write-Host "  통과 (exit=0). WARN 은 위 출력을 확인하세요." -ForegroundColor DarkGray
 }
 
 # 5) 커밋 (메시지: 인자 or 오늘 날짜)
