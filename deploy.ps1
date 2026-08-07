@@ -6,6 +6,7 @@
 #  안전장치: 아래 중 하나라도 걸리면 배포를 '즉시 중단'한다.
 #   - 원격이 로컬보다 앞서 있음(뒤처짐) 또는 히스토리가 갈라짐  → git pull 먼저
 #   - 스테이징된 파일에 충돌 마커(<<<<<<< ======= >>>>>>>) 존재  → 정리 먼저
+#   - 스테이징된 브리핑 HTML 이 validate.py ERROR      → 브리핑 수정 먼저
 #   - push 실패                                                  → git pull 후 재시도
 #  ⚠️ 이 스크립트는 스스로 merge/pull 하지 않는다. 동기화는 사람이
 #     '작업 시작 전' git pull 로 먼저 맞춘다(clean 상태에서). 여기서는 확인·푸시만.
@@ -34,7 +35,7 @@ if ($branch -ne "main") {
 }
 
 # 1) 원격 상태 확인 (fetch만 — merge/pull은 하지 않음)
-Write-Host "`n[1/5] 원격 확인 (git fetch)..." -ForegroundColor Cyan
+Write-Host "`n[1/6] 원격 확인 (git fetch)..." -ForegroundColor Cyan
 git fetch origin
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[중단] fetch 실패(네트워크/인증 확인)." -ForegroundColor Red
@@ -66,11 +67,11 @@ else {
 }
 
 # 2) 스테이징
-Write-Host "`n[2/5] 변경 스테이징 (git add -A)..." -ForegroundColor Cyan
+Write-Host "`n[2/6] 변경 스테이징 (git add -A)..." -ForegroundColor Cyan
 git add -A
 
 # 3) 충돌 마커 검사 (스테이징된 내용 기준) — 있으면 중단
-Write-Host "`n[3/5] 충돌 마커 검사..." -ForegroundColor Cyan
+Write-Host "`n[3/6] 충돌 마커 검사..." -ForegroundColor Cyan
 $conflict = git grep -l -E "^<<<<<<<|^>>>>>>>" --cached 2>$null
 if ($conflict) {
     Write-Host "[중단] 충돌 마커가 남은 파일이 있습니다:" -ForegroundColor Red
@@ -82,16 +83,59 @@ if ($conflict) {
 }
 Write-Host "  마커 없음 — 통과." -ForegroundColor DarkGray
 
-# 4) 커밋 (메시지: 인자 or 오늘 날짜)
+# 4) 브리핑 검증 게이트 — 스테이징된 브리핑 HTML 만 검사. ERROR 있으면 중단.
+#    ※ validate.py 는 인자가 없으면 news/ 전체를 검사하므로,
+#      대상이 없을 때는 호출 자체를 하지 않는다.
+Write-Host "`n[4/6] 브리핑 검증 (validate.py)..." -ForegroundColor Cyan
+$staged = git diff --cached --name-only --diff-filter=ACM
+$briefs = @($staged | Where-Object { $_ -match '^news/.*/Dinol_news_\d{8}\.html$' })
+
+if ($briefs.Count -eq 0) {
+    Write-Host "  브리핑 변경 없음 — 검증 건너뜀." -ForegroundColor DarkGray
+}
+else {
+    Write-Host "  대상 $($briefs.Count)개:" -ForegroundColor DarkGray
+    $briefs | ForEach-Object { Write-Host "   - $_" -ForegroundColor DarkGray }
+
+    $vOut = $null
+    $vCode = $null
+    try {
+        $vOut  = & python scripts/validate.py @briefs 2>&1
+        $vCode = $LASTEXITCODE
+    } catch {
+        Write-Host "[중단] validate.py 실행 실패: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "  → python 이 PATH 에 있는지, scripts/validate.py 가 있는지 확인하세요." -ForegroundColor Yellow
+        exit 1
+    }
+
+    $vOut | ForEach-Object { Write-Host "  $_" }
+
+    # 종료코드와 출력 두 가지로 판정한다(한쪽만 믿지 않는다).
+    $errLine  = $vOut | Select-String -Pattern 'ERROR\s+(\d+)건' | Select-Object -First 1
+    $errCount = if ($errLine) { [int]$errLine.Matches[0].Groups[1].Value } else { -1 }
+
+    if ($errCount -lt 0) {
+        Write-Host "[중단] 검증 결과를 해석하지 못했습니다(ERROR 건수 미검출)." -ForegroundColor Red
+        Write-Host "  → validate.py 출력 형식이 바뀌었는지 확인하세요." -ForegroundColor Yellow
+        exit 1
+    }
+    if ($vCode -ne 0 -or $errCount -gt 0) {
+        Write-Host "[중단] 검증 ERROR $errCount 건 (exit=$vCode). 브리핑을 고친 뒤 다시 배포하세요." -ForegroundColor Red
+        exit 1
+    }
+    Write-Host "  ERROR 0건 — 통과. (WARN 은 위 출력 참고)" -ForegroundColor DarkGray
+}
+
+# 5) 커밋 (메시지: 인자 or 오늘 날짜)
 $msg = if ($args.Count -gt 0) { $args -join " " } else { "briefing " + (Get-Date -Format "yyyy-MM-dd") }
-Write-Host "`n[4/5] 커밋: $msg" -ForegroundColor Cyan
+Write-Host "`n[5/6] 커밋: $msg" -ForegroundColor Cyan
 git commit -m "$msg"
 if ($LASTEXITCODE -ne 0) {
     Write-Host "  커밋할 변경이 없습니다(working tree clean). 푸시만 시도합니다." -ForegroundColor DarkGray
 }
 
-# 5) 푸시 (fast-forward). 실패하면 중단.
-Write-Host "`n[5/5] 푸시 (git push)..." -ForegroundColor Cyan
+# 6) 푸시 (fast-forward). 실패하면 중단.
+Write-Host "`n[6/6] 푸시 (git push)..." -ForegroundColor Cyan
 git push
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[중단] push 실패. 그 사이 원격이 바뀌었을 수 있습니다." -ForegroundColor Red

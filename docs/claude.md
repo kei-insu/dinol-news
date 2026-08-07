@@ -2,7 +2,7 @@
 
 | 최종 갱신 | 최근 변경 |
 |---|---|
-| 2026-08-08 | 루틴 UI 경계 마커 도입(실행 프롬프트 분리) · 제외 매체 판정 규칙 신설 · 작업 일지 스키마 정정 |
+| 2026-08-08 | 루틴 UI 경계 마커 도입(실행 프롬프트 분리) · 제외 매체 판정 규칙 신설 · 작업 일지 스키마 정정 · deploy.ps1 validate 게이트 |
 | 2026-08-07 | 루틴 브리핑 날짜 기준 변경(실행일 → 실행일+1) · 문서 스탬프와 분리 |
 | 2026-08-06 | 소스 목록 3사본 동기화 규칙 신설(news_sources · routine_instruction §3 · 루틴 UI) |
 | 2026-07-26 | 명령 작성 전 자체 검토 체크리스트 신설 |
@@ -85,9 +85,10 @@
 > `astro` 브랜치 작업은 라이브에 영향이 없다. 상세는 `detail-page-schema.md`.
 
 ### 배포 (매일 브리핑)
-- 브리핑 파일을 `news/YYYY/MM/`에 넣은 뒤, 터미널에서 **`./deploy.ps1`** 한 줄이면 끝(pull→add→commit→push 자동, 커밋 메시지에 오늘 날짜).
+- 브리핑 파일을 `news/YYYY/MM/`에 넣은 뒤, 터미널에서 **`./deploy.ps1`** 한 줄이면 끝(fetch→add→충돌검사→**validate**→commit→push, 6단계).
 - 메시지 지정: `./deploy.ps1 "add: 7/11 브리핑"`. 스크립트는 레포 루트 `deploy.ps1`.
 - 최초 1회만 실행권한: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
+- **`[4/6]` validate 게이트(2026-08-08 추가)** — 스테이징된 `news/**/Dinol_news_*.html` 만 `scripts/validate.py` 로 검사하고, ERROR 가 있으면 **커밋 전에 중단**한다. 브리핑 변경이 없으면 건너뛴다. 우회 스위치는 두지 않았다.
 - `firestore.rules`는 별도(콘솔 붙여넣기). 규칙 바꾼 날은 콘솔도 반영.
 
 ### 핵심 원칙
