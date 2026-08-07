@@ -1,0 +1,74 @@
+{
+  "20260807-ai-001": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 5,
+    "positions": [
+      "motion-designer",
+      "video-designer"
+    ]
+  },
+  "20260807-ai-002": {
+    "category_kr": "AI · 에이전트 · 연구",
+    "category_en": "AI · Agent · Research",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260807-ai-003": {
+    "category_kr": "AI · 툴 · 영상",
+    "category_en": "AI · Tool · Video",
+    "impactScore": 4,
+    "positions": [
+      "video-designer",
+      "motion-designer"
+    ]
+  },
+  "20260807-ai-004": {
+    "category_kr": "AI · 이미지 · UX",
+    "category_en": "AI · Imagery · UX",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260807-design-001": {
+    "category_kr": "디자인 · 산업 · 제품",
+    "category_en": "Design · Industrial · Product",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260807-design-002": {
+    "category_kr": "디자인 · 산업 · 광고",
+    "category_en": "Design · Industrial · Advertising",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "brand-designer"
+    ]
+  },
+  "20260807-design-003": {
+    "category_kr": "디자인 · UX · 브랜딩",
+    "category_en": "Design · UX · Branding",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "bx-designer"
+    ]
+  },
+  "20260807-design-004": {
+    "category_kr": "디자인 · 제품 · 사운드",
+    "category_en": "Design · Product · Sound",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  }
+}

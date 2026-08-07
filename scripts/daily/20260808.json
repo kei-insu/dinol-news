@@ -1,0 +1,74 @@
+{
+  "20260808-ai-001": {
+    "category_kr": "AI · 정책 · 전략",
+    "category_en": "AI · Policy · Strategy",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "design-manager"
+    ]
+  },
+  "20260808-ai-002": {
+    "category_kr": "AI · 시장 · 트렌드",
+    "category_en": "AI · Market · Trend",
+    "impactScore": 3,
+    "positions": [
+      "design-lead",
+      "product-designer"
+    ]
+  },
+  "20260808-ai-003": {
+    "category_kr": "AI · 모델 · 생태계",
+    "category_en": "AI · Models · Ecosystem",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260808-ai-004": {
+    "category_kr": "AI · 생태계 · 보안",
+    "category_en": "AI · Ecosystem · Security",
+    "impactScore": 3,
+    "positions": [
+      "design-lead",
+      "design-manager"
+    ]
+  },
+  "20260808-design-001": {
+    "category_kr": "디자인 · 컨퍼런스 · 방법론",
+    "category_en": "Design · Conference · Methodology",
+    "impactScore": 3,
+    "positions": [
+      "art-director",
+      "design-lead"
+    ]
+  },
+  "20260808-design-002": {
+    "category_kr": "디자인 · 게임 · 환경디자인",
+    "category_en": "Design · Game · Environment",
+    "impactScore": 3,
+    "positions": [
+      "space-designer",
+      "ux-designer"
+    ]
+  },
+  "20260808-design-003": {
+    "category_kr": "디자인 · 브랜딩 · 패키지",
+    "category_en": "Design · Branding · Packaging",
+    "impactScore": 4,
+    "positions": [
+      "brand-designer",
+      "package-designer"
+    ]
+  },
+  "20260808-design-004": {
+    "category_kr": "디자인 · 툴 · 생산성",
+    "category_en": "Design · Tools · Productivity",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "design-manager"
+    ]
+  }
+}
