@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 상태 |
 |---|---|
+| 2026-08-08 | §3 해외 뉴스 축에 MarkTechPost 추가 + 제외 매체 규칙 신설(news_sources.md 「제외 매체」 연동) |
 | 2026-08-07 | §1 브리핑 날짜 기준 변경(실행 당일 → 실행 시점 +1일) + 수동 재실행 보정. 22:00 실행 시 index.json 최신 항목과 충돌해 "이미 있음"으로 오판하던 문제 해소 |
 | 2026-08-06 | §3 소스 목록 확장(국내 16→37 · 해외 41→58, AI×디자인·유럽·일본·중국 축 신설) + 크롤링 폭 최소 기준 + 계열 판정 주의 |
 | 2026-08-03 | 카드 스키마 동기화(`data-category` 한국어 canonical · `data-category-en` · `data-position`) + 별점 루브릭 명문화 + §10 발행 게이트(브랜치·validate.py·localhost) |
@@ -110,7 +111,7 @@ index.json에 브리핑 날짜가 이미 있으면 → 생성 생략, "해당 �
 - **국내 · IT 매체**: zdnet.co.kr·bloter.net·byline.network·etnews.com·디지털데일리(ddaily.co.kr)·IT조선
 - **국내 · 스타트업·산업**: 플래텀·벤처스퀘어·매일경제·조선비즈 IT/사이언스·연합뉴스 IT/과학
 - **국내 · 실무 커뮤니티**: 요즘IT(yozm.wishket)·GeekNews(news.hada.io)
-- **해외 뉴스**: techcrunch·the verge·wired·ars technica·venturebeat·MIT Technology Review·UN News(정책)
+- **해외 뉴스**: techcrunch·the verge·wired·ars technica·venturebeat·MIT Technology Review·MarkTechPost(모델 출시 기술 분석 — 제품 출시 기사는 공식 블로그 교차확인)·UN News(정책)
 - **해외 논평·큐레이션**: The Batch·Import AI·Simon Willison·TLDR AI·The Rundown AI·Hugging Face Blog
 - **해외 기업·연구**: OpenAI News·Anthropic News·Google DeepMind·Google Research·Meta AI·Microsoft AI
 - **AI×디자인**(이 축을 반드시 1회 이상 돌린다): Creative Bloq AI 섹션·Adobe Blog·Figma Blog·Canva Design School·European Commission(AI 규제)
@@ -140,6 +141,8 @@ index.json에 브리핑 날짜가 이미 있으면 → 생성 생략, "해당 �
 - 한 축에서 기간 내 신규가 없으면 **다음 축으로 넘어간다.** 같은 축을 3회 이상 재검색하지 않는다.
 
 > **계열 판정 주의** — 계열 합산은 `news_sources.md`에 명시된 것만 적용한다(현재: 디자인플러스·헤이팝·행복이 가득한 집 = 디자인하우스). 문서에 없는 계열을 세션마다 즉석 판단하지 않는다. 확인되면 `news_sources.md`에 먼저 명시한다.
+
+> **제외 매체** — `news_sources.md`의 「제외 매체」 섹션에 있는 매체는 검색 결과에 떠도 카드 출처로 쓰지 않는다(현재: ROOT IN NEWS). 위 목록에 없는 새 매체가 후보로 잡히면 ① 기자 서명 ② 보도자료 전재 여부 ③ 1차 소스 인용 ④ 해당 분야 전문성을 확인하고, 판단이 서지 않으면 그 후보를 버린다.
 
 ---
 
