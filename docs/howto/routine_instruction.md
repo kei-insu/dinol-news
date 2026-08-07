@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 상태 |
 |---|---|
+| 2026-08-06 | §3 소스 목록 확장(국내 16→37 · 해외 41→58, AI×디자인·유럽·일본·중국 축 신설) + 크롤링 폭 최소 기준 + 계열 판정 주의 |
 | 2026-08-06 | 영문 카드 `data-title-kr` 필수화(§5-2·§7) + 속성값 따옴표 이스케이프 규칙 |
 | 2026-08-03 | 카드 스키마 동기화(`data-category` 한국어 canonical · `data-category-en` · `data-position`) + 별점 루브릭 명문화 + §10 발행 게이트(브랜치·validate.py·localhost) |
 | 2026-07-26 | §3-1 구성 균형 확정(섹션당 국내2·해외2 예외없음 · 동일매체 전체합산 2건) + AI 실무접점 목표 |
@@ -98,15 +99,44 @@ index.json에 오늘 날짜가 이미 있으면 → 생성 생략, "오늘 브�
 - **날짜 분산.** 수집 창 안에서 같은 날짜 기사만 몰지 않는다.
 - **최신성 vs 관련도.** 신선한 KR 건이 얇으면 관련도·품질을 우선한다(며칠 지난 건 허용). 단 그 이유를 §9-1 에 한 줄 남긴다.
 
-### AI 소스(검색어에 활용 · 넓게 크롤링)
-국내: 인공지능신문(aitimes.kr)·AI타임스(aitimes.com)·zdnet.co.kr·bloter.net·byline.network·etnews.com·디지털데일리(ddaily.co.kr)·테크42·요즘IT(yozm.wishket)
-해외: techcrunch·the verge·wired·buildfastwithai·UN News(정책)
+> 소스 단일 출처는 `news_sources.md`. 아래는 그중 매일 도는 목록이다. **한쪽을 고치면 다른 쪽도 같은 변경에서 고친다.**
+> WebSearch 전용이므로 URL 접근이 안 되는 매체도 **매체명을 검색어에 넣어** 후보를 찾는다(중국 매체 등).
 
-### Design 소스 (넓게 크롤링)
-국내: 디자인플러스(design.co.kr)·디자인 나침반(designcompass.org)·헤이팝(heypop.kr)·디자인정글(jungle.co.kr)·디에디트(the-edit.co.kr)·designdb·kidp
-해외: dezeen·yanko design·it's nice that·core77·archdaily
+### AI 소스 (넓게 크롤링 · 국내 16 · 해외 23)
+- **국내 · AI 전문**: 인공지능신문(aitimes.kr)·AI타임스(aitimes.com)·테크42
+- **국내 · IT 매체**: zdnet.co.kr·bloter.net·byline.network·etnews.com·디지털데일리(ddaily.co.kr)·IT조선
+- **국내 · 스타트업·산업**: 플래텀·벤처스퀘어·매일경제·조선비즈 IT/사이언스·연합뉴스 IT/과학
+- **국내 · 실무 커뮤니티**: 요즘IT(yozm.wishket)·GeekNews(news.hada.io)
+- **해외 뉴스**: techcrunch·the verge·wired·ars technica·venturebeat·MIT Technology Review·UN News(정책)
+- **해외 논평·큐레이션**: The Batch·Import AI·Simon Willison·TLDR AI·The Rundown AI·Hugging Face Blog
+- **해외 기업·연구**: OpenAI News·Anthropic News·Google DeepMind·Google Research·Meta AI·Microsoft AI
+- **AI×디자인**(이 축을 반드시 1회 이상 돌린다): Creative Bloq AI 섹션·Adobe Blog·Figma Blog·Canva Design School·European Commission(AI 규제)
 
-디자인 카테고리는 UXUI·시각·제품·공간·건축·패키지·브랜딩·편집·게임 등 다양하게. **주가·투자 등 무관한 것 제외.**
+### Design 소스 (넓게 크롤링 · 국내 21 · 해외 35)
+- **국내 · 디자인 매체**: 디자인플러스(design.co.kr)·디자인 나침반(designcompass.org)·헤이팝(heypop.kr)·디자인정글(jungle.co.kr)·디자인DB(designdb·kidp)·네이버 디자인프레스
+- **국내 · 브랜드·패션·컬처**: 아이즈매거진·Hypebeast KR·매거진 B·캐릿·디에디트(the-edit.co.kr)·무신사 매거진
+- **국내 · 공간·전시·공공**: 서울디자인재단·DDP·KCDF·행복이 가득한 집·한국콘텐츠진흥원
+- **국내 · 프로덕트·UX 실무**: 토스 tech·우아한형제들 기술블로그·요즘IT
+- **국내 · 게임·리빙**: 게임메카·인벤·리빙센스(smlounge)
+- **해외 종합**: dezeen·designboom·yanko design·it's nice that·core77·archdaily·creative boom·creative bloq·wallpaper*·design milk
+- **해외 브랜드·그래픽·타이포**: Brand New·The Brand Identity·BP&O·The Dieline·AIGA Eye on Design·Print Magazine·Fonts In Use·Typewolf
+- **해외 UX·트렌드**: UX Collective·NN/g·Smashing Magazine·Fast Company Co.Design·Codrops
+- **해외 광고·캠페인**: Adweek·The Drum·Campaign·Muse by Clio
+- **해외 모션·영상**: Motionographer·Stash Media·Art of the Title
+- **유럽(EU)**: Slanted(DE)·Frame(NL)·Eye Magazine(UK)·Design Week(UK)
+- **일본(JP)**: AXIS·Pen Online·JDN(Japan Design Net)·Casa BRUTUS·Spoon & Tamago·Tokyo Art Beat
+- **중국(CN)**: 站酷 ZCOOL·Design360°·TOPYS ※URL 접근 불가, 검색어로만 사용
+
+디자인 카테고리는 UXUI·시각·제품·공간·건축·패키지·브랜딩·편집·광고·모션·게임 등 다양하게. **주가·투자 등 무관한 것 제외.**
+
+### 크롤링 폭 최소 기준
+한 번에 8카드를 채우려면:
+- AI: **국내 3회 + 해외 3회 + AI×디자인 2회 이상** 검색
+- Design: **국내 3회 + 영어권 3회 + 유럽/일본/중국 중 2개 축 이상** 검색
+- **국내 3회는 매번 다른 하위 축에서 뽑는다.** 위 국내 목록이 축별로 나뉘어 있는 이유다. 3회를 전부 '디자인 매체' 축에 쓰면 매일 같은 2~3곳만 나온다.
+- 한 축에서 기간 내 신규가 없으면 **다음 축으로 넘어간다.** 같은 축을 3회 이상 재검색하지 않는다.
+
+> **계열 판정 주의** — 계열 합산은 `news_sources.md`에 명시된 것만 적용한다(현재: 디자인플러스·헤이팝·행복이 가득한 집 = 디자인하우스). 문서에 없는 계열을 세션마다 즉석 판단하지 않는다. 확인되면 `news_sources.md`에 먼저 명시한다.
 
 ---
 
