@@ -2,7 +2,7 @@
 
 | 최종 갱신 | 최근 변경 |
 |---|---|
-| 2026-08-08 | 루틴 UI 경계 마커 도입(실행 프롬프트 분리) · 제외 매체 판정 규칙 신설 · 작업 일지 스키마 정정 · deploy.ps1 validate 게이트 · worktree 4개 구조 명시 · 핵심 원칙 4 「즉시 갱신」 강화 · 5-B 수치 현행화(214→229) · 작업 일지 `브랜치` 속성 신설 |
+| 2026-08-08 | 루틴 UI 경계 마커 도입(실행 프롬프트 분리) · 제외 매체 판정 규칙 신설 · 작업 일지 스키마 정정 · deploy.ps1 validate 게이트 · worktree 4개 구조 명시 · 핵심 원칙 4 「즉시 갱신」 강화 · 5-B 수치 현행화(214→229) · 작업 일지 `브랜치` 속성 신설 · 「커밋 후 점검」 신설 |
 | 2026-08-07 | 루틴 브리핑 날짜 기준 변경(실행일 → 실행일+1) · 문서 스탬프와 분리 |
 | 2026-08-06 | 소스 목록 3사본 동기화 규칙 신설(news_sources · routine_instruction §3 · 루틴 UI) |
 | 2026-08-01 | 3자 검토 프로토콜 + `review-checklist.md` 신설 · main 예외 3종 · 저장 경로 형식 고정 · 5-A-2R/5-B 백로그 등록 |
@@ -102,8 +102,33 @@
 | 2 | 배포 시 `git status`로 스테이징 확인 필수 |
 | 3 | `firestore.rules` 변경 시 **배포 경로를 확인**한다. `firebase.json`·`.firebaserc`가 커밋되기 전까지는 콘솔 수동 반영, 이후는 `npm run deploy:rules`(⛔사용자 승인 후) |
 | 4 | **문서는 변경 발생 시점에 즉시 갱신** + 날짜 스탬프. 코드·UI·동작·구조·운영 방식이 바뀌면 **같은 작업 안에서** 관련 문서를 고친다. "나중에 한 번에"는 누락을 만든다 (2026-08-07) |
-| 5 | 작업 후 **Notion 작업 일지 기록** (위 "작업 일지" 규칙) |
+| 5 | 작업 후 **Notion 작업 일지 기록** (위 "작업 일지" 규칙). 커밋 시각을 물을 때 **밀린 항목 점검을 함께 출력**한다 — 아래 「커밋 후 점검」 |
 | 6 | `main`에 변경이 생기면 `astro` 브랜치에서 `git merge main` — 매일 브리핑 발행 시 특히 |
+
+### 커밋 후 점검 (2026-08-08)
+
+노션 `날짜` 용으로 커밋 시각을 물을 때 **같은 블록에서 밀린 항목까지 확인**한다.
+핸드오프 갱신·`main`→`astro` 머지·push 는 작업 끝에 붙는 잡일이라 대화가 길어지면 빠진다.
+기억에 의존하지 않도록, 반드시 하는 동작(커밋 시각 조회)에 점검을 얹는다.
+
+```powershell
+git log -1 --date=iso --format="COMMIT   %h %cd"
+"MERGE    main->astro 미반영 " + (git log --oneline astro..main | Measure-Object).Count + "건"
+"PUSH     astro " + (git log --oneline origin/astro..astro | Measure-Object).Count + "건 / main " + (git log --oneline origin/main..main | Measure-Object).Count + "건"
+"HANDOFF  " + (git log -1 --format="%h %cd" --date=iso astro -- HANDOFF.md)
+"LATEST   astro " + (git log -1 --format="%h %cd" --date=iso astro)
+"LATEST   main  " + (git log -1 --format="%h %cd" --date=iso main)
+"LATEST   5b    " + (git log -1 --format="%h %cd" --date=iso 5b-2-emulator) + "  (원격 없음 = 전부 미push)"
+```
+
+| 출력 | 조치 |
+|---|---|
+| `HANDOFF` 시각 < `LATEST` 시각 | 핸드오프가 뒤처짐 → 갱신 후 커밋 |
+| `MERGE` 1건 이상 | `dinol-astro` 에서 `git merge main`. 머지는 그 세션 안에서 끝낸다 |
+| `PUSH` 누적 | push 는 기본 절차에서 제외. ①raw URL 읽기 필요 ②장기 백업 때만 판단 |
+
+⛔ **커밋이 없는 작업(판단·분석·조사)에서는 이게 안 돈다.** 그때는 사용자가 `dinol-status`
+스킬(Claude 설정 > Features 등록)로 부른다. 같은 조회를 온디맨드로 실행한다.
 
 **발행본 결함 수정 순서 (②)** — 이 순서를 지켜야 한다.
 ```
