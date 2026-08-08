@@ -1,0 +1,57 @@
+{
+  "contentId": "20260807-design-001",
+  "date": "2026-08-07",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "designboom",
+    "publishedAt": "2026-08-05"
+  },
+  "url": "https://www.designboom.com/design/modular-glue-free-sneakers-3d-printing-traditional-asian-craftsmanship-udrb-daniyar-uderbekov/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 산업 · 제품",
+    "en": "Design · Industrial · Product"
+  },
+  "title": {
+    "kr": "접착제 없는 모듈러 스니커 'UDRB', 3D 프린팅과 전통 공예 결합",
+    "en": "Modular glue-free sneakers connect 3D printing with traditional Asian craftsmanship"
+  },
+  "summary": {
+    "kr": "알마티의 디자이너 다니야르 우데르베코프가 접착제를 전혀 쓰지 않는 모듈러 스니커 'UDRB'의 개선판을 공개했습니다. 3D 프린팅한 TPU 밑창, 중앙아시아 전통 신발 막시·이치기에서 가져온 가죽 이너 부츠, 로프 기반 결속 구조를 조합했습니다.",
+    "en": "Almaty-based designer Daniyar Uderbekov has updated UDRB, a modular sneaker assembled entirely without adhesives, pairing a 3D printed TPU sole with a leather inner boot drawn from Central Asian Makhsi and Ichigi footwear and a rope-based fastening system."
+  },
+  "points": {
+    "kr": [
+      "3D 프린팅 TPU 밑창·가죽 이너 부츠·로프 결속 3개 부품으로 분리",
+      "접착제를 쓰지 않아 부품별 수리·교체·재활용 가능",
+      "중앙아시아 전통 제화 방식을 순환형 설계의 참조점으로 활용"
+    ],
+    "en": [
+      "Built from three separable parts: 3D printed TPU sole, leather inner boot, rope fastening",
+      "No adhesives, so each part can be repaired, replaced or recycled on its own",
+      "Traditional Central Asian construction used as the reference for a circular design"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "분해를 전제로 한 설계의 구체적인 사례입니다. 재활용을 소재 교체 문제로 다루는 대신, 소재 종류를 줄이고 각 부품이 따로 수명을 다하도록 구조를 짰습니다.",
+    "en": "A clear worked example of designing for disassembly: cutting the material count and letting each part fail independently, instead of treating recyclability as a material-swap problem."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "분해 전제 설계 레퍼런스로 좋음 · 제품 리서치 저장 추천",
+    "en": "Good reference for design-for-disassembly · Save for product research"
+  },
+  "comment": {
+    "kr": "흥미로운 지점은 형태보다 구조입니다. 일반 스니커는 모든 층을 영구 접착제로 붙이기 때문에 수명이 끝난 뒤 재활용이 거의 불가능합니다. UDRB는 설계를 세 개의 부품으로 줄이고, 그 부품들이 물리적으로 서로를 붙잡게 만들어 이 문제를 우회합니다.\n중앙아시아 전통 신발을 참조한 것도 시각적 모티프에 그치지 않습니다. 막시와 이치기는 부품 단위로 수선하며 신도록 만들어진 신발이라, 전통적인 제작 방식과 순환형 설계의 목표가 결과적으로 같은 것을 요구합니다.",
+    "en": "The interesting move is structural rather than aesthetic. Conventional sneakers bond every layer with permanent adhesive, which is why almost none of them can be recycled at end of life. UDRB gets around that by reducing the design to three parts that hold each other in place mechanically.\nThe Central Asian reference is doing real work here too, not just supplying a visual motif. Makhsi and Ichigi were built to be maintained part by part, so the historical construction and the circular goal happen to want the same thing."
+  },
+  "thumbLabel": "모듈러스니커",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

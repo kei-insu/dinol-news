@@ -1,0 +1,57 @@
+{
+  "contentId": "20260807-ai-001",
+  "date": "2026-08-07",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "Google Developers Blog",
+    "publishedAt": "2026-08-05"
+  },
+  "url": "https://blog.google/innovation-and-ai/technology/developers-tools/veo-3-1-gemini-api/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 툴 · 생산성",
+    "en": "AI · Tools · Productivity"
+  },
+  "title": {
+    "kr": "구글, 향상된 영상생성 모델 Veo 3.1 Gemini API로 공개",
+    "en": "Google brings enhanced Veo 3.1 video generation to the Gemini API"
+  },
+  "summary": {
+    "kr": "구글이 향상된 영상 생성 모델 Veo 3.1과 Veo 3.1 Fast를 Gemini API 유료 프리뷰로 공개했습니다. 이미지 기반 영상 생성 품질이 개선되고 오디오·내러티브 제어 기능이 강화되어, 개발자가 크리에이티브 영상 도구를 만들 때 활용할 수 있습니다.",
+    "en": "Google made enhanced Veo 3.1 and Veo 3.1 Fast video-generation models available in paid preview through the Gemini API, adding improved image-to-video output, richer audio and narrative control for developers building creative video tools."
+  },
+  "points": {
+    "kr": [
+      "Veo 3.1·Veo 3.1 Fast 유료 프리뷰 공개",
+      "이미지 기반 영상 생성 품질 개선",
+      "오디오·내러티브 제어 기능 강화"
+    ],
+    "en": [
+      "Veo 3.1 and Veo 3.1 Fast now in paid preview",
+      "Improved image-to-video generation quality",
+      "Enhanced audio and narrative control for creators"
+    ]
+  },
+  "positions": [
+    "motion-designer",
+    "video-designer"
+  ],
+  "designer": {
+    "kr": "모션·영상 디자이너에게 주는 신호는 명확합니다. 프런티어 영상 생성 모델이 데모 단계를 넘어 API로 바로 쓸 수 있는 프로덕션 도구가 되고 있으니, 경쟁자보다 먼저 테스트해볼 가치가 있습니다.",
+    "en": "A direct signal for motion and video designers: frontier video-generation models are moving from demo to API-accessible production tools, worth testing now before competitors build on them."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "영상 툴을 만든다면 이번 주 안에 API를 테스트해볼 것 · 우선순위 높음",
+    "en": "Try the API this week if you build video tools · High priority"
+  },
+  "comment": {
+    "kr": "Veo 3.1이 Gemini API 유료 프리뷰로 넘어간 것은 모델 자체보다 배포 방식이 바뀌었다는 신호로 더 중요합니다. 영상 생성이 하나의 대표 앱에 갇히지 않고, 어떤 팀이든 그 위에 무언가를 쌓을 수 있는 인프라가 되고 있다는 뜻입니다.\n모션·영상, 인터랙티브 제품 경험을 다루는 디자이너라면 다듬어진 소비자용 기능을 기다리기보다 지금 API로 작은 프로토타입을 만들어볼 시점입니다. 얼리 액세스는 마케팅 페이지보다 실제 능력과 한계를 더 빨리 보여주는 경우가 많습니다.",
+    "en": "Veo 3.1's move into paid preview on the Gemini API matters less for the model itself and more for what it signals about distribution. Video generation is no longer confined to a single flagship app, it is becoming infrastructure that any team can build on top of.\nEarly access tends to reveal both the real capabilities and the real limitations faster than marketing pages do, so this is the moment to prototype something small with the API rather than wait for a polished consumer feature."
+  },
+  "thumbLabel": "영상생성",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260807-design-004",
+  "date": "2026-08-07",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-08-03"
+  },
+  "url": "https://www.itsnicethat.com/articles/oio-mattering-mur-mur-product-design-animation-project-030826",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 사운드",
+    "en": "Design · Product · Sound"
+  },
+  "title": {
+    "kr": "오이오의 '뮤어 뮤어', 하나의 생태계를 품은 휴대용 스피커",
+    "en": "Oio's Mur Mur is a portable speaker that holds an entire ecosystem within"
+  },
+  "summary": {
+    "kr": "스튜디오 오이오의 '뮤어 뮤어'는 휴대용 스피커를 하나의 독립된 사물이 아니라 작은 장소처럼 다시 정의합니다. 제품 디자인과 애니메이션을 함께 활용해 이 개념을 풀어냈습니다.",
+    "en": "Studio Oio's Mur Mur reframes the portable speaker as less of a discrete object and more of a small place, an idea explored through both product design and animation."
+  },
+  "points": {
+    "kr": [
+      "스피커를 사물이 아닌 장소로 재정의",
+      "제품 디자인과 애니메이션을 함께 활용한 컨셉 전개",
+      "더 큰 상상 속 생태계 안에 제품을 위치시킴"
+    ],
+    "en": [
+      "Speaker reframed as a place rather than an object",
+      "Concept explored through both product design and animation",
+      "Positions the product within a larger imagined ecosystem"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "제품 자체만큼이나 모션·애니메이션으로 풀어낸 컨셉 스토리가 힘을 가질 수 있다는 걸 보여줍니다. 실험적인 제품 디자인을 발표할 때 참고할 만합니다.",
+    "en": "A reminder that a product's concept story, told through motion or animation, can carry as much weight as the object itself when presenting speculative or experimental product design."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "실험적 제품 컨셉 작업에 영감 · 레퍼런스 저장 추천",
+    "en": "Inspiring for speculative product concepts · Save for reference"
+  },
+  "comment": {
+    "kr": "대부분의 휴대용 스피커 디자인은 여전히 마감과 형태에 기댑니다. 뮤어 뮤어는 대신 사물 주변에 작은 서사 세계를 만드는데, 이는 산업 디테일보다 스토리텔링에 가까운 다른 종류의 디자인 문제입니다.\n컨셉 제품을 제안해야 하는데 사물을 둘러싼 세계관까지 정성껏 설계된 것처럼 보이게 하고 싶다면 참고할 만합니다.",
+    "en": "Most portable speaker design still leans on finish and form. Mur Mur instead builds a small narrative world around the object, which is a different kind of design problem, more storytelling than industrial detailing.\nWorth a look if you are pitching a concept product and need a way to make the surrounding world feel as considered as the object itself."
+  },
+  "thumbLabel": "포터블스피커",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

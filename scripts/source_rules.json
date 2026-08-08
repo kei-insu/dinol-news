@@ -246,5 +246,33 @@
   "서울경제": {
     "region": "국내",
     "group": "서울경제"
+  },
+  "디지털데일리": {
+    "region": "국내",
+    "group": "디지털데일리"
+  },
+  "Stuff South Africa": {
+    "region": "해외",
+    "group": "Stuff South Africa"
+  },
+  "Google Developers Blog": {
+    "region": "해외",
+    "group": "Google Developers Blog"
+  },
+  "designboom": {
+    "region": "해외",
+    "group": "designboom"
+  },
+  "디자인나침반": {
+    "region": "국내",
+    "group": "디자인 나침반"
+  },
+  "MarkTechPost": {
+    "region": "해외",
+    "group": "MarkTechPost"
+  },
+  "ROOT IN NEWS": {
+    "region": "국내",
+    "group": "ROOT IN NEWS"
   }
 }
