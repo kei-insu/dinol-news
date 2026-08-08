@@ -1,6 +1,6 @@
 # HANDOFF — dinol-news
 
-> 갱신: 2026-08-08 / 세션 4
+> 갱신: 2026-08-08 / 세션 5
 
 ## [작업 규칙] — 이 문서를 읽은 세션이 즉시 적용 (5개 고정, 증설 금지)
 
@@ -16,20 +16,18 @@
 
 ## 1. 현재 단계
 
-세션 4는 5-B-2 를 진행하지 않았다. **일일 브리핑 운영과 그 주변 자동화**에 집중했고,
-8/7·8/8 두 회차를 발행한 뒤 발행 절차의 구멍 세 곳을 막았다.
+세션 5는 5-B-2 의 **A-1(execute 모드)을 구현·실증하고 커밋**했다(`78274a1`, `5b-2-emulator`).
+`migrate-likes.mjs` 는 이제 dry-run 과 execute 두 모드를 가진다. 인자를 `--out`(dry-run) /
+`--manifest`(execute) 로 분리해 기존 die 조건을 **하나도 뒤집지 않았다**.
 
-① 루틴이 **실행 당일** 을 브리핑 날짜로 잡아 `index.json` 최신 항목과 충돌하던 문제를
-`routine_instruction.md` §1 을 **실행 시점 +1일** 로 바꿔 해소했다(수동 재실행 보정 포함).
-② `deploy.ps1` 에 `[4/6] validate` 게이트를 넣어 ERROR 브리핑이 커밋 전에 막히게 했다.
-③ 루틴이 §3 소스 목록 밖 매체를 뽑아오는 것을 확인하고 `news_sources.md` 에
-**제외 매체** 섹션과 판정 기준 4항목을 신설했다.
+실증 — Fixture A(20건) passed 후 12건 생성·재조회, Fixture B(23건) blocked 에서 execute 가 중단하고
+실행 후 재조회 23건으로 **영구 생성 0건**. `sourceHead` 를 조작한 manifest 도 `inputHashes` 가 같으면
+execute 되며 최상위 provenance 는 보존된다.
 
-`main` 10커밋 · `astro` 4커밋을 만들었고 **둘 다 push 완료**다. `astro` 는 `main` 을 두 번
-머지해 미머지 0건이며(`astro..main` 빈 출력), 두 번째 머지에서 `claude.md` 충돌 4건을 해소했다.
+그 전에 문서 현행화 2건을 `astro` 에 커밋했다(`630ced7`·`9e67f4b`).
 
-5-B-2 는 세션 3 종료 시점 그대로다 — `migrate-likes.mjs` 는 여전히 dry-run 전용이고,
-**execute·delta·verify 모드 구현(A-1)이 여전히 1순위**다. 착수 조건은 §4 를 그대로 따르면 된다.
+남은 것은 **`--delta`·`--verify` 착수 여부 판단**이다. 둘 다 차단 유지 상태이고,
+C-2 범위(에뮬레이터 실증까지)는 execute 로 충족됐다고 볼 여지가 있다. §4 에 문서 작업이 여러 건 밀려 있다.
 
 ## 2. 확정 사항 — 변경 금지
 
@@ -97,6 +95,12 @@
 - `5b-2-emulator` 는 **push 되지 않았다**(확인됨) — `git ls-remote --heads origin 5b-2-emulator` 빈 출력. 세션 4의 「모름」이 해소됐다. 원격에 없으므로 raw URL 로 읽을 수 없고, 파일 전달은 업로드가 유일한 경로다
 - `claude.md` 현행화 3건 반영 — worktree 4개 구조(「로컬」 행) · 핵심 원칙 4 「즉시 갱신」 강화 · 5-B 수치 214→229. 5-A-2R 행은 `dev-history.md` 반영이 선행돼야 해 §4 에 남긴다
 - 작업 일지 노션 DB 에 **`브랜치` 속성 신설**(단일 선택: `main`·`astro`·`5b-2-emulator`·`없음`). 속성 9개가 됐다. **커밋이 남은 브랜치**를 넣고, 커밋 없는 작업은 `없음`. 배포/관리 세션과 개발 세션이 같은 DB를 쓰므로 구분용이다 — 세션 4 기재(속성 8개)는 그 시점 기준이라 그대로 둔다
+- **인자 이름을 모드별로 분리한다** — `--out`(dry-run, 새 경로) / `--manifest`(execute, 기존 경로). `existsSync(OUT) → die` 의 의미를 뒤집는 대신 인자를 나눠, dry-run 경로를 한 줄도 건드리지 않았다
+- execute 설계 5건 확정 — ① `--emulator` 필수(C-2 를 코드로 강제) ② `batch.create()` (`set` 금지 — 이미 있으면 실패시켜 덮어쓰기를 막는다) ③ 사전검사 `passed` 아니면 쓰기 0건 ④ 부분 실행 후 재실행 불가는 문서화만(`--resume` 미구현) ⑤ legacy 문서 삭제하지 않음
+- **`sourceHead` 는 provenance 이지 무결성 게이트가 아니다** — 불일치를 die 로 막으면 도구를 커밋하는 순간(HEAD 이동) 기존 manifest 로 execute 할 수 없게 된다. 매핑 입력은 `inputHashes` 4종이 전부 고정하므로 그것만 차단하고, HEAD 이동은 경고만 출력한다
+- manifest 최상위는 **dry-run 시점 고정값**(`sourceHead`·`toolHashes`·`deployments`·`deltaRuns`·`skipped`·`blocked`), 실행별 값은 `runs[]` 각 항목(`sourceHead`·`toolHashes`·`emulator`)에 기록한다. 요약 출력도 `manifest sourceHead` / `run sourceHead` 두 줄로 나눈다
+- execute 는 `PRIOR.dryRunSnapshot` 이 아니라 **현재 `R.migrate` 로 쓴다** — 분류를 매 실행 재도출하므로 manifest 의 스냅샷은 기록용이다
+- execute 페이로드는 `{ count }` 만 — 픽스처가 count 만 담고 프런트도 그것만 읽는다
 
 ## 3. 폐기한 접근 — 재제안 금지
 
@@ -112,30 +116,35 @@
 - Fixture A 실행으로 픽스처 적합성까지 판정 → 검증 대상과 테스트 데이터 적합성을 같은 실행에 섞으면 실패 원인이 4가지로 갈려 구분되지 않는다
 - Fixture B의 blocker 3종을 픽스처 3개로 분리 → 분류~사전검사 구간(184~280행)에 조기 중단이 없어 blocker가 누적 수집됨이 코드·실행으로 확인됨. 분리는 실행 3회로 늘 뿐 얻는 게 없다
 
+### 세션 5 추가
+
+- `sourceHead` 불일치를 execute 의 하드 게이트로 두기 → 도구를 커밋하면 HEAD 가 이동해 기존 manifest 로 execute 가 영구 불가해진다. 무결성은 `inputHashes` 가 담당한다
+- `--emulator` 를 빼고 execute 해서 차단을 실증하기 → 안전장치가 실패하면 곧바로 운영에 닿는 테스트다. 코드 확인으로 갈음한다
+- 같은 에뮬레이터에서 execute 를 두 번 돌려 `create()` 충돌을 실증하기 → 2차 execute 는 `targetCollision` 으로 `[5]` 에서 blocked 되어 `create()` 까지 도달하지 못한다. 재실행 차단 테스트이지 API 실증이 아니다
+- 빈 에뮬레이터 headtest 와 Fixture A 재실행을 따로 돌리기 → headtest 는 blocked 로 죽어 `runs[]` 기록을 확인할 수 없다. Fixture A seed + 가짜 `sourceHead` manifest 하나로 합치면 6가지가 한 번에 확인된다
+
 ## 4. 다음 액션
 
-- [ ] **(즉시)** 8/9 브리핑 배포 때 `deploy.ps1` `[4/6]` **실검사 경로**를 확인한다 — ① `대상 1개` + 브리핑 경로 나열 ② validate 출력 ③ `통과 (exit=0)`. 브리핑 파일이 있는데 `브리핑 변경 없음 — 검증 건너뜀` 이 나오면 필터 정규식 `^news/.*/Dinol_news_\d{8}\.html$` 문제다. 현재까지 건너뜀 경로와 하네스 4케이스만 검증됨
-- [ ] **(1순위)** `migrate-likes.mjs` 에 execute·delta·verify 모드 구현 (A-1). dry-run 전용 하드코딩 10개 지점을 모드 분기로 전환 — 특히 `existsSync(OUT)` die(execute는 정반대), `deployments` 초기화 금지(설계 19 무력화), `migrationId` 재사용, `runs[]` append, `sourceHead`·`inputHashes` 비교. 나머지 지점은 코드에서 재도출한다
-  - 착수 방법: `dinol-5b\scripts\migrate-likes.mjs` 를 **업로드**하고, 해시가 `221fc9d0…` 인지 `Get-FileHash` 로 대조
-- [ ] 구현 후 Fixture A/B로 에뮬레이터 쓰기 검증 → 그 시점의 `runtimeMigrationTool` 로 픽스처 2개 갱신 (1순위에 종속)
+- [ ] **(즉시)** 8/9 브리핑 배포 때 `deploy.ps1` `[4/6]` **실검사 경로**를 확인한다 — ① `대상 1개` + 브리핑 경로 나열 ② validate 출력 ③ `통과 (exit=0)`. 브리핑 파일이 있는데 `브리핑 변경 없음 — 검증 건너뜀` 이 나오면 필터 정규식 `^news/.*/Dinol_news_\d{8}\.html$` 문제다
+- [ ] **(판단)** `--delta`·`--verify` 착수 여부 결정 — 둘 다 차단 유지 중이다. C-2 범위(에뮬레이터 실증까지)는 execute 로 충족됐다고 볼 여지가 있어 **5-B-2 종료 선언**도 선택지다. 착수한다면 execute 결과 스키마가 확정된 지금이 적기
 - [ ] `docs/rules/guardrails.md` 에 게이트 원칙 반영 — 미반영 상태. `dinol-astro` 에서 별도 diff·별도 커밋. **`deploy.ps1` 게이트가 실제로 생겼으므로(`0aba576`) 내용을 그에 맞춰 쓴다**
-- [ ] `claude.md` 백로그 2행 정리 — 5-A-2R(19b21d2 완료) · 5-B(229문서/count 421/migrate 222). **표에 새로 쓰지 말고**, 완료된 행을 삭제하고 `dev-history.md` 에 반영한다(§2 노션 정본 원칙)
+- [ ] `claude.md` 백로그 5-A-2R 행 정리 — `19b21d2` 로 완료됐다. **표에 새로 쓰지 말고** 행을 삭제하고 `dev-history.md` 에 반영한다(§2 노션 정본 원칙). 5-B 행 수치는 세션 5에서 229/421/222 로 현행화 완료
 - [ ] ADR 신설 + `dev-history.md`·`issues.md` 판단 근거 이관 (문서 개편 5단계). 착수 시 노션 백로그의 `fortune-handoff.md 미이관 4건` 을 **함께 처리**한다 — 따로 하면 중복 작업
-- [ ] `scripts/inspect-likes.mjs` · `inspect-0802.mjs` 커밋 여부 결정 (`dinol-5b` 에 미추적 유지 중, 세션 4 조회로 재확인)
-- [ ] `5b-2-emulator` → `astro` 병합 시점·방식 결정. 병합 시 코퍼스가 305장이 되므로 새 dry-run 선행 필요
+- [ ] `scripts/inspect-likes.mjs` · `inspect-0802.mjs` 커밋 여부 결정 (`dinol-5b` 에 미추적 유지 중, 세션 5 조회로 재확인)
+- [ ] `5b-2-emulator` → `astro` 병합 시점·방식 결정. 병합 시 코퍼스가 305장이 되므로 새 dry-run 선행 필요. **미push 상태이므로 push 여부도 함께 정한다**
 - [ ] 노션 작업 일지 `날짜` 순서 역전 정정 여부 결정 (§6). 커밋 타임스탬프로 소급 수정할지, 그대로 둘지
-- [ ] `459b216`(HANDOFF 세션 3 재갱신) 노션 작업 일지 미기입 — 이번 세션 갱신 커밋과 함께 처리
+- [ ] `459b216`(HANDOFF 세션 3 재갱신) 노션 작업 일지 미기입 — 세션 5에서도 처리하지 않았다
 
 ## 5. 산출물
 
 | 경로 | 버전 | 상태 |
 |---|---|---|
-| `scripts/migrate-likes.mjs` | 5-B-1 + B-1 게이트 | 커밋됨(e263c90). SHA-256 `221fc9d0…`. execute·delta·verify 미구현 |
+| `scripts/migrate-likes.mjs` | 5-B-1 + B-1 + execute(A-1) | 커밋됨(`78274a1`). SHA-256 `9862c1a8…`. **dry-run · execute 2모드.** `--delta`·`--verify`·`--resume` 미구현(차단 유지) |
 | `scripts/seed-emulator.mjs` | 5-B-2 | 커밋됨(e263c90). 4중 게이트, `{ count }` 만 기록, 빈 컬렉션 fail-fast |
-| `scripts/fixtures/likes-a.json` · `likes-b.json` | 5-B-2 | 커밋됨(e263c90). 20건(passed) / 23건(blocked) |
+| `scripts/fixtures/likes-a.json` · `likes-b.json` | 5-B-2 | 커밋됨(`78274a1`). 20건(passed) / 23건(blocked). `runtimeMigrationTool` = `9862c1a8…` |
 | `.gitattributes` | — | 커밋됨(e263c90). `scripts/migrate-likes.mjs text eol=lf` 한 줄 |
 | 정본 dry-run manifest | 5-B-1 | `%USERPROFILE%\dinol-manifest\5b-manifest-20260802-232639.json`. git 밖. **삭제 금지** |
-| `HANDOFF.md` | 세션 4 | 커밋됨(`57125ab`→`459b216`, astro). `dinol-astro` 루트에 상시 노출. **`astro` 에서만 추적** |
+| `HANDOFF.md` | 세션 5 | 커밋됨(`57125ab`→`459b216`→`955dd73`, astro). `dinol-astro` 루트에 상시 노출. **`astro` 에서만 추적** |
 | `handoff/HANDOFF_v3.0.md` | — | **삭제됨**(`82c88a5`, main). 2026-07-19 이후 미수정, 이관 대상 아님이 확인됨 |
 | `handoff/fortune-handoff.md` | — | `main` 에만 잔존. **삭제 금지** — 미이관 4건 있음(노션 백로그 등록됨) |
 | `scripts/inspect-likes.mjs` · `inspect-0802.mjs` | — | 조사용. `dinol-5b` 에 미추적(`git status` 조회로 확인). 커밋 여부 미정 |
@@ -162,6 +171,9 @@
 - 8/8 브리핑 WARN 1건 수용 — AI 4장이 구독전략·점유율·모델공개·보안협의체로 전부 산업 동향이라 ★4~5 후보가 실제로 없었다. **별점을 올려 WARN 을 지우지 않았다**. AI×디자인 축이 §3 에 있는데 4장 중 0장이었던 것이 근본 원인
 - `%TEMP%\HANDOFF_backup_20260808.md` — 머지 전 백업본. 개행만 다르고 내용은 동일. 삭제해도 무방
 - 노션 백로그 등록 4건 — ① `--resume` 재개 경로 설계(선결: execute 구현·검증) ② 해시 게이트의 작업 트리 개행 의존 제거 ③ 저장소 OneDrive 경로 분리(선결: 5-B-2 완료, 우선순위 낮음) ④ `fortune-handoff.md` 미이관 4건 분해·이관 후 `handoff/` 폐기(선결: ADR 신설 시 함께)
+- **A-1 은 코드 확인됨이고 미실증인 항목이 4건 있다** — ① `--emulator` 없이 execute 불가(위험해서 실증 안 함) ② `create()` 사용(`targetCollision` 이 먼저 걸려 실증 불가) ③ legacy 삭제 없음(삭제 API 0건) ④ blocked 검사가 `db.batch()` 보다 앞. **실행 로그가 아니라 코드가 근거다**
+- 세션 5 커밋 3건 — `astro` 2건(`630ced7` 문서 현행화 · `9e67f4b` 브랜치 속성) / `5b-2-emulator` 1건(`78274a1` execute). **`5b-2-emulator` 는 여전히 미push**
+- `%TEMP%\dinol-5b-manifests\` 임시 manifest 9개(`probe-01`·`fix-a-01`·`fix-b-01`·`exec-a-01`·`exec-b-01`·`exec-b-02`·`head-a-01`·`head-a-fake`·`sum-a-01`) — git 밖. 삭제해도 무방. **정본 manifest(`%USERPROFILE%\dinol-manifest\`)와 혼동하지 말 것**
 
 ---
 
