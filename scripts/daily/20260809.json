@@ -1,0 +1,74 @@
+{
+  "20260809-ai-001": {
+    "category_kr": "AI · 제품 · UX",
+    "category_en": "AI · Product · UX",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "ux-designer"
+    ]
+  },
+  "20260809-ai-002": {
+    "category_kr": "AI · 정책 · 안전",
+    "category_en": "AI · Policy · Safety",
+    "impactScore": 1,
+    "positions": [
+      "design-lead",
+      "design-manager"
+    ]
+  },
+  "20260809-ai-003": {
+    "category_kr": "AI · 로봇 · 하드웨어",
+    "category_en": "AI · Robotics · Hardware",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260809-ai-004": {
+    "category_kr": "AI · 엔터프라이즈 · 보안",
+    "category_en": "AI · Enterprise · Security",
+    "impactScore": 2,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260809-design-001": {
+    "category_kr": "디자인 · 공간 · 리테일",
+    "category_en": "Design · Space · Retail",
+    "impactScore": 3,
+    "positions": [
+      "space-designer",
+      "brand-designer"
+    ]
+  },
+  "20260809-design-002": {
+    "category_kr": "디자인 · UXUI · 툴",
+    "category_en": "Design · UXUI · Tools",
+    "impactScore": 4,
+    "positions": [
+      "ux-designer",
+      "product-designer"
+    ]
+  },
+  "20260809-design-003": {
+    "category_kr": "디자인 · 포토그래피 · 제품",
+    "category_en": "Design · Photography · Product",
+    "impactScore": 3,
+    "positions": [
+      "art-director",
+      "graphic-designer"
+    ]
+  },
+  "20260809-design-004": {
+    "category_kr": "디자인 · 산업디자인 · 제품",
+    "category_en": "Design · Industrial Design · Product",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  }
+}

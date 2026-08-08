@@ -1,0 +1,57 @@
+{
+  "contentId": "20260809-design-003",
+  "date": "2026-08-09",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-08-04"
+  },
+  "url": "https://www.itsnicethat.com/articles/sam-nicklin-chrome-and-colour-alessi-photography-project-040826",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 포토그래피 · 제품",
+    "en": "Design · Photography · Product"
+  },
+  "title": {
+    "kr": "인카메라 기법으로 완성한 알레시의 크롬빛 정물 사진",
+    "en": "How in-camera tricks, colourful paper and patience brought Sam Nicklin's reflective photographs for Alessi to life"
+  },
+  "summary": {
+    "kr": "포토그래퍼 샘 니클린이 디지털 후반작업 없이, 카메라 안에서의 트릭과 색지, 인내심만으로 홈웨어 브랜드 알레시를 위한 크롬 같은 반사 정물 사진을 완성한 과정을 설명한다.",
+    "en": "Photographer Sam Nicklin explains how in-camera tricks, coloured paper and patience brought his reflective, chrome-like still-life photographs for homeware brand Alessi to life, without relying on digital post-production."
+  },
+  "points": {
+    "kr": [
+      "디지털 리터칭 대신 인카메라 기법으로 반사 효과를 만드는 방식",
+      "색지와 조명 배치로 크롬 질감의 색감을 직접 연출",
+      "브랜드 제품 촬영에 적용한 아날로그적 접근"
+    ],
+    "en": [
+      "Building reflections with in-camera technique instead of digital retouching",
+      "Using coloured paper and light placement to shape the chrome-like colour",
+      "An analogue approach applied to brand product photography"
+    ]
+  },
+  "positions": [
+    "art-director",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "요즘은 '저 느낌을 어떻게 냈을까'에 대한 기본 답이 대부분 후반작업이기 때문에, 인카메라 기법을 단계별로 설명해주는 콘텐츠는 제품 비주얼을 촬영하는 사람에게 실질적으로 쓸모 있는 참고가 된다.",
+    "en": "Post-production is the default answer to 'how did they get that look' today, so an in-camera technique explained step by step is genuinely useful reference for anyone shooting product visuals."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "제품·브랜드 촬영을 직접 다루는 그래픽·아트 디렉터에게 추천",
+    "en": "Worth saving for graphic and art directors who shoot their own brand product photography"
+  },
+  "comment": {
+    "kr": "이 아티클이 저장해둘 만한 이유는, 완성된 이미지만 보여주는 게 아니라 기법 자체를 설명해준다는 점이다. 요즘은 포토샵으로 해결할 법한 효과를, 색지와 조명 배치만으로 만들어낸 과정을 보여준다.\n예산이 적거나 후반작업 지원이 충분하지 않은 환경에서 제품 사진을 찍어야 하는 사람이라면, 인카메라 문제 해결 능력이 여전히 유효한, 그리고 연습할 가치가 있는 기술이라는 사실을 다시 확인시켜준다.",
+    "en": "What makes this piece worth saving is that it walks through technique rather than just showing a finished image. Coloured paper and careful light placement doing the work that a lot of teams would now default to solving in Photoshop.\nFor anyone shooting product photography on a budget, or without much post-production support, this is a reminder that in-camera problem solving is still a real skill worth practising, not a relic."
+  },
+  "thumbLabel": "포토",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260809-ai-004",
+  "date": "2026-08-09",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Anthropic",
+    "publishedAt": "2026-08-05"
+  },
+  "url": "https://claude.com/blog/claude-enterprise-inference-hooks",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 엔터프라이즈 · 보안",
+    "en": "AI · Enterprise · Security"
+  },
+  "title": {
+    "kr": "클로드 엔터프라이즈에 실시간 데이터 유출 방지 기능 추가",
+    "en": "Inference hooks: inline data loss prevention for Claude Enterprise"
+  },
+  "summary": {
+    "kr": "안트로픽이 클로드 엔터프라이즈용 베타 기능 '추론 훅(inference hooks)'을 도입했다. 모든 프롬프트가 모델에 도달하기 전 조직 자체 보안 서버를 거쳐 허용·차단 판정을 받는 방식이다.",
+    "en": "Anthropic introduced inference hooks, a beta feature for Claude Enterprise that routes every prompt through an organization's own security server for an allow-or-deny verdict before the model responds."
+  },
+  "points": {
+    "kr": [
+      "추론 전 모든 프롬프트가 조직의 보안 서버를 거침",
+      "가장 흔한 활용은 실시간 데이터 유출 방지(DLP)",
+      "실시간 대화 기록 보관, 텔레메트리, 커스텀 정책 엔진도 지원"
+    ],
+    "en": [
+      "Routes every prompt through an org's own security server before inference",
+      "Most common use case is inline data loss prevention (DLP)",
+      "Also supports transcript archival, telemetry and custom policy engines"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "클라이언트나 사용자 데이터를 다루는 AI 워크플로를 쓰는 팀이라면, 이런 실시간 게이트키핑 기능이 엔터프라이즈 디자인 도구의 기본 요건이 될 가능성이 크다.",
+    "en": "If your team handles client or user data inside AI workflows, this kind of inline gatekeeping is likely to become table stakes for enterprise design tooling."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "엔터프라이즈 환경에서 클로드 도입을 검토하는 팀에게 참고용",
+    "en": "Worth noting for teams evaluating Claude for enterprise design workflows"
+  },
+  "comment": {
+    "kr": "추론 훅은 작지만 시사점이 큰 기능이다. 디자인·프로덕트 팀이 AI 어시스턴트에 점점 더 실제 업무를 맡기게 되면서, 응답 전 실시간으로 개입하는 제어 기능은 컴플라이언스 체크박스를 넘어 실제 제품 요구사항이 되고 있다.\n가장 흔한 활용은 데이터 유출 방지(DLP)지만, 같은 메커니즘으로 사용 기록을 남기거나 모델 허용 목록을 강제할 수도 있다. 한 조직 안에서 여러 팀이 같은 어시스턴트를 서로 다른 목적으로 쓰게 될수록 이런 장치의 중요성은 커진다.",
+    "en": "Inference hooks are a small but telling feature: as design and product teams push more real work through AI assistants, the request for inline, pre-response controls stops being a compliance checkbox and starts being a real product requirement.\nThe most common deployment is DLP, but the same mechanism can log usage or enforce model allowlists, which matters once more than one team inside an org is using the same assistant for different kinds of work."
+  },
+  "thumbLabel": "데이터보안",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

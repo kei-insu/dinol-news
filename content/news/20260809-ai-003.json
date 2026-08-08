@@ -1,0 +1,57 @@
+{
+  "contentId": "20260809-ai-003",
+  "date": "2026-08-09",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "Stuff South Africa",
+    "publishedAt": "2026-08-05"
+  },
+  "url": "https://stuff.co.za/2026/08/05/byds-xiao-di-humanoid-robot-arrives-this-month-according-to-company-teaser/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 로봇 · 하드웨어",
+    "en": "AI · Robotics · Hardware"
+  },
+  "title": {
+    "kr": "BYD, 휴머노이드 로봇 '샤오디' 8월 매장에 배치한다",
+    "en": "BYD's Xiao Di humanoid robot arrives this month, according to company teaser"
+  },
+  "summary": {
+    "kr": "BYD가 첫 휴머노이드 로봇 '샤오디(Xiao Di)'를 이달 디 스페이스 체험관에 배치한다고 확인했다. 콘셉트가 아닌 실제 작동하는 프로토타입으로, 고객을 맞이하고 차량을 시연하는 역할을 맡는다.",
+    "en": "BYD confirmed its first humanoid robot, Xiao Di, will debut this month at its Di Space experience centres as a working prototype that greets customers and demonstrates cars, not just a concept model."
+  },
+  "points": {
+    "kr": [
+      "키 1.61m, 무게 58.5kg, 전신 31개·손 7개의 자유도",
+      "중국 방언 6종·외국어 6종 실시간 양방향 통역 지원",
+      "매장당 2~3대를 배치해 고객 응대와 차량 설명 역할 수행"
+    ],
+    "en": [
+      "Stands 1.61m and weighs 58.5kg, with 31 degrees of freedom and 7 per hand",
+      "Real-time two-way translation across six Chinese dialects and six foreign languages",
+      "BYD plans two to three units per store to greet customers and explain cars"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "UI 작업보다는 산업·제품 디자인에 가까운 사례지만, 서비스 로봇에 고정된 체형과 방언까지 인식하는 음성 인터랙션, 그리고 '모든 걸 다 하지 않고 응대라는 한 가지 역할'을 명확히 부여한 결정은 제품 디자인 관점에서 참고할 만하다.",
+    "en": "This sits closer to industrial and product design than UI work, but giving a service robot a fixed height, dialect-aware voice interaction and one clearly defined job (greeting, not everything) is a product decision worth studying."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "서비스 로봇의 폼팩터를 주시하는 제품·산업 디자이너에게 참고용",
+    "en": "A reference point for product and industrial designers tracking service-robot form factors"
+  },
+  "comment": {
+    "kr": "이 소식에서 주목할 부분은 AI 기술 자체가 아니라 역할을 한정한 방식이다. BYD는 모든 걸 다 하는 로봇을 만들려 하지 않았다. 응대·통역·시연이라는 하나의 역할을 정하고, 그에 맞춰 체형과 기능을 설계했다.\n제품·산업 디자이너에게는 스펙보다 이 부분이 더 옮겨올 만한 교훈이다. 모든 용도를 커버하려는 범용 제품보다, 역할이 명확하게 좁혀진 물리적 제품이 더 설득력을 갖는 경우가 많다.",
+    "en": "What's notable here isn't the AI underneath but the scoping. BYD didn't try to build a robot that does everything; it built one job (greet, translate, demonstrate) and matched the body to that job.\nFor product and industrial designers, that's the more transferable lesson than the specs. A tightly scoped physical product with a clear single interaction beats a general-purpose one that tries to cover every use case."
+  },
+  "thumbLabel": "로봇매장",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}
