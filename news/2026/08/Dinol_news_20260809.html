@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 09</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 9, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://zdnet.co.kr/view/?no=20260807084500" target="_blank"
+       data-category="AI · 제품 · UX"
+       data-position="product-designer|ux-designer"
+       data-summary="구글이 지도 서비스 '애스크맵스(Ask Maps)'에 에이전트 기능을 대폭 확대해, 장소 검색을 넘어 음식 주문과 호텔 예약까지 대화형으로 처리할 수 있도록 진화시켰다."
+       data-points="장소를 찾는 데 그치지 않고 메뉴를 담거나 예약을 비교해주는 에이전트 기능|이용자의 지메일 등 개인 일정에 맞춰 답하는 '퍼스널 인텔리전스' 적용|미국·인도에 이어 150개 이상 국가·지역으로 서비스 확대"
+       data-designer="지도 앱이 '찾기'에서 '처리하기'로 넘어가는 흐름은 대화형 에이전트 UX를 설계할 때 참고할 좋은 레퍼런스다. 결과 리스트를 보여주는 대신 완료된 액션을 보여주는 인터페이스가 표준이 되고 있다."
+       data-impact-score="4"
+       data-recommend="에이전트형 제품을 기획하는 UX·프로덕트 디자이너에게 추천"
+       data-comment="애스크맵스의 확장은 단순한 지도 업데이트가 아니라, 대화형 에이전트가 실제 트랜잭션(주문, 예약)을 대행하는 시대의 UX 표준을 보여준다.
+특히 퍼스널 인텔리전스가 지메일 등 개인 데이터와 연동되는 방식은, 프로덕트 디자이너들이 '개인화된 에이전트' 경험을 설계할 때 참고할 만한 사례다.
+다만 개인정보 연동 범위가 넓어질수록 신뢰와 투명성을 어떻게 설계에 반영할지에 대한 고민도 함께 커진다는 점을 염두에 둘 필요가 있다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">지도앱</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 08. 07</div>
+        <div class="card-title">구글맵, 음식 주문·호텔 예약까지 연결…'AI 비서'로 진화</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.mt.co.kr/world/2026/08/08/2026080809341340805" target="_blank"
+       data-category="AI · 정책 · 안전"
+       data-position="design-lead|design-manager"
+       data-summary="오픈AI가 차세대 모델 '아스트라(Astra)'가 자체 안전 프레임워크상 '중대(Critical)' 수준의 사이버 보안 역량에 도달했을 가능성을 배제할 수 없다고 판단해 일부 개발·시험을 일시 중단했다."
+       data-points="사람 개입 없이 보안 취약점을 찾아 공격에 활용할 수 있는 역량 우려|출시를 서두르기보다 보안 통제 강화를 택한 오픈AI의 결정|자체 안전 프레임워크의 '중대' 등급이 실제로 적용된 사례"
+       data-designer="디자인 실무와 직접 연결되는 소식은 아니지만, 프런티어 모델의 출시 속도가 안전 검증 때문에 늦춰질 수 있다는 신호는 AI 기능을 로드맵에 올려둔 팀이라면 참고할 필요가 있다."
+       data-impact-score="1"
+       data-recommend="AI 안전 이슈를 주시하는 실무자를 위한 배경 참고용"
+       data-comment="오픈AI의 이번 결정은 '더 강력한 모델을 더 빨리'라는 업계 관성에서 벗어난 예외적인 사례로 꼽힌다. 안전 프레임워크가 실제로 출시를 늦추는 근거로 작동한 최초 사례이기도 하다.
+디자이너에게 직접적인 실무 인사이트를 주는 소식은 아니지만, 앞으로 자사 제품에 프런티어 모델을 연동하는 팀이라면 '보안 검증으로 인한 지연' 가능성을 로드맵의 변수로 고려해두는 편이 안전하다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">개발중단</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">머니투데이 · 2026. 08. 08</div>
+        <div class="card-title">"너무 똑똑해서 위험하다"…오픈AI, 차세대 모델 '아스트라' 개발 중단</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://stuff.co.za/2026/08/05/byds-xiao-di-humanoid-robot-arrives-this-month-according-to-company-teaser/" target="_blank"
+       data-category="AI · 로봇 · 하드웨어" data-category-en="AI · Robotics · Hardware"
+       data-position="industrial-designer|product-designer"
+       data-summary="BYD confirmed its first humanoid robot, Xiao Di, will debut this month at its Di Space experience centres as a working prototype that greets customers and demonstrates cars, not just a concept model." data-summary-kr="BYD가 첫 휴머노이드 로봇 '샤오디(Xiao Di)'를 이달 디 스페이스 체험관에 배치한다고 확인했다. 콘셉트가 아닌 실제 작동하는 프로토타입으로, 고객을 맞이하고 차량을 시연하는 역할을 맡는다."
+       data-points="Stands 1.61m and weighs 58.5kg, with 31 degrees of freedom and 7 per hand|Real-time two-way translation across six Chinese dialects and six foreign languages|BYD plans two to three units per store to greet customers and explain cars" data-points-kr="키 1.61m, 무게 58.5kg, 전신 31개·손 7개의 자유도|중국 방언 6종·외국어 6종 실시간 양방향 통역 지원|매장당 2~3대를 배치해 고객 응대와 차량 설명 역할 수행"
+       data-designer="This sits closer to industrial and product design than UI work, but giving a service robot a fixed height, dialect-aware voice interaction and one clearly defined job (greeting, not everything) is a product decision worth studying." data-designer-kr="UI 작업보다는 산업·제품 디자인에 가까운 사례지만, 서비스 로봇에 고정된 체형과 방언까지 인식하는 음성 인터랙션, 그리고 '모든 걸 다 하지 않고 응대라는 한 가지 역할'을 명확히 부여한 결정은 제품 디자인 관점에서 참고할 만하다."
+       data-impact-score="2"
+       data-recommend="A reference point for product and industrial designers tracking service-robot form factors" data-recommend-kr="서비스 로봇의 폼팩터를 주시하는 제품·산업 디자이너에게 참고용"
+       data-comment="What's notable here isn't the AI underneath but the scoping. BYD didn't try to build a robot that does everything; it built one job (greet, translate, demonstrate) and matched the body to that job.
+For product and industrial designers, that's the more transferable lesson than the specs. A tightly scoped physical product with a clear single interaction beats a general-purpose one that tries to cover every use case." data-comment-kr="이 소식에서 주목할 부분은 AI 기술 자체가 아니라 역할을 한정한 방식이다. BYD는 모든 걸 다 하는 로봇을 만들려 하지 않았다. 응대·통역·시연이라는 하나의 역할을 정하고, 그에 맞춰 체형과 기능을 설계했다.
+제품·산업 디자이너에게는 스펙보다 이 부분이 더 옮겨올 만한 교훈이다. 모든 용도를 커버하려는 범용 제품보다, 역할이 명확하게 좁혀진 물리적 제품이 더 설득력을 갖는 경우가 많다."
+       data-title-en="BYD's Xiao Di humanoid robot arrives this month, according to company teaser">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">로봇매장</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Stuff South Africa · 2026. 08. 05</div>
+        <div class="card-title">BYD, 휴머노이드 로봇 '샤오디' 8월 매장에 배치한다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://claude.com/blog/claude-enterprise-inference-hooks" target="_blank"
+       data-category="AI · 엔터프라이즈 · 보안" data-category-en="AI · Enterprise · Security"
+       data-position="product-designer|design-lead"
+       data-summary="Anthropic introduced inference hooks, a beta feature for Claude Enterprise that routes every prompt through an organization's own security server for an allow-or-deny verdict before the model responds." data-summary-kr="안트로픽이 클로드 엔터프라이즈용 베타 기능 '추론 훅(inference hooks)'을 도입했다. 모든 프롬프트가 모델에 도달하기 전 조직 자체 보안 서버를 거쳐 허용·차단 판정을 받는 방식이다."
+       data-points="Routes every prompt through an org's own security server before inference|Most common use case is inline data loss prevention (DLP)|Also supports transcript archival, telemetry and custom policy engines" data-points-kr="추론 전 모든 프롬프트가 조직의 보안 서버를 거침|가장 흔한 활용은 실시간 데이터 유출 방지(DLP)|실시간 대화 기록 보관, 텔레메트리, 커스텀 정책 엔진도 지원"
+       data-designer="If your team handles client or user data inside AI workflows, this kind of inline gatekeeping is likely to become table stakes for enterprise design tooling." data-designer-kr="클라이언트나 사용자 데이터를 다루는 AI 워크플로를 쓰는 팀이라면, 이런 실시간 게이트키핑 기능이 엔터프라이즈 디자인 도구의 기본 요건이 될 가능성이 크다."
+       data-impact-score="2"
+       data-recommend="Worth noting for teams evaluating Claude for enterprise design workflows" data-recommend-kr="엔터프라이즈 환경에서 클로드 도입을 검토하는 팀에게 참고용"
+       data-comment="Inference hooks are a small but telling feature: as design and product teams push more real work through AI assistants, the request for inline, pre-response controls stops being a compliance checkbox and starts being a real product requirement.
+The most common deployment is DLP, but the same mechanism can log usage or enforce model allowlists, which matters once more than one team inside an org is using the same assistant for different kinds of work." data-comment-kr="추론 훅은 작지만 시사점이 큰 기능이다. 디자인·프로덕트 팀이 AI 어시스턴트에 점점 더 실제 업무를 맡기게 되면서, 응답 전 실시간으로 개입하는 제어 기능은 컴플라이언스 체크박스를 넘어 실제 제품 요구사항이 되고 있다.
+가장 흔한 활용은 데이터 유출 방지(DLP)지만, 같은 메커니즘으로 사용 기록을 남기거나 모델 허용 목록을 강제할 수도 있다. 한 조직 안에서 여러 팀이 같은 어시스턴트를 서로 다른 목적으로 쓰게 될수록 이런 장치의 중요성은 커진다."
+       data-title-en="Inference hooks: inline data loss prevention for Claude Enterprise">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">데이터보안</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Anthropic · 2026. 08. 05</div>
+        <div class="card-title">클로드 엔터프라이즈에 실시간 데이터 유출 방지 기능 추가</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://heypop.kr/n/117977/" target="_blank"
+       data-category="디자인 · 공간 · 리테일"
+       data-position="space-designer|brand-designer"
+       data-summary="신세계백화점 강남점이 프라다 뷰티의 국내 1호 부티크를 유치한다. 8월 20일 정규 매장 오픈에 앞서 8월 9일부터 25일까지 1층 오픈스테이지에서 팝업스토어를 먼저 운영한다."
+       data-points="프라다 뷰티의 컬러·스킨·향수 라인을 모두 체험할 수 있는 공간 구성|정규 매장 오픈 전 팝업으로 브랜드 경험을 먼저 예열시키는 리테일 전략|신세계 강남점의 코스메틱 카테고리 강화 움직임"
+       data-designer="정규 매장을 열기 전에 팝업으로 먼저 브랜드 경험을 예열시키는 방식은, 공간·리테일 디자이너가 오프라인 브랜드 론칭 시퀀스를 설계할 때 참고할 좋은 사례다."
+       data-impact-score="3"
+       data-recommend="리테일·공간 디자이너, 브랜드 론칭 캠페인 담당자에게 추천"
+       data-comment="정규 매장 오픈보다 2주 이상 앞서 팝업을 먼저 여는 구성은, 브랜드 경험을 한 번에 터뜨리는 대신 단계적으로 쌓아가는 최근 리테일 시퀀스를 잘 보여준다.
+1층 오픈스테이지라는 위치 선정도 눈에 띈다. 백화점 초입에서 컬러·스킨·향수 라인을 모두 체험하게 하는 구성은, 정규 매장보다 훨씬 낮은 진입장벽으로 브랜드를 처음 만나게 하려는 의도로 보인다.
+공간·리테일 디자이너라면 팝업과 정규 매장 사이의 '예열 기간'을 어떤 동선과 체험으로 채우는지 눈여겨볼 만하다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">뷰티팝업</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">헤이팝 · 2026. 08. 08</div>
+        <div class="card-title">프라다 뷰티, 신세계 강남에 국내 첫 매장…오픈 전 팝업으로 예열</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.ddaily.co.kr/page/view/2026071417542095488" target="_blank"
+       data-category="디자인 · UXUI · 툴"
+       data-position="ux-designer|product-designer"
+       data-summary="AI 디자인 앱은 쏟아지지만 실제로 쓰는 도구는 그대로라는 진단 속에, 피그마가 'AI가 만든 평균적인 결과물에 안주해서는 안 된다'는 메시지를 내놨다."
+       data-points="AI 모델은 데이터 분포를 학습해 대체로 익숙한 '평균적' 결과물을 만든다는 진단|평균에 머물지 않고 경계를 넓히는 창작자에게 오히려 기회가 커진다는 관점|AI 앱은 늘어나는데 실제 사용 도구는 크게 안 바뀐다는 시장 현실 지적"
+       data-designer="AI 도구가 늘어날수록 '평균적으로 괜찮은' 결과물은 쉽게 나오지만, 그 평균을 벗어나는 선택을 하는 것이 디자이너의 값어치가 되는 시대라는 진단은 실무자가 스스로의 역할을 재정의할 때 참고할 만하다."
+       data-impact-score="4"
+       data-recommend="AI 시대에 자신의 역할을 재정의하려는 UX·프로덕트 디자이너에게 추천"
+       data-comment="AI 모델이 데이터 분포를 학습하는 한 결과물이 평균으로 수렴하는 건 구조적인 문제라는 진단은 새롭지 않지만, 이걸 피그마가 직접 이야기한다는 점이 흥미롭다. 도구를 만드는 회사가 '우리 도구로 만든 평균적인 결과물에 안주하지 말라'고 말하는 셈이다.
+디자이너 입장에서는 이 진단을 실무 기준으로 바꿔볼 수 있다. AI가 1초 만에 만들어주는 시안이 '괜찮은 평균'이라면, 내가 더할 가치는 그 평균을 벗어나는 지점에 있다는 뜻이다.
+결국 도구가 늘어나는 것과 실제로 쓰는 도구가 바뀌는 것은 다른 이야기라는 지적도 눈여겨볼 만하다. 새 AI 앱이 쏟아져도 워크플로우 자체를 바꾸려면 훨씬 큰 전환비용이 필요하다는 뜻이다.">
+      <div class="thumb g-olive">
+        <div class="noise"></div>
+        <span class="thumb-label">평균의함정</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디지털데일리 · 2026. 07. 15</div>
+        <div class="card-title">"AI 앱은 쏟아지는데 쓰는 앱은 그대로"…피그마 "AI가 만든 평균에 안주해선 안 돼"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/sam-nicklin-chrome-and-colour-alessi-photography-project-040826" target="_blank"
+       data-category="디자인 · 포토그래피 · 제품" data-category-en="Design · Photography · Product"
+       data-position="art-director|graphic-designer"
+       data-summary="Photographer Sam Nicklin explains how in-camera tricks, coloured paper and patience brought his reflective, chrome-like still-life photographs for homeware brand Alessi to life, without relying on digital post-production." data-summary-kr="포토그래퍼 샘 니클린이 디지털 후반작업 없이, 카메라 안에서의 트릭과 색지, 인내심만으로 홈웨어 브랜드 알레시를 위한 크롬 같은 반사 정물 사진을 완성한 과정을 설명한다."
+       data-points="Building reflections with in-camera technique instead of digital retouching|Using coloured paper and light placement to shape the chrome-like colour|An analogue approach applied to brand product photography" data-points-kr="디지털 리터칭 대신 인카메라 기법으로 반사 효과를 만드는 방식|색지와 조명 배치로 크롬 질감의 색감을 직접 연출|브랜드 제품 촬영에 적용한 아날로그적 접근"
+       data-designer="Post-production is the default answer to 'how did they get that look' today, so an in-camera technique explained step by step is genuinely useful reference for anyone shooting product visuals." data-designer-kr="요즘은 '저 느낌을 어떻게 냈을까'에 대한 기본 답이 대부분 후반작업이기 때문에, 인카메라 기법을 단계별로 설명해주는 콘텐츠는 제품 비주얼을 촬영하는 사람에게 실질적으로 쓸모 있는 참고가 된다."
+       data-impact-score="3"
+       data-recommend="Worth saving for graphic and art directors who shoot their own brand product photography" data-recommend-kr="제품·브랜드 촬영을 직접 다루는 그래픽·아트 디렉터에게 추천"
+       data-comment="What makes this piece worth saving is that it walks through technique rather than just showing a finished image. Coloured paper and careful light placement doing the work that a lot of teams would now default to solving in Photoshop.
+For anyone shooting product photography on a budget, or without much post-production support, this is a reminder that in-camera problem solving is still a real skill worth practising, not a relic." data-comment-kr="이 아티클이 저장해둘 만한 이유는, 완성된 이미지만 보여주는 게 아니라 기법 자체를 설명해준다는 점이다. 요즘은 포토샵으로 해결할 법한 효과를, 색지와 조명 배치만으로 만들어낸 과정을 보여준다.
+예산이 적거나 후반작업 지원이 충분하지 않은 환경에서 제품 사진을 찍어야 하는 사람이라면, 인카메라 문제 해결 능력이 여전히 유효한, 그리고 연습할 가치가 있는 기술이라는 사실을 다시 확인시켜준다."
+       data-title-en="How in-camera tricks, colourful paper and patience brought Sam Nicklin's reflective photographs for Alessi to life">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">포토</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 08. 04</div>
+        <div class="card-title">인카메라 기법으로 완성한 알레시의 크롬빛 정물 사진</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/08/06/the-33-box-that-locks-your-phone-and-judges-you-for-opening-it-early/" target="_blank"
+       data-category="디자인 · 산업디자인 · 제품" data-category-en="Design · Industrial Design · Product"
+       data-position="industrial-designer|product-designer"
+       data-summary="Digitox is a roughly $33 phone-locking box made of ABS plastic with a polycarbonate lid, treating phone overuse as a custody problem you hand over to a timer box that simply won't negotiate." data-summary-kr="디지톡스는 ABS 플라스틱과 폴리카보네이트 뚜껑으로 만든 약 33달러짜리 폰 잠금 상자로, 스마트폰 과의존을 '타이머가 협상하지 않는 상자에 맡기는' 방식으로 해결한다."
+       data-points="A low-cost hardware fix that runs on three AAA batteries, no subscription needed|Comes in white, blue and pink, and won a category award at the 2026 Japan Stationery Awards|Chooses a physical lock over another digital-detox app" data-points-kr="구독 없이 AAA 배터리 3개로 작동하는 저비용 하드웨어 해법|화이트·블루·핑크 3색, 2026 일본 문구대상 부문상 수상|디지털 디톡스 앱 대신 물리적 잠금장치를 택한 접근"
+       data-designer="It's a small reminder that not every behaviour problem needs a software solution. A dumb, physical constraint can be more effective than another app with a streak counter." data-designer-kr="모든 행동 문제를 소프트웨어로 풀어야 하는 건 아니라는 걸 다시 보여주는 사례다. 단순한 물리적 제약이, 스트릭 카운터가 달린 또 다른 앱보다 더 효과적일 수 있다."
+       data-impact-score="2"
+       data-recommend="A light reference point for anyone designing digital-wellbeing hardware or products" data-recommend-kr="디지털 웰빙 관련 하드웨어·제품 기획자에게 가볍게 참고"
+       data-comment="The interesting part isn't the box itself, it's the framing: overuse as a custody problem, solved by handing custody to something that can't be argued with. That's a cleaner mental model than most screen-time apps manage.
+At roughly the price of a single month of most productivity subscriptions, with no ongoing cost, it's also a useful data point for anyone pricing a physical accessory against a recurring software fee." data-comment-kr="이 제품에서 흥미로운 부분은 상자 자체가 아니라 그 프레이밍이다. 과사용을 '보호자에게 맡기는 문제'로 정의하고, 그 보호자를 협상 불가능한 사물로 설정한 방식은 대부분의 스크린타임 앱보다 더 명료한 멘탈모델이다.
+대부분의 생산성 구독 서비스 한 달치 정도의 가격으로, 이후 추가 비용 없이 작동한다는 점도, 반복 결제형 소프트웨어와 물리적 액세서리의 가격을 비교할 때 참고할 만한 데이터 포인트다."
+       data-title-en="The $33 Box That Locks Your Phone and Judges You for Opening It Early">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">잠금박스</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 08. 06</div>
+        <div class="card-title">33달러짜리 폰 잠금 상자, 일찍 열면 '판단'까지 내린다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
