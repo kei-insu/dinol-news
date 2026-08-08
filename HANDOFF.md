@@ -27,7 +27,13 @@ execute 되며 최상위 provenance 는 보존된다.
 그 전에 문서 현행화 2건을 `astro` 에 커밋했다(`630ced7`·`9e67f4b`).
 
 **5-B-2 는 이로써 종료한다.** `--delta`·`--verify` 는 차단 유지한 채 Astro 전환 시점 항목으로 옮겼다(§2).
-다음은 §4 의 문서 작업과 `5b-2-emulator` → `astro` 병합·push 판단이다.
+
+이어서 문서 작업 3건을 `astro` 에 커밋했다 — `guardrails.md` 에 `deploy.ps1` validate 게이트 원칙 반영(`8e02eaf`),
+`claude.md` 에 **「커밋 후 점검」 규칙 신설**(`bc93c2b`), 그 짝인 `dinol-status` 스킬 작성(레포 밖·Claude 설정 등록).
+누락 방지 방식을 규칙 추가가 아니라 **반드시 하는 동작에 점검을 얹는 구조**로 바꿨고(§2), 첫 실행에서
+핸드오프 32분 뒤처짐을 즉시 검출했다.
+
+남은 것은 §4 의 문서 작업 3건과 `5b-2-emulator` → `astro` 병합·push 판단이다.
 
 ## 2. 확정 사항 — 변경 금지
 
@@ -101,6 +107,10 @@ execute 되며 최상위 provenance 는 보존된다.
 - manifest 최상위는 **dry-run 시점 고정값**(`sourceHead`·`toolHashes`·`deployments`·`deltaRuns`·`skipped`·`blocked`), 실행별 값은 `runs[]` 각 항목(`sourceHead`·`toolHashes`·`emulator`)에 기록한다. 요약 출력도 `manifest sourceHead` / `run sourceHead` 두 줄로 나눈다
 - execute 는 `PRIOR.dryRunSnapshot` 이 아니라 **현재 `R.migrate` 로 쓴다** — 분류를 매 실행 재도출하므로 manifest 의 스냅샷은 기록용이다
 - execute 페이로드는 `{ count }` 만 — 픽스처가 count 만 담고 프런트도 그것만 읽는다
+- **누락 방지는 규칙을 늘려서 하지 않는다 — 반드시 하는 동작에 점검을 얹는다**(`claude.md` 「커밋 후 점검」). 노션 `날짜` 용 커밋 시각 조회는 커밋마다 빠짐없이 하므로, 그 블록에 `MERGE`·`PUSH`·`HANDOFF`·`LATEST` 확인을 붙였다. 작업 규칙 4·핵심 원칙 4·6 이 이미 있었는데도 세션 3에서 누락이 났던 이유는 규칙 부재가 아니라 기억 의존이었다
+- 커밋이 없는 작업(판단·분석·조사)은 위 점검이 돌지 않는다 → **`dinol-status` 스킬**로 메운다. 사용자가 "상태 점검" 등으로 부르면 같은 조회를 온디맨드 실행한다
+- **`dinol-status` 스킬은 레포 밖에 있다** — Claude 설정 > Features 에 zip 으로 등록하며 사용자 개인 단위다. 레포를 뒤져도 없다. 노션 `## 인프라` 에 등록 사실과 배경을 기록해 뒀다
+- **스킬 본문에는 프로젝트 이력을 넣지 않는다** — 스킬이 트리거되면 SKILL.md 본문 전체가 컨텍스트에 들어간다(공식 권장 5k 토큰 미만). 절차·판정·예시만 남기고 "언제 무엇이 누락됐다" 류 서술은 `HANDOFF.md`·노션이 자리다. 구조는 공식 권장대로 `# 제목` → `## Instructions` → `## Examples`
 - **5-B-2 는 종료한다** — C-2 가 정한 범위(에뮬레이터 실증까지)를 execute 실증으로 충족했다. `--delta`·`--verify` 는 **Astro 전환 시점 항목으로 이동**한다. 설계 19 가 `deployments.frontend`/`.rules` 없으면 final delta 를 차단하는데 그 배포 자체가 Astro 전환 시점으로 옮겨져 있어, 지금 구현해도 실행 조건이 성립하지 않는다. 전환 후 화면 구조가 바뀌면 다시 손봐야 하므로 두 번 일이 된다
 
 ## 3. 폐기한 접근 — 재제안 금지
@@ -128,7 +138,7 @@ execute 되며 최상위 provenance 는 보존된다.
 
 - [ ] **(즉시)** 8/9 브리핑 배포 때 `deploy.ps1` `[4/6]` **실검사 경로**를 확인한다 — ① `대상 1개` + 브리핑 경로 나열 ② validate 출력 ③ `통과 (exit=0)`. 브리핑 파일이 있는데 `브리핑 변경 없음 — 검증 건너뜀` 이 나오면 필터 정규식 `^news/.*/Dinol_news_\d{8}\.html$` 문제다
 - [ ] **(Astro 전환 시점)** `--delta`·`--verify` 구현 — 5-B-2 에서는 하지 않기로 결정했다(§2). 전환 순서 4·6(프런트·규칙 배포)이 끝나 `deployments` 가 채워진 뒤에 착수한다. 그때 execute 결과 스키마(`created[]`·`runs[]`)를 기준으로 설계하면 된다
-- [ ] `docs/rules/guardrails.md` 에 게이트 원칙 반영 — 미반영 상태. `dinol-astro` 에서 별도 diff·별도 커밋. **`deploy.ps1` 게이트가 실제로 생겼으므로(`0aba576`) 내용을 그에 맞춰 쓴다**
+- [x] ~~`docs/rules/guardrails.md` 에 게이트 원칙 반영~~ — **완료**(`8e02eaf`). 실물 `deploy.ps1` 154줄을 읽고 3곳 반영: 갱신 이력 행 · 배포 절차 4번 하위 2줄(자동 검사 + 「검증 건너뜀」 경고) · `deploy.ps1` 가드레일 행에 2026-08-08 블록
 - [ ] `claude.md` 백로그 5-A-2R 행 정리 — `19b21d2` 로 완료됐다. **표에 새로 쓰지 말고** 행을 삭제하고 `dev-history.md` 에 반영한다(§2 노션 정본 원칙). 5-B 행 수치는 세션 5에서 229/421/222 로 현행화 완료
 - [ ] ADR 신설 + `dev-history.md`·`issues.md` 판단 근거 이관 (문서 개편 5단계). 착수 시 노션 백로그의 `fortune-handoff.md 미이관 4건` 을 **함께 처리**한다 — 따로 하면 중복 작업
 - [ ] `scripts/inspect-likes.mjs` · `inspect-0802.mjs` 커밋 여부 결정 (`dinol-5b` 에 미추적 유지 중, 세션 5 조회로 재확인)
@@ -150,7 +160,9 @@ execute 되며 최상위 provenance 는 보존된다.
 | `handoff/fortune-handoff.md` | — | `main` 에만 잔존. **삭제 금지** — 미이관 4건 있음(노션 백로그 등록됨) |
 | `scripts/inspect-likes.mjs` · `inspect-0802.mjs` | — | 조사용. `dinol-5b` 에 미추적(`git status` 조회로 확인). 커밋 여부 미정 |
 | `deploy.ps1` | `[4/6]` 게이트 | 커밋됨(`0aba576` 추가 → `c63a702` 판정 수정, main). 6단계. 하네스 4케이스 통과. **실검사 경로 미검증** — 8/9 배포 시 확인(§4) |
-| `docs/rules/guardrails.md` 게이트 원칙 | — | 미반영. main 배치본은 checkout 으로 되돌림. astro `docs/rules/guardrails.md` 에 별도 반영 필요 |
+| `docs/rules/guardrails.md` | 게이트 원칙 반영 | 커밋됨(`8e02eaf`, astro). 6단계 구성·스테이징 필터·종료 코드 판정·파싱 실패 무시·우회 스위치 없음 기술. 「검증 건너뜀」 경고 포함 |
+| `docs/claude.md` | 「커밋 후 점검」 | 커밋됨(`bc93c2b`, astro). 핵심 원칙 5 + 신설 절(명령 7줄·판정 3행). 커밋 없는 작업은 스킬로 메운다고 명시 |
+| `dinol-status` 스킬 | — | **레포 밖.** Claude 설정 > Features 에 zip 등록(사용자 개인 단위). 노션 `## 인프라` 에 기록. git 이 관리하지 않으므로 변경 시 재등록 필요 |
 | `firestore.rules` | 5-A-2R | 커밋됨(19b21d2). 배포는 Astro 전환 시점 |
 | `scripts/daily/20260807.json` · `20260808.json` | 세션 4 | 커밋됨(`83b2a27`, astro). 카드 8장씩 메타(contentId·category_kr·category_en·impactScore·positions). **KR 카드 8장의 `category_en` 은 원본 HTML 에 없어 대응 표기함** |
 | `docs/reference/news_sources.md` 「제외 매체」 | 세션 4 | 커밋됨(`8b5eeb2`, main → `43281ae` astro 반영). ROOT IN NEWS 1건 + 판정 기준 4항목 |
@@ -173,7 +185,8 @@ execute 되며 최상위 provenance 는 보존된다.
 - `%TEMP%\HANDOFF_backup_20260808.md` — 머지 전 백업본. 개행만 다르고 내용은 동일. 삭제해도 무방
 - 노션 백로그 등록 4건 — ① `--resume` 재개 경로 설계(선결: execute 구현·검증) ② 해시 게이트의 작업 트리 개행 의존 제거 ③ 저장소 OneDrive 경로 분리(선결: 5-B-2 완료, 우선순위 낮음) ④ `fortune-handoff.md` 미이관 4건 분해·이관 후 `handoff/` 폐기(선결: ADR 신설 시 함께)
 - **A-1 은 코드 확인됨이고 미실증인 항목이 4건 있다** — ① `--emulator` 없이 execute 불가(위험해서 실증 안 함) ② `create()` 사용(`targetCollision` 이 먼저 걸려 실증 불가) ③ legacy 삭제 없음(삭제 API 0건) ④ blocked 검사가 `db.batch()` 보다 앞. **실행 로그가 아니라 코드가 근거다**
-- 세션 5 커밋 3건 — `astro` 2건(`630ced7` 문서 현행화 · `9e67f4b` 브랜치 속성) / `5b-2-emulator` 1건(`78274a1` execute). **`5b-2-emulator` 는 여전히 미push**
+- 세션 5 커밋 7건 — `astro` 6건(`630ced7` 문서 현행화 · `9e67f4b` 브랜치 속성 · `114c2af` 핸드오프 세션5 · `4b1a1c5` 5-B-2 종료 · `8e02eaf` guardrails · `bc93c2b` 커밋 후 점검) / `5b-2-emulator` 1건(`78274a1` execute). 이 갱신 커밋은 미포함
+- push 상태(2026-08-08 21:30 조회) — `astro` 미push 6건 · `main` 0건 · `5b-2-emulator` 브랜치 자체가 원격에 없음. **`astro` 누적이 커지고 있어 push 시점 판단이 필요하다**
 - `%TEMP%\dinol-5b-manifests\` 임시 manifest 9개(`probe-01`·`fix-a-01`·`fix-b-01`·`exec-a-01`·`exec-b-01`·`exec-b-02`·`head-a-01`·`head-a-fake`·`sum-a-01`) — git 밖. 삭제해도 무방. **정본 manifest(`%USERPROFILE%\dinol-manifest\`)와 혼동하지 말 것**
 
 ---
