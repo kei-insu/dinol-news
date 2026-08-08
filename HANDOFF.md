@@ -1,6 +1,6 @@
 # HANDOFF — dinol-news
 
-> 갱신: 2026-08-07 / 세션 3 (재갱신)
+> 갱신: 2026-08-08 / 세션 4
 
 ## [작업 규칙] — 이 문서를 읽은 세션이 즉시 적용 (5개 고정, 증설 금지)
 
@@ -16,18 +16,20 @@
 
 ## 1. 현재 단계
 
-Q-A·Q-B가 모두 해소됐고 5-B-2의 **실증 환경 구축이 끝났다**. B-1 오실행 방지 게이트,
-시드 스크립트, 픽스처 2종을 `5b-2-emulator` 브랜치(`e263c90`)에 커밋했고
-Fixture A(passed)·Fixture B(blocked, blocker 3종) 실증을 통과했다.
+세션 4는 5-B-2 를 진행하지 않았다. **일일 브리핑 운영과 그 주변 자동화**에 집중했고,
+8/7·8/8 두 회차를 발행한 뒤 발행 절차의 구멍 세 곳을 막았다.
 
-남은 것은 **execute·delta·verify 모드 구현**이다. `migrate-likes.mjs` 는 여전히 dry-run 전용이며,
-A-1(단일 파일 확장)으로 dry-run 전용 하드코딩 10개 지점을 모드 분기로 바꿔야 한다.
-그 10개 지점은 **코드에서 직접 도출한 것**이지 별도 설계 메모에서 나온 것이 아니다.
-따라서 `migrate-likes.mjs` 실물만 있으면 착수 가능하고, 25항목 설계 메모가 없어도 막히지 않는다.
+① 루틴이 **실행 당일** 을 브리핑 날짜로 잡아 `index.json` 최신 항목과 충돌하던 문제를
+`routine_instruction.md` §1 을 **실행 시점 +1일** 로 바꿔 해소했다(수동 재실행 보정 포함).
+② `deploy.ps1` 에 `[4/6] validate` 게이트를 넣어 ERROR 브리핑이 커밋 전에 막히게 했다.
+③ 루틴이 §3 소스 목록 밖 매체를 뽑아오는 것을 확인하고 `news_sources.md` 에
+**제외 매체** 섹션과 판정 기준 4항목을 신설했다.
 
-작업 트리는 **worktree 4개로 분리**됐다(§2). 브랜치 전환이 필요 없으므로
-`git switch` 를 쓰지 말고 해당 폴더의 터미널에서 작업한다.
-문서 개편은 5단계 중 ADR 신설만 남아 있다.
+`main` 10커밋 · `astro` 4커밋을 만들었고 **둘 다 push 완료**다. `astro` 는 `main` 을 두 번
+머지해 미머지 0건이며(`astro..main` 빈 출력), 두 번째 머지에서 `claude.md` 충돌 4건을 해소했다.
+
+5-B-2 는 세션 3 종료 시점 그대로다 — `migrate-likes.mjs` 는 여전히 dry-run 전용이고,
+**execute·delta·verify 모드 구현(A-1)이 여전히 1순위**다. 착수 조건은 §4 를 그대로 따르면 된다.
 
 ## 2. 확정 사항 — 변경 금지
 
@@ -74,6 +76,22 @@ A-1(단일 파일 확장)으로 dry-run 전용 하드코딩 10개 지점을 모�
 - **문서는 변경 발생 시점에 즉시 갱신한다** — 코드·UI·동작·구조·운영 방식이 바뀌면 관련 문서를 **같은 작업 안에서** 날짜 스탬프와 함께 고친다. "나중에 한 번에"는 누락을 만든다(세션 3에서 worktree 신설·`main` 커밋·백로그 2건이 그렇게 빠졌다). **`HANDOFF.md` 도 예외가 아니다**(작업 규칙 4)
 - `claude.md` 의 `수정 예정 백로그` 표에 **신규 과제를 넣지 않는다** — 노션 백로그 DB 가 정본(`ef204c0`). 그 표는 문서 작업 중 즉시 눈에 띄어야 하는 것만 남기고, 처리된 행은 삭제 후 `dev-history.md` 에 반영한다
 
+### 세션 4 추가
+
+- **브리핑 날짜 = 루틴 실행 시점 KST + 1일**(`routine_instruction.md` §1). 22:00 실행으로 다음날 브리핑을 미리 만든다. 산출 날짜가 `index.json` 최근 발행일보다 2일 이상 앞서면 `최근 발행일 + 1일` 로 되돌린다(수동 재실행 시 밀림 방지)
+- **문서 스탬프와 브리핑 날짜는 다르다** — 문서에 찍는 날짜는 실행 당일, 브리핑 날짜는 +1일. `claude.md` 「날짜 확인 규칙」에 명시됨
+- `routine_instruction.md` 에 **경계 마커**(`<!-- ===== 여기부터 루틴 UI에 그대로 붙여넣는다 ===== -->`)를 넣었다. 마커 **위**는 레포 전용(갱신 이력·근거), **아래**가 루틴 UI 실행 프롬프트다. UI 갱신 시 **마커 아래 전체를 통째로 복사**한다 — 부분 수정 금지. 16,382자 → 14,401자(12.1%) 축소
+- **제외 매체 규칙**(`news_sources.md` 「제외 매체」) — 여기 있는 매체는 검색에 떠도 카드 출처로 쓰지 않는다. 현재 ROOT IN NEWS 1건(창간 4개월·기자 서명 없음·주최사 제공 보도자료). 판정 기준 4항목: ① 기자 서명 ② 보도자료 전재 여부 ③ 1차 소스 인용 ④ 분야 전문성
+- `deploy.ps1` 은 `[1/6]~[6/6]` 6단계다. `[4/6]` 이 validate 게이트 — **스테이징된 `news/**/Dinol_news_*.html` 만** 검사하고 브리핑 변경이 없으면 건너뛴다. 우회 스위치는 두지 않았다
+- 게이트 판정은 **`validate.py` 종료 코드가 기준**이다(양방향 실증: 정상 exit 0 / ERROR exit 1). 출력 문자열 파싱은 보조이며, 파싱 실패가 배포를 막지 않는다 — 한글이 든 정규식은 콘솔 인코딩에 따라 매칭이 깨져 정상 브리핑까지 차단했다(`0aba576` 결함 → `c63a702` 수정)
+- `validate.py` 는 **인자가 없으면 `news/` 전체를 검사**한다. 대상이 없을 때는 호출 자체를 하지 않아야 한다
+- 작업 일지 노션 DB 스키마(조회로 확인) — 속성 8개(작업명·구분·결과·커밋·이전커밋·버전·날짜·내용) / 구분 7개(기획·디자인·분석·개발·변환·배포·문서) / 결과 5개(완료·실패·롤백·보류·대기). **옵션을 새로 만들지 않는다.** `claude.md` 에 있던 `IA`·`사이트맵`·`와이어프레임`·`진행도`·`진행중` 은 실재하지 않아 삭제했다
+- 작업 일지 `날짜` 는 **git 커밋 타임스탬프**로 쓴다(`git log -1 --date=iso --format="%h %cd"`). 컨테이너·세션 시계를 쓰면 커밋 순서와 어긋난다(§6)
+- **astro 문서 경로는 계층 구조다** — `docs/howto/routine_instruction.md` · `docs/reference/news_sources.md` · `docs/rules/guardrails.md`. `main` 은 `docs/` 최상위 평면 구조라 머지 시 rename 추적에 의존한다. 두 번의 머지 모두 추적에 성공했고 중복 파일은 생기지 않았다(확인됨)
+- `main` 은 GitHub Pages 빌드 대상이라 `deploy.ps1` 로만 배포한다. `astro` 는 빌드 대상이 아니므로 `git` 명령으로 직접 커밋한다 — `deploy.ps1` 은 `main` 전용
+- **(§6→§2 이동)** `deploy.ps1` 게이트 — 세션 3의 「검증 2건 미완」은 해소됐다. `[4/6]` 로 구현·커밋됐고 하네스 4케이스(정상·결함·인코딩 깨짐·파싱 실패)를 통과했다. **잔여는 실검사 경로 1건뿐이며 §4 로 옮겼다**
+- **(§6→§2 이동)** push 상태 — `main`(`c63a702`)·`astro`(`459b216`) 모두 원격과 동기화됨(확인됨). `5b-2-emulator`(`e263c90`) 의 push 여부는 세션 4에서 확인하지 않았다(**모름**)
+
 ## 3. 폐기한 접근 — 재제안 금지
 
 - 5-A-2F를 레거시 브리핑에 배포 → `likes.js` 로드 HTML 0건, dataset 3종 0건, `dinol-firebase.js`에서 `likeKey()`·`initLikes()` 삭제됨
@@ -90,14 +108,17 @@ A-1(단일 파일 확장)으로 dry-run 전용 하드코딩 10개 지점을 모�
 
 ## 4. 다음 액션
 
+- [ ] **(즉시)** 8/9 브리핑 배포 때 `deploy.ps1` `[4/6]` **실검사 경로**를 확인한다 — ① `대상 1개` + 브리핑 경로 나열 ② validate 출력 ③ `통과 (exit=0)`. 브리핑 파일이 있는데 `브리핑 변경 없음 — 검증 건너뜀` 이 나오면 필터 정규식 `^news/.*/Dinol_news_\d{8}\.html$` 문제다. 현재까지 건너뜀 경로와 하네스 4케이스만 검증됨
 - [ ] **(1순위)** `migrate-likes.mjs` 에 execute·delta·verify 모드 구현 (A-1). dry-run 전용 하드코딩 10개 지점을 모드 분기로 전환 — 특히 `existsSync(OUT)` die(execute는 정반대), `deployments` 초기화 금지(설계 19 무력화), `migrationId` 재사용, `runs[]` append, `sourceHead`·`inputHashes` 비교. 나머지 지점은 코드에서 재도출한다
   - 착수 방법: `dinol-5b\scripts\migrate-likes.mjs` 를 **업로드**하고, 해시가 `221fc9d0…` 인지 `Get-FileHash` 로 대조
 - [ ] 구현 후 Fixture A/B로 에뮬레이터 쓰기 검증 → 그 시점의 `runtimeMigrationTool` 로 픽스처 2개 갱신 (1순위에 종속)
-- [ ] `docs/rules/guardrails.md` 에 게이트 원칙 반영 — 미반영 상태. `dinol-astro` 에서 별도 diff·별도 커밋
+- [ ] `docs/rules/guardrails.md` 에 게이트 원칙 반영 — 미반영 상태. `dinol-astro` 에서 별도 diff·별도 커밋. **`deploy.ps1` 게이트가 실제로 생겼으므로(`0aba576`) 내용을 그에 맞춰 쓴다**
 - [ ] `claude.md` 백로그 2행 정리 — 5-A-2R(19b21d2 완료) · 5-B(229문서/count 421/migrate 222). **표에 새로 쓰지 말고**, 완료된 행을 삭제하고 `dev-history.md` 에 반영한다(§2 노션 정본 원칙)
 - [ ] ADR 신설 + `dev-history.md`·`issues.md` 판단 근거 이관 (문서 개편 5단계). 착수 시 노션 백로그의 `fortune-handoff.md 미이관 4건` 을 **함께 처리**한다 — 따로 하면 중복 작업
-- [ ] `scripts/inspect-likes.mjs` · `inspect-0802.mjs` 커밋 여부 결정 (`dinol-5b` 에 미추적 유지 중, 조회로 확인됨)
+- [ ] `scripts/inspect-likes.mjs` · `inspect-0802.mjs` 커밋 여부 결정 (`dinol-5b` 에 미추적 유지 중, 세션 4 조회로 재확인)
 - [ ] `5b-2-emulator` → `astro` 병합 시점·방식 결정. 병합 시 코퍼스가 305장이 되므로 새 dry-run 선행 필요
+- [ ] 노션 작업 일지 `날짜` 순서 역전 정정 여부 결정 (§6). 커밋 타임스탬프로 소급 수정할지, 그대로 둘지
+- [ ] `459b216`(HANDOFF 세션 3 재갱신) 노션 작업 일지 미기입 — 이번 세션 갱신 커밋과 함께 처리
 
 ## 5. 산출물
 
@@ -108,25 +129,33 @@ A-1(단일 파일 확장)으로 dry-run 전용 하드코딩 10개 지점을 모�
 | `scripts/fixtures/likes-a.json` · `likes-b.json` | 5-B-2 | 커밋됨(e263c90). 20건(passed) / 23건(blocked) |
 | `.gitattributes` | — | 커밋됨(e263c90). `scripts/migrate-likes.mjs text eol=lf` 한 줄 |
 | 정본 dry-run manifest | 5-B-1 | `%USERPROFILE%\dinol-manifest\5b-manifest-20260802-232639.json`. git 밖. **삭제 금지** |
-| `HANDOFF.md` | 세션 3 | 커밋됨(`57125ab`, astro). `dinol-astro` 루트에 상시 노출 |
+| `HANDOFF.md` | 세션 4 | 커밋됨(`57125ab`→`459b216`, astro). `dinol-astro` 루트에 상시 노출. **`astro` 에서만 추적** |
 | `handoff/HANDOFF_v3.0.md` | — | **삭제됨**(`82c88a5`, main). 2026-07-19 이후 미수정, 이관 대상 아님이 확인됨 |
 | `handoff/fortune-handoff.md` | — | `main` 에만 잔존. **삭제 금지** — 미이관 4건 있음(노션 백로그 등록됨) |
 | `scripts/inspect-likes.mjs` · `inspect-0802.mjs` | — | 조사용. `dinol-5b` 에 미추적(`git status` 조회로 확인). 커밋 여부 미정 |
-| `deploy.ps1` | 게이트 추가본 | main 작업 트리 배치. **검증 2/4에서 중단**, 8/3·8/5 발행은 수동이라 미실행 |
+| `deploy.ps1` | `[4/6]` 게이트 | 커밋됨(`0aba576` 추가 → `c63a702` 판정 수정, main). 6단계. 하네스 4케이스 통과. **실검사 경로 미검증** — 8/9 배포 시 확인(§4) |
 | `docs/rules/guardrails.md` 게이트 원칙 | — | 미반영. main 배치본은 checkout 으로 되돌림. astro `docs/rules/guardrails.md` 에 별도 반영 필요 |
 | `firestore.rules` | 5-A-2R | 커밋됨(19b21d2). 배포는 Astro 전환 시점 |
+| `scripts/daily/20260807.json` · `20260808.json` | 세션 4 | 커밋됨(`83b2a27`, astro). 카드 8장씩 메타(contentId·category_kr·category_en·impactScore·positions). **KR 카드 8장의 `category_en` 은 원본 HTML 에 없어 대응 표기함** |
+| `docs/reference/news_sources.md` 「제외 매체」 | 세션 4 | 커밋됨(`8b5eeb2`, main → `43281ae` astro 반영). ROOT IN NEWS 1건 + 판정 기준 4항목 |
+| `docs/howto/routine_instruction.md` 경계 마커 | 세션 4 | 커밋됨(`63f021e`, main → `43281ae` astro). 루틴 UI 사본은 마커 아래와 바이트 일치해야 함 |
+| `news/2026/08/Dinol_news_20260807.html` · `20260808.html` | 세션 4 | 발행됨(`a4c5279` / 루틴 배포분). `published_urls.json` 317건 |
 | 5-B-2 확정 설계 25항목 | — | 본 문서에 복사하지 않음. 세션 시작 메모 참조 |
 
 ## 6. 미해결 · 판단 보류
 
 - `dinol-news-5a2f-check` worktree 제거 실패 — `.git`이 OneDrive 재분석 지점(`-a---l`, 105B). 하이드레이션 확인 미실행
-- `deploy.ps1` 게이트 검증 2건 미완 — staged 추출·중단 지점 도달. 다음 `./deploy.ps1` 실행 때 확인
 - `5a2f-staged.patch`(42KB, 바탕화면) — `git apply --check --reverse` 가 `package.json:5` 에서 실패. 미반영분이 남은 것인지 이후 변경 때문인지 미판정. **삭제 금지**
 - 날짜 스탬프 오류 — 이 세션 커밋·Notion 일부가 `2026-08-03` 으로 기록됐으나 실제는 `2026-08-05`. git 커밋 타임스탬프가 정본
+- **노션 작업 일지 날짜 순서 역전** — 세션 4 기입 10행 중 앞부분은 컨테이너 시계, 뒷부분은 커밋 타임스탬프로 넣어 정렬이 깨졌다. `c63a702`(02:43 기록)가 `0aba576`(03:55 기록)보다 앞서 있으나 git 순서는 그 반대다. 시간을 넣는 목적이 「같은 날 순서 복원」이므로 **정정 여부를 결정해야 한다**(§4)
 - `contentCorpus`·`likesCore` 해시가 작업 트리 개행에 의존 — 현재 Windows `core.autocrlf=true` 에서는 CRLF로 재현되지만 Linux·`autocrlf=false` 에서는 값이 달라진다. 백로그 등록됨
 - `seed-emulator.mjs` BOM — 원본·패치본 모두 포함. 동작·게이트 영향 없어 조사하지 않기로 함. 백로그 미등록
+- 세션 4 커밋 14건 — `main` 10건(`a4c5279`·`6510f95`·`6be7e45`·`6de8e63`·`b3f991e`·`8b5eeb2`·`63f021e`·`95b99d9`·`0aba576`·`c63a702`) / `astro` 4건(`25afce2`·`83b2a27`·`43281ae`·`459b216`). 조회로 확인
+- 작업 트리 상태(세션 4 종료 시점, 조회로 확인) — `dinol-astro` clean · `dinol-news` clean · `dinol-5b` 미추적 2건(`inspect-*.mjs`) · `dinol-news-5a2f-check` 미확인
+- `astro` 에 미완료 머지가 방치돼 있었다(`MERGE_HEAD=82c88a5`, 세션 3 잔여). 세션 4에서 `25afce2` 로 완료. **머지를 시작하면 그 세션 안에서 끝낸다**
+- 8/8 브리핑 WARN 1건 수용 — AI 4장이 구독전략·점유율·모델공개·보안협의체로 전부 산업 동향이라 ★4~5 후보가 실제로 없었다. **별점을 올려 WARN 을 지우지 않았다**. AI×디자인 축이 §3 에 있는데 4장 중 0장이었던 것이 근본 원인
+- `%TEMP%\HANDOFF_backup_20260808.md` — 머지 전 백업본. 개행만 다르고 내용은 동일. 삭제해도 무방
 - 노션 백로그 등록 4건 — ① `--resume` 재개 경로 설계(선결: execute 구현·검증) ② 해시 게이트의 작업 트리 개행 의존 제거 ③ 저장소 OneDrive 경로 분리(선결: 5-B-2 완료, 우선순위 낮음) ④ `fortune-handoff.md` 미이관 4건 분해·이관 후 `handoff/` 폐기(선결: ADR 신설 시 함께)
-- 세션 3 커밋 3건(조회로 확인) — `e263c90`(5b-2-emulator) · `57125ab`(astro) · `82c88a5`(main). **셋 다 push 안 함.** `astro` 는 origin 대비 33커밋 앞섬
 
 ---
 
