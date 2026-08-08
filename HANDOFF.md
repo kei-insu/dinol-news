@@ -26,8 +26,8 @@ execute 되며 최상위 provenance 는 보존된다.
 
 그 전에 문서 현행화 2건을 `astro` 에 커밋했다(`630ced7`·`9e67f4b`).
 
-남은 것은 **`--delta`·`--verify` 착수 여부 판단**이다. 둘 다 차단 유지 상태이고,
-C-2 범위(에뮬레이터 실증까지)는 execute 로 충족됐다고 볼 여지가 있다. §4 에 문서 작업이 여러 건 밀려 있다.
+**5-B-2 는 이로써 종료한다.** `--delta`·`--verify` 는 차단 유지한 채 Astro 전환 시점 항목으로 옮겼다(§2).
+다음은 §4 의 문서 작업과 `5b-2-emulator` → `astro` 병합·push 판단이다.
 
 ## 2. 확정 사항 — 변경 금지
 
@@ -101,6 +101,7 @@ C-2 범위(에뮬레이터 실증까지)는 execute 로 충족됐다고 볼 여�
 - manifest 최상위는 **dry-run 시점 고정값**(`sourceHead`·`toolHashes`·`deployments`·`deltaRuns`·`skipped`·`blocked`), 실행별 값은 `runs[]` 각 항목(`sourceHead`·`toolHashes`·`emulator`)에 기록한다. 요약 출력도 `manifest sourceHead` / `run sourceHead` 두 줄로 나눈다
 - execute 는 `PRIOR.dryRunSnapshot` 이 아니라 **현재 `R.migrate` 로 쓴다** — 분류를 매 실행 재도출하므로 manifest 의 스냅샷은 기록용이다
 - execute 페이로드는 `{ count }` 만 — 픽스처가 count 만 담고 프런트도 그것만 읽는다
+- **5-B-2 는 종료한다** — C-2 가 정한 범위(에뮬레이터 실증까지)를 execute 실증으로 충족했다. `--delta`·`--verify` 는 **Astro 전환 시점 항목으로 이동**한다. 설계 19 가 `deployments.frontend`/`.rules` 없으면 final delta 를 차단하는데 그 배포 자체가 Astro 전환 시점으로 옮겨져 있어, 지금 구현해도 실행 조건이 성립하지 않는다. 전환 후 화면 구조가 바뀌면 다시 손봐야 하므로 두 번 일이 된다
 
 ## 3. 폐기한 접근 — 재제안 금지
 
@@ -126,7 +127,7 @@ C-2 범위(에뮬레이터 실증까지)는 execute 로 충족됐다고 볼 여�
 ## 4. 다음 액션
 
 - [ ] **(즉시)** 8/9 브리핑 배포 때 `deploy.ps1` `[4/6]` **실검사 경로**를 확인한다 — ① `대상 1개` + 브리핑 경로 나열 ② validate 출력 ③ `통과 (exit=0)`. 브리핑 파일이 있는데 `브리핑 변경 없음 — 검증 건너뜀` 이 나오면 필터 정규식 `^news/.*/Dinol_news_\d{8}\.html$` 문제다
-- [ ] **(판단)** `--delta`·`--verify` 착수 여부 결정 — 둘 다 차단 유지 중이다. C-2 범위(에뮬레이터 실증까지)는 execute 로 충족됐다고 볼 여지가 있어 **5-B-2 종료 선언**도 선택지다. 착수한다면 execute 결과 스키마가 확정된 지금이 적기
+- [ ] **(Astro 전환 시점)** `--delta`·`--verify` 구현 — 5-B-2 에서는 하지 않기로 결정했다(§2). 전환 순서 4·6(프런트·규칙 배포)이 끝나 `deployments` 가 채워진 뒤에 착수한다. 그때 execute 결과 스키마(`created[]`·`runs[]`)를 기준으로 설계하면 된다
 - [ ] `docs/rules/guardrails.md` 에 게이트 원칙 반영 — 미반영 상태. `dinol-astro` 에서 별도 diff·별도 커밋. **`deploy.ps1` 게이트가 실제로 생겼으므로(`0aba576`) 내용을 그에 맞춰 쓴다**
 - [ ] `claude.md` 백로그 5-A-2R 행 정리 — `19b21d2` 로 완료됐다. **표에 새로 쓰지 말고** 행을 삭제하고 `dev-history.md` 에 반영한다(§2 노션 정본 원칙). 5-B 행 수치는 세션 5에서 229/421/222 로 현행화 완료
 - [ ] ADR 신설 + `dev-history.md`·`issues.md` 판단 근거 이관 (문서 개편 5단계). 착수 시 노션 백로그의 `fortune-handoff.md 미이관 4건` 을 **함께 처리**한다 — 따로 하면 중복 작업
