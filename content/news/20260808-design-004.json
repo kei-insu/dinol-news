@@ -1,0 +1,57 @@
+{
+  "contentId": "20260808-design-004",
+  "date": "2026-08-08",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Figma Blog",
+    "publishedAt": "2026-08-03"
+  },
+  "url": "https://www.figma.com/blog/code-craft-and-the-making-of-nested-folders/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 툴 · 생산성",
+    "en": "Design · Tools · Productivity"
+  },
+  "title": {
+    "kr": "코드, 크래프트, 그리고 네스티드 폴더가 만들어지기까지",
+    "en": "Code, Craft, and the Making of Nested Folders"
+  },
+  "summary": {
+    "kr": "피그마가 폴더 안에 폴더를 최대 10단계까지 만들 수 있는 '네스티드 폴더' 기능을 출시했습니다. 8월 3일부터 자동 마이그레이션이 시작됐으며, 파일 브라우저와 권한·공유 모델을 처음부터 다시 설계해야 했습니다.",
+    "en": "Figma shipped nested folders, letting paid-plan teams create folders inside folders up to 10 levels deep. The rollout began automatically on August 3 and required rethinking Figma's file browser, permissions and sharing model from the ground up."
+  },
+  "points": {
+    "kr": [
+      "유료 플랜에서 폴더 최대 10단계 중첩 가능",
+      "8월 3일부터 자동 마이그레이션 시작",
+      "권한·공유 인프라를 처음부터 재구축"
+    ],
+    "en": [
+      "Folders nestable up to 10 levels on paid plans",
+      "Automatic migration rolling out from August 3",
+      "Required rebuilding permissions and sharing infrastructure"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "design-manager"
+  ],
+  "designer": {
+    "kr": "파일 정리 같은 '지루한' 인프라 작업이 성장하는 디자인 팀의 실제 병목인 경우가 많다는 점을 보여줍니다. 팀의 피그마 프로젝트가 관리하기 어려워졌다면 참고할 만합니다.",
+    "en": "A reminder that 'boring' infrastructure work like file organization is often the actual bottleneck for growing design teams, worth a look if your team's Figma projects have become unmanageable."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "롤아웃되는 대로 팀 파일 관리 체계에 바로 적용 추천",
+    "en": "Adopt for team file organization once it rolls out"
+  },
+  "comment": {
+    "kr": "네스티드 폴더는 사소한 편의 기능처럼 보이지만, 피그마 스스로 밝힌 개발 과정을 보면 권한·공유·핵심 인프라까지 손댄 작업입니다. 화려하지는 않지만 성장하는 디자인 조직이 정돈된 상태를 유지할지, 혼란에 빠질지를 가르는 부분입니다.\n하나의 피그마 프로젝트가 검색조차 어려운 상태로 비대해지는 것을 지켜본 팀이라면, 이번 업데이트는 겉치레가 아니라 실질적으로 체감되는 개선입니다.\n마이그레이션이 적용되는 시점에 맞춰 팀의 피그마 워크스페이스 담당자에게 미리 공유해, 폴더 구조를 의도적으로 설계하도록 권할 만합니다.",
+    "en": "Nested folders sound like a minor quality-of-life fix, but Figma's own account of the build makes clear it touched permissions, sharing, and core infrastructure, the unglamorous plumbing that determines whether a growing design org stays organized or collapses into chaos.\nFor teams that have watched a single Figma project balloon into an unsearchable mess, this is a genuinely practical upgrade rather than a cosmetic one.\nWorth flagging to whoever owns your team's Figma workspace so file structures get planned intentionally once the migration lands, rather than left to sprawl further."
+  },
+  "thumbLabel": "파일관리",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}
