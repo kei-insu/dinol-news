@@ -2,7 +2,7 @@
 
 | 최종 갱신 | 최근 변경 |
 |---|---|
-| 2026-08-08 | 루틴 UI 경계 마커 도입(실행 프롬프트 분리) · 제외 매체 판정 규칙 신설 · 작업 일지 스키마 정정 · deploy.ps1 validate 게이트 |
+| 2026-08-08 | 루틴 UI 경계 마커 도입(실행 프롬프트 분리) · 제외 매체 판정 규칙 신설 · 작업 일지 스키마 정정 · deploy.ps1 validate 게이트 · worktree 4개 구조 명시 · 핵심 원칙 4 「즉시 갱신」 강화 · 5-B 수치 현행화(214→229) |
 | 2026-08-07 | 루틴 브리핑 날짜 기준 변경(실행일 → 실행일+1) · 문서 스탬프와 분리 |
 | 2026-08-06 | 소스 목록 3사본 동기화 규칙 신설(news_sources · routine_instruction §3 · 루틴 UI) |
 | 2026-08-01 | 3자 검토 프로토콜 + `review-checklist.md` 신설 · main 예외 3종 · 저장 경로 형식 고정 · 5-A-2R/5-B 백로그 등록 |
@@ -63,7 +63,7 @@
 | URL | `https://kei-insu.github.io/dinol-news/` |
 | 호스팅 | GitHub Pages |
 | 백엔드 | Firebase Firestore(asia-northeast3, Spark) |
-| 로컬 | Windows PowerShell · **kgblu 단독**(`C:\Users\kgblu\OneDrive\바탕 화면\dinol-news\dinol-news`) |
+| 로컬 | Windows PowerShell · **kgblu 단독.** 루트 `C:\Users\kgblu\OneDrive\바탕 화면\dinol-news\` 아래 **worktree 4개 고정** — `dinol-news`(main·발행·`deploy.ps1`) / `dinol-astro`(astro·개발·문서·`HANDOFF.md`) / `dinol-5b`(5b-2-emulator) / `dinol-news-5a2f-check`(잔존물). **브랜치를 전환하지 말고 해당 폴더에서 작업한다** — 전환 시 OneDrive로 디렉터리 삭제가 실패하고 그 브랜치에만 있는 파일이 폴더에서 사라진다 (2026-08-07) |
 | 배포 | 사용자 로컬 수동(git). Claude 컨테이너는 push 불가 |
 | 브랜치 | **개발 = `astro` / 상용 = `main`.** GitHub Pages는 `main`만 빌드. **main 허용은 아래 3종뿐**이고, 그 외 코드·정본 JSON·문서는 `astro`에 쌓는다<br>① 일간 브리핑 발행<br>② **발행본 결함 수정** — 누락 속성·잘못된 링크 등 이미 나간 콘텐츠 교정 (7/29 `4074d82`, 8/1 `8b227e1`)<br>③ **main에서 실행하는 도구** — `deploy.ps1`. astro에 두면 병합 전까지 main에 구버전이 남아 가드가 무용지물 (8/1 `96cba39`) |
 
@@ -101,7 +101,7 @@
 | 1 | 상단 방명록 폼은 template + 모든 브리핑에 복제 → 변경 시 전체 파일 수정 |
 | 2 | 배포 시 `git status`로 스테이징 확인 필수 |
 | 3 | `firestore.rules` 변경 시 **배포 경로를 확인**한다. `firebase.json`·`.firebaserc`가 커밋되기 전까지는 콘솔 수동 반영, 이후는 `npm run deploy:rules`(⛔사용자 승인 후) |
-| 4 | 작업 후 관련 문서 갱신 + 날짜 스탬프 |
+| 4 | **문서는 변경 발생 시점에 즉시 갱신** + 날짜 스탬프. 코드·UI·동작·구조·운영 방식이 바뀌면 **같은 작업 안에서** 관련 문서를 고친다. "나중에 한 번에"는 누락을 만든다 (2026-08-07) |
 | 5 | 작업 후 **Notion 작업 일지 기록** (위 "작업 일지" 규칙) |
 | 6 | `main`에 변경이 생기면 `astro` 브랜치에서 `git merge main` — 매일 브리핑 발행 시 특히 |
 
@@ -303,7 +303,7 @@ AI 코드 리뷰어의 목적은 결함 발견만이 아니라 **과잉 엔지�
 | 등록일 | 항목 | 비고 |
 |---|---|---|
 | 2026-08-01 | **5-A-2R 작업 트리 대기** | `firestore.rules`·`package.json`·`.firebaserc`·`firebase.json`·`scripts/rules.test.mjs` **미커밋 상태**. **JDK 21 이상** 설치 후 규칙 11건(`npm run emulators:rules`) 실행 → 커밋. ⛔배포는 5-B 마이그레이션 완료 후 프런트와 **함께** |
-| 2026-08-01 | 5-B 좋아요 마이그레이션 | 214건(count 387) legacy → contentId. 이관 제외 7건은 legacy 문서로 보존. Admin SDK 배치·dry-run·실행 직전 신규 문서 0건 재확인 |
+| 2026-08-01 | 5-B 좋아요 마이그레이션 | **229건(count 421)** legacy → contentId. migrate 222 · corpusOrphan 4 · multiCandidate 3(제외 7건은 legacy 문서로 보존). 5-B-2 에뮬레이터 실증 완료(`e263c90`), execute·delta·verify 미구현 |
 | 2026-07-25 | `policy.md` 절 구조 개편 | §1(파일명) 아래 §1-2(별점 기준)가 매달려 있음. 콘텐츠 편집 정책을 별도 절로 분리 |
 | 2026-07-25 | 섹션별 별점·필드 작성 기준 문서화 | AI판(실무 접점 거리)·Design판(추출 가능성) 2표 + 8필드 섹션 차등 |
 | 2026-07-25 | `guardrails.md`·`issues.md` 7/19 결정 반영 | Auth 롤백을 원칙 변경이 아닌 **승인된 예외**로 기록. `481516`은 배지용이 아니라 전체 수정·삭제 마스터 키 |
