@@ -51,6 +51,7 @@
 | `reference/detail-page-schema.md` | 상세 페이지·Astro 전환 | contentId·URL 규칙·데이터 스키마·Firebase 키 정책·품질 게이트 | 07-25 |
 | `reference/fortune-schema.md` | 운세 코너 | `fortune.json` 스키마(별자리 12·확률 6·궁합 6·폰트 10) | 07-13 |
 | `howto/review-checklist.md` | **복잡한 코드 작업 전·후** | 실제 사고 10건 기반 선택형 검토 기준(65항목). ⛔기계적 전수 적용 금지 | 08-01 |
+| `adr/NNNN-*.md` | **지난 결정을 다시 논할 때** | 왜 그 방식을 택했나(배경·결정·근거·검토했으나 버린 안·결과). 1결정 1파일. 템플릿 `adr/0000-template.md` | — |
 
 ---
 
@@ -83,7 +84,8 @@
    ├─ claude.md · dev-history.md · issues.md
    ├─ rules/      policy.md · guardrails.md
    ├─ reference/  design-guide.md · detail-page-schema.md · news_sources.md · fortune-schema.md
-   └─ howto/      routine_instruction.md · review-checklist.md · testing.md
+   ├─ howto/      routine_instruction.md · review-checklist.md · testing.md
+   └─ adr/        0000-template.md
 ```
 
 > **Astro 전환 진행 중**(`astro` 브랜치). GitHub Pages는 `main`만 배포하므로
