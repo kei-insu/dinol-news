@@ -1,6 +1,6 @@
 # HANDOFF — dinol-news
 
-> 갱신: 2026-08-08 / 세션 5
+> 갱신: 2026-08-10 / 세션 6
 
 ## [작업 규칙] — 이 문서를 읽은 세션이 즉시 적용 (5개 고정, 증설 금지)
 
@@ -16,30 +16,26 @@
 
 ## 1. 현재 단계
 
-- **main**: 8/9 브리핑을 발행하고(`97834fa`) 그 배포에서 `deploy.ps1 [4/6]` validate 게이트의
-  **실검사 경로를 처음으로 검증했다** — `대상 1개` + 브리핑 경로 나열 · validate 출력 · `통과 (exit=0)`
-  정상 출력. 필터 정규식이 `index.json`·`published_urls.json` 을 제외하고 브리핑만 선별했다.
-  출력 한글은 CP949 로 깨지지만 `c63a702` 의 종료 코드 주 판정 덕분에 통과한다. **미검증 항목 없음.**
-  이어서 문서 계층 정비에 착수해 문서 6종에서 운영자 비밀번호 값을 제거하고(`b75f4c8`, 10건 → 0건),
-  HANDOFF.md 를 astro 에서 main 루트로 옮겼다(`0067a5e`). `docs/` 계층 폴더 분리(`20e09e5`, 10개 파일 rename R100)와 `claude.md` 슬림화(`52ce738`,
-  5개 절 분리 · 백로그 절 삭제), 경로 참조 12건 갱신(`fe5f1c6`)을 마쳤다.
-  `claude.md` 는 16.4KB → 7KB, 절 2개(문서 목차 · 프로젝트 한눈에)만 남았다.
-  노션 백로그 이관은 전체 후보 12건 중 9건 등록 · 3건 중복 스킵으로 처리했다.
-  `docs/adr/` 는 빈 폴더라 git 에 반영되지 않았고, 실제 ADR 파일 생성 시 함께 커밋된다.
+- **main**: 8/10 브리핑을 발행했다(`797c70f`). `validate.py` ERROR 0·WARN 0, 구성 균형 8장 전수 통과
+  (AI 국내2·해외2 / Design 국내2·해외2 / 8매체 각 1건 / 그라디언트 8종 고유 / EN 4장 필드 완비 / em대시 0).
+  **예외 1건을 승인해 발행했다** — 카드8 잡코리아 커리어스토리 게재일 `2026-05-25`, 기준(1주) 대비 77일 경과.
+  에버그린 UXUI 방법론 콘텐츠로 판단했다. Design 섹션은 ★3 4장 전량이고 AI ★5 1장으로 조건만 충족했다.
+  롤백 지점 `b97b68b`. 반영 확인은 commit-pinned raw URL 로 브리핑 title·`index.json` 최상단 둘 다 통과.
 
-- **astro**: 세션 5는 5-B-2 의 **A-1(execute 모드)을 구현·실증하고 커밋**했다(`78274a1`, `5b-2-emulator`).
-  `migrate-likes.mjs` 는 이제 dry-run 과 execute 두 모드를 가진다. 인자를 `--out`(dry-run) /
-  `--manifest`(execute) 로 분리해 기존 die 조건을 **하나도 뒤집지 않았다**.
-  실증 — Fixture A(20건) passed 후 12건 생성·재조회, Fixture B(23건) blocked 에서 execute 가 중단하고
-  실행 후 재조회 23건으로 **영구 생성 0건**. `sourceHead` 를 조작한 manifest 도 `inputHashes` 가 같으면
-  execute 되며 최상위 provenance 는 보존된다.
-  그 전에 문서 현행화 2건을 `astro` 에 커밋했다(`630ced7`·`9e67f4b`).
-  **5-B-2 는 이로써 종료한다.** `--delta`·`--verify` 는 차단 유지한 채 Astro 전환 시점 항목으로 옮겼다(§2).
-  이어서 문서 작업 3건을 `astro` 에 커밋했다 — `guardrails.md` 에 `deploy.ps1` validate 게이트 원칙 반영(`8e02eaf`),
-  `claude.md` 에 **「커밋 후 점검」 규칙 신설**(`bc93c2b`), 그 짝인 `dinol-status` 스킬 작성(레포 밖·Claude 설정 등록).
-  누락 방지 방식을 규칙 추가가 아니라 **반드시 하는 동작에 점검을 얹는 구조**로 바꿨고(§2), 첫 실행에서
-  핸드오프 32분 뒤처짐을 즉시 검출했다.
-  남은 것은 §4 astro 항목과 `5b-2-emulator` → `astro` 병합 및 `5b-2-emulator` 원격 반영 여부 판단이다.
+- **astro**: main→astro 병합을 **8/9 문서 개편 7건이 밀린 상태에서** 수행해 충돌 3건이 났다(`17cf4ee`).
+  `HANDOFF.md` 는 main 버전이 astro 문단을 통째로 포함한 상위집합이라 그대로 채택했고,
+  `docs/history/issues.md` 는 ADR 참조본(astro)을 채택했다(`docs/adr/0001-…` 실재 2,966B 확인 후).
+  `docs/claude.md` 는 main 슬림 인덱스(7KB)를 뼈대로 두고 astro 전용 240줄을 분류했다 —
+  4개 절은 8/9 개편에서 이미 별도 문서로 이사돼 있었고, 누락은 2건뿐이었다.
+  **「커밋 후 점검」은 호출 빈도가 높아 `claude.md` 본문에 유지**하고,
+  「3자 검토 프로토콜」만 `rules/command-review.md` §2 로 병합했다(같은 파이프라인의 앞뒤).
+  이어 8/10 카드 8장을 추출했다(`1518fd0`, 게이트 `[0]`~`[10]` 전수 통과 39.4s).
+  게이트 `[1]` UNKNOWN 2건은 `source_rules.json` 69→71종으로 해소했고(추가만·삭제 0·변경 0 대조 검증),
+  그중 `잡코리아 커리어스토리`는 소스 3사본에 조건부 등록했다(`8daada9`).
+  마지막으로 `issues.md` ADR 링크 상대경로를 정정했다(`d5454b1`).
+
+- **오늘 커밋 5건** — `main` 1건(`797c70f`) / `astro` 4건(`17cf4ee`·`1518fd0`·`8daada9`·`d5454b1`).
+  `astro` 4건은 **미push**다. 노션 작업 일지 5행 기입 완료(조회 확인).
 
 ## 2. 확정 사항 — 변경 금지
 
@@ -119,6 +115,16 @@
 - **스킬 본문에는 프로젝트 이력을 넣지 않는다** — 스킬이 트리거되면 SKILL.md 본문 전체가 컨텍스트에 들어간다(공식 권장 5k 토큰 미만). 절차·판정·예시만 남기고 "언제 무엇이 누락됐다" 류 서술은 `HANDOFF.md`·노션이 자리다. 구조는 공식 권장대로 `# 제목` → `## Instructions` → `## Examples`
 - **5-B-2 는 종료한다** — C-2 가 정한 범위(에뮬레이터 실증까지)를 execute 실증으로 충족했다. `--delta`·`--verify` 는 **Astro 전환 시점 항목으로 이동**한다. 설계 19 가 `deployments.frontend`/`.rules` 없으면 final delta 를 차단하는데 그 배포 자체가 Astro 전환 시점으로 옮겨져 있어, 지금 구현해도 실행 조건이 성립하지 않는다. 전환 후 화면 구조가 바뀌면 다시 손봐야 하므로 두 번 일이 된다
 
+### 세션 6 추가
+
+- **`claude.md` 는 브랜치별로 나누지 않는다** — 내용 대부분이 양쪽 공통 규칙이라 두 벌로 두면 사본 드리프트가 확정적으로 생긴다(08-06 소스 미동기화로 EN 고갈 8일 연속이 그 사례). Astro 전환 후 astro 가 운영이 되므로 지금 쪼개면 그때 다시 합쳐야 한다
+- **호출 빈도가 높은 규칙은 인덱스 본문에 둔다** — 「커밋 후 점검」은 커밋마다 도는데 "인덱스 → 목차 판단 → 별도 파일" 3단계를 끼우면 그 단계가 빠지는 날이 온다. 실제로 이 세션에서 발행본 수정 순서를 놓쳤다. 반대로 「3자 검토」처럼 가끔 쓰는 규칙은 분리해도 된다
+- **`daily_import.py` 게이트 `[0]` 은 astro 워크트리에 브리핑 HTML 이 커밋돼 있어야 통과한다** — 파일 복사는 `??`(447행), `git checkout main -- <path>` 는 staged(450행)로 각각 차단된다. `news/` 는 `.gitignore` 대상이 아님을 `git check-ignore`(exit=1)로 확인했다. **우회로가 없으므로 main→astro 병합이 유일한 경로다**
+- **`source_rules.json` 과 소스 3사본은 역할이 다르다** — 전자는 카드에 *등장한* 매체의 국내/해외·계열 판정표, 후자는 루틴이 *매일 크롤링할* 목록이다. 게이트 `[1]` UNKNOWN 해소는 전자만으로 끝나며, 3사본 동기화는 「제외 매체」 규칙(4항목 판정 후 등록/제외)이 걸릴 때 수행한다
+- **4항목 판정은 전부 미달일 때만 제외한다** — 잡코리아 커리어스토리는 ④(분야 전문성)만 미달이고 ①②③(서명 △·자체 인터뷰·인터뷰이가 1차 소스)은 통과라, ROOT IN NEWS(4항목 전부 미달)와 달리 제약 조건부로 등록했다
+- `scripts/__pycache__` 는 **git 추적 대상이 아니다**(`git ls-files scripts/` 41개에 없음, `git status` 미출력). `.gitignore` 적용 상태이므로 정리 대상이 아니다
+- 노션 백로그 DB `날짜` 는 **등록일이 아니라 과제 발생일**이다 — 8/9 등록 9행은 두 값이 같아 `createdTime` 으로 시각을 채웠으나, 7/25·8/02 등 나머지 20행은 두 값이 달라 같은 근거를 쓸 수 없다. **그래서 채우지 않았다**
+
 ## 3. 폐기한 접근 — 재제안 금지
 
 - 5-A-2F를 레거시 브리핑에 배포 → `likes.js` 로드 HTML 0건, dataset 3종 0건, `dinol-firebase.js`에서 `likeKey()`·`initLikes()` 삭제됨
@@ -140,28 +146,32 @@
 - 같은 에뮬레이터에서 execute 를 두 번 돌려 `create()` 충돌을 실증하기 → 2차 execute 는 `targetCollision` 으로 `[5]` 에서 blocked 되어 `create()` 까지 도달하지 못한다. 재실행 차단 테스트이지 API 실증이 아니다
 - 빈 에뮬레이터 headtest 와 Fixture A 재실행을 따로 돌리기 → headtest 는 blocked 로 죽어 `runs[]` 기록을 확인할 수 없다. Fixture A seed + 가짜 `sourceHead` manifest 하나로 합치면 6가지가 한 번에 확인된다
 
+### 세션 6 추가
+
+- `git merge --abort` 로 되돌린 뒤 다시 판단하기 → `docs/history` 폴더가 OneDrive 잠금으로 **3회 연속 삭제 실패**해 반쪽 되돌려진 상태가 남았다. 잔재 4파일을 `git checkout` 으로 복구해 진행했다. 충돌 해소가 필요한 상황에서 abort 는 문제를 미룰 뿐이고, 병합은 카드 추출의 선결 조건이라 어차피 다시 해야 한다
+- `claude.md` 를 브랜치별 2벌로 분리 → §2 세션 6 참조. 파일명을 나누지 않으면 머지마다 같은 충돌이 반복되고, 나누면 공통 규칙이 갈라진다
+
 ## 4. 다음 액션
 
 **main**
 
-- [x] ~~`docs/` 계층 폴더 분리~~ — **완료**(`20e09e5`)
-- [x] ~~`claude.md` 5개 절 분리 + 백로그 절 삭제~~ — **완료**(`52ce738`)
-- [x] ~~`claude.md` 백로그 8행 노션 이관~~ — **완료**. 6건 등록 · 2건 중복 스킵 후 절 삭제
-- [x] ~~경로 참조 전수 확인~~ — **완료**(`fe5f1c6`). 구경로 10개 히트 0건
-- [ ] main → astro 병합 전 확인 — ① astro 에서 `dev-history.md`·`issues.md` 가 main 이동 이후
-      추가 변경됐는지 ② 병합 시 두 파일의 rename/내용 병합 결과를 실제 merge 전후 diff 로 확인.
-      2026-08-09 시점 두 파일은 이미 내용이 분기돼 있다
-- [ ] push 전 롤백 지점을 `git rev-parse origin/main` 으로 기록한다. main 은 Pages 빌드 대상이다
+- [x] ~~`docs/` 계층 폴더 분리 · `claude.md` 슬림화 · 백로그 노션 이관 · 경로 참조 전수 확인~~ — **완료**(세션 5)
+- [x] ~~main → astro 병합 전 rename 충돌 확인~~ — **완료**. 실제 병합에서 `dev-history.md`·`issues.md` 는 rename 으로 정상 인식됐고, 충돌은 `HANDOFF.md`·`claude.md`·`issues.md` 3건이었다(§1)
+- [x] ~~push 전 롤백 지점 기록~~ — **완료**. 8/10 배포에서 `b97b68b` 기록 후 발행
 
 **astro**
 
+- [ ] **(즉시)** `astro` 미push 4건 판단 — `17cf4ee`·`1518fd0`·`8daada9`·`d5454b1`. push 는 기본 절차에서 제외이나 누적이 커지고 있다. ①raw URL 읽기 필요 ②장기 백업 시점에 결정
+- [ ] `routine_instruction.md` §3 헤딩 소스 카운트 정정 (노션 백로그 등록됨) — AI 해외 표기23/실제25 · Design 국내 22/실제24 · Design 해외 35/실제43. **`8daada9` 에서 쓴 22 는 기존 표기 +1 이지 정확한 값이 아니다.** 정정 시 3개 블록을 함께 맞추고 루틴 UI(사본 ③)도 마커 아래 전체 교체
+- [ ] `scripts/` 미사용 스크립트 감사 (노션 백로그 등록됨) — 추적 25개 중 `fill_*` 3 · `apply_*` 3 · `compare_*` 2 가 일회성 추정. **삭제 전 4가지 전수 확인 필요**(subprocess 호출 · `package.json` · `docs/` 참조 · git log). 범위가 넓어 서브에이전트 위임 권장
 - [ ] **(Astro 전환 시점)** `--delta`·`--verify` 구현 — 5-B-2 에서는 하지 않기로 결정했다(§2). 전환 순서 4·6(프런트·규칙 배포)이 끝나 `deployments` 가 채워진 뒤에 착수한다. 그때 execute 결과 스키마(`created[]`·`runs[]`)를 기준으로 설계하면 된다
 - [ ] `claude.md` 백로그 5-A-2R 행 정리 — `19b21d2` 로 완료됐다. **표에 새로 쓰지 말고** 행을 삭제하고 `dev-history.md` 에 반영한다(§2 노션 정본 원칙). 5-B 행 수치는 세션 5에서 229/421/222 로 현행화 완료
-- [ ] ADR 신설 + `dev-history.md`·`issues.md` 판단 근거 이관 (문서 개편 5단계). 착수 시 노션 백로그의 `fortune-handoff.md 미이관 4건` 을 **함께 처리**한다 — 따로 하면 중복 작업
+- [ ] `dev-history.md`·`issues.md` 판단 근거 ADR 이관 계속 — ADR 0001 은 분리 완료(`522cbde`). 착수 시 노션 백로그의 `fortune-handoff.md 미이관 4건` 을 **함께 처리**한다 — 따로 하면 중복 작업
 - [ ] `scripts/inspect-likes.mjs` · `inspect-0802.mjs` 커밋 여부 결정 (`dinol-5b` 에 미추적 유지 중, 세션 5 조회로 재확인)
 - [ ] `5b-2-emulator` → `astro` 병합 시점·방식 결정. 병합 시 코퍼스가 기존 실증 시점과 달라졌으므로 새 dry-run 선행 필요. 착수 시 현재 corpus 건수를 재측정한다. **`5b-2-emulator` 의 원격 push 상태를 병합 전에 확인하고, 미push 라면 push 여부를 함께 정한다**
-- [ ] 노션 작업 일지 `날짜` 순서 역전 정정 여부 결정 (§6). 커밋 타임스탬프로 소급 수정할지, 그대로 둘지. 2026-08-09 조회에서 `0067a5e`·`b75f4c8` 2행의 `날짜` 가 커밋 시각과 약 18시간 어긋나고 `브랜치` 가 비어 있음을 확인했다
-- [ ] `459b216`(HANDOFF 세션 3 재갱신) 노션 작업 일지 미기입 — 세션 5에서도 처리하지 않았다
+- [ ] 노션 작업 일지 `날짜` 순서 역전 정정 여부 결정 (§6). `0067a5e`·`b75f4c8` 2행이 커밋 시각과 어긋나고 `브랜치` 가 비어 있다. **백로그 DB 8/9 9행은 세션 6에서 시각 기입 완료**했으나 작업 일지 DB 는 미처리
+- [ ] `459b216`(HANDOFF 세션 3 재갱신) 노션 작업 일지 미기입 — 세션 5·6 에서도 처리하지 않았다
+- [ ] 터미널 라벨 체계 확정 — 현행 문서 어디에도 규정이 없음을 확인했다(`command-review.md` 에 없음). 공통 지침은 7라벨, 디놀 세션 문서는 `[터미널]` 단일. 워크트리 4개 구조상 `터미널-운영`(main) / `터미널-개발`(astro) / `클로드코드` 3라벨안을 제안했으나 미결정
 
 ## 5. 산출물
 
@@ -176,9 +186,13 @@
 | `handoff/HANDOFF_v3.0.md` | — | **삭제됨**(`82c88a5`, main). 2026-07-19 이후 미수정, 이관 대상 아님이 확인됨 |
 | `handoff/fortune-handoff.md` | — | `main` 에만 잔존. **삭제 금지** — 미이관 4건 있음(노션 백로그 등록됨) |
 | `scripts/inspect-likes.mjs` · `inspect-0802.mjs` | — | 조사용. `dinol-5b` 에 미추적(`git status` 조회로 확인). 커밋 여부 미정 |
-| `deploy.ps1` | `[4/6]` 게이트 | 커밋됨(`0aba576` 추가 → `c63a702` 판정 수정, main). 6단계. 하네스 4케이스 통과. **실검사 경로 미검증** — 8/9 배포 시 확인(§4) |
+| `deploy.ps1` | `[4/6]` 게이트 | 커밋됨(`0aba576` 추가 → `c63a702` 판정 수정, main). 6단계. **실검사 경로 검증 완료**(8/9 `97834fa`, 8/10 `797c70f` 재확인). 출력 한글은 CP949 로 깨지나 종료 코드 주 판정으로 통과 |
 | `docs/rules/guardrails.md` | 게이트 원칙 반영 | 커밋됨(`8e02eaf`, astro). 6단계 구성·스테이징 필터·종료 코드 판정·파싱 실패 무시·우회 스위치 없음 기술. 「검증 건너뜀」 경고 포함 |
-| `docs/claude.md` | 「커밋 후 점검」 | 커밋됨(`bc93c2b`, astro). 핵심 원칙 5 + 신설 절(명령 7줄·판정 3행). 커밋 없는 작업은 스킬로 메운다고 명시 |
+| `docs/claude.md` | 세션 6 병합본 | 커밋됨(`17cf4ee`, astro). main 슬림 인덱스(7KB) 기반 10.6KB. 「커밋 후 점검」 본문 유지(발행본 수정 순서 포함) + 목차에 `review-checklist.md`·`adr/` 행 추가 + 핵심 원칙 3·4·5 astro 최신 문구 |
+| `docs/rules/command-review.md` | §1+§2 통합본 | 커밋됨(`17cf4ee`, astro). §1 자체 검토 8항목(보고 형식 포함) + §2 3자 검토 5원칙. 별도 `review-protocol.md` 는 만들지 않았다 |
+| `content/news/20260810-*.json` · `scripts/daily/20260810.json` | 세션 6 | 커밋됨(`1518fd0`, astro). 카드 8장. KR 카드 4장(`ai-002`·`ai-003`·`design-003`·`design-004`)의 `category_en` 은 원본 HTML 에 없어 대응 표기함 |
+| `scripts/source_rules.json` | 71종 | 커밋됨(`1518fd0`, astro). 69→71(`VentureBeat`·`잡코리아 커리어스토리`). 게이트 `[0]` 은 추가만 허용하므로 삭제·변경 0건을 대조 검증했다 |
+| `news/2026/08/Dinol_news_20260810.html` | 세션 6 | 발행됨(`797c70f`, main). `published_urls.json` 333건 · `index.json` 41개 |
 | `dinol-status` 스킬 | — | **레포 밖.** Claude 설정 > Features 에 zip 등록(사용자 개인 단위). 노션 `## 인프라` 에 기록. git 이 관리하지 않으므로 변경 시 재등록 필요 |
 | `firestore.rules` | 5-A-2R | 커밋됨(19b21d2). 배포는 Astro 전환 시점 |
 | `scripts/daily/20260807.json` · `20260808.json` | 세션 4 | 커밋됨(`83b2a27`, astro). 카드 8장씩 메타(contentId·category_kr·category_en·impactScore·positions). **KR 카드 8장의 `category_en` 은 원본 HTML 에 없어 대응 표기함** |
@@ -203,7 +217,12 @@
 - 노션 백로그 등록 4건 — ① `--resume` 재개 경로 설계(선결: execute 구현·검증) ② 해시 게이트의 작업 트리 개행 의존 제거 ③ 저장소 OneDrive 경로 분리(선결: 5-B-2 완료, 우선순위 낮음) ④ `fortune-handoff.md` 미이관 4건 분해·이관 후 `handoff/` 폐기(선결: ADR 신설 시 함께)
 - **A-1 은 코드 확인됨이고 미실증인 항목이 4건 있다** — ① `--emulator` 없이 execute 불가(위험해서 실증 안 함) ② `create()` 사용(`targetCollision` 이 먼저 걸려 실증 불가) ③ legacy 삭제 없음(삭제 API 0건) ④ blocked 검사가 `db.batch()` 보다 앞. **실행 로그가 아니라 코드가 근거다**
 - 세션 5 커밋 7건 — `astro` 6건(`630ced7` 문서 현행화 · `9e67f4b` 브랜치 속성 · `114c2af` 핸드오프 세션5 · `4b1a1c5` 5-B-2 종료 · `8e02eaf` guardrails · `bc93c2b` 커밋 후 점검) / `5b-2-emulator` 1건(`78274a1` execute). 이 갱신 커밋은 미포함
-- push 상태(2026-08-08 21:30 조회) — `astro` 미push 6건 · `main` 0건 · `5b-2-emulator` 브랜치 자체가 원격에 없음. **`astro` 누적이 커지고 있어 push 시점 판단이 필요하다**
+- 세션 6 커밋 5건 — `main` 1건(`797c70f` 8/10 발행) / `astro` 4건(`17cf4ee` 병합 · `1518fd0` 카드 추출 · `8daada9` 소스 동기화 · `d5454b1` ADR 링크 정정). 노션 작업 일지 5행 기입 완료(조회 확인)
+- **OneDrive 파일 잠금이 실제로 작업을 막았다** — `git merge --abort` 가 `docs/history` 폴더 삭제에 3회 연속 실패했다. `issues.md` 는 작업 트리에서 사라졌다가 `git checkout --merge` 로 복구했다. `issues.md` §반복 함정의 「OneDrive + git」 항목이 현실화된 사례다. 노션 백로그 「저장소 OneDrive 경로 분리」의 우선순위 재검토가 필요할 수 있다
+- 8/10 브리핑 게재일 예외 1건 — 카드8 잡코리아 커리어스토리 `2026-05-25`(77일 경과, 기준 1주). 에버그린 판단으로 승인 발행했다. **루틴이 기간 밖 기사를 뽑아온 원인은 조사하지 않았다**
+- Design 섹션 ★3 편중 — 8/10 은 Design 4장 전량 ★3(`[5] high45 0`). 8/8 에도 AI 쪽 같은 WARN 이 있었다. 방법론·툴 콘텐츠가 Design 축에서 잡히지 않는 것이 반복 패턴인지 미판정
+- 백로그 DB 신규 3건 — `scripts` 폴더 감사 · `issues.md` ADR 링크(**세션 6에서 완료 처리**) · `routine_instruction` §3 카운트 정정
+- push 상태(2026-08-10 02:50 조회) — `astro` 미push 4건(`17cf4ee`·`1518fd0`·`8daada9`·`d5454b1`) · `main` 0건(`797c70f` 배포 시 push 됨) · `5b-2-emulator` 브랜치 자체가 원격에 없음. 세션 5의 미push 6건은 그 사이 push 되어 `origin/astro` 가 `522cbde` 다
 - `%TEMP%\dinol-5b-manifests\` 임시 manifest 9개(`probe-01`·`fix-a-01`·`fix-b-01`·`exec-a-01`·`exec-b-01`·`exec-b-02`·`head-a-01`·`head-a-fake`·`sum-a-01`) — git 밖. 삭제해도 무방. **정본 manifest(`%USERPROFILE%\dinol-manifest\`)와 혼동하지 말 것**
 
 ---
