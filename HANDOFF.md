@@ -16,24 +16,27 @@
 
 ## 1. 현재 단계
 
-세션 5는 5-B-2 의 **A-1(execute 모드)을 구현·실증하고 커밋**했다(`78274a1`, `5b-2-emulator`).
-`migrate-likes.mjs` 는 이제 dry-run 과 execute 두 모드를 가진다. 인자를 `--out`(dry-run) /
-`--manifest`(execute) 로 분리해 기존 die 조건을 **하나도 뒤집지 않았다**.
+- **main**: 8/9 브리핑을 발행하고(`97834fa`) 그 배포에서 `deploy.ps1 [4/6]` validate 게이트의
+  **실검사 경로를 처음으로 검증했다** — `대상 1개` + 브리핑 경로 나열 · validate 출력 · `통과 (exit=0)`
+  정상 출력. 필터 정규식이 `index.json`·`published_urls.json` 을 제외하고 브리핑만 선별했다.
+  출력 한글은 CP949 로 깨지지만 `c63a702` 의 종료 코드 주 판정 덕분에 통과한다. **미검증 항목 없음.**
+  이어서 문서 계층 정비에 착수해 문서 6종에서 운영자 비밀번호 값을 제거하고(`b75f4c8`, 10건 → 0건),
+  HANDOFF.md 를 astro 에서 main 루트로 옮겼다(`0067a5e`). 현재 `docs/` 계층 폴더 분리와
+  `claude.md` 슬림화를 진행 중이다.
 
-실증 — Fixture A(20건) passed 후 12건 생성·재조회, Fixture B(23건) blocked 에서 execute 가 중단하고
-실행 후 재조회 23건으로 **영구 생성 0건**. `sourceHead` 를 조작한 manifest 도 `inputHashes` 가 같으면
-execute 되며 최상위 provenance 는 보존된다.
-
-그 전에 문서 현행화 2건을 `astro` 에 커밋했다(`630ced7`·`9e67f4b`).
-
-**5-B-2 는 이로써 종료한다.** `--delta`·`--verify` 는 차단 유지한 채 Astro 전환 시점 항목으로 옮겼다(§2).
-
-이어서 문서 작업 3건을 `astro` 에 커밋했다 — `guardrails.md` 에 `deploy.ps1` validate 게이트 원칙 반영(`8e02eaf`),
-`claude.md` 에 **「커밋 후 점검」 규칙 신설**(`bc93c2b`), 그 짝인 `dinol-status` 스킬 작성(레포 밖·Claude 설정 등록).
-누락 방지 방식을 규칙 추가가 아니라 **반드시 하는 동작에 점검을 얹는 구조**로 바꿨고(§2), 첫 실행에서
-핸드오프 32분 뒤처짐을 즉시 검출했다.
-
-남은 것은 §4 의 문서 작업 3건과 `5b-2-emulator` → `astro` 병합·push 판단이다.
+- **astro**: 세션 5는 5-B-2 의 **A-1(execute 모드)을 구현·실증하고 커밋**했다(`78274a1`, `5b-2-emulator`).
+  `migrate-likes.mjs` 는 이제 dry-run 과 execute 두 모드를 가진다. 인자를 `--out`(dry-run) /
+  `--manifest`(execute) 로 분리해 기존 die 조건을 **하나도 뒤집지 않았다**.
+  실증 — Fixture A(20건) passed 후 12건 생성·재조회, Fixture B(23건) blocked 에서 execute 가 중단하고
+  실행 후 재조회 23건으로 **영구 생성 0건**. `sourceHead` 를 조작한 manifest 도 `inputHashes` 가 같으면
+  execute 되며 최상위 provenance 는 보존된다.
+  그 전에 문서 현행화 2건을 `astro` 에 커밋했다(`630ced7`·`9e67f4b`).
+  **5-B-2 는 이로써 종료한다.** `--delta`·`--verify` 는 차단 유지한 채 Astro 전환 시점 항목으로 옮겼다(§2).
+  이어서 문서 작업 3건을 `astro` 에 커밋했다 — `guardrails.md` 에 `deploy.ps1` validate 게이트 원칙 반영(`8e02eaf`),
+  `claude.md` 에 **「커밋 후 점검」 규칙 신설**(`bc93c2b`), 그 짝인 `dinol-status` 스킬 작성(레포 밖·Claude 설정 등록).
+  누락 방지 방식을 규칙 추가가 아니라 **반드시 하는 동작에 점검을 얹는 구조**로 바꿨고(§2), 첫 실행에서
+  핸드오프 32분 뒤처짐을 즉시 검출했다.
+  남은 것은 §4 astro 항목과 `5b-2-emulator` → `astro` 병합 및 `5b-2-emulator` 원격 반영 여부 판단이다.
 
 ## 2. 확정 사항 — 변경 금지
 
@@ -136,14 +139,27 @@ execute 되며 최상위 provenance 는 보존된다.
 
 ## 4. 다음 액션
 
-- [ ] **(즉시)** 8/9 브리핑 배포 때 `deploy.ps1` `[4/6]` **실검사 경로**를 확인한다 — ① `대상 1개` + 브리핑 경로 나열 ② validate 출력 ③ `통과 (exit=0)`. 브리핑 파일이 있는데 `브리핑 변경 없음 — 검증 건너뜀` 이 나오면 필터 정규식 `^news/.*/Dinol_news_\d{8}\.html$` 문제다
+**main**
+
+- [ ] `docs/` 계층 폴더 분리 — `rules`·`reference`·`howto`·`adr`·`history` 생성 후 `git mv`.
+      `docs/history/` 는 가이드 §2 가 이력 저장소를 Notion DB 로 규정하는 것에 대한 예외이며,
+      사유를 `claude.md` 목차에 기록한다(§9 단서 적용)
+- [ ] `claude.md` 절 6개 이관 — 목차와 「프로젝트 한눈에」만 남기고, 옮긴 절마다 새 경로 링크를 남긴다.
+      「프로젝트 한눈에」 하위 `### 파일 구조` 의 `docs/` 경로도 함께 갱신한다
+- [ ] `claude.md` 백로그 8행을 노션 백로그 DB 로 이관 — **등록·재조회 확인 후에** 절을 삭제한다.
+      작업명 문자열 기준 중복 스킵
+- [ ] 경로 참조 전수 확인 — 이동 전후 `git grep "docs/"` 비교로 신규 깨짐 0건.
+      노션에 걸어둔 `github.com/kei-insu/dinol-news` 링크도 조회한다
+- [ ] push 전 롤백 지점을 `git rev-parse origin/main` 으로 기록한다. main 은 Pages 빌드 대상이다
+
+**astro**
+
 - [ ] **(Astro 전환 시점)** `--delta`·`--verify` 구현 — 5-B-2 에서는 하지 않기로 결정했다(§2). 전환 순서 4·6(프런트·규칙 배포)이 끝나 `deployments` 가 채워진 뒤에 착수한다. 그때 execute 결과 스키마(`created[]`·`runs[]`)를 기준으로 설계하면 된다
-- [x] ~~`docs/rules/guardrails.md` 에 게이트 원칙 반영~~ — **완료**(`8e02eaf`). 실물 `deploy.ps1` 154줄을 읽고 3곳 반영: 갱신 이력 행 · 배포 절차 4번 하위 2줄(자동 검사 + 「검증 건너뜀」 경고) · `deploy.ps1` 가드레일 행에 2026-08-08 블록
 - [ ] `claude.md` 백로그 5-A-2R 행 정리 — `19b21d2` 로 완료됐다. **표에 새로 쓰지 말고** 행을 삭제하고 `dev-history.md` 에 반영한다(§2 노션 정본 원칙). 5-B 행 수치는 세션 5에서 229/421/222 로 현행화 완료
 - [ ] ADR 신설 + `dev-history.md`·`issues.md` 판단 근거 이관 (문서 개편 5단계). 착수 시 노션 백로그의 `fortune-handoff.md 미이관 4건` 을 **함께 처리**한다 — 따로 하면 중복 작업
 - [ ] `scripts/inspect-likes.mjs` · `inspect-0802.mjs` 커밋 여부 결정 (`dinol-5b` 에 미추적 유지 중, 세션 5 조회로 재확인)
-- [ ] `5b-2-emulator` → `astro` 병합 시점·방식 결정. 병합 시 코퍼스가 305장이 되므로 새 dry-run 선행 필요. **미push 상태이므로 push 여부도 함께 정한다**
-- [ ] 노션 작업 일지 `날짜` 순서 역전 정정 여부 결정 (§6). 커밋 타임스탬프로 소급 수정할지, 그대로 둘지
+- [ ] `5b-2-emulator` → `astro` 병합 시점·방식 결정. 병합 시 코퍼스가 기존 실증 시점과 달라졌으므로 새 dry-run 선행 필요. 착수 시 현재 corpus 건수를 재측정한다. **`5b-2-emulator` 의 원격 push 상태를 병합 전에 확인하고, 미push 라면 push 여부를 함께 정한다**
+- [ ] 노션 작업 일지 `날짜` 순서 역전 정정 여부 결정 (§6). 커밋 타임스탬프로 소급 수정할지, 그대로 둘지. 2026-08-09 조회에서 `0067a5e`·`b75f4c8` 2행의 `날짜` 가 커밋 시각과 약 18시간 어긋나고 `브랜치` 가 비어 있음을 확인했다
 - [ ] `459b216`(HANDOFF 세션 3 재갱신) 노션 작업 일지 미기입 — 세션 5에서도 처리하지 않았다
 
 ## 5. 산출물
