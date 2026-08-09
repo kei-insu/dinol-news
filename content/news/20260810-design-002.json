@@ -1,0 +1,57 @@
+{
+  "contentId": "20260810-design-002",
+  "date": "2026-08-10",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-08-07"
+  },
+  "url": "https://www.dezeen.com/2026/08/07/antarctic-arctowski-station-kurylowicz-architects/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 공간",
+    "en": "Design · Architecture · Space"
+  },
+  "title": {
+    "kr": "쿠리워비치+아키텍츠, 남극 아르츠토프스키 기지 완공 임박",
+    "en": "Kuryłowicz + Architects nears completion on Arctowski Station"
+  },
+  "summary": {
+    "kr": "폴란드 건축사무소 쿠리워비치+아키텍츠가 남극 킹조지섬에 짓고 있는 목조 골조의 아르츠토프스키 연구기지 완공 임박 사진을 공개했습니다. 연구원 28명을 위한 세상 끝의 집을 콘셉트로 설계됐습니다.",
+    "en": "Polish studio Kuryłowicz + Architects has revealed photos of the timber-framed Arctowski research station nearing completion on Antarctica's King George Island, designed as a 'home at the end of the world' for 28 researchers."
+  },
+  "points": {
+    "kr": [
+      "단열 골드 패널로 마감한 프리패브 목조 구조",
+      "중앙의 이중층 공용 허브에 도서관·체육관·사우나 배치",
+      "과학적 기능성과 일상적 안락함의 균형을 목표로 설계"
+    ],
+    "en": [
+      "Prefabricated timber structure clad in insulated gold panels",
+      "Central double-height hub houses library, gym and sauna",
+      "Designed to balance scientific function with everyday comfort"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "물류와 기후 조건에 오차 여지가 거의 없는 극한 환경에서도 얼마나 안락함과 소재의 따뜻함을 담아낼 수 있는지 보여주는 사례입니다. 물리적 제약이 큰 공간 설계 작업이라면 참고할 지점이 많습니다.",
+    "en": "An extreme-environment case study in how much comfort and material warmth you can build into a structure with almost no room for error in logistics or climate, relevant for any space design working under tight physical constraints."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "극한 환경·모듈러 공간 설계 사례 연구로 좋음 · 저장 추천",
+    "en": "Great case study for extreme-environment or modular space design · Save"
+  },
+  "comment": {
+    "kr": "남극 연구기지는 낯설지만 실제로 참고할 만한 설계 브리프입니다. 모든 소재 선택이 운송, 소수 인력의 조립, 수십 년간의 극한 기후를 견뎌야 하면서도 동시에 몇 달씩 머무는 사람들에게 살 만한 곳으로 느껴져야 하니까요.\n\n목재와 골드 패널을 조합한 접근은, 장기간 고립된 연구원들에게 소재의 온기를 심리적 전략으로 의도적으로 선택한 사례로 볼 수 있습니다. 단순한 미감의 문제가 아니라는 거죠. 도서관·체육관·사우나를 품은 이중층 공용 허브는 쉼터 이상으로 사기를 설계했다는 걸 보여주는 작은 디테일입니다.\n\n모듈러·프리패브·오지 프로젝트를 다루는 분이라면 사진만 보고 넘기지 말고 제대로 살펴볼 가치가 있습니다. 물류 제약이야말로 이 프로젝트의 진짜 설계 이야기니까요.",
+    "en": "Antarctic research stations are a strange but genuinely useful design brief to study, since every material choice has to survive shipping, assembly by a small crew, and decades of extreme weather, while still needing to feel like a place people can live in for months at a time.\n\nThe timber-and-gold-panel approach here is a good example of choosing warmth of material as a deliberate psychological strategy, not just an aesthetic one, when researchers are isolated for long stretches. The double-height communal hub with a library, gym and sauna is a small but telling detail about designing for morale, not just shelter.\n\nIf you ever work on modular, prefab or remote-site projects, this is worth a proper look beyond the photos. The logistics constraints are the real design story here."
+  },
+  "thumbLabel": "극지건축",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}

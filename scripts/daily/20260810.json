@@ -1,0 +1,74 @@
+{
+  "20260810-ai-001": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 5,
+    "positions": [
+      "ui-designer",
+      "product-designer"
+    ]
+  },
+  "20260810-ai-002": {
+    "category_kr": "AI · 정책 · 안전",
+    "category_en": "AI · Policy · Safety",
+    "impactScore": 2,
+    "positions": [
+      "design-lead",
+      "design-manager"
+    ]
+  },
+  "20260810-ai-003": {
+    "category_kr": "AI · 하드웨어 · 트렌드",
+    "category_en": "AI · Hardware · Trends",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "ux-designer"
+    ]
+  },
+  "20260810-ai-004": {
+    "category_kr": "AI · 모델 · 비용전략",
+    "category_en": "AI · Models · Cost Strategy",
+    "impactScore": 3,
+    "positions": [
+      "design-lead",
+      "design-manager"
+    ]
+  },
+  "20260810-design-001": {
+    "category_kr": "디자인 · 제품 · 인터뷰",
+    "category_en": "Design · Product · Interview",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "illustrator"
+    ]
+  },
+  "20260810-design-002": {
+    "category_kr": "디자인 · 건축 · 공간",
+    "category_en": "Design · Architecture · Space",
+    "impactScore": 3,
+    "positions": [
+      "architect",
+      "space-designer"
+    ]
+  },
+  "20260810-design-003": {
+    "category_kr": "디자인 · 브랜딩 · 마케팅",
+    "category_en": "Design · Branding · Marketing",
+    "impactScore": 3,
+    "positions": [
+      "brand-designer",
+      "bx-designer"
+    ]
+  },
+  "20260810-design-004": {
+    "category_kr": "디자인 · UXUI · 커리어",
+    "category_en": "Design · UXUI · Career",
+    "impactScore": 3,
+    "positions": [
+      "ux-designer",
+      "product-designer"
+    ]
+  }
+}

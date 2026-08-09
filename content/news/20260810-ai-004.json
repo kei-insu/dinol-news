@@ -1,0 +1,57 @@
+{
+  "contentId": "20260810-ai-004",
+  "date": "2026-08-10",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "VentureBeat",
+    "publishedAt": "2026-08-06"
+  },
+  "url": "https://venturebeat.com/orchestration/qwen-3-8-max-and-claude-opus-5-show-why-raw-benchmark-scores-dont-predict-the-bill",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 모델 · 비용전략",
+    "en": "AI · Models · Cost Strategy"
+  },
+  "title": {
+    "kr": "벤치마크 점수와 청구서는 다르다, 큐원 3.8-맥스와 클로드 오퍼스 5가 보여준 것",
+    "en": "Qwen 3.8-Max and Claude Opus 5 show why raw benchmark scores don't predict the bill"
+  },
+  "summary": {
+    "kr": "큐원 3.8-맥스와 클로드 오퍼스 5를 나란히 비교한 결과, 벤치마크 순위가 높다고 비용 효율까지 좋은 건 아니라는 점이 드러났습니다. 오퍼스 5는 최저 강도 설정이 오히려 최고 강도 설정보다 더 많은 과제를 더 적은 비용으로 해결했습니다.",
+    "en": "A side-by-side look at Qwen 3.8-Max and Claude Opus 5 shows that top benchmark rankings don't translate directly into cost efficiency, since Opus 5's lowest-effort setting outperformed its own high-effort mode while costing a fraction as much."
+  },
+  "points": {
+    "kr": [
+      "벤치마크 1위가 곧 최고의 비용 대비 성능을 뜻하지 않음",
+      "오퍼스 5는 최저 강도 설정이 최고 강도 설정보다 더 많은 과제 해결",
+      "모델 선택 시 리더보드 순위보다 강도 설정을 함께 따져봐야 함"
+    ],
+    "en": [
+      "Top benchmark scores don't guarantee the best cost-to-performance ratio",
+      "Opus 5's lowest-effort mode beat its own high-effort mode on task completion",
+      "Model selection should weigh effort settings, not just leaderboard rank"
+    ]
+  },
+  "positions": [
+    "design-lead",
+    "design-manager"
+  ],
+  "designer": {
+    "kr": "디자인·프로토타이핑 워크플로에 어떤 AI 모델을 붙일지 고르는 팀이라면, 리더보드 순위만 좇지 말고 실제 업무와 비용 기준으로 직접 벤치마크해보라는 신호로 읽힙니다.",
+    "en": "For teams choosing which AI model to embed in a design or prototyping workflow, this is a reminder to benchmark your own use case and cost, not just chase the leaderboard."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "다음 AI 모델·벤더 선정 전 참고 · 저장 추천",
+    "en": "Useful before your next AI vendor/model decision · Save for reference"
+  },
+  "comment": {
+    "kr": "이 기사의 핵심은 다소 반직관적입니다. 쿼리당 더 많은 연산을 쓴다고 오퍼스 5가 더 똑똑해진 게 아니라, 같은 벤치마크에서 오히려 더 느리고 비싸면서 결과는 비슷하거나 더 나빴다는 겁니다.\n\n어떤 AI 모델을 쓸지를 벤더 선정 시점에 한 번 정하고 끝내는 디자인·프로덕트 팀이라면, 이 결과는 그 결정을 주기적으로 다시 점검해볼 만하다는 신호입니다. 특히 강도 조절 옵션이 계속 늘어나는 지금은 더더욱요. 가장 저렴한 설정이 가장 좋은 성능이라는 결과가 모든 과제에 적용되진 않겠지만, 가정 대신 직접 테스트해보라는 교훈은 유효합니다.\n\n모델 내부 구조에 익숙하지 않아도 가볍게 훑어볼 만합니다. 실무적으로 가져갈 메시지는 단순합니다. 강도를 최대로 높인다고 결과가 최선이라는 가정 대신, 여러분의 워크플로 기준으로 직접 벤치마크해보라는 것입니다.",
+    "en": "The headline finding here is almost counterintuitive: spending more compute per query didn't make Opus 5 smarter, it just made it slower and pricier for the same or worse results on this benchmark set.\n\nFor design and product teams that treat 'which AI model should we use' as a settled question once a vendor is picked, this is a useful nudge to revisit that decision periodically, especially as new effort-tuning options roll out. The cheapest setting being the best performer won't hold for every task, but it's a good reminder to test rather than assume.\n\nWorth a skim even if you're not deep in model internals. The actionable takeaway is simple: benchmark your own workflow before defaulting to the assumption that highest effort equals best result."
+  },
+  "thumbLabel": "비용전략",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

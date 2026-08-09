@@ -274,5 +274,13 @@
   "ROOT IN NEWS": {
     "region": "국내",
     "group": "ROOT IN NEWS"
+  },
+  "VentureBeat": {
+    "region": "해외",
+    "group": "VentureBeat"
+  },
+  "잡코리아 커리어스토리": {
+    "region": "국내",
+    "group": "잡코리아 커리어스토리"
   }
 }
