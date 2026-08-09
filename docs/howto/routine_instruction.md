@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 상태 |
 |---|---|
+| 2026-08-10 | §3 Design 국내 축에 잡코리아 커리어스토리 조건부 등록(news_sources.md §14 연동) |
 | 2026-08-08 | deploy.ps1 validate 게이트 내장 반영(§10-1) |
 | 2026-08-08 | §3 해외 뉴스 축에 MarkTechPost 추가 + 제외 매체 규칙 신설(news_sources.md 「제외 매체」 연동) |
 | 2026-08-07 | §1 브리핑 날짜 기준 변경(실행 당일 → 실행 시점 +1일) + 수동 재실행 보정. 22:00 실행 시 index.json 최신 항목과 충돌해 "이미 있음"으로 오판하던 문제 해소 |
@@ -124,11 +125,11 @@ index.json에 브리핑 날짜가 이미 있으면 → 생성 생략, "해당 �
 - **해외 기업·연구**: OpenAI News·Anthropic News·Google DeepMind·Google Research·Meta AI·Microsoft AI
 - **AI×디자인**(이 축을 반드시 1회 이상 돌린다): Creative Bloq AI 섹션·Adobe Blog·Figma Blog·Canva Design School·European Commission(AI 규제)
 
-### Design 소스 (넓게 크롤링 · 국내 21 · 해외 35)
+### Design 소스 (넓게 크롤링 · 국내 22 · 해외 35)
 - **국내 · 디자인 매체**: 디자인플러스(design.co.kr)·디자인 나침반(designcompass.org)·헤이팝(heypop.kr)·디자인정글(jungle.co.kr)·디자인DB(designdb·kidp)·네이버 디자인프레스
 - **국내 · 브랜드·패션·컬처**: 아이즈매거진·Hypebeast KR·매거진 B·캐릿·디에디트(the-edit.co.kr)·무신사 매거진
 - **국내 · 공간·전시·공공**: 서울디자인재단·DDP·KCDF·행복이 가득한 집·한국콘텐츠진흥원
-- **국내 · 프로덕트·UX 실무**: 토스 tech·우아한형제들 기술블로그·요즘IT
+- **국내 · 프로덕트·UX 실무**: 토스 tech·우아한형제들 기술블로그·요즘IT·잡코리아 커리어스토리(실무자 인터뷰만 — 연봉·취업통계·이벤트 글은 제외)
 - **국내 · 게임·리빙**: 게임메카·인벤·리빙센스(smlounge)
 - **해외 종합**: dezeen·designboom·yanko design·it's nice that·core77·archdaily·creative boom·creative bloq·wallpaper*·design milk
 - **해외 브랜드·그래픽·타이포**: Brand New·The Brand Identity·BP&O·The Dieline·AIGA Eye on Design·Print Magazine·Fonts In Use·Typewolf
