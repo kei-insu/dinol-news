@@ -21,16 +21,16 @@
 
 | 문서 | 언제 읽나 | 내용 | 날짜 열 |
 |---|---|---|---|
-| `policy.md` | 정책·규칙·컨벤션 | 확정 정책(파일명·문서화·언어·톡톡·발행·확장) | 확정일 |
-| `dev-history.md` | 기존 기능 이해·확장 | 개발한 것(기능/파일/내용/상태) | 완료일 |
-| `issues.md` | 버그·장애 대응 | 크리티컬 이슈·해결·재발방지 | 발생일 |
-| `design-guide.md` | UI·스타일 | 컬러·폰트·컴포넌트·톡톡 UI 규칙 | — |
-| `guardrails.md` | 배포·보안·위험 작업 전 | 하면 안 되는 것 + 배포 절차(순서 고정)·충돌 마커 금지 | 07-13 |
-| `testing.md` | 배포 전 검증 | 검증 절차·체크리스트 | — |
+| `docs/rules/policy.md` | 정책·규칙·컨벤션 | 확정 정책(파일명·문서화·언어·톡톡·발행·확장) | 확정일 |
+| `docs/history/dev-history.md` | 기존 기능 이해·확장 | 개발한 것(기능/파일/내용/상태) | 완료일 |
+| `docs/history/issues.md` | 버그·장애 대응 | 크리티컬 이슈·해결·재발방지 | 발생일 |
+| `docs/reference/design-guide.md` | UI·스타일 | 컬러·폰트·컴포넌트·톡톡 UI 규칙 | — |
+| `docs/rules/guardrails.md` | 배포·보안·위험 작업 전 | 하면 안 되는 것 + 배포 절차(순서 고정)·충돌 마커 금지 | 07-13 |
+| `docs/howto/testing.md` | 배포 전 검증 | 검증 절차·체크리스트 | — |
 | `docs/reference/news_sources.md` | 브리핑 소스 선정 | 크롤링/큐레이션 소스 목록(14분류·RSS). **소스 단일 출처.** 유럽(EU)·중국(CN) 섹션 포함 | 08-06 |
 | `docs/howto/routine_instruction.md` | 루틴 이해·수정 | 브리핑 자동생성 절차(WebSearch 전용). **§1 브리핑 날짜(실행일+1)** · 발행 중복 대조 관문 · 카드 스키마 · 별점 루브릭 · §3 확장 소스 목록 · §10 발행 게이트 | 08-07 |
-| `detail-page-schema.md` | 상세 페이지·Astro 전환 | contentId·URL 규칙·데이터 스키마·Firebase 키 정책·품질 게이트 | 07-25 |
-| `fortune-schema.md` | 운세 코너 | `fortune.json` 스키마(별자리 12·확률 6·궁합 6·폰트 10) | 07-13 |
+| `docs/reference/detail-page-schema.md` | 상세 페이지·Astro 전환 | contentId·URL 규칙·데이터 스키마·Firebase 키 정책·품질 게이트 | 07-25 |
+| `docs/reference/fortune-schema.md` | 운세 코너 | `fortune.json` 스키마(별자리 12·확률 6·궁합 6·폰트 10) | 07-13 |
 | `docs/howto/session-start.md` | 세션 시작 | 세션 시작 프로세스 6단계 + 날짜 확인 규칙 | 08-07 |
 | `docs/rules/command-review.md` | 명령 발송 전 | 명령 작성 전 자체 검토 7항목 | 07-26 |
 | `docs/reference/worklog-schema.md` | 작업 일지 기록 | Notion 작업 일지 DB·구분 판정·기록 시점·필드 규칙 | 08-08 |
