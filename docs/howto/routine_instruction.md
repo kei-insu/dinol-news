@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 상태 |
 |---|---|
+| 2026-08-11 | §3 AI×디자인 축에 PetaPixel 등록(news_sources.md §8 연동) |
 | 2026-08-10 | §3 Design 국내 축에 잡코리아 커리어스토리 조건부 등록(news_sources.md §14 연동) |
 | 2026-08-08 | deploy.ps1 validate 게이트 내장 반영(§10-1) |
 | 2026-08-08 | §3 해외 뉴스 축에 MarkTechPost 추가 + 제외 매체 규칙 신설(news_sources.md 「제외 매체」 연동) |
@@ -115,7 +116,7 @@ index.json에 브리핑 날짜가 이미 있으면 → 생성 생략, "해당 �
 > 소스 단일 출처는 `news_sources.md`. 아래는 그중 매일 도는 목록이다. **한쪽을 고치면 다른 쪽도 같은 변경에서 고친다.**
 > WebSearch 전용이므로 URL 접근이 안 되는 매체도 **매체명을 검색어에 넣어** 후보를 찾는다(중국 매체 등).
 
-### AI 소스 (넓게 크롤링 · 국내 16 · 해외 23)
+### AI 소스 (넓게 크롤링 · 국내 16 · 해외 24)
 - **국내 · AI 전문**: 인공지능신문(aitimes.kr)·AI타임스(aitimes.com)·테크42
 - **국내 · IT 매체**: zdnet.co.kr·bloter.net·byline.network·etnews.com·디지털데일리(ddaily.co.kr)·IT조선
 - **국내 · 스타트업·산업**: 플래텀·벤처스퀘어·매일경제·조선비즈 IT/사이언스·연합뉴스 IT/과학
@@ -123,7 +124,7 @@ index.json에 브리핑 날짜가 이미 있으면 → 생성 생략, "해당 �
 - **해외 뉴스**: techcrunch·the verge·wired·ars technica·venturebeat·MIT Technology Review·MarkTechPost(모델 출시 기술 분석 — 제품 출시 기사는 공식 블로그 교차확인)·UN News(정책)
 - **해외 논평·큐레이션**: The Batch·Import AI·Simon Willison·TLDR AI·The Rundown AI·Hugging Face Blog
 - **해외 기업·연구**: OpenAI News·Anthropic News·Google DeepMind·Google Research·Meta AI·Microsoft AI
-- **AI×디자인**(이 축을 반드시 1회 이상 돌린다): Creative Bloq AI 섹션·Adobe Blog·Figma Blog·Canva Design School·European Commission(AI 규제)
+- **AI×디자인**(이 축을 반드시 1회 이상 돌린다): Creative Bloq AI 섹션·Adobe Blog·Figma Blog·Canva Design School·PetaPixel(사진·이미징 툴 뉴스)·European Commission(AI 규제)
 
 ### Design 소스 (넓게 크롤링 · 국내 22 · 해외 35)
 - **국내 · 디자인 매체**: 디자인플러스(design.co.kr)·디자인 나침반(designcompass.org)·헤이팝(heypop.kr)·디자인정글(jungle.co.kr)·디자인DB(designdb·kidp)·네이버 디자인프레스
