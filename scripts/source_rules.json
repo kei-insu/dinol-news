@@ -282,5 +282,9 @@
   "잡코리아 커리어스토리": {
     "region": "국내",
     "group": "잡코리아 커리어스토리"
+  },
+  "PetaPixel": {
+    "region": "해외",
+    "group": "PetaPixel"
   }
 }

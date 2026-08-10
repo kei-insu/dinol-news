@@ -1,0 +1,57 @@
+{
+  "contentId": "20260811-ai-002",
+  "date": "2026-08-11",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "PetaPixel",
+    "publishedAt": "2026-08-07"
+  },
+  "url": "https://petapixel.com/2026/08/07/adobe-is-coming-for-canva-with-expanded-chatgpt-integration/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 생산성",
+    "en": "AI · Tools · Productivity"
+  },
+  "title": {
+    "kr": "어도비, 챗GPT 연동 확대하며 캔바에 정면 도전",
+    "en": "Adobe Is Coming for Canva With Expanded ChatGPT Integration"
+  },
+  "summary": {
+    "kr": "어도비가 포토샵·일러스트레이터·프리미어·파이어플라이 등 70여 개 도구를 챗GPT 안에서 바로 쓸 수 있는 플러그인을 출시했습니다. 채팅 프롬프트만으로 사진 보정, 영상 리사이즈, 소셜 콘텐츠 제작이 가능해집니다.",
+    "en": "Adobe launched a ChatGPT plugin bundling over 70 tools from Photoshop, Illustrator, Premiere, Firefly and more, letting users edit photos, resize video and generate social assets straight from a chat prompt."
+  },
+  "points": {
+    "kr": [
+      "챗GPT 안에서 70여 개 크리에이티브 클라우드 도구 사용 가능",
+      "사진 보정부터 영상 하이라이트 릴까지 다양한 활용 사례",
+      "캔바의 대화형 편집에 정면으로 맞서는 경쟁 구도"
+    ],
+    "en": [
+      "70+ Creative Cloud tools accessible inside ChatGPT",
+      "Use cases span photo fixes to video highlight reels",
+      "Direct competitive pressure on Canva's chat-based editing"
+    ]
+  },
+  "positions": [
+    "graphic-designer",
+    "art-director"
+  ],
+  "designer": {
+    "kr": "디자이너가 아닌 협업자들이 이미 챗GPT를 일상적으로 쓰고 있다면, 이제 그들이 여러분을 거치지 않고 '간단한 수정'을 직접 시작할 접점이 바로 여기입니다. 기본 요청 창구가 되기 전에 미리 써보는 게 좋습니다.",
+    "en": "If your non-designer stakeholders already live in ChatGPT, this is where they'll start making 'quick edits' without you. Worth testing before it becomes the default request funnel."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "이번 주 실제 크리에이티브 클라우드 파일로 직접 테스트 · 브랜드 가이드라인 담당자에게 공유 권장",
+    "en": "Try it with a real Creative Cloud file this week · Flag to your team's brand-guideline owner"
+  },
+  "comment": {
+    "kr": "어도비가 챗GPT 안에 70여 개 도구를 넣은 것은 챗GPT 자체보다, 창작 작업이 실제로 시작되는 지점이 캔버스가 아니라 채팅창으로 옮겨가고 있다는 흐름을 보여줍니다. 어도비는 이 흐름을 막기보다 올라타면서, 진입점이 다른 회사의 챗봇이 되더라도 크리에이티브 클라우드가 여전히 그 과정 안에 남아있도록 하는 전략을 택했습니다.\n직접적인 타깃은 캔바입니다. 캔바는 '아이디어가 있다'와 '완성된 결과물이 있다' 사이의 마찰을 없애는 것으로 성장해왔는데, 어도비가 전문가급 도구로 같은 경험을 제공하면 캔바의 가장 큰 강점이 좁아집니다.\n실무 디자이너 입장에서 진짜 위험은 도구 자체가 아니라 '업무 범위 축소'입니다. 마케팅 담당자가 포토샵을 열지 않고도 배너를 리사이즈하거나 제품 사진을 정리할 수 있게 되면, 예전에는 디자이너에게 오던 일 일부가 더 이상 오지 않게 됩니다. 이 플러그인이 무엇을 잘하고 무엇을 못하는지 20분 투자해 직접 확인해볼 가치가 있습니다.",
+    "en": "Adobe putting 70-plus tools inside ChatGPT is less about ChatGPT and more about where creative work actually starts now, increasingly in a chat window rather than a canvas. Rather than fight that shift, Adobe is meeting it, betting that owning the plugin layer keeps Creative Cloud in the loop even when the entry point is someone else's chatbot.\nThe direct target here is Canva, which built its entire growth story on removing friction between 'I have an idea' and 'I have a finished asset.' Adobe matching that with its own professional-grade tools narrows Canva's biggest advantage.\nFor working designers, the practical risk isn't the tool itself, it's scope creep. When a marketing manager can resize a hero banner or clean up a product photo without opening Photoshop, some of what used to land on a designer's desk simply won't anymore. Understanding what the plugin can and can't do well is worth the twenty minutes it takes to try it."
+  },
+  "thumbLabel": "챗GPT연동",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

@@ -1,0 +1,74 @@
+{
+  "20260811-ai-001": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 4,
+    "positions": [
+      "design-manager",
+      "design-lead"
+    ]
+  },
+  "20260811-ai-002": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 4,
+    "positions": [
+      "graphic-designer",
+      "art-director"
+    ]
+  },
+  "20260811-ai-003": {
+    "category_kr": "AI · 게임 · UX",
+    "category_en": "AI · Gaming · UX",
+    "impactScore": 3,
+    "positions": [
+      "ui-designer",
+      "product-designer"
+    ]
+  },
+  "20260811-ai-004": {
+    "category_kr": "AI · 로봇 · 가전",
+    "category_en": "AI · Robotics · Home Appliances",
+    "impactScore": 1,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260811-design-001": {
+    "category_kr": "디자인 · 일러스트레이션 · 공간",
+    "category_en": "Design · Illustration · Space",
+    "impactScore": 3,
+    "positions": [
+      "illustrator",
+      "art-director"
+    ]
+  },
+  "20260811-design-002": {
+    "category_kr": "디자인 · 편집 · 일러스트레이션",
+    "category_en": "Design · Editorial · Illustration",
+    "impactScore": 3,
+    "positions": [
+      "illustrator",
+      "editorial-designer"
+    ]
+  },
+  "20260811-design-003": {
+    "category_kr": "디자인 · 제품 · 테크",
+    "category_en": "Design · Product · Tech",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260811-design-004": {
+    "category_kr": "디자인 · 공간 · 브랜드경험",
+    "category_en": "Design · Space · Brand Experience",
+    "impactScore": 2,
+    "positions": [
+      "space-designer",
+      "brand-designer"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260811-design-002",
+  "date": "2026-08-11",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-08-10"
+  },
+  "url": "https://www.itsnicethat.com/articles/bijou-karman-peace-eye-publication-project-100826",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 편집 · 일러스트레이션",
+    "en": "Design · Editorial · Illustration"
+  },
+  "title": {
+    "kr": "비주 카먼의 '말도 안 되는' 매거진, 90년대 펑크 포스터와 빈티지 남성지·요가책 사이를 오가다",
+    "en": "Bijou Karman's 'nonsensical' magazine is a visual dance between 90s punk posters, vintage men's magazines and old yoga books"
+  },
+  "summary": {
+    "kr": "일러스트레이터 비주 카먼이 90년대 펑크 전단, 빈티지 남성지 레이아웃, 오래된 요가책 그래픽을 뒤섞어 가상의 출판물 'Peace Eye'를 만들었습니다. 의도적으로 '말이 안 되는' 비주얼 아이덴티티가 특징입니다.",
+    "en": "Illustrator Bijou Karman created a fictional publication, 'Peace Eye,' mashing up 90s punk flyers, vintage men's magazine layouts and old yoga book graphics into one deliberately nonsensical visual identity."
+  },
+  "points": {
+    "kr": [
+      "서로 무관한 세 시대의 비주얼을 뒤섞은 가상 매거진",
+      "펑크 전단 에너지, 빈티지 남성지 레이아웃, 요가 그래픽의 조합",
+      "클라이언트 작업이 아닌 개인 프로젝트로 제작"
+    ],
+    "en": [
+      "Fictional magazine mashes three unrelated visual eras",
+      "Punk flyer energy meets vintage men's-mag layout meets yoga graphics",
+      "Built as a personal project, not a client brief"
+    ]
+  },
+  "positions": [
+    "illustrator",
+    "editorial-designer"
+  ],
+  "designer": {
+    "kr": "어울리지 않는 레퍼런스도 충분히 밀어붙이면 실수가 아니라 하나의 스타일로 읽힌다는 걸 보여주는 사례입니다. 브리프가 너무 매끈해서 마찰이 필요할 때 참고할 만합니다.",
+    "en": "A good reminder that mismatched references, pushed far enough, read as a style rather than a mistake. Useful when a brief feels too polished and needs some friction."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "편집·타이포그래피 무드보드에 저장 · 개인 프로젝트 영감용으로 추천",
+    "en": "Save to your editorial/typography moodboard · Good personal-project inspiration"
+  },
+  "comment": {
+    "kr": "'Peace Eye'가 눈여겨볼 만한 이유는 특정 레퍼런스 하나 때문이 아닙니다. 펑크 전단, 남성지, 요가책은 각각 이미 많이 쓰인 소재입니다. 흥미로운 건 이 세 가지를 매끄럽게 다듬지 않고 한 출판물 안에 그대로 충돌시킨 결정 자체입니다. 그 충돌이 곧 콘셉트입니다.\n요즘 클라이언트용 편집 디자인이 대부분 비슷한 그리드와 산세리프 언어로 수렴하는 흐름과 비교하면 좋은 대조점이 됩니다. 이런 개인 프로젝트는 '말이 안 되는' 조합도 충분한 확신을 갖고 밀어붙이면 실력 부족이 아니라 하나의 정당한 디자인 방향이 될 수 있다는 걸 보여줍니다.\n특정 레퍼런스보다는, 이질적인 요소를 조합하는 확신 자체를 눈여겨보는 게 더 배울 점이 많습니다. 그게 따라 하기 더 어려운 능력이니까요.",
+    "en": "What makes 'Peace Eye' worth a look isn't any single reference point, punk flyers, men's magazines and yoga books are each well-trodden ground on their own, but the decision to force all three into the same publication without smoothing the seams between them. The clash is the point.\nIt's a useful contrast to how much client-facing editorial design tends to converge on the same safe grid-and-sans-serif language right now. A personal project like this is a reminder that 'nonsensical' can be a legitimate design direction, not just a lack of discipline, as long as the mashup is executed with enough conviction.\nWorth studying less for the specific references and more for the confidence in the pairing, that's the harder skill to copy."
+  },
+  "thumbLabel": "일러스트",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

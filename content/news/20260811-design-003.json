@@ -1,0 +1,53 @@
+{
+  "contentId": "20260811-design-003",
+  "date": "2026-08-11",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "디자인 나침반",
+    "publishedAt": "2026-08-10"
+  },
+  "url": "https://designcompass.org/2026/08/10/cmf-clip-pro/",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 테크",
+    "en": "Design · Product · Tech"
+  },
+  "title": {
+    "kr": "Nothing CMF, 첫 오픈 이어폰 'Clip Pro' 공개",
+    "en": null
+  },
+  "summary": {
+    "kr": "Nothing의 서브 브랜드 CMF가 첫 오픈형 무선 이어폰 'Clip Pro'를 공개했습니다. 인이어 방식 대신 귀 바깥쪽에 클립처럼 거는 구조를 택해, 기존 이어폰과 다른 착용 경험과 실루엣을 제안합니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "인이어 대신 귀 외부에 거는 클립형 구조 채택",
+      "CMF 특유의 투명·기계미 디자인 언어 유지",
+      "개방형 착용감을 강조한 폼팩터 전환"
+    ],
+    "en": []
+  },
+  "positions": [
+    "industrial-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "폼팩터 하나를 바꾸는 것만으로 브랜드가 '오디오 액세서리'에서 '웨어러블 오브젝트'로 포지셔닝을 옮길 수 있다는 걸 보여주는 사례입니다. 제품 디자이너라면 실루엣 레퍼런스로 저장해둘 만합니다.",
+    "en": null
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "제품·산업 디자이너 무드보드용 저장 추천",
+    "en": null
+  },
+  "comment": {
+    "kr": "CMF는 그동안 저렴하면서도 마감이 좋은 '투명 기계미' 디자인 언어로 포지션을 잡아왔는데, 이번 Clip Pro는 그 언어를 인이어가 아닌 오픈형 폼팩터에 처음 적용했다는 점이 눈에 띕니다. 귀 안이 아니라 바깥에 거는 구조는 착용감뿐 아니라 실루엣 자체를 완전히 바꿉니다.\n이어폰이라는 카테고리가 이미 포화 상태인 시장에서, 폼팩터 전환만으로 신선함을 만들어내는 접근은 참고할 만합니다. 기능보다 '착용되는 방식'을 바꾸는 것도 하나의 디자인 전략이라는 걸 보여줍니다.\n가격대나 마감 디테일까지는 이 기사만으로 확인하기 어려우니, 실물 이미지를 추가로 찾아보는 걸 추천합니다.",
+    "en": null
+  },
+  "thumbLabel": "이어폰",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}
