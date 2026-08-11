@@ -1,0 +1,53 @@
+{
+  "contentId": "20260812-design-004",
+  "date": "2026-08-12",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "EBN",
+    "publishedAt": "2026-08-04"
+  },
+  "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1719013",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 브랜딩 · BI",
+    "en": "Design · Branding · BI"
+  },
+  "title": {
+    "kr": "[단독] 간판 바꾸는 KFC…8년만에 글로벌 BI 리뉴얼",
+    "en": null
+  },
+  "summary": {
+    "kr": "얼마 전 KFC 본사가 8년 만에 글로벌 BI를 새로 정비했습니다. 각 나라 법인이 순차 적용을 맡는 가운데, KFC코리아는 새 BI 이미지 공개와 구체적 교체 일정 모두를 회사 방침상 밝힐 수 없다고 밝혔습니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "2018년부터 써온 로고를 8년 만에 교체",
+      "매장 간판부터 컵·쇼핑백·포장재까지 순차 적용",
+      "한국 법인은 이미지·일정 비공개 방침"
+    ],
+    "en": []
+  },
+  "positions": [
+    "bx-designer",
+    "brand-designer"
+  ],
+  "designer": {
+    "kr": "글로벌 프랜차이즈 BI가 국가별로 어떤 속도와 방식으로 굴러가는지 보여주는 사례로, 다국적 브랜드의 로컬 적용 전략을 짚어볼 때 참고할 만합니다.",
+    "en": null
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "브랜드·BX 디자이너 배경 지식 · 국내 적용 발표 시 비교 참고",
+    "en": null
+  },
+  "comment": {
+    "kr": "8년 만의 로고 교체라는 소식 자체보다 흥미로운 건 '한국 법인은 공개하지 않는다'는 대목입니다. 글로벌 본사가 새 BI를 발표해도 각 나라 법인이 언제, 어떻게 적용할지는 별개의 결정이라는 걸 보여주는 사례입니다.\nBX·브랜드 디자이너에게는 글로벌 아이덴티티 시스템이 실제 매장 간판·컵·포장재까지 내려오는 데 걸리는 시간과 각국의 재량 범위를 가늠해볼 수 있는 참고 자료입니다. 국내에 실제 새 BI가 적용될 때 이번 보도와 비교해보는 것도 흥미로울 것입니다.",
+    "en": null
+  },
+  "thumbLabel": "BI리뉴얼",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

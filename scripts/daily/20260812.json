@@ -1,0 +1,74 @@
+{
+  "20260812-ai-001": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 4,
+    "positions": [
+      "service-designer",
+      "product-designer"
+    ]
+  },
+  "20260812-ai-002": {
+    "category_kr": "AI · 인프라 · 전략",
+    "category_en": "AI · Infrastructure · Strategy",
+    "impactScore": 2,
+    "positions": [
+      "design-lead",
+      "design-manager"
+    ]
+  },
+  "20260812-ai-003": {
+    "category_kr": "AI · 빅테크 · 전략",
+    "category_en": "AI · Big Tech · Strategy",
+    "impactScore": 2,
+    "positions": [
+      "design-lead",
+      "design-manager"
+    ]
+  },
+  "20260812-ai-004": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 5,
+    "positions": [
+      "graphic-designer",
+      "product-designer"
+    ]
+  },
+  "20260812-design-001": {
+    "category_kr": "디자인 · 브랜딩 · 그래픽",
+    "category_en": "Design · Branding · Graphic",
+    "impactScore": 4,
+    "positions": [
+      "brand-designer",
+      "graphic-designer"
+    ]
+  },
+  "20260812-design-002": {
+    "category_kr": "디자인 · 건축 · 주거",
+    "category_en": "Design · Architecture · Residential",
+    "impactScore": 3,
+    "positions": [
+      "architect",
+      "space-designer"
+    ]
+  },
+  "20260812-design-003": {
+    "category_kr": "디자인 · 패키지 · 브랜딩",
+    "category_en": "Design · Packaging · Branding",
+    "impactScore": 3,
+    "positions": [
+      "package-designer",
+      "graphic-designer"
+    ]
+  },
+  "20260812-design-004": {
+    "category_kr": "디자인 · 브랜딩 · BI",
+    "category_en": "Design · Branding · BI",
+    "impactScore": 3,
+    "positions": [
+      "bx-designer",
+      "brand-designer"
+    ]
+  }
+}

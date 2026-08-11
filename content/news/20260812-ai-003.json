@@ -1,0 +1,57 @@
+{
+  "contentId": "20260812-ai-003",
+  "date": "2026-08-12",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-08-05"
+  },
+  "url": "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 빅테크 · 전략",
+    "en": "AI · Big Tech · Strategy"
+  },
+  "title": {
+    "kr": "Anthropic, 클로드 위한 자체 AI 칩 설계팀 꾸린다",
+    "en": "Anthropic is hiring an AI chip design team"
+  },
+  "summary": {
+    "kr": "Anthropic이 클로드 모델을 위한 자체 칩 설계팀을 사내에 구축한다고 공식 확인했습니다. 소프트웨어 중심이던 회사가 하드웨어까지 손을 뻗는 전략적 전환입니다.",
+    "en": "Anthropic confirmed it's building an in-house team to design custom chips for Claude, hiring senior chip engineers as demand for compute keeps rising."
+  },
+  "points": {
+    "kr": [
+      "사내 칩 설계팀 최초 공식 확인",
+      "최대 4억 8500만원 연봉으로 시니어 엔지니어 채용",
+      "AWS·구글·엔비디아·AMD 하드웨어는 계속 병행 사용"
+    ],
+    "en": [
+      "First public confirmation of in-house chip design team",
+      "Hiring senior engineers with salaries up to $485K",
+      "Still using AWS, Google, Nvidia, AMD hardware alongside"
+    ]
+  },
+  "positions": [
+    "design-lead",
+    "design-manager"
+  ],
+  "designer": {
+    "kr": "AI 기업들이 하드웨어까지 직접 통제하려는 흐름을 보여주는 신호로, 앞으로 여러분이 매일 쓰는 AI 도구의 속도와 비용에 영향을 줄 수 있는 변화입니다.",
+    "en": "A sign that AI labs are racing to control their own hardware stack, so expect more custom silicon shaping how fast and cheap the AI tools you use every day can run."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "AI 도구 사용자를 위한 배경 지식 · 선택",
+    "en": "Background context for AI tooling users · Optional"
+  },
+  "comment": {
+    "kr": "Anthropic은 지금까지 소프트웨어 중심 회사였기에, 이번 하드웨어 진출은 주목할 만합니다. 칩과 모델을 함께 설계할 수 있는 엔지니어를 채용해, 클로드를 대규모로 더 빠르고 저렴하게 운영하는 것이 목표입니다.\n당장 여러분의 작업 방식을 바꾸는 소식은 아니지만, 클로드를 디자인·창작 작업에 많이 활용한다면 지켜볼 가치가 있습니다. 자체 칩은 보통 장기적으로 더 나은 가격과 속도로 이어지기 때문입니다.",
+    "en": "Anthropic has always been a software-first lab, so this hardware move is notable. The company is hiring engineers who can co-design chips and models together, aiming to make Claude faster and cheaper to run at scale.\nThis isn't something that changes your workflow today, but it's worth tracking if you rely heavily on Claude for design or creative work. Custom silicon usually means better price and speed down the line."
+  },
+  "thumbLabel": "AI칩",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

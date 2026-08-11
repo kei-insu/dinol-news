@@ -286,5 +286,17 @@
   "PetaPixel": {
     "region": "해외",
     "group": "PetaPixel"
+  },
+  "베타뉴스": {
+    "region": "국내",
+    "group": "베타뉴스"
+  },
+  "EBN": {
+    "region": "국내",
+    "group": "EBN"
+  },
+  "Adobe Blog": {
+    "region": "해외",
+    "group": "Adobe Blog"
   }
 }

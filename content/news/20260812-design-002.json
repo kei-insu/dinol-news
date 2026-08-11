@@ -1,0 +1,57 @@
+{
+  "contentId": "20260812-design-002",
+  "date": "2026-08-12",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "designboom",
+    "publishedAt": "2026-08-03"
+  },
+  "url": "https://www.designboom.com/architecture/concrete-wood-greenery-perkins-will-residential-tower-sao-paulo-casa-arbo/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 주거",
+    "en": "Design · Architecture · Residential"
+  },
+  "title": {
+    "kr": "콘크리트, 목재, 초록으로 감싼 페르킨스&윌의 상파울루 주거 타워",
+    "en": "Wrapped in concrete, wood, and greenery, Perkins&Will's residential tower rises in São Paulo"
+  },
+  "summary": {
+    "kr": "페르킨스&윌의 상파울루 주거 타워 '카사 아르보'가 콘크리트와 목재를 초록으로 감쌌습니다. 단을 이룬 매스는 건물의 존재감을 동네 안에서 부드럽게 낮춥니다.",
+    "en": "Perkins&Will's Casa Arbo residential tower in São Paulo wraps concrete and wood in greenery, using stepped massing to soften its presence within the neighborhood."
+  },
+  "points": {
+    "kr": [
+      "단을 이룬 매스로 타워의 체감 높이를 낮춤",
+      "콘크리트와 목재가 만드는 강함과 따뜻함의 대화",
+      "조경을 장식이 아닌 거주 경험의 일부로 다룸"
+    ],
+    "en": [
+      "Stepped massing reduces the tower's perceived height",
+      "Concrete and wood set up a dialogue of strength and warmth",
+      "Landscape treated as part of the living experience, not decoration"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "재료 대비와 매싱 전략만으로 고층 주거 건물을 동네 스케일로 느끼게 만드는 방법을 보여주는 참고 사례입니다.",
+    "en": "A useful reference for how material contrast and massing strategy can make a tall residential building feel neighborhood-scaled."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "파사드·매싱 스터디 참고용 · 저장 추천",
+    "en": "Good reference for facade and massing studies · Save"
+  },
+  "comment": {
+    "kr": "카사 아르보는 익숙한 문제를 다룹니다. 주거 타워가 동네에 뚝 떨어진 벽처럼 느껴지지 않게 하는 방법입니다. 페르킨스&윌의 답은 단을 이룬 매싱과 콘크리트·목재 조합으로, 높이를 감추지 않으면서도 스케일감을 부드럽게 만드는 것입니다.\n건축가·공간 디자이너에게 더 흥미로운 지점은 조경을 마감 단계에 더하는 요소가 아니라 경험 자체를 구성하는 구조로 다뤘다는 점입니다. 매싱과 재료 스터디를 할 때 다시 찾아볼 만한 프로젝트입니다.",
+    "en": "Casa Arbo tackles a familiar problem: how does a residential tower avoid feeling like a wall dropped into a neighborhood. Perkins&Will's answer is stepped massing paired with a concrete-and-wood material palette that softens the building's scale without pretending it isn't tall.\nFor architects and spatial designers, the more interesting move might be treating landscape as structural to the experience rather than a finishing touch added at the end. It's a project worth returning to when massing and material studies come up in your own work."
+  },
+  "thumbLabel": "건축",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

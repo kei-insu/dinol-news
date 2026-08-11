@@ -1,0 +1,57 @@
+{
+  "contentId": "20260812-design-001",
+  "date": "2026-08-12",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-08-06"
+  },
+  "url": "https://www.itsnicethat.com/articles/stan-hema-berlin-museum-graphic-design-project-060826",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 그래픽",
+    "en": "Design · Branding · Graphic"
+  },
+  "title": {
+    "kr": "베를린 뮤지엄의 새 얼굴, U반과 커리부어스트 가판대에서 서체를 빌리다",
+    "en": "Berlin Museum's makeover borrows typefaces from the U-Bahn and currywurst stands"
+  },
+  "summary": {
+    "kr": "베를린 스튜디오 스탠 헤마가 베를린 슈타트무제움 재단의 새 아이덴티티를 공개했습니다. U반 표지판과 커리부어스트 가판대의 서체를 빌려온 것이 특징이며, 9월 도시 전역에 적용됩니다.",
+    "en": "Berlin studio Stan Hema unveiled a playful new identity for the Stiftung Stadtmuseum, borrowing typefaces from the city's U-Bahn signage and currywurst stands, launching city-wide in September 2026."
+  },
+  "points": {
+    "kr": [
+      "U반 표지판·커리부어스트 가판대 서체를 그대로 차용",
+      "도시 자체에서 나온 듯한 뮤지엄 브랜드 만들기",
+      "2026년 9월 도시 전역 적용 예정"
+    ],
+    "en": [
+      "Typefaces borrowed from U-Bahn signage and street food stands",
+      "A city museum brand that looks like it belongs to the city itself",
+      "Launches city-wide in September 2026"
+    ]
+  },
+  "positions": [
+    "brand-designer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "일반적인 '뮤지엄스러운' 톤을 수입하는 대신, 도시 자체의 길거리 서체에서 브랜드 목소리를 찾아낸 예리한 사례입니다.",
+    "en": "A sharp example of finding brand voice in a city's own vernacular signage rather than importing a generic 'museum' aesthetic."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "아이덴티티 디자이너를 위한 좋은 레퍼런스 · 저장 추천",
+    "en": "Great case study for identity designers · Save for reference"
+  },
+  "comment": {
+    "kr": "이 리브랜딩이 잘 작동하는 이유는 대담함으로 위장한 절제에 있습니다. 새 서체를 처음부터 디자인하는 대신, 스탠 헤마는 사람들이 매일 지나치는 U반 표지판과 커리부어스트 가판대 서체, 베를린 고유의 시각 언어를 그대로 가져왔습니다.\n그 결과는 흔한 '문화기관스러움' 대신 진짜 그 도시에서 나온 듯한 느낌을 줍니다. 브랜드·그래픽 디자이너에게는 도시 안에서 발견한 타이포그래피가 고립된 상태에서 새로 디자인한 것보다 더 강한 정체성의 원천이 될 수 있다는 점을 일깨워줍니다. 이례적인 서체 소스를 가독성과 개성 사이에서 어떻게 균형 잡았는지 살펴볼 만합니다.",
+    "en": "What makes this rebrand work is restraint disguised as boldness. Instead of designing a new typeface from scratch, Stan Hema pulled directly from Berlin's own visual language, the signage people already walk past every day on the U-Bahn and at currywurst stands.\nThe result reads as authentically local rather than generically 'cultural institution.' For brand and graphic designers, it's a reminder that a city's own found typography can be a stronger source of identity than anything designed in isolation. Worth studying how they balanced legibility with personality across such an unconventional type source."
+  },
+  "thumbLabel": "리브랜딩",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}
