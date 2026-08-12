@@ -1,0 +1,57 @@
+{
+  "contentId": "20260813-ai-003",
+  "date": "2026-08-13",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "Nielsen Norman Group",
+    "publishedAt": "2026-08-07"
+  },
+  "url": "https://www.nngroup.com/articles/prove-framework/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 방법론 · 툴 평가",
+    "en": "AI · Methodology · Tool Evaluation"
+  },
+  "title": {
+    "kr": "'AI 도입 압박'이 곧 '도구가 도움된다'는 증거는 아니다",
+    "en": "Pressure to Adopt AI Isn't Evidence That a Tool Helps"
+  },
+  "summary": {
+    "kr": "닐슨노먼그룹이 특정 업무에 AI 도구가 실제로 도움이 되는지 평가하는 경량 프레임워크 'PROVE'를 소개합니다. AI 도입 압박이 있다고 해서 그 도구가 실제로 도움이 된다는 증거는 아니라는 주장입니다.",
+    "en": "Nielsen Norman Group introduces PROVE, a lightweight framework for evaluating whether an AI tool actually improves a specific piece of work, arguing that pressure to adopt AI is not itself evidence that a given tool helps."
+  },
+  "points": {
+    "kr": [
+      "AI 도구 평가를 위한 PROVE 프레임워크 소개",
+      "도입 압박은 도구의 가치를 증명하지 않음",
+      "실제 워크플로우에 적용한 사례로 설명"
+    ],
+    "en": [
+      "PROVE framework for evaluating AI tools",
+      "Adoption pressure is not proof of value",
+      "Applied to a real workflow as a case study"
+    ]
+  },
+  "positions": [
+    "ux-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "유행을 좇아 AI 도구를 들이는 대신, 우리 팀 워크플로우에 실제로 도움이 되는지 판단할 수 있는 실용적 체크리스트입니다.",
+    "en": "A ready-to-use checklist for deciding whether to adopt an AI tool in your own design workflow, instead of adopting on hype alone."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "AI 도구 도입을 검토 중인 팀 필독 · 프레임워크 저장 추천",
+    "en": "Must-read for teams evaluating AI tools · Save the framework"
+  },
+  "comment": {
+    "kr": "이런 실무 바로 적용 가능한 방법론이야말로 이 뉴스레터가 가장 반기는 콘텐츠입니다. 막연한 'AI가 모든 걸 바꾼다'는 의견 대신, 이번 주 당장 도구 도입 여부를 판단하는 데 쓸 수 있는 구체적인 프레임워크를 제시합니다.\n팀 내에서 뚜렷한 이유 없이 새 AI 도구를 밀어붙이는 사람이 있다면 이 글을 함께 읽어보길 추천합니다.",
+    "en": "This is exactly the kind of practical, immediately usable methodology this newsletter looks for. Instead of another 'AI will change everything' opinion piece, NN/g breaks down a concrete framework you can literally apply to your next tool-adoption decision this week.\nWorth reading closely and sharing with whoever on your team is pushing the newest AI tool without a clear rationale."
+  },
+  "thumbLabel": "AI도구",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

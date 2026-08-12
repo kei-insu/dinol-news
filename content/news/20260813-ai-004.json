@@ -1,0 +1,57 @@
+{
+  "contentId": "20260813-ai-004",
+  "date": "2026-08-13",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Creative Bloq",
+    "publishedAt": "2026-08-12"
+  },
+  "url": "https://www.creativebloq.com/3d/video-game-design/ai-will-have-the-biggest-impact-on-the-future-of-gaming-developers-say",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 게임 · 산업 전망",
+    "en": "AI · Gaming · Industry Outlook"
+  },
+  "title": {
+    "kr": "게임 개발자들 '향후 3년, AI가 업계에 가장 큰 영향 미칠 것'",
+    "en": "AI Will Have the Biggest Impact on the Future of Gaming, Developers Say"
+  },
+  "summary": {
+    "kr": "2026 게임스컴 연사 100명 대상 설문에서 83%가 향후 3년 내 AI가 팀 구조나 생산성에 영향을 줄 것이라 응답했습니다. AI 지원 개발이 게임업계를 뒤흔들 가장 큰 변수로 꼽혔습니다.",
+    "en": "A 2026 Gamescom developer survey of 100 speakers found 83% expect AI to affect team structure or productivity over the next three years, with AI-assisted development seen as the single biggest force shaping the games industry."
+  },
+  "points": {
+    "kr": [
+      "83%가 AI의 팀 구조·생산성 영향을 예상",
+      "게임스컴 2026 연사 100명 대상 설문",
+      "AI를 신규 플랫폼보다 더 큰 변수로 인식"
+    ],
+    "en": [
+      "83% expect AI to affect team structure or productivity",
+      "Surveyed 100 speakers ahead of Gamescom 2026",
+      "AI seen as bigger force than any single new platform"
+    ]
+  },
+  "positions": [
+    "art-director",
+    "design-manager"
+  ],
+  "designer": {
+    "kr": "개별 경험담이 아니라 업계 전체 설문 데이터라는 점에서, 팀 구성이나 AI 파이프라인 도입을 설득할 때 인용하기 좋은 근거 자료입니다.",
+    "en": "A useful data point for art directors staffing teams or pitching AI-assisted pipelines internally, beyond individual anecdotes."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "AI 도입을 계획하는 스튜디오 리드 참고 · 인용 자료로 저장",
+    "en": "Reference for studio leads planning AI adoption · Save for citation"
+  },
+  "comment": {
+    "kr": "개별 스튜디오의 보도자료가 아니라 설문 데이터라는 점에서 내부 근거 자료로 쓰기 좋습니다. AI 도구 예산이나 인력을 설득할 때 83%라는 수치를 인용해볼 만합니다.\n다만 컨퍼런스 연사 대상 설문이라 이미 AI에 우호적인 응답자 비중이 높을 수 있다는 점은 감안해서 읽어야 합니다.",
+    "en": "Survey data rather than a single studio's press release, which makes it more useful as an internal reference. The 83% figure is worth quoting the next time you need to justify budget or headcount for AI tooling.\nThat said, a speaker survey skews toward people already comfortable with AI, so treat it as a temperature check rather than a hard prediction."
+  },
+  "thumbLabel": "게임",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

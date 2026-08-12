@@ -1,0 +1,74 @@
+{
+  "20260813-ai-001": {
+    "category_kr": "AI · 에이전트 · UXUI",
+    "category_en": "AI · Agents · UXUI",
+    "impactScore": 3,
+    "positions": [
+      "ui-designer",
+      "illustrator"
+    ]
+  },
+  "20260813-ai-002": {
+    "category_kr": "AI · 툴 · 워크플로우",
+    "category_en": "AI · Tools · Workflow",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "ui-designer"
+    ]
+  },
+  "20260813-ai-003": {
+    "category_kr": "AI · 방법론 · 툴 평가",
+    "category_en": "AI · Methodology · Tool Evaluation",
+    "impactScore": 5,
+    "positions": [
+      "ux-designer",
+      "design-lead"
+    ]
+  },
+  "20260813-ai-004": {
+    "category_kr": "AI · 게임 · 산업 전망",
+    "category_en": "AI · Gaming · Industry Outlook",
+    "impactScore": 3,
+    "positions": [
+      "art-director",
+      "design-manager"
+    ]
+  },
+  "20260813-design-001": {
+    "category_kr": "디자인 · 커리어 · 포트폴리오",
+    "category_en": "Design · Career · Portfolio",
+    "impactScore": 4,
+    "positions": [
+      "ux-designer",
+      "product-designer"
+    ]
+  },
+  "20260813-design-002": {
+    "category_kr": "디자인 · 트렌드 · 캘린더",
+    "category_en": "Design · Trends · Calendar",
+    "impactScore": 3,
+    "positions": [
+      "brand-designer",
+      "bx-designer"
+    ]
+  },
+  "20260813-design-003": {
+    "category_kr": "디자인 · UX · 리서치",
+    "category_en": "Design · UX · Research",
+    "impactScore": 4,
+    "positions": [
+      "ux-designer",
+      "service-designer"
+    ]
+  },
+  "20260813-design-004": {
+    "category_kr": "디자인 · 제품 · 프로덕트",
+    "category_en": "Design · Product · Industrial Design",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  }
+}

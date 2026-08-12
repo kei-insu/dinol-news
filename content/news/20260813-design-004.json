@@ -1,0 +1,57 @@
+{
+  "contentId": "20260813-design-004",
+  "date": "2026-08-13",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-07-29"
+  },
+  "url": "https://www.yankodesign.com/2026/07/29/the-foldable-e-ink-book-is-finally-taking-shape/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 프로덕트",
+    "en": "Design · Product · Industrial Design"
+  },
+  "title": {
+    "kr": "접히는 전자잉크 북, 마침내 제 모습을 갖추다",
+    "en": "The Foldable E Ink Book Is Finally Taking Shape"
+  },
+  "summary": {
+    "kr": "야코디자인이 폴더블 전자잉크 기기가 어떻게 참신한 콘셉트 단계를 넘어 실사용 가능한 독서·필기 도구로 자리잡고 있는지 정리했습니다. 힌지 구조와 화면 내구성이 함께 개선되었습니다.",
+    "en": "Yanko Design rounds up how foldable E Ink devices are maturing from novelty concepts into genuinely usable reading and writing tools, with improved hinge mechanisms and screen durability."
+  },
+  "points": {
+    "kr": [
+      "폴더블 전자잉크 하드웨어, 콘셉트 단계를 넘어 실사용 단계로",
+      "힌지 구조·화면 내구성 개선",
+      "독서와 필기가 하나의 폼팩터로 수렴"
+    ],
+    "en": [
+      "Foldable E Ink hardware maturing beyond concept stage",
+      "Hinge mechanism and screen durability improvements",
+      "Reading and writing converging on a single device form"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "폴더블 폼팩터를 위한 하드웨어 제약이 현재 어디까지 와 있는지 짧게 정리한 자료로, 이 폼팩터를 다루기 전 참고하기 좋습니다.",
+    "en": "A concise snapshot of where foldable-screen hardware constraints currently sit, useful groundwork before designing for this form factor."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "폴더블 기기 프로젝트 배경지식용 · 참고 자료로 저장",
+    "en": "Background reading for foldable device projects · Save for reference"
+  },
+  "comment": {
+    "kr": "단일 제품 소개보다는 하드웨어 트렌드 정리에 가깝지만, 몇 년간 콘셉트 렌더로만 떠돌던 폴더블 전자잉크가 실제로 어디까지 왔는지 가늠하기에 좋은 자료입니다.\n폴더블이나 듀얼 스크린을 다루는 프로젝트를 진행 중이라면, 지금 기술적으로 무엇이 가능한지 감을 잡는 용도로 가볍게 훑어볼 만합니다.",
+    "en": "More of a hardware-trend roundup than a single product story, but useful as a snapshot of where foldable E Ink has actually landed after a few years of concept renders.\nWorth a skim if you're designing anything that lives on a foldable or dual-screen surface, if only to calibrate expectations against what's technically shippable right now."
+  },
+  "thumbLabel": "폼팩터",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}

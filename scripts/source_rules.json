@@ -298,5 +298,21 @@
   "Adobe Blog": {
     "region": "해외",
     "group": "Adobe Blog"
+  },
+  "디지털투데이": {
+    "region": "국내",
+    "group": "디지털투데이"
+  },
+  "Nielsen Norman Group": {
+    "region": "해외",
+    "group": "Nielsen Norman Group"
+  },
+  "링커리어": {
+    "region": "국내",
+    "group": "링커리어"
+  },
+  "캐릿": {
+    "region": "국내",
+    "group": "캐릿"
   }
 }

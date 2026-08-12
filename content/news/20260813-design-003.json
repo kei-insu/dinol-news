@@ -1,0 +1,57 @@
+{
+  "contentId": "20260813-design-003",
+  "date": "2026-08-13",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Nielsen Norman Group",
+    "publishedAt": "2026-08-07"
+  },
+  "url": "https://www.nngroup.com/articles/dogfooding/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · UX · 리서치",
+    "en": "Design · UX · Research"
+  },
+  "title": {
+    "kr": "도그푸딩은 QA도, 유저 리서치도 아니다",
+    "en": "Dogfooding vs. QA vs. User Research"
+  },
+  "summary": {
+    "kr": "닐슨노먼그룹이 도그푸딩과 QA, 유저 리서치의 차이를 짚습니다. 자사 제품을 직접 써보는 도그푸딩은 버그를 잡고 공감을 쌓는 데는 유용하지만, 그 효용의 한계는 대부분의 팀이 생각하는 것보다 훨씬 낮다는 것입니다.",
+    "en": "Nielsen Norman Group breaks down the difference between dogfooding, QA, and user research, arguing that internal use catches bugs and builds empathy but has a much lower ceiling than most product teams assume."
+  },
+  "points": {
+    "kr": [
+      "도그푸딩은 버그는 잡아도 유저 리서치를 대체할 수 없음",
+      "팀은 이미 너무 많이 알고 있어 실제 사용자를 대변하지 못함",
+      "세 가지 방법 사이의 실무적 구분 기준 제시"
+    ],
+    "en": [
+      "Dogfooding catches bugs but cannot replace user research",
+      "Your team knows too much to represent real users",
+      "A practical line between the three methods"
+    ]
+  },
+  "positions": [
+    "ux-designer",
+    "service-designer"
+  ],
+  "designer": {
+    "kr": "'우리도 직접 써봤으니 괜찮다'는 검증만으로 출시를 결정하고 있다면, 한 번쯤 점검해볼 만한 기준을 제시합니다.",
+    "en": "A quick gut-check for teams that lean on 'we use it ourselves' as their only validation before shipping."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "유저 리서치를 생략하는 팀에 공유 추천 · 짧고 실용적인 글",
+    "en": "Share with teams that skip user research · Quick, practical read"
+  },
+  "comment": {
+    "kr": "이론보다는 실무적인 톤이라 5분 안에 읽힙니다. '우리 팀은 제품을 너무 잘 알아서 실제 사용자를 대변할 수 없다'는 핵심 논지는 말하면 당연해 보이지만, 스프린트 한복판에서는 쉽게 잊히는 부분입니다.\n누군가 '나도 직접 써봤는데 괜찮던데요'라는 말로 QA 전체를 대신하려 할 때 다시 꺼내 보여주기 좋은 글입니다.",
+    "en": "Short and practical rather than theoretical, which is why it's worth the five minutes. The core point, that your own team's deep product knowledge makes them a poor stand-in for real users, is obvious once stated but easy to forget in the middle of a sprint.\nA good one to bookmark for the next time someone on the team says 'I tried it myself and it felt fine' as the entire QA process."
+  },
+  "thumbLabel": "리서치",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}
