@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 13</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 13, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://designcompass.org/2026/08/12/grok-bot-ai-teammate/" target="_blank"
+       data-category="AI · 에이전트 · UXUI"
+       data-position="ui-designer|illustrator"
+       data-summary="xAI가 AI 에이전트 서비스 '그록 봇'을 베타로 공개했습니다. 채팅으로 업무를 지시하면 앱과 웹사이트에 직접 접속해 작업을 수행하는데, 상태에 따라 표정과 형태가 바뀌는 캐릭터 아이콘이 인터페이스의 중심을 잡습니다."
+       data-points="채팅으로 업무를 지시하는 AI 에이전트 '그록 봇' 베타 공개|둥근 사각형 눈매의 캐릭터 아이콘이 상태에 따라 표정 변화|AI 에이전트 서비스의 '얼굴' 디자인 사례"
+       data-designer="기능은 텍스트 기반 에이전트인데, 신뢰감을 주는 건 결국 캐릭터의 표정과 태도입니다. AI 서비스에서 마스코트·아이콘 디자인이 왜 계속 중요해지는지 보여주는 사례입니다."
+       data-impact-score="3"
+       data-recommend="AI 서비스 UI·캐릭터 디자인 참고 · 레퍼런스 보드 저장"
+       data-comment="기능 자체는 다른 AI 에이전트들과 크게 다르지 않지만, 상태에 따라 표정이 바뀌는 캐릭터 아이콘 하나로 서비스의 인상이 확 달라진다는 점이 흥미롭습니다. 텍스트만으로는 전달하기 어려운 '지금 이 에이전트가 일하고 있다'는 신뢰감을 캐릭터가 대신 전달하는 셈입니다.
+AI 기능을 붙이는 프로젝트를 맡고 있다면, 로딩 인디케이터나 상태 표시를 이런 캐릭터화로 풀어보는 것도 참고할 만한 접근입니다.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">에이전트</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인 나침반 · 2026. 08. 12</div>
+        <div class="card-title">그록 봇, 둥근 사각형 눈매로 완성한 AI 동료의 얼굴</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.digitaltoday.co.kr/news/articleView.html?idxno=678126" target="_blank"
+       data-category="AI · 툴 · 워크플로우"
+       data-position="product-designer|ui-designer"
+       data-summary="피그마가 협업 캔버스에 코드 기능과 AI 기반 제작 도구를 본격 도입하며 디자인 플랫폼에서 종합 제작 플랫폼으로 영역을 넓히고 있습니다. 디자인과 개발의 경계를 허무는 방향의 변화입니다."
+       data-points="캔버스에 코드 레이어·AI 제작 도구 통합|디자인 툴에서 종합 제작 플랫폼으로 전환|디자이너·개발자 협업 방식 자체의 변화"
+       data-designer="피그마 하나로 디자인부터 프로토타입, 코드까지 이어지는 흐름이 익숙해지면 '디자인 파일 전달'이라는 개념 자체가 옅어질 수 있습니다. 협업 프로세스를 다시 그려볼 시점입니다."
+       data-impact-score="4"
+       data-recommend="피그마 기반 협업 프로세스 개편 시 참고 · 팀 공유 추천"
+       data-comment="이 기사는 올여름 발행된 것으로, 이번 브리핑 수집 기간보다 다소 앞선 소식입니다. 다만 피그마의 코드·AI 통합 방향은 이후로도 계속 이어지고 있는 흐름이라 여전히 참고 가치가 있다고 판단해 포함했습니다.
+디자이너와 개발자가 같은 캔버스에서 작업하는 흐름이 자리잡으면, 핸드오프 문서나 스펙 전달 방식부터 손봐야 할 수 있습니다. 팀 프로세스를 점검하는 계기로 삼아볼 만합니다.">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">워크플로우</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디지털투데이 · 2026. 06. 25</div>
+        <div class="card-title">피그마, 코드와 AI를 품다: 디자인 플랫폼의 대변신</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.nngroup.com/articles/prove-framework/" target="_blank"
+       data-category="AI · 방법론 · 툴 평가" data-category-en="AI · Methodology · Tool Evaluation"
+       data-position="ux-designer|design-lead"
+       data-summary="Nielsen Norman Group introduces PROVE, a lightweight framework for evaluating whether an AI tool actually improves a specific piece of work, arguing that pressure to adopt AI is not itself evidence that a given tool helps." data-summary-kr="닐슨노먼그룹이 특정 업무에 AI 도구가 실제로 도움이 되는지 평가하는 경량 프레임워크 'PROVE'를 소개합니다. AI 도입 압박이 있다고 해서 그 도구가 실제로 도움이 된다는 증거는 아니라는 주장입니다."
+       data-points="PROVE framework for evaluating AI tools|Adoption pressure is not proof of value|Applied to a real workflow as a case study" data-points-kr="AI 도구 평가를 위한 PROVE 프레임워크 소개|도입 압박은 도구의 가치를 증명하지 않음|실제 워크플로우에 적용한 사례로 설명"
+       data-designer="A ready-to-use checklist for deciding whether to adopt an AI tool in your own design workflow, instead of adopting on hype alone." data-designer-kr="유행을 좇아 AI 도구를 들이는 대신, 우리 팀 워크플로우에 실제로 도움이 되는지 판단할 수 있는 실용적 체크리스트입니다."
+       data-impact-score="5"
+       data-recommend="Must-read for teams evaluating AI tools · Save the framework" data-recommend-kr="AI 도구 도입을 검토 중인 팀 필독 · 프레임워크 저장 추천"
+       data-comment="This is exactly the kind of practical, immediately usable methodology this newsletter looks for. Instead of another 'AI will change everything' opinion piece, NN/g breaks down a concrete framework you can literally apply to your next tool-adoption decision this week.
+Worth reading closely and sharing with whoever on your team is pushing the newest AI tool without a clear rationale." data-comment-kr="이런 실무 바로 적용 가능한 방법론이야말로 이 뉴스레터가 가장 반기는 콘텐츠입니다. 막연한 'AI가 모든 걸 바꾼다'는 의견 대신, 이번 주 당장 도구 도입 여부를 판단하는 데 쓸 수 있는 구체적인 프레임워크를 제시합니다.
+팀 내에서 뚜렷한 이유 없이 새 AI 도구를 밀어붙이는 사람이 있다면 이 글을 함께 읽어보길 추천합니다."
+       data-title-en="Pressure to Adopt AI Isn't Evidence That a Tool Helps" data-title-kr="'AI 도입 압박'이 곧 '도구가 도움된다'는 증거는 아니다">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">AI도구</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Nielsen Norman Group · 2026. 08. 07</div>
+        <div class="card-title">'AI 도입 압박'이 곧 '도구가 도움된다'는 증거는 아니다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.creativebloq.com/3d/video-game-design/ai-will-have-the-biggest-impact-on-the-future-of-gaming-developers-say" target="_blank"
+       data-category="AI · 게임 · 산업 전망" data-category-en="AI · Gaming · Industry Outlook"
+       data-position="art-director|design-manager"
+       data-summary="A 2026 Gamescom developer survey of 100 speakers found 83% expect AI to affect team structure or productivity over the next three years, with AI-assisted development seen as the single biggest force shaping the games industry." data-summary-kr="2026 게임스컴 연사 100명 대상 설문에서 83%가 향후 3년 내 AI가 팀 구조나 생산성에 영향을 줄 것이라 응답했습니다. AI 지원 개발이 게임업계를 뒤흔들 가장 큰 변수로 꼽혔습니다."
+       data-points="83% expect AI to affect team structure or productivity|Surveyed 100 speakers ahead of Gamescom 2026|AI seen as bigger force than any single new platform" data-points-kr="83%가 AI의 팀 구조·생산성 영향을 예상|게임스컴 2026 연사 100명 대상 설문|AI를 신규 플랫폼보다 더 큰 변수로 인식"
+       data-designer="A useful data point for art directors staffing teams or pitching AI-assisted pipelines internally, beyond individual anecdotes." data-designer-kr="개별 경험담이 아니라 업계 전체 설문 데이터라는 점에서, 팀 구성이나 AI 파이프라인 도입을 설득할 때 인용하기 좋은 근거 자료입니다."
+       data-impact-score="3"
+       data-recommend="Reference for studio leads planning AI adoption · Save for citation" data-recommend-kr="AI 도입을 계획하는 스튜디오 리드 참고 · 인용 자료로 저장"
+       data-comment="Survey data rather than a single studio's press release, which makes it more useful as an internal reference. The 83% figure is worth quoting the next time you need to justify budget or headcount for AI tooling.
+That said, a speaker survey skews toward people already comfortable with AI, so treat it as a temperature check rather than a hard prediction." data-comment-kr="개별 스튜디오의 보도자료가 아니라 설문 데이터라는 점에서 내부 근거 자료로 쓰기 좋습니다. AI 도구 예산이나 인력을 설득할 때 83%라는 수치를 인용해볼 만합니다.
+다만 컨퍼런스 연사 대상 설문이라 이미 AI에 우호적인 응답자 비중이 높을 수 있다는 점은 감안해서 읽어야 합니다."
+       data-title-en="AI Will Have the Biggest Impact on the Future of Gaming, Developers Say" data-title-kr="게임 개발자들 '향후 3년, AI가 업계에 가장 큰 영향 미칠 것'">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">게임</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Creative Bloq · 2026. 08. 12</div>
+        <div class="card-title">게임 개발자들 '향후 3년, AI가 업계에 가장 큰 영향 미칠 것'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://community.linkareer.com/employment_data/6177151" target="_blank"
+       data-category="디자인 · 커리어 · 포트폴리오"
+       data-position="ux-designer|product-designer"
+       data-summary="링커리어가 취업 시즌을 앞두고 포트폴리오 작성법을 정리했습니다. 표지부터 자기소개, 핵심 역량, 프로젝트, 마무리까지 이어지는 기본 구성과 직무별 체크리스트, 무료 템플릿을 함께 제공합니다."
+       data-points="표지→자기소개→핵심역량→프로젝트→마무리 기본 구성|채용 담당자가 이력서 한 장을 보는 시간은 평균 30초 이내|링커리어·미로·노션 등에서 받을 수 있는 무료 템플릿 200여 종 소개"
+       data-designer="신입 디자이너 포트폴리오의 기본기를 다시 점검하기 좋은 체크리스트입니다. 특히 '보여주기'에서 '설득하기'로 넘어가야 한다는 지적은 시니어에게도 유효합니다."
+       data-impact-score="4"
+       data-recommend="포트폴리오 준비 중인 주니어·취준 디자이너 필독 · 체크리스트로 저장"
+       data-comment="이 글은 2026년 6월 말에 발행된 것으로, 이번 브리핑 수집 기간보다는 다소 앞선 소식입니다. 다만 포트폴리오 구성 원칙 자체는 계절을 타지 않는 내용이라 여전히 유효하다고 판단해 포함했습니다.
+디자인 직군만을 위한 글은 아니지만, 문제 정의부터 해결 과정, 결과까지 스토리로 보여줘야 한다는 조언은 포트폴리오를 다시 손볼 때마다 곱씹어볼 만합니다. 최종 결과 이미지만 나열하는 방식은 이제 통하지 않는다는 점을 기억해두세요.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">포트폴리오</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">링커리어 · 2026. 06. 30</div>
+        <div class="card-title">포트폴리오 양식 총정리: 직무별 구성법부터 무료 템플릿까지</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.careet.net/1933" target="_blank"
+       data-category="디자인 · 트렌드 · 캘린더"
+       data-position="brand-designer|bx-designer"
+       data-summary="캐릿이 2026년 상반기를 관통한 트렌드를 트렌드 캘린더 한 장으로 정리했습니다. 하반기 브랜드·마케팅 방향을 준비하는 이들을 위한 아카이브 성격의 콘텐츠입니다."
+       data-points="2026 상반기 트렌드를 캘린더 형식 한 장으로 압축 정리|시기별로 어떤 이슈가 화제였는지 흐름으로 확인 가능|하반기 브랜드·캠페인 기획 전 레퍼런스로 활용 가능"
+       data-designer="브랜드·BX 디자이너라면 캠페인 기획 전에 상반기 흐름을 훑어보는 용도로 유용합니다. 트렌드 자체보다 '어떤 순서로 화제가 옮겨갔는지'를 보는 데 의미가 있습니다."
+       data-impact-score="3"
+       data-recommend="하반기 캠페인·브랜드 기획 전 참고 · 아카이브용 저장"
+       data-comment="이 글 역시 2026년 6월 말 발행으로, 상반기를 마무리하며 나온 정리 콘텐츠입니다. 시의성은 다소 지났지만, 브랜드 디자이너 입장에서는 '올해 상반기에 무슨 일이 있었는지' 한눈에 복기하는 용도로는 여전히 쓸모가 있습니다.
+개별 트렌드 하나하나보다는, 트렌드가 시간 순으로 어떻게 이어지고 소비되는지를 캘린더 형식으로 보여준다는 점이 이 콘텐츠의 차별점입니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">트렌드캘린더</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">캐릿 · 2026. 06. 25</div>
+        <div class="card-title">2026 상반기 트렌드, 한 장으로 정리했습니다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.nngroup.com/articles/dogfooding/" target="_blank"
+       data-category="디자인 · UX · 리서치" data-category-en="Design · UX · Research"
+       data-position="ux-designer|service-designer"
+       data-summary="Nielsen Norman Group breaks down the difference between dogfooding, QA, and user research, arguing that internal use catches bugs and builds empathy but has a much lower ceiling than most product teams assume." data-summary-kr="닐슨노먼그룹이 도그푸딩과 QA, 유저 리서치의 차이를 짚습니다. 자사 제품을 직접 써보는 도그푸딩은 버그를 잡고 공감을 쌓는 데는 유용하지만, 그 효용의 한계는 대부분의 팀이 생각하는 것보다 훨씬 낮다는 것입니다."
+       data-points="Dogfooding catches bugs but cannot replace user research|Your team knows too much to represent real users|A practical line between the three methods" data-points-kr="도그푸딩은 버그는 잡아도 유저 리서치를 대체할 수 없음|팀은 이미 너무 많이 알고 있어 실제 사용자를 대변하지 못함|세 가지 방법 사이의 실무적 구분 기준 제시"
+       data-designer="A quick gut-check for teams that lean on 'we use it ourselves' as their only validation before shipping." data-designer-kr="'우리도 직접 써봤으니 괜찮다'는 검증만으로 출시를 결정하고 있다면, 한 번쯤 점검해볼 만한 기준을 제시합니다."
+       data-impact-score="4"
+       data-recommend="Share with teams that skip user research · Quick, practical read" data-recommend-kr="유저 리서치를 생략하는 팀에 공유 추천 · 짧고 실용적인 글"
+       data-comment="Short and practical rather than theoretical, which is why it's worth the five minutes. The core point, that your own team's deep product knowledge makes them a poor stand-in for real users, is obvious once stated but easy to forget in the middle of a sprint.
+A good one to bookmark for the next time someone on the team says 'I tried it myself and it felt fine' as the entire QA process." data-comment-kr="이론보다는 실무적인 톤이라 5분 안에 읽힙니다. '우리 팀은 제품을 너무 잘 알아서 실제 사용자를 대변할 수 없다'는 핵심 논지는 말하면 당연해 보이지만, 스프린트 한복판에서는 쉽게 잊히는 부분입니다.
+누군가 '나도 직접 써봤는데 괜찮던데요'라는 말로 QA 전체를 대신하려 할 때 다시 꺼내 보여주기 좋은 글입니다."
+       data-title-en="Dogfooding vs. QA vs. User Research" data-title-kr="도그푸딩은 QA도, 유저 리서치도 아니다">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">리서치</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Nielsen Norman Group · 2026. 08. 07</div>
+        <div class="card-title">도그푸딩은 QA도, 유저 리서치도 아니다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/07/29/the-foldable-e-ink-book-is-finally-taking-shape/" target="_blank"
+       data-category="디자인 · 제품 · 프로덕트" data-category-en="Design · Product · Industrial Design"
+       data-position="industrial-designer|product-designer"
+       data-summary="Yanko Design rounds up how foldable E Ink devices are maturing from novelty concepts into genuinely usable reading and writing tools, with improved hinge mechanisms and screen durability." data-summary-kr="야코디자인이 폴더블 전자잉크 기기가 어떻게 참신한 콘셉트 단계를 넘어 실사용 가능한 독서·필기 도구로 자리잡고 있는지 정리했습니다. 힌지 구조와 화면 내구성이 함께 개선되었습니다."
+       data-points="Foldable E Ink hardware maturing beyond concept stage|Hinge mechanism and screen durability improvements|Reading and writing converging on a single device form" data-points-kr="폴더블 전자잉크 하드웨어, 콘셉트 단계를 넘어 실사용 단계로|힌지 구조·화면 내구성 개선|독서와 필기가 하나의 폼팩터로 수렴"
+       data-designer="A concise snapshot of where foldable-screen hardware constraints currently sit, useful groundwork before designing for this form factor." data-designer-kr="폴더블 폼팩터를 위한 하드웨어 제약이 현재 어디까지 와 있는지 짧게 정리한 자료로, 이 폼팩터를 다루기 전 참고하기 좋습니다."
+       data-impact-score="3"
+       data-recommend="Background reading for foldable device projects · Save for reference" data-recommend-kr="폴더블 기기 프로젝트 배경지식용 · 참고 자료로 저장"
+       data-comment="More of a hardware-trend roundup than a single product story, but useful as a snapshot of where foldable E Ink has actually landed after a few years of concept renders.
+Worth a skim if you're designing anything that lives on a foldable or dual-screen surface, if only to calibrate expectations against what's technically shippable right now." data-comment-kr="단일 제품 소개보다는 하드웨어 트렌드 정리에 가깝지만, 몇 년간 콘셉트 렌더로만 떠돌던 폴더블 전자잉크가 실제로 어디까지 왔는지 가늠하기에 좋은 자료입니다.
+폴더블이나 듀얼 스크린을 다루는 프로젝트를 진행 중이라면, 지금 기술적으로 무엇이 가능한지 감을 잡는 용도로 가볍게 훑어볼 만합니다."
+       data-title-en="The Foldable E Ink Book Is Finally Taking Shape" data-title-kr="접히는 전자잉크 북, 마침내 제 모습을 갖추다">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">폼팩터</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 07. 29</div>
+        <div class="card-title">접히는 전자잉크 북, 마침내 제 모습을 갖추다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
