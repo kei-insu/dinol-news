@@ -1,0 +1,74 @@
+{
+  "20260814-ai-001": {
+    "category_kr": "AI · 개발도구 · 에이전트",
+    "category_en": "AI · Dev Tools · Agents",
+    "impactScore": 5,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260814-ai-002": {
+    "category_kr": "AI · 영상생성 · 오픈소스",
+    "category_en": "AI · Video Generation · Open Source",
+    "impactScore": 4,
+    "positions": [
+      "motion-designer",
+      "video-designer"
+    ]
+  },
+  "20260814-ai-003": {
+    "category_kr": "AI · 코딩에이전트 · 산업동향",
+    "category_en": "AI · Coding Agents · Industry Trends",
+    "impactScore": 3,
+    "positions": [
+      "design-lead",
+      "product-designer"
+    ]
+  },
+  "20260814-ai-004": {
+    "category_kr": "AI · 로보틱스 · 휴머노이드",
+    "category_en": "AI · Robotics · Humanoid",
+    "impactScore": 3,
+    "positions": [
+      "motion-designer",
+      "industrial-designer"
+    ]
+  },
+  "20260814-design-001": {
+    "category_kr": "디자인 · UXUI · 방법론",
+    "category_en": "Design · UXUI · Methodology",
+    "impactScore": 4,
+    "positions": [
+      "ux-designer",
+      "product-designer"
+    ]
+  },
+  "20260814-design-002": {
+    "category_kr": "디자인 · 제품 · 웨어러블",
+    "category_en": "Design · Product · Wearables",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260814-design-003": {
+    "category_kr": "디자인 · 편집 · 북디자인",
+    "category_en": "Design · Editorial · Book Design",
+    "impactScore": 4,
+    "positions": [
+      "editorial-designer",
+      "graphic-designer"
+    ]
+  },
+  "20260814-design-004": {
+    "category_kr": "디자인 · 제품 · 산업디자인",
+    "category_en": "Design · Product · Industrial Design",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  }
+}

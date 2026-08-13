@@ -1,0 +1,57 @@
+{
+  "contentId": "20260814-design-003",
+  "date": "2026-08-14",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-08-12"
+  },
+  "url": "https://www.itsnicethat.com/articles/amber-pjongluck-graphic-design-discover-120826",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 편집 · 북디자인",
+    "en": "Design · Editorial · Book Design"
+  },
+  "title": {
+    "kr": "2미터짜리 책 한 권에 삶을 담다, 앰버 피용룩의 오브제 카탈로그",
+    "en": "Amber Pjongluck's two-metre-long book catalogues the designer's entire life in objects"
+  },
+  "summary": {
+    "kr": "그래픽 디자이너 앰버 피용룩이 자신의 인생 전체를 관통하는 오브제들을 2미터짜리 접이식 책 한 권에 담았습니다. 개인 아카이브를 펼쳐지는 물리적 편집 오브제로 전환한 프로젝트입니다.",
+    "en": "Graphic designer Amber Pjongluck created a two-metre-long fold-out book that catalogues objects from her entire life, turning a personal archive into a physical, unfurling editorial object."
+  },
+  "points": {
+    "kr": [
+      "2미터 접이식 포맷 자체가 핵심 디자인 결정",
+      "개인 아카이브를 시간순 오브제 카탈로그로 전환",
+      "포맷이 곧 내러티브 장치가 되는 방식"
+    ],
+    "en": [
+      "A two-metre fold-out format as the core design decision",
+      "Personal archive turned into a chronological object catalogue",
+      "Format itself becomes the narrative device"
+    ]
+  },
+  "positions": [
+    "editorial-designer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "편집·그래픽 디자이너에게 '포맷 자체가 콘텐츠'가 되는 좋은 사례입니다. 개인 아카이브나 포트폴리오 출판물을 기획할 때, 펼쳐지는 물성이 레이아웃만으로는 할 수 없는 서사적 역할을 한다는 점을 보여줍니다.",
+    "en": "A strong example of format-as-content for editorial and graphic designers building personal or portfolio publications, the physical unfolding does narrative work that layout alone can't."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "편집·자가출판 포맷 아이디어로 저장 추천",
+    "en": "Save for editorial/self-publishing format inspiration"
+  },
+  "comment": {
+    "kr": "'인생을 오브제로 정리하는' 프로젝트는 보통 그리드나 타임라인에 기댑니다. 피용룩은 책이 물리적으로 2미터까지 펼쳐지게 만들어, 독자가 직접 펼치는 행위 자체가 한 사람의 삶을 풀어보는 행위와 겹치도록 했습니다. 포맷이 콘텐츠만으로는 할 수 없는 서사적 역할을 하는 셈입니다.\n편집·그래픽 디자이너에게는 포맷 선택이 결코 중립적인 그릇이 아니라는 걸 보여주는 좋은 사례입니다. 개인 아카이브나 진(zine), 포트폴리오 출판물을 기획할 때 '이걸 펼치거나 스크롤하는 물리적 경험 자체가 무엇을 수행하는가'라는 질문을 레이아웃보다 먼저 던져볼 만합니다.",
+    "en": "Most 'life in objects' projects default to a grid or a timeline. Pjongluck's choice to make the book physically unfold across two metres means the reader's own unfolding motion mirrors the act of unpacking a life, the format does narrative work the content alone wouldn't.\nIt's a useful reminder for editorial and graphic designers that format decisions aren't neutral containers. When you're scoping a personal archive, zine, or portfolio publication, the question 'what does the physical (or scroll) experience of reading this enact' is worth asking before layout."
+  },
+  "thumbLabel": "북디자인",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

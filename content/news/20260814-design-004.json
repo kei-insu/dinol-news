@@ -1,0 +1,57 @@
+{
+  "contentId": "20260814-design-004",
+  "date": "2026-08-14",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-08-12"
+  },
+  "url": "https://www.yankodesign.com/2026/08/12/this-549-qwerty-android-phone-was-built-to-give-you-your-day-back/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 산업디자인",
+    "en": "Design · Product · Industrial Design"
+  },
+  "title": {
+    "kr": "\"하루를 되찾아주는 폰\" 549달러 쿼티 안드로이드폰",
+    "en": "This $549 QWERTY Android Phone Was Built to Give You Your Day Back"
+  },
+  "summary": {
+    "kr": "549달러짜리 쿼티 안드로이드폰이 물리 키보드의 제약을 한계가 아닌 특징으로 내세웁니다. 의도적으로 절제된 폼팩터 안에 뱅킹·내비게이션·음악·메시징을 지원하는 완전한 안드로이드를 담았습니다.",
+    "en": "A $549 QWERTY Android phone leans into physical-keyboard restraint as a feature, not a limitation, running full Android for banking, navigation, music and messaging inside a deliberately minimal form factor."
+  },
+  "points": {
+    "kr": [
+      "물리 쿼티 키보드를 노스탤지어가 아닌 의도적 절제로 재해석",
+      "절제된 폼팩터 안에 완전한 안드로이드 기능 구현",
+      "펄·오닉스·엠버 3가지 마감 옵션"
+    ],
+    "en": [
+      "Physical QWERTY reframed as intentional restraint, not nostalgia",
+      "Full Android functionality inside a minimal form factor",
+      "Three finish options: Pearl, Onyx, Ember"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "산업 디자이너가 눈여겨볼 만한 '디지털 미니멀리즘' 하드웨어 흐름의 한 사례입니다. 절제 자체가 대체 수단이 아니라 팔리는 폼팩터가 되고 있다는 신호입니다.",
+    "en": "Part of a broader 'digital minimalism' hardware trend worth tracking for industrial designers, restraint itself has become a sellable form factor, not just an accessibility fallback."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "미니멀 하드웨어·디지털 웰빙 제품 브리프 레퍼런스로 참고",
+    "en": "Reference for minimalist hardware / digital-wellness product briefs"
+  },
+  "comment": {
+    "kr": "물리 키보드폰은 한때 노스탤지어 마케팅이었습니다. 이 제품은 절제 자체를 핵심 가치 제안으로 내세웁니다. 화면도 스크롤도 의도적으로 줄인, '일부러 덜 하는 폰'을 원하는 사람들을 겨냥한 것입니다.\n산업 디자이너에게 흥미로운 지점은 키보드 자체가 아니라, 브러시드 알로이·아노다이징 컬러웨이 같은 마감·소재 선택이 '의도적으로 덜 기능적인 것'을 저렴해 보이지 않고 프리미엄하게 느끼게 만드는 방식입니다. 디지털 웰빙이나 단일 목적 하드웨어 브리프에 그대로 옮겨 쓸 수 있는 전략입니다.",
+    "en": "Physical-keyboard phones used to be a nostalgia play. This one positions restraint as the actual value proposition, less screen, less scroll, by design, aimed at people who want a phone that does less on purpose.\nFor industrial designers, the interesting part isn't the keyboard itself but the finish and material choices (brushed alloy, anodized colorways) doing the work of making 'less capable by design' feel premium rather than cheap. That's a transferable move for any digital-wellness or single-purpose hardware brief."
+  },
+  "thumbLabel": "쿼티폰",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

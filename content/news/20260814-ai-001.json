@@ -1,0 +1,57 @@
+{
+  "contentId": "20260814-ai-001",
+  "date": "2026-08-14",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-08-09"
+  },
+  "url": "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 개발도구 · 에이전트",
+    "en": "AI · Dev Tools · Agents"
+  },
+  "title": {
+    "kr": "Anthropic, '클로드 코드' 오토 모드 기본값으로 전환",
+    "en": "Anthropic makes Claude Code's auto mode the default"
+  },
+  "summary": {
+    "kr": "Anthropic이 프로·맥스·팀 계정 대상으로 '클로드 코드'의 오토 모드를 기본값으로 전환합니다. 되돌릴 수 없거나 파괴적이거나 사용자 환경 밖으로 나가는 작업이 아니라면, 에이전트가 승인 없이 스스로 진행합니다.",
+    "en": "Anthropic is switching on Claude Code's auto mode by default for Pro, Max and Team accounts, letting the coding agent proceed on its own unless an action is judged irreversible, destructive, or reaching outside the user's environment."
+  },
+  "points": {
+    "kr": [
+      "프로·맥스·팀 계정 대상 오토 모드 기본 전환",
+      "되돌릴 수 없거나 파괴적인 작업이 아니면 승인 없이 진행",
+      "확인 절차를 줄이는 방향으로의 전환 신호"
+    ],
+    "en": [
+      "Auto mode becomes default for Pro/Max/Team accounts",
+      "Agent proceeds unless action is irreversible or destructive",
+      "Signals a shift toward less human-in-the-loop confirmation"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "팀에서 클로드 코드로 UI 스캐폴딩이나 디자인 시스템 코드를 생성한다면, 기본 신뢰 경계가 바뀌는 셈입니다. 워크스페이스에 적용되기 전에 '되돌릴 수 없는 작업'의 범위를 확인해볼 필요가 있습니다.",
+    "en": "If your team uses Claude Code for scaffolding UI or generating design-system code, this changes the default trust boundary, worth reviewing what 'irreversible' covers before it ships to your workspace."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "오토 모드 적용 전 워크스페이스 설정 점검 · 개발 인접 디자인팀 공유 추천",
+    "en": "Check your workspace settings before auto mode rolls out · Share with dev-adjacent design teams"
+  },
+  "comment": {
+    "kr": "오토 모드는 새 기능이라기보다 기본 태도의 전환에 가깝습니다. 지금까지 클로드 코드는 중요한 작업 전에 확인을 구했지만, 8월 14일부터 대부분의 계정에서는 에이전트가 먼저 실행하고 나중에 설명하는 방식이 기본이 됩니다. 그 경계는 Anthropic이 정의한 '되돌릴 수 없거나 파괴적이거나 사용자 환경 밖으로 나가는 작업'입니다.\n클로드 코드를 Figma와 코드 사이의 다리로 쓰는 디자인팀이라면, 그냥 지나칠 업데이트가 아니라 한 번은 짚어봐야 할 변화입니다. '자동 실행해도 되는 것'과 '사람이 봐야 하는 것'의 경계를 정하는 주체가 우리 팀이 아니라 Anthropic이라는 점에서, 적용 전 5분짜리 설정 점검은 저렴한 보험입니다.\n더 큰 신호는 방향성입니다. 에이전트 도구가 업계 전반에서 '옵트인 자율성'에서 '옵트아웃 자율성'으로 조용히 이동하고 있습니다. 이번 릴리스 하나가 아니라 하나의 패턴으로 지켜볼 만합니다.",
+    "en": "Auto mode isn't a new feature so much as a change in default posture. Until now, Claude Code asked before taking consequential actions; from August 14, most accounts will see the agent act first and explain later, within guardrails Anthropic defines as 'irreversible, destructive, or aimed outside your environment.'\nFor design teams that treat Claude Code as a bridge from Figma to code, this is worth a deliberate look rather than a passive update. The line between 'safe to auto-run' and 'needs a human' is drawn by Anthropic, not by your team's own risk tolerance, so a five-minute settings review before rollout is cheap insurance.\nThe bigger signal is directional: agent tooling is quietly moving from opt-in autonomy to opt-out autonomy across the industry. Worth tracking as a pattern, not just this one release."
+  },
+  "thumbLabel": "자동모드",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

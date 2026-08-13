@@ -1,0 +1,57 @@
+{
+  "contentId": "20260814-ai-002",
+  "date": "2026-08-14",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "VentureBeat",
+    "publishedAt": "2026-08-11"
+  },
+  "url": "https://venturebeat.com/technology/ltx-2-5-can-generate-a-10-second-ai-video-from-an-image-in-just-6-8-seconds-on-nvidia-superchips-and-its-open-weights",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 영상생성 · 오픈소스",
+    "en": "AI · Video Generation · Open Source"
+  },
+  "title": {
+    "kr": "LTX-2.5, 이미지 한 장으로 10초 영상을 6.8초 만에 생성...오픈 웨이트로 공개",
+    "en": "LTX-2.5 generates a 10-second AI video from an image in 6.8 seconds, and it's open weights"
+  },
+  "summary": {
+    "kr": "Lightricks에서 분사한 LTX가 220억 파라미터 오픈 웨이트 오디오-비디오 모델 'LTX-2.5'를 공개했습니다. 엔비디아 슈퍼칩에서 10초, 720p 이미지-투-비디오 클립을 6.8초 만에 생성하며, 여러 컷에서 캐릭터 일관성을 유지하는 멀티샷 생성을 기본 지원합니다.",
+    "en": "Lightricks' LTX spinoff released LTX-2.5, a 22B-parameter open-weights audio-video model that generates a 10-second, 720p image-to-video clip in 6.8 seconds on Nvidia superchips, with native multi-shot generation for consistent characters across cuts."
+  },
+  "points": {
+    "kr": [
+      "220억 파라미터 디퓨전 트랜스포머, 허깅페이스에 가중치 공개",
+      "멀티샷 생성으로 컷 간 캐릭터·조명 일관성 유지",
+      "연 매출 1천만 달러 미만 조직은 상업적 무료 사용 가능"
+    ],
+    "en": [
+      "22B-parameter diffusion transformer, weights on Hugging Face",
+      "Native multi-shot generation keeps character/lighting consistent across cuts",
+      "Free commercial use for organizations under $10M annual revenue"
+    ]
+  },
+  "positions": [
+    "motion-designer",
+    "video-designer"
+  ],
+  "designer": {
+    "kr": "실제로 빠르고 오픈 웨이트인 영상 생성 모델은 스토리보드나 소셜 콘텐츠를 프로토타이핑하는 모션·영상 디자이너에게 비용 구조를 바꿉니다. 유료 파이프라인을 도입하기 전에 테스트해볼 가치가 있습니다.",
+    "en": "A genuinely fast, open-weights video model changes the cost math for motion and video designers prototyping storyboards or social content, worth testing before committing to a paid pipeline."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "스토리보드·애니매틱 프로토타이핑에 테스트 추천 · 툴킷에 저장",
+    "en": "Try it for storyboard/animatic prototyping · Save for the toolkit"
+  },
+  "comment": {
+    "kr": "올해 오픈 웨이트 영상 생성 모델이 빠르게 쏟아졌지만, LTX-2.5는 속도(적합한 하드웨어에서 실시간보다 빠름)와 멀티샷 생성을 결합했다는 점에서 단순한 데모 이상입니다. 특히 멀티샷 기능은 AI 영상을 실제 제작에 쓸 때 가장 자주 발목을 잡던 문제, 즉 컷 사이 캐릭터·조명이 흔들리는 문제를 해결합니다.\n연 매출 1천만 달러 미만 조직에 대한 무료 상업 라이선스는 프리랜서와 소규모 스튜디오에 특히 의미가 있습니다. 비교 대상이 되는 폐쇄형 모델 대부분이 규모와 무관하게 초 단위로 과금하기 때문입니다. 오픈 영상 생성이 '갖고 노는 수준'을 넘어 '프로토타이핑에 쓸 만한 수준'이 되길 기다렸다면, 지금이 다시 확인해볼 시점입니다.",
+    "en": "Open-weights video models have shipped fast this year, but LTX-2.5's combination of speed (faster than real time on the right hardware) and native multi-shot generation is what makes it more than a demo. Multi-shot in particular solves the thing that usually breaks AI video for actual production use: characters and lighting drifting between cuts.\nThe free commercial tier for organizations under $10M in revenue matters for freelancers and small studios specifically, since most comparable closed models charge per-second regardless of your size. If you've been waiting for open video generation to be good enough to prototype with rather than just play with, this is a reasonable point to check back in."
+  },
+  "thumbLabel": "영상생성",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}
