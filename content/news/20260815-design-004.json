@@ -1,0 +1,57 @@
+{
+  "contentId": "20260815-design-004",
+  "date": "2026-08-15",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-08-11"
+  },
+  "url": "https://www.itsnicethat.com/articles/kwazi-design-type-around-town-graphic-design-project-110826",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 그래픽 · 타이포그래피",
+    "en": "Design · Graphic · Typography"
+  },
+  "title": {
+    "kr": "타입 어라운드 타운, 매일 스쳐 지나가는 글자들에 주목하다",
+    "en": "Type Around Town asks us to pay attention to the letterforms that surround us every day"
+  },
+  "summary": {
+    "kr": "콰지 디자인의 '타입 어라운드 타운'은 콜카타에 대한 헌사로 만든 타이포그래피 아카이브 프로젝트로, 도시 곳곳의 일상적 글자 뒤에 숨은 지역적·문화적 맥락을 드러냅니다.",
+    "en": "Kwazi Design's Type Around Town is a typographic archival project that pays homage to Kolkata, revealing the hyper-local and cultural context behind the everyday lettering that surrounds the city."
+  },
+  "points": {
+    "kr": [
+      "콜카타 거리의 일상 글자를 기록한 아카이브 프로젝트",
+      "지역색 짙은 타이포그래피에 집중",
+      "무심코 지나치는 글자에 다시 주목하게 함"
+    ],
+    "en": [
+      "Archival project documenting Kolkata's everyday street lettering",
+      "Focus on hyper-local, culturally specific typography",
+      "A reminder to notice letterforms hiding in plain sight"
+    ]
+  },
+  "positions": [
+    "typographer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "타이포그래퍼·그래픽 디자이너에게 세련된 폰트 파운드리뿐 아니라 자기 도시의 토속적인 글자도 좋은 소스가 될 수 있다는 걸 일깨워주는 프로젝트입니다.",
+    "en": "A good prompt for typographers and graphic designers to look at vernacular lettering in their own cities as a source, not just polished type foundries."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "거리 타이포그래피 리서치 레퍼런스로 좋음 · 선택",
+    "en": "Nice reference for street typography research · Optional"
+  },
+  "comment": {
+    "kr": "이런 토속 타이포그래피 프로젝트는 무심코 넘기기 쉽지만, 세련되게 그려진 서체에 치우친 디자인 교육을 돌아보게 하는 좋은 자극입니다.\n콜카타 거리의 손글씨 간판, 낡은 상점 외관, 비공식 사이니지는 어떤 폰트 라이브러리도 대체할 수 없는 문화적 고유성을 담고 있습니다. 사라지기 전에 이를 기록하는 것 자체가 하나의 디자인 리서치입니다.\n에디토리얼이나 그래픽 디자인 분야에서 일한다면, 그대로 베낄 영감을 얻기보다 자신이 사는 도시의 글자들을 새로운 시선으로 보게 하는 계기로 천천히 읽어볼 만합니다.",
+    "en": "Vernacular typography projects like this are easy to scroll past, but they're a useful corrective to how much design education leans on polished, professionally drawn type.\nKolkata's street lettering, hand-painted signs, worn shopfronts, informal signage, carries a cultural specificity that no typeface library replicates. Documenting it before it disappears is its own kind of design research.\nIf you work in editorial or graphic design, this is worth a slow look, less for inspiration to copy and more as a reminder to look at your own city's letterforms with fresh eyes."
+  },
+  "thumbLabel": "타이포",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

@@ -1,0 +1,74 @@
+{
+  "20260815-ai-001": {
+    "category_kr": "AI · 제품 · 코딩모델",
+    "category_en": "AI · Product · Coding Models",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260815-ai-002": {
+    "category_kr": "AI · 게임 · 크리에이티브",
+    "category_en": "AI · Gaming · Creative",
+    "impactScore": 3,
+    "positions": [
+      "art-director",
+      "ui-designer"
+    ]
+  },
+  "20260815-ai-003": {
+    "category_kr": "AI · 정책 · 콘텐츠",
+    "category_en": "AI · Policy · Content",
+    "impactScore": 3,
+    "positions": [
+      "design-manager",
+      "editorial-designer"
+    ]
+  },
+  "20260815-ai-004": {
+    "category_kr": "AI · 툴 · 온디바이스",
+    "category_en": "AI · Tool · On-device",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "ui-designer"
+    ]
+  },
+  "20260815-design-001": {
+    "category_kr": "디자인 · 브랜딩 · 타이포그래피",
+    "category_en": "Design · Branding · Typography",
+    "impactScore": 4,
+    "positions": [
+      "brand-designer",
+      "typographer"
+    ]
+  },
+  "20260815-design-002": {
+    "category_kr": "디자인 · 공예 · 전시",
+    "category_en": "Design · Craft · Exhibition",
+    "impactScore": 3,
+    "positions": [
+      "fashion-designer",
+      "space-designer"
+    ]
+  },
+  "20260815-design-003": {
+    "category_kr": "디자인 · 공간 · 어댑티브리유즈",
+    "category_en": "Design · Space · Adaptive Reuse",
+    "impactScore": 4,
+    "positions": [
+      "space-designer",
+      "architect"
+    ]
+  },
+  "20260815-design-004": {
+    "category_kr": "디자인 · 그래픽 · 타이포그래피",
+    "category_en": "Design · Graphic · Typography",
+    "impactScore": 3,
+    "positions": [
+      "typographer",
+      "graphic-designer"
+    ]
+  }
+}

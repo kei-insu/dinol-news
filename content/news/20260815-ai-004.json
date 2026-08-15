@@ -1,0 +1,57 @@
+{
+  "contentId": "20260815-ai-004",
+  "date": "2026-08-15",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "MarkTechPost",
+    "publishedAt": "2026-08-13"
+  },
+  "url": "https://www.marktechpost.com/2026/08/13/liquid-ai-lfm2-5-vl-3b-on-device-vision-language-model/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 온디바이스",
+    "en": "AI · Tool · On-device"
+  },
+  "title": {
+    "kr": "리퀴드AI, 화면 읽고 도구까지 호출하는 온디바이스 비전언어모델 공개",
+    "en": "Liquid AI Releases LFM2.5-VL-3B: A 3B Vision-Language Model That Reads Screens, Grounds Objects, and Calls Tools On-Device"
+  },
+  "summary": {
+    "kr": "리퀴드AI가 화면 UI를 읽고 이미지 속 객체를 인식하며 외부 도구까지 호출할 수 있는 30억 파라미터 비전언어모델 'LFM2.5-VL-3B'를 공개했습니다. 온디바이스에서 완전히 구동되도록 설계됐습니다.",
+    "en": "Liquid AI released LFM2.5-VL-3B, a 3-billion-parameter vision-language model that can read on-screen UI, ground objects in images, and call external tools, designed to run entirely on-device."
+  },
+  "points": {
+    "kr": [
+      "온디바이스 구동 30억 파라미터 비전언어모델",
+      "화면 UI 판독·이미지 속 객체 인식",
+      "클라우드 없이 외부 도구 호출 가능"
+    ],
+    "en": [
+      "3B-parameter on-device vision-language model",
+      "Reads UI screens and grounds objects in images",
+      "Can call external tools without cloud dependency"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "ui-designer"
+  ],
+  "designer": {
+    "kr": "화면을 읽고 도구를 호출하는 온디바이스 모델은 스크린샷을 클라우드로 보내지 않고도 UI 테스트, 접근성 점검, 디자인 QA를 로컬에서 처리하는 방향을 시사합니다.",
+    "en": "On-device models that can read a screen and call tools point toward a near future where AI-assisted UI testing, accessibility checks and design QA run locally without sending screenshots to the cloud."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "디자인 툴링·QA 워크플로우 담당자 주시 추천 · 참고 저장",
+    "en": "Worth tracking for design-tooling and QA workflows · Save for reference"
+  },
+  "comment": {
+    "kr": "디자인에 AI를 접목하는 논의는 대개 클라우드 API 호출을 전제로 합니다. LFM2.5-VL-3B는 다른 방향을 보여줍니다. 노트북이나 디바이스에서 돌아갈 만큼 작으면서도 화면 내용을 이해하는 모델입니다.\n화면 판독과 도구 호출을 함께 갖춘 조합은 자동화된 UI 테스트나 접근성 감사에 딱 맞는 조건입니다. 아직 초기 단계지만 내부 QA 툴링을 준비 중인 팀이라면 지켜볼 만합니다.\n프라이버시 측면도 중요합니다. 온디바이스 추론이라면 미공개 디자인의 스크린샷이 기기 밖으로 나갈 필요가 없어, 민감한 제품 작업에서도 AI 보조 리뷰를 실험해보는 문턱이 낮아집니다.",
+    "en": "Most AI-in-design conversations assume a cloud API call. LFM2.5-VL-3B points at a different path: a small enough model to run on a laptop or device that still understands what's on a screen.\nThat combination, screen-reading plus tool-calling, is exactly what automated UI testing and accessibility auditing need. It's early, but worth watching if your team is building internal QA tooling.\nThe privacy angle matters too. On-device inference means screenshots of unreleased designs never have to leave the machine, which lowers the bar for experimenting with AI-assisted review inside sensitive product work."
+  },
+  "thumbLabel": "온디바이스",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}
