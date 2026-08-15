@@ -1,0 +1,57 @@
+{
+  "contentId": "20260816-design-004",
+  "date": "2026-08-16",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Smashing Magazine",
+    "publishedAt": "2026-08-11"
+  },
+  "url": "https://www.smashingmagazine.com/2026/08/building-tactile-ux-honoring-intentional-design-lottie/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · UXUI · 모션",
+    "en": "Design · UXUI · Motion"
+  },
+  "title": {
+    "kr": "촉각적 UX 만들기: 로티(Lottie)로 의도된 디자인을 살리는 법",
+    "en": "Building Tactile UX: Honoring Intentional Design With Lottie"
+  },
+  "summary": {
+    "kr": "디자이너 알렉세이 코피틴이 촉각적 스퀴즈토이 UI '스트레스 릴리스'를 물리 엔진 대신 로티(Lottie) 상태 제어와 DOM 이벤트, 거리 기반 계산으로 구현한 이유를 설명합니다. '그럴듯한 움직임'보다 '디자이너가 의도한 움직임'을 지키기 위해서입니다.",
+    "en": "Designer Alexey Kopytin explains why his team built 'Stress Release,' a tactile squeeze-toy UI, using Lottie state controls, DOM events and distance-based math instead of a physics engine, to preserve designer-intended motion over merely plausible motion."
+  },
+  "points": {
+    "kr": [
+      "물리 엔진 대신 로티 상태 제어값 활용",
+      "거리 기반 계산으로 인터랙션 반응 구현",
+      "일반적인 물리 움직임보다 디자이너의 의도된 모션 우선"
+    ],
+    "en": [
+      "Lottie state controls instead of a physics engine",
+      "Distance-based math drives interaction responses",
+      "Prioritizes designer-intentional motion over generic physics"
+    ]
+  },
+  "positions": [
+    "ui-designer",
+    "motion-designer"
+  ],
+  "designer": {
+    "kr": "물리 엔진으로 만든 움직임이 기술적으로는 맞지만 감정적으로는 어딘가 어색하다고 느껴본 적이 있다면, 디자인 의도를 직접 반영하는 대안적 방법론으로 참고할 만합니다.",
+    "en": "A concrete methodology for anyone who's felt that physics-engine motion looks technically correct but emotionally off, this shows an alternative built directly on top of design intent."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "로티를 쓰는 모션·UI 디자이너에게 바로 적용 가능 · 저장 추천",
+    "en": "Immediately useful for motion/UI designers working with Lottie · Save"
+  },
+  "comment": {
+    "kr": "훑어보고 넘기기보다 저장해둘 만한 글입니다. 물리 엔진이 만드는 움직임은 그럴듯할 뿐 반드시 의도된 것은 아니라는 핵심 주장은 모션이나 UI를 다루는 디자이너라면 언젠가 마주치는 문제입니다.\n\n이 글이 유용한 이유는 구체성에 있습니다. 일반적인 물리 시뮬레이션 대신 로티 상태 제어, DOM 이벤트, 거리 기반 계산을 쓴다는 것은 철학이 아니라 재현 가능한 기법입니다. 다른 촉각적 인터랙션 프로젝트에도 그대로 응용할 수 있습니다.\n\n물리 라이브러리와 씨름하며 스토리보드대로의 움직임을 얻으려 애써본 적이 있다면 정독할 가치가 있는 글입니다.",
+    "en": "This is the kind of article that's worth bookmarking rather than skimming. The core argument, that physics engines produce motion that's plausible but not necessarily intentional, is one every motion or UI designer eventually runs into.\n\nWhat makes it useful is the specificity: Lottie state controls, DOM events and distance-based math instead of a general physics simulation. That's a concrete technique, not just a design philosophy, and it's reproducible on other tactile-interaction projects.\n\nWorth reading closely if you've ever fought with a physics library to get motion that matches your storyboard rather than whatever the engine's default felt like."
+  },
+  "thumbLabel": "모션UX",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

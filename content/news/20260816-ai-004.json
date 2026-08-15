@@ -1,0 +1,57 @@
+{
+  "contentId": "20260816-ai-004",
+  "date": "2026-08-16",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Google",
+    "publishedAt": "2026-08-14"
+  },
+  "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 모델 · 생산성",
+    "en": "AI · Models · Productivity"
+  },
+  "title": {
+    "kr": "구글, 코딩·에이전트 강화한 '제미나이 3.7 플래시' 출시",
+    "en": "Gemini 3.7 Flash: our most intelligent workhorse model"
+  },
+  "summary": {
+    "kr": "구글이 3.6 출시 3주 만에 코딩·에이전트 작업에 강화된 '제미나이 3.7 플래시'를 절반 가격에 내놓으며, 개인 AI 에이전트 '제미나이 스파크'도 함께 업그레이드했습니다.",
+    "en": "Google released Gemini 3.7 Flash, a faster and cheaper workhorse model tuned for coding and agentic tasks, just three weeks after 3.6, and upgraded its Gemini Spark personal agent alongside it."
+  },
+  "points": {
+    "kr": [
+      "3.6 출시 3주 만의 빠른 후속 출시",
+      "코딩·에이전트 작업에 최적화, 비용은 절반",
+      "개인 에이전트 '제미나이 스파크' 동시 업그레이드"
+    ],
+    "en": [
+      "Released just 3 weeks after Gemini 3.6",
+      "Tuned for coding and agentic workflows at lower cost",
+      "Gemini Spark personal agent upgraded alongside it"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "일상적으로 쓰는 에이전트 툴 뒤편의 모델이 더 빠르고 저렴해진다는 것은, 프로토타이핑이나 리서치처럼 AI 보조를 받는 작업 단계의 응답 속도가 추가 비용 없이 개선된다는 뜻입니다.",
+    "en": "A cheaper, faster model behind everyday agent tools means the AI-assisted parts of a design workflow (prototyping, quick research, spec drafting) get more responsive without extra cost."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "제미나이 기반 툴 사용자는 주시 추천 · 선택",
+    "en": "Track if you rely on Gemini-based tools · Optional"
+  },
+  "comment": {
+    "kr": "이번 소식의 핵심은 벤치마크 수치보다 출시 속도입니다. 3.6에서 3.7 플래시까지 3주밖에 걸리지 않았다는 것은 구글이 평소보다 훨씬 빠르게 점진적 모델 업데이트를 내놓고 있다는 뜻입니다.\n\n디자인 작업 흐름 안에서 제미나이 스파크나 워크스페이스 AI 기능, 혹은 제미나이 API 기반 서드파티 툴을 쓰고 있다면, 이런 빠르고 저렴한 반복 개선은 한 번의 극적인 도약보다 자동완성·요약·에이전트 응답성이 꾸준히 좋아지는 형태로 체감될 가능성이 큽니다.\n\n비용 때문에 AI 보조 기능을 워크플로에 깊이 들이지 못했다면 특히 주목할 만한 흐름입니다.",
+    "en": "The headline here isn't the benchmark numbers so much as the release cadence: three weeks between 3.6 and 3.7 Flash suggests Google is shipping incremental model updates much faster than its usual cycle.\n\nFor anyone using Gemini-backed tools inside a design workflow, Spark, Workspace AI features, or third-party tools built on the Gemini API, this kind of rapid, low-cost iteration tends to show up as steadily better autocomplete, summarization and agent responsiveness rather than a single dramatic jump.\n\nWorth keeping an eye on, especially if cost has been a limiting factor for how much AI assistance you build into a recurring workflow."
+  },
+  "thumbLabel": "신모델",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

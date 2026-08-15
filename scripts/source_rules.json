@@ -314,5 +314,21 @@
   "캐릿": {
     "region": "국내",
     "group": "캐릿"
+  },
+  "NN/g": {
+    "region": "해외",
+    "group": "Nielsen Norman Group"
+  },
+  "Google": {
+    "region": "해외",
+    "group": "Google"
+  },
+  "Smashing Magazine": {
+    "region": "해외",
+    "group": "Smashing Magazine"
+  },
+  "더쎈뉴스": {
+    "region": "국내",
+    "group": "더쎈뉴스"
   }
 }

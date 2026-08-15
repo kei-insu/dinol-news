@@ -1,0 +1,74 @@
+{
+  "20260816-ai-001": {
+    "category_kr": "AI · 로봇 · 산업",
+    "category_en": "AI · Robotics · Industry",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260816-ai-002": {
+    "category_kr": "AI · 모델 · 산업동향",
+    "category_en": "AI · Models · Industry Trends",
+    "impactScore": 3,
+    "positions": [
+      "design-lead",
+      "product-designer"
+    ]
+  },
+  "20260816-ai-003": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 4,
+    "positions": [
+      "ux-designer",
+      "design-lead"
+    ]
+  },
+  "20260816-ai-004": {
+    "category_kr": "AI · 모델 · 생산성",
+    "category_en": "AI · Models · Productivity",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260816-design-001": {
+    "category_kr": "디자인 · 공간 · 팬덤",
+    "category_en": "Design · Space · Fandom",
+    "impactScore": 3,
+    "positions": [
+      "space-designer",
+      "art-director"
+    ]
+  },
+  "20260816-design-002": {
+    "category_kr": "디자인 · UXUI · 컨퍼런스",
+    "category_en": "Design · UXUI · Conference",
+    "impactScore": 3,
+    "positions": [
+      "ux-designer",
+      "design-lead"
+    ]
+  },
+  "20260816-design-003": {
+    "category_kr": "디자인 · 시스템 · 프로세스",
+    "category_en": "Design · Systems · Process",
+    "impactScore": 4,
+    "positions": [
+      "design-lead",
+      "ui-designer"
+    ]
+  },
+  "20260816-design-004": {
+    "category_kr": "디자인 · UXUI · 모션",
+    "category_en": "Design · UXUI · Motion",
+    "impactScore": 5,
+    "positions": [
+      "ui-designer",
+      "motion-designer"
+    ]
+  }
+}

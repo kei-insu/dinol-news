@@ -1,0 +1,57 @@
+{
+  "contentId": "20260816-ai-003",
+  "date": "2026-08-16",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "Anthropic",
+    "publishedAt": "2026-08-12"
+  },
+  "url": "https://claude.com/blog/cowork-chrome-side-panel",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 생산성",
+    "en": "AI · Tools · Productivity"
+  },
+  "title": {
+    "kr": "클로드 코워크, 크롬 사이드패널로 들어오다",
+    "en": "Claude Cowork comes to the Chrome side panel"
+  },
+  "summary": {
+    "kr": "앤트로픽의 Claude Cowork가 크롬 확장 프로그램의 사이드패널로 직접 통합되어, 별도 설정 없이 스킬·플러그인·커넥터를 브라우저에서 바로 쓸 수 있게 됐습니다. Max·Team 플랜 사용자부터 우선 제공됩니다.",
+    "en": "Anthropic's Claude Cowork now runs directly in the Chrome side panel, letting skills, plugins and connectors work in the browser without extra setup. It's rolling out first to Max and Team plan users."
+  },
+  "points": {
+    "kr": [
+      "브라우저 사이드패널 안에서 바로 작동하는 AI 에이전트",
+      "스킬·플러그인·커넥터 별도 설정 불필요",
+      "Max·Team 플랜부터 우선 제공"
+    ],
+    "en": [
+      "AI agent now works directly inside the browser side panel",
+      "Skills, plugins and connectors need no extra setup",
+      "Rolling out first to Max and Team plan users"
+    ]
+  },
+  "positions": [
+    "ux-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "무드보드 리서치, 경쟁사 분석, 브리프 초안 작성처럼 리서치에서 결과물까지 이어지는 작업을 이미 열어둔 브라우저 탭을 벗어나지 않고 처리할 수 있게 됐습니다.",
+    "en": "Research-to-deliverable workflows (moodboard gathering, competitive analysis, brief drafting) can now happen without leaving the browser tab you're already working in."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "리서치 비중 높은 실무자는 바로 써볼 만함 · 저장 추천",
+    "en": "Worth trying today for research-heavy workflows · Bookmark"
+  },
+  "comment": {
+    "kr": "Claude Cowork가 크롬 사이드패널로 들어오면서 실질적인 마찰 지점 하나가 사라졌습니다. 기존에는 에이전트 기반 리서치 작업을 하려면 참고 자료가 열려 있는 브라우저 탭과 별도 앱을 오가야 했습니다.\n\n스킬·플러그인·커넥터가 패널 안에서 그대로 작동하면서, 디자이너가 레퍼런스를 수집하고 경쟁사 사이트를 요약하고 브리프 초안을 작성하는 과정을 창을 바꾸지 않고 처리할 수 있게 됐습니다. 인터페이스상으로는 작은 변화지만, 툴을 실제로 얼마나 자주 쓰게 되는지를 바꿀 수 있는 종류의 변화입니다.\n\n다만 현재는 Max·Team 플랜 구독자에게만 제공되므로, 하위 플랜까지 확대되는 속도를 지켜볼 필요가 있습니다.",
+    "en": "Claude Cowork moving into the Chrome side panel closes a real friction point: agent-based research work used to mean bouncing between a separate app and the browser tab where the actual reference material lived.\n\nWith skills, plugins and connectors working natively in the panel, a designer could realistically pull references, summarize competitor sites and draft a brief without ever switching windows. It's a small interface change, but the kind that changes how often a tool actually gets used day to day.\n\nAccess is currently limited to Max and Team plan subscribers, so the rollout pace to lower tiers is worth watching if you're on a lighter plan."
+  },
+  "thumbLabel": "코워크",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

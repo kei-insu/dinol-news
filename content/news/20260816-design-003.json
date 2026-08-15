@@ -1,0 +1,57 @@
+{
+  "contentId": "20260816-design-003",
+  "date": "2026-08-16",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "NN/g",
+    "publishedAt": "2026-07-10"
+  },
+  "url": "https://www.nngroup.com/articles/design-system-maturity/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 시스템 · 프로세스",
+    "en": "Design · Systems · Process"
+  },
+  "title": {
+    "kr": "디자인 시스템 성숙도, 6개 차원으로 다시 보기",
+    "en": "Design-System Maturity: A 6-Dimension Framework"
+  },
+  "summary": {
+    "kr": "NN/g가 디자인 시스템의 성숙도를 하나의 직선형 사다리로 측정하는 방식에 문제를 제기합니다. 실제로는 여섯 개의 독립된 차원에서 고르지 않게 성숙해지기 때문에, 한 축의 점수가 낮다고 시스템 전체가 미성숙하다고 볼 수 없다는 것입니다.",
+    "en": "NN/g argues that design-system maturity shouldn't be measured as a single linear ladder. Instead, they propose assessing it across six independent dimensions, since real systems mature unevenly and a low score on one axis doesn't mean the whole system is immature."
+  },
+  "points": {
+    "kr": [
+      "기존 성숙도 모델은 직선형 발전을 가정",
+      "실제 시스템은 여러 차원에서 고르지 않게 성숙",
+      "단일 사다리 대신 6개의 독립 축으로 재구성"
+    ],
+    "en": [
+      "Maturity models often assume a straight-line progression",
+      "Real systems mature unevenly across different dimensions",
+      "Six independent axes replace the single-ladder model"
+    ]
+  },
+  "positions": [
+    "design-lead",
+    "ui-designer"
+  ],
+  "designer": {
+    "kr": "팀의 디자인 시스템이 '충분히 성숙한가'를 두고 논쟁할 때 쓸 수 있는 진단 도구입니다. 하나의 점수 대신, 다음에 어느 차원에 투자해야 하는지를 구체적으로 짚어줍니다.",
+    "en": "A useful diagnostic lens for any team debating whether their design system is 'good enough' - it reframes the question from a single score to which specific dimension actually needs investment next."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "디자인 시스템을 운영하는 리드에게 자가진단 프레임워크로 유용 · 저장 추천",
+    "en": "Useful framework for design system leads to self-assess · Save"
+  },
+  "comment": {
+    "kr": "대부분의 디자인 시스템 성숙도 모델은 사다리 모양을 빌려옵니다. '임기응변' 단계에서 시작해 '최적화' 단계로 올라간다는 식입니다. NN/g의 이번 프레임워크는 이 사다리 구조 자체에 이의를 제기하는데, 그 지점이 유용합니다.\n\n성숙도를 6개의 독립된 차원으로 나눈다는 것은, 컴포넌트 커버리지는 뛰어나지만 거버넌스는 약하거나, 도입률은 높지만 문서화는 부실한 상태를 모순으로 읽지 않아도 된다는 뜻입니다. 이는 실제 현장에서 디자인 시스템이 무너지는 방식에 더 가깝습니다.\n\n디자인 시스템을 운영하는 리드에게 이 글의 진짜 가치는 프레임워크 자체보다 질문을 바꾸는 방식에 있습니다. '우리가 얼마나 성숙한가'가 아니라 '이 6개 축 중 지금 진짜 병목은 어디인가'를 묻고, 다음 분기의 노력을 그곳에 집중하라는 것입니다.",
+    "en": "Most design-system maturity models borrow the shape of a ladder: you start at 'ad hoc' and climb toward 'optimized.' NN/g's framework pushes back on that shape directly, and the pushback is the useful part.\n\nSplitting maturity into six independent dimensions means a team can have excellent component coverage but weak governance, or strong adoption but thin documentation, without that combination reading as a contradiction. That's closer to how design systems actually break down in practice.\n\nFor a design-system lead, the real value here isn't the framework itself but the diagnostic move: instead of asking 'how mature are we,' ask 'which of these six axes is the actual bottleneck right now,' and put the next quarter's effort there."
+  },
+  "thumbLabel": "디자인시스템",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}
