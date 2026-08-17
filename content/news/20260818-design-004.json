@@ -1,0 +1,57 @@
+{
+  "contentId": "20260818-design-004",
+  "date": "2026-08-18",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Core77",
+    "publishedAt": "2026-08-14"
+  },
+  "url": "https://www.core77.com/posts/145031/The-MegCell-Pulse-A-3D-Printed-Guitar-Playing-Contraption",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · DIY",
+    "en": "Design · Product · DIY"
+  },
+  "title": {
+    "kr": "메그셀 펄스, 기타를 대신 연주하는 3D 프린팅 장치",
+    "en": "The MegCell Pulse: A 3D-Printed Guitar-Playing Contraption"
+  },
+  "summary": {
+    "kr": "메이커 브루스가 6년에 걸쳐 개발한 메그셀 펄스는 기타에 장착해 디지털 악보로 연주를 대신하는 3D 프린팅 장치입니다. 프렛과 피킹을 맡는 모듈이 분리돼 있어, 한 손만으로도 기타 연주가 가능하도록 돕습니다.",
+    "en": "After six years of development, maker Bruce built the MegCell Pulse, a 3D-printed device that clips onto a guitar and plays it from digital sheet music, with separate fretting and plucking modules that could let a one-handed player perform."
+  },
+  "points": {
+    "kr": [
+      "프렛·피킹 모듈이 분리돼 기존 기타에 부착 가능",
+      "MuseScore 등으로 디지털 악보를 읽어 연주",
+      "한 손 연주자를 위한 접근성 가능성"
+    ],
+    "en": [
+      "Separate fretting and plucking modules attach to any guitar",
+      "Reads digital sheet music via software like MuseScore",
+      "Could enable one-handed guitar playing"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "기업의 기획이 아니라 개인 메이커 프로젝트에서 접근성 디자인이 나온 좋은 사례입니다. 보조기기 디자인이나 모듈형 DIY 하드웨어에 관심 있다면 참고할 만합니다.",
+    "en": "A good example of accessibility-driven product design emerging from a hobbyist project rather than a corporate brief. Worth a look for anyone interested in assistive product design or modular DIY hardware."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "접근성 제품·DIY 하드웨어 레퍼런스로 가볍게 참고",
+    "en": "Fun reference for assistive tech or DIY product design"
+  },
+  "comment": {
+    "kr": "6년이라는 개발 기간이 이 프로젝트의 진지함을 보여줍니다. 짧은 해커톤 결과물이 아니라 꽤 정교하게 다듬어진 메커니즘입니다. 모듈 구조가 이 디자인에서 가장 영리한 부분입니다.\n프렛과 피킹을 독립된 부품으로 나눈 것은 원래 접근성을 염두에 둔 설계는 아니었지만, 손 움직임이 제한된 연주자에게 실질적인 활용 가능성을 열어줍니다. 이런 부수적 효용은 어떤 제품 디자인 과정에서든 눈여겨볼 가치가 있습니다.",
+    "en": "The six-year development timeline is the tell here: this isn't a quick hackathon project but a genuinely refined mechanism. The modularity is the smartest part of the design.\nSplitting fretting and plucking into independent components wasn't originally framed as an accessibility feature, but it opens up real use cases for players with limited hand mobility. That kind of side-effect utility is worth noticing in any product design process."
+  },
+  "thumbLabel": "DIY",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

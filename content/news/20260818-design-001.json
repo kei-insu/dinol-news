@@ -1,0 +1,57 @@
+{
+  "contentId": "20260818-design-001",
+  "date": "2026-08-18",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "Spoon & Tamago",
+    "publishedAt": "2026-08-07"
+  },
+  "url": "https://spoon-tamago.com/sou-fujimoto-meiji-park-fukuoka/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축 · 공간",
+    "en": "Design · Architecture · Space"
+  },
+  "title": {
+    "kr": "후지모토 소우의 메이지 공원, 하카타역 앞에 입체적 풍경을 펼치다",
+    "en": "Sou Fujimoto's Meiji Park Brings a Three-Dimensional Landscape to Hakata Station"
+  },
+  "summary": {
+    "kr": "건축가 후지모토 소우가 설계한 메이지 공원이 8월 7일 후쿠오카 하카타역 옆에 새롭게 문을 열었습니다. 4층 상업 건물과 226미터 길이의 입체 산책로가 나무·테라스를 여러 층위로 엮어 다층적인 동선을 만들어냅니다.",
+    "en": "Architect Sou Fujimoto's redeveloped Meiji Park opened August 7 beside Hakata Station in Fukuoka, weaving a four-story commercial building into a 226-meter elevated path that lets visitors circulate through trees and terraces at multiple levels."
+  },
+  "points": {
+    "kr": [
+      "여러 층위를 도는 226m 입체 산책로",
+      "조경에 엮여 들어간 4층 상업 건물",
+      "하카타역 인근, 8월 7일 개장"
+    ],
+    "en": [
+      "226m elevated path circulating through the park at multiple levels",
+      "Four-story commercial building woven into the landscape",
+      "Opened August 7, steps from Hakata Station"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "건축과 조경의 경계를 흐리는 명확한 사례입니다. 동선이자 테라스이기도 한 단차 구조는 복합용도나 역세권 공공공간을 설계할 때 참고할 만합니다.",
+    "en": "A clear case study in blurring the line between building and landscape. The stepped terraces that double as circulation are a useful reference for anyone designing mixed-use or transit-adjacent public space."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "공공공간·복합용도 프로젝트 레퍼런스로 저장 추천",
+    "en": "Save for public-space and mixed-use reference"
+  },
+  "comment": {
+    "kr": "이 프로젝트에서 볼 만한 지점은 녹지 자체보다 단면 구성입니다. 후지모토는 입체 산책로를 전체 대지를 조직하는 장치로 삼아, 공원과 건물이 분리된 경험이 되지 않도록 설계했습니다.\n역세권 인접 프로젝트를 다루는 사람이라면, 지상층 상업시설과 입체 동선, 식재가 쌓이는 방식이 훨씬 작은 스케일에서도 충분히 응용 가능한 다이어그램입니다.",
+    "en": "What makes this worth a look isn't the greenery itself but the section: Fujimoto treats the elevated path as the organizing device for the whole site, so the park and the building are never really separate experiences.\nFor anyone working on projects near transit hubs, the way ground-level retail, elevated circulation and planting are stacked here is a fairly transferable diagram, even at a much smaller scale."
+  },
+  "thumbLabel": "공원",
+  "thumbGradient": "g-olive",
+  "_todo": []
+}

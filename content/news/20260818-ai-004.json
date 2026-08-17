@@ -1,0 +1,57 @@
+{
+  "contentId": "20260818-ai-004",
+  "date": "2026-08-18",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Google DeepMind",
+    "publishedAt": "2026-07-30"
+  },
+  "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 로봇 · 피지컬AI",
+    "en": "AI · Robotics · Physical AI"
+  },
+  "title": {
+    "kr": "제미나이 로보틱스 2, 로봇에 전신 지능을 부여하다",
+    "en": "Gemini Robotics 2 Brings Whole-Body Intelligence to Robots"
+  },
+  "summary": {
+    "kr": "구글 딥마인드가 휴머노이드의 전신을 제어하는 비전-언어-행동 모델 '제미나이 로보틱스 2'를 공개했습니다. 다단계 추론과 다중 로봇 협업을 맡는 'ER 2', 경량 버전 'On-Device 2'도 함께 선보이며 하나의 '두뇌'로 여러 로봇 몸체를 구동한다는 방향을 제시했습니다.",
+    "en": "Google DeepMind shipped Gemini Robotics 2, a vision-language-action model that controls a humanoid's whole body, alongside ER 2 for multi-step reasoning and multi-robot teamwork, and a lightweight On-Device 2 variant, positioning one 'brain' to run across many robot bodies."
+  },
+  "points": {
+    "kr": [
+      "전신 동작을 제어하는 단일 VLA 모델",
+      "다단계 계획·다중 로봇 협업을 맡는 ER 2",
+      "로컬 하드웨어용 경량 버전 On-Device 2"
+    ],
+    "en": [
+      "One VLA model controlling full-body humanoid movement",
+      "ER 2 adds multi-step planning and multi-robot teamwork",
+      "On-Device 2 brings a lighter version for local hardware"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "로봇 몸체가 범용화될수록 차별화는 '두뇌' 레이어로 옮겨갑니다. 소비자 가전에서 소프트웨어가 하드웨어를 흡수했던 흐름과 비슷합니다. 실물 제품이나 공간 인터랙션을 다루는 디자이너라면 눈여겨볼 만합니다.",
+    "en": "As robot bodies get commoditized, the differentiation shifts to the 'brain' layer, similar to how software ate hardware in consumer electronics. Worth watching if your work touches physical products or spatial interaction design."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "피지컬 AI·로보틱스 플랫폼 흐름을 챙기고 싶다면 배경 지식으로 참고",
+    "en": "Background context for anyone tracking physical AI and robotics platforms"
+  },
+  "comment": {
+    "kr": "발표된 지 몇 주 지난 소식이지만, 구글의 피지컬 AI 전략을 가장 명확하게 보여주는 사례입니다. 하나의 범용 두뇌로 여러 로봇 몸체를 구동한다는 방향은, 두뇌와 몸체를 함께 만드는 회사들과는 결이 다른 베팅입니다.\n제품·산업 디자이너 입장에서 흥미로운 지점은, 로봇의 형태와 지능이 예상보다 빠르게 분리될 수 있다는 점입니다. 이는 물리적 외형을 설계하는 방식과 그 로봇이 보여주는 행동을 설계하는 방식을 다르게 접근해야 할 수도 있다는 뜻입니다.",
+    "en": "This announcement is a few weeks old, but it's the clearest articulation yet of Google's strategy in physical AI: one general-purpose brain, many robot bodies. That's a meaningfully different bet than companies building brain and body together.\nFor product and industrial designers, the interesting implication is that robot form factors might decouple from robot intelligence faster than expected, which changes how you think about designing the physical shell versus the behavior it exhibits."
+  },
+  "thumbLabel": "로봇두뇌",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}

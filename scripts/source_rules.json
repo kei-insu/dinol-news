@@ -342,5 +342,17 @@
   "디자인정글": {
     "region": "국내",
     "group": "디자인정글"
+  },
+  "Google DeepMind": {
+    "region": "해외",
+    "group": "Google DeepMind"
+  },
+  "Spoon & Tamago": {
+    "region": "해외",
+    "group": "Spoon & Tamago"
+  },
+  "일간스포츠": {
+    "region": "국내",
+    "group": "일간스포츠"
   }
 }

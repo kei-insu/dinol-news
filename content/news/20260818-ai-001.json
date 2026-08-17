@@ -1,0 +1,57 @@
+{
+  "contentId": "20260818-ai-001",
+  "date": "2026-08-18",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "Figma Blog",
+    "publishedAt": "2026-08-12"
+  },
+  "url": "https://www.figma.com/blog/2026-ai-report/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 디자인 · 리서치",
+    "en": "AI · Design · Research"
+  },
+  "title": {
+    "kr": "피그마 2026 AI 리포트, AI는 협업을 더 낫게 만들 수 있을까",
+    "en": "Figma's 2026 AI Report: Can AI Help Us Collaborate Better?"
+  },
+  "summary": {
+    "kr": "피그마의 2026 AI 리포트는 디자이너들이 실제로 AI를 업무에 어떻게 쓰고 있는지 조사한 결과를 담았습니다. 대부분의 팀이 AI를 협업 파트너로 받아들이고 있지만, 신뢰와 검토 습관은 여전히 도입 속도를 따라가지 못하고 있습니다.",
+    "en": "Figma's 2026 AI Report surveys how designers are actually using AI in their daily workflows, finding that most teams now treat AI as a collaborator rather than a novelty, while trust and review habits still lag behind adoption speed."
+  },
+  "points": {
+    "kr": [
+      "디자이너들이 AI를 실제로 쓰는 방식",
+      "신뢰·검토 습관이 도입 속도를 못 따라가는 지점",
+      "팀 워크플로우와 툴 선택에 주는 시사점"
+    ],
+    "en": [
+      "How designers are actually using AI day to day",
+      "Where trust and review habits lag behind adoption",
+      "What this means for team workflows and tooling decisions"
+    ]
+  },
+  "positions": [
+    "ux-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "우리 팀이 AI 도입 곡선에서 어디쯤 있는지 가늠해볼 잣대입니다. 검토 습관 없이 도입 속도만 빠른 것은 그 자체로 리스크라는 점도 함께 짚어줍니다.",
+    "en": "A useful benchmark for where your own team sits on the AI-adoption curve, and a reminder that fast adoption without review habits creates its own risk."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "AI 활용 가이드라인을 세우는 디자인 리드라면 전문을 읽어볼 가치가 있습니다",
+    "en": "Worth reading in full for design leads shaping AI usage guidelines"
+  },
+  "comment": {
+    "kr": "이 리포트가 눈에 띄는 지점은 '태도'가 아니라 '행동'을 측정했다는 것입니다. 'AI를 좋아하는가'가 아니라 '신기함이 가신 뒤 실제로 무엇을 하는가'를 본 셈입니다.\n도입 속도와 검토 습관 사이의 격차는 곱씹어볼 만합니다. 생성은 빠르게, 검토는 느리게 가져가는 팀은 나중에 갚아야 할 디자인 부채를 조용히 쌓고 있는 것과 같습니다.",
+    "en": "What stands out here is that Figma is measuring behavior, not sentiment. It's less 'do designers like AI' and more 'what do they actually do with it once the novelty wears off.'\nThe gap between adoption and review discipline is the part worth sitting with. Teams that move fast on generation but slow on review are quietly building technical and design debt they will have to pay down later."
+  },
+  "thumbLabel": "AI 리서치",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

@@ -1,0 +1,53 @@
+{
+  "contentId": "20260818-ai-002",
+  "date": "2026-08-18",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "ZDNet Korea",
+    "publishedAt": "2026-08-17"
+  },
+  "url": "https://zdnet.co.kr/view/?no=20260817084351",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "AI · 에이전트 · 비즈니스",
+    "en": "AI · Agents · Business"
+  },
+  "title": {
+    "kr": "\"AI, 답변 넘어 실행으로\"…젠스파크-SBVA, AI 에이전트 미래 논의",
+    "en": null
+  },
+  "summary": {
+    "kr": "AI 스타트업 젠스파크와 벤처캐피털 SBVA가 진행한 파이어사이드챗에서, 답변을 넘어 스스로 목표를 세우고 실행까지 하는 AI 에이전트가 국내 기업의 혁신과 생산성 향상을 지원할 것이라는 전망이 나왔습니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "젠스파크 공동창업자·CTO가 밝힌 에이전트 기술 방향",
+      "'답변형'에서 '실행형' AI로의 전환",
+      "국내 기업 혁신·생산성에 대한 기대"
+    ],
+    "en": []
+  },
+  "positions": [
+    "service-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "에이전트가 실행 단계까지 맡게 되면 서비스 설계의 단위가 '화면'에서 '작업 흐름' 전체로 바뀝니다. 에이전트가 무엇을 자동으로 하고 어디서 사람이 개입해야 하는지 미리 그려보는 습관이 필요합니다.",
+    "en": null
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "AI 에이전트 기능을 검토 중인 기획자·PM 참고용",
+    "en": null
+  },
+  "comment": {
+    "kr": "파이어사이드챗 형식이라 구체적인 로드맵보다는 방향성 논의에 가깝습니다. 다만 '답변에서 실행으로'라는 프레이밍 자체는 최근 업계 전반의 화두와 맞닿아 있어 눈여겨볼 만합니다.\n서비스 기획자 입장에서는 에이전트가 실행을 대신하는 지점에서 사용자 신뢰와 통제권을 어떻게 설계할지가 다음 질문이 될 것입니다.",
+    "en": null
+  },
+  "thumbLabel": "에이전트",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

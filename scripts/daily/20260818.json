@@ -1,0 +1,74 @@
+{
+  "20260818-ai-001": {
+    "category_kr": "AI · 디자인 · 리서치",
+    "category_en": "AI · Design · Research",
+    "impactScore": 4,
+    "positions": [
+      "ux-designer",
+      "design-lead"
+    ]
+  },
+  "20260818-ai-002": {
+    "category_kr": "AI · 에이전트 · 비즈니스",
+    "category_en": "AI · Agents · Business",
+    "impactScore": 3,
+    "positions": [
+      "service-designer",
+      "design-lead"
+    ]
+  },
+  "20260818-ai-003": {
+    "category_kr": "AI · 영상 · 콘텐츠",
+    "category_en": "AI · Video · Content",
+    "impactScore": 3,
+    "positions": [
+      "video-designer",
+      "art-director"
+    ]
+  },
+  "20260818-ai-004": {
+    "category_kr": "AI · 로봇 · 피지컬AI",
+    "category_en": "AI · Robotics · Physical AI",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer",
+      "design-lead"
+    ]
+  },
+  "20260818-design-001": {
+    "category_kr": "디자인 · 건축 · 공간",
+    "category_en": "Design · Architecture · Space",
+    "impactScore": 3,
+    "positions": [
+      "architect",
+      "space-designer"
+    ]
+  },
+  "20260818-design-002": {
+    "category_kr": "디자인 · 커리어 · 프리랜서",
+    "category_en": "Design · Career · Freelance",
+    "impactScore": 3,
+    "positions": [
+      "graphic-designer",
+      "design-lead"
+    ]
+  },
+  "20260818-design-003": {
+    "category_kr": "디자인 · 전시 · 디스플레이",
+    "category_en": "Design · Exhibition · Display",
+    "impactScore": 2,
+    "positions": [
+      "product-designer",
+      "industrial-designer"
+    ]
+  },
+  "20260818-design-004": {
+    "category_kr": "디자인 · 제품 · DIY",
+    "category_en": "Design · Product · DIY",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  }
+}

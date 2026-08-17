@@ -1,0 +1,53 @@
+{
+  "contentId": "20260818-design-003",
+  "date": "2026-08-18",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "전자신문",
+    "publishedAt": "2026-08-16"
+  },
+  "url": "https://www.etnews.com/20260816000047",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 전시 · 디스플레이",
+    "en": "Design · Exhibition · Display"
+  },
+  "title": {
+    "kr": "IMID 2026서 80여개 부스 특별 전시…\"삼성D·LGD 최초 기술 공개\"",
+    "en": null
+  },
+  "summary": {
+    "kr": "8월 18일부터 부산 벡스코에서 열리는 국제정보디스플레이 학술대회(IMID 2026)에서 삼성디스플레이·LG디스플레이가 세계 최초 기술을 적용한 디스플레이 제품을 특별전시로 공개합니다. 프라이버시 디스플레이가 적용된 갤럭시S26 울트라용 OLED, 165Hz 하이퍼 더블 스캐닝 OLED 등이 출품됩니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "80여개 부스 규모의 '퓨쳐 로드쇼' 특별전시",
+      "삼성D 프라이버시 디스플레이 OLED 최초 공개",
+      "LGD 165Hz 하이퍼 더블 스캐닝 OLED 공개"
+    ],
+    "en": []
+  },
+  "positions": [
+    "product-designer",
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "디스플레이 스펙 경쟁처럼 보이지만, 프라이버시 필터나 고주사율 같은 기능은 결국 화면을 다루는 제품·UI 디자인의 표현 범위를 넓혀줍니다. 하드웨어 전시이지만 다음 시즌 디바이스 UX를 가늠하는 참고 자료가 됩니다.",
+    "en": null
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "디바이스·하드웨어 UX에 관심 있다면 전시 라인업 훑어보기 추천",
+    "en": null
+  },
+  "comment": {
+    "kr": "이 기사 자체는 산업 전시 소식에 가깝지만, 프라이버시 디스플레이나 165Hz 하이퍼 더블 스캐닝처럼 화면 하드웨어의 새 기능들은 결국 그 위에서 동작하는 UI·인터랙션 디자인의 조건을 바꿔놓습니다.\n특히 프라이버시 디스플레이는 '보이는 화면'과 '숨겨야 할 화면'을 구분하는 새로운 UX 문제를 만들어낼 수 있어, 모바일 UI를 다루는 디자이너라면 눈여겨볼 만합니다.",
+    "en": null
+  },
+  "thumbLabel": "전시",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}
