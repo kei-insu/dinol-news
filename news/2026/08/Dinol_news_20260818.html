@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 18</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 18, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.figma.com/blog/2026-ai-report/" target="_blank"
+       data-category="AI · 디자인 · 리서치" data-category-en="AI · Design · Research"
+       data-position="ux-designer|design-lead"
+       data-summary="Figma's 2026 AI Report surveys how designers are actually using AI in their daily workflows, finding that most teams now treat AI as a collaborator rather than a novelty, while trust and review habits still lag behind adoption speed." data-summary-kr="피그마의 2026 AI 리포트는 디자이너들이 실제로 AI를 업무에 어떻게 쓰고 있는지 조사한 결과를 담았습니다. 대부분의 팀이 AI를 협업 파트너로 받아들이고 있지만, 신뢰와 검토 습관은 여전히 도입 속도를 따라가지 못하고 있습니다."
+       data-points="How designers are actually using AI day to day|Where trust and review habits lag behind adoption|What this means for team workflows and tooling decisions" data-points-kr="디자이너들이 AI를 실제로 쓰는 방식|신뢰·검토 습관이 도입 속도를 못 따라가는 지점|팀 워크플로우와 툴 선택에 주는 시사점"
+       data-designer="A useful benchmark for where your own team sits on the AI-adoption curve, and a reminder that fast adoption without review habits creates its own risk." data-designer-kr="우리 팀이 AI 도입 곡선에서 어디쯤 있는지 가늠해볼 잣대입니다. 검토 습관 없이 도입 속도만 빠른 것은 그 자체로 리스크라는 점도 함께 짚어줍니다."
+       data-impact-score="4"
+       data-recommend="Worth reading in full for design leads shaping AI usage guidelines" data-recommend-kr="AI 활용 가이드라인을 세우는 디자인 리드라면 전문을 읽어볼 가치가 있습니다"
+       data-comment="What stands out here is that Figma is measuring behavior, not sentiment. It's less 'do designers like AI' and more 'what do they actually do with it once the novelty wears off.'
+The gap between adoption and review discipline is the part worth sitting with. Teams that move fast on generation but slow on review are quietly building technical and design debt they will have to pay down later." data-comment-kr="이 리포트가 눈에 띄는 지점은 '태도'가 아니라 '행동'을 측정했다는 것입니다. 'AI를 좋아하는가'가 아니라 '신기함이 가신 뒤 실제로 무엇을 하는가'를 본 셈입니다.
+도입 속도와 검토 습관 사이의 격차는 곱씹어볼 만합니다. 생성은 빠르게, 검토는 느리게 가져가는 팀은 나중에 갚아야 할 디자인 부채를 조용히 쌓고 있는 것과 같습니다."
+       data-title-en="Figma's 2026 AI Report: Can AI Help Us Collaborate Better?" data-title-kr="피그마 2026 AI 리포트, AI는 협업을 더 낫게 만들 수 있을까">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">AI 리서치</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Figma Blog · 2026. 08. 12</div>
+        <div class="card-title">피그마 2026 AI 리포트, AI는 협업을 더 낫게 만들 수 있을까</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260817084351" target="_blank"
+       data-category="AI · 에이전트 · 비즈니스"
+       data-position="service-designer|design-lead"
+       data-summary="AI 스타트업 젠스파크와 벤처캐피털 SBVA가 진행한 파이어사이드챗에서, 답변을 넘어 스스로 목표를 세우고 실행까지 하는 AI 에이전트가 국내 기업의 혁신과 생산성 향상을 지원할 것이라는 전망이 나왔습니다."
+       data-points="젠스파크 공동창업자·CTO가 밝힌 에이전트 기술 방향|'답변형'에서 '실행형' AI로의 전환|국내 기업 혁신·생산성에 대한 기대"
+       data-designer="에이전트가 실행 단계까지 맡게 되면 서비스 설계의 단위가 '화면'에서 '작업 흐름' 전체로 바뀝니다. 에이전트가 무엇을 자동으로 하고 어디서 사람이 개입해야 하는지 미리 그려보는 습관이 필요합니다."
+       data-impact-score="3"
+       data-recommend="AI 에이전트 기능을 검토 중인 기획자·PM 참고용"
+       data-comment="파이어사이드챗 형식이라 구체적인 로드맵보다는 방향성 논의에 가깝습니다. 다만 '답변에서 실행으로'라는 프레이밍 자체는 최근 업계 전반의 화두와 맞닿아 있어 눈여겨볼 만합니다.
+서비스 기획자 입장에서는 에이전트가 실행을 대신하는 지점에서 사용자 신뢰와 통제권을 어떻게 설계할지가 다음 질문이 될 것입니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">에이전트</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 08. 17</div>
+        <div class="card-title">"AI, 답변 넘어 실행으로"…젠스파크-SBVA, AI 에이전트 미래 논의</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://isplus.com/article/view/isp202608130044" target="_blank"
+       data-category="AI · 영상 · 콘텐츠"
+       data-position="video-designer|art-director"
+       data-summary="숏폼에서 몸집을 키운 중국의 'AI 드라마'가 지방 위성TV 정규 편성까지 진출했습니다. 안후이위성TV가 선보인 20부작 사극 '도화담기'는 제작 전 과정을 AI로 완성한 첫 정규 편성 AI 드라마입니다. 국내에서도 AI 활용 장면이 하나둘 등장하는 가운데, 제작비 상승에 시달리는 드라마 업계의 대안이 될 수 있을지 관심이 모입니다."
+       data-points="중국 첫 정규 편성 AI 사극 '도화담기' 사례|숏폼에서 정규 방송으로 확장되는 AI 드라마|국내 드라마 업계의 제작비 대안으로서의 가능성"
+       data-designer="완전히 AI로 제작된 콘텐츠가 정규 편성까지 갈 수 있다는 사실은, 영상·콘텐츠 디자이너에게는 위협이자 기회입니다. AI가 대체하는 공정과 사람이 여전히 판단해야 하는 공정을 구분해두는 것이 스스로의 포지션을 지키는 방법입니다."
+       data-impact-score="3"
+       data-recommend="영상·콘텐츠 제작에 AI 도입을 검토 중이라면 참고"
+       data-comment="이 기사가 흥미로운 지점은 'AI 드라마'가 실험 단계를 넘어 지방 위성TV의 정규 편성표에 올랐다는 사실입니다. 숏폼 콘텐츠에서 검증된 포맷이 정규 방송이라는 더 큰 무대로 이동한 셈입니다.
+국내 드라마 업계가 이를 '제작비 대안'으로 바라본다는 언급도 눈여겨볼 만합니다. 비용 압박이 큰 시장일수록 AI 제작 도입 속도가 빨라질 수 있다는 뜻이며, 영상 디자이너·연출자 모두에게 실질적인 변화가 다가오고 있다는 신호로 읽힙니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">AI드라마</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">일간스포츠 · 2026. 08. 13</div>
+        <div class="card-title">배우 없는 드라마가 TV에…中 'AI 드라마'의 진격, 한국은 어디까지 갈까</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/" target="_blank"
+       data-category="AI · 로봇 · 피지컬AI" data-category-en="AI · Robotics · Physical AI"
+       data-position="industrial-designer|design-lead"
+       data-summary="Google DeepMind shipped Gemini Robotics 2, a vision-language-action model that controls a humanoid's whole body, alongside ER 2 for multi-step reasoning and multi-robot teamwork, and a lightweight On-Device 2 variant, positioning one 'brain' to run across many robot bodies." data-summary-kr="구글 딥마인드가 휴머노이드의 전신을 제어하는 비전-언어-행동 모델 '제미나이 로보틱스 2'를 공개했습니다. 다단계 추론과 다중 로봇 협업을 맡는 'ER 2', 경량 버전 'On-Device 2'도 함께 선보이며 하나의 '두뇌'로 여러 로봇 몸체를 구동한다는 방향을 제시했습니다."
+       data-points="One VLA model controlling full-body humanoid movement|ER 2 adds multi-step planning and multi-robot teamwork|On-Device 2 brings a lighter version for local hardware" data-points-kr="전신 동작을 제어하는 단일 VLA 모델|다단계 계획·다중 로봇 협업을 맡는 ER 2|로컬 하드웨어용 경량 버전 On-Device 2"
+       data-designer="As robot bodies get commoditized, the differentiation shifts to the 'brain' layer, similar to how software ate hardware in consumer electronics. Worth watching if your work touches physical products or spatial interaction design." data-designer-kr="로봇 몸체가 범용화될수록 차별화는 '두뇌' 레이어로 옮겨갑니다. 소비자 가전에서 소프트웨어가 하드웨어를 흡수했던 흐름과 비슷합니다. 실물 제품이나 공간 인터랙션을 다루는 디자이너라면 눈여겨볼 만합니다."
+       data-impact-score="2"
+       data-recommend="Background context for anyone tracking physical AI and robotics platforms" data-recommend-kr="피지컬 AI·로보틱스 플랫폼 흐름을 챙기고 싶다면 배경 지식으로 참고"
+       data-comment="This announcement is a few weeks old, but it's the clearest articulation yet of Google's strategy in physical AI: one general-purpose brain, many robot bodies. That's a meaningfully different bet than companies building brain and body together.
+For product and industrial designers, the interesting implication is that robot form factors might decouple from robot intelligence faster than expected, which changes how you think about designing the physical shell versus the behavior it exhibits." data-comment-kr="발표된 지 몇 주 지난 소식이지만, 구글의 피지컬 AI 전략을 가장 명확하게 보여주는 사례입니다. 하나의 범용 두뇌로 여러 로봇 몸체를 구동한다는 방향은, 두뇌와 몸체를 함께 만드는 회사들과는 결이 다른 베팅입니다.
+제품·산업 디자이너 입장에서 흥미로운 지점은, 로봇의 형태와 지능이 예상보다 빠르게 분리될 수 있다는 점입니다. 이는 물리적 외형을 설계하는 방식과 그 로봇이 보여주는 행동을 설계하는 방식을 다르게 접근해야 할 수도 있다는 뜻입니다."
+       data-title-en="Gemini Robotics 2 Brings Whole-Body Intelligence to Robots" data-title-kr="제미나이 로보틱스 2, 로봇에 전신 지능을 부여하다">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">로봇두뇌</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Google DeepMind · 2026. 07. 30</div>
+        <div class="card-title">제미나이 로보틱스 2, 로봇에 전신 지능을 부여하다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://spoon-tamago.com/sou-fujimoto-meiji-park-fukuoka/" target="_blank"
+       data-category="디자인 · 건축 · 공간" data-category-en="Design · Architecture · Space"
+       data-position="architect|space-designer"
+       data-summary="Architect Sou Fujimoto's redeveloped Meiji Park opened August 7 beside Hakata Station in Fukuoka, weaving a four-story commercial building into a 226-meter elevated path that lets visitors circulate through trees and terraces at multiple levels." data-summary-kr="건축가 후지모토 소우가 설계한 메이지 공원이 8월 7일 후쿠오카 하카타역 옆에 새롭게 문을 열었습니다. 4층 상업 건물과 226미터 길이의 입체 산책로가 나무·테라스를 여러 층위로 엮어 다층적인 동선을 만들어냅니다."
+       data-points="226m elevated path circulating through the park at multiple levels|Four-story commercial building woven into the landscape|Opened August 7, steps from Hakata Station" data-points-kr="여러 층위를 도는 226m 입체 산책로|조경에 엮여 들어간 4층 상업 건물|하카타역 인근, 8월 7일 개장"
+       data-designer="A clear case study in blurring the line between building and landscape. The stepped terraces that double as circulation are a useful reference for anyone designing mixed-use or transit-adjacent public space." data-designer-kr="건축과 조경의 경계를 흐리는 명확한 사례입니다. 동선이자 테라스이기도 한 단차 구조는 복합용도나 역세권 공공공간을 설계할 때 참고할 만합니다."
+       data-impact-score="3"
+       data-recommend="Save for public-space and mixed-use reference" data-recommend-kr="공공공간·복합용도 프로젝트 레퍼런스로 저장 추천"
+       data-comment="What makes this worth a look isn't the greenery itself but the section: Fujimoto treats the elevated path as the organizing device for the whole site, so the park and the building are never really separate experiences.
+For anyone working on projects near transit hubs, the way ground-level retail, elevated circulation and planting are stacked here is a fairly transferable diagram, even at a much smaller scale." data-comment-kr="이 프로젝트에서 볼 만한 지점은 녹지 자체보다 단면 구성입니다. 후지모토는 입체 산책로를 전체 대지를 조직하는 장치로 삼아, 공원과 건물이 분리된 경험이 되지 않도록 설계했습니다.
+역세권 인접 프로젝트를 다루는 사람이라면, 지상층 상업시설과 입체 동선, 식재가 쌓이는 방식이 훨씬 작은 스케일에서도 충분히 응용 가능한 다이어그램입니다."
+       data-title-en="Sou Fujimoto's Meiji Park Brings a Three-Dimensional Landscape to Hakata Station" data-title-kr="후지모토 소우의 메이지 공원, 하카타역 앞에 입체적 풍경을 펼치다">
+      <div class="thumb g-olive">
+        <div class="noise"></div>
+        <span class="thumb-label">공원</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Spoon & Tamago · 2026. 08. 07</div>
+        <div class="card-title">후지모토 소우의 메이지 공원, 하카타역 앞에 입체적 풍경을 펼치다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.jungle.co.kr/magazine/206909" target="_blank"
+       data-category="디자인 · 커리어 · 프리랜서"
+       data-position="graphic-designer|design-lead"
+       data-summary="디자인정글 칼럼이 '프리랜서'와 '솔로프리너'의 차이를 짚습니다. 솔로프리너는 단순히 혼자 일하는 사람이 아니라, 직원 없이도 브랜드를 만들고 매출을 내는 작지만 단단한 1인 사업가라는 관점을 제시합니다."
+       data-points="프리랜서와 솔로프리너의 개념적 차이|직원 없이 브랜드·매출을 만드는 1인 사업 구조|디자이너 독립에 적용해볼 수 있는 관점"
+       data-designer="프리랜서 디자이너로 일하는 사람이라면 '일감을 받는 사람'에서 '브랜드를 운영하는 사람'으로 스스로를 재정의해볼 계기가 됩니다. 포지셔닝과 가격 책정을 다시 생각해보게 만드는 글입니다."
+       data-impact-score="3"
+       data-recommend="프리랜스·1인 스튜디오 운영을 고민하는 디자이너 참고"
+       data-comment="'솔로프리너'라는 단어 자체는 이미 여러 분야에서 쓰이고 있지만, 이 칼럼은 이를 디자이너의 독립이라는 맥락으로 가져와 실질적인 질문을 던집니다. 일감 수주자로 남을지, 브랜드를 만드는 사업가가 될지의 차이입니다.
+특히 가격을 '시간당 비용'이 아니라 '브랜드가 주는 가치'로 책정하자는 관점 전환은, 프리랜스 초기 단계의 디자이너들이 자주 걸려 넘어지는 지점을 정확히 짚고 있습니다.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">커리어</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인정글 · 2026. 08. 17</div>
+        <div class="card-title">[디자인정글 칼럼] '프리랜서'를 넘어 '솔로프리너'로_ 디자이너 독립의 새로운 패러다임</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.etnews.com/20260816000047" target="_blank"
+       data-category="디자인 · 전시 · 디스플레이"
+       data-position="product-designer|industrial-designer"
+       data-summary="8월 18일부터 부산 벡스코에서 열리는 국제정보디스플레이 학술대회(IMID 2026)에서 삼성디스플레이·LG디스플레이가 세계 최초 기술을 적용한 디스플레이 제품을 특별전시로 공개합니다. 프라이버시 디스플레이가 적용된 갤럭시S26 울트라용 OLED, 165Hz 하이퍼 더블 스캐닝 OLED 등이 출품됩니다."
+       data-points="80여개 부스 규모의 '퓨쳐 로드쇼' 특별전시|삼성D 프라이버시 디스플레이 OLED 최초 공개|LGD 165Hz 하이퍼 더블 스캐닝 OLED 공개"
+       data-designer="디스플레이 스펙 경쟁처럼 보이지만, 프라이버시 필터나 고주사율 같은 기능은 결국 화면을 다루는 제품·UI 디자인의 표현 범위를 넓혀줍니다. 하드웨어 전시이지만 다음 시즌 디바이스 UX를 가늠하는 참고 자료가 됩니다."
+       data-impact-score="2"
+       data-recommend="디바이스·하드웨어 UX에 관심 있다면 전시 라인업 훑어보기 추천"
+       data-comment="이 기사 자체는 산업 전시 소식에 가깝지만, 프라이버시 디스플레이나 165Hz 하이퍼 더블 스캐닝처럼 화면 하드웨어의 새 기능들은 결국 그 위에서 동작하는 UI·인터랙션 디자인의 조건을 바꿔놓습니다.
+특히 프라이버시 디스플레이는 '보이는 화면'과 '숨겨야 할 화면'을 구분하는 새로운 UX 문제를 만들어낼 수 있어, 모바일 UI를 다루는 디자이너라면 눈여겨볼 만합니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">전시</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">전자신문 · 2026. 08. 16</div>
+        <div class="card-title">IMID 2026서 80여개 부스 특별 전시…"삼성D·LGD 최초 기술 공개"</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.core77.com/posts/145031/The-MegCell-Pulse-A-3D-Printed-Guitar-Playing-Contraption" target="_blank"
+       data-category="디자인 · 제품 · DIY" data-category-en="Design · Product · DIY"
+       data-position="industrial-designer|product-designer"
+       data-summary="After six years of development, maker Bruce built the MegCell Pulse, a 3D-printed device that clips onto a guitar and plays it from digital sheet music, with separate fretting and plucking modules that could let a one-handed player perform." data-summary-kr="메이커 브루스가 6년에 걸쳐 개발한 메그셀 펄스는 기타에 장착해 디지털 악보로 연주를 대신하는 3D 프린팅 장치입니다. 프렛과 피킹을 맡는 모듈이 분리돼 있어, 한 손만으로도 기타 연주가 가능하도록 돕습니다."
+       data-points="Separate fretting and plucking modules attach to any guitar|Reads digital sheet music via software like MuseScore|Could enable one-handed guitar playing" data-points-kr="프렛·피킹 모듈이 분리돼 기존 기타에 부착 가능|MuseScore 등으로 디지털 악보를 읽어 연주|한 손 연주자를 위한 접근성 가능성"
+       data-designer="A good example of accessibility-driven product design emerging from a hobbyist project rather than a corporate brief. Worth a look for anyone interested in assistive product design or modular DIY hardware." data-designer-kr="기업의 기획이 아니라 개인 메이커 프로젝트에서 접근성 디자인이 나온 좋은 사례입니다. 보조기기 디자인이나 모듈형 DIY 하드웨어에 관심 있다면 참고할 만합니다."
+       data-impact-score="2"
+       data-recommend="Fun reference for assistive tech or DIY product design" data-recommend-kr="접근성 제품·DIY 하드웨어 레퍼런스로 가볍게 참고"
+       data-comment="The six-year development timeline is the tell here: this isn't a quick hackathon project but a genuinely refined mechanism. The modularity is the smartest part of the design.
+Splitting fretting and plucking into independent components wasn't originally framed as an accessibility feature, but it opens up real use cases for players with limited hand mobility. That kind of side-effect utility is worth noticing in any product design process." data-comment-kr="6년이라는 개발 기간이 이 프로젝트의 진지함을 보여줍니다. 짧은 해커톤 결과물이 아니라 꽤 정교하게 다듬어진 메커니즘입니다. 모듈 구조가 이 디자인에서 가장 영리한 부분입니다.
+프렛과 피킹을 독립된 부품으로 나눈 것은 원래 접근성을 염두에 둔 설계는 아니었지만, 손 움직임이 제한된 연주자에게 실질적인 활용 가능성을 열어줍니다. 이런 부수적 효용은 어떤 제품 디자인 과정에서든 눈여겨볼 가치가 있습니다."
+       data-title-en="The MegCell Pulse: A 3D-Printed Guitar-Playing Contraption" data-title-kr="메그셀 펄스, 기타를 대신 연주하는 3D 프린팅 장치">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">DIY</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Core77 · 2026. 08. 14</div>
+        <div class="card-title">메그셀 펄스, 기타를 대신 연주하는 3D 프린팅 장치</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
