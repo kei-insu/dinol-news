@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 변경 |
 |---|---|
+| 2026-08-18 | ⑧ 반영 확인을 **`git rev-parse` 해시 대조**로 교체(raw URL 이 GitHub 429 로 차단됨). 매체 등록 유형에 계열 별칭 추가 |
 | 2026-08-16 | ③ 표 11 → 13항목(전체 ★5 · 매체 등록 대조 · 게재일 반려선). 8/10~8/16 7일 운영 결과 반영 |
 | 2026-08-09 | 신설 |
 
@@ -38,7 +39,7 @@
 ⑤  대장 재생성      build_published_urls.py
 ⑥  롤백 지점        git fetch → git rev-parse origin/main
 ⑦  배포             deploy.ps1
-⑧  반영 확인        commit-pinned raw URL
+⑧  반영 확인        git rev-parse 해시 대조
 ⑨  노션 작업 일지   1행
 ```
 
@@ -181,15 +182,42 @@ git rev-parse origin/main
 
 ## ⑧ 반영 확인
 
-**브랜치 raw URL을 쓰지 않는다.** CDN 캐시로 최대 5분 stale이라 옛 버전이 나온다. **commit-pinned raw URL**로 조회한다.
+**`git rev-parse` 로 로컬·원격 blob 해시를 대조한다.**
 
+### [터미널-운영]
+```powershell
+git rev-parse HEAD:news/2026/MM/Dinol_news_YYYYMMDD.html origin/main:news/2026/MM/Dinol_news_YYYYMMDD.html
 ```
-https://raw.githubusercontent.com/kei-insu/dinol-news/<커밋해시>/news/2026/MM/Dinol_news_YYYYMMDD.html
+
+### [터미널-운영]
+```powershell
+git rev-parse HEAD:index.json origin/main:index.json
 ```
 
-`index.json` 최상단에 오늘 날짜가 들어갔는지도 함께 확인한다.
+**해시 2줄이 같으면 원격 반영 확인이다.** 다르면 push 가 불완전한 것이므로 멈추고 보고한다.
 
----
+`index.json` 최상단 날짜까지 보려면:
+
+### [터미널-운영]
+```powershell
+(git show origin/main:index.json).Substring(0,120)
+```
+
+`["YYYYMMDD", ...]` 로 오늘 날짜가 맨 앞이어야 한다.
+
+**왜 raw URL 을 쓰지 않나** — 2026-08-18 에 commit-pinned raw URL 이 GitHub `429 Too Many Requests` 로 **2회 연속 차단**됐다. 9일간 매일 2회씩 조회한 누적 영향으로 추정되나 정확한 리밋 조건은 모른다.
+
+해시 대조가 더 나은 이유는 세 가지다.
+
+| | raw URL | `git rev-parse` |
+|---|---|---|
+| 네트워크 | 필요 (429 위험) | **불필요** |
+| 비교 범위 | `<title>` 등 일부 | **파일 전체 SHA-1** |
+| CDN 캐시 | commit-pinned 로 회피 | 해당 없음 |
+
+`origin/main` 은 `deploy.ps1 [1/6]` 의 fetch 로 이미 갱신돼 있다. astro push 확인은 `origin/astro` 로 바꿔 같은 방식으로 한다.
+
+> raw URL 이 필요한 경우(예: 다른 세션에 문서를 전달)는 브랜치 URL 을 쓰되 **CDN 캐시로 최대 5분 stale** 임을 감안한다.
 
 ## ⑨ 노션 작업 일지
 
@@ -239,6 +267,7 @@ DB ID `33a617d6-8ebc-4ee8-816a-d4323dff0311`
 |---|---|
 | 공식 블로그 (`Adobe Blog`·`Figma Blog`·`Google`·`Anthropic` 등) | 1차 소스. `source_rules.json` 에만 등록, 4항목 판정·3사본 동기화 불필요 |
 | 약어 표기 (`NN/g`) | `group` 에 풀네임을 넣어 **별칭 등록**. `source.name` 은 카드 표기 유지, 매체 상한 계산만 합산된다 |
+| 계열 매체의 다른 표기 (`heyPOP`) | `group` 에 **계열명**을 넣는다(`디자인하우스`). 매체명이 아니라 계열명이어야 4번 계열 합산이 정확해진다 |
 | 신규 언론 매체 | **4항목 판정** — ①기자 서명 ②보도자료 전재 여부 ③1차 소스 인용 ④분야 전문성 |
 
 **4항목 판정 결과는 3단으로 나뉜다.**
@@ -257,7 +286,8 @@ DB ID `33a617d6-8ebc-4ee8-816a-d4323dff0311`
 
 | 항목 | 내용 |
 |---|---|
-| CDN 캐시 | 브랜치 raw URL 최대 5분 stale. commit-pinned로 확인 |
+| GitHub 429 | raw URL 반복 조회 시 `Too Many Requests`. ⑧ 은 `git rev-parse` 해시 대조를 쓴다(2026-08-18 발생) |
+| CDN 캐시 | 브랜치 raw URL 최대 5분 stale. 문서 전달 등으로 raw 를 쓸 때만 유의 |
 | PowerShell 5.1 | `&&` 미지원. 명령을 한 줄씩 분리 |
 | astro 오탐 | astro에서 브리핑을 열면 「링크 없음」 배지 8개. 파일 결함 아님 |
 | `file://` | Firebase ESM CORS 차단. 반드시 `http://localhost:8000` |
