@@ -330,5 +330,17 @@
   "더쎈뉴스": {
     "region": "국내",
     "group": "더쎈뉴스"
+  },
+  "Simon Willison's Weblog": {
+    "region": "해외",
+    "group": "Simon Willison"
+  },
+  "heyPOP": {
+    "region": "국내",
+    "group": "디자인하우스"
+  },
+  "디자인정글": {
+    "region": "국내",
+    "group": "디자인정글"
   }
 }

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260817-ai-003",
+  "date": "2026-08-17",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "Figma Blog",
+    "publishedAt": "2026-08-13"
+  },
+  "url": "https://www.figma.com/blog/got-skills-make-the-figma-agent-a-better-collaborator/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 디자인 · 툴링",
+    "en": "AI · Design · Tooling"
+  },
+  "title": {
+    "kr": "피그마 에이전트에 '스킬'을 가르치다",
+    "en": "Got Skills? Make the Figma Agent a Better Collaborator"
+  },
+  "summary": {
+    "kr": "피그마 AI 에이전트가 재사용 가능한 '스킬' 기능을 지원한다. 팀이 디자인 시스템 규칙과 컴포넌트 컨벤션, QA 기준을 마크다운으로 한 번 작성해두면 '/' 명령으로 에이전트가 매번 그대로 따르게 할 수 있다.",
+    "en": "Figma's AI agent now supports reusable \"skills\", markdown-based instructions teams can author once to encode design-system rules, component conventions and QA standards, invoked with a simple \"/\" command."
+  },
+  "points": {
+    "kr": [
+      "마크다운으로 한 번 작성해 '/' 로 재사용",
+      "디자인 시스템 규칙을 명문화해 에이전트의 임의 판단 방지",
+      "출시 시점에 커뮤니티 스킬 50개 이상 제공"
+    ],
+    "en": [
+      "Skills are authored once as markdown, reused via \"/\"",
+      "Encode design-system rules so the agent stops guessing",
+      "50+ community skill library available at launch"
+    ]
+  },
+  "positions": [
+    "ui-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "그동안 AI 에이전트가 디자인 시스템 컨벤션을 무시한다고 답답해했던 팀에 필요한 기능입니다. 신입 온보딩 문서를 쓰듯, AI를 위한 규칙 문서를 한 번 써둔다고 생각하면 됩니다.",
+    "en": "This is the missing piece for teams frustrated by AI agents ignoring design-system conventions. Treat skills like onboarding docs you write once for the AI, not the intern."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "피그마 AI 에이전트를 이미 쓰는 팀이라면 이번 주 안에 설정해볼 것",
+    "en": "Try it if your team already uses Figma's AI agent · Worth setting up this week"
+  },
+  "comment": {
+    "kr": "이번 업데이트는 'AI 에이전트가 장난감이냐 동료냐'를 가르는 지점입니다. 지속되는 규칙이 없으면 에이전트는 매번 백지에서 시작해 같은 실수를 반복합니다. 간격 토큰을 틀리거나 네이밍이 제각각이거나 접근성 체크를 건너뛰는 식입니다.\n스킬 기능을 쓰면 디자인옵스 담당자가 이런 기준을 한 번만 문서화해두고, 이후 모든 에이전트 실행에 그대로 적용할 수 있습니다. 출시 시점에 50개 이상의 커뮤니티 스킬 라이브러리도 함께 제공되므로, 처음부터 직접 작성하기 전에 먼저 둘러보는 것을 추천합니다.",
+    "en": "This is exactly the kind of update that separates 'AI agent as toy' from 'AI agent as teammate.' Without persistent rules, every agent session starts from zero and repeats the same mistakes: wrong spacing tokens, inconsistent naming, ignored accessibility checks.\nSkills let a design-ops lead encode those standards once and have every agent invocation respect them going forward. The 50+ community library at launch also means most teams won't start from a blank page, so it's worth browsing before writing custom skills from scratch."
+  },
+  "thumbLabel": "에이전트스킬",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

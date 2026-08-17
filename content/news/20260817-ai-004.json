@@ -1,0 +1,57 @@
+{
+  "contentId": "20260817-ai-004",
+  "date": "2026-08-17",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Simon Willison's Weblog",
+    "publishedAt": "2026-08-13"
+  },
+  "url": "https://simonwillison.net/2026/Aug/13/llm-gemini/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 개발자 · 커맨드라인",
+    "en": "AI · Developer Tools · CLI"
+  },
+  "title": {
+    "kr": "CLI에서 제미나이 3.7 플래시 쓰기, llm-gemini 0.33 공개",
+    "en": "llm-gemini 0.33: Gemini 3.7 Flash and server-side tools in your terminal"
+  },
+  "summary": {
+    "kr": "llm-gemini 플러그인이 구글의 신규 모델 제미나이 3.7 플래시와 소형 플래시라이트, 임베딩 모델까지 지원한다. 터미널에서 명령 한 줄로 추론 과정과 코드 실행 같은 서버사이드 툴을 바로 호출할 수 있다.",
+    "en": "The llm-gemini plugin adds support for Google's newly released Gemini 3.7 Flash, plus two smaller flash-lite variants and embedding models, letting developers call reasoning traces and server-side tools like code execution directly from the terminal."
+  },
+  "points": {
+    "kr": [
+      "제미나이 3.7 플래시·플래시라이트 2종 신규 지원",
+      "추론 과정·서버사이드 툴 호출 가능",
+      "기존 LLM 플러그인 체계로 명령 한 줄 설치"
+    ],
+    "en": [
+      "Adds Gemini 3.7 Flash and two flash-lite variants",
+      "Supports reasoning traces and server-side tool calls",
+      "One command line install via existing LLM plugin system"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "챗 UI 대신 스크립트로 AI 모델을 테스트하는 팀이라면, UI 래퍼를 기다릴 필요 없이 구글의 신형 저가 모델을 가장 빠르게 써볼 방법입니다.",
+    "en": "If your team prototypes with AI models via scripts rather than chat windows, this is the fastest way to try Google's newest cheap model without waiting for a UI wrapper."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "LLM CLI를 이미 쓰는 팀에 유용 · 빠르게 테스트 가능",
+    "en": "Useful for teams already using the LLM CLI · Quick to test"
+  },
+  "comment": {
+    "kr": "사이먼 윌리슨의 LLM 플러그인 생태계는 여러 SDK를 오가지 않고 모델을 비교하고 싶은 개발자들 사이에서 사실상 표준이 됐습니다. 이번 업데이트는 구글의 빠른 제미나이 3.x 출시 흐름을 모델 공개 며칠 만에 그대로 따라잡았습니다.\n디자인 테크놀로지스트나 내부 툴을 만드는 디자인옵스 담당자처럼 기술에 가까운 직무라면, 새 모델이 나올 때마다 하나의 CLI로 바로 써볼 수 있다는 점이 특정 공급사에 워크플로를 묶기 전에 비용과 품질을 비교하는 데 큰 도움이 됩니다.",
+    "en": "Simon Willison's LLM plugin ecosystem has become a de facto standard for developers who want to compare models without juggling five different SDKs. This release keeps pace with Google's rapid Gemini 3.x rollout within days of the model's launch.\nFor design-adjacent technical roles, design technologists and ops leads building internal tools, having every new model available through one consistent CLI interface makes it much easier to benchmark cost and quality before committing a workflow to a specific provider."
+  },
+  "thumbLabel": "CLI툴",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

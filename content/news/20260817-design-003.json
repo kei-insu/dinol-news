@@ -1,0 +1,57 @@
+{
+  "contentId": "20260817-design-003",
+  "date": "2026-08-17",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Nielsen Norman Group",
+    "publishedAt": "2026-08-14"
+  },
+  "url": "https://www.nngroup.com/articles/eval-ai-output/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · UXUI · 방법론",
+    "en": "Design · UX · Methodology"
+  },
+  "title": {
+    "kr": "AI 결과물 하나는 사례일 뿐, 평가가 아니다",
+    "en": "One AI Output Is an Example, Not an Evaluation"
+  },
+  "summary": {
+    "kr": "NN/g가 AI 결과물 하나만으로는 AI 기능의 실제 성능을 판단할 수 없다고 지적한다. 인상적인 데모 하나가 아니라 대표성 있는 여러 입력값, 반복 실행, 신뢰구간을 기준으로 평가해야 한다는 것이다.",
+    "en": "NN/g argues that a single AI output cannot establish how well an AI feature actually performs. Teams should evaluate with multiple representative inputs, repeated runs, and confidence intervals instead of judging from one impressive demo."
+  },
+  "points": {
+    "kr": [
+      "좋은 결과 하나는 일화일 뿐 증거가 아님",
+      "대표성 있는 입력 세트와 반복 실행으로 평가",
+      "최선의 결과가 아니라 편차까지 함께 보고"
+    ],
+    "en": [
+      "One good output is an anecdote, not evidence",
+      "Use representative input sets and repeated runs",
+      "Report variability, not just best-case results"
+    ]
+  },
+  "positions": [
+    "ux-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "AI 기능을 이해관계자에게 데모하기 전에 꼭 읽어야 할 글입니다. 잘 골라낸 결과 하나로 기대치를 높여놓으면, 실제 운영 단계에서 그 기대를 꾸준히 맞추기 어렵습니다.",
+    "en": "This is essential reading before you demo an AI feature to stakeholders. A cherry-picked great output sets expectations you can't reliably meet in production."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "AI 기능을 출시하는 모든 실무자 필독 · PM과 공유 추천",
+    "en": "Required reading for anyone shipping AI features · Share with your PM"
+  },
+  "comment": {
+    "kr": "이 글은 AI 제품 리뷰에서 끊임없이 반복되는 실패 패턴을 정확히 짚습니다. 잘 골라낸 결과물 하나가 회의실을 설득하고 나면, 정작 실제 사용자의 지저분한 입력값을 마주했을 때 기능이 기대에 못 미치는 상황이 벌어집니다.\nNN/g가 제시하는 해법은 단순하지만 실제로 지켜지는 경우는 드뭅니다. 대표성 있는 샘플로 테스트하고, AI 결과물은 매번 달라지므로 여러 번 반복 실행하고, 최선의 결과가 아니라 품질의 편차 범위까지 보고하라는 것입니다. 다음 AI 기능 리뷰 전에 실제 체크리스트로 만들어볼 만합니다.",
+    "en": "This piece names a failure mode that shows up constantly in AI product reviews: a beautiful cherry-picked output convinces a room, then the feature underdelivers once real users with messy real inputs show up.\nNN/g's fix is straightforward but rarely practiced. Test with a representative sample, run it more than once since AI outputs vary, and report the range of quality rather than just the best case. Worth turning into an actual checklist before your next AI feature review."
+  },
+  "thumbLabel": "AI검증",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

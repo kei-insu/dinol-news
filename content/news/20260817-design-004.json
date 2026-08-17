@@ -1,0 +1,57 @@
+{
+  "contentId": "20260817-design-004",
+  "date": "2026-08-17",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "designboom",
+    "publishedAt": "2026-08-08"
+  },
+  "url": "https://www.designboom.com/design/red-craft-collection-four-japanese-traditional-techniques-sculptural-domestic-objects-kenta-yoshizawa/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 공예",
+    "en": "Design · Product · Craft"
+  },
+  "title": {
+    "kr": "일본 전통 공예 네 가지를 조각적 생활 오브제로, '레드 크래프트' 컬렉션",
+    "en": "Red Craft Collection Reworks Four Japanese Traditional Techniques into Sculptural Domestic Objects"
+  },
+  "summary": {
+    "kr": "교토 디자이너 요시자와 켄타의 '아카이 코게이(레드 크래프트)' 컬렉션이 대나무 울타리, 조편(組紐), 와시 종이, 우루시 옻칠이라는 일본 전통 공예 네 가지를 장인들과 협업해 붉은 톤의 가구·조명·수납 오브제로 재해석했다.",
+    "en": "Kyoto designer Kenta Yoshizawa's \"Akai Kogei\" (Red Craft) collection translates four traditional Japanese techniques, bamboo fencing, kumihimo cord, washi paper and urushi lacquer, into red-toned furniture, lighting and storage objects made with master artisans."
+  },
+  "points": {
+    "kr": [
+      "전통 공예 기법 네 가지를 한 컬렉션으로 재해석",
+      "각 기법의 장인과 직접 협업",
+      "붉은색 통일 팔레트로 이질적인 소재를 하나로 묶음"
+    ],
+    "en": [
+      "Four traditional craft techniques reworked into one collection",
+      "Collaboration with master artisans in each technique",
+      "Unified red color palette ties disparate materials together"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "industrial-designer"
+  ],
+  "designer": {
+    "kr": "하나의 제약, 이 경우 통일된 색상이 서로 다른 공예 기법들을 하나의 일관된 컬렉션으로 묶어내는 방법을 보여주는 좋은 사례입니다. 여러 소재를 함께 다루는 제품 라인을 기획할 때 참고할 만합니다.",
+    "en": "A clear case study in how a single constraint, here a unified color, can turn a grab-bag of different craft techniques into a coherent collection. Useful reference for anyone designing a multi-material product line."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "소재 중심 제품 라인 기획 시 참고 · 공예 리서치 자료로 저장 추천",
+    "en": "Great reference for material-driven product lines · Save for craft research"
+  },
+  "comment": {
+    "kr": "이 컬렉션이 흥미로운 지점은 개별 기법의 참신함이 아닙니다. 대나무 세공도 우루시 옻칠도 모두 수백 년 된 전통 기법입니다. 핵심은 전체 라인을 하나의 색 계열로 제한해, 서로 전혀 다른 네 가지 공예를 하나의 이야기로 묶어낸 절제력입니다.\n여러 소재나 공급처를 동시에 다뤄야 하는 제품 디자이너에게는, 형태만으로 소재들을 억지로 맞추려 하기보다 하나의 강력한 제약이 훨씬 효과적인 통일 장치가 될 수 있다는 교훈을 줍니다.",
+    "en": "What makes this collection work isn't the novelty of any single technique, bamboo weaving and urushi lacquer are both centuries old, but the discipline of restricting the entire range to one color family so four very different crafts read as one story.\nFor product designers juggling multiple suppliers or materials, this is a useful lesson in how a single strong constraint can do more unifying work than trying to make every material \"match\" through shape alone."
+  },
+  "thumbLabel": "공예가구",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

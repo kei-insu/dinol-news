@@ -1,0 +1,74 @@
+{
+  "20260817-ai-001": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260817-ai-002": {
+    "category_kr": "AI · 모델 · 접근성",
+    "category_en": "AI · Models · Accessibility",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260817-ai-003": {
+    "category_kr": "AI · 디자인 · 툴링",
+    "category_en": "AI · Design · Tooling",
+    "impactScore": 5,
+    "positions": [
+      "ui-designer",
+      "design-lead"
+    ]
+  },
+  "20260817-ai-004": {
+    "category_kr": "AI · 개발자 · 커맨드라인",
+    "category_en": "AI · Developer Tools · CLI",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260817-design-001": {
+    "category_kr": "디자인 · 브랜딩 · 인물",
+    "category_en": "Design · Branding · Profile",
+    "impactScore": 3,
+    "positions": [
+      "brand-designer",
+      "art-director"
+    ]
+  },
+  "20260817-design-002": {
+    "category_kr": "디자인 · 브랜딩 · IP콜라보",
+    "category_en": "Design · Branding · IP Collaboration",
+    "impactScore": 3,
+    "positions": [
+      "brand-designer",
+      "bx-designer"
+    ]
+  },
+  "20260817-design-003": {
+    "category_kr": "디자인 · UXUI · 방법론",
+    "category_en": "Design · UX · Methodology",
+    "impactScore": 5,
+    "positions": [
+      "ux-designer",
+      "design-lead"
+    ]
+  },
+  "20260817-design-004": {
+    "category_kr": "디자인 · 제품 · 공예",
+    "category_en": "Design · Product · Craft",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "industrial-designer"
+    ]
+  }
+}
