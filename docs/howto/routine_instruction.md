@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 상태 |
 |---|---|
+| 2026-08-18 | §3 AI 국내 축에 일간스포츠 조건부 등록(news_sources.md §12 연동) |
 | 2026-08-16 | §3 Design 국내 브랜드·패션·컬처 축에 더쎈뉴스 조건부 등록(news_sources.md §12 연동) |
 | 2026-08-13 | §3 에 디지털투데이(AI 국내 IT)·링커리어(Design 프로덕트 실무) 등록(news_sources.md §13·§14 연동) |
 | 2026-08-12 | §3 에 베타뉴스(AI·IT 매체)·EBN(Design 브랜드 축) 조건부 등록(news_sources.md §13·§12 연동) |
@@ -119,11 +120,12 @@ index.json에 브리핑 날짜가 이미 있으면 → 생성 생략, "해당 �
 > 소스 단일 출처는 `news_sources.md`. 아래는 그중 매일 도는 목록이다. **한쪽을 고치면 다른 쪽도 같은 변경에서 고친다.**
 > WebSearch 전용이므로 URL 접근이 안 되는 매체도 **매체명을 검색어에 넣어** 후보를 찾는다(중국 매체 등).
 
-### AI 소스 (넓게 크롤링 · 국내 18 · 해외 24)
+### AI 소스 (넓게 크롤링 · 국내 19 · 해외 24)
 - **국내 · AI 전문**: 인공지능신문(aitimes.kr)·AI타임스(aitimes.com)·테크42
 - **국내 · IT 매체**: zdnet.co.kr·bloter.net·byline.network·etnews.com·디지털데일리(ddaily.co.kr)·IT조선·베타뉴스(betanews.net — 자체 취재·리뷰만. 신제품·협업 보도자료 전재는 제외)·디지털투데이(digitaltoday.co.kr — ICT·AI 심층보도)
 - **국내 · 스타트업·산업**: 플래텀·벤처스퀘어·매일경제·조선비즈 IT/사이언스·연합뉴스 IT/과학
 - **국내 · 실무 커뮤니티**: 요즘IT(yozm.wishket)·GeekNews(news.hada.io)
+- **국내 · 콘텐츠·미디어 산업**: 일간스포츠(isplus.com — AI·콘텐츠 산업 분석만. 연예인 동정·공연 홍보는 제외)
 - **해외 뉴스**: techcrunch·the verge·wired·ars technica·venturebeat·MIT Technology Review·MarkTechPost(모델 출시 기술 분석 — 제품 출시 기사는 공식 블로그 교차확인)·UN News(정책)
 - **해외 논평·큐레이션**: The Batch·Import AI·Simon Willison·TLDR AI·The Rundown AI·Hugging Face Blog
 - **해외 기업·연구**: OpenAI News·Anthropic News·Google DeepMind·Google Research·Meta AI·Microsoft AI
