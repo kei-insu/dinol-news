@@ -1,0 +1,57 @@
+{
+  "contentId": "20260819-design-003",
+  "date": "2026-08-19",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Spoon & Tamago",
+    "publishedAt": "2026-08-14"
+  },
+  "url": "https://spoon-tamago.com/hiro-sugiyama-hokusai-great-wave-brussels/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 시각 · 설치미술",
+    "en": "Design · Visual · Installation Art"
+  },
+  "title": {
+    "kr": "히로 스기야마, 달리아 75만 송이로 호쿠사이 '가나가와의 파도' 재현",
+    "en": "Artist Hiro Sugiyama Recreates Hokusai's 'Great Wave' With 750,000 Dahlias"
+  },
+  "summary": {
+    "kr": "일본 작가 히로 스기야마가 도쿄 기반 크리에이티브 컬렉티브 인라이튼먼트와 함께, 브뤼셀 그랑플라스 광장에 달리아 75만 송이로 호쿠사이의 '가나가와의 파도'를 재현했습니다. 벨기에와 일본 수교 160주년을 기념한 제24회 플라워 카펫 행사입니다.",
+    "en": "Japanese artist Hiro Sugiyama and his Tokyo-based collective Enlightenment recreated Hokusai's The Great Wave off Kanagawa in Brussels' Grand-Place using 750,000 dahlias, for the city's 24th Flower Carpet, marking 160 years of Belgium-Japan relations."
+  },
+  "points": {
+    "kr": [
+      "1,680㎡ 규모를 4시간 만에 완성",
+      "자원봉사자 약 120명 참여",
+      "8월 13일부터 16일까지 나흘간 전시"
+    ],
+    "en": [
+      "1,680㎡ scale, assembled in under four hours",
+      "About 120 volunteers took part",
+      "On view for four days, August 13-16"
+    ]
+  },
+  "positions": [
+    "illustrator",
+    "art-director"
+  ],
+  "designer": {
+    "kr": "평면 그래픽 아이콘을 소재 제약이 큰 대형 매체(생화)로 옮기면서도 원작의 정체성을 잃지 않은 인상적인 사례입니다.",
+    "en": "A striking example of translating a flat 2D graphic icon into a large-scale, materially-constrained medium (fresh flowers) without losing its identity."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "대형 설치작업 및 소재 전환 레퍼런스로 저장 추천",
+    "en": "Save as large-scale installation / material-translation reference"
+  },
+  "comment": {
+    "kr": "미술사에서 가장 많이 복제된 이미지 중 하나를 살아있고 언젠가 시드는 소재로 옮기는 일은 실제로 어려운 디자인 문제입니다. 색은 그 시기에 피는 꽃에서 나와야 하고, 경계는 바닥에서도 위에서도 읽혀야 하며, 나흘간의 인파와 날씨를 버텨야 합니다.\n자원봉사자 120명이 4시간 만에 1,680제곱미터를 완성했다는 사실도 밑그림이 얼마나 치밀하게 설계됐는지를 보여줍니다. 이건 이미지 제작이라기보다 프로덕션 디자인에 가깝습니다. 꽃에 손대기 훨씬 전에 창작의 핵심 결정들이 이미 끝나 있었다는 뜻입니다.\n익숙한 2D 그래픽을 낯선 물리적 소재로 다시 해석해야 할 때, 그 소재가 꽃이든 빛이든 다른 무엇이든, 참고할 만한 레퍼런스로 저장해 둘 만합니다.",
+    "en": "Translating one of the most reproduced images in art history into a living, perishable medium is a genuinely hard design problem: color has to come from what's in bloom, edges have to read from ground level and from above, and the whole thing has to survive four days of foot traffic and weather.\nThe fact that 120 volunteers assembled 1,680 square meters in under four hours also says something about how well the underlying pattern was pre-planned. This is production design as much as image-making; the creative decisions happened long before anyone touched a flower.\nWorth keeping as a reference the next time a familiar 2D graphic needs to be reinterpreted in an unfamiliar physical medium, whether that's flowers, light, or something else entirely."
+  },
+  "thumbLabel": "플라워카펫",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

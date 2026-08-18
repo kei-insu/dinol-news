@@ -1,0 +1,57 @@
+{
+  "contentId": "20260819-design-004",
+  "date": "2026-08-19",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-08-18"
+  },
+  "url": "https://www.yankodesign.com/2026/08/18/adidas-x-dios-put-houston-car-culture-on-a-180-sneaker/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 브랜딩",
+    "en": "Design · Product · Branding"
+  },
+  "title": {
+    "kr": "아디다스 x DIOS, 휴스턴 카 컬처를 180달러 스니커즈에 담다",
+    "en": "adidas x DIOS Put Houston Car Culture on a $180 Sneaker"
+  },
+  "summary": {
+    "kr": "아디다스 오리지널스가 휴스턴 기반 브랜드 DIOS와 손잡고 메가라이드 01 스니커즈를 선보였습니다. 휴스턴 특유의 카 컬처(캔디 페인트, 로우라이더 디테일)를 180달러짜리 신발 한 켤레에 담았습니다.",
+    "en": "Adidas Originals partnered with Houston-based label DIOS on the Megaride 01 sneaker, translating Houston's car culture aesthetic (candy paint, lowrider details) into a $180 silhouette."
+  },
+  "points": {
+    "kr": [
+      "휴스턴 로컬 브랜드 DIOS와의 협업",
+      "캔디 페인트·로우라이더 디테일을 신발 그래픽 요소로 변환",
+      "180달러 가격대로 출시"
+    ],
+    "en": [
+      "Collaboration with Houston local label DIOS",
+      "Candy paint and lowrider details translated into shoe graphics",
+      "Released at a $180 price point"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "brand-designer"
+  ],
+  "designer": {
+    "kr": "지역색이 강한 서브컬처 미감을 뭉뚱그린 '스트리트웨어'로 납작하게 만들지 않고 글로벌 제품 라인에 옮긴 깔끔한 사례입니다.",
+    "en": "A clean example of translating a hyper-local subculture aesthetic into a global product line without flattening it into generic 'streetwear'."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "컬처를 제품으로 옮기는 작업의 레퍼런스로 저장 추천",
+    "en": "Save as a culture-to-product translation case study"
+  },
+  "comment": {
+    "kr": "카 컬처 협업 자체는 흔하지만, 대부분 특정 지역의 씬을 뭉뚱그린 '로우라이더풍' 시각 기호로 납작하게 만들곤 합니다. 여기서 지켜볼 지점은 DIOS라는 로컬 브랜드의 진정성이 대량 생산되는 스니커즈 드롭과 만난 뒤에도 살아남는지, 아니면 그저 관광 상품처럼 읽히는지입니다.\n프로덕트·브랜드 디자이너에게는 서브컬처가 매대 위 제품으로 옮겨가는 과정에서 얼마나 많은 디테일이 살아남는지 살펴볼 좋은 사례입니다. 어떤 디테일(캔디 페인트, 딥디시 디테일)이 유지되고, 어떤 것이 양산을 위해 단순화되며, 어떤 것이 대중 시장을 위해 아예 빠지는지를 볼 수 있습니다.\n특정 트렌드가 아니라 특정 지역·특정 씬에서 영감을 가져오는 협업이나 캡슐 컬렉션을 작업한다면 참고할 만합니다.",
+    "en": "Car culture collaborations are common, but most flatten a specific regional scene into generic 'lowrider' visual shorthand. What's worth watching here is whether DIOS's local credibility survives contact with a mass sneaker drop, or whether the collab reads as tourism.\nFor product and brand designers, this is a useful case to study for how much specificity survives the translation from subculture to shelf: which details get kept (candy paint, deep dish details), which get simplified for manufacturing, and which get dropped entirely for the mass market.\nWorth a look if you work on collaborations or capsule collections that borrow from a specific place or scene, rather than a generic trend."
+  },
+  "thumbLabel": "스니커즈",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

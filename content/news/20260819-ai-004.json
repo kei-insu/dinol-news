@@ -1,0 +1,57 @@
+{
+  "contentId": "20260819-ai-004",
+  "date": "2026-08-19",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-08-17"
+  },
+  "url": "https://techcrunch.com/2026/08/17/reddit-begins-testing-a-new-audio-and-video-experience-similar-to-popular-tiktok-videos/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 콘텐츠 · 미디어",
+    "en": "AI · Content · Media"
+  },
+  "title": {
+    "kr": "레딧, 인기 게시물을 틱톡처럼 보여주는 오디오·비디오 실험 시작",
+    "en": "Reddit begins testing a new audio and video experience, similar to popular TikTok videos"
+  },
+  "summary": {
+    "kr": "레딧이 인기 게시물과 베스트 댓글을 AI 음성 내레이션과 자막이 있는 틱톡풍 짧은 영상으로 바꿔 보여주는 기능을 테스트합니다. 웹은 8월 17일, 모바일 앱은 8월 18일부터 순차 적용됩니다.",
+    "en": "Reddit is testing an AI-narrated short-form video format that turns popular text posts and top comments into voiceover-and-caption clips resembling TikTok, rolling out on web August 17 and mobile apps August 18."
+  },
+  "points": {
+    "kr": [
+      "AI 음성이 인기 게시물과 댓글을 읽어주는 형식",
+      "화면 자막이 함께 동기화되는 숏폼 영상 스타일",
+      "웹 우선 적용 후 iOS·안드로이드 순차 확대"
+    ],
+    "en": [
+      "AI voiceover reads top posts and comments aloud",
+      "Synced on-screen captions mimic short-form video platforms",
+      "Rolling out first on web, then iOS and Android"
+    ]
+  },
+  "positions": [
+    "motion-designer",
+    "editorial-designer"
+  ],
+  "designer": {
+    "kr": "같은 콘텐츠를 그 시점 사용자가 선호하는 포맷으로 다시 포장하는 사례입니다. 콘텐츠·피드 경험을 설계하는 사람이라면 참고할 만합니다.",
+    "en": "A case study in re-skinning the same content into whatever format the audience currently prefers, useful for anyone designing content or feed experiences."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "콘텐츠·피드 프로덕트를 설계한다면 살펴볼 가치 있음",
+    "en": "Worth a look if you design content or feed products"
+  },
+  "comment": {
+    "kr": "텍스트를 영상으로 재가공하는 시도 자체는 새롭지 않지만, 레딧이 10년 넘게 쌓아온 자신의 텍스트 스레드에 이걸 적용한다는 점이 흥미롭습니다. 레딧의 핵심 자산은 늘 길고 논쟁적인 댓글 체인이었고, 이는 본질적으로 숏폼 영상과는 어울리지 않는 형식이었습니다.\n흥미로운 디자인 질문은 이 과정에서 무엇이 사라지느냐입니다. 스레드 맥락 안에서 재치나 타이밍 덕분에 살아나는 댓글이 맥락 없이 낭독되면 밋밋해질 수 있습니다. 레딧이 어떤 스레드를 이 포맷 대상으로 고르는지 지켜볼 부분입니다.\n프로덕트·콘텐츠 디자이너라면 지켜볼 만한 실험입니다. AI 생성 영상이 텍스트 중심 콘텐츠의 수명을 실제로 늘려주는지, 아니면 그냥 채움용 콘텐츠를 만드는 데 그치는지를 시험하는 사례이기 때문입니다.",
+    "en": "Text-to-video repackaging isn't new, but Reddit doing it to its own decade-old text threads is notable. The platform's core asset has always been long, argumentative comment chains, a format that resists short video by nature.\nThe interesting design question is what gets lost in translation. A comment that works because of its wit or timing inside a thread may fall flat read aloud out of context. Watch how Reddit curates which threads qualify for this treatment.\nFor product and content designers, this is a live experiment worth tracking: it tests whether AI-generated video can meaningfully extend the life of text-first content, or whether it just produces filler."
+  },
+  "thumbLabel": "숏폼",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}

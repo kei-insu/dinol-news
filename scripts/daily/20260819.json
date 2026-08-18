@@ -1,0 +1,74 @@
+{
+  "20260819-ai-001": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260819-ai-002": {
+    "category_kr": "AI · 정책 · 산업",
+    "category_en": "AI · Policy · Industry",
+    "impactScore": 1,
+    "positions": [
+      "design-lead",
+      "design-manager"
+    ]
+  },
+  "20260819-ai-003": {
+    "category_kr": "AI · 개발자 도구 · 생산성",
+    "category_en": "AI · Developer Tools · Productivity",
+    "impactScore": 5,
+    "positions": [
+      "graphic-designer",
+      "ui-designer"
+    ]
+  },
+  "20260819-ai-004": {
+    "category_kr": "AI · 콘텐츠 · 미디어",
+    "category_en": "AI · Content · Media",
+    "impactScore": 3,
+    "positions": [
+      "motion-designer",
+      "editorial-designer"
+    ]
+  },
+  "20260819-design-001": {
+    "category_kr": "디자인 · 공간 · 이벤트",
+    "category_en": "Design · Space · Event",
+    "impactScore": 3,
+    "positions": [
+      "space-designer",
+      "brand-designer"
+    ]
+  },
+  "20260819-design-002": {
+    "category_kr": "디자인 · 브랜딩 · 아이덴티티",
+    "category_en": "Design · Branding · Identity",
+    "impactScore": 4,
+    "positions": [
+      "brand-designer",
+      "bx-designer"
+    ]
+  },
+  "20260819-design-003": {
+    "category_kr": "디자인 · 시각 · 설치미술",
+    "category_en": "Design · Visual · Installation Art",
+    "impactScore": 3,
+    "positions": [
+      "illustrator",
+      "art-director"
+    ]
+  },
+  "20260819-design-004": {
+    "category_kr": "디자인 · 제품 · 브랜딩",
+    "category_en": "Design · Product · Branding",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "brand-designer"
+    ]
+  }
+}

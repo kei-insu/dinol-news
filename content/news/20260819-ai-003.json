@@ -1,0 +1,57 @@
+{
+  "contentId": "20260819-ai-003",
+  "date": "2026-08-19",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "Simon Willison's Weblog",
+    "publishedAt": "2026-08-16"
+  },
+  "url": "https://simonwillison.net/2026/Aug/16/markdown-svg-upgrades/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 개발자 도구 · 생산성",
+    "en": "AI · Developer Tools · Productivity"
+  },
+  "title": {
+    "kr": "마크다운 SVG 렌더러, PNG·MP4 변환까지 지원하도록 업데이트",
+    "en": "Markdown SVG upgrades"
+  },
+  "summary": {
+    "kr": "사이먼 윌리슨이 브라우저에서 동작하는 마크다운 SVG 렌더러 툴을 업데이트했습니다. PNG·JPEG로 내보내는 탭과, SVG 애니메이션을 감지해 웹어셈블리 기반 FFmpeg로 MP4 영상까지 만들어주는 탭을 새로 추가했습니다.",
+    "en": "Simon Willison updated his browser-based Markdown SVG renderer tool, adding PNG/JPEG export tabs and a new MP4 tab that detects SVG animations and compiles them into a video using WebAssembly FFmpeg, all running client-side."
+  },
+  "points": {
+    "kr": [
+      "PNG·JPEG 탭으로 SVG를 래스터 이미지로 즉시 변환",
+      "신규 MP4 탭이 애니메이션을 감지해 웹어셈블리 FFmpeg로 영상 제작",
+      "Gist 링크를 담은 북마크형 URL 옵션 제공"
+    ],
+    "en": [
+      "PNG/JPEG tab renders SVG to raster formats for easy sharing",
+      "New MP4 tab detects animations and compiles frames via WASM FFmpeg",
+      "URL option bakes in a bookmarkable Gist link"
+    ]
+  },
+  "positions": [
+    "graphic-designer",
+    "ui-designer"
+  ],
+  "designer": {
+    "kr": "SVG로 다이어그램이나 아이콘을 만들지만 SVG를 지원하지 않는 플랫폼에 공유해야 하는 사람이라면 바로 써먹을 수 있는 실용적인 도구입니다.",
+    "en": "A genuinely useful pocket tool for anyone who makes SVG diagrams or icons but needs to share them on platforms that don't render SVG natively."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "지금 바로 북마크해 두고 SVG 내보내기가 필요할 때 바로 쓰기 추천",
+    "en": "Bookmark the tool now, useful for daily SVG export tasks"
+  },
+  "comment": {
+    "kr": "이런 작고 날카로운 도구가 실제로 시간을 아껴줍니다. 계정도, 업로드도 필요 없이 웹어셈블리로 브라우저에서 전부 처리됩니다. 팀에서 다이어그램이나 아이콘, 모션 SVG를 다루면서 'SVG를 지원하지 않는다'는 벽에 자주 부딪힌다면 이 도구가 그 틈을 한 번에 메워줍니다.\n가장 흥미로운 추가 기능은 MP4 탭입니다. 반복되는 SVG 애니메이션을 클라이언트 단에서 바로 공유 가능한 영상 파일로 바꿔주는 워크플로는 예전 같으면 별도의 화면 녹화 과정이 필요했습니다. 이제는 원래 쓰던 도구 안에 그대로 들어와 있습니다.\n오늘 바로 북마크해 둘 만합니다. 프로덕션 에셋용 정식 내보내기 파이프라인을 대체하지는 못하지만, 슬랙이나 문서, 발표 자료에 빠르게 공유할 때는 이만한 게 없습니다.",
+    "en": "This is exactly the kind of small, sharp tool that saves real time: no account, no upload, everything runs in the browser via WebAssembly. If your team ships diagrams, icons or motion SVGs and constantly hits 'this platform doesn't support SVG,' this closes that gap in one click.\nThe MP4 tab is the most interesting addition. Turning a looping SVG animation into a shareable video file, entirely client-side, is a workflow that used to require a separate screen-recording step. Now it's built into the same tool you already reach for.\nWorth bookmarking today. It won't replace a proper export pipeline for production assets, but for quick shares in Slack, docs or presentations, it's hard to beat."
+  },
+  "thumbLabel": "SVG툴",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}
