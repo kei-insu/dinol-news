@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 상태 |
 |---|---|
+| 2026-08-19 | §3 Design 국내 브랜드 축에 뉴스핌·매거진한경 조건부 등록(news_sources.md §12 연동) |
 | 2026-08-18 | §3 AI 국내 축에 일간스포츠 조건부 등록(news_sources.md §12 연동) |
 | 2026-08-16 | §3 Design 국내 브랜드·패션·컬처 축에 더쎈뉴스 조건부 등록(news_sources.md §12 연동) |
 | 2026-08-13 | §3 에 디지털투데이(AI 국내 IT)·링커리어(Design 프로덕트 실무) 등록(news_sources.md §13·§14 연동) |
@@ -131,9 +132,9 @@ index.json에 브리핑 날짜가 이미 있으면 → 생성 생략, "해당 �
 - **해외 기업·연구**: OpenAI News·Anthropic News·Google DeepMind·Google Research·Meta AI·Microsoft AI
 - **AI×디자인**(이 축을 반드시 1회 이상 돌린다): Creative Bloq AI 섹션·Adobe Blog·Figma Blog·Canva Design School·PetaPixel(사진·이미징 툴 뉴스)·European Commission(AI 규제)
 
-### Design 소스 (넓게 크롤링 · 국내 25 · 해외 35)
+### Design 소스 (넓게 크롤링 · 국내 27 · 해외 35)
 - **국내 · 디자인 매체**: 디자인플러스(design.co.kr)·디자인 나침반(designcompass.org)·헤이팝(heypop.kr)·디자인정글(jungle.co.kr)·디자인DB(designdb·kidp)·네이버 디자인프레스
-- **국내 · 브랜드·패션·컬처**: 아이즈매거진·Hypebeast KR·매거진 B·캐릿·디에디트(the-edit.co.kr)·무신사 매거진·EBN 산업경제(ebn.co.kr — BI·브랜드 리뉴얼 단독 보도만. 기업 홍보성 기사는 제외)·더쎈뉴스(mhns.co.kr — 자체 취재·단독 보도만. 팬덤 이벤트·연예 홍보 기사는 제외)
+- **국내 · 브랜드·패션·컬처**: 아이즈매거진·Hypebeast KR·매거진 B·캐릿·디에디트(the-edit.co.kr)·무신사 매거진·EBN 산업경제(ebn.co.kr — BI·브랜드 리뉴얼 단독 보도만. 기업 홍보성 기사는 제외)·더쎈뉴스(mhns.co.kr — 자체 취재·단독 보도만. 팬덤 이벤트·연예 홍보 기사는 제외)·뉴스핌(newspim.com — 자체 취재분만. 행사·기업 홍보는 제외)·매거진한경(magazine.hankyung.com — 브랜드·디자인 분석만. **한국경제 계열로 합산**)
 - **국내 · 공간·전시·공공**: 서울디자인재단·DDP·KCDF·행복이 가득한 집·한국콘텐츠진흥원
 - **국내 · 프로덕트·UX 실무**: 토스 tech·우아한형제들 기술블로그·요즘IT·잡코리아 커리어스토리(실무자 인터뷰만 — 연봉·취업통계·이벤트 글은 제외)·링커리어(linkareer.com — 현직자 인터뷰·포트폴리오 실무만. 대학생 에디터 제작분·대외활동 모집 글은 제외)
 - **국내 · 게임·리빙**: 게임메카·인벤·리빙센스(smlounge)
