@@ -2,6 +2,7 @@
 
 | 최종 갱신 | 최근 변경 |
 |---|---|
+| 2026-08-19 | `howto/briefing-deploy.md` 보완 3건(브리핑 날짜 실행일+1 · `astro` 전용 단서 · 작업 순서에 5단계 병기) + 목차에 `astro` 전용 표기 |
 | 2026-08-16 | `howto/briefing-deploy.md` 신설 — 배포 세션 지침을 레포로 이관. ③ 구성 균형 11 → 13항목(전체 ★5 · 매체 등록 대조 · 게재일 반려선) |
 | 2026-08-10 | main→astro 병합. `claude.md` 충돌 해소 — 「커밋 후 점검」은 본문 유지, 「3자 검토 프로토콜」은 `rules/command-review.md §2` 로 병합 |
 | 2026-08-09 | `docs/` 5계층 분리(rules·reference·howto·history·adr) · `claude.md` 슬림화(16.4KB → 7KB) · 백로그 노션 이관 |
@@ -29,7 +30,7 @@
 | `docs/history/issues.md` | 버그·장애 대응 | 크리티컬 이슈·해결·재발방지 | 발생일 |
 | `docs/reference/design-guide.md` | UI·스타일 | 컬러·폰트·컴포넌트·톡톡 UI 규칙 | — |
 | `docs/rules/guardrails.md` | 배포·보안·위험 작업 전 | 하면 안 되는 것 + 배포 절차(순서 고정)·충돌 마커 금지 | 07-13 |
-| `docs/howto/briefing-deploy.md` | **매일 브리핑 배포** | 9단계 절차 · ③ 구성 균형 13항목 · 게재일 판정 기준 · astro 후속 추출. **이 세션 시작 시 이것만 읽으면 된다** | 08-16 |
+| `docs/howto/briefing-deploy.md` | **매일 브리핑 배포** | 9단계 절차 · ③ 구성 균형 13항목 · 게재일 판정 기준 · astro 후속 추출. **이 세션 시작 시 이것만 읽으면 된다**. ⚠️ **이 문서만 `astro` 전용** — 위 raw 읽기 예시(`/main/docs/`)로는 404. `/astro/docs/howto/` | 08-19 |
 | `docs/howto/testing.md` | 배포 전 검증 | 검증 절차·체크리스트 | — |
 | `docs/reference/news_sources.md` | 브리핑 소스 선정 | 크롤링/큐레이션 소스 목록(14분류·RSS). **소스 단일 출처.** 유럽(EU)·중국(CN) 섹션 + 제외 매체 | 08-08 |
 | `docs/howto/routine_instruction.md` | 루틴 이해·수정 | 브리핑 자동생성 절차(WebSearch 전용). **§1 브리핑 날짜(실행일+1)** · 발행 중복 대조 관문 · 카드 스키마 · 별점 루브릭 · §3 확장 소스 목록 · §10 발행 게이트 | 08-08 |
