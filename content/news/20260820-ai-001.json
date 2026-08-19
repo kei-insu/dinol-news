@@ -1,0 +1,57 @@
+{
+  "contentId": "20260820-ai-001",
+  "date": "2026-08-20",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "Creative Bloq",
+    "publishedAt": "2026-08-18"
+  },
+  "url": "https://www.creativebloq.com/ai/replacing-creative-jobs-with-ai-could-have-a-hidden-cost-new-report-warns",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 크리에이티브 · 인사이트",
+    "en": "AI · Creative · Insight"
+  },
+  "title": {
+    "kr": "AI로 크리에이티브 직무를 대체하면 숨은 비용이 따른다는 경고",
+    "en": "Replacing creative jobs with AI could have a hidden cost, a new report warns"
+  },
+  "summary": {
+    "kr": "Creative Bloq가 D&AD의 2026 AI와 크리에이티브 리포트를 소개하며, AI로 비용을 줄이려 주니어 직무를 없애는 것이 업계가 의존해온 '판단력 양성 경로'를 갉아먹을 수 있다고 경고했습니다.",
+    "en": "A new Creative Bloq report on D&AD's 2026 AI & Creativity survey warns that cutting entry-level creative jobs to save money with AI could erode the judgement pipeline the industry depends on."
+  },
+  "points": {
+    "kr": [
+      "D&AD 어워드 AI 사용 신청작 비중이 전년 대비 두 배인 27.6%로 증가",
+      "판단력을 기르는 주니어 직무가 가장 빠르게 사라지는 중",
+      "AI는 반복 업무를 빠르게 처리하지만 인간의 판단력을 대체하지 못함"
+    ],
+    "en": [
+      "D&AD Award AI-use entries doubled YoY to 27.6% in 2026",
+      "Junior roles that build creative judgement are disappearing fastest",
+      "AI speeds up repetitive tasks but doesn't replace human judgement"
+    ]
+  },
+  "positions": [
+    "design-lead",
+    "art-director"
+  ],
+  "designer": {
+    "kr": "크리에이티브 리드에게 보내는 직접적인 경고입니다. 비용 절감을 위해 주니어 업무를 없애면, 5년 뒤 스튜디오에 필요한 시니어 판단력을 기를 훈련장까지 함께 사라집니다.",
+    "en": "A direct warning for creative leads: strip out junior work to save cost, and you also strip out the training ground for the senior judgement your studio will need in five years."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "AI 중심으로 팀을 재편 중인 크리에이티브 디렉터·디자인 리드 필독",
+    "en": "Must-read for creative directors and design leads restructuring teams around AI"
+  },
+  "comment": {
+    "kr": "올해 나온 AI와 크리에이티브 관련 리포트 중 가장 서늘한 축에 속합니다. AI 사용 자체를 반대하는 게 아니라, '게으르게 쓰는 것'을 문제 삼기 때문입니다.\nD&AD 출품작의 약 28%가 AI를 사용했다는 사실 자체는 놀랍지 않습니다. 진짜 눈여겨볼 대목은 그다음입니다. AI가 반복 업무를 흡수하면서 주니어 직무까지 함께 사라지면, 스튜디오는 조용히 최고의 판단력을 길러내던 도제 구조를 잃게 됩니다.\n지금 AI 도구 중심으로 팀을 재편하는 디자인 리드라면, '무엇을 줄일 수 있는가'뿐 아니라 '그 대가로 어떤 훈련장을 없애는가'까지 함께 물어볼 만한 리포트입니다.",
+    "en": "This is one of the more sobering AI-and-creativity reports of the year, precisely because it doesn't argue against using AI. It argues against using it lazily.\nThe finding that nearly 28% of D&AD entries now involve AI is not surprising. What is worth sitting with is the second-order effect: if junior roles disappear along with the repetitive tasks AI absorbs, studios lose the apprenticeship structure that quietly produced their best judgement-holders.\nFor any design lead thinking about restructuring around AI tools right now, this is a good prompt to ask not just 'what can we cut' but 'what are we cutting the training ground for.'"
+  },
+  "thumbLabel": "저비용의 함정",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

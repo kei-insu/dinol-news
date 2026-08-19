@@ -1,0 +1,74 @@
+{
+  "20260820-ai-001": {
+    "category_kr": "AI · 크리에이티브 · 인사이트",
+    "category_en": "AI · Creative · Insight",
+    "impactScore": 4,
+    "positions": [
+      "design-lead",
+      "art-director"
+    ]
+  },
+  "20260820-ai-002": {
+    "category_kr": "AI · 툴 · 개발",
+    "category_en": "AI · Tools · Development",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "ux-designer"
+    ]
+  },
+  "20260820-ai-003": {
+    "category_kr": "AI · 산업 · 실무",
+    "category_en": "AI · Industry · Practice",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "service-designer"
+    ]
+  },
+  "20260820-ai-004": {
+    "category_kr": "AI · 콘텐츠 · 방송제작",
+    "category_en": "AI · Content · Broadcast Production",
+    "impactScore": 3,
+    "positions": [
+      "art-director",
+      "motion-designer"
+    ]
+  },
+  "20260820-design-001": {
+    "category_kr": "디자인 · 예술 · 도자기",
+    "category_en": "Design · Art · Ceramics",
+    "impactScore": 3,
+    "positions": [
+      "art-director",
+      "space-designer"
+    ]
+  },
+  "20260820-design-002": {
+    "category_kr": "디자인 · 포토그래피 · 아트",
+    "category_en": "Design · Photography · Art",
+    "impactScore": 3,
+    "positions": [
+      "art-director",
+      "illustrator"
+    ]
+  },
+  "20260820-design-003": {
+    "category_kr": "디자인 · 공간 · 문화재생",
+    "category_en": "Design · Space · Cultural Regeneration",
+    "impactScore": 2,
+    "positions": [
+      "space-designer",
+      "architect"
+    ]
+  },
+  "20260820-design-004": {
+    "category_kr": "디자인 · 브랜드 · 팝업",
+    "category_en": "Design · Brand · Pop-up",
+    "impactScore": 3,
+    "positions": [
+      "brand-designer",
+      "space-designer"
+    ]
+  }
+}

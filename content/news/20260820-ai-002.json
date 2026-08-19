@@ -1,0 +1,57 @@
+{
+  "contentId": "20260820-ai-002",
+  "date": "2026-08-20",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-08-18"
+  },
+  "url": "https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 개발",
+    "en": "AI · Tools · Development"
+  },
+  "title": {
+    "kr": "커서, 깃허브에 지친 개발자 겨냥해 경쟁 호스팅 플랫폼 출시",
+    "en": "Cursor capitalizes on GitHub frustration, launches rival hosting platform"
+  },
+  "summary": {
+    "kr": "AI 코드 에디터 커서(Cursor)가 깃허브에 불만이 쌓인 개발자들을 겨냥한 새 코드 호스팅 플랫폼을 출시했습니다. 단순 AI 코딩 보조 도구를 넘어 정면 경쟁자로 자리매김하려는 행보입니다.",
+    "en": "AI code editor Cursor launched a new code-hosting platform aimed at developers frustrated with GitHub, positioning itself as a challenger beyond just an AI coding assistant."
+  },
+  "points": {
+    "kr": [
+      "커서, AI 코딩 보조 도구에서 종합 호스팅 플랫폼으로 확장",
+      "오랜 기간 독점적 위치였던 깃허브에 대한 불만을 정조준",
+      "AI 네이티브 툴이 개발 핵심 인프라 영역까지 넓어지는 신호"
+    ],
+    "en": [
+      "Cursor moves from AI coding assistant to full hosting platform",
+      "Targets developer frustration with long-time incumbent GitHub",
+      "Signals AI-native tools are expanding into core dev infrastructure"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "ux-designer"
+  ],
+  "designer": {
+    "kr": "디자인-개발 핸드오프가 깃허브를 거친다면 주목할 만합니다. AI 네이티브 경쟁자들이 에디터를 넘어 인프라 레이어 자체를 바꾸기 시작했습니다.",
+    "en": "Worth watching if your team's design-to-dev handoff runs through GitHub. AI-native competitors are starting to reshape the infrastructure layer, not just the editor."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "디자인 시스템·개발 툴체인 결정에 참고할 배경 지식 · 선택",
+    "en": "Useful context for design-systems and dev-tooling decisions · Optional"
+  },
+  "comment": {
+    "kr": "커서는 지난 2년간 전통적인 코드 에디터의 AI 우선 대안으로 자리매김해 왔습니다. 이번 호스팅 진출은 더 큰 승부수입니다. 코드를 '작성하는 곳'을 넘어 코드가 '살아가는 곳'까지 되겠다는 선언입니다.\n디자이너의 일상 업무와는 한 단계 떨어져 있지만, 조직의 디자인-개발 핸드오프가 깃허브 특화 연동에 의존한다면 눈여겨볼 만합니다. 신뢰할 만한 AI 네이티브 대안이 자리 잡으면 디자인 핸드오프 툴체인이 만들어지는 방식 자체가 바뀔 수 있습니다.",
+    "en": "Cursor has spent the last two years positioning itself as the AI-first alternative to traditional code editors. This move into hosting is a bigger bet: it says Cursor doesn't just want to be where you write code, it wants to be where your code lives.\nFor designers this sits one layer removed from daily work, but it matters if your org's design-to-dev pipeline depends on GitHub-specific integrations. A credible AI-native alternative could eventually reshape how design-handoff tooling gets built."
+  },
+  "thumbLabel": "코드 호스팅",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

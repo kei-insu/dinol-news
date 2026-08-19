@@ -1,0 +1,57 @@
+{
+  "contentId": "20260820-design-001",
+  "date": "2026-08-20",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "designboom",
+    "publishedAt": "2026-08-17"
+  },
+  "url": "https://www.designboom.com/art/contemporary-ceramics-rhodes-historic-monuments-bck-biennale-2026/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 예술 · 도자기",
+    "en": "Design · Art · Ceramics"
+  },
+  "title": {
+    "kr": "로도스 역사 유적에 들어선 현대 도자기, BCK 비엔날레 2026",
+    "en": "Contemporary ceramics enter Rhodes' historic monuments in the BCK biennale 2026"
+  },
+  "summary": {
+    "kr": "디자인붐이 그리스 로도스의 역사적 건축물과 공공 공간 곳곳에 현대 도자 작품을 배치한 '현대 도자기 비엔날레(BCK) 2026'을 소개했습니다.",
+    "en": "Designboom reports on the Biennale of Contemporary Keramics (BCK) 2026, which places new ceramic works directly inside Rhodes' historic monuments and public spaces."
+  },
+  "points": {
+    "kr": [
+      "로도스 중세 도시의 유적 곳곳에 현대 도자 작품 설치",
+      "동시대 공예와 역사적 물성 문화가 한 공간에서 마주하는 구성",
+      "2026 현대 도자기 비엔날레(BCK) 프로그램의 일환"
+    ],
+    "en": [
+      "New ceramic works installed inside Rhodes' Medieval City monuments",
+      "Contemporary craft placed in direct dialogue with historic material culture",
+      "Part of the 2026 Biennale of Contemporary Keramics programme"
+    ]
+  },
+  "positions": [
+    "art-director",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "동시대 공예 오브제를 역사적 건축물 안에 배치해, 화이트 큐브가 아니라 오래된 물성과 새 물성이 서로를 비추도록 하는 전시 방식의 좋은 레퍼런스입니다.",
+    "en": "A strong reference for how contemporary craft objects can be sited against historic architecture, letting old material and new material read against each other rather than in a neutral white cube."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "공예 오브제를 다루는 전시·공간 디자이너에게 좋은 레퍼런스 · 무드보드 저장 추천",
+    "en": "Good reference for exhibition and spatial designers working with craft objects · Save for moodboard"
+  },
+  "comment": {
+    "kr": "대부분의 도자 전시는 무난한 화이트 큐브 안에서 열립니다. 그래서 중세 도시의 유적 안에 신작을 직접 배치한 이번 큐레이션 방식이 눈에 띕니다.\n수백 년 된 돌과 갓 구워낸 흙이 나란히 놓이면서, 서로의 시간과 공예성을 오히려 더 선명하게 드러냅니다. 공예 오브제를 다루는 전시·공간 디자인을 고민하는 이들에게는, 텅 빈 화이트룸에 기대지 않는 장소 특정적 전시의 모델로 참고할 만합니다.",
+    "en": "Most ceramics shows default to the neutral gallery box, so placing new work directly inside a Medieval city's monuments is a genuinely different curatorial choice.\nThe friction between centuries-old stone and freshly fired clay is the whole point here: each material makes the other's age and craft more legible. For anyone designing exhibitions or spatial installations around craft objects, this is worth studying as a model for site-specific display that doesn't rely on a blank white room."
+  },
+  "thumbLabel": "도자기 비엔날레",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}
