@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 20</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 20, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.creativebloq.com/ai/replacing-creative-jobs-with-ai-could-have-a-hidden-cost-new-report-warns" target="_blank"
+       data-category="AI · 크리에이티브 · 인사이트" data-category-en="AI · Creative · Insight"
+       data-position="design-lead|art-director"
+       data-summary="A new Creative Bloq report on D&amp;AD's 2026 AI &amp; Creativity survey warns that cutting entry-level creative jobs to save money with AI could erode the judgement pipeline the industry depends on." data-summary-kr="Creative Bloq가 D&amp;AD의 2026 AI와 크리에이티브 리포트를 소개하며, AI로 비용을 줄이려 주니어 직무를 없애는 것이 업계가 의존해온 '판단력 양성 경로'를 갉아먹을 수 있다고 경고했습니다."
+       data-points="D&amp;AD Award AI-use entries doubled YoY to 27.6% in 2026|Junior roles that build creative judgement are disappearing fastest|AI speeds up repetitive tasks but doesn't replace human judgement" data-points-kr="D&amp;AD 어워드 AI 사용 신청작 비중이 전년 대비 두 배인 27.6%로 증가|판단력을 기르는 주니어 직무가 가장 빠르게 사라지는 중|AI는 반복 업무를 빠르게 처리하지만 인간의 판단력을 대체하지 못함"
+       data-designer="A direct warning for creative leads: strip out junior work to save cost, and you also strip out the training ground for the senior judgement your studio will need in five years." data-designer-kr="크리에이티브 리드에게 보내는 직접적인 경고입니다. 비용 절감을 위해 주니어 업무를 없애면, 5년 뒤 스튜디오에 필요한 시니어 판단력을 기를 훈련장까지 함께 사라집니다."
+       data-impact-score="4"
+       data-recommend="Must-read for creative directors and design leads restructuring teams around AI" data-recommend-kr="AI 중심으로 팀을 재편 중인 크리에이티브 디렉터·디자인 리드 필독"
+       data-comment="This is one of the more sobering AI-and-creativity reports of the year, precisely because it doesn't argue against using AI. It argues against using it lazily.
+The finding that nearly 28% of D&amp;AD entries now involve AI is not surprising. What is worth sitting with is the second-order effect: if junior roles disappear along with the repetitive tasks AI absorbs, studios lose the apprenticeship structure that quietly produced their best judgement-holders.
+For any design lead thinking about restructuring around AI tools right now, this is a good prompt to ask not just 'what can we cut' but 'what are we cutting the training ground for.'" data-comment-kr="올해 나온 AI와 크리에이티브 관련 리포트 중 가장 서늘한 축에 속합니다. AI 사용 자체를 반대하는 게 아니라, '게으르게 쓰는 것'을 문제 삼기 때문입니다.
+D&amp;AD 출품작의 약 28%가 AI를 사용했다는 사실 자체는 놀랍지 않습니다. 진짜 눈여겨볼 대목은 그다음입니다. AI가 반복 업무를 흡수하면서 주니어 직무까지 함께 사라지면, 스튜디오는 조용히 최고의 판단력을 길러내던 도제 구조를 잃게 됩니다.
+지금 AI 도구 중심으로 팀을 재편하는 디자인 리드라면, '무엇을 줄일 수 있는가'뿐 아니라 '그 대가로 어떤 훈련장을 없애는가'까지 함께 물어볼 만한 리포트입니다."
+       data-title-en="Replacing creative jobs with AI could have a hidden cost, a new report warns" data-title-kr="AI로 크리에이티브 직무를 대체하면 숨은 비용이 따른다는 경고">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">저비용의 함정</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Creative Bloq · 2026. 08. 18</div>
+        <div class="card-title">AI로 크리에이티브 직무를 대체하면 숨은 비용이 따른다는 경고</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/" target="_blank"
+       data-category="AI · 툴 · 개발" data-category-en="AI · Tools · Development"
+       data-position="product-designer|ux-designer"
+       data-summary="AI code editor Cursor launched a new code-hosting platform aimed at developers frustrated with GitHub, positioning itself as a challenger beyond just an AI coding assistant." data-summary-kr="AI 코드 에디터 커서(Cursor)가 깃허브에 불만이 쌓인 개발자들을 겨냥한 새 코드 호스팅 플랫폼을 출시했습니다. 단순 AI 코딩 보조 도구를 넘어 정면 경쟁자로 자리매김하려는 행보입니다."
+       data-points="Cursor moves from AI coding assistant to full hosting platform|Targets developer frustration with long-time incumbent GitHub|Signals AI-native tools are expanding into core dev infrastructure" data-points-kr="커서, AI 코딩 보조 도구에서 종합 호스팅 플랫폼으로 확장|오랜 기간 독점적 위치였던 깃허브에 대한 불만을 정조준|AI 네이티브 툴이 개발 핵심 인프라 영역까지 넓어지는 신호"
+       data-designer="Worth watching if your team's design-to-dev handoff runs through GitHub. AI-native competitors are starting to reshape the infrastructure layer, not just the editor." data-designer-kr="디자인-개발 핸드오프가 깃허브를 거친다면 주목할 만합니다. AI 네이티브 경쟁자들이 에디터를 넘어 인프라 레이어 자체를 바꾸기 시작했습니다."
+       data-impact-score="3"
+       data-recommend="Useful context for design-systems and dev-tooling decisions · Optional" data-recommend-kr="디자인 시스템·개발 툴체인 결정에 참고할 배경 지식 · 선택"
+       data-comment="Cursor has spent the last two years positioning itself as the AI-first alternative to traditional code editors. This move into hosting is a bigger bet: it says Cursor doesn't just want to be where you write code, it wants to be where your code lives.
+For designers this sits one layer removed from daily work, but it matters if your org's design-to-dev pipeline depends on GitHub-specific integrations. A credible AI-native alternative could eventually reshape how design-handoff tooling gets built." data-comment-kr="커서는 지난 2년간 전통적인 코드 에디터의 AI 우선 대안으로 자리매김해 왔습니다. 이번 호스팅 진출은 더 큰 승부수입니다. 코드를 '작성하는 곳'을 넘어 코드가 '살아가는 곳'까지 되겠다는 선언입니다.
+디자이너의 일상 업무와는 한 단계 떨어져 있지만, 조직의 디자인-개발 핸드오프가 깃허브 특화 연동에 의존한다면 눈여겨볼 만합니다. 신뢰할 만한 AI 네이티브 대안이 자리 잡으면 디자인 핸드오프 툴체인이 만들어지는 방식 자체가 바뀔 수 있습니다."
+       data-title-en="Cursor capitalizes on GitHub frustration, launches rival hosting platform" data-title-kr="커서, 깃허브에 지친 개발자 겨냥해 경쟁 호스팅 플랫폼 출시">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">코드 호스팅</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 08. 18</div>
+        <div class="card-title">커서, 깃허브에 지친 개발자 겨냥해 경쟁 호스팅 플랫폼 출시</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260819142920" target="_blank"
+       data-category="AI · 산업 · 실무"
+       data-position="product-designer|service-designer"
+       data-summary="AI 기업들이 데이터 분석, 업무 자동화, 문서 생성, 코딩 등 실제 업무에 AI가 어떻게 적용되는지 보여주며 기업 고객과의 직접 접점을 넓히고 있다는 현장 소식입니다."
+       data-points="AI 기업들이 전시·데모를 통해 기업 고객 직접 공략|데이터 분석·업무 자동화·문서 생성·코딩까지 적용 범위 확대|막연한 AI 담론에서 구체적 활용 사례 중심으로 전환"
+       data-designer="실무에 AI를 도입하려는 조직이라면 '무엇이 실제로 돌아가는가'를 보여주는 사례가 계속 쌓이고 있다는 신호입니다. 프로덕트·서비스 디자이너도 이런 사례를 워크플로 설계의 참고자료로 볼 만합니다."
+       data-impact-score="3"
+       data-recommend="AI 기능 기획·도입을 검토 중인 실무자 참고 추천"
+       data-comment="'AI가 무엇을 할 수 있는가'에서 '실제로 어떻게 일하고 있는가'로 논의가 옮겨가고 있음을 보여주는 현장 스케치입니다.
+데이터 분석이나 문서 생성처럼 이미 익숙한 영역뿐 아니라 코딩까지 기업 고객에게 직접 시연되고 있다는 점이 눈에 띕니다. 막연한 가능성이 아니라 검증 가능한 워크플로로 AI를 설명하려는 시도로 읽힙니다.
+프로덕트·서비스 디자이너 입장에서는 이런 실무 적용 사례들을 AI 기능 설계 시 레퍼런스로 모아두면 좋습니다.">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">현장의 AI</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 08. 19</div>
+        <div class="card-title">[현장] "AI, 실제로 이렇게 일합니다"…고객 찾아 나선 기업들</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.ddaily.co.kr/page/view/2026080315453823073" target="_blank"
+       data-category="AI · 콘텐츠 · 방송제작"
+       data-position="art-director|motion-designer"
+       data-summary="KBS가 생성형 AI 기반 방송 제작 전문 허브 'AI 프로덕션'을 열고, 11월 방영 예정인 대하드라마 '문무' 제작에 AI 기술을 본격 적용한다는 소식입니다. 대규모 전쟁 장면의 군중 표현과 위험한 액션 장면의 사전 시각화에 AI를 활용합니다."
+       data-points="KBS, 생성형 AI 기반 제작 허브 'AI 프로덕션' 개소|대하드라마 '문무'의 전투 신 군중 표현에 AI 적용|화재·위험 액션 장면은 AI 사전 시각화(프리비주얼)로 제작"
+       data-designer="실사 촬영이 어려운 대규모 장면을 AI로 보강하는 워크플로가 국내 지상파 제작 현장에 자리 잡고 있다는 신호입니다. 아트 디렉터·비주얼 개발자에게는 프리비주얼 단계에 AI를 끼워 넣는 구체적인 사례로 참고할 만합니다."
+       data-impact-score="3"
+       data-recommend="영상·콘텐츠 프리비주얼 워크플로 참고용 · 저장 추천"
+       data-comment="그동안 제작비·인력 한계로 구현하기 어려웠던 대규모 전투 장면을 AI로 보강한다는 점에서, 이번 사례는 '있으면 좋은 기술'이 아니라 '없으면 못 만드는 장면'을 만드는 데 AI를 쓰는 경우에 가깝습니다.
+특히 화재나 위험한 액션처럼 실제 촬영이 까다로운 장면을 AI로 먼저 시각화해보고 촬영을 설계하는 방식은, 프리비주얼 단계를 다루는 아트 디렉터·VFX 아티스트에게 실질적인 워크플로 참고가 될 만합니다. 지상파 대하드라마라는 보수적인 제작 환경에서 나온 사례라는 점도 의미가 있습니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">AI 사극</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디지털데일리 · 2026. 08. 03</div>
+        <div class="card-title">KBS, 대하드라마 '문무'에도 AI 기술 본격 활용…AI 프로덕션 개소식</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.designboom.com/art/contemporary-ceramics-rhodes-historic-monuments-bck-biennale-2026/" target="_blank"
+       data-category="디자인 · 예술 · 도자기" data-category-en="Design · Art · Ceramics"
+       data-position="art-director|space-designer"
+       data-summary="Designboom reports on the Biennale of Contemporary Keramics (BCK) 2026, which places new ceramic works directly inside Rhodes' historic monuments and public spaces." data-summary-kr="디자인붐이 그리스 로도스의 역사적 건축물과 공공 공간 곳곳에 현대 도자 작품을 배치한 '현대 도자기 비엔날레(BCK) 2026'을 소개했습니다."
+       data-points="New ceramic works installed inside Rhodes' Medieval City monuments|Contemporary craft placed in direct dialogue with historic material culture|Part of the 2026 Biennale of Contemporary Keramics programme" data-points-kr="로도스 중세 도시의 유적 곳곳에 현대 도자 작품 설치|동시대 공예와 역사적 물성 문화가 한 공간에서 마주하는 구성|2026 현대 도자기 비엔날레(BCK) 프로그램의 일환"
+       data-designer="A strong reference for how contemporary craft objects can be sited against historic architecture, letting old material and new material read against each other rather than in a neutral white cube." data-designer-kr="동시대 공예 오브제를 역사적 건축물 안에 배치해, 화이트 큐브가 아니라 오래된 물성과 새 물성이 서로를 비추도록 하는 전시 방식의 좋은 레퍼런스입니다."
+       data-impact-score="3"
+       data-recommend="Good reference for exhibition and spatial designers working with craft objects · Save for moodboard" data-recommend-kr="공예 오브제를 다루는 전시·공간 디자이너에게 좋은 레퍼런스 · 무드보드 저장 추천"
+       data-comment="Most ceramics shows default to the neutral gallery box, so placing new work directly inside a Medieval city's monuments is a genuinely different curatorial choice.
+The friction between centuries-old stone and freshly fired clay is the whole point here: each material makes the other's age and craft more legible. For anyone designing exhibitions or spatial installations around craft objects, this is worth studying as a model for site-specific display that doesn't rely on a blank white room." data-comment-kr="대부분의 도자 전시는 무난한 화이트 큐브 안에서 열립니다. 그래서 중세 도시의 유적 안에 신작을 직접 배치한 이번 큐레이션 방식이 눈에 띕니다.
+수백 년 된 돌과 갓 구워낸 흙이 나란히 놓이면서, 서로의 시간과 공예성을 오히려 더 선명하게 드러냅니다. 공예 오브제를 다루는 전시·공간 디자인을 고민하는 이들에게는, 텅 빈 화이트룸에 기대지 않는 장소 특정적 전시의 모델로 참고할 만합니다."
+       data-title-en="Contemporary ceramics enter Rhodes' historic monuments in the BCK biennale 2026" data-title-kr="로도스 역사 유적에 들어선 현대 도자기, BCK 비엔날레 2026">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">도자기 비엔날레</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">designboom · 2026. 08. 17</div>
+        <div class="card-title">로도스 역사 유적에 들어선 현대 도자기, BCK 비엔날레 2026</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/turkina-faso-film-project-170826" target="_blank"
+       data-category="디자인 · 포토그래피 · 아트" data-category-en="Design · Photography · Art"
+       data-position="art-director|illustrator"
+       data-summary="It's Nice That profiles London-based photographer Turkina Faso, who is expanding her multidisciplinary practice across photography, fashion and documentary into narrative filmmaking." data-summary-kr="잇츠나이스댓이 런던 기반 포토그래퍼 터키나 파소를 조명했습니다. 그는 사진·패션·다큐멘터리를 넘나들던 작업을 내러티브 필름메이킹으로 확장하고 있습니다."
+       data-points="Practice spans photography, fashion and documentary work|Now expanding into narrative filmmaking|Focus on female identity, desire and everyday life" data-points-kr="사진·패션·다큐멘터리를 아우르는 작업 스펙트럼|내러티브 필름메이킹으로 영역 확장 중|여성의 정체성·욕망·일상을 다루는 주제의식"
+       data-designer="A good case study in how a visual practice grows by moving between mediums rather than specializing narrower over time." data-designer-kr="한 분야에 좁게 특화되기보다 매체를 넘나들며 실천을 확장하는 방식을 보여주는 좋은 사례입니다."
+       data-impact-score="3"
+       data-recommend="Inspiration for art directors and multidisciplinary creatives · Save for reference" data-recommend-kr="아트 디렉터·다원적 실천가에게 영감 · 레퍼런스 저장 추천"
+       data-comment="What stands out here isn't just the imagery but the trajectory: a photographer expanding sideways into filmmaking rather than deeper into a single medium.
+For art directors and creatives who feel boxed into one discipline, this is a reminder that a consistent point of view (in this case, stories of female identity and everyday life) can carry across mediums, while the medium itself keeps changing." data-comment-kr="눈여겨볼 지점은 이미지 자체보다 궤적입니다. 한 매체를 더 깊이 파고드는 대신 옆으로 확장해 필름메이킹까지 넘어간 포토그래퍼의 경로입니다.
+하나의 분야에 갇혀 있다고 느끼는 아트 디렉터·크리에이터라면 참고할 만합니다. 매체는 계속 바뀌어도, 일관된 관점(이 경우 여성의 정체성과 일상이라는 주제의식)은 그대로 이어질 수 있다는 사실을 보여줍니다."
+       data-title-en="Turkina Faso is reshaping her multidisciplinary practice through stories of female identity, desire and everyday life" data-title-kr="터키나 파소, 여성의 정체성과 일상을 담아 다원적 실천을 확장하다">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">다원적 사진</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 08. 17</div>
+        <div class="card-title">터키나 파소, 여성의 정체성과 일상을 담아 다원적 실천을 확장하다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.jungle.co.kr/magazine/207071" target="_blank"
+       data-category="디자인 · 공간 · 문화재생"
+       data-position="space-designer|architect"
+       data-summary="디자인정글이 화가 김창열의 평창동 작업실이 시민을 위한 문화공간 '김창열 화가의 집'으로 재탄생한 과정을 다룬 공간다큐입니다."
+       data-points="30년 화가의 작업실을 공공 문화공간으로 재생|건축·공간 재구성 과정에서 원래의 흔적을 남기는 방식에 주목|평창동이라는 장소성과 작가의 시간을 함께 보존"
+       data-designer="개인의 작업 공간을 공공 자산으로 전환할 때 무엇을 남기고 무엇을 새로 짜야 하는지 보여주는 공간 재생 사례입니다. 공간·전시 디자이너에게 참고할 만한 접근 방식입니다."
+       data-impact-score="2"
+       data-recommend="공간 재생·전시 기획 레퍼런스로 저장 추천"
+       data-comment="작가의 작업실을 공공 문화공간으로 바꾸는 프로젝트는 자칫 원래의 흔적을 지우고 '깨끗한' 전시장으로 만들어버리기 쉽습니다. 이 기사가 다루는 김창열 화가의 집은 그 반대편에 가깝습니다. 30년간 쌓인 작업실의 시간을 남기면서 공간을 시민에게 여는 방식을 택했습니다.
+개인 소유의 창작 공간을 공공 자산으로 전환하는 프로젝트를 맡은 공간 디자이너라면, 무엇을 보존하고 무엇을 새로 구성할지에 대한 판단 기준으로 참고할 만합니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">화가의 집</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인정글 · 2026. 08. 15</div>
+        <div class="card-title">물방울은 남고 화가의 시간은 집이 되었다, 평창동 '김창열 화가의 집'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.eyesmag.com/posts/165013/puma-man-city-seongsu-house-open" target="_blank"
+       data-category="디자인 · 브랜드 · 팝업"
+       data-position="brand-designer|space-designer"
+       data-summary="글로벌 스포츠 브랜드 푸마가 맨체스터 시티의 방한을 기념해 성수동에 한국 팬 전용 공간 '맨시티 하우스'를 열었습니다. 자개·병풍 등 한국 전통 미감을 팝업 공간 디자인에 접목한 것이 특징입니다."
+       data-points="성수동 카페 '쎈느'에서 8월 5일부터 9일까지 팝업 운영|자개·병풍에서 착안한 조명·장식으로 구단 아이덴티티를 한국식으로 재해석|서예가와 협업한 한글 유니폼 등 로커룸 콘셉트 공간 구성"
+       data-designer="해외 스포츠 브랜드가 한국 팝업에서 로컬 미감을 어떻게 번역하는지 보여주는 사례입니다. 브랜드 아이덴티티와 지역 문화 요소를 공간 디자인으로 결합하는 방식이 MD·브랜드 기획자에게 참고가 될 만합니다."
+       data-impact-score="3"
+       data-recommend="브랜드 팝업·공간 기획 레퍼런스로 저장 추천"
+       data-comment="해외 브랜드의 한국 팝업은 자칫 태극기나 한글을 그대로 붙이는 수준에 그치기 쉽습니다. 이 팝업은 자개와 병풍이라는 소재적 은유를 공간 조명·장식에 녹이고, 서예가와의 협업으로 유니폼까지 한글화한 점에서 한 단계 더 들어간 로컬라이제이션을 보여줍니다.
+브랜드 정체성을 유지하면서 로컬 맥락을 어떻게 공간에 번역할지 고민하는 브랜드 디자이너·MD에게는, 소재 하나를 깊게 파고든 이번 사례가 참고할 만한 접근법입니다.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">맨시티 하우스</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">아이즈매거진 · 2026. 08. 05</div>
+        <div class="card-title">푸마 x 맨체스터 시티, 성수동 '맨시티 하우스' 오픈</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
