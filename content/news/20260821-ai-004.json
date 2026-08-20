@@ -1,0 +1,57 @@
+{
+  "contentId": "20260821-ai-004",
+  "date": "2026-08-21",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "MarkTechPost",
+    "publishedAt": "2026-08-18"
+  },
+  "url": "https://www.marktechpost.com/2026/08/18/cartesia-ships-sonic-3-6-a-streaming-tts-model-that-now-leads-both-artificial-analysis-speech-arenas/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 음성",
+    "en": "AI · Tools · Voice"
+  },
+  "title": {
+    "kr": "카르테시아, 스트리밍 TTS 모델 'Sonic-3.6' 출시…음성 리더보드 1위",
+    "en": "Cartesia Ships Sonic-3.6: A Streaming TTS Model That Now Leads Both Artificial Analysis Speech Arenas"
+  },
+  "summary": {
+    "kr": "카르테시아가 실시간 스트리밍 음성합성 모델 'Sonic-3.6'을 출시했다. 지연시간 90ms 이하로 두 개의 아티피셜 애널리시스 음성 리더보드에서 모두 1위를 차지했다.",
+    "en": "Cartesia released Sonic-3.6, a real-time streaming text-to-speech model with sub-90ms latency that now tops both major Artificial Analysis speech leaderboards."
+  },
+  "points": {
+    "kr": [
+      "90ms 이하 지연시간으로 실시간 스트리밍에 적합",
+      "아티피셜 애널리시스 음성 벤치마크 두 부문 모두 1위",
+      "API로 즉시 프로덕션 워크플로에 연동 가능"
+    ],
+    "en": [
+      "Sub-90ms latency suitable for live/streaming use",
+      "Tops both Artificial Analysis speech benchmark arenas",
+      "Available now via API for production workflows"
+    ]
+  },
+  "positions": [
+    "motion-designer",
+    "video-designer"
+  ],
+  "designer": {
+    "kr": "빠르고 품질 좋은 스트리밍 TTS는 모션그래픽 내레이션, 프로토타입 보이스오버, 접근성 기능에 별도 녹음 없이 바로 활용할 수 있습니다.",
+    "en": "Fast, high-quality streaming TTS is directly usable for voiceover in motion graphics, prototype narration, and accessibility features, without needing a separate recording pass."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "모션·영상 워크플로의 내레이션·보이스오버에 바로 시도해볼 만함",
+    "en": "Try it for voiceover or narration in motion/video workflows"
+  },
+  "comment": {
+    "kr": "이 소식에서 주목할 점은 벤치마크 순위보다 지연시간 수치입니다. 90ms 이하 스트리밍이면 디자이너나 모션 아티스트가 비주얼을 다듬는 속도만큼 빠르게 보이스오버도 반복 수정할 수 있습니다. 느린 렌더링-청취 사이클을 기다릴 필요가 줄어듭니다.\n스크립트 작성부터 녹음, 재녹음까지 수작업으로 하던 팀이라면 실제 프로젝트에 한 번 시도해볼 만합니다. 다만 최종 납품용 전문 성우 내레이션을 완전히 대체하기는 아직 어려울 수 있습니다.",
+    "en": "What makes this notable for design workflows is the latency number more than the benchmark ranking. Sub-90ms streaming means a designer or motion artist can iterate on voiceover almost as fast as they iterate on visuals, instead of waiting on a slow render-and-listen cycle.\nFor teams that currently script, record and re-record narration by hand, a model like this is worth a trial run on a real project, even if it does not fully replace a professional voice actor for final delivery."
+  },
+  "thumbLabel": "TTS",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}

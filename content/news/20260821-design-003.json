@@ -1,0 +1,57 @@
+{
+  "contentId": "20260821-design-003",
+  "date": "2026-08-21",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Dezeen",
+    "publishedAt": "2026-08-18"
+  },
+  "url": "https://www.dezeen.com/2026/08/18/thompson-center-google-jahn-chicago-new-facade/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 리노베이션",
+    "en": "Design · Architecture · Renovation"
+  },
+  "title": {
+    "kr": "구글 톰슨 센터, 새 파사드 사진 공개",
+    "en": "Photos reveal new facade of Google's Thompson Center"
+  },
+  "summary": {
+    "kr": "시카고 톰슨 센터가 구글 오피스로 전환되는 리노베이션의 일환으로, Jahn이 설계한 새로운 파사드가 사진으로 공개됐다.",
+    "en": "New photos reveal the redesigned facade of Chicago's Thompson Center, renovated by Jahn as part of the building's transformation into a Google office."
+  },
+  "points": {
+    "kr": [
+      "포스트모던 건축의 대표작이 구글 시카고 오피스로 재탄생",
+      "Jahn 건축사무소가 파사드 리노베이션 담당",
+      "사진을 통해 외관 전환 과정 공개"
+    ],
+    "en": [
+      "Historic postmodern building repositioned as Google's Chicago office",
+      "Jahn architecture firm behind the facade renovation",
+      "Photos show the building's exterior transformation"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "상징성 있는 포스트모던 건물이 새 기업 임차인 아래에서 원형의 정체성을 어떻게 보존 또는 재해석하는지 보여주는 사례로, 어댑티브 리유즈 프로젝트를 다루는 건축·공간 디자이너에게 참고가 됩니다.",
+    "en": "A high-profile case of adaptive reuse, worth watching for how a landmark postmodern building's identity is preserved or reinterpreted under a new corporate tenant."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "어댑티브 리유즈·기업 캠퍼스 리노베이션 프로젝트의 참고 사례로 추천",
+    "en": "Good reference for adaptive reuse and corporate campus renovation projects"
+  },
+  "comment": {
+    "kr": "톰슨 센터는 오랫동안 건축계에서 논쟁의 중심에 있던 건물이라, 파사드 변경 소식은 단순한 한 기업의 오피스 리노베이션 이상의 무게를 갖습니다. Jahn 팀이 원래의 포스트모던 색채와 기하학을 그대로 살릴지, 아니면 조용히 중화시킬지가 논쟁적인 랜드마크를 기업이 재활용할 때 어떤 태도를 취하는지 보여줍니다.\n건축가·공간 디자이너에게는 보존을 둘러싼 정치적 맥락과 테크 기업의 브랜드·업무 공간 요구 사이에서 균형을 잡는 실시간 사례 연구입니다. 내부 사진과 세부 정보가 더 공개되면 이어서 살펴볼 만합니다.",
+    "en": "The Thompson Center has long been a lightning rod in architecture circles, so any update to its facade carries weight beyond a single tenant's office renovation. How Jahn's team treats the original postmodern language, whether they preserve its color and geometry or quietly neutralize it, says a lot about how corporate reuse projects negotiate with contentious landmarks.\nFor architects and space designers, this is a live case study in balancing preservation politics with a tech company's brand and workplace requirements. Worth following as more photos and details of the interior emerge."
+  },
+  "thumbLabel": "파사드",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

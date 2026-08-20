@@ -1,0 +1,57 @@
+{
+  "contentId": "20260821-design-004",
+  "date": "2026-08-21",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "BP&O",
+    "publishedAt": "2026-08-11"
+  },
+  "url": "https://bpando.org/2026/08/11/vans-skateshoes-rebrand-accept-proceed/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 그래픽",
+    "en": "Design · Branding · Graphic"
+  },
+  "title": {
+    "kr": "반스 스케이트슈즈, Accept & Proceed가 새 브랜딩 공개",
+    "en": "New Branding for Vans skate shoes by Accept & Proceed"
+  },
+  "summary": {
+    "kr": "디자인 스튜디오 Accept & Proceed가 반스 스케이트슈즈 라인의 새로운 디자인 시스템과 비주얼 아이덴티티, 로고를 공개했다.",
+    "en": "Design studio Accept & Proceed unveiled a new design system, visual identity and logo for Vans' skate shoes line."
+  },
+  "points": {
+    "kr": [
+      "반스 특정 제품 라인을 위한 새 로고·비주얼 아이덴티티",
+      "스케이트 문화를 중심으로 구축한 디자인 시스템 전반",
+      "BP&O가 상세히 기록한 브랜딩 케이스 스터디"
+    ],
+    "en": [
+      "New logo and visual identity for a specific Vans product line",
+      "A full design system built around skate culture",
+      "Case study documented in detail by BP&O"
+    ]
+  },
+  "positions": [
+    "brand-designer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "큰 레거시 브랜드 안에서 하위 브랜드의 정체성을 만드는 구체적 사례로, 상위 브랜드에서 벗어나지 않으면서도 개별 제품 라인만의 시각 언어를 구축해야 하는 실무자에게 유용합니다.",
+    "en": "A concrete example of sub-brand identity work within a larger legacy brand, useful for anyone tasked with carving out a distinct visual language for one product line without breaking from the parent brand."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "서브 브랜드 시스템을 다루는 브랜드·그래픽 디자이너에게 케이스 스터디로 추천",
+    "en": "Recommended case study for brand and graphic designers working on sub-brand systems"
+  },
+  "comment": {
+    "kr": "반스처럼 이미 확고한 레거시가 있는 브랜드 안에서 서브 브랜드를 만드는 일은 까다로운 디자인 과제입니다. 상위 브랜드와 너무 닮으면 새 라인만의 정체성이 없고, 너무 멀어지면 브랜드 인지도가 흩어집니다. BP&O의 기사는 Accept & Proceed가 내린 구체적 선택들을 감상 수준이 아니라 실제로 뜯어볼 수 있을 만큼 자세히 다룹니다.\n이미 자리 잡은 브랜드를 새 제품 카테고리로 확장해야 하는 프로젝트를 맡게 될 때, 백지에서 시작하지 않고 참고할 수 있는 케이스 스터디로 저장해둘 만합니다.",
+    "en": "Sub-brand work inside a legacy company like Vans is a genuinely hard design problem: too close to the parent brand and the new line has no identity of its own, too far and it fractures brand recognition. BP&O's writeup documents Accept & Proceed's specific choices in enough detail to actually study, not just admire.\nThis is the kind of case study worth bookmarking for reference the next time a project calls for extending an established brand into a new product category without starting from a blank page."
+  },
+  "thumbLabel": "리브랜딩",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

@@ -1,0 +1,74 @@
+{
+  "20260821-ai-001": {
+    "category_kr": "AI · UX · 에이전트",
+    "category_en": "AI · UX · Agents",
+    "impactScore": 3,
+    "positions": [
+      "ux-designer",
+      "service-designer"
+    ]
+  },
+  "20260821-ai-002": {
+    "category_kr": "AI · 제품 · 하드웨어",
+    "category_en": "AI · Product · Hardware",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260821-ai-003": {
+    "category_kr": "AI · 툴 · 교육",
+    "category_en": "AI · Tools · Education",
+    "impactScore": 3,
+    "positions": [
+      "ux-designer",
+      "illustrator"
+    ]
+  },
+  "20260821-ai-004": {
+    "category_kr": "AI · 툴 · 음성",
+    "category_en": "AI · Tools · Voice",
+    "impactScore": 4,
+    "positions": [
+      "motion-designer",
+      "video-designer"
+    ]
+  },
+  "20260821-design-001": {
+    "category_kr": "디자인 · 제품 · 모빌리티",
+    "category_en": "Design · Product · Mobility",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260821-design-002": {
+    "category_kr": "디자인 · 일러스트 · 전시",
+    "category_en": "Design · Illustration · Exhibition",
+    "impactScore": 3,
+    "positions": [
+      "illustrator",
+      "editorial-designer"
+    ]
+  },
+  "20260821-design-003": {
+    "category_kr": "디자인 · 건축 · 리노베이션",
+    "category_en": "Design · Architecture · Renovation",
+    "impactScore": 3,
+    "positions": [
+      "architect",
+      "space-designer"
+    ]
+  },
+  "20260821-design-004": {
+    "category_kr": "디자인 · 브랜딩 · 그래픽",
+    "category_en": "Design · Branding · Graphic",
+    "impactScore": 4,
+    "positions": [
+      "brand-designer",
+      "graphic-designer"
+    ]
+  }
+}
