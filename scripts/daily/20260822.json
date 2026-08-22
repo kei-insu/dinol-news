@@ -1,0 +1,74 @@
+{
+  "20260822-ai-001": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260822-ai-002": {
+    "category_kr": "AI · 툴 · 에이전트",
+    "category_en": "AI · Tools · Agents",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260822-ai-003": {
+    "category_kr": "AI · 모빌리티 · 산업",
+    "category_en": "AI · Mobility · Industry",
+    "impactScore": 2,
+    "positions": [
+      "design-lead",
+      "design-manager"
+    ]
+  },
+  "20260822-ai-004": {
+    "category_kr": "AI · 콘텐츠 · 트렌드",
+    "category_en": "AI · Content · Trends",
+    "impactScore": 2,
+    "positions": [
+      "editorial-designer",
+      "design-lead"
+    ]
+  },
+  "20260822-design-001": {
+    "category_kr": "디자인 · UXUI · 비평",
+    "category_en": "Design · UXUI · Critique",
+    "impactScore": 3,
+    "positions": [
+      "ui-designer",
+      "product-designer"
+    ]
+  },
+  "20260822-design-002": {
+    "category_kr": "디자인 · 산업 · 인사이트",
+    "category_en": "Design · Industry · Insight",
+    "impactScore": 2,
+    "positions": [
+      "design-lead",
+      "design-manager"
+    ]
+  },
+  "20260822-design-003": {
+    "category_kr": "디자인 · 브랜딩 · 패키지",
+    "category_en": "Design · Branding · Packaging",
+    "impactScore": 4,
+    "positions": [
+      "package-designer",
+      "brand-designer"
+    ]
+  },
+  "20260822-design-004": {
+    "category_kr": "디자인 · 도시 · 건축",
+    "category_en": "Design · Urbanism · Architecture",
+    "impactScore": 3,
+    "positions": [
+      "architect",
+      "space-designer"
+    ]
+  }
+}

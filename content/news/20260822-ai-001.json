@@ -1,0 +1,57 @@
+{
+  "contentId": "20260822-ai-001",
+  "date": "2026-08-22",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "VentureBeat",
+    "publishedAt": "2026-08-20"
+  },
+  "url": "https://venturebeat.com/orchestration/slack-wants-to-drag-ai-coding-out-of-the-terminal-and-into-the-group-chat",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 툴 · 생산성",
+    "en": "AI · Tools · Productivity"
+  },
+  "title": {
+    "kr": "슬랙, AI 코딩을 터미널에서 단체 채팅방으로 끌어낸다",
+    "en": "Slack wants to drag AI coding out of the terminal and into the group chat"
+  },
+  "summary": {
+    "kr": "슬랙이 클로드 코드, 데빈, 깃허브 코파일럿, 버셀 에이전트 등 AI 코딩 에이전트를 팀 전용 채널에 그대로 심은 '슬랙 코드'를 출시했습니다. 한 사람이 터미널을 붙잡고 있는 대신, 팀 전체가 채널에서 지켜보고 방향을 잡고 검토해 함께 배포할 수 있습니다.",
+    "en": "Slack launched Slack Code, embedding AI coding agents like Claude Code, Devin, GitHub Copilot and Vercel's agent directly into dedicated team channels where members can watch, steer, review and ship code together instead of one person babysitting a terminal."
+  },
+  "points": {
+    "kr": [
+      "코딩 에이전트가 1:1 DM이 아닌 프로젝트 전용 공유 채널에서 동작",
+      "팀원들이 코드 비교·실시간 HTML 프리뷰를 보고 승인 후 배포",
+      "모든 슬랙 요금제에서 쓸 수 있지만 에이전트별 개별 라이선스는 별도"
+    ],
+    "en": [
+      "Coding agents run inside shared project channels, not 1:1 DMs",
+      "Team members review diffs, live HTML previews and approve before shipping",
+      "Available on any Slack plan, but each agent still needs its own license"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "개발자가 아닌 프로덕트 팀원도 AI 에이전트가 실시간으로 기능을 만드는 과정을 지켜보고 배포 전에 피드백을 남길 수 있습니다. 디자인-개발 핸드오프 방식을 다시 볼 만합니다.",
+    "en": "Even non-developers on a product team can watch an AI agent build a feature in real time and leave feedback before it ships, worth exploring for design-dev handoff."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "슬랙과 AI 코딩 에이전트를 함께 쓰는 팀이라면 시도해볼 것 · PM·개발 리드에게 공유 추천",
+    "en": "Try it if your team already uses Slack + AI coding agents · Share with PM/dev leads"
+  },
+  "comment": {
+    "kr": "'슬랙 코드'는 AI 코딩 에이전트가 혼자 쓰는 터미널 도구에서 팀 전체가 지켜보는 협업 도구로 넘어가고 있다는 신호 중 하나입니다. 개발자 한 명이 터미널에서 에이전트에게 프롬프트를 넣던 방식과 달리, 채널 전체가 작업 과정을 지켜볼 수 있어 기능이 만들어지는 방식에 누가 목소리를 낼 수 있는지가 달라집니다.\n디자이너 입장에서는 코딩 도구 자체보다 투명성의 변화로 볼 만합니다. 기능 구현 과정이 실시간 프리뷰와 함께 공유 채널에 드러나면, PR이 올라오기도 전에 디자인 QA를 더 일찍 시작할 수 있습니다.\n다만 라이선스는 별개입니다. 슬랙 코드 자체는 무료로 켤 수 있지만, 클로드 코드·데빈·코파일럿·버셀 에이전트 등 연동되는 각 에이전트는 별도 유료 접근권이 필요해 기존 도구를 대체한다기보다 그 위에 얹는 레이어에 가깝습니다.",
+    "en": "\"Slack Code\" is one of the clearest signs yet that AI coding agents are moving from solo terminal tools to team-visible collaborators. Instead of a single engineer prompting an agent in isolation, the whole channel can watch the work happen, which changes who gets a say in how a feature gets built.\nFor designers, this matters less as a coding tool and more as a transparency shift. If a feature's implementation is visible in a shared channel with live previews, design QA can happen earlier, before a PR even opens, instead of after the fact.\nThe catch is licensing. Slack Code is free to turn on, but every partner agent (Claude Code, Devin, Copilot, Vercel's agent) still needs its own paid access, so this is an added layer on existing tools rather than a replacement for them."
+  },
+  "thumbLabel": "협업코딩",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

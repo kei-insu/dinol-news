@@ -1,0 +1,57 @@
+{
+  "contentId": "20260822-design-004",
+  "date": "2026-08-22",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "designboom",
+    "publishedAt": "2026-08-17"
+  },
+  "url": "https://www.designboom.com/architecture/cities-digital-nomad-destinations-lisbon-mexico-city-athens-bali/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 도시 · 건축",
+    "en": "Design · Urbanism · Architecture"
+  },
+  "title": {
+    "kr": "도시가 '디지털 노마드'의 목적지가 될 때, 남는 건 누구인가",
+    "en": "who gets to stay when cities become digital nomad destinations?"
+  },
+  "summary": {
+    "kr": "리스본, 멕시코시티, 아테네, 발리 같은 도시가 디지털 노마드의 목적지로 떠오르면서, 주거비와 공공공간이 원격근무자 중심으로 재편되고 정주민이 밀려나는 문제를 다룬 에디토리얼입니다.",
+    "en": "An editorial look at how cities like Lisbon, Mexico City, Athens and Bali have become magnets for digital nomads, and the housing and public-space pressures this creates for permanent residents as neighborhoods reshape around remote workers."
+  },
+  "points": {
+    "kr": [
+      "리스본·멕시코시티·아테네·발리를 사례로 분석",
+      "주거비·공공공간이 원격근무자 수요 중심으로 재편",
+      "도시가 궁극적으로 누구를 위해 설계되는가라는 질문 제기"
+    ],
+    "en": [
+      "Lisbon, Mexico City, Athens, Bali examined as case studies",
+      "Housing costs and public space reshaped around remote-worker demand",
+      "Raises the question of who cities are ultimately designed for"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "코워킹 밀도, 단기임대 용도지역, '카페가 사무실이 되는' 문화 같은 도시·공간 디자인 선택이 동네가 어떻게 보이는지를 넘어 누가 그곳에 계속 살 수 있는지를 좌우한다는 걸 보여줍니다.",
+    "en": "A reminder that urban and spatial design choices (co-working density, short-term rental zoning, cafe-as-office culture) actively shape who can afford to stay in a neighborhood, not just how it looks."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "도시·공간 디자인 논의에 좋은 배경 자료 · 참고용 저장",
+    "en": "Good context for urban/spatial design discussions · Save for reference"
+  },
+  "comment": {
+    "kr": "이 글은 디지털 노마드 자체보다, 그들의 유입이 도시의 디자인 우선순위를 어떻게 바꾸는지에 초점을 맞춥니다. 동네의 카페·코워킹 공간·단기임대가 이동성이 높고 소비력이 큰 인구를 겨냥해 설계되기 시작하면, 특정 건물 하나가 바뀌지 않아도 물리적·경제적 구조 자체가 달라집니다.\n이 주제를 검색하면 흔히 나오는 '디지털 노마드 추천 도시' 식의 리스티클과 달리, 이 글은 도시 순위를 매기는 대신 누가 그 매력의 대가를 치르는지를 묻습니다.\n공간·도시 디자이너 입장에서는 용도지역제·임대 정책·공공공간 설계가 중립적인 배경 조건이 아니라, 그 동네가 결국 누구를 위한 곳이 될지를 실질적으로 결정한다는 점을 다시 상기시켜주는 사례입니다.",
+    "en": "This piece is less about digital nomads themselves and more about what their arrival does to a city's design priorities. When a neighborhood's cafes, co-working spaces and short-term rentals start being designed for a transient, higher-spending population, the physical and economic fabric shifts even if no single building changes.\nIt's a useful counterpoint to the usual \"best cities for digital nomads\" listicle framing that dominates search results on this topic. Instead of ranking destinations, it asks who bears the cost of a city becoming attractive to remote workers.\nFor spatial and urban designers, it's a reminder that zoning, rental policy and public-space design are not neutral background conditions. They actively decide who a neighborhood ends up serving."
+  },
+  "thumbLabel": "도시젠트리",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

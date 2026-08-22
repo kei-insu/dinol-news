@@ -1,0 +1,57 @@
+{
+  "contentId": "20260822-design-003",
+  "date": "2026-08-22",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "The Dieline",
+    "publishedAt": "2026-08-10"
+  },
+  "url": "https://thedieline.com/jif-peanut-butter-unveils-first-brand-redesign-in-30-years/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 패키지",
+    "en": "Design · Branding · Packaging"
+  },
+  "title": {
+    "kr": "지프 땅콩버터, 30여 년 만의 첫 브랜드 리디자인 공개",
+    "en": "Jif Peanut Butter Unveils First Brand Redesign In 30 Years"
+  },
+  "summary": {
+    "kr": "J.M. 스머커가 지프(Jif) 땅콩버터의 30여 년 만의 첫 대대적 브랜드 리프레시를 공개했습니다. 디자인은 소울사이트(Soulsight)가 맡았으며, 브랜드 상징인 삼색 배너를 되살리고 오래된 워드마크의 드롭섀도를 제거해 더 깔끔하고 굵은 인상을 만들었습니다. 땅콩버터를 'PB&J'를 넘어선 다양한 용도로 포지셔닝하려는 전략의 일환입니다.",
+    "en": "J.M. Smucker unveiled Jif's first major brand refresh in more than 30 years, designed by Soulsight. The redesign revives the brand's signature tri-color banner and removes the dated drop shadow from the wordmark for a cleaner, bolder look, part of a broader strategy to position peanut butter beyond the classic PB&J."
+  },
+  "points": {
+    "kr": [
+      "30여 년 만의 첫 대대적 리브랜딩, 디자인은 소울사이트가 담당",
+      "삼색 배너 부활 + 워드마크 드롭섀도 제거로 클린한 인상",
+      "신규 패키지는 10월부터 출하, 가을~초겨울 순차 매대 전환"
+    ],
+    "en": [
+      "First major rebrand in more than 30 years, designed by Soulsight",
+      "Signature tri-color banner returns and the wordmark drop shadow is removed for a cleaner look",
+      "New packaging ships from October, rolling onto shelves through fall and early winter"
+    ]
+  },
+  "positions": [
+    "package-designer",
+    "brand-designer"
+  ],
+  "designer": {
+    "kr": "삼색 배너라는 오래된 브랜드 자산을 버리지 않고 다듬어 되살린 점이 눈에 띕니다. 완전히 새로 만드는 대신 기존 자산의 무엇을 남기고 무엇을 걷어낼지 판단하는 리브랜딩의 좋은 참고 사례입니다.",
+    "en": "What stands out is that the brand kept its old tri-color banner instead of discarding it, only refining it, a useful reference for deciding what to preserve versus cut in a rebrand."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "패키지·브랜드 리뉴얼 프로젝트 레퍼런스로 저장 · 실무 참고 추천",
+    "en": "Save as reference for packaging/brand refresh projects · Practical reference"
+  },
+  "comment": {
+    "kr": "지프 리프레시에서 눈에 띄는 건 파격적인 재창조가 아니라 절제입니다. 삼색 배너는 수십 년간 브랜드의 일부였고, 소울사이트는 이를 완전히 갈아엎는 대신 드롭섀도를 제거하고 타이포를 조여 기존 컬러 스토리가 더 힘을 받도록 다듬었습니다.\n보호해야 할 실질적인 브랜드 자산이 있는 패키지·브랜드 리뉴얼 프로젝트에 참고할 만한 사례입니다. 30년 만의 개편이라면 대개 처음부터 다시 만들고 싶은 유혹이 크지만, 이번 사례에서는 실제로 브랜드 인지를 담당하는 두세 가지 요소가 무엇인지 가려내 그것만 남기는, 더 어렵고 절제된 선택을 했습니다.\n비즈니스 맥락도 짚을 만합니다. 단순한 비주얼 리프레시가 아니라 땅콩버터를 'PB&J'를 넘어선 용도로 포지셔닝하려는 전략과 맞물려 있어, 이번 디자인 개편은 매대에서의 인상을 현대화하는 동시에 소비자에게 더 넓은 활용 가능성을 신호하는 이중 역할을 합니다.",
+    "en": "What stands out about the Jif refresh isn't a dramatic reinvention, it's restraint. The tri-color banner has been part of the brand for decades, and instead of replacing it, Soulsight sharpened it: removing the drop shadow, tightening the type, and letting the existing color story carry more of the weight.\nThis is a useful case study for any packaging or brand refresh project where the client has genuine equity to protect. The temptation in a 30-year update is often to start from zero; here the harder, more disciplined choice was figuring out which two or three elements were actually doing the brand-recognition work and keeping those intact.\nThe business context matters too. This isn't just a visual refresh, it's paired with a strategy to position peanut butter beyond the PB&J occasion, so the design update is doing double duty: modernizing the shelf presence while signaling a broader use case to shoppers."
+  },
+  "thumbLabel": "패키지리뉴얼",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}
