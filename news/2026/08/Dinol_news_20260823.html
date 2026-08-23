@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 23</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 23, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://simonwillison.net/2026/Aug/20/chatgpt-search-now-uses-the-siteoperator-at-scale/" target="_blank"
+       data-category="AI · 콘텐츠전략 · 검색" data-category-en="AI · Content Strategy · Search"
+       data-position="editorial-designer|design-lead"
+       data-summary="Simon Willison highlights new tracking data showing ChatGPT Search now uses the site: operator at scale following the GPT-5.6 rollout, changing how content actually surfaces in AI-generated answers." data-summary-kr="사이먼 윌리슨이 GPT-5.6 롤아웃 이후 챗GPT 검색이 site: 연산자를 대규모로 활용하기 시작했다는 추적 데이터를 소개했습니다. AI 답변에 콘텐츠가 노출되는 방식이 달라지고 있다는 뜻입니다."
+       data-points="Promptwatch tracking shows a sharp rise in site:-scoped queries after GPT-5.6|Reddit's share of cited sources in ChatGPT Search dropped noticeably since Aug 18|Signals a shift worth watching for anyone optimizing content for AI-driven discovery (GEO)" data-points-kr="GPT-5.6 롤아웃 이후 site: 연산자 사용 쿼리 비중이 급증한 것으로 추적됨|8월 18일 이후 챗GPT 검색에서 레딧 인용 비중이 눈에 띄게 감소|AI 기반 발견(GEO)을 위한 콘텐츠 최적화 전략에서 주목할 변화"
+       data-designer="If AI search engines are quietly changing which domains and formats get cited, that directly affects how editorial and content teams should structure and tag their work." data-designer-kr="AI 검색엔진이 어떤 도메인·포맷을 인용할지 조용히 바꾸고 있다면, 에디토리얼·콘텐츠 팀이 글을 구조화하고 태깅하는 방식에도 직접 영향을 줍니다."
+       data-impact-score="4"
+       data-recommend="Must-read if you care about AI search visibility · Track your own citation share" data-recommend-kr="AI 검색 노출도에 신경 쓴다면 필독 · 자사 콘텐츠의 인용 비중 직접 추적 권장"
+       data-comment="What makes this worth reading isn't the raw stat but the method: independent tracking of invisible product changes inside ChatGPT Search, rather than waiting for OpenAI to announce anything.
+For content and brand teams, this is a concrete early signal of how 'Generative Engine Optimization' will actually work in practice, distinct from classic SEO instincts.
+Worth revisiting Promptwatch's ongoing reports periodically rather than treating this as a one-off data point, since these citation patterns seem to shift with each model rollout." data-comment-kr="이 글에서 눈여겨볼 것은 수치 자체보다 방법론입니다. OpenAI의 공식 발표를 기다리는 대신, 챗GPT 검색 내부의 보이지 않는 변화를 독립적으로 추적했다는 점입니다.
+콘텐츠·브랜드 팀 입장에서는 '생성형 엔진 최적화(GEO)'가 기존 SEO 감각과는 다르게 실제로 어떻게 작동하는지 보여주는 구체적인 초기 신호입니다.
+이런 인용 패턴은 모델이 업데이트될 때마다 바뀌는 것으로 보이는 만큼, 일회성 데이터로 보기보다 Promptwatch의 후속 리포트를 주기적으로 챙겨볼 만합니다."
+       data-title-en="ChatGPT search now uses the site: operator at scale" data-title-kr="챗GPT 검색, site: 연산자를 대규모로 쓰기 시작했다">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">AI검색</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Simon Willison · 2026. 08. 20</div>
+        <div class="card-title">챗GPT 검색, site: 연산자를 대규모로 쓰기 시작했다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.technologyreview.com/2026/08/18/1142226/how-people-use-ai/" target="_blank"
+       data-category="AI · 리서치 · 사용자 행동" data-category-en="AI · Research · User Behavior"
+       data-position="ux-designer|design-lead"
+       data-summary="MIT Technology Review reports that even AI companies don't have clear visibility into how people actually use their chatbots, since usage research relies on selective self-reported data." data-summary-kr="MIT 테크놀로지 리뷰가 AI 기업들조차 자사 챗봇이 실제로 어떻게 쓰이는지 명확히 파악하지 못하고 있다고 보도했습니다. 사용 실태 조사가 기업이 선택적으로 공개하는 데이터에 의존하고 있기 때문입니다."
+       data-points="A new 'AI Observatory' project aims to independently track real usage patterns|Nearly half of sampled conversations would be filtered out under Anthropic's own methodology|Highlights a gap between marketed AI use-cases and everyday reality" data-points-kr="독립적으로 실사용 패턴을 추적하려는 'AI 옵저버토리' 프로젝트 등장|샘플 대화의 절반 가까이가 앤트로픽 자체 방법론으로도 걸러지는 것으로 확인|마케팅상의 AI 활용 사례와 실제 일상 사용 사이의 간극을 드러냄"
+       data-designer="A reminder to validate AI-feature usage with your own product analytics rather than relying on vendor-published usage narratives." data-designer-kr="AI 기능의 실제 사용 실태는 벤더가 공개하는 서사에 기대기보다, 자사 제품 데이터로 직접 검증해야 한다는 점을 다시 일깨워줍니다."
+       data-impact-score="3"
+       data-recommend="Useful context for anyone shipping AI features · Read for perspective" data-recommend-kr="AI 기능을 출시하는 팀에게 유용한 배경 지식 · 관점 확보용으로 추천"
+       data-comment="This piece is a useful counterweight to the constant stream of AI capability announcements: it asks the more boring but more important question of what people actually do with these tools day to day.
+For teams designing AI features, the gap between vendor-reported usage and independently observed usage is a real risk when building on assumptions instead of your own telemetry.
+Worth bookmarking as a prompt to check your own product's AI feature analytics rather than trusting industry-wide framing." data-comment-kr="이 기사는 끊임없이 쏟아지는 AI 성능 발표 소식들과 대비되는 관점을 제공합니다. 사람들이 실제로 이 도구들을 일상에서 어떻게 쓰는지, 더 지루하지만 더 중요한 질문을 던지기 때문입니다.
+AI 기능을 설계하는 팀이라면, 벤더가 발표하는 사용 실태와 독립적으로 관찰된 실제 사용 사이의 간극은 자체 텔레메트리 대신 가정에 기대어 설계할 때 실질적인 리스크가 됩니다.
+업계 전반의 프레이밍을 그대로 믿기보다 자사 제품의 AI 기능 데이터를 다시 점검해보라는 신호로 저장해둘 만합니다."
+       data-title-en="We still don't know how people are really using AI" data-title-kr="AI를 실제로 어떻게 쓰는지, 우리는 아직 모른다">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">사용실태</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">MIT Technology Review · 2026. 08. 18</div>
+        <div class="card-title">AI를 실제로 어떻게 쓰는지, 우리는 아직 모른다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.digitaltoday.co.kr/news/articleView.html?idxno=686228" target="_blank"
+       data-category="AI · 빅테크 · 지표"
+       data-position="product-designer|design-manager"
+       data-summary="구글이 2026년 2분기 실적 발표에서 제미나이 앱 월간 활성 사용자(MAU)가 9억5000만 명을 돌파했다고 밝혔습니다. 챗GPT의 10억 명에 약 5000만 명 차이로 근접한 수치입니다."
+       data-points="2월 발표된 7억5000만 명에서 6개월 만에 2억 명 증가|작년 10월 6억5000만 명 대비 9개월간 3억 명 순증|챗GPT와의 MAU 격차가 한 자릿수 퍼센트대로 좁혀짐"
+       data-designer="특정 AI 서비스로의 사용자 쏠림이 완화되고 있다는 신호로, 제품에 AI 기능을 붙일 때 특정 모델·생태계 종속을 낮추는 설계가 더 중요해질 수 있습니다."
+       data-impact-score="2"
+       data-recommend="빅테크 AI 경쟁 구도 파악용 · 참고 저장"
+       data-comment="이번 발표는 실적 수치이긴 하지만, 챗GPT 독주 구도가 흔들리고 있다는 시장 신호로 읽을 만합니다. 사용자 기반이 특정 서비스에 쏠리지 않고 분산되면 AI 기능을 설계할 때 고려해야 할 생태계도 늘어납니다.
+다만 이 수치 자체는 사업 전략보다는 배경 지식에 가깝습니다. 실무에 바로 적용할 인사이트라기보다는 업계 동향을 놓치지 않기 위한 참고 자료로 저장해두는 정도가 적당합니다.">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">사용자지표</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디지털투데이 · 2026. 08. 22</div>
+        <div class="card-title">구글 제미나이, 월간 이용자 9억5000만명...챗GPT 10억명 턱밑까지 추격</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.fnnews.com/news/202608201839006517" target="_blank"
+       data-category="AI · 모바일 · 안드로이드"
+       data-position="product-designer|ui-designer"
+       data-summary="삼성전자가 8월 27일 갤럭시 언팩 이벤트를 열고 준 플래그십 모델 '갤럭시 S26 팬에디션(FE)'을 공개합니다. 플래그십급 갤럭시 AI 핵심 기능을 그대로 담으면서 가격은 100만원 이하로 낮춘 것이 특징입니다."
+       data-points="6.7형 디스플레이·120Hz 주사율, 5000만 화소 메인 카메라 등 준 플래그십 사양|갤럭시 AI 핵심 기능을 보급형 라인까지 그대로 확대 적용|100만원 이하 가격으로 플래그십 AI 경험의 구매 문턱을 낮추는 전략"
+       data-designer="AI 기능이 플래그십 전유물에서 보급형까지 표준화되는 흐름으로, 특정 고가 기기에서만 AI UX를 전제로 설계하기 어려워지고 있다는 점을 보여줍니다."
+       data-impact-score="2"
+       data-recommend="안드로이드 AI 기능 확산 추이 참고 · 가볍게 훑어보기"
+       data-comment="이번 발표의 핵심은 신제품 스펙보다 '갤럭시 AI 기능을 보급형까지 그대로 가져간다'는 전략적 선택입니다. AI 기능이 플래그십 마케팅 포인트에서 전 라인업 표준으로 넘어가는 신호로 읽을 수 있습니다.
+모바일 제품이나 서비스를 설계할 때, AI 기반 UX를 더 이상 고가 기기 전용 시나리오로만 가정하기 어려워지고 있다는 배경 지식으로 참고할 만합니다.
+다만 아직 스펙·가격 예고 수준의 소식이라 구체적인 AI 기능 변경점은 27일 공개 이후 다시 확인이 필요합니다.">
+      <div class="thumb g-rust">
+        <div class="noise"></div>
+        <span class="thumb-label">보급형AI</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">파이낸셜뉴스 · 2026. 08. 20</div>
+        <div class="card-title">AI 핵심 탑재 '보급형 갤S26' 출격</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.designboom.com/architecture/albanian-files-two-decades-international-architecture-country-transition-anneke-abhelakh-lars-muller-publishers/" target="_blank"
+       data-category="디자인 · 건축 · 출판" data-category-en="Design · Architecture · Publishing"
+       data-position="architect|space-designer"
+       data-summary="A new 800-page volume, 'The Albanian Files', documents two decades of international architecture practices working in Albania through 60 project-based case files." data-summary-kr="신간 《The Albanian Files》가 지난 20년간 알바니아에서 활동한 해외 건축 실무를 60개의 프로젝트별 파일로 정리해 기록했습니다."
+       data-points="Studio Gang, Herzog & de Meuron, Kengo Kuma among 60 practices featured|Each file combines project data, interviews and visual documentation|Focuses on relationships with local collaborators, not just star-architect authorship" data-points-kr="스튜디오 갱, 헤르초크 & 드 뫼롱, 쿠마 겐고 등 60개 실무 사례 수록|프로젝트 데이터·인터뷰·비주얼 자료를 파일 단위로 구성|건축가 개인의 저작권보다 현지 협업자와의 관계·협상 과정에 주목"
+       data-designer="A useful model for documenting collaborative practice itself, not just finished buildings, which is directly transferable to how design teams archive process work." data-designer-kr="완공된 결과물만이 아니라 협업 과정 자체를 기록하는 방식이 인상적입니다. 디자인팀이 프로세스 자료를 아카이빙하는 방식에도 그대로 적용해볼 만한 접근입니다."
+       data-impact-score="3"
+       data-recommend="Editorial and archival designers should note the format · Good reference" data-recommend-kr="편집·아카이빙 디자이너에게 포맷 참고용 · 레퍼런스로 저장 추천"
+       data-comment="What makes this book interesting is that instead of listing finished buildings, each of the 60 'files' pairs project data and interviews with the story of local collaborators.
+Beyond architecture journalism, it's a useful editorial format for any design field wrestling with how to document collaborative process transparently.
+The choice to credit local collaborators rather than crediting a single starchitect on international projects is also worth noting for branding and editorial work." data-comment-kr="이 책이 흥미로운 지점은 완성된 건축물을 나열하는 대신, 60개의 '파일' 각각에 프로젝트 데이터와 인터뷰, 현지 협업자와의 관계를 함께 담았다는 구성 방식입니다.
+건축 저널리즘을 넘어, 협업 과정을 어떻게 투명하게 기록하고 편집할지 고민하는 모든 디자인 분야에 참고가 될 만한 편집 포맷입니다.
+특히 국제 프로젝트에서 저작권이 한 명의 스타 건축가에게만 귀속되지 않도록 현지 협업자를 함께 조명한 태도는 브랜드·에디토리얼 작업에서도 새겨볼 만합니다."
+       data-title-en="The Albanian files: two decades of international architecture in a country in transition" data-title-kr="《알바니안 파일스》, 알바니아에서 활동한 20년간의 해외 건축을 기록하다">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">건축기록</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">designboom · 2026. 08. 21</div>
+        <div class="card-title">《알바니안 파일스》, 알바니아에서 활동한 20년간의 해외 건축을 기록하다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/08/21/nikes-most-responsive-running-shoe-with-visible-air-zoom-and-zoomx-foam-sole-is-arriving-august-30/" target="_blank"
+       data-category="디자인 · 제품 · 풋웨어" data-category-en="Design · Product · Footwear"
+       data-position="industrial-designer|product-designer"
+       data-summary="Nike's new Pegasus Plus 2 pairs a curved, visible Air Zoom unit with a full-length ZoomX foam midsole, making the shoe 18 percent springier than its predecessor without a rigid carbon plate." data-summary-kr="나이키의 신형 페가수스 플러스 2가 곡선형 에어줌 유닛과 풀렝스 줌X 폼 미드솔을 결합해, 딱딱한 카본 플레이트 없이도 전작보다 18% 더 탄력 있는 착화감을 구현했습니다."
+       data-points="Curved, visible Air Zoom unit placed in the forefoot|Full-length ZoomX foam for a plate-free bounce|Positioned as a tempo trainer, not a race-day carbon shoe" data-points-kr="전족부에 배치된 곡선형 노출 에어줌 유닛|플레이트 없이도 탄력을 내는 풀렝스 줌X 폼|카본 레이싱화가 아닌 템포 트레이닝화로 포지셔닝"
+       data-designer="A good case study in achieving a 'plated' ride feel through geometry and foam alone, useful for product designers working with cushioning or compliant materials." data-designer-kr="플레이트 없이 지오메트리와 폼만으로 '플레이트가 있는 듯한' 라이드 감을 만들어낸 사례로, 쿠셔닝이나 컴플라이언트 소재를 다루는 제품 디자이너에게 참고가 될 만합니다."
+       data-impact-score="3"
+       data-recommend="Good reference for footwear or cushioning product design · Save for material research" data-recommend-kr="풋웨어·쿠셔닝 제품 디자인 레퍼런스로 유용 · 소재 리서치용 저장 추천"
+       data-comment="What's notable here isn't just the shoe itself but the design logic: Nike is using foam geometry and a curved Air unit to simulate the propulsive feel of a plated racer, without the stiffness and cost that come with carbon.
+For product designers working outside footwear, it's a clean example of solving a performance problem through material and form rather than adding a rigid structural component.
+Positioning it as a 'tempo trainer' rather than a race shoe also shows careful segmentation within a product line that already has a flagship racer." data-comment-kr="주목할 점은 신발 자체보다 설계 논리입니다. 나이키는 카본이 주는 강성과 비용 부담 없이, 폼 지오메트리와 곡선형 에어 유닛만으로 플레이트화가 주는 추진력을 흉내 냈습니다.
+풋웨어 바깥의 제품 디자이너에게는 딱딱한 구조 부품을 더하는 대신 소재와 형태로 성능 문제를 해결한 깔끔한 사례로 참고할 만합니다.
+레이싱화가 아닌 '템포 트레이닝화'로 포지셔닝한 점도, 이미 플래그십 레이싱화를 보유한 제품 라인 안에서 세그먼트를 세심하게 나눈 방식으로 눈여겨볼 만합니다."
+       data-title-en="Nike's most responsive running shoe with visible Air Zoom and ZoomX foam sole is arriving August 30" data-title-kr="나이키, 곡선형 에어줌과 줌X 폼 결합한 페가수스 플러스 2 8월 30일 출시">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">러닝화</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 08. 21</div>
+        <div class="card-title">나이키, 곡선형 에어줌과 줌X 폼 결합한 페가수스 플러스 2 8월 30일 출시</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.inven.co.kr/webzine/news/?news=319783" target="_blank"
+       data-category="디자인 · 게임 · 아트디렉션"
+       data-position="art-director|illustrator"
+       data-summary="언리얼 페스트 서울 2026에서 넥슨게임즈 '우치 더 웨이페어러'의 아트 디렉터 목영미가 UE5로 한국적 판타지를 구현한 아트디렉션 방법론을 공개했습니다."
+       data-points="한복·건축·색채를 UE5 기반으로 재해석한 과정 공개|개발진 얼굴을 3D 스캔해 NPC에 반영, 사실감과 판타지의 균형 추구|배경 지역 '평산'을 한국적 디테일이 강조된 공간으로 구현"
+       data-designer="실제 프로덕션 파이프라인 사례를 구체적으로 공개했다는 점에서, 로컬 문화 요소를 3D 엔진 기반 비주얼로 옮기는 실무자에게 바로 참고할 방법론을 제공합니다."
+       data-impact-score="4"
+       data-recommend="게임·3D 아트디렉터 필독 · 방법론 정리용 저장 추천"
+       data-comment="이 강연이 값진 이유는 '한국적인 것을 어떻게 그릴 것인가'라는 추상적인 질문에 한복·건축·색채·얼굴 스캔이라는 구체적인 제작 단계로 답했다는 데 있습니다.
+특히 개발진의 얼굴을 3D 스캔해 NPC에 활용한 방식은 사실성과 판타지 사이의 균형을 잡는 실용적인 해법으로, 다른 문화권 배경을 다루는 프로젝트에도 그대로 응용해볼 수 있습니다.
+국내 게임 아트디렉션 사례가 방법론 수준까지 공개되는 경우가 흔치 않은 만큼, 관련 실무자라면 발표 자료나 후속 인터뷰를 챙겨볼 가치가 있습니다.">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">아트디렉션</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">인벤 · 2026. 08. 21</div>
+        <div class="card-title">[언리얼 서울] 조선의 정취를 게임에 담기 위한 '우치 더 웨이페어러'의 고민과 비책</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.jungle.co.kr/magazine/206907" target="_blank"
+       data-category="디자인 · 에세이 · 커리어"
+       data-position="design-lead|design-manager"
+       data-summary="디자인정글 칼럼에서 한 디자이너가 응용미술부터 저널리즘, 마케팅, 도시환경, 최근의 인공지능까지 여러 전공을 거쳐온 자신의 학습 여정을 돌아봤습니다."
+       data-points="응용미술·저널리즘·마케팅·도시환경·AI 등 다전공 이력을 관통하는 지적 호기심 이야기|학습을 학위·자격증이 아니라 사람·공간·경험과의 만남으로 정의|여러 전공을 오간 경험 자체를 커리어 자산으로 재해석"
+       data-designer="정형화된 한 우물 커리어가 아니어도, 다양한 분야를 넘나든 경험 자체가 디자이너의 관점을 넓히는 자산이 될 수 있다는 관점을 제시합니다."
+       data-impact-score="2"
+       data-recommend="커리어 전환·다전공 배경 디자이너에게 공감 포인트 · 가볍게 읽기 추천"
+       data-comment="화려한 사례 연구나 툴 리뷰는 아니지만, 여러 전공을 거친 커리어를 '산만함'이 아니라 '호기심'이라는 하나의 축으로 재해석하는 관점이 눈에 띕니다.
+디자인 업계에서도 비전형적인 경로로 들어온 이들이 많은 만큼, 자신의 이력을 어떻게 서사화할지 고민하는 주니어·시니어 디자이너 모두에게 가볍게 공감할 만한 글입니다.
+다만 구체적인 방법론이나 실무 팁보다는 에세이 형식의 회고에 가까워, 실무 적용도는 낮게 평가했습니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">커리어</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">디자인정글 · 2026. 08. 18</div>
+        <div class="card-title">[디자인정글_에세이] 배움은 끝나지 않는다_ 나의 전공, 나의 호기심, 나의 지적 여정</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
