@@ -1,0 +1,57 @@
+{
+  "contentId": "20260823-design-001",
+  "date": "2026-08-23",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "designboom",
+    "publishedAt": "2026-08-21"
+  },
+  "url": "https://www.designboom.com/architecture/albanian-files-two-decades-international-architecture-country-transition-anneke-abhelakh-lars-muller-publishers/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축 · 출판",
+    "en": "Design · Architecture · Publishing"
+  },
+  "title": {
+    "kr": "《알바니안 파일스》, 알바니아에서 활동한 20년간의 해외 건축을 기록하다",
+    "en": "The Albanian files: two decades of international architecture in a country in transition"
+  },
+  "summary": {
+    "kr": "신간 《The Albanian Files》가 지난 20년간 알바니아에서 활동한 해외 건축 실무를 60개의 프로젝트별 파일로 정리해 기록했습니다.",
+    "en": "A new 800-page volume, 'The Albanian Files', documents two decades of international architecture practices working in Albania through 60 project-based case files."
+  },
+  "points": {
+    "kr": [
+      "스튜디오 갱, 헤르초크 & 드 뫼롱, 쿠마 겐고 등 60개 실무 사례 수록",
+      "프로젝트 데이터·인터뷰·비주얼 자료를 파일 단위로 구성",
+      "건축가 개인의 저작권보다 현지 협업자와의 관계·협상 과정에 주목"
+    ],
+    "en": [
+      "Studio Gang, Herzog & de Meuron, Kengo Kuma among 60 practices featured",
+      "Each file combines project data, interviews and visual documentation",
+      "Focuses on relationships with local collaborators, not just star-architect authorship"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "완공된 결과물만이 아니라 협업 과정 자체를 기록하는 방식이 인상적입니다. 디자인팀이 프로세스 자료를 아카이빙하는 방식에도 그대로 적용해볼 만한 접근입니다.",
+    "en": "A useful model for documenting collaborative practice itself, not just finished buildings, which is directly transferable to how design teams archive process work."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "편집·아카이빙 디자이너에게 포맷 참고용 · 레퍼런스로 저장 추천",
+    "en": "Editorial and archival designers should note the format · Good reference"
+  },
+  "comment": {
+    "kr": "이 책이 흥미로운 지점은 완성된 건축물을 나열하는 대신, 60개의 '파일' 각각에 프로젝트 데이터와 인터뷰, 현지 협업자와의 관계를 함께 담았다는 구성 방식입니다.\n건축 저널리즘을 넘어, 협업 과정을 어떻게 투명하게 기록하고 편집할지 고민하는 모든 디자인 분야에 참고가 될 만한 편집 포맷입니다.\n특히 국제 프로젝트에서 저작권이 한 명의 스타 건축가에게만 귀속되지 않도록 현지 협업자를 함께 조명한 태도는 브랜드·에디토리얼 작업에서도 새겨볼 만합니다.",
+    "en": "What makes this book interesting is that instead of listing finished buildings, each of the 60 'files' pairs project data and interviews with the story of local collaborators.\nBeyond architecture journalism, it's a useful editorial format for any design field wrestling with how to document collaborative process transparently.\nThe choice to credit local collaborators rather than crediting a single starchitect on international projects is also worth noting for branding and editorial work."
+  },
+  "thumbLabel": "건축기록",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

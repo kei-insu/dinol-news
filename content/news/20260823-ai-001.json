@@ -1,0 +1,57 @@
+{
+  "contentId": "20260823-ai-001",
+  "date": "2026-08-23",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "Simon Willison",
+    "publishedAt": "2026-08-20"
+  },
+  "url": "https://simonwillison.net/2026/Aug/20/chatgpt-search-now-uses-the-siteoperator-at-scale/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 콘텐츠전략 · 검색",
+    "en": "AI · Content Strategy · Search"
+  },
+  "title": {
+    "kr": "챗GPT 검색, site: 연산자를 대규모로 쓰기 시작했다",
+    "en": "ChatGPT search now uses the site: operator at scale"
+  },
+  "summary": {
+    "kr": "사이먼 윌리슨이 GPT-5.6 롤아웃 이후 챗GPT 검색이 site: 연산자를 대규모로 활용하기 시작했다는 추적 데이터를 소개했습니다. AI 답변에 콘텐츠가 노출되는 방식이 달라지고 있다는 뜻입니다.",
+    "en": "Simon Willison highlights new tracking data showing ChatGPT Search now uses the site: operator at scale following the GPT-5.6 rollout, changing how content actually surfaces in AI-generated answers."
+  },
+  "points": {
+    "kr": [
+      "GPT-5.6 롤아웃 이후 site: 연산자 사용 쿼리 비중이 급증한 것으로 추적됨",
+      "8월 18일 이후 챗GPT 검색에서 레딧 인용 비중이 눈에 띄게 감소",
+      "AI 기반 발견(GEO)을 위한 콘텐츠 최적화 전략에서 주목할 변화"
+    ],
+    "en": [
+      "Promptwatch tracking shows a sharp rise in site:-scoped queries after GPT-5.6",
+      "Reddit's share of cited sources in ChatGPT Search dropped noticeably since Aug 18",
+      "Signals a shift worth watching for anyone optimizing content for AI-driven discovery (GEO)"
+    ]
+  },
+  "positions": [
+    "editorial-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "AI 검색엔진이 어떤 도메인·포맷을 인용할지 조용히 바꾸고 있다면, 에디토리얼·콘텐츠 팀이 글을 구조화하고 태깅하는 방식에도 직접 영향을 줍니다.",
+    "en": "If AI search engines are quietly changing which domains and formats get cited, that directly affects how editorial and content teams should structure and tag their work."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "AI 검색 노출도에 신경 쓴다면 필독 · 자사 콘텐츠의 인용 비중 직접 추적 권장",
+    "en": "Must-read if you care about AI search visibility · Track your own citation share"
+  },
+  "comment": {
+    "kr": "이 글에서 눈여겨볼 것은 수치 자체보다 방법론입니다. OpenAI의 공식 발표를 기다리는 대신, 챗GPT 검색 내부의 보이지 않는 변화를 독립적으로 추적했다는 점입니다.\n콘텐츠·브랜드 팀 입장에서는 '생성형 엔진 최적화(GEO)'가 기존 SEO 감각과는 다르게 실제로 어떻게 작동하는지 보여주는 구체적인 초기 신호입니다.\n이런 인용 패턴은 모델이 업데이트될 때마다 바뀌는 것으로 보이는 만큼, 일회성 데이터로 보기보다 Promptwatch의 후속 리포트를 주기적으로 챙겨볼 만합니다.",
+    "en": "What makes this worth reading isn't the raw stat but the method: independent tracking of invisible product changes inside ChatGPT Search, rather than waiting for OpenAI to announce anything.\nFor content and brand teams, this is a concrete early signal of how 'Generative Engine Optimization' will actually work in practice, distinct from classic SEO instincts.\nWorth revisiting Promptwatch's ongoing reports periodically rather than treating this as a one-off data point, since these citation patterns seem to shift with each model rollout."
+  },
+  "thumbLabel": "AI검색",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}

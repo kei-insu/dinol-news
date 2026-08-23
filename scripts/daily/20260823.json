@@ -1,0 +1,74 @@
+{
+  "20260823-ai-001": {
+    "category_kr": "AI · 콘텐츠전략 · 검색",
+    "category_en": "AI · Content Strategy · Search",
+    "impactScore": 4,
+    "positions": [
+      "editorial-designer",
+      "design-lead"
+    ]
+  },
+  "20260823-ai-002": {
+    "category_kr": "AI · 리서치 · 사용자 행동",
+    "category_en": "AI · Research · User Behavior",
+    "impactScore": 3,
+    "positions": [
+      "ux-designer",
+      "design-lead"
+    ]
+  },
+  "20260823-ai-003": {
+    "category_kr": "AI · 빅테크 · 지표",
+    "category_en": "AI · Big Tech · Metrics",
+    "impactScore": 2,
+    "positions": [
+      "product-designer",
+      "design-manager"
+    ]
+  },
+  "20260823-ai-004": {
+    "category_kr": "AI · 모바일 · 안드로이드",
+    "category_en": "AI · Mobile · Android",
+    "impactScore": 2,
+    "positions": [
+      "product-designer",
+      "ui-designer"
+    ]
+  },
+  "20260823-design-001": {
+    "category_kr": "디자인 · 건축 · 출판",
+    "category_en": "Design · Architecture · Publishing",
+    "impactScore": 3,
+    "positions": [
+      "architect",
+      "space-designer"
+    ]
+  },
+  "20260823-design-002": {
+    "category_kr": "디자인 · 제품 · 풋웨어",
+    "category_en": "Design · Product · Footwear",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260823-design-003": {
+    "category_kr": "디자인 · 게임 · 아트디렉션",
+    "category_en": "Design · Games · Art Direction",
+    "impactScore": 4,
+    "positions": [
+      "art-director",
+      "illustrator"
+    ]
+  },
+  "20260823-design-004": {
+    "category_kr": "디자인 · 에세이 · 커리어",
+    "category_en": "Design · Essay · Career",
+    "impactScore": 2,
+    "positions": [
+      "design-lead",
+      "design-manager"
+    ]
+  }
+}

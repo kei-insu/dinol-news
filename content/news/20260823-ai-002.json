@@ -1,0 +1,57 @@
+{
+  "contentId": "20260823-ai-002",
+  "date": "2026-08-23",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "MIT Technology Review",
+    "publishedAt": "2026-08-18"
+  },
+  "url": "https://www.technologyreview.com/2026/08/18/1142226/how-people-use-ai/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 리서치 · 사용자 행동",
+    "en": "AI · Research · User Behavior"
+  },
+  "title": {
+    "kr": "AI를 실제로 어떻게 쓰는지, 우리는 아직 모른다",
+    "en": "We still don't know how people are really using AI"
+  },
+  "summary": {
+    "kr": "MIT 테크놀로지 리뷰가 AI 기업들조차 자사 챗봇이 실제로 어떻게 쓰이는지 명확히 파악하지 못하고 있다고 보도했습니다. 사용 실태 조사가 기업이 선택적으로 공개하는 데이터에 의존하고 있기 때문입니다.",
+    "en": "MIT Technology Review reports that even AI companies don't have clear visibility into how people actually use their chatbots, since usage research relies on selective self-reported data."
+  },
+  "points": {
+    "kr": [
+      "독립적으로 실사용 패턴을 추적하려는 'AI 옵저버토리' 프로젝트 등장",
+      "샘플 대화의 절반 가까이가 앤트로픽 자체 방법론으로도 걸러지는 것으로 확인",
+      "마케팅상의 AI 활용 사례와 실제 일상 사용 사이의 간극을 드러냄"
+    ],
+    "en": [
+      "A new 'AI Observatory' project aims to independently track real usage patterns",
+      "Nearly half of sampled conversations would be filtered out under Anthropic's own methodology",
+      "Highlights a gap between marketed AI use-cases and everyday reality"
+    ]
+  },
+  "positions": [
+    "ux-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "AI 기능의 실제 사용 실태는 벤더가 공개하는 서사에 기대기보다, 자사 제품 데이터로 직접 검증해야 한다는 점을 다시 일깨워줍니다.",
+    "en": "A reminder to validate AI-feature usage with your own product analytics rather than relying on vendor-published usage narratives."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "AI 기능을 출시하는 팀에게 유용한 배경 지식 · 관점 확보용으로 추천",
+    "en": "Useful context for anyone shipping AI features · Read for perspective"
+  },
+  "comment": {
+    "kr": "이 기사는 끊임없이 쏟아지는 AI 성능 발표 소식들과 대비되는 관점을 제공합니다. 사람들이 실제로 이 도구들을 일상에서 어떻게 쓰는지, 더 지루하지만 더 중요한 질문을 던지기 때문입니다.\nAI 기능을 설계하는 팀이라면, 벤더가 발표하는 사용 실태와 독립적으로 관찰된 실제 사용 사이의 간극은 자체 텔레메트리 대신 가정에 기대어 설계할 때 실질적인 리스크가 됩니다.\n업계 전반의 프레이밍을 그대로 믿기보다 자사 제품의 AI 기능 데이터를 다시 점검해보라는 신호로 저장해둘 만합니다.",
+    "en": "This piece is a useful counterweight to the constant stream of AI capability announcements: it asks the more boring but more important question of what people actually do with these tools day to day.\nFor teams designing AI features, the gap between vendor-reported usage and independently observed usage is a real risk when building on assumptions instead of your own telemetry.\nWorth bookmarking as a prompt to check your own product's AI feature analytics rather than trusting industry-wide framing."
+  },
+  "thumbLabel": "사용실태",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

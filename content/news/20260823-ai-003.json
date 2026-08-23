@@ -1,0 +1,53 @@
+{
+  "contentId": "20260823-ai-003",
+  "date": "2026-08-23",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "디지털투데이",
+    "publishedAt": "2026-08-22"
+  },
+  "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=686228",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "AI · 빅테크 · 지표",
+    "en": "AI · Big Tech · Metrics"
+  },
+  "title": {
+    "kr": "구글 제미나이, 월간 이용자 9억5000만명...챗GPT 10억명 턱밑까지 추격",
+    "en": null
+  },
+  "summary": {
+    "kr": "구글이 2026년 2분기 실적 발표에서 제미나이 앱 월간 활성 사용자(MAU)가 9억5000만 명을 돌파했다고 밝혔습니다. 챗GPT의 10억 명에 약 5000만 명 차이로 근접한 수치입니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "2월 발표된 7억5000만 명에서 6개월 만에 2억 명 증가",
+      "작년 10월 6억5000만 명 대비 9개월간 3억 명 순증",
+      "챗GPT와의 MAU 격차가 한 자릿수 퍼센트대로 좁혀짐"
+    ],
+    "en": []
+  },
+  "positions": [
+    "product-designer",
+    "design-manager"
+  ],
+  "designer": {
+    "kr": "특정 AI 서비스로의 사용자 쏠림이 완화되고 있다는 신호로, 제품에 AI 기능을 붙일 때 특정 모델·생태계 종속을 낮추는 설계가 더 중요해질 수 있습니다.",
+    "en": null
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "빅테크 AI 경쟁 구도 파악용 · 참고 저장",
+    "en": null
+  },
+  "comment": {
+    "kr": "이번 발표는 실적 수치이긴 하지만, 챗GPT 독주 구도가 흔들리고 있다는 시장 신호로 읽을 만합니다. 사용자 기반이 특정 서비스에 쏠리지 않고 분산되면 AI 기능을 설계할 때 고려해야 할 생태계도 늘어납니다.\n다만 이 수치 자체는 사업 전략보다는 배경 지식에 가깝습니다. 실무에 바로 적용할 인사이트라기보다는 업계 동향을 놓치지 않기 위한 참고 자료로 저장해두는 정도가 적당합니다.",
+    "en": null
+  },
+  "thumbLabel": "사용자지표",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

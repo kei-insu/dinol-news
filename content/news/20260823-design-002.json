@@ -1,0 +1,57 @@
+{
+  "contentId": "20260823-design-002",
+  "date": "2026-08-23",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "Yanko Design",
+    "publishedAt": "2026-08-21"
+  },
+  "url": "https://www.yankodesign.com/2026/08/21/nikes-most-responsive-running-shoe-with-visible-air-zoom-and-zoomx-foam-sole-is-arriving-august-30/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 풋웨어",
+    "en": "Design · Product · Footwear"
+  },
+  "title": {
+    "kr": "나이키, 곡선형 에어줌과 줌X 폼 결합한 페가수스 플러스 2 8월 30일 출시",
+    "en": "Nike's most responsive running shoe with visible Air Zoom and ZoomX foam sole is arriving August 30"
+  },
+  "summary": {
+    "kr": "나이키의 신형 페가수스 플러스 2가 곡선형 에어줌 유닛과 풀렝스 줌X 폼 미드솔을 결합해, 딱딱한 카본 플레이트 없이도 전작보다 18% 더 탄력 있는 착화감을 구현했습니다.",
+    "en": "Nike's new Pegasus Plus 2 pairs a curved, visible Air Zoom unit with a full-length ZoomX foam midsole, making the shoe 18 percent springier than its predecessor without a rigid carbon plate."
+  },
+  "points": {
+    "kr": [
+      "전족부에 배치된 곡선형 노출 에어줌 유닛",
+      "플레이트 없이도 탄력을 내는 풀렝스 줌X 폼",
+      "카본 레이싱화가 아닌 템포 트레이닝화로 포지셔닝"
+    ],
+    "en": [
+      "Curved, visible Air Zoom unit placed in the forefoot",
+      "Full-length ZoomX foam for a plate-free bounce",
+      "Positioned as a tempo trainer, not a race-day carbon shoe"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "플레이트 없이 지오메트리와 폼만으로 '플레이트가 있는 듯한' 라이드 감을 만들어낸 사례로, 쿠셔닝이나 컴플라이언트 소재를 다루는 제품 디자이너에게 참고가 될 만합니다.",
+    "en": "A good case study in achieving a 'plated' ride feel through geometry and foam alone, useful for product designers working with cushioning or compliant materials."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "풋웨어·쿠셔닝 제품 디자인 레퍼런스로 유용 · 소재 리서치용 저장 추천",
+    "en": "Good reference for footwear or cushioning product design · Save for material research"
+  },
+  "comment": {
+    "kr": "주목할 점은 신발 자체보다 설계 논리입니다. 나이키는 카본이 주는 강성과 비용 부담 없이, 폼 지오메트리와 곡선형 에어 유닛만으로 플레이트화가 주는 추진력을 흉내 냈습니다.\n풋웨어 바깥의 제품 디자이너에게는 딱딱한 구조 부품을 더하는 대신 소재와 형태로 성능 문제를 해결한 깔끔한 사례로 참고할 만합니다.\n레이싱화가 아닌 '템포 트레이닝화'로 포지셔닝한 점도, 이미 플래그십 레이싱화를 보유한 제품 라인 안에서 세그먼트를 세심하게 나눈 방식으로 눈여겨볼 만합니다.",
+    "en": "What's notable here isn't just the shoe itself but the design logic: Nike is using foam geometry and a curved Air unit to simulate the propulsive feel of a plated racer, without the stiffness and cost that come with carbon.\nFor product designers working outside footwear, it's a clean example of solving a performance problem through material and form rather than adding a rigid structural component.\nPositioning it as a 'tempo trainer' rather than a race shoe also shows careful segmentation within a product line that already has a flagship racer."
+  },
+  "thumbLabel": "러닝화",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}
