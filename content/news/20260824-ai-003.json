@@ -1,0 +1,57 @@
+{
+  "contentId": "20260824-ai-003",
+  "date": "2026-08-24",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-08-21"
+  },
+  "url": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 방법론",
+    "en": "AI · Tools · Methodology"
+  },
+  "title": {
+    "kr": "엔비디아, '이제 중요한 건 AI 모델이 아니라 하네스'",
+    "en": "Nvidia just showed that the harness, not the AI model, is now the real hero"
+  },
+  "summary": {
+    "kr": "엔비디아 연구에 따르면 장기 추론 작업에서는 AI 모델 자체보다 모델을 감싸는 하네스(작업 구조)가 더 중요해지고 있습니다. 연구진은 맞춤 하네스를 활용해 클로드 오퍼스 5를 ARC-AGI-3 인터랙티브 추론 벤치마크에서 100% 점수로 이끌었습니다.",
+    "en": "Nvidia research suggests the harness, the scaffolding and orchestration around an AI model, now matters more than the model itself for long-horizon tasks. Researchers used a custom harness to get Claude Opus 5 to a 100% score on the ARC-AGI-3 interactive reasoning benchmark."
+  },
+  "points": {
+    "kr": [
+      "장기 추론 과제에서는 모델 선택보다 하네스 설계가 더 중요",
+      "맞춤 하네스로 클로드 오퍼스 5가 ARC-AGI-3에서 100% 달성",
+      "모델 고르기에서 워크플로우·툴 오케스트레이션 설계로 무게중심 이동"
+    ],
+    "en": [
+      "Harness design now outweighs raw model choice for long-horizon tasks",
+      "Custom harness pushed Claude Opus 5 to 100% on ARC-AGI-3",
+      "Signals a shift from model-picking to workflow and tool-orchestration design"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "service-designer"
+  ],
+  "designer": {
+    "kr": "제품에 AI 기능을 넣는 실무자라면, 어떤 모델을 쓰느냐보다 그 모델을 감싸는 워크플로우·툴 접근·작업 구조 설계가 성과를 좌우한다는 점을 다시 새겨볼 만합니다.",
+    "en": "If you're building AI features into a product, this is a reminder that the surrounding workflow, tool access and task structure often matter more than which model you plug in."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "AI 기능 기획자 필독 · 프로덕트팀 공유 추천",
+    "en": "Must-read for AI feature builders · Share with product teams"
+  },
+  "comment": {
+    "kr": "AI 기능을 출시하는 실무자라면 눈여겨볼 전환점입니다. 엔비디아 연구는 모델을 감싸는 워크플로우, 툴 접근 권한, 작업 구조 설계, 즉 하네스가 잘 갖춰지면 더 큰 모델로 바꾸는 것보다 성능이 좋아질 수 있음을 보여줍니다.\nAI 기반 플로우를 기획하는 프로덕트·서비스 디자이너에게는 실무적인 시사점입니다. 최신 모델을 좇기보다, AI 에이전트에게 맥락과 툴, 단계별 구조를 어떻게 부여하는지에 투자하는 편이 더 생산적일 수 있습니다. 이는 엔지니어링 문제이면서 동시에 설계의 문제이기도 합니다.",
+    "en": "This piece captures a shift that matters for anyone shipping AI features. Nvidia's research shows that a well designed harness, meaning the scaffolding, tool access and task structure around a model, can push performance further than swapping in a bigger model.\nFor product and service designers who scope AI-powered flows, this is a practical cue. Instead of chasing the newest model release, it may be more productive to invest in how the AI agent is given context, tools and step-by-step structure. That is a design problem as much as an engineering one."
+  },
+  "thumbLabel": "하네스",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

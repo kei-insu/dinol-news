@@ -1,0 +1,57 @@
+{
+  "contentId": "20260824-ai-004",
+  "date": "2026-08-24",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Adobe Blog",
+    "publishedAt": "2026-08-20"
+  },
+  "url": "https://blog.adobe.com/en/publish/2026/08/20/adobe-firefly-expands-its-creative-ai-studio-generate-music-speech-and-sound-effects-in-one-place",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 오디오",
+    "en": "AI · Tools · Audio"
+  },
+  "title": {
+    "kr": "어도비 파이어플라이, 음악·음성·효과음까지 생성형 AI 오디오 스튜디오로 확장",
+    "en": "Adobe Firefly expands its creative AI studio: generate music, speech, and sound effects in one place"
+  },
+  "summary": {
+    "kr": "어도비 파이어플라이의 음악·음성·효과음 생성 도구가 정식 출시됐습니다. 이미지·영상 생성 도구와 같은 스튜디오 안에서 라이선스가 보장된 오디오를 만들 수 있습니다.",
+    "en": "Adobe Firefly's Generate Music, Generate Speech and Generate Sound Effects tools are now generally available, bringing licensed, commercially safe audio generation into the same studio as Firefly's image and video tools."
+  },
+  "points": {
+    "kr": [
+      "Generate Music은 영상 길이·분위기에 맞춘 트랙 생성",
+      "Generate Speech는 대본을 음성으로 변환, ElevenLabs 옵션 제공",
+      "모든 결과물은 상업적 사용까지 포함해 라이선스 보장, 별도 구독 불필요"
+    ],
+    "en": [
+      "Generate Music creates tracks tuned to a video's length and mood",
+      "Generate Speech converts scripts into voiceovers with ElevenLabs as an option",
+      "All outputs are universally licensed for commercial use, no extra subscription needed"
+    ]
+  },
+  "positions": [
+    "video-designer",
+    "motion-designer"
+  ],
+  "designer": {
+    "kr": "영상 콘텐츠를 만드는 실무자에게 바로 쓸 수 있는 업데이트입니다. 별도 오디오 툴을 오갈 필요 없이 한 워크플로우 안에서 음악·나레이션·효과음을 만들고 라이선스까지 해결할 수 있습니다.",
+    "en": "A practical drop for anyone producing video content: music, voiceover and sound effects can now be generated and licensed in one workflow, without juggling separate audio tools."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "다음 영상 프로젝트에 바로 적용 추천 · 제작 워크플로우 북마크",
+    "en": "Try it on your next video project · Bookmark for production workflows"
+  },
+  "comment": {
+    "kr": "헤드라인용 기능이 아니라 일상 워크플로우를 바꾸는 업데이트에 가깝습니다. 음악·음성·효과음 생성을 파이어플라이 하나에 묶어놓으면서, 모션·영상 디자이너는 편집 툴을 벗어나지 않고도 사운드트랙 초안을 완성할 수 있게 됐습니다.\n생성 품질 못지않게 라이선스 구조가 중요합니다. 어도비는 결과물이 어디로 가든 라이선스 문제 없이 따라간다고 강조하는데, 이는 클라이언트 작업에 AI 오디오를 쓰는 데 걸림돌이 됐던 부분을 상당 부분 해소합니다.",
+    "en": "This is the kind of update that changes a daily workflow rather than just a headline feature. Bundling music, speech and sound effects generation into Firefly means motion and video designers can rough out a full soundtrack without leaving their editing tool.\nThe licensing angle matters as much as the generation quality. Adobe's pitch is that everything produced travels with the content without licensing headaches, which removes one of the biggest blockers to using AI audio in client work."
+  },
+  "thumbLabel": "오디오",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

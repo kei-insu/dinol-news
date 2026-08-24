@@ -1,0 +1,53 @@
+{
+  "contentId": "20260824-ai-001",
+  "date": "2026-08-24",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "ZDNet Korea",
+    "publishedAt": "2026-08-22"
+  },
+  "url": "https://zdnet.co.kr/view/?no=20260822083422",
+  "isEn": false,
+  "featured": true,
+  "category": {
+    "kr": "AI · 보안 · 인프라",
+    "en": "AI · Security · Infrastructure"
+  },
+  "title": {
+    "kr": "미국 정부, 지멘스 PLC 해킹 경고…AI가 공격 스크립트 짠다",
+    "en": null
+  },
+  "summary": {
+    "kr": "미국 사이버 당국이 지멘스 S7 시리즈 PLC를 겨냥한 해킹 위협에 긴급 경보를 발령했습니다. AI가 공격 스크립트 작성에 활용되고 있다는 점이 새로운 우려로 떠올랐습니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "NSA·FBI·DOE·EPA·CISA 합동 경보 발령",
+      "인터넷에 노출된 S7 컨트롤러가 물리적 시스템 접근 통로로 악용 우려",
+      "AI가 공격 스크립트 작성 속도를 높이는 도구로 활용"
+    ],
+    "en": []
+  },
+  "positions": [
+    "design-lead",
+    "design-manager"
+  ],
+  "designer": {
+    "kr": "디자인 실무와 직접 연결되진 않지만, AI가 공격 도구로도 쓰인다는 배경 지식은 AI 기반 서비스를 기획하는 실무자에게 참고가 됩니다.",
+    "en": null
+  },
+  "impactScore": 1,
+  "recommend": {
+    "kr": "배경 지식 참고용 · 선택적 열람",
+    "en": null
+  },
+  "comment": {
+    "kr": "산업 제어 시스템(ICS) 보안은 디자인 실무와는 거리가 멀어 보이지만, AI가 공격 스크립트 작성 속도를 끌어올리는 도구로 쓰이고 있다는 점은 주목할 만합니다. 방어 못지않게 공격 쪽에서도 AI 활용이 빨라지고 있다는 신호입니다.\n디자인 조직이 AI 기능을 제품에 심을 때도 이런 양날의 구조를 참고할 필요가 있습니다. 생성형 AI가 만들어내는 산출물이 어떤 방식으로 오남용될 수 있는지 미리 점검하는 습관이 실무에도 도움이 됩니다.",
+    "en": null
+  },
+  "thumbLabel": "보안",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

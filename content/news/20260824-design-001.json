@@ -1,0 +1,53 @@
+{
+  "contentId": "20260824-design-001",
+  "date": "2026-08-24",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "뉴스핌",
+    "publishedAt": "2026-08-21"
+  },
+  "url": "https://www.newspim.com/news/view/20260821000608",
+  "isEn": false,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 브랜딩 · 어워드",
+    "en": "Design · Branding · Awards"
+  },
+  "title": {
+    "kr": "신한은행 나라사랑카드, 'IDEA 2026' 동상 수상",
+    "en": null
+  },
+  "summary": {
+    "kr": "신한은행과 신한카드가 함께 선보인 '신한 나라사랑카드'가 미국산업디자이너협회(IDSA) 주관 IDEA 2026 브랜딩 부문에서 동상을 수상했습니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "IDEA(International Design Excellence Awards)는 세계 3대 디자인 어워드 중 하나로 꼽힘",
+      "국내 금융권 카드 디자인이 브랜딩 부문에서 국제적으로 인정받은 사례",
+      "공공성 강한 금융 상품 브랜딩의 레퍼런스로 참고 가능"
+    ],
+    "en": []
+  },
+  "positions": [
+    "brand-designer",
+    "bx-designer"
+  ],
+  "designer": {
+    "kr": "금융 상품처럼 제약이 많은 영역에서도 브랜딩 완성도로 국제 어워드를 받을 수 있다는 사례입니다. 규제 산업 브랜딩을 다루는 디자이너에게 참고할 만합니다.",
+    "en": null
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "금융·공공 브랜딩 담당자 참고 추천",
+    "en": null
+  },
+  "comment": {
+    "kr": "카드 하나의 비주얼이 국제 어워드 브랜딩 부문에서 인정받았다는 소식입니다. 금융 상품은 규제와 심사가 많아 브랜딩 자유도가 낮은 편인데, 그런 제약 속에서도 완성도를 인정받은 사례라 눈여겨볼 만합니다.\n공공성이 강조되는 금융·공공 프로젝트를 맡은 디자이너라면, 이번 수상작이 어떤 지점에서 심사위원단의 평가를 받았는지 살펴보는 것도 좋은 레퍼런스가 될 수 있습니다.",
+    "en": null
+  },
+  "thumbLabel": "수상",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

@@ -382,5 +382,9 @@
   "MIT Technology Review": {
     "region": "해외",
     "group": "MIT Technology Review"
+  },
+  "테크42": {
+    "region": "국내",
+    "group": "테크42"
   }
 }

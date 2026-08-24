@@ -1,0 +1,57 @@
+{
+  "contentId": "20260824-design-003",
+  "date": "2026-08-24",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "designboom",
+    "publishedAt": "2026-08-21"
+  },
+  "url": "https://www.designboom.com/architecture/minqa-atelier-charred-timber-refuge-ecuador-choco-forest/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 공간",
+    "en": "Design · Architecture · Space"
+  },
+  "title": {
+    "kr": "미냐 아틀리에, 에콰도르 초코 숲 경사면에 그을린 목재 은신처를 짓다",
+    "en": "minqa atelier steps charred timber refuge down a steep slope in ecuador's chocó forest"
+  },
+  "summary": {
+    "kr": "에콰도르 초코 숲의 가파른 경사지에 미냐 아틀리에가 53제곱미터 규모의 목조 은신처를 지었습니다. 그을린 목재와 리버스톤 게비온으로 감싸 강수량이 많고 습한 지역 기후에 대응했습니다.",
+    "en": "In Ecuador's Chocó forest, Minqa Atelier places a 53-square-meter timber refuge on a steep slope, wrapping it in charred timber and river-stone gabions to withstand the region's heavy rain and humidity."
+  },
+  "points": {
+    "kr": [
+      "그을린 목재 외피로 습한 기후에 대응",
+      "리버스톤 게비온과 지역산 티크로 구조적 조형언어 완성",
+      "바닥 레벨 변화로 좁은 실내를 구분하면서도 연결성 유지"
+    ],
+    "en": [
+      "Charred timber cladding protects the exterior in a humid climate",
+      "River-stone gabions and local teak form the structural language",
+      "Shifting floor levels divide the compact interior while keeping it connected"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "그을린 목재와 스톤 게비온을 조합한 기후 대응형 소재 전략은 소규모 공간·건축 프로젝트를 다루는 디자이너에게 좋은 레퍼런스가 됩니다.",
+    "en": "A good reference for climate-responsive material choices, especially the charred timber and stone gabion combination, when working on small-footprint spatial or architectural projects."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "소재·공간 리서치용 저장 추천",
+    "en": "Save for material and spatial research"
+  },
+  "comment": {
+    "kr": "작은 집 하나가 큰 제약을 풀어낸 사례입니다. 험한 지형과 많은 강수량이 구조가 땅에 닿는 방식부터, 습한 초코 기후로부터 건물을 보호하는 그을린 목재 외피까지 거의 모든 결정을 이끌었습니다.\n좁은 대지 조건에서 공간·건축 프로젝트를 진행하는 이들에게, 지역산 티크 프레임과 리버스톤 게비온, 그을린 외장을 겹겹이 쌓은 방식은 어딘가에서 스타일을 가져오는 대신 대지 조건에 직접 반응하는 소재 팔레트를 만드는 압축적인 사례연구가 됩니다.",
+    "en": "A small house that solves a big constraint. Difficult terrain and heavy rain shaped nearly every decision here, from how the structure touches the ground to the charred timber skin that protects it from the humid Chocó climate.\nFor anyone working on spatial or architectural projects with tight footprints, the way Minqa Atelier layers local materials, teak framing, river-stone gabions and charred cladding, offers a compact case study in building a material palette that responds directly to site conditions rather than importing a look from elsewhere."
+  },
+  "thumbLabel": "건축",
+  "thumbGradient": "g-olive",
+  "_todo": []
+}

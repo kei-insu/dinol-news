@@ -1,0 +1,57 @@
+{
+  "contentId": "20260824-design-004",
+  "date": "2026-08-24",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-08-19"
+  },
+  "url": "https://www.itsnicethat.com/articles/charlotte-rohde-oficia-mono-typography-graphic-design-project-190826",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 타이포그래피 · 그래픽",
+    "en": "Design · Typography · Graphic"
+  },
+  "title": {
+    "kr": "샬럿 로데, 하트 점 'i'로 새 서체를 완성하다",
+    "en": "Charlotte Rohde's new typeface has heart-dotted i's and a plan to overwrite problematic men"
+  },
+  "summary": {
+    "kr": "베를린을 기반으로 활동하는 타이포그래피 전문가이자 은퇴한 타이포그래피·서체 디자인 교수 샬럿 로데가 하트 모양 점을 가진 새 서체를 공개했습니다. 길 산스 울트라 블랙에서 영감을 받았습니다.",
+    "en": "Berlin-based typographer Charlotte Rohde, a retired professor of typography and type design, has released a new typeface with heart-dotted i's, inspired by Gill Sans Ultra Black."
+  },
+  "points": {
+    "kr": [
+      "표준 점 대신 작은 하트로 표시한 'i'가 특징",
+      "길 산스 울트라 블랙의 볼드한 구조에서 영감을 얻음",
+      "타이포그래피 교육 현장에서 오래 일한 뒤 독립적으로 진행한 개인 프로젝트"
+    ],
+    "en": [
+      "The typeface's i's are dotted with small hearts instead of standard dots",
+      "Drew inspiration from the bold structure of Gill Sans Ultra Black",
+      "Comes from a veteran typography educator now working independently"
+    ]
+  },
+  "positions": [
+    "typographer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "하트 점 i처럼 작지만 의도적인 디테일 하나가 서체의 개성을 만든다는 점이 인상적입니다. 전면적인 재설계가 아니라 하나의 과감한 변형에서 개성이 나올 수 있음을 보여줍니다.",
+    "en": "A small, playful detail like a heart-dotted i is a reminder that distinctive personality in a typeface can come from a single deliberate deviation, not a wholesale redesign."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "타이포그래피·레터링 작업 영감용으로 추천",
+    "en": "Good inspiration for typography and lettering work"
+  },
+  "comment": {
+    "kr": "이런 서체 제작기가 유용한 이유는 하나의 결정에 집중해서 보여주기 때문입니다. 로데는 길 산스 울트라 블랙 정신을 살린 볼드하고 단단한 레터폼 체계를 만든 다음, 점 대신 하트를 넣는 유희적인 변형 하나를 더해 서체 전체에 뚜렷한 개성을 부여했습니다.\n서체나 레터링 시스템을 설계하는 사람에게, 시그니처 디테일이 모든 곳에서 요란할 필요는 없다는 점을 상기시켜 줍니다. 일관되게, 적절한 자리에 배치된 변형 하나만으로도 서체의 정체성을 충분히 이끌어갈 수 있습니다.",
+    "en": "Type design stories like this are useful precisely because they zoom in on one decision. Rohde builds a bold, confident letterform system in the spirit of Gill Sans Ultra Black, then adds a single playful twist, hearts instead of dots, that gives the whole face a distinct personality.\nIt is a good reminder for anyone designing type or lettering systems that a signature detail does not need to be loud everywhere. One consistent, well-placed deviation can carry a typeface's identity on its own."
+  },
+  "thumbLabel": "타이포",
+  "thumbGradient": "g-plum",
+  "_todo": []
+}
