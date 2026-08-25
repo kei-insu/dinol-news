@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 26</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 26, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.figma.com/blog/how-to-design-agentic-tools-for-work/" target="_blank"
+       data-category="AI · 툴 · 방법론" data-category-en="AI · Tools · Methodology"
+       data-position="ux-designer|product-designer"
+       data-summary="Figma's design team breaks down the unique UX challenges of building agentic AI products, from establishing trust to giving users the right amount of control over autonomous actions." data-summary-kr="Figma 디자인팀이 에이전틱 AI 제품을 만들 때 마주치는 고유한 UX 과제를 정리했습니다. 신뢰 형성부터 자율 행동에 대한 사용자 통제권 부여까지, 실무에서 바로 참고할 방법론을 제시합니다."
+       data-points="Trust as the core design constraint for agentic tools|Giving users the right level of control over autonomy|Patterns for showing what the agent is doing and why" data-points-kr="신뢰를 에이전틱 툴 디자인의 핵심 제약으로 삼기|자율성에 대한 사용자 통제권 수준 설정|에이전트의 행동과 이유를 보여주는 패턴"
+       data-designer="A rare piece that treats agent UX as its own discipline, not just a chat UI dressed up." data-designer-kr="에이전트 UX를 단순 챗봇 UI의 변형이 아니라, 독자적인 디자인 영역으로 다루는 드문 글입니다."
+       data-impact-score="5"
+       data-recommend="Must-read for anyone designing AI product features" data-recommend-kr="AI 제품 기능을 설계하는 디자이너라면 필독"
+       data-comment="Most AI feature design guides still boil down to chat bubble layout. This one goes deeper, into how much autonomy to hand an agent, how to visualize its reasoning, and how to let users course correct without breaking trust.
+
+If you are building anything with agentic behavior into a product, this is one of the most concrete frameworks available right now. Worth bookmarking and revisiting per feature." data-comment-kr="'AI 기능 디자인' 가이드 대부분은 결국 챗봇 말풍선 배치로 귀결되곤 합니다. 이 글은 한 단계 더 들어가 에이전트에게 얼마만큼의 자율성을 줄지, 그 판단 과정을 어떻게 시각화할지, 신뢰를 깨지 않으면서 사용자가 궤도를 수정하게 하는 방법까지 다룹니다.
+
+제품에 에이전틱 동작을 넣고 있다면 지금 나와 있는 프레임워크 중 가장 구체적인 축에 속합니다. 북마크해두고 기능별로 다시 참고할 만합니다."
+       data-title-en="How to Design Agentic Tools for Work" data-title-kr="업무용 에이전틱 툴, 어떻게 디자인할 것인가">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">에이전트</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Figma · 2026. 08. 20</div>
+        <div class="card-title">업무용 에이전틱 툴, 어떻게 디자인할 것인가</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/08/24/valor-point72-back-general-intuition-at-6b-valuation-as-ai-startup-pushes-into-robotics/" target="_blank"
+       data-category="AI · 로봇 · 스타트업" data-category-en="AI · Robotics · Startups"
+       data-position="design-lead|product-designer"
+       data-summary="General Intuition, which builds foundation models that teach AI agents to understand and act in physical space and time, is raising at a $6B valuation as it expands its focus from gaming environments into robotics." data-summary-kr="AI 에이전트에게 물리적 공간과 시간을 이해시키는 파운데이션 모델을 만드는 제너럴 인튜이션이, 게임 환경 중심이던 사업 범위를 로봇공학으로 확장하며 약 6조원(60억 달러) 밸류에이션으로 투자를 유치하고 있습니다."
+       data-points="Foundation model teaches agents spatial and temporal reasoning|Pivot from gaming environments to physical robotics|Backed by Valor Ventures and Point72 Ventures" data-points-kr="파운데이션 모델이 에이전트에게 공간·시간 추론 능력을 학습시킴|게임 환경 중심에서 실제 로봇공학으로 사업 확장|Valor Ventures·Point72 Ventures 등이 투자"
+       data-designer="A reminder that the hard part of embodied AI isn't the robot hardware, it's teaching a model to understand space the way a body does." data-designer-kr="실체를 가진(embodied) AI에서 어려운 부분은 로봇 하드웨어가 아니라, 몸이 공간을 이해하는 방식을 모델에게 가르치는 일이라는 걸 보여주는 사례입니다."
+       data-impact-score="2"
+       data-recommend="Background reading for those tracking physical AI and robotics" data-recommend-kr="피지컬 AI·로봇공학 동향을 좇는다면 배경지식으로"
+       data-comment="The headline number is a funding round, but the underlying bet is more interesting: that the same kind of foundation model teaching AI to navigate a video game can be repurposed to teach a robot to navigate a warehouse.
+
+If that transfer actually works, it changes the calculus for robotics companies that have been building spatial reasoning from scratch. Worth watching where this model shows up next, gaming, robotics, or somewhere in between." data-comment-kr="헤드라인은 투자 유치 소식이지만, 그 밑에 깔린 베팅이 더 흥미롭습니다. 비디오 게임 속을 탐색하도록 AI를 훈련시키던 것과 같은 종류의 파운데이션 모델을, 로봇이 창고를 탐색하도록 훈련시키는 데 재활용할 수 있다는 것이죠.
+
+이 전이(transfer)가 실제로 통한다면, 처음부터 공간 추론 능력을 직접 구축해온 로봇공학 기업들의 계산법이 바뀝니다. 이 모델이 게임과 로봇공학 중 어느 쪽에서 다음 행보를 보일지 지켜볼 만합니다."
+       data-title-en="Valor, Point72 back General Intuition at $6B valuation as AI startup pushes into robotics" data-title-kr="제너럴 인튜이션, 로봇에 '공간 이해' 가르치는 AI로 6조원 밸류 투자유치">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">로봇AI</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 08. 24</div>
+        <div class="card-title">제너럴 인튜이션, 로봇에 '공간 이해' 가르치는 AI로 6조원 밸류 투자유치</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260825083618" target="_blank"
+       data-category="AI · 툴 · 생산성"
+       data-position="product-designer|design-lead"
+       data-summary="아마존 AWS의 AI 코딩 에이전트 '키로(Kiro)'에 오픈AI GPT-5.6 시리즈 전 모델이 탑재되어, 개발자가 최신 모델 계열을 코딩 워크플로우에서 바로 쓸 수 있게 됐습니다."
+       data-points="AWS 키로에 GPT-5.6 전 모델 탑재|모델 선택 폭 확대로 작업별 최적화 가능|AI 코딩 에이전트 시장 경쟁 심화"
+       data-designer="AI 코딩 에이전트가 특정 벤더 모델에 종속되지 않고 여러 프런티어 모델을 골라 쓰는 방향으로 가고 있습니다. 디자인 도구도 비슷하게 모델 중립적 워크플로우로 수렴할 가능성이 있습니다."
+       data-impact-score="3"
+       data-recommend="AI 개발 도구 스택을 살피는 실무자에게 참고"
+       data-comment="AWS가 자체 AI 코딩 에이전트 '키로'에 오픈AI의 최신 GPT-5.6 시리즈를 전면 탑재했다는 소식입니다. 특정 벤더의 모델에 묶이지 않고, 여러 프런티어 모델 중에서 작업에 맞는 것을 골라 쓰는 방향이 코딩 에이전트 시장의 흐름으로 자리잡고 있습니다.
+
+디자인 도구 생태계도 크게 다르지 않습니다. Figma나 어도비 같은 플랫폼들이 여러 AI 모델을 붙였다 뗐다 하며 실험하는 걸 보면, 앞으로는 어떤 AI를 쓰느냐보다 어떤 워크플로우에 AI를 얼마나 매끄럽게 끼워 넣느냐가 더 중요한 경쟁 포인트가 될 것 같습니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">코딩툴</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">지디넷코리아 · 2026. 08. 25</div>
+        <div class="card-title">오픈AI, AWS 코딩툴 '키로'에 GPT-5.6 얹었다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.etnews.com/20260825000388" target="_blank"
+       data-category="AI · 툴 · 에이전트"
+       data-position="ux-designer|service-designer"
+       data-summary="솔트룩스가 AI 서비스 플랫폼 '구버'에 대화만으로 나만의 AI 에이전트를 만들고 공유할 수 있는 'AI 버디' 기능을 추가했습니다."
+       data-points="대화형 인터페이스로 에이전트 제작|제작한 에이전트를 다른 사용자와 공유 가능|노코드 방식으로 진입장벽 낮춤"
+       data-designer="에이전트 제작 자체가 노코드 UI 디자인 문제가 되고 있습니다. 대화만으로 도구를 만드는 인터페이스가 늘어날수록, 그 대화 흐름을 설계하는 것 자체가 새로운 디자인 영역이 됩니다."
+       data-impact-score="3"
+       data-recommend="노코드 AI 에이전트 툴에 관심 있다면 눈여겨볼 것"
+       data-comment="국내에서도 대화만으로 나만의 AI 에이전트를 만들고 공유하는 노코드형 서비스가 늘고 있습니다. 솔트룩스의 '구버'가 추가한 'AI 버디' 기능도 같은 흐름입니다.
+
+이런 도구들이 늘어날수록 에이전트를 만드는 대화 그 자체를 얼마나 직관적으로 설계하느냐가 서비스 완성도를 가릅니다. 사용자가 원하는 걸 자연어로 잘 표현하도록 유도하는 온보딩과 프롬프트 가이드 UX가 다음 경쟁 지점이 될 것으로 보입니다.">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">AI버디</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">전자신문 · 2026. 08. 25</div>
+        <div class="card-title">솔트룩스 '구버', 맞춤형 AI 에이전트 생성·공유 지원</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.designboom.com/architecture/wittman-estes-corbusier-minimum-cell-cabin-blakely-island-washington/" target="_blank"
+       data-category="디자인 · 건축 · 공간" data-category-en="Design · Architecture · Space"
+       data-position="architect|space-designer"
+       data-summary="Architecture studio Wittman Estes reinterprets Le Corbusier's 'minimum cell' concept in a compact, elevated cabin on Blakely Island, Washington, built around a tight footprint and framed forest views." data-summary-kr="건축사무소 위트먼 에스테스가 워싱턴주 블레이클리 섬에 지은 소형 캐빈을 통해 르 코르뷔지에의 '미니멈 셀' 개념을 다시 풀어냈습니다. 좁은 면적 안에서 숲 전망을 프레이밍하는 데 집중했습니다."
+       data-points="Reinterpretation of Corbusier's minimum-cell footprint|Elevated structure minimizes site disturbance|Framed views substitute for square footage" data-points-kr="코르뷔지에의 미니멈 셀 면적 개념 재해석|고상식 구조로 대지 훼손 최소화|평수 대신 프레이밍된 조망으로 공간감 확보"
+       data-designer="A useful case study for anyone designing small spaces, on treating constraint as the design driver rather than the obstacle." data-designer-kr="좁은 공간을 다루는 이들에게 좋은 사례입니다. 제약을 걸림돌이 아니라 디자인을 이끄는 동력으로 삼는 방식을 보여줍니다."
+       data-impact-score="3"
+       data-recommend="Save for small-space and material studies" data-recommend-kr="소형 공간·물성 스터디 자료로 저장 추천"
+       data-comment="Small cabins are a crowded genre, so what stands out here is the direct lineage back to Le Corbusier's minimum-cell thinking, applied literally to a tight island footprint instead of treated as a design history footnote.
+
+The framed-view strategy, using the smallness of the structure to sharpen what you see outside it, is a transferable idea well beyond architecture. Worth studying for any project where less physical space is a constraint rather than a choice." data-comment-kr="작은 캐빈은 이미 포화 상태인 장르지만, 이 프로젝트는 르 코르뷔지에의 미니멈 셀 개념을 디자인사의 각주로만 두지 않고 실제 좁은 섬 부지에 그대로 적용했다는 점이 눈에 띕니다.
+
+구조를 작게 만들어 바깥 풍경을 더 선명하게 프레이밍하는 전략은 건축을 넘어 다른 분야에도 옮겨 쓸 만한 아이디어입니다. 물리적 공간이 선택이 아니라 제약으로 주어지는 모든 프로젝트에서 참고할 가치가 있습니다."
+       data-title-en="Wittman Estes revisits Le Corbusier's 'minimum cell' with floating Pacific Northwest cabin" data-title-kr="위트먼 에스테스, 르 코르뷔지에의 '미니멈 셀'을 태평양 연안 캐빈으로 재해석하다">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">미니멀셀</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">designboom · 2026. 08. 24</div>
+        <div class="card-title">위트먼 에스테스, 르 코르뷔지에의 '미니멈 셀'을 태평양 연안 캐빈으로 재해석하다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.hankyung.com/article/2026082505871" target="_blank"
+       data-category="디자인 · 패션 · 브랜딩"
+       data-position="fashion-designer|brand-designer"
+       data-summary="패션 브랜드 구호가 더 로우 출신 디자이너 푸치와 손잡고, 이탈리아식 건축적 절제미를 담은 2026 가을 컬렉션을 선보입니다."
+       data-points="더 로우 출신 디자이너와의 협업|이탈리아 건축에서 온 절제된 실루엣|미니멀 무드를 강조한 가을 라인"
+       data-designer="협업 상대의 이력(더 로우)을 브랜드 신뢰도로 그대로 가져오는 방식은, 국내 브랜드가 해외 아카이브를 자산화하는 전형적인 패턴입니다. 컬렉션 자체보다 누구와 협업했는가가 스토리텔링의 절반을 차지합니다."
+       data-impact-score="3"
+       data-recommend="브랜드 협업 기획을 참고하는 디자이너에게 추천"
+       data-comment="구호가 미니멀리즘의 대명사 격인 더 로우 출신 디자이너와 협업했다는 것 자체가 이미 메시지입니다. 절제된 이탈리아적 미감이라는 컨셉을 앞세우며 브랜드의 방향성을 명확히 하려는 시도로 보입니다.
+
+해외 유명 스튜디오·디자이너 출신 이력을 협업 크레딧으로 앞세우는 건 국내 브랜드가 자주 쓰는 신뢰 구축 전략입니다. 컬렉션 자체의 완성도만큼이나, 이 서사를 어떻게 풀어내는지도 지켜볼 만합니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">패션협업</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">한국경제 · 2026. 08. 25</div>
+        <div class="card-title">구호, 더 로우 출신 푸치와 협업…伊 절제미 담긴 가을 룩 온다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.venturesquare.net/1103737" target="_blank"
+       data-category="디자인 · 타이포그래피 · 브랜딩"
+       data-position="typographer|brand-designer"
+       data-summary="폰트 기업 산돌이 젬스톤이앤엠과 손잡고 아티스트 손글씨·K-콘텐츠 IP를 활용한 폰트를 공동 개발하기로 했습니다. 폰트를 디자인 자산을 넘어 팬덤과 브랜드를 잇는 IP 사업으로 확장하는 행보입니다."
+       data-points="아티스트 손글씨·콘텐츠 IP 기반 폰트 공동 개발|폰트를 팬덤 비즈니스로 연결하는 전략|타이포그래피가 브랜드 자산이 되는 흐름"
+       data-designer="서체가 순수한 조형 요소를 넘어 누구의 손글씨인가라는 스토리 자체로 팔리는 시대입니다. 타이포그래피 라이선싱이 브랜드 IP 전략의 한 축이 되고 있다는 걸 보여주는 사례입니다."
+       data-impact-score="3"
+       data-recommend="폰트·타이포그래피 비즈니스 모델에 관심 있다면 참고"
+       data-comment="산돌이 아티스트의 손글씨와 K-콘텐츠 IP를 폰트로 만드는 사업에 나섰습니다. 서체 하나를 파는 게 아니라, 그 서체에 담긴 이야기와 팬덤까지 함께 파는 구조입니다.
+
+타이포그래피가 브랜드의 목소리를 만든다는 이야기는 많이 들어봤지만, 이번 사례는 한 발 더 나아가 서체 자체를 굿즈나 라이선스 상품처럼 다룹니다. 폰트 라이브러리를 IP 포트폴리오로 보는 시각이 국내에서도 자리잡는 중입니다.">
+      <div class="thumb g-olive">
+        <div class="noise"></div>
+        <span class="thumb-label">폰트IP</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">벤처스퀘어 · 2026. 08. 05</div>
+        <div class="card-title">산돌, K-콘텐츠 IP로 폰트 사업 확장…팬덤 플랫폼 시장 공략한다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.smashingmagazine.com/2026/07/bull-and-bear-case-digital-design-age-ai/" target="_blank"
+       data-category="디자인 · 이론 · 산업전망" data-category-en="Design · Theory · Industry Outlook"
+       data-position="design-lead|design-manager"
+       data-summary="Designer Andy Budd lays out both the optimistic and pessimistic scenarios for the design profession as AI lowers the barrier to acting on ideas, from designers needing less permission to a hollowing-out of entry-level craft work." data-summary-kr="디자이너 앤디 버드가 AI로 인해 아이디어를 실행에 옮기는 문턱이 낮아지면서 디자인 업계에 펼쳐질 낙관·비관 시나리오를 각각 정리했습니다. 디자이너가 덜 허락받고 더 많이 만들 수 있게 되는 것부터, 주니어급 실무가 공동화될 위험까지 다룹니다."
+       data-points="Bull case: designers need less permission to build|Bear case: entry-level craft work gets hollowed out|Frames AI as a shift in leverage, not a replacement event" data-points-kr="낙관 시나리오: 디자이너가 덜 허락받고 더 많이 실행|비관 시나리오: 주니어급 실무의 공동화 위험|AI를 대체가 아닌 레버리지의 이동으로 프레이밍"
+       data-designer="Rare for taking both scenarios seriously instead of picking a side, which makes it more useful for actually planning a team's future." data-designer-kr="한쪽 편을 들지 않고 두 시나리오를 똑같이 진지하게 다룬다는 점이 드뭅니다. 그래서 팀의 미래를 실제로 계획하는 데 더 쓸모가 있습니다."
+       data-impact-score="4"
+       data-recommend="Worth reading before your next team planning conversation" data-recommend-kr="다음 팀 계획 논의 전에 읽어볼 가치가 있음"
+       data-comment="Most AI-and-design essays pick a lane, either cheerleading or doom. This one is useful precisely because it refuses to. The bull case (designers acting on ideas without waiting for a dev team) and the bear case (junior roles disappearing before anyone builds a path to senior) are both laid out with equal seriousness.
+
+If you manage a design team, the bear case section alone is worth the read: it names a specific structural risk that most AI-optimism pieces skip past entirely." data-comment-kr="AI와 디자인을 다루는 글 대부분은 한쪽 차선을 고릅니다. 응원 아니면 비관, 둘 중 하나죠. 이 글이 쓸모 있는 이유는 정확히 그걸 거부해서입니다. 낙관 시나리오(디자이너가 개발팀을 기다리지 않고 아이디어를 바로 실행하는 것)와 비관 시나리오(시니어로 성장할 경로가 마련되기도 전에 주니어 역할이 사라지는 것)를 똑같은 무게로 다룹니다.
+
+디자인팀을 관리하는 입장이라면 비관 시나리오 부분만으로도 읽을 가치가 있습니다. 신입 실무가 사라지면 시니어를 어떻게 키울 것인가라는 구조적 위험을 구체적으로 짚는데, AI 낙관론 위주의 글들은 대개 이 부분을 건너뜁니다."
+       data-title-en="The Bull And Bear Case For Digital Design In The Age Of AI" data-title-kr="AI 시대의 디지털 디자인, 낙관론과 비관론 사이">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">낙관비관</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Smashing Magazine · 2026. 07. 29</div>
+        <div class="card-title">AI 시대의 디지털 디자인, 낙관론과 비관론 사이</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
