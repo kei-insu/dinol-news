@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 25</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 25, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.figma.com/blog/how-to-move-fast-toward-the-right-thing/" target="_blank"
+       data-category="AI · 디자인프로세스" data-category-en="AI · Design Process"
+       data-position="product-designer|design-lead"
+       data-summary="Figma's Jake Albaugh argues that AI has removed the barrier to shipping software, but the teams that actually win are the ones who slow down just enough to build with judgment instead of just speed." data-summary-kr="피그마의 제이크 알보프는 AI로 소프트웨어를 만드는 진입장벽이 사라졌지만, 결국 이기는 팀은 속도보다 판단력을 앞세워 신중하게 만드는 팀이라고 짚는다."
+       data-points="Anyone can now ship working software with AI, removing the old gatekeeping of who gets to build|Speed without consideration creates tech debt just as fast as it creates features|Front-loaded clarity and reusable context layers like design systems keep speed from becoming chaos" data-points-kr="AI 덕에 코딩 경험이 없어도 작동하는 소프트웨어를 만들 수 있는 시대가 됐다|고민 없는 속도는 기능만큼이나 빠르게 기술 부채를 만든다|디자인 시스템 같은 재사용 가능한 컨텍스트 레이어와 초기 단계의 명확한 방향 설정이 속도를 혼돈으로 만들지 않는 열쇠"
+       data-designer="Design systems and clear early-stage documentation stop being 'nice to have' once anyone on the team can generate working UI with AI. This is a direct argument for investing in shared context before scaling AI-assisted production." data-designer-kr="팀 누구나 AI로 작동하는 UI를 뽑아낼 수 있게 된 지금, 디자인 시스템과 초기 문서화는 선택이 아니라 필수가 된다. AI 기반 제작을 확장하기 전에 공유된 컨텍스트에 먼저 투자해야 한다는 주장이다."
+       data-impact-score="5"
+       data-recommend="If your team has hit tech debt or consistency issues after adopting AI coding or design tools, this piece's 'build the context layer first' principle is worth applying directly to your process." data-recommend-kr="AI 코딩·디자인 툴 도입 후 조직 내 기술 부채나 일관성 문제를 겪고 있다면, 이 글에서 제안하는 '컨텍스트 레이어 우선 구축' 원칙을 팀 프로세스에 바로 적용해볼 만하다."
+       data-comment="Written by a Figma developer advocate, the piece stays grounded rather than abstract, reframing design systems as a mechanism for storing judgment rather than just components. It's a rare case among AI-era 'speed vs. care' pieces that actually offers a method, not just a warning.
+What stands out is how it answers 'what's still hard when anyone can build' by pointing to upfront clarity and reusable context, effectively turning the argument into a checklist teams can apply directly." data-comment-kr="피그마 개발자 애드보킷이 쓴 글답게 관념적인 이야기로 흐르지 않고, 디자인 시스템을 '판단을 대신 저장해두는 장치'로 재정의하는 실용적인 프레임을 제시한다. AI 시대 제품 조직이 속도와 신중함 사이에서 겪는 딜레마를 다룬 글 중 방법론까지 제시하는 흔치 않은 사례다.
+특히 '누구나 만들 수 있는 시대에 무엇이 여전히 어려운가'라는 질문의 답을 명확한 초기 방향 설정과 재사용 가능한 컨텍스트에서 찾는다는 점이, 실무에 바로 옮겨볼 수 있는 체크리스트로 기능한다."
+       data-title-en="How To Move Fast Toward the Right Thing" data-title-kr="속도보다 방향, AI 시대 제대로 빠르게 가는 법">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">AI속도</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Figma Blog · 2026. 08. 13</div>
+        <div class="card-title">속도보다 방향, AI 시대 제대로 빠르게 가는 법</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.etnews.com/20260812000202" target="_blank"
+       data-category="AI · 이커머스"
+       data-position="service-designer|ux-designer"
+       data-summary="가격비교 플랫폼 다나와가 최근 1년간 챗GPT·제미나이 등 생성형 AI를 통한 방문자가 119% 늘었다고 밝히며, 클로드와 연동한 국내 최초 AI 쇼핑 MCP를 도입했다."
+       data-points="제미나이발 유입이 910%로 최다 증가, 챗GPT는 전체 AI 유입의 62.1% 차지|모바일 유입 증가율(127%)이 PC(115%)보다 높음|클로드와 연동한 AI 쇼핑 MCP(Model Context Protocol) 도입으로 대화형 쇼핑 대응"
+       data-designer="검색엔진최적화 중심이던 커머스 UX가 AI 에이전트에 최적화된 정보 구조로 옮겨가는 신호로, 서비스·UX 디자이너는 상품 데이터 구조와 콘텐츠 설계를 'AI가 읽기 좋은' 방식으로 재점검할 필요가 있다."
+       data-impact-score="3"
+       data-recommend="이커머스나 콘텐츠 플랫폼을 운영한다면 애널리틱스에서 AI 리퍼럴 트래픽을 별도로 추적하고, 상품 상세 페이지 구조를 대화형 AI가 파싱하기 쉽게 정비하는 것부터 시작해볼 만하다."
+       data-comment="수치 자체보다 다나와가 이 흐름에 대응해 MCP를 선제적으로 붙였다는 점이 눈에 띈다. AI 검색 유입이 아직 전체 트래픽에서 차지하는 비중은 작지만 증가 속도가 가파른 만큼, 서비스 디자인 관점에서 미리 대비하는 사례로 참고할 만하다.
+다만 이번 발표는 다나와의 자체 애널리틱스 기반이라 업계 전반에 그대로 적용하기는 조심스럽다. 그래도 AI 에이전트발 트래픽이라는 새로운 채널이 실제 수치로 확인됐다는 점에서 커머스·서비스 디자이너들이 눈여겨볼 신호다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">AI쇼핑</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">전자신문 · 2026. 08. 12</div>
+        <div class="card-title">다나와, 생성형 AI 유입 1년새 119% 증가</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://zdnet.co.kr/view/?no=20260821121648" target="_blank"
+       data-category="AI · 콘텐츠"
+       data-position="motion-designer|video-designer"
+       data-summary="문체부와 콘진원이 주최한 '2026 뉴콘텐츠아카데미 쇼케이스'에서 AI와 XR을 결합한 실험적 융복합 콘텐츠 21개 팀의 결과물이 공개됐다."
+       data-points="이머시브 미디어아트부터 AI 애니메이션, XR 다큐멘터리까지 7개 분야 작품 전시|버추얼 프로덕션과 인터랙션 디자인 등 실무형 신기술 커리큘럼 성과물|가짜뉴스 체험형 XR 다큐 '토끼굴 대탐험' 등 사회적 메시지를 담은 프로젝트 다수"
+       data-designer="AI 생성 도구를 완성품이 아니라 프로토타이핑 속도를 높이는 협업 파트너로 쓴 사례가 많아, 모션·공간·인터랙션 디자이너들이 참고할 실험적 워크플로우가 풍부하다."
+       data-impact-score="3"
+       data-recommend="XR·이머시브 콘텐츠나 AI 애니메이션 파이프라인을 검토 중인 팀이라면 참가팀 포트폴리오를 살펴보며 실제 제작 워크플로우를 벤치마킹해볼 만하다."
+       data-comment="정부 지원 인재양성 프로그램의 결과물 전시라 상업적 완성도보다는 실험성이 두드러진다. 그만큼 AI를 활용한 새로운 표현 방식을 부담 없이 시도해본 사례가 많아, 상업 프로젝트에 바로 적용하긴 어려워도 아이디어 소스로는 유용하다.
+특히 인터랙션 디자인과 가상 시각화 카테고리는 최근 국내에서 보기 드문 실험적 시도가 많았다는 평가다. 콘진원이 매년 유사 프로그램을 운영하는 만큼, 다음 기수 지원팀들의 방향성을 가늠하는 자료로도 참고할 수 있다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">AI콘텐츠</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">ZDNet Korea · 2026. 08. 21</div>
+        <div class="card-title">콘진원 'NCA 쇼케이스'…AI·XR 융복합 콘텐츠 눈길</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.figma.com/blog/sightlines-issue-no2/" target="_blank"
+       data-category="AI · 프로덕트" data-category-en="AI · Product"
+       data-position="product-designer|ux-designer"
+       data-summary="Figma's Sightlines newsletter gathers perspectives from leaders at Cisco, OpenAI, Airbnb and others on the core design challenge of agentic products: building something powerful enough to be a real partner while keeping trust and security at the center." data-summary-kr="피그마의 사이트라인 뉴스레터가 시스코, 오픈AI, 에어비앤비 등 리더들의 시각을 모아, 에이전트형 제품을 만들 때 마주하는 핵심 디자인 과제인 신뢰와 보안을 지키면서도 진짜 파트너처럼 느껴지는 도구를 만드는 법을 다룬다."
+       data-points="Agentic products raise new UX questions around trust, permission, and how much autonomy to hand over|Leaders across companies converge on similar tensions between capability and control|The piece frames agent design as a leadership-level product decision, not just an interaction pattern" data-points-kr="에이전트형 제품은 신뢰, 권한 부여, 자율성의 정도를 둘러싼 새로운 UX 질문을 던진다|여러 기업 리더들이 '역량과 통제' 사이의 유사한 긴장을 공통적으로 짚는다|에이전트 설계를 단순한 인터랙션 패턴이 아니라 리더십 차원의 제품 결정으로 프레이밍한다"
+       data-designer="Product and UX designers working on agentic experiences can apply the capability-versus-control framing laid out here to their own projects and set early design principles from it." data-designer-kr="에이전트 UX를 설계하는 프로덕트·UX 디자이너라면, 이 글이 정리한 '역량 대 통제'의 균형점 프레임을 스스로의 프로젝트에 대입해 초기 설계 원칙을 세우는 데 활용할 수 있다."
+       data-impact-score="4"
+       data-recommend="If you're in the early stages of adding AI agent features to your product, the leadership principles gathered here make solid discussion material for a team workshop." data-recommend-kr="AI 에이전트 기능을 제품에 붙이는 초기 단계라면, 이 글에서 소개하는 리더들의 원칙들을 팀 워크숍의 토론 자료로 활용해볼 만하다."
+       data-comment="As a newsletter format gathering interviews from multiple leaders, its strength is breadth of perspective rather than a single clear methodology. Since agentic products still lack standard UX patterns, the fact that different companies are wrestling with similar tensions is itself a useful reference point for setting direction.
+It doesn't offer concrete UI patterns or execution guidelines, though, so applying it in practice will take further internal discussion. Best suited as a 'problem framing' resource for teams just starting to scope an agent product." data-comment-kr="여러 리더의 인터뷰를 모은 뉴스레터 형식이라 하나의 명확한 방법론보다는 시각의 다양성이 강점이다. 에이전트형 제품이 아직 업계 표준 패턴이 없는 만큼, 서로 다른 회사가 비슷한 고민을 하고 있다는 사실 자체가 설계 방향을 잡는 데 참고가 된다.
+다만 구체적인 UI 패턴이나 실행 가이드라인까지 제공하지는 않아, 실무 적용을 위해서는 팀 내 추가 논의가 필요하다. 에이전트 제품을 처음 기획하는 팀의 '문제 정의' 단계 자료로 적합하다."
+       data-title-en="Sightlines Issue No. 2: What Leaders Need to Know About Building Agents" data-title-kr="사이트라인 2호: 에이전트 제품을 만들 때 리더가 알아야 할 것">
+      <div class="thumb g-indigo">
+        <div class="noise"></div>
+        <span class="thumb-label">에이전트</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Figma Blog · 2026. 08. 20</div>
+        <div class="card-title">사이트라인 2호: 에이전트 제품을 만들 때 리더가 알아야 할 것</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://bpando.org/2026/08/20/studio-blackburns-new-identity-for-folding-bike-icon-brompton-cements-the-brands-place-in-british-engineering-heritage/" target="_blank"
+       data-category="디자인 · 브랜딩" data-category-en="Design · Branding"
+       data-position="brand-designer|graphic-designer"
+       data-summary="Studio Blackburn gave British folding bike icon Brompton a new brand identity that leans into its engineering heritage, positioning the 50-year-old brand for global expansion beyond its cult UK following." data-summary-kr="스튜디오 블랙번이 영국의 상징적 폴딩 자전거 브랜드 브롬튼에 새로운 브랜드 아이덴티티를 부여하며, 영국식 엔지니어링 유산을 강조하는 방향으로 글로벌 확장을 준비했다."
+       data-points="Wordmark and system rebuilt around precision engineering rather than lifestyle branding|New identity aims to carry Brompton's British heritage into international markets|Typography and graphic system designed to scale from product packaging to retail environments" data-points-kr="라이프스타일 브랜딩 대신 정밀 엔지니어링을 중심에 둔 워드마크와 시스템 재구축|영국적 헤리티지를 해외 시장으로 확장 가능한 형태로 전환|패키지부터 리테일 공간까지 확장 가능한 타이포그래피·그래픽 시스템 설계"
+       data-designer="A 50-year-old product brand translates heritage into engineering precision rather than retro decoration, giving brand and graphic designers a practical rebranding approach to borrow." data-designer-kr="50년 된 제품 브랜드가 '헤리티지'를 복고풍 장식이 아니라 엔지니어링 정밀성이라는 브랜드 본질로 번역해낸 사례로, 브랜드·그래픽 디자이너에게 실용적인 리브랜딩 접근법을 제공한다."
+       data-impact-score="4"
+       data-recommend="When rebranding a manufacturing-rooted or heritage brand, this approach of translating a brand's functional essence (here, engineering) into visual language, rather than leaning on decorative nostalgia, is worth referencing." data-recommend-kr="제조업 기반 브랜드나 헤리티지가 있는 브랜드를 리뉴얼할 때, 장식적 노스탤지어 대신 브랜드의 기능적 본질(이 경우 엔지니어링)을 시각 언어로 치환하는 접근법을 참고할 만하다."
+       data-comment="Published with BP&amp;O's signature detailed visual breakdown, the review is useful for tracing the logic of the whole system rather than just a logo swap. Brands with cult followings like Brompton usually face backlash on rebrands, so it's notable that this refresh chose to reaffirm the brand's essence rather than force a radical change.
+As demand grows domestically for rebranding heritage manufacturing brands, this approach, gaining scalability without radically altering long-held brand equity, is a useful reference point." data-comment-kr="BP&amp;O 특유의 상세한 비주얼 브레이크다운과 함께 실린 리뷰로, 로고 하나의 변화보다 시스템 전체의 논리를 짚는다는 점이 유용하다. 브롬튼처럼 팬덤이 강한 브랜드는 리브랜딩 시 기존 팬의 반발이 크기 마련인데, 이번 개편은 급진적 변화 대신 브랜드 본질을 재확인하는 방향을 택했다는 점이 눈에 띈다.
+국내에서도 헤리티지 제조업 브랜드의 리브랜딩 수요가 늘고 있는 만큼, 오래된 브랜드 자산을 급진적으로 바꾸지 않으면서도 확장성을 확보하는 이번 접근이 참고가 될 만하다."
+       data-title-en="New Branding for Brompton by Studio Blackburn" data-title-kr="브롬튼, 스튜디오 블랙번과 새 브랜드 아이덴티티 공개">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">브롬튼</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">BP&amp;O · 2026. 08. 20</div>
+        <div class="card-title">브롬튼, 스튜디오 블랙번과 새 브랜드 아이덴티티 공개</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itdaily.kr/news/articleView.html?idxno=241135" target="_blank"
+       data-category="디자인 · 제품"
+       data-position="industrial-designer|product-designer"
+       data-summary="삼성전자와 LG전자가 미국 산업디자이너협회(IDSA) 주관 'IDEA 2026'에서 각각 45개, 17개 상을 받으며 레드닷·iF와 함께 세계 3대 디자인상을 모두 휩쓸었다."
+       data-points="삼성전자는 접근성 디자인으로 올해 신설된 임팩트상 수상, 가전 사용 편의성이 핵심 평가 포인트|LG전자는 클로이드·시그니처 올레드 W 등 6개 제품이 IDEA·레드닷·iF 3관왕 달성|양사 모두 AI와 지속가능성을 통합한 제품 경험을 수상 핵심 근거로 제시"
+       data-designer="3대 디자인 어워드를 동시에 석권한 제품들의 공통 축이 '접근성'과 'AI 경험의 자연스러운 통합'이라는 점은, 산업디자인 심사 기준이 조형미에서 사용자 포용성으로 옮겨가고 있음을 보여준다."
+       data-impact-score="3"
+       data-recommend="가전·산업디자인 포트폴리오를 준비 중이라면 이번 수상작들의 심사평을 참고해 '접근성'을 조형 언어에 어떻게 녹였는지 구체적 사례로 분석해볼 만하다."
+       data-comment="단순 수상 소식이지만, 국내 대기업이 국제 3대 디자인상을 동시에 석권한 사례가 매년 반복되면서 심사 기준의 변화 흐름을 읽는 참고 자료로서의 가치가 있다. 특히 삼성의 임팩트상은 올해 신설된 부문으로, 접근성 디자인이 주류 평가축에 편입되고 있다는 신호로 볼 수 있다.
+LG전자의 3관왕 제품들처럼 하나의 제품 아이덴티티를 여러 어워드에서 반복 수상하는 전략도 눈여겨볼 만하다. 이는 단발성 컨셉이 아니라 브랜드 전체의 디자인 언어로 완성도를 쌓아온 결과로 읽힌다.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">디자인상</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">아이티데일리 · 2026. 08. 21</div>
+        <div class="card-title">삼성·LG전자, 국제 디자인상 휩쓸어…가전·TV·AI 제품 두각</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.hankyung.com/article/2026081903381" target="_blank"
+       data-category="디자인 · 전시·행사"
+       data-position="space-designer|art-director"
+       data-summary="9월 초 코엑스에서 나란히 열리는 키아프 서울과 프리즈 서울이 단순 미술품 판매를 넘어 거장 다큐멘터리 상영, 클래식 공연, '도심 보물찾기' 등 다채로운 부대 프로그램으로 저변을 넓히며 전 세계 수백여 화랑을 불러모은다."
+       data-points="키아프·프리즈 서울, 9월 초 코엑스에서 동시 개최|다큐멘터리 상영·클래식 공연·도심 보물찾기 등 미술품 판매를 넘어선 부대 프로그램 다수|아트페어 전후로 국내외 작가들의 대형 전시가 줄줄이 이어지는 '미술 시즌' 형성"
+       data-designer="아트페어가 부스 판매 중심에서 다큐·공연·도심 연계 프로그램까지 아우르는 종합 문화 이벤트로 확장되는 흐름은, 전시·공간 디자이너에게 단일 행사를 여러 채널의 콘텐츠로 확장하는 기획 사례로 참고할 만하다."
+       data-impact-score="2"
+       data-recommend="9월 초 코엑스 일대 아트페어·연계 전시를 방문할 계획이거나, 하나의 행사를 다큐·공연 등 여러 형식의 콘텐츠로 확장하는 기획 사례를 참고하고 싶다면 이 기사에 소개된 부대 프로그램 구성을 살펴볼 만하다."
+       data-comment="아트페어 소식 자체는 매년 반복되는 정례 뉴스에 가깝지만, 이 기사는 미술품 판매라는 단일 기능을 넘어 다큐멘터리·클래식 공연·도심 보물찾기처럼 다양한 형식의 콘텐츠로 확장되는 최근 아트페어의 기획 방향을 짚는다는 점이 눈에 띈다. 하나의 행사를 여러 접점으로 쪼개 저변을 넓히는 방식은 전시·브랜드 기획자에게도 참고할 만한 틀이다.
+다만 이 기사는 개막 2주 전 시점의 개요성 보도라, 실제 프로그램의 구체적 연출이나 공간 구성은 9월 개막 이후에나 확인할 수 있다. 코엑스 실내 부스를 넘어 도심 전역으로 확장되는 연계 프로그램 방식은, 팝업이나 지역 연계 행사를 기획하는 공간 디자이너에게 특히 참고할 지점이다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">아트페어</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">한국경제 · 2026. 08. 19</div>
+        <div class="card-title">그림 안 사도 즐거워…전 세계 화랑 수백곳 모인다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/features/gail-bichler-the-new-york-times-magazine-redesign-publication-spotlight-080426" target="_blank"
+       data-category="디자인 · 편집" data-category-en="Design · Editorial"
+       data-position="editorial-designer|art-director"
+       data-summary="Elizabeth Goodspeed talks to New York Times Magazine creative director Gail Bichler about the publication's first major redesign in nearly a decade, and how a flexible system now has to carry one story across print, web, audio and video." data-summary-kr="엘리자베스 굿스피드가 뉴욕타임스 매거진 크리에이티브 디렉터 게일 비클러와 나눈 인터뷰. 거의 10년 만에 이뤄진 이번 리디자인은, 하나의 스토리가 지면·웹·오디오·비디오를 넘나드는 유연한 시스템을 어떻게 구축했는지를 다룬다."
+       data-points="First major redesign of NYT Magazine in nearly a decade, built to flex across formats|A single story now moves across print, web, audio and video without one format being the default|Redesigning a publication with deep institutional memory while still treating it as something in flux" data-points-kr="거의 10년 만에 이뤄진 뉴욕타임스 매거진 첫 대규모 리디자인, 여러 포맷에 대응하도록 설계|하나의 스토리가 특정 포맷을 기본값으로 두지 않고 지면·웹·오디오·비디오를 넘나듦|오랜 역사를 가진 매체를 존중하면서도 계속 변화하는 상태로 다루는 리디자인 접근"
+       data-designer="The interview frames a magazine redesign not as a one-off visual refresh but as building a system flexible enough to hold a single story across four different formats, a useful model for any editorial team producing across print and digital simultaneously." data-designer-kr="이 인터뷰는 매거진 리디자인을 일회성 비주얼 개편이 아니라, 하나의 스토리를 네 가지 포맷에 걸쳐 담아낼 수 있는 유연한 시스템 구축으로 프레이밍한다. 지면과 디지털을 동시에 운영하는 편집 팀이라면 참고할 만한 모델이다."
+       data-impact-score="4"
+       data-recommend="If your team publishes across print and digital and struggles to keep a consistent voice, this interview's approach to building one flexible system rather than separate treatments per channel is worth studying." data-recommend-kr="지면과 디지털을 동시에 운영하며 톤을 통일하는 데 어려움을 겪고 있다면, 채널별로 따로 만들지 않고 하나의 유연한 시스템을 구축하는 이 인터뷰의 접근을 참고할 만하다."
+       data-comment="It's Nice That's interview format lets Bichler speak candidly about the tension between honoring a publication's institutional memory and treating its design as something still in flux, a balance most long-running editorial brands wrestle with. The framing of 'what makes something feel like magazine journalism, even when it isn't actually printed in a magazine' is the piece's sharpest idea.
+This piece is a few months old relative to this briefing's collection window, but its systems-thinking approach to cross-format editorial design remains directly useful reference material for any team maintaining a publication across print, web and other formats today." data-comment-kr="잇츠나이스댓 특유의 인터뷰 형식 덕분에, 오랜 역사를 가진 매체의 유산을 존중하면서도 디자인을 계속 변화하는 상태로 다뤄야 하는 긴장을 비클러가 솔직하게 풀어낸다. '실제로 잡지에 인쇄되지 않아도 매거진 저널리즘처럼 느껴지게 만드는 것은 무엇인가'라는 질문이 이 글에서 가장 예리한 지점이다.
+이 기사는 이번 브리핑 수집 기간 기준으로는 다소 시점이 지난 콘텐츠지만(2026년 4월 발행), 지면·웹 등 여러 포맷을 넘나드는 편집 디자인을 시스템 사고로 접근하는 방식만큼은 지금도 유효한 참고 자료다."
+       data-title-en="A new leaf: an exclusive look inside The New York Times Magazine redesign" data-title-kr="게일 비클러가 말하는 뉴욕타임스 매거진, 10년 만의 재탄생">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">매거진</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 04. 08</div>
+        <div class="card-title">게일 비클러가 말하는 뉴욕타임스 매거진, 10년 만의 재탄생</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
