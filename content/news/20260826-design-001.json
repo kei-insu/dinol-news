@@ -1,0 +1,57 @@
+{
+  "contentId": "20260826-design-001",
+  "date": "2026-08-26",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "designboom",
+    "publishedAt": "2026-08-24"
+  },
+  "url": "https://www.designboom.com/architecture/wittman-estes-corbusier-minimum-cell-cabin-blakely-island-washington/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 건축 · 공간",
+    "en": "Design · Architecture · Space"
+  },
+  "title": {
+    "kr": "위트먼 에스테스, 르 코르뷔지에의 '미니멈 셀'을 태평양 연안 캐빈으로 재해석하다",
+    "en": "Wittman Estes revisits Le Corbusier's 'minimum cell' with floating Pacific Northwest cabin"
+  },
+  "summary": {
+    "kr": "건축사무소 위트먼 에스테스가 워싱턴주 블레이클리 섬에 지은 소형 캐빈을 통해 르 코르뷔지에의 '미니멈 셀' 개념을 다시 풀어냈습니다. 좁은 면적 안에서 숲 전망을 프레이밍하는 데 집중했습니다.",
+    "en": "Architecture studio Wittman Estes reinterprets Le Corbusier's 'minimum cell' concept in a compact, elevated cabin on Blakely Island, Washington, built around a tight footprint and framed forest views."
+  },
+  "points": {
+    "kr": [
+      "코르뷔지에의 미니멈 셀 면적 개념 재해석",
+      "고상식 구조로 대지 훼손 최소화",
+      "평수 대신 프레이밍된 조망으로 공간감 확보"
+    ],
+    "en": [
+      "Reinterpretation of Corbusier's minimum-cell footprint",
+      "Elevated structure minimizes site disturbance",
+      "Framed views substitute for square footage"
+    ]
+  },
+  "positions": [
+    "architect",
+    "space-designer"
+  ],
+  "designer": {
+    "kr": "좁은 공간을 다루는 이들에게 좋은 사례입니다. 제약을 걸림돌이 아니라 디자인을 이끄는 동력으로 삼는 방식을 보여줍니다.",
+    "en": "A useful case study for anyone designing small spaces, on treating constraint as the design driver rather than the obstacle."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "소형 공간·물성 스터디 자료로 저장 추천",
+    "en": "Save for small-space and material studies"
+  },
+  "comment": {
+    "kr": "작은 캐빈은 이미 포화 상태인 장르지만, 이 프로젝트는 르 코르뷔지에의 미니멈 셀 개념을 디자인사의 각주로만 두지 않고 실제 좁은 섬 부지에 그대로 적용했다는 점이 눈에 띕니다.\n\n구조를 작게 만들어 바깥 풍경을 더 선명하게 프레이밍하는 전략은 건축을 넘어 다른 분야에도 옮겨 쓸 만한 아이디어입니다. 물리적 공간이 선택이 아니라 제약으로 주어지는 모든 프로젝트에서 참고할 가치가 있습니다.",
+    "en": "Small cabins are a crowded genre, so what stands out here is the direct lineage back to Le Corbusier's minimum-cell thinking, applied literally to a tight island footprint instead of treated as a design history footnote.\n\nThe framed-view strategy, using the smallness of the structure to sharpen what you see outside it, is a transferable idea well beyond architecture. Worth studying for any project where less physical space is a constraint rather than a choice."
+  },
+  "thumbLabel": "미니멀셀",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260826-ai-002",
+  "date": "2026-08-26",
+  "section": "ai",
+  "order": 2,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-08-24"
+  },
+  "url": "https://techcrunch.com/2026/08/24/valor-point72-back-general-intuition-at-6b-valuation-as-ai-startup-pushes-into-robotics/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 로봇 · 스타트업",
+    "en": "AI · Robotics · Startups"
+  },
+  "title": {
+    "kr": "제너럴 인튜이션, 로봇에 '공간 이해' 가르치는 AI로 6조원 밸류 투자유치",
+    "en": "Valor, Point72 back General Intuition at $6B valuation as AI startup pushes into robotics"
+  },
+  "summary": {
+    "kr": "AI 에이전트에게 물리적 공간과 시간을 이해시키는 파운데이션 모델을 만드는 제너럴 인튜이션이, 게임 환경 중심이던 사업 범위를 로봇공학으로 확장하며 약 6조원(60억 달러) 밸류에이션으로 투자를 유치하고 있습니다.",
+    "en": "General Intuition, which builds foundation models that teach AI agents to understand and act in physical space and time, is raising at a $6B valuation as it expands its focus from gaming environments into robotics."
+  },
+  "points": {
+    "kr": [
+      "파운데이션 모델이 에이전트에게 공간·시간 추론 능력을 학습시킴",
+      "게임 환경 중심에서 실제 로봇공학으로 사업 확장",
+      "Valor Ventures·Point72 Ventures 등이 투자"
+    ],
+    "en": [
+      "Foundation model teaches agents spatial and temporal reasoning",
+      "Pivot from gaming environments to physical robotics",
+      "Backed by Valor Ventures and Point72 Ventures"
+    ]
+  },
+  "positions": [
+    "design-lead",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "실체를 가진(embodied) AI에서 어려운 부분은 로봇 하드웨어가 아니라, 몸이 공간을 이해하는 방식을 모델에게 가르치는 일이라는 걸 보여주는 사례입니다.",
+    "en": "A reminder that the hard part of embodied AI isn't the robot hardware, it's teaching a model to understand space the way a body does."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "피지컬 AI·로봇공학 동향을 좇는다면 배경지식으로",
+    "en": "Background reading for those tracking physical AI and robotics"
+  },
+  "comment": {
+    "kr": "헤드라인은 투자 유치 소식이지만, 그 밑에 깔린 베팅이 더 흥미롭습니다. 비디오 게임 속을 탐색하도록 AI를 훈련시키던 것과 같은 종류의 파운데이션 모델을, 로봇이 창고를 탐색하도록 훈련시키는 데 재활용할 수 있다는 것이죠.\n\n이 전이(transfer)가 실제로 통한다면, 처음부터 공간 추론 능력을 직접 구축해온 로봇공학 기업들의 계산법이 바뀝니다. 이 모델이 게임과 로봇공학 중 어느 쪽에서 다음 행보를 보일지 지켜볼 만합니다.",
+    "en": "The headline number is a funding round, but the underlying bet is more interesting: that the same kind of foundation model teaching AI to navigate a video game can be repurposed to teach a robot to navigate a warehouse.\n\nIf that transfer actually works, it changes the calculus for robotics companies that have been building spatial reasoning from scratch. Worth watching where this model shows up next, gaming, robotics, or somewhere in between."
+  },
+  "thumbLabel": "로봇AI",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

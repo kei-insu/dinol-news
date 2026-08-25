@@ -1,0 +1,53 @@
+{
+  "contentId": "20260826-ai-003",
+  "date": "2026-08-26",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "지디넷코리아",
+    "publishedAt": "2026-08-25"
+  },
+  "url": "https://zdnet.co.kr/view/?no=20260825083618",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 생산성",
+    "en": "AI · Tools · Productivity"
+  },
+  "title": {
+    "kr": "오픈AI, AWS 코딩툴 '키로'에 GPT-5.6 얹었다",
+    "en": null
+  },
+  "summary": {
+    "kr": "아마존 AWS의 AI 코딩 에이전트 '키로(Kiro)'에 오픈AI GPT-5.6 시리즈 전 모델이 탑재되어, 개발자가 최신 모델 계열을 코딩 워크플로우에서 바로 쓸 수 있게 됐습니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "AWS 키로에 GPT-5.6 전 모델 탑재",
+      "모델 선택 폭 확대로 작업별 최적화 가능",
+      "AI 코딩 에이전트 시장 경쟁 심화"
+    ],
+    "en": []
+  },
+  "positions": [
+    "product-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "AI 코딩 에이전트가 특정 벤더 모델에 종속되지 않고 여러 프런티어 모델을 골라 쓰는 방향으로 가고 있습니다. 디자인 도구도 비슷하게 모델 중립적 워크플로우로 수렴할 가능성이 있습니다.",
+    "en": null
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "AI 개발 도구 스택을 살피는 실무자에게 참고",
+    "en": null
+  },
+  "comment": {
+    "kr": "AWS가 자체 AI 코딩 에이전트 '키로'에 오픈AI의 최신 GPT-5.6 시리즈를 전면 탑재했다는 소식입니다. 특정 벤더의 모델에 묶이지 않고, 여러 프런티어 모델 중에서 작업에 맞는 것을 골라 쓰는 방향이 코딩 에이전트 시장의 흐름으로 자리잡고 있습니다.\n\n디자인 도구 생태계도 크게 다르지 않습니다. Figma나 어도비 같은 플랫폼들이 여러 AI 모델을 붙였다 뗐다 하며 실험하는 걸 보면, 앞으로는 어떤 AI를 쓰느냐보다 어떤 워크플로우에 AI를 얼마나 매끄럽게 끼워 넣느냐가 더 중요한 경쟁 포인트가 될 것 같습니다.",
+    "en": null
+  },
+  "thumbLabel": "코딩툴",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

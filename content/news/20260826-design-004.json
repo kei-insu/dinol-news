@@ -1,0 +1,57 @@
+{
+  "contentId": "20260826-design-004",
+  "date": "2026-08-26",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "Smashing Magazine",
+    "publishedAt": "2026-07-29"
+  },
+  "url": "https://www.smashingmagazine.com/2026/07/bull-and-bear-case-digital-design-age-ai/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 이론 · 산업전망",
+    "en": "Design · Theory · Industry Outlook"
+  },
+  "title": {
+    "kr": "AI 시대의 디지털 디자인, 낙관론과 비관론 사이",
+    "en": "The Bull And Bear Case For Digital Design In The Age Of AI"
+  },
+  "summary": {
+    "kr": "디자이너 앤디 버드가 AI로 인해 아이디어를 실행에 옮기는 문턱이 낮아지면서 디자인 업계에 펼쳐질 낙관·비관 시나리오를 각각 정리했습니다. 디자이너가 덜 허락받고 더 많이 만들 수 있게 되는 것부터, 주니어급 실무가 공동화될 위험까지 다룹니다.",
+    "en": "Designer Andy Budd lays out both the optimistic and pessimistic scenarios for the design profession as AI lowers the barrier to acting on ideas, from designers needing less permission to a hollowing-out of entry-level craft work."
+  },
+  "points": {
+    "kr": [
+      "낙관 시나리오: 디자이너가 덜 허락받고 더 많이 실행",
+      "비관 시나리오: 주니어급 실무의 공동화 위험",
+      "AI를 대체가 아닌 레버리지의 이동으로 프레이밍"
+    ],
+    "en": [
+      "Bull case: designers need less permission to build",
+      "Bear case: entry-level craft work gets hollowed out",
+      "Frames AI as a shift in leverage, not a replacement event"
+    ]
+  },
+  "positions": [
+    "design-lead",
+    "design-manager"
+  ],
+  "designer": {
+    "kr": "한쪽 편을 들지 않고 두 시나리오를 똑같이 진지하게 다룬다는 점이 드뭅니다. 그래서 팀의 미래를 실제로 계획하는 데 더 쓸모가 있습니다.",
+    "en": "Rare for taking both scenarios seriously instead of picking a side, which makes it more useful for actually planning a team's future."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "다음 팀 계획 논의 전에 읽어볼 가치가 있음",
+    "en": "Worth reading before your next team planning conversation"
+  },
+  "comment": {
+    "kr": "AI와 디자인을 다루는 글 대부분은 한쪽 차선을 고릅니다. 응원 아니면 비관, 둘 중 하나죠. 이 글이 쓸모 있는 이유는 정확히 그걸 거부해서입니다. 낙관 시나리오(디자이너가 개발팀을 기다리지 않고 아이디어를 바로 실행하는 것)와 비관 시나리오(시니어로 성장할 경로가 마련되기도 전에 주니어 역할이 사라지는 것)를 똑같은 무게로 다룹니다.\n\n디자인팀을 관리하는 입장이라면 비관 시나리오 부분만으로도 읽을 가치가 있습니다. 신입 실무가 사라지면 시니어를 어떻게 키울 것인가라는 구조적 위험을 구체적으로 짚는데, AI 낙관론 위주의 글들은 대개 이 부분을 건너뜁니다.",
+    "en": "Most AI-and-design essays pick a lane, either cheerleading or doom. This one is useful precisely because it refuses to. The bull case (designers acting on ideas without waiting for a dev team) and the bear case (junior roles disappearing before anyone builds a path to senior) are both laid out with equal seriousness.\n\nIf you manage a design team, the bear case section alone is worth the read: it names a specific structural risk that most AI-optimism pieces skip past entirely."
+  },
+  "thumbLabel": "낙관비관",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

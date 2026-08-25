@@ -1,0 +1,57 @@
+{
+  "contentId": "20260826-ai-001",
+  "date": "2026-08-26",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "Figma",
+    "publishedAt": "2026-08-20"
+  },
+  "url": "https://www.figma.com/blog/how-to-design-agentic-tools-for-work/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 툴 · 방법론",
+    "en": "AI · Tools · Methodology"
+  },
+  "title": {
+    "kr": "업무용 에이전틱 툴, 어떻게 디자인할 것인가",
+    "en": "How to Design Agentic Tools for Work"
+  },
+  "summary": {
+    "kr": "Figma 디자인팀이 에이전틱 AI 제품을 만들 때 마주치는 고유한 UX 과제를 정리했습니다. 신뢰 형성부터 자율 행동에 대한 사용자 통제권 부여까지, 실무에서 바로 참고할 방법론을 제시합니다.",
+    "en": "Figma's design team breaks down the unique UX challenges of building agentic AI products, from establishing trust to giving users the right amount of control over autonomous actions."
+  },
+  "points": {
+    "kr": [
+      "신뢰를 에이전틱 툴 디자인의 핵심 제약으로 삼기",
+      "자율성에 대한 사용자 통제권 수준 설정",
+      "에이전트의 행동과 이유를 보여주는 패턴"
+    ],
+    "en": [
+      "Trust as the core design constraint for agentic tools",
+      "Giving users the right level of control over autonomy",
+      "Patterns for showing what the agent is doing and why"
+    ]
+  },
+  "positions": [
+    "ux-designer",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "에이전트 UX를 단순 챗봇 UI의 변형이 아니라, 독자적인 디자인 영역으로 다루는 드문 글입니다.",
+    "en": "A rare piece that treats agent UX as its own discipline, not just a chat UI dressed up."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "AI 제품 기능을 설계하는 디자이너라면 필독",
+    "en": "Must-read for anyone designing AI product features"
+  },
+  "comment": {
+    "kr": "'AI 기능 디자인' 가이드 대부분은 결국 챗봇 말풍선 배치로 귀결되곤 합니다. 이 글은 한 단계 더 들어가 에이전트에게 얼마만큼의 자율성을 줄지, 그 판단 과정을 어떻게 시각화할지, 신뢰를 깨지 않으면서 사용자가 궤도를 수정하게 하는 방법까지 다룹니다.\n\n제품에 에이전틱 동작을 넣고 있다면 지금 나와 있는 프레임워크 중 가장 구체적인 축에 속합니다. 북마크해두고 기능별로 다시 참고할 만합니다.",
+    "en": "Most AI feature design guides still boil down to chat bubble layout. This one goes deeper, into how much autonomy to hand an agent, how to visualize its reasoning, and how to let users course correct without breaking trust.\n\nIf you are building anything with agentic behavior into a product, this is one of the most concrete frameworks available right now. Worth bookmarking and revisiting per feature."
+  },
+  "thumbLabel": "에이전트",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

@@ -390,5 +390,13 @@
   "아이티데일리": {
     "region": "국내",
     "group": "아이티데일리"
+  },
+  "Figma": {
+    "region": "해외",
+    "group": "Figma Blog"
+  },
+  "지디넷코리아": {
+    "region": "국내",
+    "group": "ZDNet Korea"
   }
 }

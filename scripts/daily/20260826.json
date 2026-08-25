@@ -1,0 +1,74 @@
+{
+  "20260826-ai-001": {
+    "category_kr": "AI · 툴 · 방법론",
+    "category_en": "AI · Tools · Methodology",
+    "impactScore": 5,
+    "positions": [
+      "ux-designer",
+      "product-designer"
+    ]
+  },
+  "20260826-ai-002": {
+    "category_kr": "AI · 로봇 · 스타트업",
+    "category_en": "AI · Robotics · Startups",
+    "impactScore": 2,
+    "positions": [
+      "design-lead",
+      "product-designer"
+    ]
+  },
+  "20260826-ai-003": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 3,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260826-ai-004": {
+    "category_kr": "AI · 툴 · 에이전트",
+    "category_en": "AI · Tools · Agents",
+    "impactScore": 3,
+    "positions": [
+      "ux-designer",
+      "service-designer"
+    ]
+  },
+  "20260826-design-001": {
+    "category_kr": "디자인 · 건축 · 공간",
+    "category_en": "Design · Architecture · Space",
+    "impactScore": 3,
+    "positions": [
+      "architect",
+      "space-designer"
+    ]
+  },
+  "20260826-design-002": {
+    "category_kr": "디자인 · 패션 · 브랜딩",
+    "category_en": "Design · Fashion · Branding",
+    "impactScore": 3,
+    "positions": [
+      "fashion-designer",
+      "brand-designer"
+    ]
+  },
+  "20260826-design-003": {
+    "category_kr": "디자인 · 타이포그래피 · 브랜딩",
+    "category_en": "Design · Typography · Branding",
+    "impactScore": 3,
+    "positions": [
+      "typographer",
+      "brand-designer"
+    ]
+  },
+  "20260826-design-004": {
+    "category_kr": "디자인 · 이론 · 산업전망",
+    "category_en": "Design · Theory · Industry Outlook",
+    "impactScore": 4,
+    "positions": [
+      "design-lead",
+      "design-manager"
+    ]
+  }
+}
