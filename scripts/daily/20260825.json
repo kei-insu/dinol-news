@@ -1,0 +1,74 @@
+{
+  "20260825-ai-001": {
+    "category_kr": "AI · 디자인프로세스",
+    "category_en": "AI · Design Process",
+    "impactScore": 5,
+    "positions": [
+      "product-designer",
+      "design-lead"
+    ]
+  },
+  "20260825-ai-002": {
+    "category_kr": "AI · 이커머스",
+    "category_en": "AI · E-commerce",
+    "impactScore": 3,
+    "positions": [
+      "service-designer",
+      "ux-designer"
+    ]
+  },
+  "20260825-ai-003": {
+    "category_kr": "AI · 콘텐츠",
+    "category_en": "AI · Content",
+    "impactScore": 3,
+    "positions": [
+      "motion-designer",
+      "video-designer"
+    ]
+  },
+  "20260825-ai-004": {
+    "category_kr": "AI · 프로덕트",
+    "category_en": "AI · Product",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "ux-designer"
+    ]
+  },
+  "20260825-design-001": {
+    "category_kr": "디자인 · 브랜딩",
+    "category_en": "Design · Branding",
+    "impactScore": 4,
+    "positions": [
+      "brand-designer",
+      "graphic-designer"
+    ]
+  },
+  "20260825-design-002": {
+    "category_kr": "디자인 · 제품",
+    "category_en": "Design · Product",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260825-design-003": {
+    "category_kr": "디자인 · 전시·행사",
+    "category_en": "Design · Exhibitions & Events",
+    "impactScore": 2,
+    "positions": [
+      "space-designer",
+      "art-director"
+    ]
+  },
+  "20260825-design-004": {
+    "category_kr": "디자인 · 편집",
+    "category_en": "Design · Editorial",
+    "impactScore": 4,
+    "positions": [
+      "editorial-designer",
+      "art-director"
+    ]
+  }
+}

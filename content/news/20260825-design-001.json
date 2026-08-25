@@ -1,0 +1,57 @@
+{
+  "contentId": "20260825-design-001",
+  "date": "2026-08-25",
+  "section": "design",
+  "order": 1,
+  "source": {
+    "name": "BP&O",
+    "publishedAt": "2026-08-20"
+  },
+  "url": "https://bpando.org/2026/08/20/studio-blackburns-new-identity-for-folding-bike-icon-brompton-cements-the-brands-place-in-british-engineering-heritage/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "디자인 · 브랜딩",
+    "en": "Design · Branding"
+  },
+  "title": {
+    "kr": "브롬튼, 스튜디오 블랙번과 새 브랜드 아이덴티티 공개",
+    "en": "New Branding for Brompton by Studio Blackburn"
+  },
+  "summary": {
+    "kr": "스튜디오 블랙번이 영국의 상징적 폴딩 자전거 브랜드 브롬튼에 새로운 브랜드 아이덴티티를 부여하며, 영국식 엔지니어링 유산을 강조하는 방향으로 글로벌 확장을 준비했다.",
+    "en": "Studio Blackburn gave British folding bike icon Brompton a new brand identity that leans into its engineering heritage, positioning the 50-year-old brand for global expansion beyond its cult UK following."
+  },
+  "points": {
+    "kr": [
+      "라이프스타일 브랜딩 대신 정밀 엔지니어링을 중심에 둔 워드마크와 시스템 재구축",
+      "영국적 헤리티지를 해외 시장으로 확장 가능한 형태로 전환",
+      "패키지부터 리테일 공간까지 확장 가능한 타이포그래피·그래픽 시스템 설계"
+    ],
+    "en": [
+      "Wordmark and system rebuilt around precision engineering rather than lifestyle branding",
+      "New identity aims to carry Brompton's British heritage into international markets",
+      "Typography and graphic system designed to scale from product packaging to retail environments"
+    ]
+  },
+  "positions": [
+    "brand-designer",
+    "graphic-designer"
+  ],
+  "designer": {
+    "kr": "50년 된 제품 브랜드가 '헤리티지'를 복고풍 장식이 아니라 엔지니어링 정밀성이라는 브랜드 본질로 번역해낸 사례로, 브랜드·그래픽 디자이너에게 실용적인 리브랜딩 접근법을 제공한다.",
+    "en": "A 50-year-old product brand translates heritage into engineering precision rather than retro decoration, giving brand and graphic designers a practical rebranding approach to borrow."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "제조업 기반 브랜드나 헤리티지가 있는 브랜드를 리뉴얼할 때, 장식적 노스탤지어 대신 브랜드의 기능적 본질(이 경우 엔지니어링)을 시각 언어로 치환하는 접근법을 참고할 만하다.",
+    "en": "When rebranding a manufacturing-rooted or heritage brand, this approach of translating a brand's functional essence (here, engineering) into visual language, rather than leaning on decorative nostalgia, is worth referencing."
+  },
+  "comment": {
+    "kr": "BP&O 특유의 상세한 비주얼 브레이크다운과 함께 실린 리뷰로, 로고 하나의 변화보다 시스템 전체의 논리를 짚는다는 점이 유용하다. 브롬튼처럼 팬덤이 강한 브랜드는 리브랜딩 시 기존 팬의 반발이 크기 마련인데, 이번 개편은 급진적 변화 대신 브랜드 본질을 재확인하는 방향을 택했다는 점이 눈에 띈다.\n국내에서도 헤리티지 제조업 브랜드의 리브랜딩 수요가 늘고 있는 만큼, 오래된 브랜드 자산을 급진적으로 바꾸지 않으면서도 확장성을 확보하는 이번 접근이 참고가 될 만하다.",
+    "en": "Published with BP&O's signature detailed visual breakdown, the review is useful for tracing the logic of the whole system rather than just a logo swap. Brands with cult followings like Brompton usually face backlash on rebrands, so it's notable that this refresh chose to reaffirm the brand's essence rather than force a radical change.\nAs demand grows domestically for rebranding heritage manufacturing brands, this approach, gaining scalability without radically altering long-held brand equity, is a useful reference point."
+  },
+  "thumbLabel": "브롬튼",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

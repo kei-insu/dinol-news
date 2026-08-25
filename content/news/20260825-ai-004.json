@@ -1,0 +1,57 @@
+{
+  "contentId": "20260825-ai-004",
+  "date": "2026-08-25",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "Figma Blog",
+    "publishedAt": "2026-08-20"
+  },
+  "url": "https://www.figma.com/blog/sightlines-issue-no2/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 프로덕트",
+    "en": "AI · Product"
+  },
+  "title": {
+    "kr": "사이트라인 2호: 에이전트 제품을 만들 때 리더가 알아야 할 것",
+    "en": "Sightlines Issue No. 2: What Leaders Need to Know About Building Agents"
+  },
+  "summary": {
+    "kr": "피그마의 사이트라인 뉴스레터가 시스코, 오픈AI, 에어비앤비 등 리더들의 시각을 모아, 에이전트형 제품을 만들 때 마주하는 핵심 디자인 과제인 신뢰와 보안을 지키면서도 진짜 파트너처럼 느껴지는 도구를 만드는 법을 다룬다.",
+    "en": "Figma's Sightlines newsletter gathers perspectives from leaders at Cisco, OpenAI, Airbnb and others on the core design challenge of agentic products: building something powerful enough to be a real partner while keeping trust and security at the center."
+  },
+  "points": {
+    "kr": [
+      "에이전트형 제품은 신뢰, 권한 부여, 자율성의 정도를 둘러싼 새로운 UX 질문을 던진다",
+      "여러 기업 리더들이 '역량과 통제' 사이의 유사한 긴장을 공통적으로 짚는다",
+      "에이전트 설계를 단순한 인터랙션 패턴이 아니라 리더십 차원의 제품 결정으로 프레이밍한다"
+    ],
+    "en": [
+      "Agentic products raise new UX questions around trust, permission, and how much autonomy to hand over",
+      "Leaders across companies converge on similar tensions between capability and control",
+      "The piece frames agent design as a leadership-level product decision, not just an interaction pattern"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "ux-designer"
+  ],
+  "designer": {
+    "kr": "에이전트 UX를 설계하는 프로덕트·UX 디자이너라면, 이 글이 정리한 '역량 대 통제'의 균형점 프레임을 스스로의 프로젝트에 대입해 초기 설계 원칙을 세우는 데 활용할 수 있다.",
+    "en": "Product and UX designers working on agentic experiences can apply the capability-versus-control framing laid out here to their own projects and set early design principles from it."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "AI 에이전트 기능을 제품에 붙이는 초기 단계라면, 이 글에서 소개하는 리더들의 원칙들을 팀 워크숍의 토론 자료로 활용해볼 만하다.",
+    "en": "If you're in the early stages of adding AI agent features to your product, the leadership principles gathered here make solid discussion material for a team workshop."
+  },
+  "comment": {
+    "kr": "여러 리더의 인터뷰를 모은 뉴스레터 형식이라 하나의 명확한 방법론보다는 시각의 다양성이 강점이다. 에이전트형 제품이 아직 업계 표준 패턴이 없는 만큼, 서로 다른 회사가 비슷한 고민을 하고 있다는 사실 자체가 설계 방향을 잡는 데 참고가 된다.\n다만 구체적인 UI 패턴이나 실행 가이드라인까지 제공하지는 않아, 실무 적용을 위해서는 팀 내 추가 논의가 필요하다. 에이전트 제품을 처음 기획하는 팀의 '문제 정의' 단계 자료로 적합하다.",
+    "en": "As a newsletter format gathering interviews from multiple leaders, its strength is breadth of perspective rather than a single clear methodology. Since agentic products still lack standard UX patterns, the fact that different companies are wrestling with similar tensions is itself a useful reference point for setting direction.\nIt doesn't offer concrete UI patterns or execution guidelines, though, so applying it in practice will take further internal discussion. Best suited as a 'problem framing' resource for teams just starting to scope an agent product."
+  },
+  "thumbLabel": "에이전트",
+  "thumbGradient": "g-indigo",
+  "_todo": []
+}

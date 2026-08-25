@@ -1,0 +1,57 @@
+{
+  "contentId": "20260825-ai-001",
+  "date": "2026-08-25",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "Figma Blog",
+    "publishedAt": "2026-08-13"
+  },
+  "url": "https://www.figma.com/blog/how-to-move-fast-toward-the-right-thing/",
+  "isEn": true,
+  "featured": true,
+  "category": {
+    "kr": "AI · 디자인프로세스",
+    "en": "AI · Design Process"
+  },
+  "title": {
+    "kr": "속도보다 방향, AI 시대 제대로 빠르게 가는 법",
+    "en": "How To Move Fast Toward the Right Thing"
+  },
+  "summary": {
+    "kr": "피그마의 제이크 알보프는 AI로 소프트웨어를 만드는 진입장벽이 사라졌지만, 결국 이기는 팀은 속도보다 판단력을 앞세워 신중하게 만드는 팀이라고 짚는다.",
+    "en": "Figma's Jake Albaugh argues that AI has removed the barrier to shipping software, but the teams that actually win are the ones who slow down just enough to build with judgment instead of just speed."
+  },
+  "points": {
+    "kr": [
+      "AI 덕에 코딩 경험이 없어도 작동하는 소프트웨어를 만들 수 있는 시대가 됐다",
+      "고민 없는 속도는 기능만큼이나 빠르게 기술 부채를 만든다",
+      "디자인 시스템 같은 재사용 가능한 컨텍스트 레이어와 초기 단계의 명확한 방향 설정이 속도를 혼돈으로 만들지 않는 열쇠"
+    ],
+    "en": [
+      "Anyone can now ship working software with AI, removing the old gatekeeping of who gets to build",
+      "Speed without consideration creates tech debt just as fast as it creates features",
+      "Front-loaded clarity and reusable context layers like design systems keep speed from becoming chaos"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "팀 누구나 AI로 작동하는 UI를 뽑아낼 수 있게 된 지금, 디자인 시스템과 초기 문서화는 선택이 아니라 필수가 된다. AI 기반 제작을 확장하기 전에 공유된 컨텍스트에 먼저 투자해야 한다는 주장이다.",
+    "en": "Design systems and clear early-stage documentation stop being 'nice to have' once anyone on the team can generate working UI with AI. This is a direct argument for investing in shared context before scaling AI-assisted production."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "AI 코딩·디자인 툴 도입 후 조직 내 기술 부채나 일관성 문제를 겪고 있다면, 이 글에서 제안하는 '컨텍스트 레이어 우선 구축' 원칙을 팀 프로세스에 바로 적용해볼 만하다.",
+    "en": "If your team has hit tech debt or consistency issues after adopting AI coding or design tools, this piece's 'build the context layer first' principle is worth applying directly to your process."
+  },
+  "comment": {
+    "kr": "피그마 개발자 애드보킷이 쓴 글답게 관념적인 이야기로 흐르지 않고, 디자인 시스템을 '판단을 대신 저장해두는 장치'로 재정의하는 실용적인 프레임을 제시한다. AI 시대 제품 조직이 속도와 신중함 사이에서 겪는 딜레마를 다룬 글 중 방법론까지 제시하는 흔치 않은 사례다.\n특히 '누구나 만들 수 있는 시대에 무엇이 여전히 어려운가'라는 질문의 답을 명확한 초기 방향 설정과 재사용 가능한 컨텍스트에서 찾는다는 점이, 실무에 바로 옮겨볼 수 있는 체크리스트로 기능한다.",
+    "en": "Written by a Figma developer advocate, the piece stays grounded rather than abstract, reframing design systems as a mechanism for storing judgment rather than just components. It's a rare case among AI-era 'speed vs. care' pieces that actually offers a method, not just a warning.\nWhat stands out is how it answers 'what's still hard when anyone can build' by pointing to upfront clarity and reusable context, effectively turning the argument into a checklist teams can apply directly."
+  },
+  "thumbLabel": "AI속도",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}
