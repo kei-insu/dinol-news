@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 27</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 27, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.aitimes.com/news/articleView.html?idxno=214324" target="_blank"
+       data-category="AI · 모델 · 경쟁"
+       data-position="design-lead|product-designer"
+       data-summary="일론 머스크가 자사 AI 모델 '그록'이 코딩 분야에서 앤트로픽의 클로드에 뒤처져 있다고 인정하며, 개발진에 커서(Cursor)와의 격차를 좁힐 것을 주문했습니다."
+       data-points="머스크, 그록의 코딩 성능이 클로드 대비 열세라고 공개 인정|코딩 특화 AI 경쟁이 격화되는 배경|커서·클로드 코드 등 AI 코딩 툴 시장의 지각변동"
+       data-designer="AI 코딩 툴 간 성능 격차는 결국 디자이너가 협업하는 개발 조직의 워크플로우 속도에도 영향을 줍니다. 어떤 모델이 우위를 점하는지 주시해두면 좋습니다."
+       data-impact-score="2"
+       data-recommend="AI 코딩 툴 동향에 관심 있는 실무자 참고용"
+       data-comment="일론 머스크가 직접 자사 모델의 약점을 인정한 흔치 않은 발언입니다. AI 코딩 도구 시장에서 앤트로픽 클로드 계열이 실무 개발자 사이에서 강세를 보이고 있다는 방증이기도 합니다.
+디자이너 입장에서 코딩 모델 경쟁 자체는 직접적인 실무 도구는 아니지만, 프로덕트 조직 전체의 개발 속도와 AI 활용 문화에 영향을 미치는 배경 지식으로 봐두면 좋습니다. 특히 커서(Cursor)처럼 디자이너도 접할 수 있는 AI 코딩 에디터가 언급된다는 점은 주목할 만합니다.">
+      <div class="thumb g-crimson">
+        <div class="noise"></div>
+        <span class="thumb-label">경쟁</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">AI타임스 · 2026. 08. 25</div>
+        <div class="card-title">머스크 "그록, 앤트로픽에 뒤처져"…커서에 코딩 격차 극복 당부</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.venturesquare.net/1108502" target="_blank"
+       data-category="AI · 모빌리티 · 자율주행"
+       data-position="industrial-designer|product-designer"
+       data-summary="'2026 자율주행모빌리티산업전(AME 2026)' 개막 현장을 취재한 기사로, 자율주행 기술의 무게중심이 고성능 센서·정밀지도·개별 알고리즘에서 방대한 주행 데이터를 학습해 스스로 상황을 해석·판단하는 AI 모델로 옮겨가고 있다고 짚었습니다."
+       data-points="생성형 AI발 파운데이션 모델 경쟁이 '피지컬 AI'로 확장되는 흐름|센서·정밀지도 중심에서 상황을 스스로 해석·판단하는 모델 중심으로 전환|E2E 자율주행·VLA·로보택시·로보셔틀·디지털트윈 등 기술 총출동"
+       data-designer="자율주행이 '정해진 규칙을 따르는 차'에서 '상황을 이해하고 판단하는 차'로 바뀐다는 건, 차량 내부 인터페이스도 정적인 표시에서 맥락 대응형으로 바뀌어야 한다는 뜻입니다. 모빌리티 UX를 다루는 디자이너에게 배경 지식으로 유용합니다."
+       data-impact-score="2"
+       data-recommend="모빌리티·피지컬 AI 트렌드를 챙기는 실무자 참고용"
+       data-comment="AME 2026 현장을 취재한 기사로, 단순 행사 소개를 넘어 자율주행 기술의 패러다임 전환을 짚었다는 점이 눈에 띕니다. '센서·지도 중심'에서 '데이터로 학습해 스스로 판단하는 모델 중심'으로 넘어가는 흐름은 생성형 AI 논쟁이 물리 세계로 확장되는 과정과 맞닿아 있습니다.
+디자이너에게 직접적인 툴은 아니지만, E2E 자율주행·VLA 같은 개념이 로보택시·로보셔틀 등 실제 서비스로 이어지는 흐름을 보여줘 모빌리티 UX·공간 디자인 쪽 배경 지식으로 참고할 만합니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">판단하는차</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">벤처스퀘어 · 2026. 08. 25</div>
+        <div class="card-title">"스스로 달리는 차에서 스스로 판단하는 차로"…자율주행, '피지컬 AI' 경쟁 시작됐다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://techcrunch.com/2026/08/19/ai-was-supposed-to-win-people-over-by-now-it-hasnt/" target="_blank"
+       data-category="AI · 트렌드 · 사용자인식" data-category-en="AI · Trends · Public Perception"
+       data-position="product-designer|ux-designer"
+       data-summary="Despite rapid technological progress, AI's public image keeps worsening: 52% of Americans now say they're more concerned than excited about AI in daily life, up from 37% in 2021." data-summary-kr="기술은 빠르게 발전하고 있지만 AI에 대한 대중의 인식은 오히려 나빠지고 있습니다. 일상 속 AI 확산에 대해 '기대보다 우려가 크다'고 답한 미국인 비율이 2021년 37%에서 현재 52%로 늘었습니다."
+       data-points="Public concern about AI rose from 37% to 52% since 2021|Tech progress hasn't translated into public trust|Gap between industry excitement and user sentiment" data-points-kr="AI에 대한 우려가 2021년 37%→현재 52%로 증가|기술 발전이 대중의 신뢰로 이어지지 못하는 흐름|업계의 기대와 사용자 정서 사이의 간극"
+       data-designer="A reminder that product trust isn't just about capability - onboarding, transparency and control in AI features matter as much as raw model power." data-designer-kr="제품 신뢰는 단순히 AI 성능만으로 만들어지지 않습니다. 온보딩, 투명성, 사용자 통제권 같은 UX 요소가 AI 기능 수용도에 큰 영향을 준다는 점을 다시 확인시켜줍니다."
+       data-impact-score="2"
+       data-recommend="Useful context for anyone designing AI-powered features · Worth a skim" data-recommend-kr="AI 기능을 설계하는 실무자에게 유용한 배경 지식 · 가볍게 읽기 추천"
+       data-comment="The data point is stark: more Americans are worried about AI than excited about it, and that gap has widened significantly since 2021 despite huge capability gains.
+For anyone building AI-powered products, this is a useful counterweight to pure capability-chasing - trust, transparency and perceived control may matter more to adoption than raw model quality." data-comment-kr="수치가 꽤 선명합니다. AI 성능은 크게 발전했지만, 대중의 우려는 오히려 커졌고 그 격차는 2021년 이후 계속 벌어지고 있습니다.
+AI 기능을 만드는 입장에서는 단순히 '더 똑똑한 모델'을 쫓기보다, 신뢰·투명성·사용자 통제권 같은 요소가 실제 수용도에 더 큰 영향을 줄 수 있다는 점을 시사하는 데이터입니다."
+       data-title-en="AI was supposed to win people over by now - it hasn't" data-title-kr="AI, 지금쯤 대중을 설득했어야 했지만 그러지 못했다">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">신뢰</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">TechCrunch · 2026. 08. 19</div>
+        <div class="card-title">AI, 지금쯤 대중을 설득했어야 했지만 그러지 못했다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.marktechpost.com/2026/08/03/how-to-secure-ai-agents-mcp-servers-and-llm-apps-in-production/" target="_blank"
+       data-category="AI · 기술 · MCP" data-category-en="AI · Technology · MCP"
+       data-position="design-lead|product-designer"
+       data-summary="A practitioner's guide to securing AI agents, MCP servers, and LLM-powered apps in production, covering the security gaps that emerge once these systems move from prototype to real deployment." data-summary-kr="AI 에이전트·MCP 서버·LLM 기반 앱을 프로토타입 단계를 넘어 실제 프로덕션에 배포할 때 생기는 보안 공백을 다루는 실무 가이드입니다."
+       data-points="Common security gaps in production MCP server deployments|Practical checklist for securing AI agents and LLM apps|Based on a practitioner's guide to real-world deployment risks" data-points-kr="프로덕션 MCP 서버 배포 시 자주 발생하는 보안 공백|AI 에이전트·LLM 앱 보안을 위한 실무 체크리스트|실제 배포 사례를 기반으로 한 실무자 가이드"
+       data-designer="As more internal tools wire AI agents into MCP servers, teams that ship design tooling or internal products need at least a baseline awareness of these security gaps before going to production." data-designer-kr="사내 툴에 AI 에이전트와 MCP 서버를 연결하는 사례가 늘면서, 디자인 툴링이나 내부 제품을 만드는 팀도 프로덕션 배포 전 최소한의 보안 체크리스트는 알아둘 필요가 있습니다."
+       data-impact-score="5"
+       data-recommend="Directly actionable for teams shipping MCP-based tools · Save for reference" data-recommend-kr="MCP 기반 툴을 배포하는 팀에게 바로 적용 가능 · 저장 추천"
+       data-comment="Most MCP coverage is about what the protocol enables. This piece is refreshingly practical: it walks through the specific security gaps that show up once an MCP server or AI agent leaves the prototype stage and hits production traffic.
+Even for non-engineers, the checklist format is useful as a gut-check before greenlighting an internal AI agent or MCP integration - asking 'have we covered these gaps' before shipping matters more than which model powers the agent." data-comment-kr="MCP 관련 글 대부분은 '무엇을 할 수 있는가'에 초점을 맞추지만, 이 글은 실제로 '무엇이 뚫리는가'를 짚어주는 실무 가이드입니다. 프로토타입 단계를 벗어나 실제 트래픽을 받는 순간 드러나는 보안 공백을 구체적으로 다룹니다.
+엔지니어가 아니더라도 체크리스트 형식이라 사내 AI 에이전트나 MCP 연동을 승인하기 전 점검표로 활용하기 좋습니다. 어떤 모델을 쓰느냐보다, 이 공백들을 챙겼는지가 더 중요하다는 걸 보여줍니다."
+       data-title-en="How to Secure AI Agents, MCP Servers, and LLM Apps in Production" data-title-kr="프로덕션 환경에서 AI 에이전트·MCP 서버·LLM 앱을 안전하게 지키는 법">
+      <div class="thumb g-violet">
+        <div class="noise"></div>
+        <span class="thumb-label">MCP보안</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">MarkTechPost · 2026. 08. 03</div>
+        <div class="card-title">프로덕션 환경에서 AI 에이전트·MCP 서버·LLM 앱을 안전하게 지키는 법</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.hankyung.com/article/202608250146g" target="_blank"
+       data-category="디자인 · 패션 · 브랜드"
+       data-position="brand-designer|fashion-designer"
+       data-summary="CJ온스타일이 미국 럭셔리 브랜드 '베라왕'과 라이선스 계약을 맺고, 2026년 가을·겨울 시즌부터 베라왕 패션 컬렉션을 국내에 단독으로 선보입니다."
+       data-points="베라왕과 국내 독점 라이선스 계약 체결|2026 FW 시즌부터 컬렉션 단독 전개|프리미엄 패션 라인업 강화 전략의 일환"
+       data-designer="해외 디자이너 브랜드의 국내 독점 유통은 브랜드 경험을 새로운 채널에 맞게 재구성하는 작업을 동반합니다. 라이선스 브랜드의 로컬라이제이션 방식을 참고할 만합니다."
+       data-impact-score="1"
+       data-recommend="패션·리테일 브랜드 동향 참고용"
+       data-comment="해외 럭셔리 디자이너 브랜드가 국내 유통사와 손잡고 단독 전개에 나서는 사례입니다. 콘텐츠 자체는 유통·라이선스 계약 소식에 가깝지만, 프리미엄 패션 브랜드가 국내 채널에 어떻게 들어오는지 보여주는 사례로 참고할 수 있습니다.
+디자인 관점에서는 화보·매장 디스플레이·온라인 상세페이지 등 브랜드 경험을 로컬 채널에 맞게 재구성하는 후속 작업을 지켜볼 만합니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">단독전개</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">한국경제 · 2026. 08. 25</div>
+        <div class="card-title">CJ온스타일, 美 베라왕 국내 독점 전개…프리미엄 패션 강화</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://magazine.hankyung.com/business/article/202608264273b" target="_blank"
+       data-category="디자인 · 브랜드 · 트렌드"
+       data-position="brand-designer|bx-designer"
+       data-summary="K-컬처의 영향력이 콘텐츠 인기를 넘어 K-뷰티·K-푸드·K-패션·K-관광 등 연관 산업의 소비로 확장되고 있다는 분석으로, 이를 'K-컬처 4.0'으로 정의합니다."
+       data-points="틱톡 등 콘텐츠 소비가 뷰티·패션·식품 구매로 전이되는 흐름|K-컬처 영향력을 'K-컬처 4.0'으로 재정의|연관 산업 전반으로 확산되는 K-소비 패턴"
+       data-designer="콘텐츠에서 소비로 이어지는 흐름은 브랜드 경험을 설계할 때 '어디서 처음 브랜드를 접했는가'까지 고려해야 한다는 뜻입니다. SNS 콘텐츠와 실제 구매 경험의 연결고리를 디자인하는 것이 중요해집니다."
+       data-impact-score="2"
+       data-recommend="브랜드·마케팅 관점의 트렌드 참고용"
+       data-comment="K-컬처가 단순한 콘텐츠 소비를 넘어 실제 구매로 이어지는 패턴이 뚜렷해지고 있다는 분석입니다. 특히 틱톡 같은 숏폼 플랫폼이 발견의 통로가 되는 점이 흥미롭습니다.
+브랜드·BX 디자이너 입장에서는 콘텐츠 접점과 실제 구매 경험 사이의 간극을 얼마나 매끄럽게 이어주는지가 앞으로 더 중요한 과제가 될 것으로 보입니다.">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">K소비</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">한경매거진&북 · 2026. 08. 26</div>
+        <div class="card-title">틱톡서 K팝 봤다가 화장품까지 산다… 커지는 'K-소비'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.yankodesign.com/2026/08/24/rayneo-just-split-smart-glasses-into-two-and-neither-one-compromises/" target="_blank"
+       data-category="디자인 · 제품 · 웨어러블" data-category-en="Design · Product · Wearables"
+       data-position="industrial-designer|product-designer"
+       data-summary="RayNeo's answer to smart glasses is two separate devices instead of one do-it-all pair: the 33g iO as a discreet all-day AI companion with a 97%-transparent, 1,300-nit display, and the GT Series as a portable personal theater." data-summary-kr="레이네오가 만능형 스마트글라스 한 종류 대신 용도별로 나눈 두 제품을 내놓았습니다. 33그램의 'iO'는 투명도 97%, 밝기 1,300니트 디스플레이를 갖춘 종일 착용형 AI 동반 기기이고, 'GT 시리즈'는 휴대용 개인 극장 콘셉트입니다."
+       data-points="iO: 33g, titanium frame, 97% transparent 1,300-nit display|GT Series: portable personal-theater form factor|Philosophy: specialization over one-device-does-everything" data-points-kr="iO: 33g, 티타늄 프레임, 투명도 97%·1,300니트 디스플레이|GT 시리즈: 휴대용 개인 극장 콘셉트|'하나로 다 하기'보다 '특화'를 택한 제품 철학"
+       data-designer="A clear case study in resisting feature creep - splitting a category into purpose-built devices instead of cramming every use case into one form factor." data-designer-kr="기능을 욱여넣기보다 용도별로 제품 라인을 쪼갠 사례입니다. '모든 걸 하나에 담기'의 유혹을 거절한 제품 전략 참고용으로 좋습니다."
+       data-impact-score="3"
+       data-recommend="Good reference for wearable/hardware product designers" data-recommend-kr="웨어러블·하드웨어 제품 디자이너에게 좋은 레퍼런스"
+       data-comment="Most smart glasses try to be everything at once and end up compromised on weight, battery or display quality. RayNeo's split strategy is a useful counter-example.
+Worth studying as a product-line decision framework: when does splitting a category into specialized SKUs beat one flagship device trying to cover every use case?" data-comment-kr="대부분의 스마트글라스는 하나로 모든 걸 해결하려다 무게·배터리·디스플레이 품질 중 하나를 포기하게 됩니다. 레이네오의 분리 전략은 좋은 반례입니다.
+'하나의 플래그십'과 '용도별 라인업 분리' 중 무엇이 나은 선택인지 판단하는 제품 라인 의사결정 프레임워크로 참고할 만합니다."
+       data-title-en="RayNeo Just Split Smart Glasses Into Two, and Neither One Compromises" data-title-kr="레이네오, 스마트글라스를 두 갈래로 나누다…타협 없는 특화 전략">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">웨어러블</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Yanko Design · 2026. 08. 24</div>
+        <div class="card-title">레이네오, 스마트글라스를 두 갈래로 나누다…타협 없는 특화 전략</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.designboom.com/design/martin-labbe-pine-chair-without-single-screw-stockholm/" target="_blank"
+       data-category="디자인 · 제품 · 가구" data-category-en="Design · Product · Furniture"
+       data-position="industrial-designer|art-director"
+       data-summary="Designer Martin Labbé built a chair entirely from standard pine construction timber in Stockholm, using traditional mortise-and-tenon joinery and linseed-oil finishing instead of a single screw." data-summary-kr="디자이너 마르탱 라베가 스톡홀름에서 표준 건축용 소나무 목재만으로 의자를 제작했습니다. 스크루를 하나도 쓰지 않고 전통 장부맞춤(mortise-and-tenon) 방식과 아마인유 마감으로 완성했습니다."
+       data-points="Made from off-the-shelf construction-grade pine, not furniture-grade wood|Screw-free joinery via traditional mortise-and-tenon technique|Finished with linseed oil instead of industrial coatings" data-points-kr="가구용이 아닌 건축용 표준 소나무 목재 사용|장부맞춤(mortise-and-tenon) 기법으로 스크루 없이 결합|공업용 도장 대신 아마인유로 마감"
+       data-designer="A hands-on demonstration that low-cost, off-the-shelf materials plus a disciplined traditional joinery method can outperform hardware-dependent construction - directly transferable technique for furniture and product designers." data-designer-kr="저렴한 기성 자재라도 전통 조인트 기법을 정확히 적용하면 철물 없이도 견고한 구조를 만들 수 있다는 실증 사례입니다. 가구·제품 디자이너가 바로 참고할 수 있는 제작 방법론입니다."
+       data-impact-score="4"
+       data-recommend="Directly applicable technique for furniture/product designers · Save for reference" data-recommend-kr="가구·제품 디자이너에게 바로 응용 가능한 제작 기법 · 저장 추천"
+       data-comment="What makes this piece stand out isn't the aesthetic but the method: standard construction pine, no screws, just precise mortise-and-tenon joints and a linseed-oil finish.
+It's a good reminder that constraint-driven making - cheap material, traditional joinery, no hardware - often produces more resolved design thinking than access to premium materials would." data-comment-kr="이 작업이 눈에 띄는 이유는 미감보다 방법론입니다. 표준 건축용 소나무, 스크루 없이 정교한 장부맞춤 조인트, 아마인유 마감이 전부입니다.
+값싼 자재와 전통 조인트 기법이라는 제약 안에서 작업할 때 오히려 더 정제된 디자인 사고가 나온다는 걸 보여주는 사례입니다. 스크루·철물에 의존하지 않는 구조 설계를 고민하는 이들에게 실질적으로 참고할 수 있는 제작법입니다."
+       data-title-en="martin labbé builds pine chair without a single screw in stockholm" data-title-kr="마르탱 라베, 스크루 없이 소나무 의자를 만들다">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">목공</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">designboom · 2026. 08. 26</div>
+        <div class="card-title">마르탱 라베, 스크루 없이 소나무 의자를 만들다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
