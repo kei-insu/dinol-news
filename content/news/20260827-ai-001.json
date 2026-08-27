@@ -1,0 +1,53 @@
+{
+  "contentId": "20260827-ai-001",
+  "date": "2026-08-27",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "AI타임스",
+    "publishedAt": "2026-08-25"
+  },
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=214324",
+  "isEn": false,
+  "featured": true,
+  "category": {
+    "kr": "AI · 모델 · 경쟁",
+    "en": "AI · Models · Competition"
+  },
+  "title": {
+    "kr": "머스크 \"그록, 앤트로픽에 뒤처져\"…커서에 코딩 격차 극복 당부",
+    "en": null
+  },
+  "summary": {
+    "kr": "일론 머스크가 자사 AI 모델 '그록'이 코딩 분야에서 앤트로픽의 클로드에 뒤처져 있다고 인정하며, 개발진에 커서(Cursor)와의 격차를 좁힐 것을 주문했습니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "머스크, 그록의 코딩 성능이 클로드 대비 열세라고 공개 인정",
+      "코딩 특화 AI 경쟁이 격화되는 배경",
+      "커서·클로드 코드 등 AI 코딩 툴 시장의 지각변동"
+    ],
+    "en": []
+  },
+  "positions": [
+    "design-lead",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "AI 코딩 툴 간 성능 격차는 결국 디자이너가 협업하는 개발 조직의 워크플로우 속도에도 영향을 줍니다. 어떤 모델이 우위를 점하는지 주시해두면 좋습니다.",
+    "en": null
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "AI 코딩 툴 동향에 관심 있는 실무자 참고용",
+    "en": null
+  },
+  "comment": {
+    "kr": "일론 머스크가 직접 자사 모델의 약점을 인정한 흔치 않은 발언입니다. AI 코딩 도구 시장에서 앤트로픽 클로드 계열이 실무 개발자 사이에서 강세를 보이고 있다는 방증이기도 합니다.\n디자이너 입장에서 코딩 모델 경쟁 자체는 직접적인 실무 도구는 아니지만, 프로덕트 조직 전체의 개발 속도와 AI 활용 문화에 영향을 미치는 배경 지식으로 봐두면 좋습니다. 특히 커서(Cursor)처럼 디자이너도 접할 수 있는 AI 코딩 에디터가 언급된다는 점은 주목할 만합니다.",
+    "en": null
+  },
+  "thumbLabel": "경쟁",
+  "thumbGradient": "g-crimson",
+  "_todo": []
+}

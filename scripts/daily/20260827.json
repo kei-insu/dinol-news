@@ -1,0 +1,74 @@
+{
+  "20260827-ai-001": {
+    "category_kr": "AI · 모델 · 경쟁",
+    "category_en": "AI · Models · Competition",
+    "impactScore": 2,
+    "positions": [
+      "design-lead",
+      "product-designer"
+    ]
+  },
+  "20260827-ai-002": {
+    "category_kr": "AI · 모빌리티 · 자율주행",
+    "category_en": "AI · Mobility · Autonomous Driving",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260827-ai-003": {
+    "category_kr": "AI · 트렌드 · 사용자인식",
+    "category_en": "AI · Trends · Public Perception",
+    "impactScore": 2,
+    "positions": [
+      "product-designer",
+      "ux-designer"
+    ]
+  },
+  "20260827-ai-004": {
+    "category_kr": "AI · 기술 · MCP",
+    "category_en": "AI · Technology · MCP",
+    "impactScore": 5,
+    "positions": [
+      "design-lead",
+      "product-designer"
+    ]
+  },
+  "20260827-design-001": {
+    "category_kr": "디자인 · 패션 · 브랜드",
+    "category_en": "Design · Fashion · Brand",
+    "impactScore": 2,
+    "positions": [
+      "brand-designer",
+      "fashion-designer"
+    ]
+  },
+  "20260827-design-002": {
+    "category_kr": "디자인 · 브랜드 · 트렌드",
+    "category_en": "Design · Brand · Trends",
+    "impactScore": 2,
+    "positions": [
+      "brand-designer",
+      "bx-designer"
+    ]
+  },
+  "20260827-design-003": {
+    "category_kr": "디자인 · 제품 · 웨어러블",
+    "category_en": "Design · Product · Wearables",
+    "impactScore": 3,
+    "positions": [
+      "industrial-designer",
+      "product-designer"
+    ]
+  },
+  "20260827-design-004": {
+    "category_kr": "디자인 · 제품 · 가구",
+    "category_en": "Design · Product · Furniture",
+    "impactScore": 4,
+    "positions": [
+      "industrial-designer",
+      "art-director"
+    ]
+  }
+}

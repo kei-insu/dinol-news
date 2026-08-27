@@ -1,0 +1,57 @@
+{
+  "contentId": "20260827-ai-003",
+  "date": "2026-08-27",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "TechCrunch",
+    "publishedAt": "2026-08-19"
+  },
+  "url": "https://techcrunch.com/2026/08/19/ai-was-supposed-to-win-people-over-by-now-it-hasnt/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 트렌드 · 사용자인식",
+    "en": "AI · Trends · Public Perception"
+  },
+  "title": {
+    "kr": "AI, 지금쯤 대중을 설득했어야 했지만 그러지 못했다",
+    "en": "AI was supposed to win people over by now - it hasn't"
+  },
+  "summary": {
+    "kr": "기술은 빠르게 발전하고 있지만 AI에 대한 대중의 인식은 오히려 나빠지고 있습니다. 일상 속 AI 확산에 대해 '기대보다 우려가 크다'고 답한 미국인 비율이 2021년 37%에서 현재 52%로 늘었습니다.",
+    "en": "Despite rapid technological progress, AI's public image keeps worsening: 52% of Americans now say they're more concerned than excited about AI in daily life, up from 37% in 2021."
+  },
+  "points": {
+    "kr": [
+      "AI에 대한 우려가 2021년 37%→현재 52%로 증가",
+      "기술 발전이 대중의 신뢰로 이어지지 못하는 흐름",
+      "업계의 기대와 사용자 정서 사이의 간극"
+    ],
+    "en": [
+      "Public concern about AI rose from 37% to 52% since 2021",
+      "Tech progress hasn't translated into public trust",
+      "Gap between industry excitement and user sentiment"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "ux-designer"
+  ],
+  "designer": {
+    "kr": "제품 신뢰는 단순히 AI 성능만으로 만들어지지 않습니다. 온보딩, 투명성, 사용자 통제권 같은 UX 요소가 AI 기능 수용도에 큰 영향을 준다는 점을 다시 확인시켜줍니다.",
+    "en": "A reminder that product trust isn't just about capability - onboarding, transparency and control in AI features matter as much as raw model power."
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "AI 기능을 설계하는 실무자에게 유용한 배경 지식 · 가볍게 읽기 추천",
+    "en": "Useful context for anyone designing AI-powered features · Worth a skim"
+  },
+  "comment": {
+    "kr": "수치가 꽤 선명합니다. AI 성능은 크게 발전했지만, 대중의 우려는 오히려 커졌고 그 격차는 2021년 이후 계속 벌어지고 있습니다.\nAI 기능을 만드는 입장에서는 단순히 '더 똑똑한 모델'을 쫓기보다, 신뢰·투명성·사용자 통제권 같은 요소가 실제 수용도에 더 큰 영향을 줄 수 있다는 점을 시사하는 데이터입니다.",
+    "en": "The data point is stark: more Americans are worried about AI than excited about it, and that gap has widened significantly since 2021 despite huge capability gains.\nFor anyone building AI-powered products, this is a useful counterweight to pure capability-chasing - trust, transparency and perceived control may matter more to adoption than raw model quality."
+  },
+  "thumbLabel": "신뢰",
+  "thumbGradient": "g-slate",
+  "_todo": []
+}

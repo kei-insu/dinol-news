@@ -1,0 +1,57 @@
+{
+  "contentId": "20260827-design-004",
+  "date": "2026-08-27",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "designboom",
+    "publishedAt": "2026-08-26"
+  },
+  "url": "https://www.designboom.com/design/martin-labbe-pine-chair-without-single-screw-stockholm/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 제품 · 가구",
+    "en": "Design · Product · Furniture"
+  },
+  "title": {
+    "kr": "마르탱 라베, 스크루 없이 소나무 의자를 만들다",
+    "en": "martin labbé builds pine chair without a single screw in stockholm"
+  },
+  "summary": {
+    "kr": "디자이너 마르탱 라베가 스톡홀름에서 표준 건축용 소나무 목재만으로 의자를 제작했습니다. 스크루를 하나도 쓰지 않고 전통 장부맞춤(mortise-and-tenon) 방식과 아마인유 마감으로 완성했습니다.",
+    "en": "Designer Martin Labbé built a chair entirely from standard pine construction timber in Stockholm, using traditional mortise-and-tenon joinery and linseed-oil finishing instead of a single screw."
+  },
+  "points": {
+    "kr": [
+      "가구용이 아닌 건축용 표준 소나무 목재 사용",
+      "장부맞춤(mortise-and-tenon) 기법으로 스크루 없이 결합",
+      "공업용 도장 대신 아마인유로 마감"
+    ],
+    "en": [
+      "Made from off-the-shelf construction-grade pine, not furniture-grade wood",
+      "Screw-free joinery via traditional mortise-and-tenon technique",
+      "Finished with linseed oil instead of industrial coatings"
+    ]
+  },
+  "positions": [
+    "industrial-designer",
+    "art-director"
+  ],
+  "designer": {
+    "kr": "저렴한 기성 자재라도 전통 조인트 기법을 정확히 적용하면 철물 없이도 견고한 구조를 만들 수 있다는 실증 사례입니다. 가구·제품 디자이너가 바로 참고할 수 있는 제작 방법론입니다.",
+    "en": "A hands-on demonstration that low-cost, off-the-shelf materials plus a disciplined traditional joinery method can outperform hardware-dependent construction - directly transferable technique for furniture and product designers."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "가구·제품 디자이너에게 바로 응용 가능한 제작 기법 · 저장 추천",
+    "en": "Directly applicable technique for furniture/product designers · Save for reference"
+  },
+  "comment": {
+    "kr": "이 작업이 눈에 띄는 이유는 미감보다 방법론입니다. 표준 건축용 소나무, 스크루 없이 정교한 장부맞춤 조인트, 아마인유 마감이 전부입니다.\n값싼 자재와 전통 조인트 기법이라는 제약 안에서 작업할 때 오히려 더 정제된 디자인 사고가 나온다는 걸 보여주는 사례입니다. 스크루·철물에 의존하지 않는 구조 설계를 고민하는 이들에게 실질적으로 참고할 수 있는 제작법입니다.",
+    "en": "What makes this piece stand out isn't the aesthetic but the method: standard construction pine, no screws, just precise mortise-and-tenon joints and a linseed-oil finish.\nIt's a good reminder that constraint-driven making - cheap material, traditional joinery, no hardware - often produces more resolved design thinking than access to premium materials would."
+  },
+  "thumbLabel": "목공",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

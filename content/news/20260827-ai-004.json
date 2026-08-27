@@ -1,0 +1,57 @@
+{
+  "contentId": "20260827-ai-004",
+  "date": "2026-08-27",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "MarkTechPost",
+    "publishedAt": "2026-08-03"
+  },
+  "url": "https://www.marktechpost.com/2026/08/03/how-to-secure-ai-agents-mcp-servers-and-llm-apps-in-production/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 기술 · MCP",
+    "en": "AI · Technology · MCP"
+  },
+  "title": {
+    "kr": "프로덕션 환경에서 AI 에이전트·MCP 서버·LLM 앱을 안전하게 지키는 법",
+    "en": "How to Secure AI Agents, MCP Servers, and LLM Apps in Production"
+  },
+  "summary": {
+    "kr": "AI 에이전트·MCP 서버·LLM 기반 앱을 프로토타입 단계를 넘어 실제 프로덕션에 배포할 때 생기는 보안 공백을 다루는 실무 가이드입니다.",
+    "en": "A practitioner's guide to securing AI agents, MCP servers, and LLM-powered apps in production, covering the security gaps that emerge once these systems move from prototype to real deployment."
+  },
+  "points": {
+    "kr": [
+      "프로덕션 MCP 서버 배포 시 자주 발생하는 보안 공백",
+      "AI 에이전트·LLM 앱 보안을 위한 실무 체크리스트",
+      "실제 배포 사례를 기반으로 한 실무자 가이드"
+    ],
+    "en": [
+      "Common security gaps in production MCP server deployments",
+      "Practical checklist for securing AI agents and LLM apps",
+      "Based on a practitioner's guide to real-world deployment risks"
+    ]
+  },
+  "positions": [
+    "design-lead",
+    "product-designer"
+  ],
+  "designer": {
+    "kr": "사내 툴에 AI 에이전트와 MCP 서버를 연결하는 사례가 늘면서, 디자인 툴링이나 내부 제품을 만드는 팀도 프로덕션 배포 전 최소한의 보안 체크리스트는 알아둘 필요가 있습니다.",
+    "en": "As more internal tools wire AI agents into MCP servers, teams that ship design tooling or internal products need at least a baseline awareness of these security gaps before going to production."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "MCP 기반 툴을 배포하는 팀에게 바로 적용 가능 · 저장 추천",
+    "en": "Directly actionable for teams shipping MCP-based tools · Save for reference"
+  },
+  "comment": {
+    "kr": "MCP 관련 글 대부분은 '무엇을 할 수 있는가'에 초점을 맞추지만, 이 글은 실제로 '무엇이 뚫리는가'를 짚어주는 실무 가이드입니다. 프로토타입 단계를 벗어나 실제 트래픽을 받는 순간 드러나는 보안 공백을 구체적으로 다룹니다.\n엔지니어가 아니더라도 체크리스트 형식이라 사내 AI 에이전트나 MCP 연동을 승인하기 전 점검표로 활용하기 좋습니다. 어떤 모델을 쓰느냐보다, 이 공백들을 챙겼는지가 더 중요하다는 걸 보여줍니다.",
+    "en": "Most MCP coverage is about what the protocol enables. This piece is refreshingly practical: it walks through the specific security gaps that show up once an MCP server or AI agent leaves the prototype stage and hits production traffic.\nEven for non-engineers, the checklist format is useful as a gut-check before greenlighting an internal AI agent or MCP integration - asking 'have we covered these gaps' before shipping matters more than which model powers the agent."
+  },
+  "thumbLabel": "MCP보안",
+  "thumbGradient": "g-violet",
+  "_todo": []
+}

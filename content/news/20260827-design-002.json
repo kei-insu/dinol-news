@@ -1,0 +1,53 @@
+{
+  "contentId": "20260827-design-002",
+  "date": "2026-08-27",
+  "section": "design",
+  "order": 2,
+  "source": {
+    "name": "한경매거진&북",
+    "publishedAt": "2026-08-26"
+  },
+  "url": "https://magazine.hankyung.com/business/article/202608264273b",
+  "isEn": false,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 브랜드 · 트렌드",
+    "en": "Design · Brand · Trends"
+  },
+  "title": {
+    "kr": "틱톡서 K팝 봤다가 화장품까지 산다… 커지는 'K-소비'",
+    "en": null
+  },
+  "summary": {
+    "kr": "K-컬처의 영향력이 콘텐츠 인기를 넘어 K-뷰티·K-푸드·K-패션·K-관광 등 연관 산업의 소비로 확장되고 있다는 분석으로, 이를 'K-컬처 4.0'으로 정의합니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "틱톡 등 콘텐츠 소비가 뷰티·패션·식품 구매로 전이되는 흐름",
+      "K-컬처 영향력을 'K-컬처 4.0'으로 재정의",
+      "연관 산업 전반으로 확산되는 K-소비 패턴"
+    ],
+    "en": []
+  },
+  "positions": [
+    "brand-designer",
+    "bx-designer"
+  ],
+  "designer": {
+    "kr": "콘텐츠에서 소비로 이어지는 흐름은 브랜드 경험을 설계할 때 '어디서 처음 브랜드를 접했는가'까지 고려해야 한다는 뜻입니다. SNS 콘텐츠와 실제 구매 경험의 연결고리를 디자인하는 것이 중요해집니다.",
+    "en": null
+  },
+  "impactScore": 2,
+  "recommend": {
+    "kr": "브랜드·마케팅 관점의 트렌드 참고용",
+    "en": null
+  },
+  "comment": {
+    "kr": "K-컬처가 단순한 콘텐츠 소비를 넘어 실제 구매로 이어지는 패턴이 뚜렷해지고 있다는 분석입니다. 특히 틱톡 같은 숏폼 플랫폼이 발견의 통로가 되는 점이 흥미롭습니다.\n브랜드·BX 디자이너 입장에서는 콘텐츠 접점과 실제 구매 경험 사이의 간극을 얼마나 매끄럽게 이어주는지가 앞으로 더 중요한 과제가 될 것으로 보입니다.",
+    "en": null
+  },
+  "thumbLabel": "K소비",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}
