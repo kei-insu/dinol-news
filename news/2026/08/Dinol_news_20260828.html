@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 놀이터 — 2026. 08. 28</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC93DYWB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC93DYWB2B');
+</script>
+<!-- Google AdSense — TODO: ca-pub- 뒤 숫자를 실제 발급받은 게시자 ID로 교체하세요 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Cormorant+Garamond:wght@300&family=Noto+Serif+KR:wght@300&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/dinol.css">
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════
+  디자인 놀이터 — 콘텐츠 수집 정책
+  ════════════════════════════════════════════════════════
+  [크롤링 기간]
+  · 해당일 + 전일 (예: 오늘 2026-06-30 → 2026-06-29 ~ 2026-06-30)
+
+  [크롤링 범위]
+  · 뉴스 기사 + 소스 공유 + 인사이트 자료 등 다양한 읽을거리
+  · 카테고리별 최소 4개 이상 수집
+
+  [언어 비율]
+  · 섹션별 한국어 기사 : 영문 기사 = 50:50 유지
+  · 영문 기사만으로 섹션이 채워지지 않도록 한국어 소스 우선 탐색
+  · 한국어 기사 후보: designdb.com, design.co.kr, kidp.or.kr,
+    ajunews.com, asiae.co.kr, mt.co.kr, zdnet.co.kr 등
+
+  [콘텐츠 검증 — 크롤링 후 반드시 수행]
+  1. URL 중복 확인 — 동일 URL은 1개 카드만 허용
+  2. 날짜 확인 — 기사 본문의 실제 게재일이 수집 기간 내인지 검증
+  3. 카드 타이틀 ↔ 목적지 URL 일치 확인
+     · 카드에 표시된 타이틀·내용이 링크 도착 페이지의 실제 내용과 일치해야 함
+     · URL이 목록/메인 페이지 등 기사가 아닌 경우 사용 금지
+     · 실제 페이지를 열어 확인되지 않은 내용은 카드에 기재하지 않음
+  4. 빈 링크·깨진 링크 사용 금지
+  5. 언어 비율 확인 — 섹션별 KR:En = 50:50 충족 여부 최종 점검
+
+  [표기 규칙]
+  · 날짜 형식: YYYY. MM. DD (하드코딩, replace 연산 사용 금지)
+  · 영문 기사만 En 배지 표시 (국문 기사는 배지 없음)
+  · 파일명: Dinol_news_YYYYMMDD.html
+  ════════════════════════════════════════════════════════
+-->
+
+<!-- ── DRAWER ── -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-source" id="drawerSource"></div>
+  </div>
+  <div class="drawer-thumb" id="drawerThumb">
+    <div class="noise"></div>
+    <span class="thumb-label" id="drawerLabel"></span>
+    <span class="thumb-en" id="drawerEn" style="display:none">EN</span>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-toolbar">
+      <div class="card-actions drawer-actions">
+        <span class="act act-like" id="drawerLike" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count" id="drawerLikeCount"></span></span>
+        <span class="act act-share" id="drawerShare" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+      </div>
+      <div class="drawer-lang-toggle" id="drawerLangToggle" style="display:none">
+        <button class="lang-btn active" id="btnKr">KR</button>
+        <button class="lang-btn" id="btnEn">EN</button>
+      </div>
+    </div>
+    <div class="drawer-category" id="drawerCategory"></div>
+    <div class="drawer-title" id="drawerTitle"></div>
+
+    <div class="drawer-field">
+      <div class="drawer-field-label">한 줄 요약</div>
+      <div class="drawer-field-text" id="drawerOneline"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">핵심 인사이트</div>
+      <ul class="drawer-points" id="drawerPoints"></ul>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">디자이너 관점</div>
+      <div class="drawer-field-text" id="drawerDesigner"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">실무 영향도</div>
+      <div class="drawer-stars" id="drawerImpact"></div>
+    </div>
+    <div class="drawer-field">
+      <div class="drawer-field-label">활용 추천</div>
+      <div class="drawer-field-text" id="drawerRecommend"></div>
+    </div>
+    <div class="drawer-comment" id="drawerCommentWrap">
+      <div class="drawer-comment-label">💬 큐레이션 노트</div>
+      <div class="drawer-comment-text" id="drawerComment"></div>
+    </div>
+  </div>
+  <div class="drawer-footer">
+    <button class="drawer-close-btn" id="drawerClose">닫기</button>
+    <a class="drawer-cta" id="drawerCta" target="_blank" rel="noopener">원문 보기 →</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-title">디자인 놀이터</div>
+  <img class="site-logo" src="../../../assets/ai-design-news.png" alt="AI & Design News">
+  <div class="header-sep"></div>
+  <div class="site-date">August 28, 2026</div>
+</header>
+
+
+<!-- ══════════════════════ AI ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>AI</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://www.etnews.com/20260824000105" target="_blank"
+       data-category="AI · 디자인전략 · 컨퍼런스"
+       data-position="design-lead|ux-designer"
+       data-summary="9월 2일 서울 강남 ST센터에서 열리는 'UX Korea 2026 - Fall'을 앞두고, AI가 디자인 프로세스에 깊이 들어온 상황에서 디자이너의 주체성과 역할을 다시 묻는 컨퍼런스 소식입니다. KAIST, 삼성SDS, LG전자, Figma 관계자가 각자의 입장에서 4가지 질문을 던집니다."
+       data-points="AI 시대, 디자이너는 '누구의 도구' 안에서 일하는가|KAIST·삼성SDS·LG전자·Figma가 제시하는 4가지 질문|9월 2일 강남 ST센터에서 UX Korea 2026 Fall 개최"
+       data-designer="자동화·효율성을 앞세운 AI 도구 도입 국면에서, '무엇을 더 할 것인가'보다 '나는 지금 누구의 도구 안에서 일하고 있는가'라는 질문이 실무 디자이너에게 더 중요해지고 있다는 관점을 제시합니다."
+       data-impact-score="4"
+       data-recommend="컨퍼런스 세션 구성 참고 및 팀 내 AI 활용 논의 자료로 추천"
+       data-comment="AI 도구가 디자인 워크플로 깊숙이 들어오면서 '얼마나 빨리 만들 것인가'에서 '무엇을 만들 것인가'로 질문이 옮겨가고 있습니다. 이번 컨퍼런스가 KAIST(학계)·삼성SDS·LG전자(기업 인하우스)·Figma(툴 벤더)라는 서로 다른 입장을 한 자리에 모은 점이 눈에 띕니다.
+실무 디자이너 입장에서는 '내가 지금 어떤 도구의 논리 안에서 결정을 내리고 있는가'를 점검하는 계기로 삼을 만합니다. 특히 AI 에이전트가 기획·리서치 단계까지 관여하기 시작한 지금, 디자이너의 역할 재정의는 더 이상 미룰 수 없는 주제입니다.">
+      <div class="thumb g-navy">
+        <div class="noise"></div>
+        <span class="thumb-label">AI전략</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">전자신문 · 2026. 08. 24</div>
+        <div class="card-title">[UX Korea 2026 Fall] 디자인과 AI의 관계를 다시 묻다…KAIST·삼성SDS·LG전자·Figma가 던지는 4개의 질문</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.tech42.co.kr/유저-민감-정보까지-기억한다앤트로픽-클로드-ai/" target="_blank"
+       data-category="AI · 툴 · 생산성"
+       data-position="design-lead|ui-designer"
+       data-summary="앤트로픽이 클로드의 기억(메모리) 관리 기능을 대폭 업그레이드했습니다. 일반 챗봇 대화와 자동화 에이전트 서비스 '클로드 코워크' 간 기억 공유가 가능해져, 여러 세션에 걸친 맥락 유지가 쉬워졌습니다."
+       data-points="일반 대화와 '클로드 코워크' 간 메모리 공유 지원|세션을 넘나드는 맥락 유지로 반복 설명 감소|민감 정보 기억 범위 확대에 따른 프라이버시 논의도 병행"
+       data-designer="여러 프로젝트를 오가며 AI에게 매번 같은 맥락을 반복 설명해야 했던 번거로움이 줄어들 수 있습니다. 다만 클라이언트 정보를 다루는 디자인 실무자라면 메모리 범위와 데이터 보관 정책을 먼저 확인할 필요가 있습니다."
+       data-impact-score="3"
+       data-recommend="클로드 코워크로 반복 작업을 자동화하는 팀에 참고 추천"
+       data-comment="AI 도구를 업무에 상시로 쓰는 실무자에게 '기억력'은 은근히 큰 생산성 변수입니다. 대화가 리셋될 때마다 맥락을 다시 설명해야 했던 피로가 이번 업데이트로 줄어들 가능성이 있습니다.
+다만 '유저 민감 정보까지 기억한다'는 표현이 시사하듯, 메모리 범위가 넓어질수록 데이터 거버넌스 문제도 함께 커집니다. 클라이언트 브리프나 미공개 프로젝트 정보를 다루는 디자인팀이라면 메모리 보관·삭제 정책을 먼저 확인하고 도입하는 편이 안전합니다.">
+      <div class="thumb g-slate">
+        <div class="noise"></div>
+        <span class="thumb-label">메모리</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">테크42 · 2026. 08. 26</div>
+        <div class="card-title">"유저 민감 정보까지 기억한다"…앤트로픽, 클로드 AI 대대적 개편</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.creativebloq.com/design/design-software/adobe-just-added-a-brand-new-ai-assisted-editor-to-photoshop" target="_blank"
+       data-category="AI · 툴 · 생산성" data-category-en="AI · Tools · Productivity"
+       data-position="graphic-designer|illustrator"
+       data-summary="Adobe has rolled out a raft of new AI-powered features for Photoshop, leaning further into prompt-based editing with new light adjustment tools, more precise AI masking, and a brand new editing space built around natural-language prompts, now in beta." data-summary-kr="어도비가 포토샵에 프롬프트 기반 편집을 중심으로 한 새 AI 기능들을 대거 추가했습니다. 새로운 조명 보정 도구, 더 정교해진 AI 마스크 편집, 그리고 자연어 프롬프트로 조작하는 완전히 새로운 편집 공간이 베타로 공개됐습니다."
+       data-points="New AI-powered light adjustment tools|More precise AI editing with masks|New prompt-based editing space in beta" data-points-kr="AI 기반 조명 보정 도구 신설|더 정교해진 AI 마스크 편집|프롬프트 기반 신규 편집 공간 베타 공개"
+       data-designer="For working designers, this pushes Photoshop further toward 'describe the edit' workflows, worth testing now while it's still beta, before it becomes the default way clients expect changes to be made." data-designer-kr="실무 디자이너에게는 포토샵이 '말로 설명하는 편집' 방식으로 한 걸음 더 나아갔다는 신호입니다. 아직 베타인 지금 미리 써보고 익혀두면, 이 방식이 기본값이 됐을 때 앞서갈 수 있습니다."
+       data-impact-score="5"
+       data-recommend="Try the beta this week if you're a Photoshop power user" data-recommend-kr="포토샵을 자주 쓰는 실무자라면 이번 주 베타 기능부터 먼저 사용해볼 것을 추천"
+       data-comment="This is exactly the kind of update worth blocking out 30 minutes for: not a flashy demo feature, but a change to the core editing loop. Prompt-based light adjustment and masking could meaningfully cut down repetitive retouching work.
+The interesting question is what happens to client expectations once 'just describe what you want changed' becomes normal. Designers who get fluent with prompt-based editing early will have an edge in speed, even if the underlying judgment calls stay human." data-comment-kr="화려한 데모용 기능이 아니라 편집 워크플로의 기본 흐름 자체를 바꾸는 업데이트라 30분 정도 투자해 직접 써볼 가치가 있습니다. 프롬프트 기반 조명 보정과 마스킹은 반복적인 리터칭 작업 시간을 실질적으로 줄여줄 수 있습니다.
+관건은 '원하는 걸 말로 설명하면 된다'는 방식이 표준이 됐을 때 클라이언트의 기대치가 어떻게 바뀔지입니다. 최종 판단은 여전히 사람의 몫이더라도, 프롬프트 기반 편집에 먼저 익숙해진 디자이너가 속도 면에서 앞서갈 가능성이 큽니다."
+       data-title-en="Adobe just added a brand new AI-assisted editor to Photoshop" data-title-kr="어도비, 포토샵에 완전히 새로운 AI 편집 공간 추가">
+      <div class="thumb g-amber">
+        <div class="noise"></div>
+        <span class="thumb-label">포토샵</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">Creative Bloq · 2026. 08. 27</div>
+        <div class="card-title">어도비, 포토샵에 완전히 새로운 AI 편집 공간 추가</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.nngroup.com/articles/ai-generated-images/" target="_blank"
+       data-category="AI · 이미지생성 · UX리서치" data-category-en="AI · Image Generation · UX Research"
+       data-position="ux-designer|ui-designer"
+       data-summary="In usability testing, AI-generated images did not create any perception penalty compared to stock photos when users didn't know the image source, suggesting AI imagery is a viable option for many web contexts." data-summary-kr="사용성 테스트 결과, 이용자가 이미지 출처를 모를 경우 AI 생성 이미지와 스톡 사진 사이에 인식 차이가 없었습니다. 많은 웹 상황에서 AI 이미지가 충분히 대안이 될 수 있다는 뜻입니다."
+       data-points="No perception penalty for AI images when source is undisclosed|Findings based on controlled usability testing, not opinion surveys|Implications for cost and speed of web content production" data-points-kr="출처를 밝히지 않으면 AI 이미지도 인식 차이 없음|의견 설문이 아닌 실제 사용성 테스트 기반 결과|웹 콘텐츠 제작 비용·속도 측면의 시사점"
+       data-designer="A rare case of AI-skepticism being tested empirically rather than assumed, useful ammunition when deciding whether a project really needs custom photography." data-designer-kr="'AI 이미지는 티가 난다'는 통념을 실제 테스트로 검증한 드문 사례입니다. 프로젝트에 커스텀 촬영이 정말 필요한지 판단할 때 근거로 쓸 만합니다."
+       data-impact-score="5"
+       data-recommend="Save this to justify AI imagery choices in client conversations" data-recommend-kr="클라이언트와 이미지 소싱 방식을 논의할 때 근거 자료로 저장 추천"
+       data-comment="This is the kind of finding worth keeping on hand: it's not 'AI images are fine,' it's 'in controlled testing, undisclosed AI images performed the same as stock photos.' That distinction matters when a client pushes back on AI imagery for vague reasons.
+It doesn't settle the ethical or rights questions around AI image generation, but as a pure usability data point, it's one of the more actionable design-research findings this month." data-comment-kr="'AI 이미지도 괜찮다'는 감상이 아니라, 통제된 테스트에서 출처를 밝히지 않았을 때 스톡 사진과 성능 차이가 없었다는 구체적 결과라는 점이 중요합니다. 클라이언트가 막연한 이유로 AI 이미지 사용을 반대할 때 근거로 제시하기 좋습니다.
+AI 이미지 생성을 둘러싼 저작권·윤리 문제까지 해결해주는 건 아니지만, 순수 사용성 데이터로서는 이번 달 나온 디자인 리서치 결과 중 가장 실무에 바로 쓸 수 있는 축에 속합니다."
+       data-title-en="AI-Generated Images Can Perform as Well as Stock Photography" data-title-kr="AI 생성 이미지, 스톡 사진만큼 잘 통한다">
+      <div class="thumb g-teal">
+        <div class="noise"></div>
+        <span class="thumb-label">UX리서치</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">NN/g · 2026. 08. 21</div>
+        <div class="card-title">AI 생성 이미지, 스톡 사진만큼 잘 통한다</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════ DESIGN ══════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <h2>Design</h2>
+    <div class="line"></div>
+    <span class="section-chevron">▼</span>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="https://heypop.kr/n/142024/" target="_blank"
+       data-category="디자인 · 브랜드 · 팝업"
+       data-position="brand-designer|graphic-designer"
+       data-summary="영화 '마티 슈프림' 팝업이 8월 29일 서울 용산 사파리스팟에서 열립니다. 오드와 사파리스팟이 협업해 만든 공식 굿즈와 영화 아카이브를 선보이며, 뉴욕·런던·도쿄에 이어 서울에서 열리는 글로벌 투어의 일환입니다."
+       data-points="8월 29일 용산 사파리스팟서 오픈|오드×사파리스팟 협업 굿즈·필름 아카이브 공개|뉴욕·런던·도쿄 이은 글로벌 팝업 투어의 서울 편"
+       data-designer="영화 IP와 로컬 스트리트 브랜드가 협업할 때 '한국다움'을 어떻게 녹이는지 보여주는 사례입니다. 패션·인테리어·브랜딩 디자이너에게 팝업은 브랜드 세계관을 3차원 공간과 굿즈로 동시에 번역해보는 실전 레퍼런스이기도 합니다. 글로벌 투어 포맷을 그대로 가져오되 로컬 파트너의 손길이 얼마나 묻어나는지가 팝업의 완성도를 가릅니다."
+       data-impact-score="4"
+       data-recommend="브랜드 협업 팝업·리테일 공간 기획 시 벤치마킹용으로 저장 추천"
+       data-comment="영화 개봉과 맞물린 굿즈 팝업은 흔하지만, 이 사례는 뉴욕, 런던, 도쿄를 거쳐 서울까지 이어지는 '투어' 형태라는 점이 눈에 띕니다. 각 도시 로컬 파트너와의 협업 방식이 조금씩 다르다면, 그 차이를 비교해보는 것만으로도 브랜드 협업 기획에 참고가 됩니다.
+패션·인테리어·브랜딩 디자이너에게 팝업 사례는 단순 이벤트가 아니라 '브랜드 세계관을 공간과 굿즈로 동시에 번역하는 법'을 보여주는 실무 레퍼런스입니다. 예산·기간이 제한된 팝업일수록 무엇을 덜어내고 무엇에 집중했는지가 드러나, 자사 프로젝트에 바로 응용할 만한 아이디어를 얻기 좋습니다.">
+      <div class="thumb g-plum">
+        <div class="noise"></div>
+        <span class="thumb-label">팝업</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">heyPOP · 2026. 08. 25</div>
+        <div class="card-title">마티 슈프림 팝업, 마침내 서울!</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.inven.co.kr/webzine/news/?news=319920" target="_blank"
+       data-category="디자인 · 게임 · 세계관"
+       data-position="art-director|illustrator"
+       data-summary="엔씨소프트의 오픈월드 슈터 신작 '신더시티'가 게임스컴 2026 오프닝 나이트 라이브에서 핵심 세계관을 담은 신규 트레일러를 공개했습니다. 23세기의 한 사건으로 역사가 뒤틀려 폐허가 된 서울, 삼성동·논현동 등 실제 장소를 언리얼 엔진5로 재현한 대체역사 SF 세계관이 특징입니다."
+       data-points="23세기 SF 사건으로 역사가 바뀐 대체역사 세계관|삼성동·논현동 등 실제 서울 장소를 폐허 도시로 재구성|언리얼 엔진5 기반 오픈월드 시네마틱 비주얼"
+       data-designer="실재하는 도시 좌표를 그대로 가져와 폐허화된 미래로 뒤바꾸는 방식은, 장소성을 활용한 세계관 디자인의 실무적 접근을 보여줍니다. 브랜드 스토리텔링이나 공간 기반 IP를 만드는 디자이너에게도 참고가 됩니다."
+       data-impact-score="3"
+       data-recommend="게임·IP 세계관 디자인, 디스토피아 비주얼 컨셉 리서치용으로 참고 추천"
+       data-comment="국산 게임의 세계관 디자인이 '가상의 어디쯤'이 아니라 삼성동, 논현동처럼 실재하는 좌표를 정확히 짚어 폐허로 뒤바꾸는 방식이 눈에 띕니다. 익숙한 장소가 낯설게 파괴된 모습으로 재현될 때 느껴지는 위화감은, 완전한 가상 도시보다 훨씬 강한 몰입을 만들어냅니다.
+이런 접근은 게임 세계관 디자인에 국한되지 않습니다. 브랜드 스토리나 공간 기반 IP를 기획할 때도 '완전히 새로운 것을 만드는 것'과 '익숙한 것을 비틀어 낯설게 만드는 것' 중 후자가 더 효율적인 몰입 장치가 될 수 있다는 걸 보여주는 사례입니다.">
+      <div class="thumb g-forest">
+        <div class="noise"></div>
+        <span class="thumb-label">세계관</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">인벤 · 2026. 08. 26</div>
+        <div class="card-title">엔씨 '신더시티', 핵심 세계관 담은 신규 트레일러 발표</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://petapixel.com/2026/08/26/instagrams-new-video-editing-tool-quickly-makes-a-first-draft/" target="_blank"
+       data-category="디자인 · 영상 · 편집툴" data-category-en="Design · Video · Editing Tools"
+       data-position="video-designer|motion-designer"
+       data-summary="Instagram's new 'First Draft' feature automatically trims and stitches selected clips into a rough Reels edit in under 10 seconds, cutting out pauses and silences from talking-head and multi-clip footage before handing it back for manual refinement." data-summary-kr="인스타그램의 새 기능 '퍼스트 드래프트'가 선택한 클립들을 10초 안에 자동으로 다듬고 이어 붙여 릴스 초안을 만들어줍니다. 정적이나 침묵 구간을 알아서 잘라내며, 이후 순서 변경이나 삭제 등 수동 수정도 가능합니다."
+       data-points="Produces a rough Reels edit in under 10 seconds|Trims pauses/silences automatically from talking-head clips|Fully editable afterward: reorder, remove, or adjust any clip" data-points-kr="10초 안에 릴스 초안 완성|말하는 영상의 정적·침묵 구간 자동 삭제|이후 순서 변경·삭제 등 자유롭게 수정 가능"
+       data-designer="For anyone editing short-form video regularly, this shifts the starting point of an edit from a blank timeline to a workable rough cut, worth testing to see how much of the 'boring' first pass it can actually take off your plate." data-designer-kr="숏폼 영상을 자주 편집하는 사람이라면, 빈 타임라인이 아니라 어느 정도 다듬어진 초안에서 작업을 시작할 수 있게 됩니다. 지루한 1차 편집 작업을 얼마나 덜어주는지 직접 써보고 판단할 가치가 있습니다."
+       data-impact-score="4"
+       data-recommend="Try it on your next multi-clip Reel before doing the rough cut manually" data-recommend-kr="다음 릴스를 만들 때 수동으로 초벌 편집하기 전에 먼저 써볼 것을 추천"
+       data-comment="Auto-editing tools for short-form video have been creeping toward this for a while, but a sub-10-second turnaround for a usable rough cut is a meaningful threshold. It won't replace intentional pacing or a strong hook, but it removes the most tedious part of the process: assembling and trimming raw footage.
+For video and motion designers working across many small deliverables, tools like this are worth tracking less for the output quality and more for how they reshape where human editing time actually goes." data-comment-kr="숏폼 영상 자동 편집 도구는 꾸준히 발전해 왔지만, 쓸 만한 초안을 10초 안에 뽑아준다는 건 의미 있는 문턱을 넘은 것입니다. 의도적인 리듬감이나 강한 훅까지 대신해주진 않지만, 가장 지루한 작업인 원본 소스 조립·트리밍은 확실히 덜어줍니다.
+많은 짧은 결과물을 다루는 영상·모션 디자이너라면, 결과물의 완성도보다는 이런 도구가 사람의 편집 시간을 어디로 옮겨놓는지에 주목해 볼 가치가 있습니다."
+       data-title-en="Instagram's New Video Editing Tool Quickly Makes a First Draft" data-title-kr="인스타그램 새 영상 편집 기능 '퍼스트 드래프트', 10초 만에 초안 완성">
+      <div class="thumb g-olive">
+        <div class="noise"></div>
+        <span class="thumb-label">영상편집</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">PetaPixel · 2026. 08. 26</div>
+        <div class="card-title">인스타그램 새 영상 편집 기능 '퍼스트 드래프트', 10초 만에 초안 완성</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+    <a class="card" href="https://www.itsnicethat.com/articles/moriz-oberberger-illustration-art-discover-270826" target="_blank"
+       data-category="디자인 · 일러스트레이션 · 아트" data-category-en="Design · Illustration · Art"
+       data-position="illustrator|art-director"
+       data-summary="German visual artist Moriz Oberberger draws bendy figures and awkward bodies with muted colours and messy mark-making, his paint oozing into melted, Philip Guston-esque forms that turn ordinary situations quietly uncanny." data-summary-kr="독일 비주얼 아티스트 모리츠 오버베르거는 뒤틀린 신체와 어색한 자세를 절제된 색감과 거친 마크메이킹으로 그립니다. 물감이 녹아내리듯 번지는 형상은 필립 거스턴을 연상시키며, 평범한 상황을 은근히 기이하게 뒤바꿉니다."
+       data-points="Known for 'strange characters and awkward bodies'|Paint's viscosity used deliberately to create melted, textured forms|Uses nearly-worn-down pencils so the tool itself alters the line as it draws" data-points-kr="'낯선 캐릭터와 어색한 신체'로 알려진 작업 스타일|물감의 점성을 그대로 활용해 녹아내리는 듯한 질감 표현|다 닳은 연필을 일부러 사용해 그리는 동안 선의 질감이 변하게 함"
+       data-designer="A useful study in how material constraints (worn tools, paint viscosity) can generate a signature style rather than get in its way, relevant well beyond illustration to anyone developing a distinctive editorial or brand visual voice." data-designer-kr="다 닳은 도구나 물감의 물성 같은 제약을 방해 요소가 아니라 시그니처 스타일을 만드는 재료로 쓰는 방식이 인상적입니다. 일러스트레이션을 넘어 자기만의 편집·브랜드 비주얼 톤을 찾는 실무자에게도 참고가 됩니다."
+       data-impact-score="3"
+       data-recommend="Save as mood-board reference for editorial illustration or character-driven visual identity work" data-recommend-kr="에디토리얼 일러스트나 캐릭터 기반 비주얼 아이덴티티 작업의 무드보드 레퍼런스로 저장 추천"
+       data-comment="What stands out here isn't just the wobbly, Guston-adjacent figures, it's the process behind them: Oberberger deliberately keeps pencils until they're nearly spent because the changing nub alters the line in real time, and leans into paint's own viscosity rather than fighting it.
+That's a small but transferable lesson for any visual practice: a signature look often comes less from a clever concept and more from choosing which material accidents to keep instead of correct." data-comment-kr="눈길을 끄는 건 뒤틀린 필립 거스턴풍 인물 자체보다 그 뒤에 있는 작업 방식입니다. 오버베르거는 연필을 일부러 다 닳을 때까지 쓰는데, 닳아가는 심이 실시간으로 선의 질감을 바꾸기 때문입니다. 물감의 점성도 억지로 통제하지 않고 그대로 활용합니다.
+시그니처 스타일은 영리한 콘셉트보다 '어떤 재료의 우연을 남기고 어떤 걸 고칠지' 선택하는 데서 나온다는, 작지만 응용 가능한 교훈을 줍니다."
+       data-title-en="Moriz Oberberger's bendy figures and whimsical cartoons reveal 'the strange beauty of ordinary situations'" data-title-kr="모리츠 오버베르거의 뒤틀린 인물화가 보여주는 '평범한 순간의 낯선 아름다움'">
+      <div class="thumb g-rust">
+        <div class="noise"></div>
+        <span class="thumb-label">일러스트</span>
+        <span class="thumb-en">EN</span>
+      </div>
+      <div class="card-body">
+        <div class="card-source">It's Nice That · 2026. 08. 27</div>
+        <div class="card-title">모리츠 오버베르거의 뒤틀린 인물화가 보여주는 '평범한 순간의 낯선 아름다움'</div>
+      </div>
+      <div class="card-footer"><div class="card-actions"><span class="act act-like" role="button" aria-label="좋아요"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="act-count"></span></span><span class="act act-share" role="button" aria-label="공유"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── 아카이브 · 오픈채팅방 이동 (카드 끝, 푸터 위) ── -->
+<div class="archive-cta-wrap">
+  <a class="archive-cta" href="../../../archive.html">AI &amp; Design 아카이브</a>
+  <a class="kakao-cta" href="https://open.kakao.com/o/g3XICwx" target="_blank" rel="noopener noreferrer">디자인놀이터 오픈채팅방</a>
+</div>
+
+
+
+<!-- ── 방명록 ── -->
+<section class="guestbook">
+  <div class="gb-header"><h2>디놀 톡톡</h2></div>
+  <div class="gb-form">
+    <div class="gb-namerow">
+      <input class="gb-nick" type="text" placeholder="닉네임 (분야)" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="dinol-nick-1783201003">
+      <input class="gb-pw" type="password" inputmode="numeric" placeholder="비밀번호 4자리" maxlength="6" autocomplete="new-password">
+    </div>
+    <div class="gb-content-wrap">
+      <textarea class="gb-content" placeholder="디자인에 대한 의견이나 궁금한 점을 자유롭게 남겨보세요." maxlength="1000"></textarea>
+      <span class="gb-count" id="gbCount">0 / 1000</span>
+    </div>
+    <div class="gb-tbar">
+      <button type="button" class="gb-tsmile" id="gbSmile" aria-label="이모지"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#c9c9d4" stroke-width="1.7"/><path d="M8.5 14 Q12 17 15.5 14" fill="none" stroke="#c9c9d4" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.3" cy="10.2" r="1.1" fill="#c9c9d4"/><circle cx="14.7" cy="10.2" r="1.1" fill="#c9c9d4"/></svg></button>
+      <button class="gb-submit" id="gbSubmit" disabled>등록</button>
+    </div>
+  </div>
+  <div class="gb-list" id="gbList"></div>
+  <div class="gb-pagination" id="gbPager"></div>
+</section>
+
+<!-- 디놀 톡톡 비번 확인 모달 -->
+<div class="gb-modal-overlay" id="gbModalOverlay"></div>
+<div class="gb-modal" id="gbModal">
+  <div class="gb-modal-title" id="gbModalTitle">비밀번호 확인</div>
+  <input class="gb-modal-pw" id="gbModalPw" type="password" inputmode="numeric" maxlength="6" placeholder="비밀번호" autocomplete="new-password">
+  <div class="gb-modal-err" id="gbModalErr"></div>
+  <div class="gb-modal-btns">
+    <button class="gb-modal-cancel" id="gbModalCancel">취소</button>
+    <button class="gb-modal-ok" id="gbModalOk">확인</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-copy">© 2026 디자인놀이터. All rights reserved.</p>
+  <p class="footer-notice">본 서비스의 디자인 및 구성에 대한 권리는 디자인놀이터에 있습니다.<br>제공되는 콘텐츠의 저작권은 각 언론사 및 원저작권자에게 있습니다.</p>
+  <div class="footer-links">
+    <a class="footer-link" href="../../../privacy.html">개인정보처리방침</a>
+  </div>
+</footer>
+
+<!-- ── 맨 위로 (모바일 전용, 스크롤 시 노출) ── -->
+<button class="to-top" id="toTop" aria-label="맨 위로" title="맨 위로">↑</button>
+
+
+<script src="../../../assets/dinol.js"></script>
+
+
+
+
+<script type="module" src="../../../assets/dinol-firebase.js"></script>
+</body>
+</html>
