@@ -1,0 +1,57 @@
+{
+  "contentId": "20260828-ai-003",
+  "date": "2026-08-28",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "Creative Bloq",
+    "publishedAt": "2026-08-27"
+  },
+  "url": "https://www.creativebloq.com/design/design-software/adobe-just-added-a-brand-new-ai-assisted-editor-to-photoshop",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 생산성",
+    "en": "AI · Tools · Productivity"
+  },
+  "title": {
+    "kr": "어도비, 포토샵에 완전히 새로운 AI 편집 공간 추가",
+    "en": "Adobe just added a brand new AI-assisted editor to Photoshop"
+  },
+  "summary": {
+    "kr": "어도비가 포토샵에 프롬프트 기반 편집을 중심으로 한 새 AI 기능들을 대거 추가했습니다. 새로운 조명 보정 도구, 더 정교해진 AI 마스크 편집, 그리고 자연어 프롬프트로 조작하는 완전히 새로운 편집 공간이 베타로 공개됐습니다.",
+    "en": "Adobe has rolled out a raft of new AI-powered features for Photoshop, leaning further into prompt-based editing with new light adjustment tools, more precise AI masking, and a brand new editing space built around natural-language prompts, now in beta."
+  },
+  "points": {
+    "kr": [
+      "AI 기반 조명 보정 도구 신설",
+      "더 정교해진 AI 마스크 편집",
+      "프롬프트 기반 신규 편집 공간 베타 공개"
+    ],
+    "en": [
+      "New AI-powered light adjustment tools",
+      "More precise AI editing with masks",
+      "New prompt-based editing space in beta"
+    ]
+  },
+  "positions": [
+    "graphic-designer",
+    "illustrator"
+  ],
+  "designer": {
+    "kr": "실무 디자이너에게는 포토샵이 '말로 설명하는 편집' 방식으로 한 걸음 더 나아갔다는 신호입니다. 아직 베타인 지금 미리 써보고 익혀두면, 이 방식이 기본값이 됐을 때 앞서갈 수 있습니다.",
+    "en": "For working designers, this pushes Photoshop further toward 'describe the edit' workflows, worth testing now while it's still beta, before it becomes the default way clients expect changes to be made."
+  },
+  "impactScore": 5,
+  "recommend": {
+    "kr": "포토샵을 자주 쓰는 실무자라면 이번 주 베타 기능부터 먼저 사용해볼 것을 추천",
+    "en": "Try the beta this week if you're a Photoshop power user"
+  },
+  "comment": {
+    "kr": "화려한 데모용 기능이 아니라 편집 워크플로의 기본 흐름 자체를 바꾸는 업데이트라 30분 정도 투자해 직접 써볼 가치가 있습니다. 프롬프트 기반 조명 보정과 마스킹은 반복적인 리터칭 작업 시간을 실질적으로 줄여줄 수 있습니다.\n관건은 '원하는 걸 말로 설명하면 된다'는 방식이 표준이 됐을 때 클라이언트의 기대치가 어떻게 바뀔지입니다. 최종 판단은 여전히 사람의 몫이더라도, 프롬프트 기반 편집에 먼저 익숙해진 디자이너가 속도 면에서 앞서갈 가능성이 큽니다.",
+    "en": "This is exactly the kind of update worth blocking out 30 minutes for: not a flashy demo feature, but a change to the core editing loop. Prompt-based light adjustment and masking could meaningfully cut down repetitive retouching work.\nThe interesting question is what happens to client expectations once 'just describe what you want changed' becomes normal. Designers who get fluent with prompt-based editing early will have an edge in speed, even if the underlying judgment calls stay human."
+  },
+  "thumbLabel": "포토샵",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}

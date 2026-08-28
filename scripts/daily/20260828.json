@@ -1,0 +1,74 @@
+{
+  "20260828-ai-001": {
+    "category_kr": "AI · 디자인전략 · 컨퍼런스",
+    "category_en": "AI · Design Strategy · Conference",
+    "impactScore": 4,
+    "positions": [
+      "design-lead",
+      "ux-designer"
+    ]
+  },
+  "20260828-ai-002": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 3,
+    "positions": [
+      "design-lead",
+      "ui-designer"
+    ]
+  },
+  "20260828-ai-003": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 5,
+    "positions": [
+      "graphic-designer",
+      "illustrator"
+    ]
+  },
+  "20260828-ai-004": {
+    "category_kr": "AI · 이미지생성 · UX리서치",
+    "category_en": "AI · Image Generation · UX Research",
+    "impactScore": 5,
+    "positions": [
+      "ux-designer",
+      "ui-designer"
+    ]
+  },
+  "20260828-design-001": {
+    "category_kr": "디자인 · 브랜드 · 팝업",
+    "category_en": "Design · Brand · Pop-up",
+    "impactScore": 4,
+    "positions": [
+      "brand-designer",
+      "graphic-designer"
+    ]
+  },
+  "20260828-design-002": {
+    "category_kr": "디자인 · 게임 · 세계관",
+    "category_en": "Design · Games · Worldbuilding",
+    "impactScore": 3,
+    "positions": [
+      "art-director",
+      "illustrator"
+    ]
+  },
+  "20260828-design-003": {
+    "category_kr": "디자인 · 영상 · 편집툴",
+    "category_en": "Design · Video · Editing Tools",
+    "impactScore": 4,
+    "positions": [
+      "video-designer",
+      "motion-designer"
+    ]
+  },
+  "20260828-design-004": {
+    "category_kr": "디자인 · 일러스트레이션 · 아트",
+    "category_en": "Design · Illustration · Art",
+    "impactScore": 3,
+    "positions": [
+      "illustrator",
+      "art-director"
+    ]
+  }
+}

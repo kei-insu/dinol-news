@@ -1,0 +1,53 @@
+{
+  "contentId": "20260828-ai-001",
+  "date": "2026-08-28",
+  "section": "ai",
+  "order": 1,
+  "source": {
+    "name": "전자신문",
+    "publishedAt": "2026-08-24"
+  },
+  "url": "https://www.etnews.com/20260824000105",
+  "isEn": false,
+  "featured": true,
+  "category": {
+    "kr": "AI · 디자인전략 · 컨퍼런스",
+    "en": "AI · Design Strategy · Conference"
+  },
+  "title": {
+    "kr": "[UX Korea 2026 Fall] 디자인과 AI의 관계를 다시 묻다…KAIST·삼성SDS·LG전자·Figma가 던지는 4개의 질문",
+    "en": null
+  },
+  "summary": {
+    "kr": "9월 2일 서울 강남 ST센터에서 열리는 'UX Korea 2026 - Fall'을 앞두고, AI가 디자인 프로세스에 깊이 들어온 상황에서 디자이너의 주체성과 역할을 다시 묻는 컨퍼런스 소식입니다. KAIST, 삼성SDS, LG전자, Figma 관계자가 각자의 입장에서 4가지 질문을 던집니다.",
+    "en": null
+  },
+  "points": {
+    "kr": [
+      "AI 시대, 디자이너는 '누구의 도구' 안에서 일하는가",
+      "KAIST·삼성SDS·LG전자·Figma가 제시하는 4가지 질문",
+      "9월 2일 강남 ST센터에서 UX Korea 2026 Fall 개최"
+    ],
+    "en": []
+  },
+  "positions": [
+    "design-lead",
+    "ux-designer"
+  ],
+  "designer": {
+    "kr": "자동화·효율성을 앞세운 AI 도구 도입 국면에서, '무엇을 더 할 것인가'보다 '나는 지금 누구의 도구 안에서 일하고 있는가'라는 질문이 실무 디자이너에게 더 중요해지고 있다는 관점을 제시합니다.",
+    "en": null
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "컨퍼런스 세션 구성 참고 및 팀 내 AI 활용 논의 자료로 추천",
+    "en": null
+  },
+  "comment": {
+    "kr": "AI 도구가 디자인 워크플로 깊숙이 들어오면서 '얼마나 빨리 만들 것인가'에서 '무엇을 만들 것인가'로 질문이 옮겨가고 있습니다. 이번 컨퍼런스가 KAIST(학계)·삼성SDS·LG전자(기업 인하우스)·Figma(툴 벤더)라는 서로 다른 입장을 한 자리에 모은 점이 눈에 띕니다.\n실무 디자이너 입장에서는 '내가 지금 어떤 도구의 논리 안에서 결정을 내리고 있는가'를 점검하는 계기로 삼을 만합니다. 특히 AI 에이전트가 기획·리서치 단계까지 관여하기 시작한 지금, 디자이너의 역할 재정의는 더 이상 미룰 수 없는 주제입니다.",
+    "en": null
+  },
+  "thumbLabel": "AI전략",
+  "thumbGradient": "g-navy",
+  "_todo": []
+}

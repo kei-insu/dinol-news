@@ -1,0 +1,57 @@
+{
+  "contentId": "20260828-design-003",
+  "date": "2026-08-28",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "PetaPixel",
+    "publishedAt": "2026-08-26"
+  },
+  "url": "https://petapixel.com/2026/08/26/instagrams-new-video-editing-tool-quickly-makes-a-first-draft/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 영상 · 편집툴",
+    "en": "Design · Video · Editing Tools"
+  },
+  "title": {
+    "kr": "인스타그램 새 영상 편집 기능 '퍼스트 드래프트', 10초 만에 초안 완성",
+    "en": "Instagram's New Video Editing Tool Quickly Makes a First Draft"
+  },
+  "summary": {
+    "kr": "인스타그램의 새 기능 '퍼스트 드래프트'가 선택한 클립들을 10초 안에 자동으로 다듬고 이어 붙여 릴스 초안을 만들어줍니다. 정적이나 침묵 구간을 알아서 잘라내며, 이후 순서 변경이나 삭제 등 수동 수정도 가능합니다.",
+    "en": "Instagram's new 'First Draft' feature automatically trims and stitches selected clips into a rough Reels edit in under 10 seconds, cutting out pauses and silences from talking-head and multi-clip footage before handing it back for manual refinement."
+  },
+  "points": {
+    "kr": [
+      "10초 안에 릴스 초안 완성",
+      "말하는 영상의 정적·침묵 구간 자동 삭제",
+      "이후 순서 변경·삭제 등 자유롭게 수정 가능"
+    ],
+    "en": [
+      "Produces a rough Reels edit in under 10 seconds",
+      "Trims pauses/silences automatically from talking-head clips",
+      "Fully editable afterward: reorder, remove, or adjust any clip"
+    ]
+  },
+  "positions": [
+    "video-designer",
+    "motion-designer"
+  ],
+  "designer": {
+    "kr": "숏폼 영상을 자주 편집하는 사람이라면, 빈 타임라인이 아니라 어느 정도 다듬어진 초안에서 작업을 시작할 수 있게 됩니다. 지루한 1차 편집 작업을 얼마나 덜어주는지 직접 써보고 판단할 가치가 있습니다.",
+    "en": "For anyone editing short-form video regularly, this shifts the starting point of an edit from a blank timeline to a workable rough cut, worth testing to see how much of the 'boring' first pass it can actually take off your plate."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "다음 릴스를 만들 때 수동으로 초벌 편집하기 전에 먼저 써볼 것을 추천",
+    "en": "Try it on your next multi-clip Reel before doing the rough cut manually"
+  },
+  "comment": {
+    "kr": "숏폼 영상 자동 편집 도구는 꾸준히 발전해 왔지만, 쓸 만한 초안을 10초 안에 뽑아준다는 건 의미 있는 문턱을 넘은 것입니다. 의도적인 리듬감이나 강한 훅까지 대신해주진 않지만, 가장 지루한 작업인 원본 소스 조립·트리밍은 확실히 덜어줍니다.\n많은 짧은 결과물을 다루는 영상·모션 디자이너라면, 결과물의 완성도보다는 이런 도구가 사람의 편집 시간을 어디로 옮겨놓는지에 주목해 볼 가치가 있습니다.",
+    "en": "Auto-editing tools for short-form video have been creeping toward this for a while, but a sub-10-second turnaround for a usable rough cut is a meaningful threshold. It won't replace intentional pacing or a strong hook, but it removes the most tedious part of the process: assembling and trimming raw footage.\nFor video and motion designers working across many small deliverables, tools like this are worth tracking less for the output quality and more for how they reshape where human editing time actually goes."
+  },
+  "thumbLabel": "영상편집",
+  "thumbGradient": "g-olive",
+  "_todo": []
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260828-design-004",
+  "date": "2026-08-28",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "It's Nice That",
+    "publishedAt": "2026-08-27"
+  },
+  "url": "https://www.itsnicethat.com/articles/moriz-oberberger-illustration-art-discover-270826",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 일러스트레이션 · 아트",
+    "en": "Design · Illustration · Art"
+  },
+  "title": {
+    "kr": "모리츠 오버베르거의 뒤틀린 인물화가 보여주는 '평범한 순간의 낯선 아름다움'",
+    "en": "Moriz Oberberger's bendy figures and whimsical cartoons reveal 'the strange beauty of ordinary situations'"
+  },
+  "summary": {
+    "kr": "독일 비주얼 아티스트 모리츠 오버베르거는 뒤틀린 신체와 어색한 자세를 절제된 색감과 거친 마크메이킹으로 그립니다. 물감이 녹아내리듯 번지는 형상은 필립 거스턴을 연상시키며, 평범한 상황을 은근히 기이하게 뒤바꿉니다.",
+    "en": "German visual artist Moriz Oberberger draws bendy figures and awkward bodies with muted colours and messy mark-making, his paint oozing into melted, Philip Guston-esque forms that turn ordinary situations quietly uncanny."
+  },
+  "points": {
+    "kr": [
+      "'낯선 캐릭터와 어색한 신체'로 알려진 작업 스타일",
+      "물감의 점성을 그대로 활용해 녹아내리는 듯한 질감 표현",
+      "다 닳은 연필을 일부러 사용해 그리는 동안 선의 질감이 변하게 함"
+    ],
+    "en": [
+      "Known for 'strange characters and awkward bodies'",
+      "Paint's viscosity used deliberately to create melted, textured forms",
+      "Uses nearly-worn-down pencils so the tool itself alters the line as it draws"
+    ]
+  },
+  "positions": [
+    "illustrator",
+    "art-director"
+  ],
+  "designer": {
+    "kr": "다 닳은 도구나 물감의 물성 같은 제약을 방해 요소가 아니라 시그니처 스타일을 만드는 재료로 쓰는 방식이 인상적입니다. 일러스트레이션을 넘어 자기만의 편집·브랜드 비주얼 톤을 찾는 실무자에게도 참고가 됩니다.",
+    "en": "A useful study in how material constraints (worn tools, paint viscosity) can generate a signature style rather than get in its way, relevant well beyond illustration to anyone developing a distinctive editorial or brand visual voice."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "에디토리얼 일러스트나 캐릭터 기반 비주얼 아이덴티티 작업의 무드보드 레퍼런스로 저장 추천",
+    "en": "Save as mood-board reference for editorial illustration or character-driven visual identity work"
+  },
+  "comment": {
+    "kr": "눈길을 끄는 건 뒤틀린 필립 거스턴풍 인물 자체보다 그 뒤에 있는 작업 방식입니다. 오버베르거는 연필을 일부러 다 닳을 때까지 쓰는데, 닳아가는 심이 실시간으로 선의 질감을 바꾸기 때문입니다. 물감의 점성도 억지로 통제하지 않고 그대로 활용합니다.\n시그니처 스타일은 영리한 콘셉트보다 '어떤 재료의 우연을 남기고 어떤 걸 고칠지' 선택하는 데서 나온다는, 작지만 응용 가능한 교훈을 줍니다.",
+    "en": "What stands out here isn't just the wobbly, Guston-adjacent figures, it's the process behind them: Oberberger deliberately keeps pencils until they're nearly spent because the changing nub alters the line in real time, and leans into paint's own viscosity rather than fighting it.\nThat's a small but transferable lesson for any visual practice: a signature look often comes less from a clever concept and more from choosing which material accidents to keep instead of correct."
+  },
+  "thumbLabel": "일러스트",
+  "thumbGradient": "g-rust",
+  "_todo": []
+}
