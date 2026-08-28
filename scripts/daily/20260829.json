@@ -1,0 +1,74 @@
+{
+  "20260829-ai-001": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 5,
+    "positions": [
+      "ux-designer",
+      "ui-designer"
+    ]
+  },
+  "20260829-ai-002": {
+    "category_kr": "AI · 로보틱스 · 산업현장",
+    "category_en": "AI · Robotics · Industrial Sites",
+    "impactScore": 2,
+    "positions": [
+      "industrial-designer",
+      "design-lead"
+    ]
+  },
+  "20260829-ai-003": {
+    "category_kr": "AI · 툴 · 생산성",
+    "category_en": "AI · Tools · Productivity",
+    "impactScore": 4,
+    "positions": [
+      "product-designer",
+      "ux-designer"
+    ]
+  },
+  "20260829-ai-004": {
+    "category_kr": "AI · 툴 · 비교가이드",
+    "category_en": "AI · Tools · Comparison Guide",
+    "impactScore": 3,
+    "positions": [
+      "video-designer",
+      "motion-designer"
+    ]
+  },
+  "20260829-design-001": {
+    "category_kr": "디자인 · UXUI · 모빌리티",
+    "category_en": "Design · UXUI · Mobility",
+    "impactScore": 3,
+    "positions": [
+      "ux-designer",
+      "ui-designer"
+    ]
+  },
+  "20260829-design-002": {
+    "category_kr": "디자인 · 게임 · 엔진기술",
+    "category_en": "Design · Games · Engine Technology",
+    "impactScore": 3,
+    "positions": [
+      "motion-designer",
+      "art-director"
+    ]
+  },
+  "20260829-design-003": {
+    "category_kr": "디자인 · UXUI · 웹",
+    "category_en": "Design · UXUI · Web",
+    "impactScore": 4,
+    "positions": [
+      "ui-designer",
+      "design-lead"
+    ]
+  },
+  "20260829-design-004": {
+    "category_kr": "디자인 · 건축 · 도시계획",
+    "category_en": "Design · Architecture · Urban Planning",
+    "impactScore": 3,
+    "positions": [
+      "space-designer",
+      "architect"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260829-ai-003",
+  "date": "2026-08-29",
+  "section": "ai",
+  "order": 3,
+  "source": {
+    "name": "VentureBeat",
+    "publishedAt": "2026-08-26"
+  },
+  "url": "https://venturebeat.com/infrastructure/perplexity-partners-with-nvidia-to-launch-portable-computer-a-fully-local-ai-agent-with-zero-token-costs",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 생산성",
+    "en": "AI · Tools · Productivity"
+  },
+  "title": {
+    "kr": "퍼플렉시티, 엔비디아와 손잡고 완전 로컬 AI 에이전트 '포터블 컴퓨터' 출시",
+    "en": "Perplexity partners with Nvidia to launch Portable Computer, a fully local AI agent with zero token costs"
+  },
+  "summary": {
+    "kr": "퍼플렉시티가 자사 에이전트 플랫폼 'Computer'를 사용자가 이미 보유한 하드웨어에서 완전히 로컬로 구동하는 '포터블 컴퓨터'를 출시합니다. 엔비디아 DGX 스파크와 RTX 탑재 리눅스 머신을 시작으로, 엔비디아와 긴밀히 협력해 개발했습니다.",
+    "en": "Perplexity is launching Portable Computer, a version of its agentic 'Computer' platform that runs entirely on hardware users already own, starting with Nvidia's DGX Spark and RTX-equipped Linux machines, developed in close partnership with Nvidia."
+  },
+  "points": {
+    "kr": [
+      "로컬에서 처리한 작업은 과금 크레딧을 소모하지 않음",
+      "기본적으로 기기에서 작업을 시작하고, 클라우드로 넘길 때는 권한을 요청",
+      "Qwen 3.8 27B와 자체 PPLX 27B 지원, 엔비디아 Nemotron 3.5 Lightning 추후 지원 예정"
+    ],
+    "en": [
+      "Work done locally consumes zero billing credits",
+      "Tasks start on-device by default, asking permission before sending steps to the cloud",
+      "Supports Qwen 3.8 27B and Perplexity's own PPLX 27B, with Nvidia Nemotron 3.5 Lightning to follow"
+    ]
+  },
+  "positions": [
+    "product-designer",
+    "ux-designer"
+  ],
+  "designer": {
+    "kr": "에이전트형 도구가 '항상 클라우드'에서 '로컬 우선, 필요할 때만 클라우드'로 옮겨가는 구체적 사례입니다. AI 에이전트가 더 강력한 모델로 넘어갈 때의 동의(consent) 흐름을 설계하는 이들에게 참고가 됩니다.",
+    "en": "A concrete example of agentic tools moving from 'always cloud' to 'local-first, cloud-when-needed,' worth studying if you're designing consent flows for when an AI agent should escalate to a more powerful model."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "에이전트형 AI 도구를 매일 쓰는 실무자라면 직접 테스트해볼 만함 · 로컬/클라우드 전환 흐름 UX 참고자료로 저장 추천",
+    "en": "Worth testing if you use agentic AI tools daily · Save as a UX reference for local/cloud handoff flows"
+  },
+  "comment": {
+    "kr": "이 소식에서 눈여겨볼 지점은 단순히 'AI가 로컬에서 돈다'는 사실이 아니라, 명시적인 권한 모델입니다. 에이전트는 기본적으로 기기에서 작업하고, 더 강력한 연산이 필요할 때만 클라우드 모델로 단계를 넘기겠다고 사용자에게 묻습니다. 비용 절감을 넘어 에이전트형 제품에 신뢰·동의를 어떻게 설계할지 보여주는 구체적인 패턴입니다.\n\n예측 불가능한 API 비용에 지친 팀이라면, 제로 비용 로컬 추론은 에이전트 워크플로우가 단순한 호스팅 LLM 래퍼를 넘어 성숙해지고 있다는 의미 있는 신호이기도 합니다. 실제로 더 널리 출시됐을 때 온디바이스/클라우드 전환 UI가 사용자에게 어떻게 노출되는지 지켜볼 만합니다.",
+    "en": "What stands out here isn't just 'AI running locally' but the explicit permission model: the agent defaults to on-device work and only asks to hand off a step to a cloud model when it needs more horsepower. That's a concrete pattern for anyone designing trust and consent into agentic products, not just a cost play.\n\nFor teams tired of unpredictable API bills, zero-cost local inference is also a meaningful signal that agentic workflows are maturing beyond thin wrappers over hosted LLMs. Worth watching how the on-device/cloud handoff UI is actually presented to users once it ships more broadly."
+  },
+  "thumbLabel": "로컬에이전트",
+  "thumbGradient": "g-teal",
+  "_todo": []
+}

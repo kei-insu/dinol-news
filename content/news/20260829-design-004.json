@@ -1,0 +1,57 @@
+{
+  "contentId": "20260829-design-004",
+  "date": "2026-08-29",
+  "section": "design",
+  "order": 4,
+  "source": {
+    "name": "designboom",
+    "publishedAt": "2026-08-27"
+  },
+  "url": "https://www.designboom.com/architecture/clarence-perry-neighborhood-unit-15-minute-city/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · 건축 · 도시계획",
+    "en": "Design · Architecture · Urban Planning"
+  },
+  "title": {
+    "kr": "클래런스 페리의 '근린주구', 오늘날 '15분 도시'의 100년 전 원형",
+    "en": "clarence perry's 'neighborhood unit': the century-old idea behind today's 15-minute city"
+  },
+  "summary": {
+    "kr": "designboom이 오늘날 '15분 도시' 개념의 뿌리를 1929년 클래런스 페리의 '근린주구' 계획에서 찾습니다. 학교·공원·상점이 도보 5~10분 거리 안에 있는 자족적 커뮤니티 구상입니다.",
+    "en": "Designboom traces today's '15-minute city' back to Clarence Perry's 1929 'Neighborhood Unit,' a plan for self-contained communities where schools, parks and shops sit within a 5-10 minute walk."
+  },
+  "points": {
+    "kr": [
+      "1929년 뉴욕 지역계획의 일부로 공식화된 '근린주구' 개념",
+      "인구 5천~6천 명, 도보 5~10분(400~800m) 내 필수 시설 배치가 핵심 원칙",
+      "간선도로는 외곽으로, 공원·놀이터는 전체 면적의 약 10%로 계획"
+    ],
+    "en": [
+      "The 'neighborhood unit' concept was formalized in 1929 as part of the Regional Plan of New York",
+      "Core principles: 5,000-6,000 residents with daily amenities within a 5-10 minute walk (400-800m)",
+      "Arterial roads pushed to the edges; parks and playgrounds planned at about 10% of total area"
+    ]
+  },
+  "positions": [
+    "space-designer",
+    "architect"
+  ],
+  "designer": {
+    "kr": "100년 전 계획 원칙이 지금의 '15분 도시' 담론과 거의 그대로 겹친다는 점은, 좋은 공간 계획의 원리가 유행보다 오래간다는 것을 보여줍니다. 도보 접근성 중심 설계를 다시 짚어볼 좋은 레퍼런스입니다.",
+    "en": "A century-old planning principle mapping almost exactly onto today's '15-minute city' discourse shows how good spatial planning outlasts trends, a useful reference for revisiting walkability-first design."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "도보 접근성 원칙을 다시 짚어보려는 공간·도시 디자이너에게 좋은 입문 자료 · 참고 저장 추천",
+    "en": "Good primer for urban/spatial designers revisiting walkability principles · Save for reference"
+  },
+  "comment": {
+    "kr": "눈에 띄는 것은 핵심 논리가 100년간 거의 바뀌지 않았다는 점입니다. 자족적 근린, 도보 거리 안의 학교와 공원, 외곽으로 밀어낸 통과교통. '15분 도시'라는 이름은 새롭지만 그 이면의 공간 셈법은 1929년 클래런스 페리의 것입니다.\n\n마스터플랜이나 도시 스케일의 공간 디자인을 다루는 이들에게는, '현대적' 계획 혁신으로 읽히는 것들 중 상당수가 사실은 새로운 정치·기후 맥락에 맞춰 리브랜딩된 오래되고 검증된 원칙이라는 점을 다시 일깨워주는 사례입니다.",
+    "en": "What's striking is how little the core logic has changed in a century: self-contained neighborhoods, a school and park within walking distance, through-traffic pushed to the edges. The '15-minute city' branding is new, but the spatial math behind it is Clarence Perry's from 1929.\n\nFor anyone doing masterplanning or urban-scale spatial design, this is a useful reminder that a lot of what reads as a 'modern' planning innovation is really an old, well-tested principle getting rebranded for a new political and climate context."
+  },
+  "thumbLabel": "15분도시",
+  "thumbGradient": "g-forest",
+  "_todo": []
+}

@@ -1,0 +1,57 @@
+{
+  "contentId": "20260829-ai-004",
+  "date": "2026-08-29",
+  "section": "ai",
+  "order": 4,
+  "source": {
+    "name": "crazyrouter.com",
+    "publishedAt": "2026-08-29"
+  },
+  "url": "https://crazyrouter.com/en/blog/ai-video-generation-comparison-2026",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "AI · 툴 · 비교가이드",
+    "en": "AI · Tools · Comparison Guide"
+  },
+  "title": {
+    "kr": "2026년 AI 영상 생성기 비교: 소라·클링·런웨이·비오·피카",
+    "en": "AI Video Generator Comparison 2026: Sora, Kling, Runway, Veo, Pika"
+  },
+  "summary": {
+    "kr": "AI 영상 생성 툴 5종(소라·클링·런웨이·비오·피카)을 비교하는 가이드입니다. 빠르게 바뀌는 AI 영상 생성 시장에서 각 툴이 현재 어떤 위치에 있는지 정리했습니다.",
+    "en": "A comparison guide surveys five leading AI video generation tools, Sora, Kling, Runway, Veo, and Pika, covering where each currently stands in the fast-moving AI video landscape."
+  },
+  "points": {
+    "kr": [
+      "런웨이, 카메라 컨트롤과 캐릭터 일관성을 갖춘 이미지-투-비디오 올라운더",
+      "클링, 4K/60fps 네이티브 출력으로 방송급 모션에 강점",
+      "비오·피카는 각각 포토리얼리즘과 빠른 크리에이티브 이펙트로 나머지 자리를 채움"
+    ],
+    "en": [
+      "Runway, image-to-video all-rounder with camera control and character consistency",
+      "Kling, native 4K/60fps output tuned for broadcast-grade motion",
+      "Veo and Pika round out the field with distinct strengths in photorealism and quick creative effects"
+    ]
+  },
+  "positions": [
+    "video-designer",
+    "motion-designer"
+  ],
+  "designer": {
+    "kr": "프로젝트에 맞는 영상 생성 툴을 고를 때 빠르게 훑어볼 참고 자료입니다. 다만 직접 사용해본 리뷰가 아니라 비교 정리 콘텐츠이므로, 순위는 출발점 정도로만 참고하는 게 좋습니다.",
+    "en": "Useful as a quick reference when picking a video-gen tool for a project, though it's a comparison roundup rather than hands-on testing, so treat the rankings as a starting point, not a final verdict."
+  },
+  "impactScore": 3,
+  "recommend": {
+    "kr": "AI 영상 툴 후보를 추릴 때 빠른 참고용 · 실제 도입 전 직접 테스트로 검증 권장",
+    "en": "Quick reference when shortlisting an AI video tool · Verify claims with hands-on trials before committing"
+  },
+  "comment": {
+    "kr": "이 콘텐츠는 개별 보도라기보다 비교 정리물이라 이번 섹션의 다른 카드들과는 성격이 다릅니다. 신규 출시나 인터뷰가 아니라, 잘 알려진 AI 영상 툴 5종이 현재 어떤 위치에 있는지 스냅샷으로 정리한 것에 가깝습니다. 런웨이는 컨트롤 가능성에, 클링은 방송급 해상도·모션에 강점을 두고, 비오와 피카는 각각 포토리얼리즘과 빠른 크리에이티브 이펙트로 자기 자리를 만들고 있습니다.\n\n프로젝트에 쓸 툴을 추릴 때 훑어보긴 좋지만, 결론이 아니라 출발점으로 다루는 게 좋습니다. AI 영상 시장처럼 빠르게 바뀌는 분야에서는 이런 비교 콘텐츠가 금방 낡기 때문에, 구체적인 주장은 사용 전 각 벤더의 공식 릴리스 노트로 다시 확인하는 걸 권합니다.",
+    "en": "This is a comparison roundup rather than a single reported story, so it belongs in a different category from the rest of this section: no new release, no interview, just a snapshot of where the five best-known AI video tools stand relative to each other. Runway leans on controllability, Kling pushes broadcast-grade resolution and motion, and Veo and Pika each carve out their own niche in photorealism and fast creative effects.\n\nWorth a skim if you're shortlisting a tool for a project, but treat it as a starting point rather than a verdict, comparison content like this ages fast in a market moving as quickly as AI video, and it's worth confirming any specific claim against the vendor's own release notes before you commit."
+  },
+  "thumbLabel": "영상AI비교",
+  "thumbGradient": "g-olive",
+  "_todo": []
+}

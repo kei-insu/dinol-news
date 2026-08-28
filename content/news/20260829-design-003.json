@@ -1,0 +1,57 @@
+{
+  "contentId": "20260829-design-003",
+  "date": "2026-08-29",
+  "section": "design",
+  "order": 3,
+  "source": {
+    "name": "Smashing Magazine",
+    "publishedAt": "2026-08-25"
+  },
+  "url": "https://www.smashingmagazine.com/2026/08/why-website-should-never-stop-changing/",
+  "isEn": true,
+  "featured": false,
+  "category": {
+    "kr": "디자인 · UXUI · 웹",
+    "en": "Design · UXUI · Web"
+  },
+  "title": {
+    "kr": "웹사이트는 왜 멈추지 않고 계속 바뀌어야 하는가",
+    "en": "Why Your Website Should Never Stop Changing"
+  },
+  "summary": {
+    "kr": "대부분의 웹사이트는 출시일에 완성도가 정점을 찍고 서서히 방치됩니다. Smashing Magazine이 출시 이후에도 에이전트가 지속적으로 최적화하는 '자율 웹사이트' 개념을 다룹니다.",
+    "en": "Most websites peak in quality on launch day and slowly decay. Smashing Magazine explores autonomous, agent-optimized websites that keep improving continuously after launch instead of stagnating."
+  },
+  "points": {
+    "kr": [
+      "웹사이트는 보통 출시일에 정점을 찍고 이후 우선순위 변화 속에 서서히 낙후됨",
+      "출시 후에도 AI 에이전트가 지속적으로 최적화하는 '자율 웹사이트' 개념 제안",
+      "'완성'을 일회성 마일스톤이 아닌 지속적 과정으로 재정의"
+    ],
+    "en": [
+      "Websites typically peak on launch day, then degrade as priorities shift",
+      "Proposes autonomous websites continuously optimized by AI agents post-launch",
+      "Reframes 'done' as an ongoing process rather than a one-time milestone"
+    ]
+  },
+  "positions": [
+    "ui-designer",
+    "design-lead"
+  ],
+  "designer": {
+    "kr": "에이전트가 라이브 사이트를 계속 손볼 것이라면, 디자이너는 에이전트가 건드릴 수 있는 것과 없는 것의 경계, 즉 디자인 시스템의 가드레일을 정의하는 역할을 맡게 됩니다. 화면을 만드는 일에서 규칙을 설계하는 일로 무게중심이 옮겨가는 셈입니다.",
+    "en": "If agents are going to keep tweaking a live site, designers need to define the guardrails and design system boundaries an agent can and can't touch, which shifts part of the design job from producing screens to authoring rules."
+  },
+  "impactScore": 4,
+  "recommend": {
+    "kr": "출시 후 에이전트 기반 최적화를 검토하는 팀이라면 필독 · 디자인 시스템 기획 시 참고 저장 추천",
+    "en": "Must-read for teams considering agentic post-launch optimization · Save for design-system planning"
+  },
+  "comment": {
+    "kr": "이 글의 프레이밍이 날카롭습니다. 웹 디자인에서 '완성'은 늘 허구였지만, 우리는 출시일을 결승선처럼 취급하는 워크플로우를 통째로 만들어왔습니다. 이 글은 라이브 사이트를 인프라가 모니터링·오토스케일링되듯 에이전트가 지속적으로 돌보는 대상으로 다루자고 제안합니다.\n\n흥미로운 디자인 질문은 '에이전트가 출시 후 카피나 레이아웃을 손볼 수 있는가'가 아니라, 수백 번의 작은 자율적 변경 속에서 브랜드와 접근성 기준을 벗어나지 않도록 어떤 경계를 둘 것인가입니다. 이는 엔지니어링만큼이나 디자인 시스템의 문제입니다.",
+    "en": "The framing here is sharp: 'done' has always been a fiction in web design, but we've built entire workflows around pretending launch day is the finish line. This piece pushes toward treating a live site as something an agent tends continuously, similar to how infrastructure gets monitored and auto-scaled today.\n\nThe interesting design question isn't whether agents can tweak copy or layout post-launch, it's what boundaries stop an agent from drifting away from brand and accessibility standards over hundreds of small autonomous changes. That's a design-system problem as much as an engineering one."
+  },
+  "thumbLabel": "에이전틱웹",
+  "thumbGradient": "g-amber",
+  "_todo": []
+}
